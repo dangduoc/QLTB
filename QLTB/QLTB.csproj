@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9B908897-165D-49A9-ACA5-16FF2D5EF8E0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QLTB</RootNamespace>
+    <AssemblyName>QLTB</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AdvancedDataGridView, Version=0.1.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AdvancedDataGridView.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Layout, Version=12.8.0.6, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevComponents.DotNetBar.Layout.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=12.8.0.6, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\DanhMuc\CanBoThietBiModel.cs" />
+    <Compile Include="BLL\DanhMuc\ThietBiToiThieuModel.cs" />
+    <Compile Include="BLL\ThietBi\ThietBiModel.cs" />
+    <Compile Include="GUI\DialogBox\frmFilterGrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DialogBox\frmFilterGrid.Designer.cs">
+      <DependentUpon>frmFilterGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThietBi\DanhMuc\CanBoThietBi\frmDMCanBoThietBi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBi\DanhMuc\CanBoThietBi\frmDMCanBoThietBi.Designer.cs">
+      <DependentUpon>frmDMCanBoThietBi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThietBi\DanhMuc\GiaoVien\frmDMGiaoVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBi\DanhMuc\GiaoVien\frmDMGiaoVien.Designer.cs">
+      <DependentUpon>frmDMGiaoVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThietBi\DanhMuc\KhoiLop\frmDMKhoiLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBi\DanhMuc\KhoiLop\frmDMKhoiLop.Designer.cs">
+      <DependentUpon>frmDMKhoiLop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThietBi\DanhMuc\LopHoc\frmDMLopHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBi\DanhMuc\LopHoc\frmDMLopHoc.Designer.cs">
+      <DependentUpon>frmDMLopHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThietBi\DanhMuc\MonHoc\frmDMMonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBi\DanhMuc\MonHoc\frmDMMonHoc.Designer.cs">
+      <DependentUpon>frmDMMonHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThietBi\DanhMuc\NguonKinhPhi\frmDMNguonKinhPhi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBi\DanhMuc\NguonKinhPhi\frmDMNguonKinhPhi.Designer.cs">
+      <DependentUpon>frmDMNguonKinhPhi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThietBi\DanhMuc\PhongBoMon\frmDMPhongBoMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBi\DanhMuc\PhongBoMon\frmDMPhongBoMon.Designer.cs">
+      <DependentUpon>frmDMPhongBoMon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThietBi\DanhMuc\ThietBiToiThieu\frmDMThietBiTT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBi\DanhMuc\ThietBiToiThieu\frmDMThietBiTT.Designer.cs">
+      <DependentUpon>frmDMThietBiTT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThietBi\DanhMuc\ToBoMon\frmDMToBoMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBi\DanhMuc\ToBoMon\frmDMToBoMon.Designer.cs">
+      <DependentUpon>frmDMToBoMon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThietBi\MuonTra\frmDanhSachMuonTB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBi\MuonTra\frmDanhSachMuonTB.Designer.cs">
+      <DependentUpon>frmDanhSachMuonTB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThietBi\KhaiBao\frmDanhSachThietBi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBi\KhaiBao\frmDanhSachThietBi.Designer.cs">
+      <DependentUpon>frmDanhSachThietBi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThietBi\KhaiBao\frmKhaiBaoThietBi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBi\KhaiBao\frmKhaiBaoThietBi.Designer.cs">
+      <DependentUpon>frmKhaiBaoThietBi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThietBi\MuonTra\frmThietBiMuon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBi\MuonTra\frmThietBiMuon.Designer.cs">
+      <DependentUpon>frmThietBiMuon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\MyConvert.cs" />
+    <EmbeddedResource Include="GUI\DialogBox\frmFilterGrid.resx">
+      <DependentUpon>frmFilterGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBi\DanhMuc\CanBoThietBi\frmDMCanBoThietBi.resx">
+      <DependentUpon>frmDMCanBoThietBi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBi\DanhMuc\GiaoVien\frmDMGiaoVien.resx">
+      <DependentUpon>frmDMGiaoVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBi\DanhMuc\KhoiLop\frmDMKhoiLop.resx">
+      <DependentUpon>frmDMKhoiLop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBi\DanhMuc\LopHoc\frmDMLopHoc.resx">
+      <DependentUpon>frmDMLopHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBi\DanhMuc\MonHoc\frmDMMonHoc.resx">
+      <DependentUpon>frmDMMonHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBi\DanhMuc\NguonKinhPhi\frmDMNguonKinhPhi.resx">
+      <DependentUpon>frmDMNguonKinhPhi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBi\DanhMuc\PhongBoMon\frmDMPhongBoMon.resx">
+      <DependentUpon>frmDMPhongBoMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBi\DanhMuc\ThietBiToiThieu\frmDMThietBiTT.resx">
+      <DependentUpon>frmDMThietBiTT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBi\DanhMuc\ToBoMon\frmDMToBoMon.resx">
+      <DependentUpon>frmDMToBoMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBi\MuonTra\frmDanhSachMuonTB.resx">
+      <DependentUpon>frmDanhSachMuonTB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBi\KhaiBao\frmDanhSachThietBi.resx">
+      <DependentUpon>frmDanhSachThietBi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBi\KhaiBao\frmKhaiBaoThietBi.resx">
+      <DependentUpon>frmKhaiBaoThietBi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBi\MuonTra\frmThietBiMuon.resx">
+      <DependentUpon>frmThietBiMuon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Apps-session-logout-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AQUA ICONS SYSTEM KEYS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\browse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Collap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\conference-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Expand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\groups_f2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\groups_f21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_about.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_datetime.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_pagesetup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_printpreview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\langmanager.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office-Customer-Male-Light-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\properties_f2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reload_f2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stop_f2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\windows.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xem.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\XọaPG.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Misc-Misc-Stuff-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\message_f2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DuyetGiaoDich.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
