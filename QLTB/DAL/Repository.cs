@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Linq.Expressions;
 using System.Data.Entity;
+using QLTB.DAL.Data;
 
 namespace QLTB.DAL
 {

@@ -1,7 +1,6 @@
 D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\QLTB.exe.config
 D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\QLTB.exe
 D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\QLTB.pdb
-D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.csprojResolveAssemblyReference.cache
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.DialogBox.frmFilterGrid.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmLogin.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmMain.resources
@@ -22,3 +21,4 @@ D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.Properties.Resources.resource
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.csproj.GenerateResource.Cache
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.exe
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.pdb
+D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.csprojResolveAssemblyReference.cache

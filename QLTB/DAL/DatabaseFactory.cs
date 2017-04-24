@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QLTB.DAL.Data;
+using QLTB.Utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +14,7 @@ namespace QLTB.DAL
         public string Id { get; set; }
         public DatabaseFactory()
         {
+           
             dataContext = new Entities();
 
             // Get randomize Id

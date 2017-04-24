@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QLTB.DAL;
+using QLTB.DAL.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,7 +31,11 @@ namespace QLTB.GUI
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
+            using (var unitOfWork= new UnitOfWork())
+            {
+                var list = unitOfWork.GetRepository<DM_LopHoc>().GetAll().FirstOrDefault();
+            }
+                DialogResult = DialogResult.OK;
             this.Close();
         }
     }

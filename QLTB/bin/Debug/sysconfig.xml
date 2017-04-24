@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+    <server>TED-PC</server>
+    <user>sa</user>
+    <password>123456</password>
+    <security>false</security>
+    <initial>QLTB</initial>
+    <timeout>200</timeout>
+</Configuration>
