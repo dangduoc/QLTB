@@ -43,7 +43,6 @@ namespace QLTB.DAL.Data
         public bool IsThietBiTuLam { get; set; }
         public Nullable<System.DateTime> NgaySanXuat { get; set; }
         public Nullable<System.DateTime> HanSD { get; set; }
-        public int TrangThaiId { get; set; }
         public string GhiChu { get; set; }
         public string CreateByUserId { get; set; }
         public Nullable<System.DateTime> CreatedOnDate { get; set; }
