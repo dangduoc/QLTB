@@ -12,14 +12,12 @@ namespace QLTB.DAL.Data
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    using Utils;
-
+    
     public partial class Entities : DbContext
     {
         public Entities()
             : base("name=Entities")
         {
-            this.Database.Connection.ConnectionString = ConnectiongStringBuilder.getConnectionString();
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

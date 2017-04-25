@@ -139,6 +139,7 @@
     <Compile Include="BLL\QuanHe\QH_PhieuGiamTB_ThietBi.cs" />
     <Compile Include="BLL\QuanHe\QH_PhieuMuonPhong_ThietBi.cs" />
     <Compile Include="BLL\QuanHe\QH_PhieuMuonTB_ThietBi.cs" />
+    <Compile Include="BLL\ThietBi\DbThietBiHandler.cs" />
     <Compile Include="BLL\ThietBi\ThietBiModel.cs" />
     <Compile Include="BLL\ThongTinDonVi\ThongTinDonViModel.cs" />
     <Compile Include="BLL\User\UserModel.cs" />

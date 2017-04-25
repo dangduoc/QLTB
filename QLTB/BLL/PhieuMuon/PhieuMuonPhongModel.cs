@@ -54,6 +54,7 @@ namespace QLTB.Model
         public int MucDichSDId { get; set; }
         public bool IsNgoaiQuyDinh { get; set; }
         public bool IsSuDungChoGD { get; set; }
+        public Nullable<int> TrangThaiId { get; set; }
         public string GhiChu { get; set; }
         public string CreatedByUserId { get; set; }
         public Nullable<System.DateTime> CreatedOnDate { get; set; }
@@ -73,6 +74,7 @@ namespace QLTB.Model
         public int MucDichSDId { get; set; }
         public bool IsNgoaiQuyDinh { get; set; }
         public bool IsSuDungChoGD { get; set; }
+        public Nullable<int> TrangThaiId { get; set; }
         public string GhiChu { get; set; }
         public string UpdatedByUserId { get; set; }
         public Nullable<System.DateTime> UpdatedOnDate { get; set; }

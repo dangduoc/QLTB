@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QLTB.Handler;
 
 namespace QLTB.GUI
 {
@@ -130,58 +131,18 @@ namespace QLTB.GUI
         private void LoadForm()
         {
             //Clone
-            List<ThietBiGridDisplayModel> list = new List<ThietBiGridDisplayModel>();
-            list.Add(new ThietBiGridDisplayModel
-            {
-                ThietBiId = "CSCN1001",
-                SoHieu = "CSCN1001.02",
-                Ten = "Quy trình sản xuất vải sợi thiên nhiên",
-                KhoPhong = "Phòng thực hành công nghệ",
-                BoMon = "Công nghệ",
-                KhoiLop = "Khối lớp 7",
-                SoLuong = "3",
-                SoLuongMat = "0",
-                SoLuongHong = "0",
-                TrangThai = "Đang được mượn"
-            });
-            list.Add(new ThietBiGridDisplayModel
-            {
-                ThietBiId = "CSCN1002",
-                SoHieu = "CSCN1002.01",
-                Ten = "Quy trình sản xuất vải sợi hoá học",
-                KhoPhong = "Phòng thực hành công nghệ",
-                BoMon = "Công nghệ",
-                KhoiLop = "Khối lớp 8",
-                SoLuong = "10",
-                SoLuongMat = "1",
-                SoLuongHong = "0",
-                TrangThai = "Đang được mượn"
-            });
-            list.Add(new ThietBiGridDisplayModel
-            {
-                ThietBiId = "CSHH1001",
-                SoHieu = "CSHH1001.05",
-                Ten = "Ảnh hưởng của nhiệt độ đến độ tan của chất rắn và chất khí",
-                KhoPhong = "Phòng thực hành hóa học",
-                BoMon = "Hóa học",
-                KhoiLop = "Khối lớp 9",
-                SoLuong = "2",
-                SoLuongMat = "0",
-                SoLuongHong = "0",
-                TrangThai = "Đang được mượn"
-            });
+            List<ThietBiGridDisplayModel> list = new DbThietBiHandler().GetAll();
+            
             //
             List<string> headers = new List<string>();
-            headers.Add("Mã thiết bị");
             headers.Add("Số hiệu");
+            headers.Add("Mã thiết bị");
             headers.Add("Tên thiết bị");
             headers.Add("Kho/Phòng bộ môn");
             headers.Add("Bộ môn");
-            headers.Add("Khối lớp");
             headers.Add("Số lượng");
             headers.Add("Mất");
             headers.Add("Hỏng");
-            headers.Add("Trạng thái");
             //
             DataTable tb = MyConvert.ToDataTable(list);
             source.DataSource = SetUpSearch(tb, headers);
