@@ -1,6 +1,6 @@
 ﻿namespace QLTB.GUI
 {
-    partial class frmDanhSachMuonTB
+    partial class frmDSMuonPhongBM
     {
         /// <summary>
         /// Required designer variable.
@@ -28,18 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDanhSachMuonTB));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDSMuonPhongBM));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.rbChucNang = new DevComponents.DotNetBar.RibbonBar();
             this.btnXem = new DevComponents.DotNetBar.ButtonItem();
             this.btnThem = new DevComponents.DotNetBar.ButtonItem();
             this.btnSua = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem2 = new DevComponents.DotNetBar.ButtonItem();
             this.btnXoa = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem3 = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem4 = new DevComponents.DotNetBar.ButtonItem();
             this.btnLamMoi = new DevComponents.DotNetBar.ButtonItem();
             this.btnImportTuExcel = new DevComponents.DotNetBar.ButtonItem();
             this.btnExportFileExcel = new DevComponents.DotNetBar.ButtonItem();
@@ -76,8 +74,6 @@
             this.btnThem,
             this.btnSua,
             this.btnXoa,
-            this.buttonItem3,
-            this.buttonItem4,
             this.btnLamMoi,
             this.btnImportTuExcel,
             this.btnExportFileExcel,
@@ -87,9 +83,9 @@
             this.rbChucNang.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.rbChucNang.Name = "rbChucNang";
             this.rbChucNang.ShowShortcutKeysInToolTips = true;
-            this.rbChucNang.Size = new System.Drawing.Size(909, 79);
+            this.rbChucNang.Size = new System.Drawing.Size(758, 80);
             this.rbChucNang.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.rbChucNang.TabIndex = 9;
+            this.rbChucNang.TabIndex = 14;
             // 
             // 
             // 
@@ -115,12 +111,11 @@
             // 
             this.btnThem.BeginGroup = true;
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
-            this.btnThem.ImagePaddingHorizontal = 50;
             this.btnThem.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
             this.btnThem.Name = "btnThem";
             this.btnThem.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlN);
-            this.btnThem.Text = "Khai báo thiết bị";
-            this.btnThem.Tooltip = "Khai báo thiết bị";
+            this.btnThem.Text = "Thêm";
+            this.btnThem.Tooltip = "Thêm";
             // 
             // btnSua
             // 
@@ -152,25 +147,6 @@
             this.btnXoa.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlD);
             this.btnXoa.Text = "Xóa";
             this.btnXoa.Tooltip = "Xóa thiết bị";
-            // 
-            // buttonItem3
-            // 
-            this.buttonItem3.BeginGroup = true;
-            this.buttonItem3.Image = global::QLTB.Properties.Resources.cancel;
-            this.buttonItem3.ImagePaddingHorizontal = 40;
-            this.buttonItem3.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.buttonItem3.Name = "buttonItem3";
-            this.buttonItem3.SubItemsExpandWidth = 14;
-            this.buttonItem3.Text = "Bỏ ghi mượn";
-            // 
-            // buttonItem4
-            // 
-            this.buttonItem4.Image = global::QLTB.Properties.Resources.DuyetGiaoDich;
-            this.buttonItem4.ImagePaddingHorizontal = 10;
-            this.buttonItem4.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.buttonItem4.Name = "buttonItem4";
-            this.buttonItem4.SubItemsExpandWidth = 14;
-            this.buttonItem4.Text = "Ghi trả";
             // 
             // btnLamMoi
             // 
@@ -231,9 +207,9 @@
             this.pnlBack.Controls.Add(this.searchToolBar);
             this.pnlBack.DisabledBackColor = System.Drawing.Color.Empty;
             this.pnlBack.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlBack.Location = new System.Drawing.Point(0, 79);
+            this.pnlBack.Location = new System.Drawing.Point(0, 80);
             this.pnlBack.Name = "pnlBack";
-            this.pnlBack.Size = new System.Drawing.Size(909, 380);
+            this.pnlBack.Size = new System.Drawing.Size(758, 310);
             this.pnlBack.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.pnlBack.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.pnlBack.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -252,7 +228,7 @@
             this.panelEx1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEx1.Location = new System.Drawing.Point(0, 27);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(909, 353);
+            this.panelEx1.Size = new System.Drawing.Size(758, 283);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -269,33 +245,33 @@
             this.advancedDataGridView.AutoGenerateContextFilters = true;
             this.advancedDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.advancedDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advancedDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advancedDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.advancedDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.advancedDataGridView.DateWithTime = false;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.advancedDataGridView.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.advancedDataGridView.DefaultCellStyle = dataGridViewCellStyle8;
             this.advancedDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.advancedDataGridView.Location = new System.Drawing.Point(0, 0);
             this.advancedDataGridView.Name = "advancedDataGridView";
             this.advancedDataGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advancedDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advancedDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.advancedDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.advancedDataGridView.Size = new System.Drawing.Size(909, 353);
+            this.advancedDataGridView.Size = new System.Drawing.Size(758, 283);
             this.advancedDataGridView.TabIndex = 27;
             this.advancedDataGridView.TimeFilter = false;
             this.advancedDataGridView.SortStringChanged += new System.EventHandler(this.advancedDataGridView_SortStringChanged);
@@ -311,19 +287,20 @@
             this.searchToolBar.MinimumSize = new System.Drawing.Size(0, 27);
             this.searchToolBar.Name = "searchToolBar";
             this.searchToolBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.searchToolBar.Size = new System.Drawing.Size(909, 27);
+            this.searchToolBar.Size = new System.Drawing.Size(758, 27);
             this.searchToolBar.TabIndex = 28;
             this.searchToolBar.Text = "searchToolBar1";
             // 
-            // frmDanhSachMuonTB
+            // frmDSMuonPhongBM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(909, 459);
+            this.ClientSize = new System.Drawing.Size(758, 390);
             this.Controls.Add(this.pnlBack);
             this.Controls.Add(this.rbChucNang);
-            this.Name = "frmDanhSachMuonTB";
-            this.Text = "Lịch đăng ký mượn, trả thiết bị";
+            this.DoubleBuffered = true;
+            this.Name = "frmDSMuonPhongBM";
+            this.Text = "Danh sách phiếu mượn phòng học bộ môn";
             this.pnlBack.ResumeLayout(false);
             this.pnlBack.PerformLayout();
             this.panelEx1.ResumeLayout(false);
@@ -345,8 +322,6 @@
         private DevComponents.DotNetBar.ButtonItem btnExportFileExcel;
         private DevComponents.DotNetBar.ButtonItem btnThoat;
         private DevComponents.DotNetBar.ButtonItem buttonItem1;
-        private DevComponents.DotNetBar.ButtonItem buttonItem3;
-        private DevComponents.DotNetBar.ButtonItem buttonItem4;
         private DevComponents.DotNetBar.PanelEx pnlBack;
         private DevComponents.DotNetBar.PanelEx panelEx1;
         private ADGV.AdvancedDataGridView advancedDataGridView;

@@ -14,13 +14,14 @@ namespace QLTB.Model
     }
     public class CanBoThietBi: BaseCanBoThietBiModel
     {
-        public int PhuTrachId { get; set; }
+        //
+        public Nullable<int> GioiTinhId { get; set; }
+        public Nullable<int> PhuTrachId { get; set; }
         public string TrinhDoVanHoa { get; set; }
-        public DateTime TGBatDauQL { get; set; }
-        public DateTime TGKetThucQL { get; set; }
-        public bool IsCoTrinhDoNghiepVu { get; set; }
+        public Nullable<System.DateTime> ThoiGianBatDau { get; set; }
+        public Nullable<System.DateTime> ThoiGianKetThuc { get; set; }
+        public Nullable<bool> IsCoTrinhDoNghiepVu { get; set; }
         public string GhiChu { get; set; }
-        public int GioiTinhId { get; set; }
     }
     public class CanBoTBGridDisplayModel
     {
@@ -35,5 +36,29 @@ namespace QLTB.Model
         public string IsCoTrinhDoNghiepVu { get; set; }
         public string GhiChu { get; set; }
         
+    }
+    public class CanBoThietBiCreateModel
+    {
+        public string HoVaDem { get; set; }
+        public string Ten { get; set; }
+        public Nullable<int> GioiTinhId { get; set; }
+        public Nullable<int> PhuTrachId { get; set; }
+        public string TrinhDoVanHoa { get; set; }
+        public Nullable<System.DateTime> ThoiGianBatDau { get; set; }
+        public Nullable<System.DateTime> ThoiGianKetThuc { get; set; }
+        public Nullable<bool> IsCoTrinhDoNghiepVu { get; set; }
+        public string GhiChu { get; set; }
+    }
+    public class CanBoThietBiUpdateModel
+    {
+        public string HoVaDem { get; set; }
+        public string Ten { get; set; }
+        public Nullable<int> GioiTinhId { get; set; }
+        public Nullable<int> PhuTrachId { get; set; }
+        public string TrinhDoVanHoa { get; set; }
+        public Nullable<System.DateTime> ThoiGianBatDau { get; set; }
+        public Nullable<System.DateTime> ThoiGianKetThuc { get; set; }
+        public Nullable<bool> IsCoTrinhDoNghiepVu { get; set; }
+        public string GhiChu { get; set; }
     }
 }

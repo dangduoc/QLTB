@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace QLTB.GUI
 {
-    public partial class frmDanhSachMuonTB : Form
+    public partial class frmDMThietBiTT : DevComponents.DotNetBar.Office2007Form
     {
         private BindingSource source = new BindingSource();
         private string defaultSearchValue = "Value for search";
-        public frmDanhSachMuonTB()
+        public frmDMThietBiTT()
         {
             InitializeComponent();
         }
@@ -80,6 +80,7 @@ namespace QLTB.GUI
         }
         public void searchChanged()
         {
+
             ToolStripTextBox textSearch = searchToolBar.Items[3] as ToolStripTextBox;
             if (!textSearch.Equals(defaultSearchValue))
             {
@@ -126,73 +127,83 @@ namespace QLTB.GUI
         private void LoadForm()
         {
             //Clone
-            List<CanBoTBGridDisplayModel> list = new List<CanBoTBGridDisplayModel>();
-            list.Add(new CanBoTBGridDisplayModel
+            List<ThietBiTTGridDisplayModel> list = new List<ThietBiTTGridDisplayModel>();
+            list.Add(new ThietBiTTGridDisplayModel
             {
-                CanBoThietBiId = "CBTB0001",
-                HoVaDem = "Đặng Minh",
-                Ten = "Được",
-                GioiTinh = "Nam",
-                IsCoTrinhDoNghiepVu = "Có",
-                TrinhDoVanHoa = "Đại học",
-                TGBatDauQL = "21/11/2010",
-                TGKetThucQL = "22/1/2017",
-                PhuTrach = "Chuyên trách",
-                GhiChu = ""
+                ThietBiId = "CSCN1001",
+                Ten = "Quy trình sản xuất vải sợi thiên nhiên",
+                DonViTinh = "Cái",
+                DungChoLop = "6,7,8,9",
+                LoaiThietBi = "Tranh ảnh",
+                MonHoc = "Công nghệ",
+                DauMuc = "Máy in",
+                SoLuong = "10",
+                MoTa = "Kích th¬ước (790x540)mm dung sai 10mm, in offset 4 màu trên giấy couché có định lượng 200g/m2,  cán láng OPP mờ."
             });
-            list.Add(new CanBoTBGridDisplayModel
+            list.Add(new ThietBiTTGridDisplayModel
             {
-                CanBoThietBiId = "CBTB0002",
-                HoVaDem = "Ngô Hoàng",
-                Ten = "Huy",
-                GioiTinh = "Nam",
-                IsCoTrinhDoNghiepVu = "Có",
-                TrinhDoVanHoa = "Đại học",
-                TGBatDauQL = "1/3/2013",
-                TGKetThucQL = "8/5/2016",
-                PhuTrach = "Chuyên trách",
-                GhiChu = ""
+                ThietBiId = "CSCN1002",
+                Ten = "Quy trình sản xuất vải sợi hoá học",
+                DonViTinh = "Cái",
+                DungChoLop = "6,7,8,9",
+                LoaiThietBi = "Tranh ảnh",
+                MonHoc = "Công nghệ",
+                DauMuc = "Máy in",
+                SoLuong = "12",
+                MoTa = "Kích th¬ước (790x540)mm dung sai 10mm, in offset 4 màu trên giấy couché có định lượng 200g/m2,  cán láng OPP mờ."
             });
-            list.Add(new CanBoTBGridDisplayModel
+            list.Add(new ThietBiTTGridDisplayModel
             {
-                CanBoThietBiId = "CBTB0003",
-                HoVaDem = "Đặng Thu",
-                Ten = "Thảo",
-                GioiTinh = "Nữ",
-                IsCoTrinhDoNghiepVu = "Có",
-                TrinhDoVanHoa = "Đại học",
-                TGBatDauQL = "11/4/2013",
-                TGKetThucQL = "12/3/2016",
-                PhuTrach = "Chuyên trách",
-                GhiChu = "Là hoa hậu Việt Nam 2012"
+                ThietBiId = "CSHH1001",
+                Ten = "Ảnh hưởng của nhiệt độ đến độ tan của chất rắn và chất khí",
+                DonViTinh = "Cái",
+                DungChoLop = "6,7,8,9",
+                LoaiThietBi = "Tranh ảnh",
+                MonHoc = "Hóa học",
+                DauMuc = "Máy in",
+                SoLuong = "4",
+                MoTa = "Kích th¬ước (790x540)mm dung sai 10mm, in offset 4 màu trên giấy couché có định lượng 200g/m2,  cán láng OPP mờ."
             });
             //
             List<string> headers = new List<string>();
-            headers.Add("Mã cán bộ");
-            headers.Add("Họ và tên đêm");
-            headers.Add("Tên cán bộ");
-            headers.Add("Giới tính");
-            headers.Add("Phụ trách");
-            headers.Add("Trinh độ văn hóa");
-            headers.Add("Thời gian bắt đầu quản lý");
-            headers.Add("Thời gian kết thúc quản lý");
-            headers.Add("Trình độ nghiệp vụ");
-            headers.Add("Ghi chú");
+            headers.Add("Mã thiết bị");
+            headers.Add("Tên thiết bị");
+            headers.Add("Đơn vị tính");
+            headers.Add("Dùng cho lớp");
+            headers.Add("Loại thiết bị");
+            headers.Add("Môn học");
+            headers.Add("Đầu mục");
+            headers.Add("Số lượng");
+            headers.Add("Mô tả");
+
             //
             DataTable tb = MyConvert.ToDataTable(list);
             source.DataSource = SetUpSearch(tb, headers);
             advancedDataGridView.DataSource = source;
             SetHeaderForGrid(advancedDataGridView, headers);
+            DataGridViewCheckBoxColumn checkColumn = new DataGridViewCheckBoxColumn();
+            checkColumn.Name = "checkCol";
+            //checkColumn.DefaultHeaderCellType = typeof(DataGridViewCheckBoxCell);
+            advancedDataGridView.Columns.Add(checkColumn);
+            advancedDataGridView.Columns["checkCol"].HeaderText = "";
+            advancedDataGridView.Columns["checkCol"].DisplayIndex = 0;
+            advancedDataGridView.Columns["checkCol"].DefaultHeaderCellType= typeof(DataGridViewCheckBoxCell);
+            advancedDataGridView.Columns["checkCol"].Width = 30;
         }
 
-        private void advancedDataGridView_SortStringChanged(object sender, EventArgs e)
+        private void frmDMThietBiTT_Load(object sender, EventArgs e)
         {
-            source.Sort = advancedDataGridView.SortString;
+            LoadForm();
         }
 
         private void advancedDataGridView_FilterStringChanged(object sender, EventArgs e)
         {
             source.Filter = advancedDataGridView.FilterString;
+        }
+
+        private void advancedDataGridView_SortStringChanged(object sender, EventArgs e)
+        {
+            source.Sort = advancedDataGridView.SortString;
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

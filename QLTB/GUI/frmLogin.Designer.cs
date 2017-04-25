@@ -170,7 +170,7 @@
             this.textBoxX2.PreventEnterBeep = true;
             this.textBoxX2.Size = new System.Drawing.Size(220, 26);
             this.textBoxX2.TabIndex = 0;
-            this.textBoxX2.Text = "dangduoc";
+            this.textBoxX2.Text = "ADMIN";
             // 
             // textBoxX1
             // 

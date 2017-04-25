@@ -88,8 +88,60 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\DanhMuc\CanBoThietBi\CanBoThietBiModel.cs" />
+    <Compile Include="BLL\DanhMuc\GiaoVien\GiaoVienModel.cs" />
+    <Compile Include="BLL\DanhMuc\KhoiLop\KhoiLopModel.cs" />
+    <Compile Include="BLL\DanhMuc\LopHoc\LopHocModel.cs" />
+    <Compile Include="BLL\DanhMuc\MonHoc\MonHocModel.cs" />
+    <Compile Include="BLL\DanhMuc\NguonKinhPhi\NguonKinhPhiModel.cs" />
+    <Compile Include="BLL\DanhMuc\PhongBoMon\PhongBoMonModel.cs" />
     <Compile Include="BLL\DanhMuc\ThietBiToiThieu\ThietBiToiThieuModel.cs" />
+    <Compile Include="BLL\DanhMuc\ToBoMon\ToBoMonModel.cs" />
+    <Compile Include="BLL\DanhSach\DSBaiGiang.cs" />
+    <Compile Include="BLL\DanhSach\DSCapTruong.cs" />
+    <Compile Include="BLL\DanhSach\DSChucVuGiaoVien.cs" />
+    <Compile Include="BLL\DanhSach\DSDanToc.cs" />
+    <Compile Include="BLL\DanhSach\DSDauMucThietBi.cs" />
+    <Compile Include="BLL\DanhSach\DSDonViTinh.cs" />
+    <Compile Include="BLL\DanhSach\DSGioiTinh.cs" />
+    <Compile Include="BLL\DanhSach\DSHangTruong.cs" />
+    <Compile Include="BLL\DanhSach\DSHinhThucDaoTao.cs" />
+    <Compile Include="BLL\DanhSach\DSKhoiTruong.cs" />
+    <Compile Include="BLL\DanhSach\DSLoaiDanhGiaMH.cs" />
+    <Compile Include="BLL\DanhSach\DSLoaiHinhTruong.cs" />
+    <Compile Include="BLL\DanhSach\DSLoaiHopDong.cs" />
+    <Compile Include="BLL\DanhSach\DSLoaiMonHoc.cs" />
+    <Compile Include="BLL\DanhSach\DSLoaiPhongTN.cs" />
+    <Compile Include="BLL\DanhSach\DSLoaiThietBi.cs" />
+    <Compile Include="BLL\DanhSach\DSLoaiTruongChuyenBiet.cs" />
+    <Compile Include="BLL\DanhSach\DSLyLuanChinhTri.cs" />
+    <Compile Include="BLL\DanhSach\DSMucDichSDPhong.cs" />
+    <Compile Include="BLL\DanhSach\DSMucDichSDThietBi.cs" />
+    <Compile Include="BLL\DanhSach\DSNguonNganSach.cs" />
+    <Compile Include="BLL\DanhSach\DSPhongBan.cs" />
+    <Compile Include="BLL\DanhSach\DSPhuongXa.cs" />
+    <Compile Include="BLL\DanhSach\DSPhuTrachCBTB.cs" />
+    <Compile Include="BLL\DanhSach\DSQuanHuyen.cs" />
+    <Compile Include="BLL\DanhSach\DSQuanLyGD.cs" />
+    <Compile Include="BLL\DanhSach\DSQuanLyNhaNuoc.cs" />
+    <Compile Include="BLL\DanhSach\DSThoiGianTrongNganh.cs" />
+    <Compile Include="BLL\DanhSach\DSTinhThanh.cs" />
+    <Compile Include="BLL\DanhSach\DSTrangThaiPhieuMuon.cs" />
+    <Compile Include="BLL\DanhSach\DSTrinhDoChuan.cs" />
+    <Compile Include="BLL\DanhSach\DSTrinhDoChuyenMon.cs" />
+    <Compile Include="BLL\DanhSach\DSViTriGiaoVien.cs" />
+    <Compile Include="BLL\DanhSach\DSVungMien.cs" />
+    <Compile Include="BLL\DanhSach\DSXepLoaiPhongBM.cs" />
+    <Compile Include="BLL\PhieuMuon\PhieuBaoHongModel.cs" />
+    <Compile Include="BLL\PhieuMuon\PhieuGiamTBModel.cs" />
+    <Compile Include="BLL\PhieuMuon\PhieuMuonPhongModel.cs" />
+    <Compile Include="BLL\PhieuMuon\PhieuMuonThietBiModel.cs" />
+    <Compile Include="BLL\QuanHe\QH_PhieuBaoHong_ThietBi.cs" />
+    <Compile Include="BLL\QuanHe\QH_PhieuGiamTB_ThietBi.cs" />
+    <Compile Include="BLL\QuanHe\QH_PhieuMuonPhong_ThietBi.cs" />
+    <Compile Include="BLL\QuanHe\QH_PhieuMuonTB_ThietBi.cs" />
     <Compile Include="BLL\ThietBi\ThietBiModel.cs" />
+    <Compile Include="BLL\ThongTinDonVi\ThongTinDonViModel.cs" />
+    <Compile Include="BLL\User\UserModel.cs" />
     <Compile Include="DAL\DatabaseFactory.cs" />
     <Compile Include="DAL\Data\DM_CanBoThietBi.cs">
       <DependentUpon>QLTBContext.tt</DependentUpon>
@@ -285,6 +337,12 @@
     <Compile Include="DAL\IUnitOfWork.cs" />
     <Compile Include="DAL\Repository.cs" />
     <Compile Include="DAL\UnitOfWork.cs" />
+    <Compile Include="GUI\DialogBox\frmDialogDSThietBi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DialogBox\frmDialogDSThietBi.Designer.cs">
+      <DependentUpon>frmDialogDSThietBi.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\DialogBox\frmFilterGrid.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -303,58 +361,70 @@
     <Compile Include="GUI\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ThietBi\DanhMuc\CanBoThietBi\frmDMCanBoThietBi.cs">
+    <Compile Include="GUI\PhieuMuon\PhongBoMon\frmCTPhieuMuonPhong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\ThietBi\DanhMuc\CanBoThietBi\frmDMCanBoThietBi.Designer.cs">
+    <Compile Include="GUI\PhieuMuon\PhongBoMon\frmCTPhieuMuonPhong.Designer.cs">
+      <DependentUpon>frmCTPhieuMuonPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PhieuMuon\PhongBoMon\frmDSMuonPhongBM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\PhieuMuon\PhongBoMon\frmDSMuonPhongBM.Designer.cs">
+      <DependentUpon>frmDSMuonPhongBM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\DanhMuc\CanBoThietBi\frmDMCanBoThietBi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DanhMuc\CanBoThietBi\frmDMCanBoThietBi.Designer.cs">
       <DependentUpon>frmDMCanBoThietBi.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ThietBi\DanhMuc\GiaoVien\frmDMGiaoVien.cs">
+    <Compile Include="GUI\DanhMuc\GiaoVien\frmDMGiaoVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\ThietBi\DanhMuc\GiaoVien\frmDMGiaoVien.Designer.cs">
+    <Compile Include="GUI\DanhMuc\GiaoVien\frmDMGiaoVien.Designer.cs">
       <DependentUpon>frmDMGiaoVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ThietBi\DanhMuc\KhoiLop\frmDMKhoiLop.cs">
+    <Compile Include="GUI\DanhMuc\KhoiLop\frmDMKhoiLop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\ThietBi\DanhMuc\KhoiLop\frmDMKhoiLop.Designer.cs">
+    <Compile Include="GUI\DanhMuc\KhoiLop\frmDMKhoiLop.Designer.cs">
       <DependentUpon>frmDMKhoiLop.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ThietBi\DanhMuc\LopHoc\frmDMLopHoc.cs">
+    <Compile Include="GUI\DanhMuc\LopHoc\frmDMLopHoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\ThietBi\DanhMuc\LopHoc\frmDMLopHoc.Designer.cs">
+    <Compile Include="GUI\DanhMuc\LopHoc\frmDMLopHoc.Designer.cs">
       <DependentUpon>frmDMLopHoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ThietBi\DanhMuc\MonHoc\frmDMMonHoc.cs">
+    <Compile Include="GUI\DanhMuc\MonHoc\frmDMMonHoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\ThietBi\DanhMuc\MonHoc\frmDMMonHoc.Designer.cs">
+    <Compile Include="GUI\DanhMuc\MonHoc\frmDMMonHoc.Designer.cs">
       <DependentUpon>frmDMMonHoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ThietBi\DanhMuc\NguonKinhPhi\frmDMNguonKinhPhi.cs">
+    <Compile Include="GUI\DanhMuc\NguonKinhPhi\frmDMNguonKinhPhi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\ThietBi\DanhMuc\NguonKinhPhi\frmDMNguonKinhPhi.Designer.cs">
+    <Compile Include="GUI\DanhMuc\NguonKinhPhi\frmDMNguonKinhPhi.Designer.cs">
       <DependentUpon>frmDMNguonKinhPhi.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ThietBi\DanhMuc\PhongBoMon\frmDMPhongBoMon.cs">
+    <Compile Include="GUI\DanhMuc\PhongBoMon\frmDMPhongBoMon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\ThietBi\DanhMuc\PhongBoMon\frmDMPhongBoMon.Designer.cs">
+    <Compile Include="GUI\DanhMuc\PhongBoMon\frmDMPhongBoMon.Designer.cs">
       <DependentUpon>frmDMPhongBoMon.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ThietBi\DanhMuc\ThietBiToiThieu\frmDMThietBiTT.cs">
+    <Compile Include="GUI\DanhMuc\ThietBiToiThieu\frmDMThietBiTT.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\ThietBi\DanhMuc\ThietBiToiThieu\frmDMThietBiTT.Designer.cs">
+    <Compile Include="GUI\DanhMuc\ThietBiToiThieu\frmDMThietBiTT.Designer.cs">
       <DependentUpon>frmDMThietBiTT.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ThietBi\DanhMuc\ToBoMon\frmDMToBoMon.cs">
+    <Compile Include="GUI\DanhMuc\ToBoMon\frmDMToBoMon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\ThietBi\DanhMuc\ToBoMon\frmDMToBoMon.Designer.cs">
+    <Compile Include="GUI\DanhMuc\ToBoMon\frmDMToBoMon.Designer.cs">
       <DependentUpon>frmDMToBoMon.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\ThietBi\MuonTra\frmDanhSachMuonTB.cs">
@@ -385,6 +455,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\ConnectiongStringBuilder.cs" />
     <Compile Include="Utils\MyConvert.cs" />
+    <EmbeddedResource Include="GUI\DialogBox\frmDialogDSThietBi.resx">
+      <DependentUpon>frmDialogDSThietBi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\DialogBox\frmFilterGrid.resx">
       <DependentUpon>frmFilterGrid.cs</DependentUpon>
     </EmbeddedResource>
@@ -394,31 +467,37 @@
     <EmbeddedResource Include="GUI\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\ThietBi\DanhMuc\CanBoThietBi\frmDMCanBoThietBi.resx">
+    <EmbeddedResource Include="GUI\PhieuMuon\PhongBoMon\frmCTPhieuMuonPhong.resx">
+      <DependentUpon>frmCTPhieuMuonPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\PhieuMuon\PhongBoMon\frmDSMuonPhongBM.resx">
+      <DependentUpon>frmDSMuonPhongBM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DanhMuc\CanBoThietBi\frmDMCanBoThietBi.resx">
       <DependentUpon>frmDMCanBoThietBi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\ThietBi\DanhMuc\GiaoVien\frmDMGiaoVien.resx">
+    <EmbeddedResource Include="GUI\DanhMuc\GiaoVien\frmDMGiaoVien.resx">
       <DependentUpon>frmDMGiaoVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\ThietBi\DanhMuc\KhoiLop\frmDMKhoiLop.resx">
+    <EmbeddedResource Include="GUI\DanhMuc\KhoiLop\frmDMKhoiLop.resx">
       <DependentUpon>frmDMKhoiLop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\ThietBi\DanhMuc\LopHoc\frmDMLopHoc.resx">
+    <EmbeddedResource Include="GUI\DanhMuc\LopHoc\frmDMLopHoc.resx">
       <DependentUpon>frmDMLopHoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\ThietBi\DanhMuc\MonHoc\frmDMMonHoc.resx">
+    <EmbeddedResource Include="GUI\DanhMuc\MonHoc\frmDMMonHoc.resx">
       <DependentUpon>frmDMMonHoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\ThietBi\DanhMuc\NguonKinhPhi\frmDMNguonKinhPhi.resx">
+    <EmbeddedResource Include="GUI\DanhMuc\NguonKinhPhi\frmDMNguonKinhPhi.resx">
       <DependentUpon>frmDMNguonKinhPhi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\ThietBi\DanhMuc\PhongBoMon\frmDMPhongBoMon.resx">
+    <EmbeddedResource Include="GUI\DanhMuc\PhongBoMon\frmDMPhongBoMon.resx">
       <DependentUpon>frmDMPhongBoMon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\ThietBi\DanhMuc\ThietBiToiThieu\frmDMThietBiTT.resx">
+    <EmbeddedResource Include="GUI\DanhMuc\ThietBiToiThieu\frmDMThietBiTT.resx">
       <DependentUpon>frmDMThietBiTT.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\ThietBi\DanhMuc\ToBoMon\frmDMToBoMon.resx">
+    <EmbeddedResource Include="GUI\DanhMuc\ToBoMon\frmDMToBoMon.resx">
       <DependentUpon>frmDMToBoMon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ThietBi\MuonTra\frmDanhSachMuonTB.resx">
@@ -591,15 +670,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BLL\DanhMuc\GiaoVien\" />
-    <Folder Include="BLL\DanhMuc\KhoiLop\" />
-    <Folder Include="BLL\DanhMuc\LopHoc\" />
-    <Folder Include="BLL\DanhMuc\MonHoc\" />
-    <Folder Include="BLL\DanhMuc\NguonKinhPhi\" />
-    <Folder Include="BLL\DanhMuc\PhongBoMon\" />
-    <Folder Include="BLL\DanhMuc\ToBoMon\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
