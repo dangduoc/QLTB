@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,21 @@ namespace QLTB.Utils
                 table.Rows.Add(row);
             }
             return table;
+        }
+        public static string DateToString(DateTime date)
+        {
+            return date.ToString("dd/M/yyyy", CultureInfo.InvariantCulture);
+        }
+        public static string BoolToString(bool value, string iftrue,string iffalse)
+        {
+            return value == true ? iftrue : iffalse;
+        }
+        public static string ToVienameseCurrency(double value)
+        {
+            CultureInfo original = new CultureInfo("vi-VN", false);
+            NumberFormatInfo vietNfi = (NumberFormatInfo)original.NumberFormat.Clone();
+            vietNfi.CurrencySymbol = "₫"; // ₫
+            return value.ToString("C", vietNfi);
         }
     }
 }

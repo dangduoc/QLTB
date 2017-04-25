@@ -1,6 +1,6 @@
 ﻿namespace QLTB.GUI
 {
-    partial class frmThietBiMuon
+    partial class frmCTPhieuMuonPhong
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThietBiMuon));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCTPhieuMuonPhong));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.rbChucNang = new DevComponents.DotNetBar.RibbonBar();
+            this.btnLuu = new DevComponents.DotNetBar.ButtonItem();
+            this.btnBaoHong = new DevComponents.DotNetBar.ButtonItem();
+            this.buttonItem2 = new DevComponents.DotNetBar.ButtonItem();
+            this.btnXoa = new DevComponents.DotNetBar.ButtonItem();
+            this.btnIn = new DevComponents.DotNetBar.ButtonItem();
+            this.btnTroGiup = new DevComponents.DotNetBar.ButtonItem();
+            this.btnThoat = new DevComponents.DotNetBar.ButtonItem();
+            this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
+            this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
+            this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
+            this.expandablePanel2 = new DevComponents.DotNetBar.ExpandablePanel();
+            this.gridDSThietBiMuon = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.expandablePanel1 = new DevComponents.DotNetBar.ExpandablePanel();
             this.layoutControl1 = new DevComponents.DotNetBar.Layout.LayoutControl();
             this.cboxNgoaiQuyDinh = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.txtGhiChu = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.CbbMucDichSD = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.txtTenBaiDay = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.dPickerNgayTra = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.txtSoTiet = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.CbbMonHoc = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.CbbBuoiTrongNgay = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -58,573 +70,22 @@
             this.layoutControlItem7 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
             this.layoutControlItem8 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
             this.layoutControlItem9 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
-            this.layoutControlItem10 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
             this.layoutControlItem11 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
             this.layoutControlItem12 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
             this.layoutControlItem13 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
             this.layoutControlItem14 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
-            this.gridDSThietBiMuon = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.expandablePanel2 = new DevComponents.DotNetBar.ExpandablePanel();
-            this.rbChucNang = new DevComponents.DotNetBar.RibbonBar();
-            this.btnLuu = new DevComponents.DotNetBar.ButtonItem();
-            this.btnBaoHong = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem2 = new DevComponents.DotNetBar.ButtonItem();
-            this.btnXoa = new DevComponents.DotNetBar.ButtonItem();
-            this.btnIn = new DevComponents.DotNetBar.ButtonItem();
-            this.btnTroGiup = new DevComponents.DotNetBar.ButtonItem();
-            this.btnThoat = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
-            this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
-            this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
-            this.expandablePanel1.SuspendLayout();
-            this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dPickerNgayTra)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dPickerNgayMuon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridDSThietBiMuon)).BeginInit();
-            this.expandablePanel2.SuspendLayout();
+            this.CbbPhongBoMon = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.layoutControlItem15 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
+            this.cboxSuDungCaNgay = new DevComponents.DotNetBar.Controls.CheckBoxX();
+            this.layoutControlItem10 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
             this.panelEx1.SuspendLayout();
             this.panelEx2.SuspendLayout();
+            this.expandablePanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridDSThietBiMuon)).BeginInit();
+            this.expandablePanel1.SuspendLayout();
+            this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dPickerNgayMuon)).BeginInit();
             this.SuspendLayout();
-            // 
-            // expandablePanel1
-            // 
-            this.expandablePanel1.CanvasColor = System.Drawing.SystemColors.Control;
-            this.expandablePanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.expandablePanel1.Controls.Add(this.layoutControl1);
-            this.expandablePanel1.DisabledBackColor = System.Drawing.Color.Empty;
-            this.expandablePanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.expandablePanel1.HideControlsWhenCollapsed = true;
-            this.expandablePanel1.Location = new System.Drawing.Point(0, 0);
-            this.expandablePanel1.Name = "expandablePanel1";
-            this.expandablePanel1.Size = new System.Drawing.Size(888, 212);
-            this.expandablePanel1.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.expandablePanel1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.expandablePanel1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.expandablePanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.expandablePanel1.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.expandablePanel1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
-            this.expandablePanel1.Style.GradientAngle = 90;
-            this.expandablePanel1.TabIndex = 0;
-            this.expandablePanel1.TitleStyle.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.expandablePanel1.TitleStyle.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.expandablePanel1.TitleStyle.Border = DevComponents.DotNetBar.eBorderType.RaisedInner;
-            this.expandablePanel1.TitleStyle.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.expandablePanel1.TitleStyle.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.expandablePanel1.TitleStyle.ForeColor.Color = System.Drawing.Color.Black;
-            this.expandablePanel1.TitleStyle.GradientAngle = 90;
-            this.expandablePanel1.TitleStyle.MarginLeft = 5;
-            this.expandablePanel1.TitleText = "Thông tin phiếu mượn";
-            // 
-            // layoutControl1
-            // 
-            this.layoutControl1.Controls.Add(this.cboxNgoaiQuyDinh);
-            this.layoutControl1.Controls.Add(this.txtGhiChu);
-            this.layoutControl1.Controls.Add(this.CbbMucDichSD);
-            this.layoutControl1.Controls.Add(this.txtTenBaiDay);
-            this.layoutControl1.Controls.Add(this.dPickerNgayTra);
-            this.layoutControl1.Controls.Add(this.txtSoTiet);
-            this.layoutControl1.Controls.Add(this.CbbMonHoc);
-            this.layoutControl1.Controls.Add(this.CbbBuoiTrongNgay);
-            this.layoutControl1.Controls.Add(this.txtMuonTuTiet);
-            this.layoutControl1.Controls.Add(this.CbbDayLop);
-            this.layoutControl1.Controls.Add(this.CbbGiaoVien);
-            this.layoutControl1.Controls.Add(this.dPickerNgayMuon);
-            this.layoutControl1.Controls.Add(this.CbbKhoiLop);
-            this.layoutControl1.Controls.Add(this.txtSoPhieu);
-            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 26);
-            this.layoutControl1.Name = "layoutControl1";
-            // 
-            // 
-            // 
-            this.layoutControl1.RootGroup.Items.AddRange(new DevComponents.DotNetBar.Layout.LayoutItemBase[] {
-            this.layoutControlItem1,
-            this.layoutControlItem2,
-            this.layoutControlItem3,
-            this.layoutControlItem4,
-            this.layoutControlItem5,
-            this.layoutGroup1,
-            this.layoutControlItem8,
-            this.layoutControlItem9,
-            this.layoutControlItem10,
-            this.layoutControlItem11,
-            this.layoutControlItem12,
-            this.layoutControlItem13,
-            this.layoutControlItem14});
-            this.layoutControl1.Size = new System.Drawing.Size(888, 186);
-            this.layoutControl1.TabIndex = 4;
-            // 
-            // cboxNgoaiQuyDinh
-            // 
-            this.cboxNgoaiQuyDinh.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.cboxNgoaiQuyDinh.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.cboxNgoaiQuyDinh.Location = new System.Drawing.Point(720, 144);
-            this.cboxNgoaiQuyDinh.Margin = new System.Windows.Forms.Padding(95, 0, 0, 0);
-            this.cboxNgoaiQuyDinh.Name = "cboxNgoaiQuyDinh";
-            this.cboxNgoaiQuyDinh.Size = new System.Drawing.Size(164, 27);
-            this.cboxNgoaiQuyDinh.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cboxNgoaiQuyDinh.TabIndex = 14;
-            this.cboxNgoaiQuyDinh.Text = "Ngoài quy định";
-            this.cboxNgoaiQuyDinh.TextColor = System.Drawing.Color.Black;
-            // 
-            // txtGhiChu
-            // 
-            // 
-            // 
-            // 
-            this.txtGhiChu.Border.Class = "TextBoxBorder";
-            this.txtGhiChu.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtGhiChu.Location = new System.Drawing.Point(98, 144);
-            this.txtGhiChu.Margin = new System.Windows.Forms.Padding(0);
-            this.txtGhiChu.Name = "txtGhiChu";
-            this.txtGhiChu.PreventEnterBeep = true;
-            this.txtGhiChu.Size = new System.Drawing.Size(519, 21);
-            this.txtGhiChu.TabIndex = 13;
-            // 
-            // CbbMucDichSD
-            // 
-            this.CbbMucDichSD.DisplayMember = "Text";
-            this.CbbMucDichSD.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.CbbMucDichSD.FormattingEnabled = true;
-            this.CbbMucDichSD.ItemHeight = 16;
-            this.CbbMucDichSD.Location = new System.Drawing.Point(719, 109);
-            this.CbbMucDichSD.Margin = new System.Windows.Forms.Padding(0);
-            this.CbbMucDichSD.Name = "CbbMucDichSD";
-            this.CbbMucDichSD.Size = new System.Drawing.Size(165, 22);
-            this.CbbMucDichSD.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.CbbMucDichSD.TabIndex = 12;
-            // 
-            // txtTenBaiDay
-            // 
-            this.txtTenBaiDay.DisplayMember = "Text";
-            this.txtTenBaiDay.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.txtTenBaiDay.FormattingEnabled = true;
-            this.txtTenBaiDay.ItemHeight = 16;
-            this.txtTenBaiDay.Location = new System.Drawing.Point(98, 109);
-            this.txtTenBaiDay.Margin = new System.Windows.Forms.Padding(0);
-            this.txtTenBaiDay.Name = "txtTenBaiDay";
-            this.txtTenBaiDay.Size = new System.Drawing.Size(519, 22);
-            this.txtTenBaiDay.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.txtTenBaiDay.TabIndex = 11;
-            // 
-            // dPickerNgayTra
-            // 
-            // 
-            // 
-            // 
-            this.dPickerNgayTra.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.dPickerNgayTra.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dPickerNgayTra.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.dPickerNgayTra.ButtonDropDown.Visible = true;
-            this.dPickerNgayTra.IsPopupCalendarOpen = false;
-            this.dPickerNgayTra.Location = new System.Drawing.Point(719, 74);
-            this.dPickerNgayTra.Margin = new System.Windows.Forms.Padding(0);
-            // 
-            // 
-            // 
-            // 
-            // 
-            // 
-            this.dPickerNgayTra.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dPickerNgayTra.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
-            this.dPickerNgayTra.MonthCalendar.ClearButtonVisible = true;
-            // 
-            // 
-            // 
-            this.dPickerNgayTra.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.dPickerNgayTra.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.dPickerNgayTra.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.dPickerNgayTra.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.dPickerNgayTra.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.dPickerNgayTra.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.dPickerNgayTra.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dPickerNgayTra.MonthCalendar.DisplayMonth = new System.DateTime(2017, 4, 1, 0, 0, 0, 0);
-            // 
-            // 
-            // 
-            this.dPickerNgayTra.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.dPickerNgayTra.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.dPickerNgayTra.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.dPickerNgayTra.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dPickerNgayTra.MonthCalendar.TodayButtonVisible = true;
-            this.dPickerNgayTra.Name = "dPickerNgayTra";
-            this.dPickerNgayTra.Size = new System.Drawing.Size(165, 21);
-            this.dPickerNgayTra.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dPickerNgayTra.TabIndex = 10;
-            // 
-            // txtSoTiet
-            // 
-            // 
-            // 
-            // 
-            this.txtSoTiet.Border.Class = "TextBoxBorder";
-            this.txtSoTiet.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtSoTiet.Location = new System.Drawing.Point(453, 74);
-            this.txtSoTiet.Margin = new System.Windows.Forms.Padding(0);
-            this.txtSoTiet.Name = "txtSoTiet";
-            this.txtSoTiet.PreventEnterBeep = true;
-            this.txtSoTiet.Size = new System.Drawing.Size(164, 21);
-            this.txtSoTiet.TabIndex = 9;
-            // 
-            // CbbMonHoc
-            // 
-            this.CbbMonHoc.DisplayMember = "Text";
-            this.CbbMonHoc.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.CbbMonHoc.FormattingEnabled = true;
-            this.CbbMonHoc.ItemHeight = 16;
-            this.CbbMonHoc.Location = new System.Drawing.Point(98, 74);
-            this.CbbMonHoc.Margin = new System.Windows.Forms.Padding(0);
-            this.CbbMonHoc.Name = "CbbMonHoc";
-            this.CbbMonHoc.Size = new System.Drawing.Size(253, 22);
-            this.CbbMonHoc.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.CbbMonHoc.TabIndex = 8;
-            // 
-            // CbbBuoiTrongNgay
-            // 
-            this.CbbBuoiTrongNgay.DisplayMember = "Text";
-            this.CbbBuoiTrongNgay.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.CbbBuoiTrongNgay.FormattingEnabled = true;
-            this.CbbBuoiTrongNgay.ItemHeight = 16;
-            this.CbbBuoiTrongNgay.Location = new System.Drawing.Point(784, 43);
-            this.CbbBuoiTrongNgay.Margin = new System.Windows.Forms.Padding(0);
-            this.CbbBuoiTrongNgay.Name = "CbbBuoiTrongNgay";
-            this.CbbBuoiTrongNgay.Size = new System.Drawing.Size(96, 22);
-            this.CbbBuoiTrongNgay.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.CbbBuoiTrongNgay.TabIndex = 6;
-            // 
-            // txtMuonTuTiet
-            // 
-            // 
-            // 
-            // 
-            this.txtMuonTuTiet.Border.Class = "TextBoxBorder";
-            this.txtMuonTuTiet.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtMuonTuTiet.Location = new System.Drawing.Point(719, 43);
-            this.txtMuonTuTiet.Margin = new System.Windows.Forms.Padding(0);
-            this.txtMuonTuTiet.Name = "txtMuonTuTiet";
-            this.txtMuonTuTiet.PreventEnterBeep = true;
-            this.txtMuonTuTiet.Size = new System.Drawing.Size(57, 21);
-            this.txtMuonTuTiet.TabIndex = 5;
-            // 
-            // CbbDayLop
-            // 
-            this.CbbDayLop.DisplayMember = "Text";
-            this.CbbDayLop.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.CbbDayLop.FormattingEnabled = true;
-            this.CbbDayLop.ItemHeight = 16;
-            this.CbbDayLop.Location = new System.Drawing.Point(453, 39);
-            this.CbbDayLop.Margin = new System.Windows.Forms.Padding(0);
-            this.CbbDayLop.Name = "CbbDayLop";
-            this.CbbDayLop.Size = new System.Drawing.Size(164, 22);
-            this.CbbDayLop.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.CbbDayLop.TabIndex = 4;
-            // 
-            // CbbGiaoVien
-            // 
-            this.CbbGiaoVien.DisplayMember = "Text";
-            this.CbbGiaoVien.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.CbbGiaoVien.FormattingEnabled = true;
-            this.CbbGiaoVien.ItemHeight = 16;
-            this.CbbGiaoVien.Location = new System.Drawing.Point(98, 39);
-            this.CbbGiaoVien.Margin = new System.Windows.Forms.Padding(0);
-            this.CbbGiaoVien.Name = "CbbGiaoVien";
-            this.CbbGiaoVien.Size = new System.Drawing.Size(253, 22);
-            this.CbbGiaoVien.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.CbbGiaoVien.TabIndex = 3;
-            // 
-            // dPickerNgayMuon
-            // 
-            // 
-            // 
-            // 
-            this.dPickerNgayMuon.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.dPickerNgayMuon.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dPickerNgayMuon.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.dPickerNgayMuon.ButtonDropDown.Visible = true;
-            this.dPickerNgayMuon.IsPopupCalendarOpen = false;
-            this.dPickerNgayMuon.Location = new System.Drawing.Point(721, 4);
-            this.dPickerNgayMuon.Margin = new System.Windows.Forms.Padding(0);
-            // 
-            // 
-            // 
-            // 
-            // 
-            // 
-            this.dPickerNgayMuon.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dPickerNgayMuon.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
-            this.dPickerNgayMuon.MonthCalendar.ClearButtonVisible = true;
-            // 
-            // 
-            // 
-            this.dPickerNgayMuon.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.dPickerNgayMuon.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.dPickerNgayMuon.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.dPickerNgayMuon.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.dPickerNgayMuon.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.dPickerNgayMuon.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.dPickerNgayMuon.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dPickerNgayMuon.MonthCalendar.DisplayMonth = new System.DateTime(2017, 4, 1, 0, 0, 0, 0);
-            // 
-            // 
-            // 
-            this.dPickerNgayMuon.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.dPickerNgayMuon.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.dPickerNgayMuon.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.dPickerNgayMuon.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dPickerNgayMuon.MonthCalendar.TodayButtonVisible = true;
-            this.dPickerNgayMuon.Name = "dPickerNgayMuon";
-            this.dPickerNgayMuon.Size = new System.Drawing.Size(163, 21);
-            this.dPickerNgayMuon.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dPickerNgayMuon.TabIndex = 2;
-            // 
-            // CbbKhoiLop
-            // 
-            this.CbbKhoiLop.DisplayMember = "Text";
-            this.CbbKhoiLop.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.CbbKhoiLop.FormattingEnabled = true;
-            this.CbbKhoiLop.ItemHeight = 16;
-            this.CbbKhoiLop.Location = new System.Drawing.Point(453, 4);
-            this.CbbKhoiLop.Margin = new System.Windows.Forms.Padding(0);
-            this.CbbKhoiLop.Name = "CbbKhoiLop";
-            this.CbbKhoiLop.Size = new System.Drawing.Size(164, 22);
-            this.CbbKhoiLop.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.CbbKhoiLop.TabIndex = 1;
-            // 
-            // txtSoPhieu
-            // 
-            // 
-            // 
-            // 
-            this.txtSoPhieu.Border.Class = "TextBoxBorder";
-            this.txtSoPhieu.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtSoPhieu.Location = new System.Drawing.Point(98, 4);
-            this.txtSoPhieu.Margin = new System.Windows.Forms.Padding(0);
-            this.txtSoPhieu.Name = "txtSoPhieu";
-            this.txtSoPhieu.PreventEnterBeep = true;
-            this.txtSoPhieu.Size = new System.Drawing.Size(253, 21);
-            this.txtSoPhieu.TabIndex = 0;
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.txtSoPhieu;
-            this.layoutControlItem1.Height = 35;
-            this.layoutControlItem1.MinSize = new System.Drawing.Size(120, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Text = "<b>Số phiếu <font color=\"#ED1C24\">(*)</font></b>";
-            this.layoutControlItem1.Width = 40;
-            this.layoutControlItem1.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
-            // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.CbbKhoiLop;
-            this.layoutControlItem2.Height = 35;
-            this.layoutControlItem2.MinSize = new System.Drawing.Size(64, 18);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Text = "<b>Khối lớp <font color=\"#ED1C24\">(*)</font></b>";
-            this.layoutControlItem2.Width = 30;
-            this.layoutControlItem2.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.dPickerNgayMuon;
-            this.layoutControlItem3.Height = 35;
-            this.layoutControlItem3.MinSize = new System.Drawing.Size(64, 18);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Text = "<b>Ngày mượn <font color=\"#ED1C24\">(*)</font></b>";
-            this.layoutControlItem3.TextControlSpacing = 5;
-            this.layoutControlItem3.Width = 30;
-            this.layoutControlItem3.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.CbbGiaoVien;
-            this.layoutControlItem4.Height = 35;
-            this.layoutControlItem4.MinSize = new System.Drawing.Size(64, 18);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Text = "<b>Giáo viên <font color=\"#ED1C24\">(*)</font></b>";
-            this.layoutControlItem4.Width = 40;
-            this.layoutControlItem4.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
-            // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.CbbDayLop;
-            this.layoutControlItem5.Height = 35;
-            this.layoutControlItem5.MinSize = new System.Drawing.Size(64, 18);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Text = "<b>Dạy lớp <font color=\"#ED1C24\">(*)</font></b>";
-            this.layoutControlItem5.Width = 30;
-            this.layoutControlItem5.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
-            // 
-            // layoutGroup1
-            // 
-            this.layoutGroup1.Height = 35;
-            this.layoutGroup1.Items.AddRange(new DevComponents.DotNetBar.Layout.LayoutItemBase[] {
-            this.layoutControlItem6,
-            this.layoutControlItem7});
-            this.layoutGroup1.MinSize = new System.Drawing.Size(120, 32);
-            this.layoutGroup1.Name = "layoutGroup1";
-            this.layoutGroup1.TextPosition = DevComponents.DotNetBar.Layout.eLayoutPosition.Top;
-            this.layoutGroup1.Width = 30;
-            this.layoutGroup1.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
-            // 
-            // layoutControlItem6
-            // 
-            this.layoutControlItem6.Control = this.txtMuonTuTiet;
-            this.layoutControlItem6.Height = 23;
-            this.layoutControlItem6.MinSize = new System.Drawing.Size(120, 0);
-            this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.SharedTextSizeEnabled = false;
-            this.layoutControlItem6.Text = "<b>Mượn từ tiết <font color=\"#ED1C24\">(*)</font></b>";
-            this.layoutControlItem6.TextControlSpacing = 10;
-            this.layoutControlItem6.TextPadding = new System.Windows.Forms.Padding(-5, 0, 0, 0);
-            this.layoutControlItem6.Width = 60;
-            this.layoutControlItem6.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
-            // 
-            // layoutControlItem7
-            // 
-            this.layoutControlItem7.Control = this.CbbBuoiTrongNgay;
-            this.layoutControlItem7.Height = 31;
-            this.layoutControlItem7.MinSize = new System.Drawing.Size(64, 18);
-            this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.SharedTextSizeEnabled = false;
-            this.layoutControlItem7.Width = 40;
-            this.layoutControlItem7.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
-            // 
-            // layoutControlItem8
-            // 
-            this.layoutControlItem8.Control = this.CbbMonHoc;
-            this.layoutControlItem8.Height = 35;
-            this.layoutControlItem8.MinSize = new System.Drawing.Size(64, 18);
-            this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Text = "<b>Dạy môn <font color=\"#ED1C24\">(*)</font></b>";
-            this.layoutControlItem8.Width = 40;
-            this.layoutControlItem8.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
-            // 
-            // layoutControlItem9
-            // 
-            this.layoutControlItem9.Control = this.txtSoTiet;
-            this.layoutControlItem9.Height = 35;
-            this.layoutControlItem9.MinSize = new System.Drawing.Size(120, 0);
-            this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Text = "<b>Sô tiết/lớp <font color=\"#ED1C24\">(*)</font></b>";
-            this.layoutControlItem9.Width = 30;
-            this.layoutControlItem9.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
-            // 
-            // layoutControlItem10
-            // 
-            this.layoutControlItem10.Control = this.dPickerNgayTra;
-            this.layoutControlItem10.Height = 35;
-            this.layoutControlItem10.MinSize = new System.Drawing.Size(64, 18);
-            this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Text = "<b>Ngày hẹn trả <font color=\"#ED1C24\">(*)</font></b>";
-            this.layoutControlItem10.Width = 30;
-            this.layoutControlItem10.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
-            // 
-            // layoutControlItem11
-            // 
-            this.layoutControlItem11.Control = this.txtTenBaiDay;
-            this.layoutControlItem11.Height = 35;
-            this.layoutControlItem11.MinSize = new System.Drawing.Size(64, 18);
-            this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Text = "<b>Tên bài dạy</b>";
-            this.layoutControlItem11.Width = 70;
-            this.layoutControlItem11.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
-            // 
-            // layoutControlItem12
-            // 
-            this.layoutControlItem12.Control = this.CbbMucDichSD;
-            this.layoutControlItem12.Height = 35;
-            this.layoutControlItem12.MinSize = new System.Drawing.Size(64, 18);
-            this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Text = "<b>Mục đích SD <font color=\"#ED1C24\">(*)</font></b>";
-            this.layoutControlItem12.Width = 30;
-            this.layoutControlItem12.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
-            // 
-            // layoutControlItem13
-            // 
-            this.layoutControlItem13.Control = this.txtGhiChu;
-            this.layoutControlItem13.Height = 35;
-            this.layoutControlItem13.MinSize = new System.Drawing.Size(120, 0);
-            this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Text = "<b>Ghi chú</b>";
-            this.layoutControlItem13.Width = 70;
-            this.layoutControlItem13.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
-            // 
-            // layoutControlItem14
-            // 
-            this.layoutControlItem14.Control = this.cboxNgoaiQuyDinh;
-            this.layoutControlItem14.Height = 35;
-            this.layoutControlItem14.MinSize = new System.Drawing.Size(64, 18);
-            this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Width = 30;
-            this.layoutControlItem14.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
-            // 
-            // gridDSThietBiMuon
-            // 
-            this.gridDSThietBiMuon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gridDSThietBiMuon.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridDSThietBiMuon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.gridDSThietBiMuon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridDSThietBiMuon.DefaultCellStyle = dataGridViewCellStyle2;
-            this.gridDSThietBiMuon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridDSThietBiMuon.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
-            this.gridDSThietBiMuon.Location = new System.Drawing.Point(0, 26);
-            this.gridDSThietBiMuon.MultiSelect = false;
-            this.gridDSThietBiMuon.Name = "gridDSThietBiMuon";
-            this.gridDSThietBiMuon.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridDSThietBiMuon.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.gridDSThietBiMuon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridDSThietBiMuon.Size = new System.Drawing.Size(888, 158);
-            this.gridDSThietBiMuon.TabIndex = 4;
-            // 
-            // expandablePanel2
-            // 
-            this.expandablePanel2.CanvasColor = System.Drawing.SystemColors.Control;
-            this.expandablePanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.expandablePanel2.Controls.Add(this.gridDSThietBiMuon);
-            this.expandablePanel2.DisabledBackColor = System.Drawing.Color.Empty;
-            this.expandablePanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.expandablePanel2.HideControlsWhenCollapsed = true;
-            this.expandablePanel2.Location = new System.Drawing.Point(0, 0);
-            this.expandablePanel2.Name = "expandablePanel2";
-            this.expandablePanel2.Size = new System.Drawing.Size(888, 184);
-            this.expandablePanel2.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.expandablePanel2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.expandablePanel2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.expandablePanel2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.expandablePanel2.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.expandablePanel2.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
-            this.expandablePanel2.Style.GradientAngle = 90;
-            this.expandablePanel2.TabIndex = 8;
-            this.expandablePanel2.TitleStyle.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.expandablePanel2.TitleStyle.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.expandablePanel2.TitleStyle.Border = DevComponents.DotNetBar.eBorderType.RaisedInner;
-            this.expandablePanel2.TitleStyle.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.expandablePanel2.TitleStyle.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.expandablePanel2.TitleStyle.ForeColor.Color = System.Drawing.Color.Black;
-            this.expandablePanel2.TitleStyle.GradientAngle = 90;
-            this.expandablePanel2.TitleStyle.MarginLeft = 5;
-            this.expandablePanel2.TitleText = "Danh sách các thiết bị đã mượn";
             // 
             // rbChucNang
             // 
@@ -655,9 +116,9 @@
             this.rbChucNang.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.rbChucNang.Name = "rbChucNang";
             this.rbChucNang.ShowShortcutKeysInToolTips = true;
-            this.rbChucNang.Size = new System.Drawing.Size(888, 79);
+            this.rbChucNang.Size = new System.Drawing.Size(825, 79);
             this.rbChucNang.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.rbChucNang.TabIndex = 9;
+            this.rbChucNang.TabIndex = 10;
             // 
             // 
             // 
@@ -759,7 +220,7 @@
             this.panelEx1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEx1.Location = new System.Drawing.Point(0, 79);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(888, 396);
+            this.panelEx1.Size = new System.Drawing.Size(825, 386);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -767,7 +228,7 @@
             this.panelEx1.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
             this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.panelEx1.Style.GradientAngle = 90;
-            this.panelEx1.TabIndex = 10;
+            this.panelEx1.TabIndex = 14;
             // 
             // panelEx2
             // 
@@ -776,9 +237,9 @@
             this.panelEx2.Controls.Add(this.expandablePanel2);
             this.panelEx2.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelEx2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelEx2.Location = new System.Drawing.Point(0, 212);
+            this.panelEx2.Location = new System.Drawing.Point(0, 260);
             this.panelEx2.Name = "panelEx2";
-            this.panelEx2.Size = new System.Drawing.Size(888, 184);
+            this.panelEx2.Size = new System.Drawing.Size(825, 126);
             this.panelEx2.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -789,37 +250,600 @@
             this.panelEx2.TabIndex = 9;
             this.panelEx2.Text = "panelEx2";
             // 
-            // frmThietBiMuon
+            // expandablePanel2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.expandablePanel2.CanvasColor = System.Drawing.SystemColors.Control;
+            this.expandablePanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.expandablePanel2.Controls.Add(this.gridDSThietBiMuon);
+            this.expandablePanel2.DisabledBackColor = System.Drawing.Color.Empty;
+            this.expandablePanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.expandablePanel2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.expandablePanel2.HideControlsWhenCollapsed = true;
+            this.expandablePanel2.Location = new System.Drawing.Point(0, 0);
+            this.expandablePanel2.Name = "expandablePanel2";
+            this.expandablePanel2.Size = new System.Drawing.Size(825, 126);
+            this.expandablePanel2.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.expandablePanel2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.expandablePanel2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.expandablePanel2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.expandablePanel2.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.expandablePanel2.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
+            this.expandablePanel2.Style.GradientAngle = 90;
+            this.expandablePanel2.TabIndex = 8;
+            this.expandablePanel2.TitleStyle.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.expandablePanel2.TitleStyle.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.expandablePanel2.TitleStyle.Border = DevComponents.DotNetBar.eBorderType.RaisedInner;
+            this.expandablePanel2.TitleStyle.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.expandablePanel2.TitleStyle.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.expandablePanel2.TitleStyle.ForeColor.Color = System.Drawing.Color.Black;
+            this.expandablePanel2.TitleStyle.GradientAngle = 90;
+            this.expandablePanel2.TitleStyle.MarginLeft = 5;
+            this.expandablePanel2.TitleText = "Danh sách các thiết bị";
+            // 
+            // gridDSThietBiMuon
+            // 
+            this.gridDSThietBiMuon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridDSThietBiMuon.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridDSThietBiMuon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.gridDSThietBiMuon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridDSThietBiMuon.DefaultCellStyle = dataGridViewCellStyle5;
+            this.gridDSThietBiMuon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridDSThietBiMuon.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
+            this.gridDSThietBiMuon.Location = new System.Drawing.Point(0, 26);
+            this.gridDSThietBiMuon.MultiSelect = false;
+            this.gridDSThietBiMuon.Name = "gridDSThietBiMuon";
+            this.gridDSThietBiMuon.RowHeadersVisible = false;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridDSThietBiMuon.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.gridDSThietBiMuon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridDSThietBiMuon.Size = new System.Drawing.Size(825, 100);
+            this.gridDSThietBiMuon.TabIndex = 4;
+            // 
+            // expandablePanel1
+            // 
+            this.expandablePanel1.CanvasColor = System.Drawing.SystemColors.Control;
+            this.expandablePanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.expandablePanel1.Controls.Add(this.layoutControl1);
+            this.expandablePanel1.DisabledBackColor = System.Drawing.Color.Empty;
+            this.expandablePanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.expandablePanel1.HideControlsWhenCollapsed = true;
+            this.expandablePanel1.Location = new System.Drawing.Point(0, 0);
+            this.expandablePanel1.Name = "expandablePanel1";
+            this.expandablePanel1.Size = new System.Drawing.Size(825, 260);
+            this.expandablePanel1.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.expandablePanel1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.expandablePanel1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.expandablePanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.expandablePanel1.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.expandablePanel1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
+            this.expandablePanel1.Style.GradientAngle = 90;
+            this.expandablePanel1.TabIndex = 0;
+            this.expandablePanel1.TitleStyle.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.expandablePanel1.TitleStyle.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.expandablePanel1.TitleStyle.Border = DevComponents.DotNetBar.eBorderType.RaisedInner;
+            this.expandablePanel1.TitleStyle.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.expandablePanel1.TitleStyle.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.expandablePanel1.TitleStyle.ForeColor.Color = System.Drawing.Color.Black;
+            this.expandablePanel1.TitleStyle.GradientAngle = 90;
+            this.expandablePanel1.TitleStyle.MarginLeft = 5;
+            this.expandablePanel1.TitleText = "Thông tin phiếu mượn";
+            // 
+            // layoutControl1
+            // 
+            this.layoutControl1.Controls.Add(this.cboxSuDungCaNgay);
+            this.layoutControl1.Controls.Add(this.CbbPhongBoMon);
+            this.layoutControl1.Controls.Add(this.cboxNgoaiQuyDinh);
+            this.layoutControl1.Controls.Add(this.txtGhiChu);
+            this.layoutControl1.Controls.Add(this.CbbMucDichSD);
+            this.layoutControl1.Controls.Add(this.txtTenBaiDay);
+            this.layoutControl1.Controls.Add(this.txtSoTiet);
+            this.layoutControl1.Controls.Add(this.CbbMonHoc);
+            this.layoutControl1.Controls.Add(this.CbbBuoiTrongNgay);
+            this.layoutControl1.Controls.Add(this.txtMuonTuTiet);
+            this.layoutControl1.Controls.Add(this.CbbDayLop);
+            this.layoutControl1.Controls.Add(this.CbbGiaoVien);
+            this.layoutControl1.Controls.Add(this.dPickerNgayMuon);
+            this.layoutControl1.Controls.Add(this.CbbKhoiLop);
+            this.layoutControl1.Controls.Add(this.txtSoPhieu);
+            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl1.Location = new System.Drawing.Point(0, 26);
+            this.layoutControl1.Name = "layoutControl1";
+            // 
+            // 
+            // 
+            this.layoutControl1.RootGroup.Items.AddRange(new DevComponents.DotNetBar.Layout.LayoutItemBase[] {
+            this.layoutControlItem1,
+            this.layoutControlItem2,
+            this.layoutControlItem3,
+            this.layoutControlItem4,
+            this.layoutControlItem5,
+            this.layoutGroup1,
+            this.layoutControlItem8,
+            this.layoutControlItem9,
+            this.layoutControlItem10,
+            this.layoutControlItem15,
+            this.layoutControlItem12,
+            this.layoutControlItem11,
+            this.layoutControlItem13,
+            this.layoutControlItem14});
+            this.layoutControl1.Size = new System.Drawing.Size(825, 234);
+            this.layoutControl1.TabIndex = 4;
+            // 
+            // cboxNgoaiQuyDinh
+            // 
+            this.cboxNgoaiQuyDinh.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.cboxNgoaiQuyDinh.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.cboxNgoaiQuyDinh.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboxNgoaiQuyDinh.Location = new System.Drawing.Point(677, 179);
+            this.cboxNgoaiQuyDinh.Margin = new System.Windows.Forms.Padding(0);
+            this.cboxNgoaiQuyDinh.Name = "cboxNgoaiQuyDinh";
+            this.cboxNgoaiQuyDinh.Size = new System.Drawing.Size(144, 27);
+            this.cboxNgoaiQuyDinh.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cboxNgoaiQuyDinh.TabIndex = 15;
+            this.cboxNgoaiQuyDinh.Text = "Ngoài quy định";
+            this.cboxNgoaiQuyDinh.TextColor = System.Drawing.Color.Black;
+            // 
+            // txtGhiChu
+            // 
+            // 
+            // 
+            // 
+            this.txtGhiChu.Border.Class = "TextBoxBorder";
+            this.txtGhiChu.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtGhiChu.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGhiChu.Location = new System.Drawing.Point(98, 179);
+            this.txtGhiChu.Margin = new System.Windows.Forms.Padding(0);
+            this.txtGhiChu.Name = "txtGhiChu";
+            this.txtGhiChu.PreventEnterBeep = true;
+            this.txtGhiChu.Size = new System.Drawing.Size(475, 21);
+            this.txtGhiChu.TabIndex = 14;
+            // 
+            // CbbMucDichSD
+            // 
+            this.CbbMucDichSD.DisplayMember = "Text";
+            this.CbbMucDichSD.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CbbMucDichSD.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbbMucDichSD.FormattingEnabled = true;
+            this.CbbMucDichSD.ItemHeight = 16;
+            this.CbbMucDichSD.Location = new System.Drawing.Point(675, 109);
+            this.CbbMucDichSD.Margin = new System.Windows.Forms.Padding(0);
+            this.CbbMucDichSD.Name = "CbbMucDichSD";
+            this.CbbMucDichSD.Size = new System.Drawing.Size(146, 22);
+            this.CbbMucDichSD.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.CbbMucDichSD.TabIndex = 12;
+            // 
+            // txtTenBaiDay
+            // 
+            this.txtTenBaiDay.DisplayMember = "Text";
+            this.txtTenBaiDay.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.txtTenBaiDay.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenBaiDay.FormattingEnabled = true;
+            this.txtTenBaiDay.ItemHeight = 16;
+            this.txtTenBaiDay.Location = new System.Drawing.Point(98, 144);
+            this.txtTenBaiDay.Margin = new System.Windows.Forms.Padding(0);
+            this.txtTenBaiDay.Name = "txtTenBaiDay";
+            this.txtTenBaiDay.Size = new System.Drawing.Size(723, 22);
+            this.txtTenBaiDay.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.txtTenBaiDay.TabIndex = 13;
+            // 
+            // txtSoTiet
+            // 
+            // 
+            // 
+            // 
+            this.txtSoTiet.Border.Class = "TextBoxBorder";
+            this.txtSoTiet.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtSoTiet.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoTiet.Location = new System.Drawing.Point(428, 74);
+            this.txtSoTiet.Margin = new System.Windows.Forms.Padding(0);
+            this.txtSoTiet.Name = "txtSoTiet";
+            this.txtSoTiet.PreventEnterBeep = true;
+            this.txtSoTiet.Size = new System.Drawing.Size(145, 21);
+            this.txtSoTiet.TabIndex = 9;
+            // 
+            // CbbMonHoc
+            // 
+            this.CbbMonHoc.DisplayMember = "Text";
+            this.CbbMonHoc.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CbbMonHoc.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbbMonHoc.FormattingEnabled = true;
+            this.CbbMonHoc.ItemHeight = 16;
+            this.CbbMonHoc.Location = new System.Drawing.Point(98, 74);
+            this.CbbMonHoc.Margin = new System.Windows.Forms.Padding(0);
+            this.CbbMonHoc.Name = "CbbMonHoc";
+            this.CbbMonHoc.Size = new System.Drawing.Size(228, 22);
+            this.CbbMonHoc.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.CbbMonHoc.TabIndex = 8;
+            // 
+            // CbbBuoiTrongNgay
+            // 
+            this.CbbBuoiTrongNgay.DisplayMember = "Text";
+            this.CbbBuoiTrongNgay.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CbbBuoiTrongNgay.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbbBuoiTrongNgay.FormattingEnabled = true;
+            this.CbbBuoiTrongNgay.ItemHeight = 16;
+            this.CbbBuoiTrongNgay.Location = new System.Drawing.Point(729, 43);
+            this.CbbBuoiTrongNgay.Margin = new System.Windows.Forms.Padding(0);
+            this.CbbBuoiTrongNgay.Name = "CbbBuoiTrongNgay";
+            this.CbbBuoiTrongNgay.Size = new System.Drawing.Size(88, 22);
+            this.CbbBuoiTrongNgay.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.CbbBuoiTrongNgay.TabIndex = 6;
+            // 
+            // txtMuonTuTiet
+            // 
+            // 
+            // 
+            // 
+            this.txtMuonTuTiet.Border.Class = "TextBoxBorder";
+            this.txtMuonTuTiet.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtMuonTuTiet.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMuonTuTiet.Location = new System.Drawing.Point(677, 43);
+            this.txtMuonTuTiet.Margin = new System.Windows.Forms.Padding(0);
+            this.txtMuonTuTiet.Name = "txtMuonTuTiet";
+            this.txtMuonTuTiet.PreventEnterBeep = true;
+            this.txtMuonTuTiet.Size = new System.Drawing.Size(44, 21);
+            this.txtMuonTuTiet.TabIndex = 5;
+            // 
+            // CbbDayLop
+            // 
+            this.CbbDayLop.DisplayMember = "Text";
+            this.CbbDayLop.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CbbDayLop.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbbDayLop.FormattingEnabled = true;
+            this.CbbDayLop.ItemHeight = 16;
+            this.CbbDayLop.Location = new System.Drawing.Point(428, 39);
+            this.CbbDayLop.Margin = new System.Windows.Forms.Padding(0);
+            this.CbbDayLop.Name = "CbbDayLop";
+            this.CbbDayLop.Size = new System.Drawing.Size(145, 22);
+            this.CbbDayLop.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.CbbDayLop.TabIndex = 4;
+            // 
+            // CbbGiaoVien
+            // 
+            this.CbbGiaoVien.DisplayMember = "Text";
+            this.CbbGiaoVien.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CbbGiaoVien.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbbGiaoVien.FormattingEnabled = true;
+            this.CbbGiaoVien.ItemHeight = 16;
+            this.CbbGiaoVien.Location = new System.Drawing.Point(98, 39);
+            this.CbbGiaoVien.Margin = new System.Windows.Forms.Padding(0);
+            this.CbbGiaoVien.Name = "CbbGiaoVien";
+            this.CbbGiaoVien.Size = new System.Drawing.Size(228, 22);
+            this.CbbGiaoVien.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.CbbGiaoVien.TabIndex = 3;
+            // 
+            // dPickerNgayMuon
+            // 
+            // 
+            // 
+            // 
+            this.dPickerNgayMuon.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.dPickerNgayMuon.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dPickerNgayMuon.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.dPickerNgayMuon.ButtonDropDown.Visible = true;
+            this.dPickerNgayMuon.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dPickerNgayMuon.IsPopupCalendarOpen = false;
+            this.dPickerNgayMuon.Location = new System.Drawing.Point(677, 4);
+            this.dPickerNgayMuon.Margin = new System.Windows.Forms.Padding(0);
+            // 
+            // 
+            // 
+            // 
+            // 
+            // 
+            this.dPickerNgayMuon.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dPickerNgayMuon.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
+            this.dPickerNgayMuon.MonthCalendar.ClearButtonVisible = true;
+            // 
+            // 
+            // 
+            this.dPickerNgayMuon.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.dPickerNgayMuon.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.dPickerNgayMuon.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.dPickerNgayMuon.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.dPickerNgayMuon.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.dPickerNgayMuon.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.dPickerNgayMuon.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dPickerNgayMuon.MonthCalendar.DisplayMonth = new System.DateTime(2017, 4, 1, 0, 0, 0, 0);
+            // 
+            // 
+            // 
+            this.dPickerNgayMuon.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.dPickerNgayMuon.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.dPickerNgayMuon.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.dPickerNgayMuon.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dPickerNgayMuon.MonthCalendar.TodayButtonVisible = true;
+            this.dPickerNgayMuon.Name = "dPickerNgayMuon";
+            this.dPickerNgayMuon.Size = new System.Drawing.Size(144, 21);
+            this.dPickerNgayMuon.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.dPickerNgayMuon.TabIndex = 2;
+            // 
+            // CbbKhoiLop
+            // 
+            this.CbbKhoiLop.DisplayMember = "Text";
+            this.CbbKhoiLop.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CbbKhoiLop.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbbKhoiLop.FormattingEnabled = true;
+            this.CbbKhoiLop.ItemHeight = 16;
+            this.CbbKhoiLop.Location = new System.Drawing.Point(428, 4);
+            this.CbbKhoiLop.Margin = new System.Windows.Forms.Padding(0);
+            this.CbbKhoiLop.Name = "CbbKhoiLop";
+            this.CbbKhoiLop.Size = new System.Drawing.Size(145, 22);
+            this.CbbKhoiLop.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.CbbKhoiLop.TabIndex = 1;
+            // 
+            // txtSoPhieu
+            // 
+            // 
+            // 
+            // 
+            this.txtSoPhieu.Border.Class = "TextBoxBorder";
+            this.txtSoPhieu.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtSoPhieu.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoPhieu.Location = new System.Drawing.Point(98, 4);
+            this.txtSoPhieu.Margin = new System.Windows.Forms.Padding(0);
+            this.txtSoPhieu.Name = "txtSoPhieu";
+            this.txtSoPhieu.PreventEnterBeep = true;
+            this.txtSoPhieu.Size = new System.Drawing.Size(228, 21);
+            this.txtSoPhieu.TabIndex = 0;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.txtSoPhieu;
+            this.layoutControlItem1.Height = 35;
+            this.layoutControlItem1.MinSize = new System.Drawing.Size(120, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Text = "<b>Số phiếu <font color=\"#ED1C24\">(*)</font></b>";
+            this.layoutControlItem1.Width = 40;
+            this.layoutControlItem1.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.CbbKhoiLop;
+            this.layoutControlItem2.Height = 35;
+            this.layoutControlItem2.MinSize = new System.Drawing.Size(64, 18);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Text = "<b>Khối lớp <font color=\"#ED1C24\">(*)</font></b>";
+            this.layoutControlItem2.Width = 30;
+            this.layoutControlItem2.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.dPickerNgayMuon;
+            this.layoutControlItem3.Height = 35;
+            this.layoutControlItem3.MinSize = new System.Drawing.Size(64, 18);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Text = "<b>Ngày mượn <font color=\"#ED1C24\">(*)</font></b>";
+            this.layoutControlItem3.TextControlSpacing = 5;
+            this.layoutControlItem3.Width = 30;
+            this.layoutControlItem3.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.CbbGiaoVien;
+            this.layoutControlItem4.Height = 35;
+            this.layoutControlItem4.MinSize = new System.Drawing.Size(64, 18);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Text = "<b>Giáo viên <font color=\"#ED1C24\">(*)</font></b>";
+            this.layoutControlItem4.Width = 40;
+            this.layoutControlItem4.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.CbbDayLop;
+            this.layoutControlItem5.Height = 35;
+            this.layoutControlItem5.MinSize = new System.Drawing.Size(64, 18);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Text = "<b>Dạy lớp <font color=\"#ED1C24\">(*)</font></b>";
+            this.layoutControlItem5.Width = 30;
+            this.layoutControlItem5.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
+            // 
+            // layoutGroup1
+            // 
+            this.layoutGroup1.Height = 35;
+            this.layoutGroup1.Items.AddRange(new DevComponents.DotNetBar.Layout.LayoutItemBase[] {
+            this.layoutControlItem6,
+            this.layoutControlItem7});
+            this.layoutGroup1.MinSize = new System.Drawing.Size(120, 32);
+            this.layoutGroup1.Name = "layoutGroup1";
+            this.layoutGroup1.TextPosition = DevComponents.DotNetBar.Layout.eLayoutPosition.Top;
+            this.layoutGroup1.Width = 30;
+            this.layoutGroup1.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.txtMuonTuTiet;
+            this.layoutControlItem6.Height = 23;
+            this.layoutControlItem6.MinSize = new System.Drawing.Size(120, 0);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Text = "<b>Mượn từ tiết <font color=\"#ED1C24\">(*)</font></b>";
+            this.layoutControlItem6.TextControlSpacing = 25;
+            this.layoutControlItem6.TextPadding = new System.Windows.Forms.Padding(-5, 0, 0, 0);
+            this.layoutControlItem6.Width = 60;
+            this.layoutControlItem6.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
+            // 
+            // layoutControlItem7
+            // 
+            this.layoutControlItem7.Control = this.CbbBuoiTrongNgay;
+            this.layoutControlItem7.Height = 31;
+            this.layoutControlItem7.MinSize = new System.Drawing.Size(64, 18);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.SharedTextSizeEnabled = false;
+            this.layoutControlItem7.Width = 40;
+            this.layoutControlItem7.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.Control = this.CbbMonHoc;
+            this.layoutControlItem8.Height = 35;
+            this.layoutControlItem8.MinSize = new System.Drawing.Size(64, 18);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Text = "<b>Dạy môn <font color=\"#ED1C24\">(*)</font></b>";
+            this.layoutControlItem8.Width = 40;
+            this.layoutControlItem8.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
+            // 
+            // layoutControlItem9
+            // 
+            this.layoutControlItem9.Control = this.txtSoTiet;
+            this.layoutControlItem9.Height = 35;
+            this.layoutControlItem9.MinSize = new System.Drawing.Size(120, 0);
+            this.layoutControlItem9.Name = "layoutControlItem9";
+            this.layoutControlItem9.Text = "<b>Sô tiết/lớp <font color=\"#ED1C24\">(*)</font></b>";
+            this.layoutControlItem9.Width = 30;
+            this.layoutControlItem9.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
+            // 
+            // layoutControlItem11
+            // 
+            this.layoutControlItem11.Control = this.txtTenBaiDay;
+            this.layoutControlItem11.Height = 35;
+            this.layoutControlItem11.MinSize = new System.Drawing.Size(64, 18);
+            this.layoutControlItem11.Name = "layoutControlItem11";
+            this.layoutControlItem11.Text = "<b>Tên bài dạy</b>";
+            this.layoutControlItem11.Width = 70;
+            this.layoutControlItem11.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
+            // 
+            // layoutControlItem12
+            // 
+            this.layoutControlItem12.Control = this.CbbMucDichSD;
+            this.layoutControlItem12.Height = 35;
+            this.layoutControlItem12.MinSize = new System.Drawing.Size(64, 18);
+            this.layoutControlItem12.Name = "layoutControlItem12";
+            this.layoutControlItem12.Text = "<b>Mục đích SD <font color=\"#ED1C24\">(*)</font></b>";
+            this.layoutControlItem12.Width = 30;
+            this.layoutControlItem12.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
+            // 
+            // layoutControlItem13
+            // 
+            this.layoutControlItem13.Control = this.txtGhiChu;
+            this.layoutControlItem13.Height = 35;
+            this.layoutControlItem13.MinSize = new System.Drawing.Size(120, 0);
+            this.layoutControlItem13.Name = "layoutControlItem13";
+            this.layoutControlItem13.Text = "<b>Ghi chú</b>";
+            this.layoutControlItem13.Width = 70;
+            this.layoutControlItem13.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
+            // 
+            // layoutControlItem14
+            // 
+            this.layoutControlItem14.Control = this.cboxNgoaiQuyDinh;
+            this.layoutControlItem14.Height = 35;
+            this.layoutControlItem14.MinSize = new System.Drawing.Size(64, 18);
+            this.layoutControlItem14.Name = "layoutControlItem14";
+            this.layoutControlItem14.Padding = new System.Windows.Forms.Padding(100, 4, 4, 4);
+            this.layoutControlItem14.Width = 30;
+            this.layoutControlItem14.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
+            // 
+            // CbbPhongBoMon
+            // 
+            this.CbbPhongBoMon.DisplayMember = "Text";
+            this.CbbPhongBoMon.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CbbPhongBoMon.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbbPhongBoMon.FormattingEnabled = true;
+            this.CbbPhongBoMon.ItemHeight = 16;
+            this.CbbPhongBoMon.Location = new System.Drawing.Point(98, 109);
+            this.CbbPhongBoMon.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.CbbPhongBoMon.Name = "CbbPhongBoMon";
+            this.CbbPhongBoMon.Size = new System.Drawing.Size(475, 22);
+            this.CbbPhongBoMon.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.CbbPhongBoMon.TabIndex = 11;
+            // 
+            // layoutControlItem15
+            // 
+            this.layoutControlItem15.Control = this.CbbPhongBoMon;
+            this.layoutControlItem15.Height = 29;
+            this.layoutControlItem15.MinSize = new System.Drawing.Size(64, 18);
+            this.layoutControlItem15.Name = "layoutControlItem15";
+            this.layoutControlItem15.Text = "<b>Phòng bộ môn <font color=\"#ED1C24\">(*)</font></b>";
+            this.layoutControlItem15.Width = 70;
+            this.layoutControlItem15.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
+            // 
+            // cboxSuDungCaNgay
+            // 
+            this.cboxSuDungCaNgay.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.cboxSuDungCaNgay.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.cboxSuDungCaNgay.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboxSuDungCaNgay.Location = new System.Drawing.Point(677, 74);
+            this.cboxSuDungCaNgay.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.cboxSuDungCaNgay.Name = "cboxSuDungCaNgay";
+            this.cboxSuDungCaNgay.Size = new System.Drawing.Size(144, 27);
+            this.cboxSuDungCaNgay.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cboxSuDungCaNgay.TabIndex = 10;
+            this.cboxSuDungCaNgay.Text = "Sử dụng cả ngày";
+            this.cboxSuDungCaNgay.TextColor = System.Drawing.Color.Black;
+            // 
+            // layoutControlItem10
+            // 
+            this.layoutControlItem10.Control = this.cboxSuDungCaNgay;
+            this.layoutControlItem10.Height = 31;
+            this.layoutControlItem10.MinSize = new System.Drawing.Size(64, 18);
+            this.layoutControlItem10.Name = "layoutControlItem10";
+            this.layoutControlItem10.Padding = new System.Windows.Forms.Padding(100, 4, 4, 4);
+            this.layoutControlItem10.Width = 30;
+            this.layoutControlItem10.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
+            // 
+            // frmCTPhieuMuonPhong
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(888, 475);
+            this.ClientSize = new System.Drawing.Size(825, 465);
             this.Controls.Add(this.panelEx1);
             this.Controls.Add(this.rbChucNang);
             this.DoubleBuffered = true;
-            this.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "frmThietBiMuon";
-            this.Text = "Chi tiết phiếu mượn thiết bị";
-            this.Load += new System.EventHandler(this.frmThietBiMuon_Load);
-            this.expandablePanel1.ResumeLayout(false);
-            this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dPickerNgayTra)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dPickerNgayMuon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridDSThietBiMuon)).EndInit();
-            this.expandablePanel2.ResumeLayout(false);
+            this.Name = "frmCTPhieuMuonPhong";
+            this.Text = "Chiết phiếu mượn phòng học bộ môn";
             this.panelEx1.ResumeLayout(false);
             this.panelEx2.ResumeLayout(false);
+            this.expandablePanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridDSThietBiMuon)).EndInit();
+            this.expandablePanel1.ResumeLayout(false);
+            this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dPickerNgayMuon)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DevComponents.DotNetBar.ExpandablePanel expandablePanel1;
-        private DevComponents.DotNetBar.Controls.DataGridViewX gridDSThietBiMuon;
-        private DevComponents.DotNetBar.Layout.LayoutControl layoutControl1;
+        private DevComponents.DotNetBar.RibbonBar rbChucNang;
+        private DevComponents.DotNetBar.ButtonItem btnLuu;
+        private DevComponents.DotNetBar.ButtonItem btnBaoHong;
+        private DevComponents.DotNetBar.ButtonItem buttonItem2;
+        private DevComponents.DotNetBar.ButtonItem btnXoa;
+        private DevComponents.DotNetBar.ButtonItem btnIn;
+        private DevComponents.DotNetBar.ButtonItem btnTroGiup;
+        private DevComponents.DotNetBar.ButtonItem btnThoat;
+        private DevComponents.DotNetBar.ButtonItem buttonItem1;
+        private DevComponents.DotNetBar.PanelEx panelEx1;
+        private DevComponents.DotNetBar.PanelEx panelEx2;
         private DevComponents.DotNetBar.ExpandablePanel expandablePanel2;
-        private DevComponents.Editors.DateTimeAdv.DateTimeInput dPickerNgayTra;
+        private DevComponents.DotNetBar.Controls.DataGridViewX gridDSThietBiMuon;
+        private DevComponents.DotNetBar.ExpandablePanel expandablePanel1;
+        private DevComponents.DotNetBar.Layout.LayoutControl layoutControl1;
+        private DevComponents.DotNetBar.Controls.CheckBoxX cboxNgoaiQuyDinh;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtGhiChu;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx CbbMucDichSD;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx txtTenBaiDay;
         private DevComponents.DotNetBar.Controls.TextBoxX txtSoTiet;
         private DevComponents.DotNetBar.Controls.ComboBoxEx CbbMonHoc;
         private DevComponents.DotNetBar.Controls.ComboBoxEx CbbBuoiTrongNgay;
@@ -839,25 +863,13 @@
         private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem7;
         private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem8;
         private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem9;
-        private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem10;
-        private DevComponents.DotNetBar.Controls.CheckBoxX cboxNgoaiQuyDinh;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtGhiChu;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx CbbMucDichSD;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx txtTenBaiDay;
         private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem11;
         private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem12;
         private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem13;
         private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem14;
-        private DevComponents.DotNetBar.RibbonBar rbChucNang;
-        private DevComponents.DotNetBar.ButtonItem btnLuu;
-        private DevComponents.DotNetBar.ButtonItem btnBaoHong;
-        private DevComponents.DotNetBar.ButtonItem buttonItem2;
-        private DevComponents.DotNetBar.ButtonItem btnXoa;
-        private DevComponents.DotNetBar.ButtonItem btnIn;
-        private DevComponents.DotNetBar.ButtonItem btnThoat;
-        private DevComponents.DotNetBar.ButtonItem buttonItem1;
-        private DevComponents.DotNetBar.PanelEx panelEx1;
-        private DevComponents.DotNetBar.PanelEx panelEx2;
-        private DevComponents.DotNetBar.ButtonItem btnTroGiup;
+        private DevComponents.DotNetBar.Controls.CheckBoxX cboxSuDungCaNgay;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx CbbPhongBoMon;
+        private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem10;
+        private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem15;
     }
 }
