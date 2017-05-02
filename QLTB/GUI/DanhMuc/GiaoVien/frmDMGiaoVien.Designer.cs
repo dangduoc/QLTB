@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDMGiaoVien));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.rbChucNang = new DevComponents.DotNetBar.RibbonBar();
             this.btnXem = new DevComponents.DotNetBar.ButtonItem();
             this.btnThem = new DevComponents.DotNetBar.ButtonItem();
@@ -44,9 +44,12 @@
             this.btnThoat = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
             this.pnlBack = new DevComponents.DotNetBar.PanelEx();
-            this.gridDSGiaoVien = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
+            this.advancedDataGridView = new ADGV.AdvancedDataGridView();
+            this.searchToolBar = new ADGV.SearchToolBar();
             this.pnlBack.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridDSGiaoVien)).BeginInit();
+            this.panelEx1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // rbChucNang
@@ -199,7 +202,8 @@
             // 
             this.pnlBack.CanvasColor = System.Drawing.SystemColors.Control;
             this.pnlBack.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.pnlBack.Controls.Add(this.gridDSGiaoVien);
+            this.pnlBack.Controls.Add(this.panelEx1);
+            this.pnlBack.Controls.Add(this.searchToolBar);
             this.pnlBack.DisabledBackColor = System.Drawing.Color.Empty;
             this.pnlBack.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBack.Location = new System.Drawing.Point(0, 79);
@@ -212,42 +216,79 @@
             this.pnlBack.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
             this.pnlBack.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.pnlBack.Style.GradientAngle = 90;
-            this.pnlBack.TabIndex = 14;
+            this.pnlBack.TabIndex = 21;
             // 
-            // gridDSGiaoVien
+            // panelEx1
             // 
-            this.gridDSGiaoVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gridDSGiaoVien.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridDSGiaoVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.gridDSGiaoVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridDSGiaoVien.DefaultCellStyle = dataGridViewCellStyle2;
-            this.gridDSGiaoVien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridDSGiaoVien.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
-            this.gridDSGiaoVien.Location = new System.Drawing.Point(0, 0);
-            this.gridDSGiaoVien.MultiSelect = false;
-            this.gridDSGiaoVien.Name = "gridDSGiaoVien";
-            this.gridDSGiaoVien.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridDSGiaoVien.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.gridDSGiaoVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridDSGiaoVien.Size = new System.Drawing.Size(674, 285);
-            this.gridDSGiaoVien.TabIndex = 4;
+            this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
+            this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx1.Controls.Add(this.advancedDataGridView);
+            this.panelEx1.DisabledBackColor = System.Drawing.Color.Empty;
+            this.panelEx1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelEx1.Location = new System.Drawing.Point(0, 27);
+            this.panelEx1.Name = "panelEx1";
+            this.panelEx1.Size = new System.Drawing.Size(674, 258);
+            this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.panelEx1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.panelEx1.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.panelEx1.Style.GradientAngle = 90;
+            this.panelEx1.TabIndex = 29;
+            // 
+            // advancedDataGridView
+            // 
+            this.advancedDataGridView.AllowUserToAddRows = false;
+            this.advancedDataGridView.AllowUserToDeleteRows = false;
+            this.advancedDataGridView.AutoGenerateContextFilters = true;
+            this.advancedDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.advancedDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advancedDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.advancedDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.advancedDataGridView.DateWithTime = false;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.advancedDataGridView.DefaultCellStyle = dataGridViewCellStyle5;
+            this.advancedDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.advancedDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.advancedDataGridView.Name = "advancedDataGridView";
+            this.advancedDataGridView.RowHeadersVisible = false;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advancedDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.advancedDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.advancedDataGridView.Size = new System.Drawing.Size(674, 258);
+            this.advancedDataGridView.TabIndex = 27;
+            this.advancedDataGridView.TimeFilter = false;
+            this.advancedDataGridView.SortStringChanged += new System.EventHandler(this.advancedDataGridView_SortStringChanged);
+            this.advancedDataGridView.FilterStringChanged += new System.EventHandler(this.advancedDataGridView_FilterStringChanged);
+            // 
+            // searchToolBar
+            // 
+            this.searchToolBar.AllowMerge = false;
+            this.searchToolBar.Font = new System.Drawing.Font("Arial", 9F);
+            this.searchToolBar.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.searchToolBar.Location = new System.Drawing.Point(0, 0);
+            this.searchToolBar.MaximumSize = new System.Drawing.Size(0, 27);
+            this.searchToolBar.MinimumSize = new System.Drawing.Size(0, 27);
+            this.searchToolBar.Name = "searchToolBar";
+            this.searchToolBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.searchToolBar.Size = new System.Drawing.Size(674, 27);
+            this.searchToolBar.TabIndex = 28;
+            this.searchToolBar.Text = "searchToolBar1";
             // 
             // frmDMGiaoVien
             // 
@@ -258,8 +299,11 @@
             this.Controls.Add(this.rbChucNang);
             this.Name = "frmDMGiaoVien";
             this.Text = "Danh mục giáo viên";
+            this.Load += new System.EventHandler(this.frmDMGiaoVien_Load);
             this.pnlBack.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridDSGiaoVien)).EndInit();
+            this.pnlBack.PerformLayout();
+            this.panelEx1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -278,6 +322,8 @@
         private DevComponents.DotNetBar.ButtonItem btnThoat;
         private DevComponents.DotNetBar.ButtonItem buttonItem1;
         private DevComponents.DotNetBar.PanelEx pnlBack;
-        private DevComponents.DotNetBar.Controls.DataGridViewX gridDSGiaoVien;
+        private DevComponents.DotNetBar.PanelEx panelEx1;
+        private ADGV.AdvancedDataGridView advancedDataGridView;
+        private ADGV.SearchToolBar searchToolBar;
     }
 }

@@ -26,7 +26,7 @@ namespace QLTB
             frmLogin fLogin = new frmLogin();
             if (fLogin.ShowDialog() == DialogResult.OK)
             {
-                Application.Run(new frmMain());
+                Application.Run(new frmDialogDSThietBi());
             }
             else
             {

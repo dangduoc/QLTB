@@ -38,27 +38,25 @@
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.layoutControl1 = new DevComponents.DotNetBar.Layout.LayoutControl();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.textBoxX9 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.dateTimeInput3 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.textBoxX8 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.dateTimeInput2 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.dateTimeInput1 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.comboBoxEx4 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.checkBoxX1 = new DevComponents.DotNetBar.Controls.CheckBoxX();
-            this.comboBoxEx3 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.comboBoxEx2 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.textBoxX7 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX6 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.richTextBoxEx1 = new DevComponents.DotNetBar.Controls.RichTextBoxEx();
-            this.textBoxX5 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX4 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX3 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX2 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.comboBoxEx1 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.txtNamTheoDoi = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.dpickerNgaySD = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.txtNamSD = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.dpickerHanSD = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.dpickNgaySX = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.cbbNguonKinhPhi = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.cboxThietBiTuLam = new DevComponents.DotNetBar.Controls.CheckBoxX();
+            this.cbbPhongBM = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.cbbMucDichSD = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.txtNuocSX = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtThanhTien = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtQuyCach = new DevComponents.DotNetBar.Controls.RichTextBoxEx();
+            this.txtDonGia = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtSoHieu = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtSoLuong = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtTen = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.cbbMaThietBi = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.layoutControlItem19 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
             this.layoutControlItem1 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
-            this.layoutControlItem2 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
             this.layoutSpacerItem1 = new DevComponents.DotNetBar.Layout.LayoutSpacerItem();
             this.layoutControlItem3 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
             this.layoutControlItem4 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
@@ -85,11 +83,13 @@
             this.layoutSpacerItem7 = new DevComponents.DotNetBar.Layout.LayoutSpacerItem();
             this.layoutControlItem18 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
             this.layoutSpacerItem8 = new DevComponents.DotNetBar.Layout.LayoutSpacerItem();
+            this.cbbDVT = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.layoutControlItem2 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
             this.panelEx1.SuspendLayout();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dpickerNgaySD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dpickerHanSD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dpickNgaySX)).BeginInit();
             this.SuspendLayout();
             // 
             // rbChucNang
@@ -205,25 +205,25 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.cbbDVT);
             this.layoutControl1.Controls.Add(this.labelX1);
-            this.layoutControl1.Controls.Add(this.textBoxX9);
-            this.layoutControl1.Controls.Add(this.dateTimeInput3);
-            this.layoutControl1.Controls.Add(this.textBoxX8);
-            this.layoutControl1.Controls.Add(this.dateTimeInput2);
-            this.layoutControl1.Controls.Add(this.dateTimeInput1);
-            this.layoutControl1.Controls.Add(this.comboBoxEx4);
-            this.layoutControl1.Controls.Add(this.checkBoxX1);
-            this.layoutControl1.Controls.Add(this.comboBoxEx3);
-            this.layoutControl1.Controls.Add(this.comboBoxEx2);
-            this.layoutControl1.Controls.Add(this.textBoxX7);
-            this.layoutControl1.Controls.Add(this.textBoxX6);
-            this.layoutControl1.Controls.Add(this.richTextBoxEx1);
-            this.layoutControl1.Controls.Add(this.textBoxX5);
-            this.layoutControl1.Controls.Add(this.textBoxX4);
-            this.layoutControl1.Controls.Add(this.textBoxX3);
-            this.layoutControl1.Controls.Add(this.textBoxX2);
-            this.layoutControl1.Controls.Add(this.textBoxX1);
-            this.layoutControl1.Controls.Add(this.comboBoxEx1);
+            this.layoutControl1.Controls.Add(this.txtNamTheoDoi);
+            this.layoutControl1.Controls.Add(this.dpickerNgaySD);
+            this.layoutControl1.Controls.Add(this.txtNamSD);
+            this.layoutControl1.Controls.Add(this.dpickerHanSD);
+            this.layoutControl1.Controls.Add(this.dpickNgaySX);
+            this.layoutControl1.Controls.Add(this.cbbNguonKinhPhi);
+            this.layoutControl1.Controls.Add(this.cboxThietBiTuLam);
+            this.layoutControl1.Controls.Add(this.cbbPhongBM);
+            this.layoutControl1.Controls.Add(this.cbbMucDichSD);
+            this.layoutControl1.Controls.Add(this.txtNuocSX);
+            this.layoutControl1.Controls.Add(this.txtThanhTien);
+            this.layoutControl1.Controls.Add(this.txtQuyCach);
+            this.layoutControl1.Controls.Add(this.txtDonGia);
+            this.layoutControl1.Controls.Add(this.txtSoHieu);
+            this.layoutControl1.Controls.Add(this.txtSoLuong);
+            this.layoutControl1.Controls.Add(this.txtTen);
+            this.layoutControl1.Controls.Add(this.cbbMaThietBi);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
@@ -275,350 +275,336 @@
             this.labelX1.TabIndex = 0;
             this.labelX1.Text = "THÔNG TIN THIẾT BỊ";
             // 
-            // textBoxX9
+            // txtNamTheoDoi
             // 
             // 
             // 
             // 
-            this.textBoxX9.Border.Class = "TextBoxBorder";
-            this.textBoxX9.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX9.Location = new System.Drawing.Point(156, 374);
-            this.textBoxX9.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxX9.Name = "textBoxX9";
-            this.textBoxX9.PreventEnterBeep = true;
-            this.textBoxX9.Size = new System.Drawing.Size(270, 21);
-            this.textBoxX9.TabIndex = 27;
+            this.txtNamTheoDoi.Border.Class = "TextBoxBorder";
+            this.txtNamTheoDoi.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtNamTheoDoi.Location = new System.Drawing.Point(156, 374);
+            this.txtNamTheoDoi.Margin = new System.Windows.Forms.Padding(0);
+            this.txtNamTheoDoi.Name = "txtNamTheoDoi";
+            this.txtNamTheoDoi.PreventEnterBeep = true;
+            this.txtNamTheoDoi.Size = new System.Drawing.Size(270, 21);
+            this.txtNamTheoDoi.TabIndex = 27;
             // 
-            // dateTimeInput3
+            // dpickerNgaySD
             // 
             // 
             // 
             // 
-            this.dateTimeInput3.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.dateTimeInput3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput3.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.dateTimeInput3.ButtonDropDown.Visible = true;
-            this.dateTimeInput3.CustomFormat = "dd/mm/yyyy";
-            this.dateTimeInput3.IsPopupCalendarOpen = false;
-            this.dateTimeInput3.Location = new System.Drawing.Point(268, 343);
-            this.dateTimeInput3.Margin = new System.Windows.Forms.Padding(0);
+            this.dpickerNgaySD.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.dpickerNgaySD.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dpickerNgaySD.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.dpickerNgaySD.ButtonDropDown.Visible = true;
+            this.dpickerNgaySD.CustomFormat = "dd/mm/yyyy";
+            this.dpickerNgaySD.IsPopupCalendarOpen = false;
+            this.dpickerNgaySD.Location = new System.Drawing.Point(268, 343);
+            this.dpickerNgaySD.Margin = new System.Windows.Forms.Padding(0);
             // 
             // 
             // 
             // 
             // 
             // 
-            this.dateTimeInput3.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput3.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
-            this.dateTimeInput3.MonthCalendar.ClearButtonVisible = true;
+            this.dpickerNgaySD.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dpickerNgaySD.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
+            this.dpickerNgaySD.MonthCalendar.ClearButtonVisible = true;
             // 
             // 
             // 
-            this.dateTimeInput3.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.dateTimeInput3.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.dateTimeInput3.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.dateTimeInput3.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.dateTimeInput3.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.dateTimeInput3.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.dateTimeInput3.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput3.MonthCalendar.DisplayMonth = new System.DateTime(2017, 4, 1, 0, 0, 0, 0);
+            this.dpickerNgaySD.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.dpickerNgaySD.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.dpickerNgaySD.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.dpickerNgaySD.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.dpickerNgaySD.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.dpickerNgaySD.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.dpickerNgaySD.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dpickerNgaySD.MonthCalendar.DisplayMonth = new System.DateTime(2017, 4, 1, 0, 0, 0, 0);
             // 
             // 
             // 
-            this.dateTimeInput3.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.dateTimeInput3.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.dateTimeInput3.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.dateTimeInput3.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput3.MonthCalendar.TodayButtonVisible = true;
-            this.dateTimeInput3.Name = "dateTimeInput3";
-            this.dateTimeInput3.Size = new System.Drawing.Size(154, 21);
-            this.dateTimeInput3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dateTimeInput3.TabIndex = 23;
-            this.dateTimeInput3.WatermarkText = "dd/mm/yyyy";
+            this.dpickerNgaySD.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.dpickerNgaySD.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.dpickerNgaySD.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.dpickerNgaySD.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dpickerNgaySD.MonthCalendar.TodayButtonVisible = true;
+            this.dpickerNgaySD.Name = "dpickerNgaySD";
+            this.dpickerNgaySD.Size = new System.Drawing.Size(154, 21);
+            this.dpickerNgaySD.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.dpickerNgaySD.TabIndex = 23;
+            this.dpickerNgaySD.WatermarkText = "dd/mm/yyyy";
             // 
-            // textBoxX8
+            // txtNamSD
             // 
             // 
             // 
             // 
-            this.textBoxX8.Border.Class = "TextBoxBorder";
-            this.textBoxX8.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX8.Location = new System.Drawing.Point(155, 343);
-            this.textBoxX8.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxX8.Name = "textBoxX8";
-            this.textBoxX8.PreventEnterBeep = true;
-            this.textBoxX8.Size = new System.Drawing.Size(56, 21);
-            this.textBoxX8.TabIndex = 22;
+            this.txtNamSD.Border.Class = "TextBoxBorder";
+            this.txtNamSD.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtNamSD.Location = new System.Drawing.Point(155, 343);
+            this.txtNamSD.Margin = new System.Windows.Forms.Padding(0);
+            this.txtNamSD.Name = "txtNamSD";
+            this.txtNamSD.PreventEnterBeep = true;
+            this.txtNamSD.Size = new System.Drawing.Size(56, 21);
+            this.txtNamSD.TabIndex = 22;
             // 
-            // dateTimeInput2
+            // dpickerHanSD
             // 
             // 
             // 
             // 
-            this.dateTimeInput2.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.dateTimeInput2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput2.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.dateTimeInput2.ButtonDropDown.Visible = true;
-            this.dateTimeInput2.CustomFormat = "dd/mm/yyyy";
-            this.dateTimeInput2.IsPopupCalendarOpen = false;
-            this.dateTimeInput2.Location = new System.Drawing.Point(606, 344);
-            this.dateTimeInput2.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.dpickerHanSD.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.dpickerHanSD.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dpickerHanSD.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.dpickerHanSD.ButtonDropDown.Visible = true;
+            this.dpickerHanSD.CustomFormat = "dd/mm/yyyy";
+            this.dpickerHanSD.IsPopupCalendarOpen = false;
+            this.dpickerHanSD.Location = new System.Drawing.Point(606, 344);
+            this.dpickerHanSD.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             // 
             // 
             // 
             // 
             // 
             // 
-            this.dateTimeInput2.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput2.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
-            this.dateTimeInput2.MonthCalendar.ClearButtonVisible = true;
+            this.dpickerHanSD.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dpickerHanSD.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
+            this.dpickerHanSD.MonthCalendar.ClearButtonVisible = true;
             // 
             // 
             // 
-            this.dateTimeInput2.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.dateTimeInput2.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.dateTimeInput2.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.dateTimeInput2.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.dateTimeInput2.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.dateTimeInput2.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.dateTimeInput2.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput2.MonthCalendar.DisplayMonth = new System.DateTime(2017, 4, 1, 0, 0, 0, 0);
+            this.dpickerHanSD.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.dpickerHanSD.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.dpickerHanSD.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.dpickerHanSD.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.dpickerHanSD.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.dpickerHanSD.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.dpickerHanSD.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dpickerHanSD.MonthCalendar.DisplayMonth = new System.DateTime(2017, 4, 1, 0, 0, 0, 0);
             // 
             // 
             // 
-            this.dateTimeInput2.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.dateTimeInput2.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.dateTimeInput2.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.dateTimeInput2.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput2.MonthCalendar.TodayButtonVisible = true;
-            this.dateTimeInput2.Name = "dateTimeInput2";
-            this.dateTimeInput2.Size = new System.Drawing.Size(142, 21);
-            this.dateTimeInput2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dateTimeInput2.TabIndex = 25;
-            this.dateTimeInput2.WatermarkText = "dd/mm/yyyy";
+            this.dpickerHanSD.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.dpickerHanSD.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.dpickerHanSD.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.dpickerHanSD.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dpickerHanSD.MonthCalendar.TodayButtonVisible = true;
+            this.dpickerHanSD.Name = "dpickerHanSD";
+            this.dpickerHanSD.Size = new System.Drawing.Size(142, 21);
+            this.dpickerHanSD.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.dpickerHanSD.TabIndex = 25;
+            this.dpickerHanSD.WatermarkText = "dd/mm/yyyy";
             // 
-            // dateTimeInput1
+            // dpickNgaySX
             // 
             // 
             // 
             // 
-            this.dateTimeInput1.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.dateTimeInput1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput1.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.dateTimeInput1.ButtonDropDown.Visible = true;
-            this.dateTimeInput1.CustomFormat = "dd/mm/yyyy";
-            this.dateTimeInput1.IsPopupCalendarOpen = false;
-            this.dateTimeInput1.Location = new System.Drawing.Point(606, 304);
-            this.dateTimeInput1.Margin = new System.Windows.Forms.Padding(0);
+            this.dpickNgaySX.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.dpickNgaySX.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dpickNgaySX.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.dpickNgaySX.ButtonDropDown.Visible = true;
+            this.dpickNgaySX.CustomFormat = "dd/mm/yyyy";
+            this.dpickNgaySX.IsPopupCalendarOpen = false;
+            this.dpickNgaySX.Location = new System.Drawing.Point(606, 304);
+            this.dpickNgaySX.Margin = new System.Windows.Forms.Padding(0);
             // 
             // 
             // 
             // 
             // 
             // 
-            this.dateTimeInput1.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput1.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
-            this.dateTimeInput1.MonthCalendar.ClearButtonVisible = true;
+            this.dpickNgaySX.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dpickNgaySX.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
+            this.dpickNgaySX.MonthCalendar.ClearButtonVisible = true;
             // 
             // 
             // 
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput1.MonthCalendar.DisplayMonth = new System.DateTime(2017, 4, 1, 0, 0, 0, 0);
+            this.dpickNgaySX.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.dpickNgaySX.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.dpickNgaySX.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.dpickNgaySX.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.dpickNgaySX.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.dpickNgaySX.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.dpickNgaySX.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dpickNgaySX.MonthCalendar.DisplayMonth = new System.DateTime(2017, 4, 1, 0, 0, 0, 0);
             // 
             // 
             // 
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput1.MonthCalendar.TodayButtonVisible = true;
-            this.dateTimeInput1.Name = "dateTimeInput1";
-            this.dateTimeInput1.Size = new System.Drawing.Size(142, 21);
-            this.dateTimeInput1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dateTimeInput1.TabIndex = 20;
-            this.dateTimeInput1.WatermarkText = "dd/mm/yyyy";
+            this.dpickNgaySX.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.dpickNgaySX.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.dpickNgaySX.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.dpickNgaySX.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dpickNgaySX.MonthCalendar.TodayButtonVisible = true;
+            this.dpickNgaySX.Name = "dpickNgaySX";
+            this.dpickNgaySX.Size = new System.Drawing.Size(142, 21);
+            this.dpickNgaySX.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.dpickNgaySX.TabIndex = 20;
+            this.dpickNgaySX.WatermarkText = "dd/mm/yyyy";
             // 
-            // comboBoxEx4
+            // cbbNguonKinhPhi
             // 
-            this.comboBoxEx4.DisplayMember = "Text";
-            this.comboBoxEx4.FormattingEnabled = true;
-            this.comboBoxEx4.ItemHeight = 15;
-            this.comboBoxEx4.Location = new System.Drawing.Point(156, 304);
-            this.comboBoxEx4.Margin = new System.Windows.Forms.Padding(0);
-            this.comboBoxEx4.Name = "comboBoxEx4";
-            this.comboBoxEx4.Size = new System.Drawing.Size(270, 23);
-            this.comboBoxEx4.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.comboBoxEx4.TabIndex = 19;
+            this.cbbNguonKinhPhi.DisplayMember = "Text";
+            this.cbbNguonKinhPhi.FormattingEnabled = true;
+            this.cbbNguonKinhPhi.ItemHeight = 15;
+            this.cbbNguonKinhPhi.Location = new System.Drawing.Point(156, 304);
+            this.cbbNguonKinhPhi.Margin = new System.Windows.Forms.Padding(0);
+            this.cbbNguonKinhPhi.Name = "cbbNguonKinhPhi";
+            this.cbbNguonKinhPhi.Size = new System.Drawing.Size(270, 23);
+            this.cbbNguonKinhPhi.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cbbNguonKinhPhi.TabIndex = 19;
             // 
-            // checkBoxX1
+            // cboxThietBiTuLam
             // 
-            this.checkBoxX1.BackColor = System.Drawing.Color.Transparent;
+            this.cboxThietBiTuLam.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
-            this.checkBoxX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.checkBoxX1.Location = new System.Drawing.Point(606, 269);
-            this.checkBoxX1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.checkBoxX1.Name = "checkBoxX1";
-            this.checkBoxX1.Size = new System.Drawing.Size(142, 17);
-            this.checkBoxX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.checkBoxX1.TabIndex = 17;
-            this.checkBoxX1.TextColor = System.Drawing.Color.Black;
+            this.cboxThietBiTuLam.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.cboxThietBiTuLam.Location = new System.Drawing.Point(606, 269);
+            this.cboxThietBiTuLam.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.cboxThietBiTuLam.Name = "cboxThietBiTuLam";
+            this.cboxThietBiTuLam.Size = new System.Drawing.Size(142, 17);
+            this.cboxThietBiTuLam.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cboxThietBiTuLam.TabIndex = 17;
+            this.cboxThietBiTuLam.TextColor = System.Drawing.Color.Black;
             // 
-            // comboBoxEx3
+            // cbbPhongBM
             // 
-            this.comboBoxEx3.DisplayMember = "Text";
-            this.comboBoxEx3.FormattingEnabled = true;
-            this.comboBoxEx3.ItemHeight = 15;
-            this.comboBoxEx3.Location = new System.Drawing.Point(156, 269);
-            this.comboBoxEx3.Margin = new System.Windows.Forms.Padding(0);
-            this.comboBoxEx3.Name = "comboBoxEx3";
-            this.comboBoxEx3.Size = new System.Drawing.Size(270, 23);
-            this.comboBoxEx3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.comboBoxEx3.TabIndex = 16;
+            this.cbbPhongBM.DisplayMember = "Text";
+            this.cbbPhongBM.FormattingEnabled = true;
+            this.cbbPhongBM.ItemHeight = 15;
+            this.cbbPhongBM.Location = new System.Drawing.Point(156, 269);
+            this.cbbPhongBM.Margin = new System.Windows.Forms.Padding(0);
+            this.cbbPhongBM.Name = "cbbPhongBM";
+            this.cbbPhongBM.Size = new System.Drawing.Size(270, 23);
+            this.cbbPhongBM.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cbbPhongBM.TabIndex = 16;
             // 
-            // comboBoxEx2
+            // cbbMucDichSD
             // 
-            this.comboBoxEx2.DisplayMember = "Text";
-            this.comboBoxEx2.FormattingEnabled = true;
-            this.comboBoxEx2.ItemHeight = 15;
-            this.comboBoxEx2.Location = new System.Drawing.Point(607, 233);
-            this.comboBoxEx2.Margin = new System.Windows.Forms.Padding(0);
-            this.comboBoxEx2.Name = "comboBoxEx2";
-            this.comboBoxEx2.Size = new System.Drawing.Size(137, 23);
-            this.comboBoxEx2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.comboBoxEx2.TabIndex = 13;
+            this.cbbMucDichSD.DisplayMember = "Text";
+            this.cbbMucDichSD.FormattingEnabled = true;
+            this.cbbMucDichSD.ItemHeight = 15;
+            this.cbbMucDichSD.Location = new System.Drawing.Point(607, 233);
+            this.cbbMucDichSD.Margin = new System.Windows.Forms.Padding(0);
+            this.cbbMucDichSD.Name = "cbbMucDichSD";
+            this.cbbMucDichSD.Size = new System.Drawing.Size(137, 23);
+            this.cbbMucDichSD.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cbbMucDichSD.TabIndex = 13;
             // 
-            // textBoxX7
+            // txtNuocSX
             // 
             // 
             // 
             // 
-            this.textBoxX7.Border.Class = "TextBoxBorder";
-            this.textBoxX7.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX7.Location = new System.Drawing.Point(606, 198);
-            this.textBoxX7.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxX7.Name = "textBoxX7";
-            this.textBoxX7.PreventEnterBeep = true;
-            this.textBoxX7.Size = new System.Drawing.Size(138, 21);
-            this.textBoxX7.TabIndex = 12;
+            this.txtNuocSX.Border.Class = "TextBoxBorder";
+            this.txtNuocSX.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtNuocSX.Location = new System.Drawing.Point(606, 198);
+            this.txtNuocSX.Margin = new System.Windows.Forms.Padding(0);
+            this.txtNuocSX.Name = "txtNuocSX";
+            this.txtNuocSX.PreventEnterBeep = true;
+            this.txtNuocSX.Size = new System.Drawing.Size(138, 21);
+            this.txtNuocSX.TabIndex = 12;
             // 
-            // textBoxX6
+            // txtThanhTien
             // 
             // 
             // 
             // 
-            this.textBoxX6.Border.Class = "TextBoxBorder";
-            this.textBoxX6.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX6.Location = new System.Drawing.Point(606, 163);
-            this.textBoxX6.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxX6.Name = "textBoxX6";
-            this.textBoxX6.PreventEnterBeep = true;
-            this.textBoxX6.Size = new System.Drawing.Size(138, 21);
-            this.textBoxX6.TabIndex = 11;
+            this.txtThanhTien.Border.Class = "TextBoxBorder";
+            this.txtThanhTien.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtThanhTien.Location = new System.Drawing.Point(606, 163);
+            this.txtThanhTien.Margin = new System.Windows.Forms.Padding(0);
+            this.txtThanhTien.Name = "txtThanhTien";
+            this.txtThanhTien.PreventEnterBeep = true;
+            this.txtThanhTien.Size = new System.Drawing.Size(138, 21);
+            this.txtThanhTien.TabIndex = 11;
             // 
-            // richTextBoxEx1
+            // txtQuyCach
             // 
             // 
             // 
             // 
-            this.richTextBoxEx1.BackgroundStyle.Class = "RichTextBoxBorder";
-            this.richTextBoxEx1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.richTextBoxEx1.Location = new System.Drawing.Point(156, 159);
-            this.richTextBoxEx1.Margin = new System.Windows.Forms.Padding(0);
-            this.richTextBoxEx1.Name = "richTextBoxEx1";
-            this.richTextBoxEx1.Rtf = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}\r\n\\" +
+            this.txtQuyCach.BackgroundStyle.Class = "RichTextBoxBorder";
+            this.txtQuyCach.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtQuyCach.Location = new System.Drawing.Point(156, 159);
+            this.txtQuyCach.Margin = new System.Windows.Forms.Padding(0);
+            this.txtQuyCach.Name = "txtQuyCach";
+            this.txtQuyCach.Rtf = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}\r\n\\" +
     "viewkind4\\uc1\\pard\\fs18\\par\r\n}\r\n";
-            this.richTextBoxEx1.Size = new System.Drawing.Size(270, 102);
-            this.richTextBoxEx1.TabIndex = 10;
+            this.txtQuyCach.Size = new System.Drawing.Size(270, 102);
+            this.txtQuyCach.TabIndex = 10;
             // 
-            // textBoxX5
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX5.Border.Class = "TextBoxBorder";
-            this.textBoxX5.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX5.Location = new System.Drawing.Point(606, 124);
-            this.textBoxX5.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxX5.Name = "textBoxX5";
-            this.textBoxX5.PreventEnterBeep = true;
-            this.textBoxX5.Size = new System.Drawing.Size(142, 21);
-            this.textBoxX5.TabIndex = 8;
-            // 
-            // textBoxX4
+            // txtDonGia
             // 
             // 
             // 
             // 
-            this.textBoxX4.Border.Class = "TextBoxBorder";
-            this.textBoxX4.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX4.Location = new System.Drawing.Point(156, 124);
-            this.textBoxX4.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxX4.Name = "textBoxX4";
-            this.textBoxX4.PreventEnterBeep = true;
-            this.textBoxX4.Size = new System.Drawing.Size(270, 21);
-            this.textBoxX4.TabIndex = 7;
+            this.txtDonGia.Border.Class = "TextBoxBorder";
+            this.txtDonGia.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtDonGia.Location = new System.Drawing.Point(606, 124);
+            this.txtDonGia.Margin = new System.Windows.Forms.Padding(0);
+            this.txtDonGia.Name = "txtDonGia";
+            this.txtDonGia.PreventEnterBeep = true;
+            this.txtDonGia.Size = new System.Drawing.Size(142, 21);
+            this.txtDonGia.TabIndex = 8;
             // 
-            // textBoxX3
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX3.Border.Class = "TextBoxBorder";
-            this.textBoxX3.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX3.Location = new System.Drawing.Point(606, 89);
-            this.textBoxX3.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxX3.Name = "textBoxX3";
-            this.textBoxX3.PreventEnterBeep = true;
-            this.textBoxX3.Size = new System.Drawing.Size(142, 21);
-            this.textBoxX3.TabIndex = 5;
-            // 
-            // textBoxX2
+            // txtSoHieu
             // 
             // 
             // 
             // 
-            this.textBoxX2.Border.Class = "TextBoxBorder";
-            this.textBoxX2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX2.Location = new System.Drawing.Point(156, 89);
-            this.textBoxX2.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxX2.Name = "textBoxX2";
-            this.textBoxX2.PreventEnterBeep = true;
-            this.textBoxX2.Size = new System.Drawing.Size(270, 21);
-            this.textBoxX2.TabIndex = 4;
+            this.txtSoHieu.Border.Class = "TextBoxBorder";
+            this.txtSoHieu.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtSoHieu.Location = new System.Drawing.Point(156, 124);
+            this.txtSoHieu.Margin = new System.Windows.Forms.Padding(0);
+            this.txtSoHieu.Name = "txtSoHieu";
+            this.txtSoHieu.PreventEnterBeep = true;
+            this.txtSoHieu.Size = new System.Drawing.Size(270, 21);
+            this.txtSoHieu.TabIndex = 7;
             // 
-            // textBoxX1
-            // 
-            // 
+            // txtSoLuong
             // 
             // 
-            this.textBoxX1.Border.Class = "TextBoxBorder";
-            this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX1.Location = new System.Drawing.Point(606, 54);
-            this.textBoxX1.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.PreventEnterBeep = true;
-            this.textBoxX1.Size = new System.Drawing.Size(142, 21);
-            this.textBoxX1.TabIndex = 2;
             // 
-            // comboBoxEx1
             // 
-            this.comboBoxEx1.DisplayMember = "Text";
-            this.comboBoxEx1.FormattingEnabled = true;
-            this.comboBoxEx1.ItemHeight = 15;
-            this.comboBoxEx1.Location = new System.Drawing.Point(156, 54);
-            this.comboBoxEx1.Margin = new System.Windows.Forms.Padding(0);
-            this.comboBoxEx1.Name = "comboBoxEx1";
-            this.comboBoxEx1.Size = new System.Drawing.Size(270, 23);
-            this.comboBoxEx1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.comboBoxEx1.TabIndex = 1;
+            this.txtSoLuong.Border.Class = "TextBoxBorder";
+            this.txtSoLuong.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtSoLuong.Location = new System.Drawing.Point(606, 89);
+            this.txtSoLuong.Margin = new System.Windows.Forms.Padding(0);
+            this.txtSoLuong.Name = "txtSoLuong";
+            this.txtSoLuong.PreventEnterBeep = true;
+            this.txtSoLuong.Size = new System.Drawing.Size(142, 21);
+            this.txtSoLuong.TabIndex = 5;
+            // 
+            // txtTen
+            // 
+            // 
+            // 
+            // 
+            this.txtTen.Border.Class = "TextBoxBorder";
+            this.txtTen.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtTen.Location = new System.Drawing.Point(156, 89);
+            this.txtTen.Margin = new System.Windows.Forms.Padding(0);
+            this.txtTen.Name = "txtTen";
+            this.txtTen.PreventEnterBeep = true;
+            this.txtTen.Size = new System.Drawing.Size(270, 21);
+            this.txtTen.TabIndex = 4;
+            // 
+            // cbbMaThietBi
+            // 
+            this.cbbMaThietBi.DisplayMember = "Text";
+            this.cbbMaThietBi.FormattingEnabled = true;
+            this.cbbMaThietBi.ItemHeight = 15;
+            this.cbbMaThietBi.Location = new System.Drawing.Point(156, 54);
+            this.cbbMaThietBi.Margin = new System.Windows.Forms.Padding(0);
+            this.cbbMaThietBi.Name = "cbbMaThietBi";
+            this.cbbMaThietBi.Size = new System.Drawing.Size(270, 23);
+            this.cbbMaThietBi.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cbbMaThietBi.TabIndex = 1;
             // 
             // layoutControlItem19
             // 
@@ -631,7 +617,7 @@
             // 
             // layoutControlItem1
             // 
-            this.layoutControlItem1.Control = this.comboBoxEx1;
+            this.layoutControlItem1.Control = this.cbbMaThietBi;
             this.layoutControlItem1.Height = 35;
             this.layoutControlItem1.MinSize = new System.Drawing.Size(430, 35);
             this.layoutControlItem1.Name = "layoutControlItem1";
@@ -639,17 +625,6 @@
             this.layoutControlItem1.TextPadding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.layoutControlItem1.Width = 40;
             this.layoutControlItem1.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
-            // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.textBoxX1;
-            this.layoutControlItem2.Height = 35;
-            this.layoutControlItem2.MinSize = new System.Drawing.Size(320, 35);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Text = "<b>Đơn vị tính <font color=\"#ED1C24\">(*)</font></b>";
-            this.layoutControlItem2.TextPadding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.layoutControlItem2.Width = 30;
-            this.layoutControlItem2.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
             // 
             // layoutSpacerItem1
             // 
@@ -660,7 +635,7 @@
             // 
             // layoutControlItem3
             // 
-            this.layoutControlItem3.Control = this.textBoxX2;
+            this.layoutControlItem3.Control = this.txtTen;
             this.layoutControlItem3.Height = 35;
             this.layoutControlItem3.MinSize = new System.Drawing.Size(430, 35);
             this.layoutControlItem3.Name = "layoutControlItem3";
@@ -671,7 +646,7 @@
             // 
             // layoutControlItem4
             // 
-            this.layoutControlItem4.Control = this.textBoxX3;
+            this.layoutControlItem4.Control = this.txtSoLuong;
             this.layoutControlItem4.Height = 35;
             this.layoutControlItem4.MinSize = new System.Drawing.Size(320, 35);
             this.layoutControlItem4.Name = "layoutControlItem4";
@@ -689,7 +664,7 @@
             // 
             // layoutControlItem5
             // 
-            this.layoutControlItem5.Control = this.textBoxX4;
+            this.layoutControlItem5.Control = this.txtSoHieu;
             this.layoutControlItem5.Height = 35;
             this.layoutControlItem5.MinSize = new System.Drawing.Size(430, 35);
             this.layoutControlItem5.Name = "layoutControlItem5";
@@ -700,7 +675,7 @@
             // 
             // layoutControlItem6
             // 
-            this.layoutControlItem6.Control = this.textBoxX5;
+            this.layoutControlItem6.Control = this.txtDonGia;
             this.layoutControlItem6.Height = 35;
             this.layoutControlItem6.MinSize = new System.Drawing.Size(320, 35);
             this.layoutControlItem6.Name = "layoutControlItem6";
@@ -718,7 +693,7 @@
             // 
             // layoutControlItem7
             // 
-            this.layoutControlItem7.Control = this.richTextBoxEx1;
+            this.layoutControlItem7.Control = this.txtQuyCach;
             this.layoutControlItem7.Height = 110;
             this.layoutControlItem7.MinSize = new System.Drawing.Size(430, 110);
             this.layoutControlItem7.Name = "layoutControlItem7";
@@ -742,7 +717,7 @@
             // 
             // layoutControlItem8
             // 
-            this.layoutControlItem8.Control = this.textBoxX6;
+            this.layoutControlItem8.Control = this.txtThanhTien;
             this.layoutControlItem8.Height = 35;
             this.layoutControlItem8.MinSize = new System.Drawing.Size(120, 0);
             this.layoutControlItem8.Name = "layoutControlItem8";
@@ -754,7 +729,7 @@
             // 
             // layoutControlItem9
             // 
-            this.layoutControlItem9.Control = this.textBoxX7;
+            this.layoutControlItem9.Control = this.txtNuocSX;
             this.layoutControlItem9.Height = 35;
             this.layoutControlItem9.MinSize = new System.Drawing.Size(120, 0);
             this.layoutControlItem9.Name = "layoutControlItem9";
@@ -766,7 +741,7 @@
             // 
             // layoutControlItem10
             // 
-            this.layoutControlItem10.Control = this.comboBoxEx2;
+            this.layoutControlItem10.Control = this.cbbMucDichSD;
             this.layoutControlItem10.Height = 35;
             this.layoutControlItem10.MinSize = new System.Drawing.Size(64, 18);
             this.layoutControlItem10.Name = "layoutControlItem10";
@@ -785,7 +760,7 @@
             // 
             // layoutControlItem11
             // 
-            this.layoutControlItem11.Control = this.comboBoxEx3;
+            this.layoutControlItem11.Control = this.cbbPhongBM;
             this.layoutControlItem11.Height = 35;
             this.layoutControlItem11.MinSize = new System.Drawing.Size(430, 35);
             this.layoutControlItem11.Name = "layoutControlItem11";
@@ -796,7 +771,7 @@
             // 
             // layoutControlItem12
             // 
-            this.layoutControlItem12.Control = this.checkBoxX1;
+            this.layoutControlItem12.Control = this.cboxThietBiTuLam;
             this.layoutControlItem12.Height = 35;
             this.layoutControlItem12.MinSize = new System.Drawing.Size(320, 18);
             this.layoutControlItem12.Name = "layoutControlItem12";
@@ -814,7 +789,7 @@
             // 
             // layoutControlItem13
             // 
-            this.layoutControlItem13.Control = this.comboBoxEx4;
+            this.layoutControlItem13.Control = this.cbbNguonKinhPhi;
             this.layoutControlItem13.Height = 35;
             this.layoutControlItem13.MinSize = new System.Drawing.Size(430, 35);
             this.layoutControlItem13.Name = "layoutControlItem13";
@@ -825,7 +800,7 @@
             // 
             // layoutControlItem14
             // 
-            this.layoutControlItem14.Control = this.dateTimeInput1;
+            this.layoutControlItem14.Control = this.dpickNgaySX;
             this.layoutControlItem14.Height = 35;
             this.layoutControlItem14.MinSize = new System.Drawing.Size(320, 35);
             this.layoutControlItem14.Name = "layoutControlItem14";
@@ -855,7 +830,7 @@
             // 
             // layoutControlItem16
             // 
-            this.layoutControlItem16.Control = this.textBoxX8;
+            this.layoutControlItem16.Control = this.txtNamSD;
             this.layoutControlItem16.Height = 28;
             this.layoutControlItem16.MinSize = new System.Drawing.Size(120, 0);
             this.layoutControlItem16.Name = "layoutControlItem16";
@@ -867,7 +842,7 @@
             // 
             // layoutControlItem17
             // 
-            this.layoutControlItem17.Control = this.dateTimeInput3;
+            this.layoutControlItem17.Control = this.dpickerNgaySD;
             this.layoutControlItem17.Height = 28;
             this.layoutControlItem17.MinSize = new System.Drawing.Size(64, 18);
             this.layoutControlItem17.Name = "layoutControlItem17";
@@ -878,7 +853,7 @@
             // 
             // layoutControlItem15
             // 
-            this.layoutControlItem15.Control = this.dateTimeInput2;
+            this.layoutControlItem15.Control = this.dpickerHanSD;
             this.layoutControlItem15.Height = 35;
             this.layoutControlItem15.MinSize = new System.Drawing.Size(320, 35);
             this.layoutControlItem15.Name = "layoutControlItem15";
@@ -896,7 +871,7 @@
             // 
             // layoutControlItem18
             // 
-            this.layoutControlItem18.Control = this.textBoxX9;
+            this.layoutControlItem18.Control = this.txtNamTheoDoi;
             this.layoutControlItem18.Height = 35;
             this.layoutControlItem18.MinSize = new System.Drawing.Size(430, 35);
             this.layoutControlItem18.Name = "layoutControlItem18";
@@ -912,6 +887,29 @@
             this.layoutSpacerItem8.Width = 60;
             this.layoutSpacerItem8.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
             // 
+            // cbbDVT
+            // 
+            this.cbbDVT.DisplayMember = "Text";
+            this.cbbDVT.FormattingEnabled = true;
+            this.cbbDVT.ItemHeight = 15;
+            this.cbbDVT.Location = new System.Drawing.Point(606, 54);
+            this.cbbDVT.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.cbbDVT.Name = "cbbDVT";
+            this.cbbDVT.Size = new System.Drawing.Size(142, 23);
+            this.cbbDVT.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cbbDVT.TabIndex = 2;
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.cbbDVT;
+            this.layoutControlItem2.Height = 35;
+            this.layoutControlItem2.MinSize = new System.Drawing.Size(64, 18);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Text = "<b>Đơn vị tính <font color=\"#ED1C24\">(*)</font></b>";
+            this.layoutControlItem2.TextPadding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.layoutControlItem2.Width = 30;
+            this.layoutControlItem2.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
+            // 
             // frmKhaiBaoThietBi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -923,9 +921,9 @@
             this.Text = "Khai báo thiết bị";
             this.panelEx1.ResumeLayout(false);
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dpickerNgaySD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dpickerHanSD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dpickNgaySX)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -940,26 +938,24 @@
         private DevComponents.DotNetBar.ButtonItem buttonItem1;
         private DevComponents.DotNetBar.PanelEx panelEx1;
         private DevComponents.DotNetBar.Layout.LayoutControl layoutControl1;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX9;
-        private DevComponents.Editors.DateTimeAdv.DateTimeInput dateTimeInput3;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX8;
-        private DevComponents.Editors.DateTimeAdv.DateTimeInput dateTimeInput2;
-        private DevComponents.Editors.DateTimeAdv.DateTimeInput dateTimeInput1;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx comboBoxEx4;
-        private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxX1;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx comboBoxEx3;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx comboBoxEx2;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX7;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX6;
-        private DevComponents.DotNetBar.Controls.RichTextBoxEx richTextBoxEx1;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX5;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX4;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX3;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX2;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx comboBoxEx1;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtNamTheoDoi;
+        private DevComponents.Editors.DateTimeAdv.DateTimeInput dpickerNgaySD;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtNamSD;
+        private DevComponents.Editors.DateTimeAdv.DateTimeInput dpickerHanSD;
+        private DevComponents.Editors.DateTimeAdv.DateTimeInput dpickNgaySX;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx cbbNguonKinhPhi;
+        private DevComponents.DotNetBar.Controls.CheckBoxX cboxThietBiTuLam;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx cbbPhongBM;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx cbbMucDichSD;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtNuocSX;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtThanhTien;
+        private DevComponents.DotNetBar.Controls.RichTextBoxEx txtQuyCach;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtDonGia;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtSoHieu;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtSoLuong;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtTen;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx cbbMaThietBi;
         private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem1;
-        private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem2;
         private DevComponents.DotNetBar.Layout.LayoutSpacerItem layoutSpacerItem1;
         private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem3;
         private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem4;
@@ -988,5 +984,7 @@
         private DevComponents.DotNetBar.Layout.LayoutSpacerItem layoutSpacerItem8;
         private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem19;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx cbbDVT;
+        private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem2;
     }
 }

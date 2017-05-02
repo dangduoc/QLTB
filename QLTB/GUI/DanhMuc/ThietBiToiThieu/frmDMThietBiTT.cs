@@ -1,4 +1,5 @@
-﻿using QLTB.Model;
+﻿using QLTB.Handler;
+using QLTB.Model;
 using QLTB.Utils;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ namespace QLTB.GUI
     {
         private BindingSource source = new BindingSource();
         private string defaultSearchValue = "Value for search";
+
         public frmDMThietBiTT()
         {
             InitializeComponent();
@@ -82,7 +84,7 @@ namespace QLTB.GUI
         {
 
             ToolStripTextBox textSearch = searchToolBar.Items[3] as ToolStripTextBox;
-            if (!textSearch.Equals(defaultSearchValue))
+            if (!textSearch.Text.Equals(defaultSearchValue))
             {
                 ToolStripComboBox columns = searchToolBar.Items[2] as ToolStripComboBox;
                 ToolStripButton searchBegin = searchToolBar.Items[4] as ToolStripButton;
@@ -127,68 +129,25 @@ namespace QLTB.GUI
         private void LoadForm()
         {
             //Clone
-            List<ThietBiTTGridDisplayModel> list = new List<ThietBiTTGridDisplayModel>();
-            list.Add(new ThietBiTTGridDisplayModel
-            {
-                ThietBiId = "CSCN1001",
-                Ten = "Quy trình sản xuất vải sợi thiên nhiên",
-                DonViTinh = "Cái",
-                DungChoLop = "6,7,8,9",
-                LoaiThietBi = "Tranh ảnh",
-                MonHoc = "Công nghệ",
-                DauMuc = "Máy in",
-                SoLuong = "10",
-                MoTa = "Kích th¬ước (790x540)mm dung sai 10mm, in offset 4 màu trên giấy couché có định lượng 200g/m2,  cán láng OPP mờ."
-            });
-            list.Add(new ThietBiTTGridDisplayModel
-            {
-                ThietBiId = "CSCN1002",
-                Ten = "Quy trình sản xuất vải sợi hoá học",
-                DonViTinh = "Cái",
-                DungChoLop = "6,7,8,9",
-                LoaiThietBi = "Tranh ảnh",
-                MonHoc = "Công nghệ",
-                DauMuc = "Máy in",
-                SoLuong = "12",
-                MoTa = "Kích th¬ước (790x540)mm dung sai 10mm, in offset 4 màu trên giấy couché có định lượng 200g/m2,  cán láng OPP mờ."
-            });
-            list.Add(new ThietBiTTGridDisplayModel
-            {
-                ThietBiId = "CSHH1001",
-                Ten = "Ảnh hưởng của nhiệt độ đến độ tan của chất rắn và chất khí",
-                DonViTinh = "Cái",
-                DungChoLop = "6,7,8,9",
-                LoaiThietBi = "Tranh ảnh",
-                MonHoc = "Hóa học",
-                DauMuc = "Máy in",
-                SoLuong = "4",
-                MoTa = "Kích th¬ước (790x540)mm dung sai 10mm, in offset 4 màu trên giấy couché có định lượng 200g/m2,  cán láng OPP mờ."
-            });
+            List<ThietBiTTGridDisplayModel> list = new DbThietBiTTHandler().GetAll();
+           
             //
             List<string> headers = new List<string>();
             headers.Add("Mã thiết bị");
             headers.Add("Tên thiết bị");
-            headers.Add("Đơn vị tính");
             headers.Add("Dùng cho lớp");
             headers.Add("Loại thiết bị");
             headers.Add("Môn học");
             headers.Add("Đầu mục");
             headers.Add("Số lượng");
+            headers.Add("Đơn vị tính");
             headers.Add("Mô tả");
 
             //
             DataTable tb = MyConvert.ToDataTable(list);
             source.DataSource = SetUpSearch(tb, headers);
             advancedDataGridView.DataSource = source;
-            SetHeaderForGrid(advancedDataGridView, headers);
-            DataGridViewCheckBoxColumn checkColumn = new DataGridViewCheckBoxColumn();
-            checkColumn.Name = "checkCol";
-            //checkColumn.DefaultHeaderCellType = typeof(DataGridViewCheckBoxCell);
-            advancedDataGridView.Columns.Add(checkColumn);
-            advancedDataGridView.Columns["checkCol"].HeaderText = "";
-            advancedDataGridView.Columns["checkCol"].DisplayIndex = 0;
-            advancedDataGridView.Columns["checkCol"].DefaultHeaderCellType= typeof(DataGridViewCheckBoxCell);
-            advancedDataGridView.Columns["checkCol"].Width = 30;
+            SetHeaderForGrid(advancedDataGridView, headers);;
         }
 
         private void frmDMThietBiTT_Load(object sender, EventArgs e)

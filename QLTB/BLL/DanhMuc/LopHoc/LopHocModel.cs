@@ -15,8 +15,8 @@ namespace QLTB.Model
     }
     public class LopHocGridDisplayModel
     {
-        public string KhoiLopId { get; set; }
-        public string LopHoc { get; set; }
+        public string KhoiLop { get; set; }
+        public string LopHocId { get; set; }
         public string Ten { get; set; }
         public string GhiChu { get; set; }
     }

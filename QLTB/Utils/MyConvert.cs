@@ -27,9 +27,11 @@ namespace QLTB.Utils
             }
             return table;
         }
-        public static string DateToString(DateTime date)
+        public static string DateToString(DateTime? date)
         {
-            return date.ToString("dd/M/yyyy", CultureInfo.InvariantCulture);
+            if (date == null) return "";
+            else
+            return ((DateTime)date).ToString("dd/M/yyyy", CultureInfo.InvariantCulture);
         }
         public static string BoolToString(bool value, string iftrue,string iffalse)
         {
@@ -41,6 +43,15 @@ namespace QLTB.Utils
             NumberFormatInfo vietNfi = (NumberFormatInfo)original.NumberFormat.Clone();
             vietNfi.CurrencySymbol = "₫"; // ₫
             return value.ToString("C", vietNfi);
+        }
+        public static T ConvertSameData<T>(object source)
+        {
+            var result = Activator.CreateInstance<T>();
+            foreach (var item in typeof(T).GetProperties())
+            {
+                item.SetValue(result, typeof(object).GetProperty(item.Name).GetValue(source));
+            }
+            return result;
         }
     }
 }
