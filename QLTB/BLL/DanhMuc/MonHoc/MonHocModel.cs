@@ -16,10 +16,11 @@ namespace QLTB.Model
     }
     public class MonHocGridDisplayModel
     {
-        public string MonHocId { get; set; }
-        public string MaMonHoc { get; set; }
+        public string MonHocId { get; set; } 
         public string Ten { get; set; }
+        public string MaMonHoc { get; set; }
         public string LoaiMonHoc { get; set; }
+        
         public string LoaiDanhGia { get; set; }
     }
     public class MonHocCreateModel

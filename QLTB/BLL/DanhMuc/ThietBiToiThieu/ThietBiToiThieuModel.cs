@@ -27,14 +27,15 @@ namespace QLTB.Model
     }
     public class ThietBiTTGridDisplayModel
     {
+        
         public string ThietBiId { get; set; }
         public string Ten { get; set; }
-        public string DonViTinh { get; set; }
         public string DungChoLop { get; set; }
         public string LoaiThietBi { get; set; }
         public string MonHoc { get; set; }
         public string DauMuc { get; set; }
         public string SoLuong { get; set; }
+        public string DonViTinh { get; set; }
         public string MoTa { get; set; }
     }
     public class ThietBiTTCreateModel

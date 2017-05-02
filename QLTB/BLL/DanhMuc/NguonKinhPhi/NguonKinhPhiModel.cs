@@ -15,4 +15,10 @@ namespace QLTB.Model
         public Nullable<int> NguonNganSachId { get; set; }
         public string GhiChu { get; set; }
     }
+    public class NguonKPGridDisplayModel
+    {
+        public string NguonKinhPhiId { get; set; }
+        public string Ten { get; set; }
+        public string GhiChu { get; set; }
+    }
 }

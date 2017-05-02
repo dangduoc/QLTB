@@ -12,7 +12,7 @@ namespace QLTB.Model
         public string HoVaDem { get; set; }
         public string Ten { get; set; }
     }
-    public class CanBoThietBi: BaseCanBoThietBiModel
+    public class CanBoThietBiModel: BaseCanBoThietBiModel
     {
         //
         public Nullable<int> GioiTinhId { get; set; }

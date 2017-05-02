@@ -119,14 +119,14 @@
             this.btnDongHetCuaSo = new DevComponents.DotNetBar.ButtonItem();
             this.btnExit = new DevComponents.DotNetBar.ButtonItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.expandableSplitter1 = new DevComponents.DotNetBar.ExpandableSplitter();
+            this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.expandableSplitter1 = new DevComponents.DotNetBar.ExpandableSplitter();
             this.statusStrip1.SuspendLayout();
             this.groupPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -173,21 +173,21 @@
             treeNode14.Text = "THEO DÕI THANH LÝ THIẾT BỊ";
             treeNode15.Name = "btnDMThietBi";
             treeNode15.Text = "Thiết bị giáo dục";
-            treeNode16.Name = "Node13";
+            treeNode16.Name = "btnDMPhongBM";
             treeNode16.Text = "Kho/Phòng bộ môn";
-            treeNode17.Name = "Node14";
+            treeNode17.Name = "btnDMKhoiLop";
             treeNode17.Text = "Khối lớp";
-            treeNode18.Name = "Node15";
+            treeNode18.Name = "btnDMLopHoc";
             treeNode18.Text = "Lớp học";
-            treeNode19.Name = "Node16";
+            treeNode19.Name = "btnDMToBM";
             treeNode19.Text = "Tổ bộ môn";
-            treeNode20.Name = "Node17";
+            treeNode20.Name = "btnDMMonHoc";
             treeNode20.Text = "Môn học";
-            treeNode21.Name = "Node18";
+            treeNode21.Name = "btnDMGiaoVien";
             treeNode21.Text = "Giáo viên";
             treeNode22.Name = "btnDMCanBoTB";
             treeNode22.Text = "Cán bộ thiết bị";
-            treeNode23.Name = "Node20";
+            treeNode23.Name = "btnDMNguonKinhPhi";
             treeNode23.Text = "Nguồn kinh phí";
             treeNode24.Name = "Node10";
             treeNode24.Text = "Thiết lập các danh mục";
@@ -427,6 +427,59 @@
             this.statusStrip1.TabIndex = 13;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // toolStripStatusLabel6
+            // 
+            this.toolStripStatusLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripStatusLabel6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.toolStripStatusLabel6.IsLink = true;
+            this.toolStripStatusLabel6.LinkColor = System.Drawing.Color.Blue;
+            this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
+            this.toolStripStatusLabel6.Size = new System.Drawing.Size(394, 19);
+            this.toolStripStatusLabel6.Text = "PHẦN MỀM QUẢN LÝ THIẾT BỊ TRƯỜNG HỌC. Copyright 2017 © DMD";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripStatusLabel1.IsLink = true;
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(71, 19);
+            this.toolStripStatusLabel1.Text = "Người dùng";
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(0, 19);
+            // 
+            // toolStripStatusLabel3
+            // 
+            this.toolStripStatusLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripStatusLabel3.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.toolStripStatusLabel3.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
+            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(101, 19);
+            this.toolStripStatusLabel3.Text = "Đặng Minh Được";
+            // 
+            // toolStripStatusLabel4
+            // 
+            this.toolStripStatusLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripStatusLabel4.IsLink = true;
+            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
+            this.toolStripStatusLabel4.Size = new System.Drawing.Size(82, 19);
+            this.toolStripStatusLabel4.Text = "Ngày làm việc";
+            // 
+            // toolStripStatusLabel5
+            // 
+            this.toolStripStatusLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripStatusLabel5.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.toolStripStatusLabel5.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
+            this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
+            this.toolStripStatusLabel5.Size = new System.Drawing.Size(63, 19);
+            this.toolStripStatusLabel5.Text = "23/4/2017";
+            // 
             // groupPanel1
             // 
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
@@ -499,59 +552,6 @@
             this.expandableSplitter1.Style = DevComponents.DotNetBar.eSplitterStyle.Office2007;
             this.expandableSplitter1.TabIndex = 15;
             this.expandableSplitter1.TabStop = false;
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.toolStripStatusLabel1.IsLink = true;
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(71, 19);
-            this.toolStripStatusLabel1.Text = "Người dùng";
-            // 
-            // toolStripStatusLabel2
-            // 
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(0, 19);
-            // 
-            // toolStripStatusLabel3
-            // 
-            this.toolStripStatusLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.toolStripStatusLabel3.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
-            this.toolStripStatusLabel3.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
-            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(101, 19);
-            this.toolStripStatusLabel3.Text = "Đặng Minh Được";
-            // 
-            // toolStripStatusLabel4
-            // 
-            this.toolStripStatusLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.toolStripStatusLabel4.IsLink = true;
-            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
-            this.toolStripStatusLabel4.Size = new System.Drawing.Size(82, 19);
-            this.toolStripStatusLabel4.Text = "Ngày làm việc";
-            // 
-            // toolStripStatusLabel5
-            // 
-            this.toolStripStatusLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.toolStripStatusLabel5.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
-            this.toolStripStatusLabel5.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
-            this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
-            this.toolStripStatusLabel5.Size = new System.Drawing.Size(63, 19);
-            this.toolStripStatusLabel5.Text = "23/4/2017";
-            // 
-            // toolStripStatusLabel6
-            // 
-            this.toolStripStatusLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.toolStripStatusLabel6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.toolStripStatusLabel6.IsLink = true;
-            this.toolStripStatusLabel6.LinkColor = System.Drawing.Color.Blue;
-            this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
-            this.toolStripStatusLabel6.Size = new System.Drawing.Size(394, 19);
-            this.toolStripStatusLabel6.Text = "PHẦN MỀM QUẢN LÝ THIẾT BỊ TRƯỜNG HỌC. Copyright 2017 © DMD";
             // 
             // frmMain
             // 

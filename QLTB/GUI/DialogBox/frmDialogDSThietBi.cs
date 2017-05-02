@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QLTB.GUI.DialogBox
+namespace QLTB.GUI
 {
     public partial class frmDialogDSThietBi : DevComponents.DotNetBar.Office2007Form
     {
@@ -80,20 +80,48 @@ namespace QLTB.GUI.DialogBox
 
             //
             DataTable tb = MyConvert.ToDataTable(list);
-            tb.Columns.Add("check", typeof(DataGridViewCheckBoxColumn));
-            source.DataSource = tb; // SetUpSearch(tb, headers);
-            advancedDataGridView.DataSource = source;
-            SetHeaderForGrid(advancedDataGridView, headers);
+            
+            //tb.Columns.Add("check", typeof(DataGridViewCheckBoxColumn));
+            //source.DataSource = tb; 
+            //advancedDataGridView.DataSource = source;
+            //SetHeaderForGrid(advancedDataGridView, headers);
+            dataGridView.DataSource = list;
+            DataGridViewCheckBoxColumn colCB = new DataGridViewCheckBoxColumn();
+            DatagridViewCheckBoxHeaderCell cbHeader = new DatagridViewCheckBoxHeaderCell();
+            colCB.DefaultCellStyle.Alignment= DataGridViewContentAlignment.MiddleCenter;
+            colCB.HeaderCell = cbHeader;
+            colCB.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            colCB.Name = "checkbox";
+            dataGridView.Columns.Add(colCB);
+            dataGridView.Columns["checkbox"].DisplayIndex = 0;
+            dataGridView.Columns["checkbox"].Width = 20;      
+            dataGridView.Columns["checkbox"].HeaderText = "";
+            dataGridView.Columns["checkbox"].DefaultCellStyle.Alignment= DataGridViewContentAlignment.MiddleCenter;
+            //
+
+        }
+
+        private void cbHeader_OnCheckBoxClicked(bool state)
+        {
+            foreach(DataGridViewRow r in dataGridView.Rows)
+            {
+                r.Cells["checkbox"].Value = state;
+            }
         }
 
         private void advancedDataGridView_FilterStringChanged(object sender, EventArgs e)
         {
-            source.Filter = advancedDataGridView.FilterString;
+            //source.Filter = advancedDataGridView.FilterString;
         }
 
         private void advancedDataGridView_SortStringChanged(object sender, EventArgs e)
         {
-            source.Sort = advancedDataGridView.SortString;
+           // source.Sort = advancedDataGridView.SortString;
+        }
+
+        private void frmDialogDSThietBi_Load(object sender, EventArgs e)
+        {
+            LoadForm();
         }
     }
 }

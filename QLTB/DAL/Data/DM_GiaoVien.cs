@@ -26,7 +26,7 @@ namespace QLTB.DAL.Data
         public string Ten { get; set; }
         public string TenDayDu { get; set; }
         public int GioiTinhId { get; set; }
-        public Nullable<System.DateTime> NgaySinh { get; set; }
+        public Nullable<System.DateTime> NgaySinh { get ; set; }
         public string NoiSinh { get; set; }
         public Nullable<int> DanTocId { get; set; }
         public string DienThoaiDD { get; set; }

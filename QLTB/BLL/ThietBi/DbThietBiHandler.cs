@@ -62,6 +62,48 @@ namespace QLTB.Handler
                 }
             }
         }
-        
+        public ThietBiModel GetById(string Id)
+        {
+            try
+            {
+                using (var unitOfWork= new UnitOfWork())
+                {
+                    var data=unitOfWork.GetRepository<TB_ThongTinThietBi>().GetById(Id);
+                    return ConvertData(data);
+                }
+            }
+            catch(Exception ex)
+            {
+                return null;
+            }
+        }
+        private ThietBiModel ConvertData(TB_ThongTinThietBi source)
+        {
+            ThietBiModel result = new ThietBiModel
+            {
+                ThietBiId = source.ThietBiId,
+                Ten = source.Ten,
+                SoHieu = source.SoHieu,
+                SoLuong = source.SoLuong,
+                SoLuongHong = source.SoLuongHong,
+                SoLuongMat = source.SoLuongMat,
+                HanSD = source.HanSD,
+                MucDichSDId = source.MucDichSDId,
+                NamDuaVaoSD = source.NamDuaVaoSD,
+                NgaySanXuat = source.NgaySanXuat,
+                NuocSX = source.NuocSanXuat,
+                DonGia = source.DonGia,
+                DonViTinhId = source.DonViTinhId,
+                GhiChu = source.GhiChu,
+                IsThietBiTuLam = source.IsThietBiTuLam,
+                NamTheoDoi = source.NamTheoDoi,
+                NguonKinhPhiId = source.NguonKinhPhiId,
+                PhongHocId = source.PhongHocId,
+                QuyCach = source.QuyCachSD,
+                ThanhTien = source.ThanhTien
+            };
+            return result;
+        }
+
     }
 }

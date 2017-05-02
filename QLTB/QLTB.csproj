@@ -88,14 +88,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\DanhMuc\CanBoThietBi\CanBoThietBiModel.cs" />
+    <Compile Include="BLL\DanhMuc\CanBoThietBi\DbCanBoThietBiHandler.cs" />
+    <Compile Include="BLL\DanhMuc\GiaoVien\DbGiaoVienHandler.cs" />
     <Compile Include="BLL\DanhMuc\GiaoVien\GiaoVienModel.cs" />
+    <Compile Include="BLL\DanhMuc\KhoiLop\DbKhoiLopHandler.cs" />
     <Compile Include="BLL\DanhMuc\KhoiLop\KhoiLopModel.cs" />
+    <Compile Include="BLL\DanhMuc\LopHoc\DbLopHocHandler.cs" />
     <Compile Include="BLL\DanhMuc\LopHoc\LopHocModel.cs" />
+    <Compile Include="BLL\DanhMuc\MonHoc\DbMonHocHandler.cs" />
     <Compile Include="BLL\DanhMuc\MonHoc\MonHocModel.cs" />
+    <Compile Include="BLL\DanhMuc\NguonKinhPhi\DbNguonKinhPhiHandler.cs" />
     <Compile Include="BLL\DanhMuc\NguonKinhPhi\NguonKinhPhiModel.cs" />
+    <Compile Include="BLL\DanhMuc\PhongBoMon\DbPhongBMHandler.cs" />
     <Compile Include="BLL\DanhMuc\PhongBoMon\PhongBoMonModel.cs" />
+    <Compile Include="BLL\DanhMuc\ThietBiToiThieu\DbThietBiTTHandler.cs" />
     <Compile Include="BLL\DanhMuc\ThietBiToiThieu\ThietBiToiThieuModel.cs" />
     <Compile Include="BLL\DanhMuc\ToBoMon\ToBoMonModel.cs" />
+    <Compile Include="BLL\DanhSach\DbDanhSachHandler.cs" />
     <Compile Include="BLL\DanhSach\DSBaiGiang.cs" />
     <Compile Include="BLL\DanhSach\DSCapTruong.cs" />
     <Compile Include="BLL\DanhSach\DSChucVuGiaoVien.cs" />
@@ -455,6 +464,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\ConnectiongStringBuilder.cs" />
+    <Compile Include="Utils\DatagridViewCheckBoxHeaderCell.cs" />
     <Compile Include="Utils\MyConvert.cs" />
     <EmbeddedResource Include="GUI\DialogBox\frmDialogDSThietBi.resx">
       <DependentUpon>frmDialogDSThietBi.cs</DependentUpon>
