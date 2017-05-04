@@ -1,5 +1,7 @@
 ﻿using QLTB.DAL;
 using QLTB.DAL.Data;
+using QLTB.Handler;
+using QLTB.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,8 +33,24 @@ namespace QLTB.GUI
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
-            this.Close();
+            string username = txtUserName.Text.Trim();
+            string password = txtPassWord.Text.Trim();
+            string message = "";     
+            var handler = new LoginHandler();
+            var WorkingUser=handler.CheckLogin(username, password,out message);
+            if (WorkingUser != null)
+            {
+                //Set global
+                GlobalVariable.SetUser(WorkingUser);
+                //
+                DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
         }
     }
 }

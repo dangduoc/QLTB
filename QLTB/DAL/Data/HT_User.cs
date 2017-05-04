@@ -20,6 +20,7 @@ namespace QLTB.DAL.Data
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
         public string Note { get; set; }
+        public string Name { get; set; }
     
         public virtual HT_UserRole HT_UserRole { get; set; }
     }

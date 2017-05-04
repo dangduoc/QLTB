@@ -1,4 +1,5 @@
-﻿using QLTB.Model;
+﻿using QLTB.Handler;
+using QLTB.Model;
 using QLTB.Utils;
 using System;
 using System.Collections.Generic;
@@ -28,44 +29,10 @@ namespace QLTB.GUI
         }
         private void LoadForm()
         {
+
             //Clone
-            List<ThietBiTTGridDisplayModel> list = new List<ThietBiTTGridDisplayModel>();
-            list.Add(new ThietBiTTGridDisplayModel
-            {
-                ThietBiId = "CSCN1001",
-                Ten = "Quy trình sản xuất vải sợi thiên nhiên",
-                DonViTinh = "Cái",
-                DungChoLop = "6,7,8,9",
-                LoaiThietBi = "Tranh ảnh",
-                MonHoc = "Công nghệ",
-                DauMuc = "Máy in",
-                SoLuong = "10",
-                MoTa = "Kích th¬ước (790x540)mm dung sai 10mm, in offset 4 màu trên giấy couché có định lượng 200g/m2,  cán láng OPP mờ."
-            });
-            list.Add(new ThietBiTTGridDisplayModel
-            {
-                ThietBiId = "CSCN1002",
-                Ten = "Quy trình sản xuất vải sợi hoá học",
-                DonViTinh = "Cái",
-                DungChoLop = "6,7,8,9",
-                LoaiThietBi = "Tranh ảnh",
-                MonHoc = "Công nghệ",
-                DauMuc = "Máy in",
-                SoLuong = "12",
-                MoTa = "Kích th¬ước (790x540)mm dung sai 10mm, in offset 4 màu trên giấy couché có định lượng 200g/m2,  cán láng OPP mờ."
-            });
-            list.Add(new ThietBiTTGridDisplayModel
-            {
-                ThietBiId = "CSHH1001",
-                Ten = "Ảnh hưởng của nhiệt độ đến độ tan của chất rắn và chất khí",
-                DonViTinh = "Cái",
-                DungChoLop = "6,7,8,9",
-                LoaiThietBi = "Tranh ảnh",
-                MonHoc = "Hóa học",
-                DauMuc = "Máy in",
-                SoLuong = "4",
-                MoTa = "Kích th¬ước (790x540)mm dung sai 10mm, in offset 4 màu trên giấy couché có định lượng 200g/m2,  cán láng OPP mờ."
-            });
+            List<ThietBiTTGridDisplayModel> list = new DbThietBiTTHandler().GetAll();
+           
             //
             List<string> headers = new List<string>();
             headers.Add("Mã thiết bị");
@@ -80,11 +47,6 @@ namespace QLTB.GUI
 
             //
             DataTable tb = MyConvert.ToDataTable(list);
-            
-            //tb.Columns.Add("check", typeof(DataGridViewCheckBoxColumn));
-            //source.DataSource = tb; 
-            //advancedDataGridView.DataSource = source;
-            //SetHeaderForGrid(advancedDataGridView, headers);
             dataGridView.DataSource = list;
             DataGridViewCheckBoxColumn colCB = new DataGridViewCheckBoxColumn();
             DatagridViewCheckBoxHeaderCell cbHeader = new DatagridViewCheckBoxHeaderCell();
@@ -108,17 +70,6 @@ namespace QLTB.GUI
                 r.Cells["checkbox"].Value = state;
             }
         }
-
-        private void advancedDataGridView_FilterStringChanged(object sender, EventArgs e)
-        {
-            //source.Filter = advancedDataGridView.FilterString;
-        }
-
-        private void advancedDataGridView_SortStringChanged(object sender, EventArgs e)
-        {
-           // source.Sort = advancedDataGridView.SortString;
-        }
-
         private void frmDialogDSThietBi_Load(object sender, EventArgs e)
         {
             LoadForm();

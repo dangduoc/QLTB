@@ -171,6 +171,7 @@ namespace QLTB.GUI
         private void btnThem_Click(object sender, EventArgs e)
         {
             frmKhaiBaoThietBi frm = new frmKhaiBaoThietBi();
+            frm.Text = "Khai báo thiết bị";
             frm.MdiParent = MdiParent;
             frm.Show();
         }
@@ -178,6 +179,54 @@ namespace QLTB.GUI
         private void btnThoat_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void advancedDataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var id = advancedDataGridView.Rows[e.RowIndex].Cells["SoHieu"].Value.ToString();
+            frmKhaiBaoThietBi frm = new frmKhaiBaoThietBi(id);
+            frm.Text = "Chi thiết thông tin thiết bị";
+            frm.MdiParent = MdiParent;
+            frm.Show();
+        }
+
+        private void btnXem_Click(object sender, EventArgs e)
+        {  
+            var id = advancedDataGridView.SelectedRows[0].Cells["SoHieu"].Value.ToString();
+            frmKhaiBaoThietBi frm = new frmKhaiBaoThietBi(id);
+            frm.Text = "Chi thiết thông tin thiết bị";
+            frm.MdiParent = MdiParent;
+            frm.Show();
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            var row = advancedDataGridView.SelectedRows[0];
+            var id = row.Cells["SoHieu"].Value.ToString();
+            DialogResult dr = MessageBox.Show("Bạn chắc chắn muốn xóa thiết bị này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+               int result= new DbThietBiHandler().Delete(id);
+                if (result == 1) MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else MessageBox.Show("Xóa không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                advancedDataGridView.Rows.Remove(row);
+            }
+        }
+
+        private void advancedDataGridView_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var row = advancedDataGridView.SelectedRows[0];
+            if (row != null)
+            {
+                 if(e.KeyChar == (char)13)
+                {
+                    var id = row.Cells["SoHieu"].Value.ToString();
+                    frmKhaiBaoThietBi frm = new frmKhaiBaoThietBi(id);
+                    frm.Text = "Chi thiết thông tin thiết bị";
+                    frm.MdiParent = MdiParent;
+                    frm.Show();
+                }
+            }
         }
     }
 }

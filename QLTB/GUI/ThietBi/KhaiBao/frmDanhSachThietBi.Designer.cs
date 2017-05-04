@@ -34,8 +34,6 @@
             this.rbChucNang = new DevComponents.DotNetBar.RibbonBar();
             this.btnXem = new DevComponents.DotNetBar.ButtonItem();
             this.btnThem = new DevComponents.DotNetBar.ButtonItem();
-            this.btnSua = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem2 = new DevComponents.DotNetBar.ButtonItem();
             this.btnXoa = new DevComponents.DotNetBar.ButtonItem();
             this.btnLamMoi = new DevComponents.DotNetBar.ButtonItem();
             this.btnImportTuExcel = new DevComponents.DotNetBar.ButtonItem();
@@ -71,7 +69,6 @@
             this.rbChucNang.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.btnXem,
             this.btnThem,
-            this.btnSua,
             this.btnXoa,
             this.btnLamMoi,
             this.btnImportTuExcel,
@@ -104,6 +101,7 @@
             this.btnXem.ShowSubItems = false;
             this.btnXem.Text = "Xem";
             this.btnXem.Tooltip = "Xem thông tin chi tiết";
+            this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
             // 
             // btnThem
             // 
@@ -117,28 +115,6 @@
             this.btnThem.Tooltip = "Khai báo thiết bị";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // btnSua
-            // 
-            this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
-            this.btnSua.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F2);
-            this.btnSua.ShowSubItems = false;
-            this.btnSua.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.buttonItem2});
-            this.btnSua.Text = "Sửa";
-            this.btnSua.Tooltip = "Sửa thông tin";
-            // 
-            // buttonItem2
-            // 
-            this.buttonItem2.BeginGroup = true;
-            this.buttonItem2.Image = ((System.Drawing.Image)(resources.GetObject("buttonItem2.Image")));
-            this.buttonItem2.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.buttonItem2.Name = "buttonItem2";
-            this.buttonItem2.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F2);
-            this.buttonItem2.Text = "Sửa";
-            this.buttonItem2.Tooltip = "Sửa thông tin";
-            // 
             // btnXoa
             // 
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
@@ -147,6 +123,7 @@
             this.btnXoa.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlD);
             this.btnXoa.Text = "Xóa";
             this.btnXoa.Tooltip = "Xóa thiết bị";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnLamMoi
             // 
@@ -271,6 +248,8 @@
             this.advancedDataGridView.TimeFilter = false;
             this.advancedDataGridView.SortStringChanged += new System.EventHandler(this.advancedDataGridView_SortStringChanged);
             this.advancedDataGridView.FilterStringChanged += new System.EventHandler(this.advancedDataGridView_FilterStringChanged);
+            this.advancedDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.advancedDataGridView_CellContentDoubleClick);
+            this.advancedDataGridView.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.advancedDataGridView_KeyPress);
             // 
             // searchToolBar
             // 
@@ -311,8 +290,6 @@
         private DevComponents.DotNetBar.RibbonBar rbChucNang;
         private DevComponents.DotNetBar.ButtonItem btnXem;
         private DevComponents.DotNetBar.ButtonItem btnThem;
-        private DevComponents.DotNetBar.ButtonItem btnSua;
-        private DevComponents.DotNetBar.ButtonItem buttonItem2;
         private DevComponents.DotNetBar.ButtonItem btnXoa;
         private DevComponents.DotNetBar.ButtonItem btnLamMoi;
         private DevComponents.DotNetBar.ButtonItem btnImportTuExcel;

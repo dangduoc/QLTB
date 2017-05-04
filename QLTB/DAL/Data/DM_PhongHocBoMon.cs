@@ -29,6 +29,7 @@ namespace QLTB.DAL.Data
         public Nullable<short> NamDuaVaoSD { get; set; }
         public Nullable<bool> IsPhongChucNang { get; set; }
         public Nullable<int> XepLoaiId { get; set; }
+        public int TrangThai { get; set; }
     
         public virtual DM_MonHoc DM_MonHoc { get; set; }
         public virtual DS_LoaiPhongTN DS_LoaiPhongTN { get; set; }

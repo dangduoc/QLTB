@@ -119,12 +119,12 @@
             this.btnDongHetCuaSo = new DevComponents.DotNetBar.ButtonItem();
             this.btnExit = new DevComponents.DotNetBar.ButtonItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusTenSP = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusUser = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusCurrentDay = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.expandableSplitter1 = new DevComponents.DotNetBar.ExpandableSplitter();
             this.statusStrip1.SuspendLayout();
@@ -191,7 +191,7 @@
             treeNode23.Text = "Nguồn kinh phí";
             treeNode24.Name = "Node10";
             treeNode24.Text = "Thiết lập các danh mục";
-            treeNode25.Name = "Node22";
+            treeNode25.Name = "btnThongTinDV";
             treeNode25.Text = "Thông tin đơn vị";
             treeNode26.Name = "Node23";
             treeNode26.Text = "Thông tin năm học";
@@ -415,27 +415,27 @@
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel6,
+            this.statusTenSP,
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2,
-            this.toolStripStatusLabel3,
+            this.statusUser,
             this.toolStripStatusLabel4,
-            this.toolStripStatusLabel5});
+            this.statusCurrentDay});
             this.statusStrip1.Location = new System.Drawing.Point(0, 442);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(986, 24);
             this.statusStrip1.TabIndex = 13;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // toolStripStatusLabel6
+            // statusTenSP
             // 
-            this.toolStripStatusLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.toolStripStatusLabel6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.toolStripStatusLabel6.IsLink = true;
-            this.toolStripStatusLabel6.LinkColor = System.Drawing.Color.Blue;
-            this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
-            this.toolStripStatusLabel6.Size = new System.Drawing.Size(394, 19);
-            this.toolStripStatusLabel6.Text = "PHẦN MỀM QUẢN LÝ THIẾT BỊ TRƯỜNG HỌC. Copyright 2017 © DMD";
+            this.statusTenSP.BackColor = System.Drawing.Color.Transparent;
+            this.statusTenSP.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.statusTenSP.IsLink = true;
+            this.statusTenSP.LinkColor = System.Drawing.Color.Blue;
+            this.statusTenSP.Name = "statusTenSP";
+            this.statusTenSP.Size = new System.Drawing.Size(466, 19);
+            this.statusTenSP.Text = "PHẦN MỀM QUẢN LÝ THIẾT BỊ TRƯỜNG HỌC. Copyright 2017 © Vsmart Estimation";
             // 
             // toolStripStatusLabel1
             // 
@@ -450,16 +450,16 @@
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(0, 19);
             // 
-            // toolStripStatusLabel3
+            // statusUser
             // 
-            this.toolStripStatusLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.toolStripStatusLabel3.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            this.statusUser.BackColor = System.Drawing.Color.Transparent;
+            this.statusUser.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
-            this.toolStripStatusLabel3.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
-            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(101, 19);
-            this.toolStripStatusLabel3.Text = "Đặng Minh Được";
+            this.statusUser.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
+            this.statusUser.Name = "statusUser";
+            this.statusUser.Size = new System.Drawing.Size(50, 19);
+            this.statusUser.Text = "ADMIN";
             // 
             // toolStripStatusLabel4
             // 
@@ -469,16 +469,16 @@
             this.toolStripStatusLabel4.Size = new System.Drawing.Size(82, 19);
             this.toolStripStatusLabel4.Text = "Ngày làm việc";
             // 
-            // toolStripStatusLabel5
+            // statusCurrentDay
             // 
-            this.toolStripStatusLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.toolStripStatusLabel5.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            this.statusCurrentDay.BackColor = System.Drawing.Color.Transparent;
+            this.statusCurrentDay.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
-            this.toolStripStatusLabel5.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
-            this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
-            this.toolStripStatusLabel5.Size = new System.Drawing.Size(63, 19);
-            this.toolStripStatusLabel5.Text = "23/4/2017";
+            this.statusCurrentDay.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
+            this.statusCurrentDay.Name = "statusCurrentDay";
+            this.statusCurrentDay.Size = new System.Drawing.Size(69, 19);
+            this.statusCurrentDay.Text = "03/05/2017";
             // 
             // groupPanel1
             // 
@@ -601,11 +601,11 @@
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
         private DevComponents.DotNetBar.ExpandableSplitter expandableSplitter1;
         private DevComponents.DotNetBar.ButtonItem btnOption;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel6;
+        private System.Windows.Forms.ToolStripStatusLabel statusTenSP;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
+        private System.Windows.Forms.ToolStripStatusLabel statusUser;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
+        private System.Windows.Forms.ToolStripStatusLabel statusCurrentDay;
     }
 }

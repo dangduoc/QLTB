@@ -24,6 +24,7 @@ namespace QLTB.DAL.Data
         public Nullable<System.DateTime> ThoiGianKetThuc { get; set; }
         public Nullable<bool> IsCoTrinhDoNghiepVu { get; set; }
         public string GhiChu { get; set; }
+        public int TrangThai { get; set; }
     
         public virtual DS_GioiTinh DS_GioiTinh { get; set; }
         public virtual DS_PhuTrachCBTB DS_PhuTrachCBTB { get; set; }

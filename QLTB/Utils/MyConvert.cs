@@ -49,9 +49,29 @@ namespace QLTB.Utils
             var result = Activator.CreateInstance<T>();
             foreach (var item in typeof(T).GetProperties())
             {
-                item.SetValue(result, typeof(object).GetProperty(item.Name).GetValue(source));
+                if(!item.GetMethod.IsVirtual)
+                item.SetValue(result, source.GetType().GetProperty(item.Name).GetValue(source)??null);
             }
             return result;
+        }
+        public static T To<T>(object value)
+        {
+            if (value.GetType() == typeof(string))
+            {
+                if (String.IsNullOrEmpty(value.ToString()))
+                {
+                    return default(T);
+                }
+            }
+            return (T)Convert.ChangeType(value, typeof(T));
+        }
+        public static void TransferValues(object value1,object value2)
+        {
+            foreach (var item in value1.GetType().GetProperties())
+            {
+                if (!item.GetMethod.IsVirtual)
+                    item.SetValue(value1, value2.GetType().GetProperty(item.Name).GetValue(value2) ?? null);
+            }
         }
     }
 }

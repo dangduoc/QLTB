@@ -35,9 +35,9 @@
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.textBoxX2 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.richTextBoxEx1 = new DevComponents.DotNetBar.Controls.RichTextBoxEx();
+            this.txtUserName = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtPassWord = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtThongTin = new DevComponents.DotNetBar.Controls.RichTextBoxEx();
             this.groupPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,9 +50,9 @@
             this.groupPanel1.Controls.Add(this.labelX3);
             this.groupPanel1.Controls.Add(this.labelX2);
             this.groupPanel1.Controls.Add(this.labelX1);
-            this.groupPanel1.Controls.Add(this.textBoxX2);
-            this.groupPanel1.Controls.Add(this.textBoxX1);
-            this.groupPanel1.Controls.Add(this.richTextBoxEx1);
+            this.groupPanel1.Controls.Add(this.txtUserName);
+            this.groupPanel1.Controls.Add(this.txtPassWord);
+            this.groupPanel1.Controls.Add(this.txtThongTin);
             this.groupPanel1.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupPanel1.Location = new System.Drawing.Point(0, 0);
@@ -157,49 +157,52 @@
             this.labelX1.TabIndex = 3;
             this.labelX1.Text = "Tên đăng nhập";
             // 
-            // textBoxX2
+            // txtUserName
             // 
             // 
             // 
             // 
-            this.textBoxX2.Border.Class = "TextBoxBorder";
-            this.textBoxX2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxX2.Location = new System.Drawing.Point(172, 24);
-            this.textBoxX2.Name = "textBoxX2";
-            this.textBoxX2.PreventEnterBeep = true;
-            this.textBoxX2.Size = new System.Drawing.Size(220, 26);
-            this.textBoxX2.TabIndex = 0;
-            this.textBoxX2.Text = "ADMIN";
+            this.txtUserName.Border.Class = "TextBoxBorder";
+            this.txtUserName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtUserName.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.txtUserName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserName.Location = new System.Drawing.Point(172, 24);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.PreventEnterBeep = true;
+            this.txtUserName.Size = new System.Drawing.Size(220, 26);
+            this.txtUserName.TabIndex = 0;
+            this.txtUserName.Text = "admin";
             // 
-            // textBoxX1
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX1.Border.Class = "TextBoxBorder";
-            this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxX1.Location = new System.Drawing.Point(172, 56);
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.PreventEnterBeep = true;
-            this.textBoxX1.Size = new System.Drawing.Size(220, 26);
-            this.textBoxX1.TabIndex = 1;
-            // 
-            // richTextBoxEx1
+            // txtPassWord
             // 
             // 
             // 
             // 
-            this.richTextBoxEx1.BackgroundStyle.Class = "RichTextBoxBorder";
-            this.richTextBoxEx1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.richTextBoxEx1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBoxEx1.Location = new System.Drawing.Point(172, 88);
-            this.richTextBoxEx1.Name = "richTextBoxEx1";
-            this.richTextBoxEx1.Rtf = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}\r\n\\" +
+            this.txtPassWord.Border.Class = "TextBoxBorder";
+            this.txtPassWord.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtPassWord.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassWord.Location = new System.Drawing.Point(172, 56);
+            this.txtPassWord.Name = "txtPassWord";
+            this.txtPassWord.PreventEnterBeep = true;
+            this.txtPassWord.Size = new System.Drawing.Size(220, 26);
+            this.txtPassWord.TabIndex = 1;
+            this.txtPassWord.Text = "123456";
+            this.txtPassWord.UseSystemPasswordChar = true;
+            // 
+            // txtThongTin
+            // 
+            // 
+            // 
+            // 
+            this.txtThongTin.BackgroundStyle.Class = "RichTextBoxBorder";
+            this.txtThongTin.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtThongTin.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtThongTin.Location = new System.Drawing.Point(172, 88);
+            this.txtThongTin.Name = "txtThongTin";
+            this.txtThongTin.Rtf = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}\r\n\\" +
     "viewkind4\\uc1\\pard\\fs24\\par\r\n}\r\n";
-            this.richTextBoxEx1.Size = new System.Drawing.Size(220, 100);
-            this.richTextBoxEx1.TabIndex = 2;
+            this.txtThongTin.Size = new System.Drawing.Size(220, 100);
+            this.txtThongTin.TabIndex = 2;
             // 
             // frmLogin
             // 
@@ -226,8 +229,8 @@
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.LabelX labelX1;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX2;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
-        private DevComponents.DotNetBar.Controls.RichTextBoxEx richTextBoxEx1;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtUserName;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtPassWord;
+        private DevComponents.DotNetBar.Controls.RichTextBoxEx txtThongTin;
     }
 }
