@@ -1,6 +1,7 @@
 ﻿using QLTB.DAL;
 using QLTB.DAL.Data;
 using QLTB.Model;
+using QLTB.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace QLTB.Handler
             {
                 try
                 {
-                    var data = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetAll()
+                    var data = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetAll().Where(p=>p.TrangThai==1)
                                 .Join(unitOfWork.GetRepository<DM_ThietBiToiThieu>().GetAll(),
                                     tttb => tttb.ThietBiId,
                                     tbtt => tbtt.ThietBiId,
@@ -69,7 +70,7 @@ namespace QLTB.Handler
                 using (var unitOfWork= new UnitOfWork())
                 {
                     var data=unitOfWork.GetRepository<TB_ThongTinThietBi>().GetById(Id);
-                    return ConvertData(data);
+                    return MyConvert.ConvertSameData<ThietBiModel>(data);
                 }
             }
             catch(Exception ex)
@@ -91,7 +92,7 @@ namespace QLTB.Handler
                 MucDichSDId = source.MucDichSDId,
                 NamDuaVaoSD = source.NamDuaVaoSD,
                 NgaySanXuat = source.NgaySanXuat,
-                NuocSX = source.NuocSanXuat,
+                NuocSanXuat = source.NuocSanXuat,
                 DonGia = source.DonGia,
                 DonViTinhId = source.DonViTinhId,
                 GhiChu = source.GhiChu,
@@ -99,11 +100,127 @@ namespace QLTB.Handler
                 NamTheoDoi = source.NamTheoDoi,
                 NguonKinhPhiId = source.NguonKinhPhiId,
                 PhongHocId = source.PhongHocId,
-                QuyCach = source.QuyCachSD,
+                QuyCachSD = source.QuyCachSD,
                 ThanhTien = source.ThanhTien
             };
             return result;
         }
+        public string GenerateCode(string ThietBiId)
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    string newCode = "";
+                    var last = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetAll().Where(p => p.ThietBiId.Equals(ThietBiId)).OrderByDescending(p => p.SoHieu).FirstOrDefault();
+                    if (last != null)
+                    {
+                        var lastCode = last.SoHieu;
+                        var numberPart=lastCode.Substring(lastCode.LastIndexOf('.')+1);
+                        var prefixPart = ThietBiId;
+                        var number=Convert.ToInt32(numberPart.TrimStart('0'));
+                        var suffix = number + 1;
+                        
+                        if (suffix < 10)
+                        {
+                            newCode = prefixPart + ".0" + suffix.ToString();
+                        }
+                        else
+                        {
+                            newCode = prefixPart + "."+suffix.ToString();
+                        }
 
+                    }
+                    else
+                    {
+                        newCode = ThietBiId + ".01";
+                    }
+                    return newCode;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+        public int Create(ThietBiModel model)
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    TB_ThongTinThietBi entity = MyConvert.ConvertSameData<TB_ThongTinThietBi>(model);
+                    unitOfWork.GetRepository<TB_ThongTinThietBi>().Add(entity);
+                    if (unitOfWork.Save() >= 1)
+                    {
+                        return 1;
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+        }
+        public int Update(ThietBiModel model)
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    var data = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetById(model.SoHieu);
+                    //data.Ten = model.Ten;
+                    //data.SoLuongMat = model.SoLuongMat;
+                    //data.SoLuongHong = model.SoLuongHong;
+                    //data.QuyCachSD = model.QuyCachSD;
+                    //data.SoLuong = model.SoLuong;
+                    //data.ThanhTien = model.ThanhTien;
+                    //data.DonGia = model.DonGia;
+                    //data.IsThietBiTuLam = model.IsThietBiTuLam;
+                    //data.DonViTinhId = model.DonViTinhId;
+                    //data.
+                    if (data != null)
+                    {
+                        MyConvert.TransferValues(data, model);
+                        unitOfWork.GetRepository<TB_ThongTinThietBi>().Update(data);
+                        if (unitOfWork.Save() >= 1)
+                        {
+                            return 1;
+                        }
+                    }
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+        }
+        public int Delete(string Id)
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    var data = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetById(Id);
+                    data.TrangThai = 0;
+                    unitOfWork.GetRepository<TB_ThongTinThietBi>().Update(data);
+                    if (unitOfWork.Save() >= 1)
+                    {
+                        return 1;
+                    }
+                    return 0;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+        }
     }
 }

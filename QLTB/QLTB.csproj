@@ -140,6 +140,7 @@
     <Compile Include="BLL\DanhSach\DSViTriGiaoVien.cs" />
     <Compile Include="BLL\DanhSach\DSVungMien.cs" />
     <Compile Include="BLL\DanhSach\DSXepLoaiPhongBM.cs" />
+    <Compile Include="BLL\Login\LoginHandler.cs" />
     <Compile Include="BLL\PhieuMuon\PhieuBaoHongModel.cs" />
     <Compile Include="BLL\PhieuMuon\PhieuGiamTBModel.cs" />
     <Compile Include="BLL\PhieuMuon\PhieuMuonPhongModel.cs" />
@@ -371,6 +372,12 @@
     <Compile Include="GUI\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmThongTinDonVi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmThongTinDonVi.Designer.cs">
+      <DependentUpon>frmThongTinDonVi.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\PhieuMuon\PhongBoMon\frmCTPhieuMuonPhong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -465,6 +472,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\ConnectiongStringBuilder.cs" />
     <Compile Include="Utils\DatagridViewCheckBoxHeaderCell.cs" />
+    <Compile Include="Utils\GlobalVariable.cs" />
     <Compile Include="Utils\MyConvert.cs" />
     <EmbeddedResource Include="GUI\DialogBox\frmDialogDSThietBi.resx">
       <DependentUpon>frmDialogDSThietBi.cs</DependentUpon>
@@ -477,6 +485,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmThongTinDonVi.resx">
+      <DependentUpon>frmThongTinDonVi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\PhieuMuon\PhongBoMon\frmCTPhieuMuonPhong.resx">
       <DependentUpon>frmCTPhieuMuonPhong.cs</DependentUpon>

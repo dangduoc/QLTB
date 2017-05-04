@@ -19,6 +19,7 @@
           <Property Name="ThoiGianKetThuc" Type="date" />
           <Property Name="IsCoTrinhDoNghiepVu" Type="bit" />
           <Property Name="GhiChu" Type="nvarchar" MaxLength="500" />
+          <Property Name="TrangThai" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="DM_GiaoVien">
           <Key>
@@ -51,6 +52,7 @@
           <Property Name="IsLaDangVien" Type="bit" />
           <Property Name="LyLuanChinhTriId" Type="int" />
           <Property Name="NgayVaoDang" Type="date" />
+          <Property Name="TrangThai" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="DM_KhoiLop">
           <Key>
@@ -105,6 +107,7 @@
           <Property Name="NamDuaVaoSD" Type="smallint" />
           <Property Name="IsPhongChucNang" Type="bit" />
           <Property Name="XepLoaiId" Type="int" />
+          <Property Name="TrangThai" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="DM_ThietBiToiThieu">
           <Key>
@@ -123,6 +126,7 @@
           <Property Name="IsDanhChoGV" Type="bit" Nullable="false" />
           <Property Name="IsDanhChoHS" Type="bit" Nullable="false" />
           <Property Name="GhiChu" Type="nvarchar" MaxLength="500" />
+          <Property Name="TrangThai" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="DM_ToBoMon">
           <Key>
@@ -401,6 +405,7 @@
           <Property Name="PhoneNumber" Type="varchar" MaxLength="11" />
           <Property Name="Email" Type="varchar" MaxLength="500" />
           <Property Name="Note" Type="nvarchar" MaxLength="500" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="HT_UserRole">
           <Key>
@@ -473,6 +478,7 @@
           <Property Name="CreatedOnDate" Type="datetime" />
           <Property Name="UpdatedByUserId" Type="varchar" MaxLength="20" />
           <Property Name="UpdatedOnDate" Type="datetime" />
+          <Property Name="IsDelete" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="TB_PhieuGiamTB">
           <Key>
@@ -485,6 +491,7 @@
           <Property Name="CreatedOnDate" Type="datetime" />
           <Property Name="UpdatedByUserId" Type="varchar" MaxLength="20" />
           <Property Name="UpdatedOnDate" Type="datetime" />
+          <Property Name="IsDelete" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="TB_PhieuMuonPhong">
           <Key>
@@ -510,6 +517,7 @@
           <Property Name="CreatedOnDate" Type="datetime" />
           <Property Name="UpdatedByUserId" Type="nchar" MaxLength="10" />
           <Property Name="UpdatedOnDate" Type="datetime" />
+          <Property Name="IsDelete" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="TB_PhieuMuonTB">
           <Key>
@@ -533,6 +541,7 @@
           <Property Name="CreatedOnDate" Type="datetime" />
           <Property Name="UpdatedByUserId" Type="varchar" MaxLength="20" />
           <Property Name="UpdatedOnDate" Type="datetime" />
+          <Property Name="IsDelete" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="TB_PhieuThanhLyTB">
           <Key>
@@ -546,6 +555,7 @@
           <Property Name="CreatedOnDate" Type="datetime" />
           <Property Name="UpdatedByUserId" Type="varchar" MaxLength="20" />
           <Property Name="UpdatedOnDate" Type="datetime" />
+          <Property Name="IsDelete" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="TB_ThongTinThietBi">
           <Key>
@@ -558,6 +568,7 @@
           <Property Name="PhongHocId" Type="int" Nullable="false" />
           <Property Name="NguonKinhPhiId" Type="int" Nullable="false" />
           <Property Name="NamDuaVaoSD" Type="smallint" Nullable="false" />
+          <Property Name="NgayDuaVaoSD" Type="date" Nullable="false" />
           <Property Name="NamTheoDoi" Type="smallint" Nullable="false" />
           <Property Name="DonViTinhId" Type="int" Nullable="false" />
           <Property Name="SoLuong" Type="smallint" Nullable="false" />
@@ -571,6 +582,7 @@
           <Property Name="NgaySanXuat" Type="date" />
           <Property Name="HanSD" Type="date" />
           <Property Name="GhiChu" Type="nchar" MaxLength="10" />
+          <Property Name="TrangThai" Type="int" Nullable="false" />
           <Property Name="CreateByUserId" Type="varchar" MaxLength="20" />
           <Property Name="CreatedOnDate" Type="datetime" />
           <Property Name="UpdatedByUserId" Type="varchar" MaxLength="20" />
@@ -1969,6 +1981,7 @@
           <Property Name="GhiChu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="DS_GioiTinh" Relationship="Data.FK_DM_CanBoThietBi_DS_GioiTinh" FromRole="DM_CanBoThietBi" ToRole="DS_GioiTinh" />
           <NavigationProperty Name="DS_PhuTrachCBTB" Relationship="Data.FK_DM_CanBoThietBi_DS_PhuTrachCBTB" FromRole="DM_CanBoThietBi" ToRole="DS_PhuTrachCBTB" />
+          <Property Name="TrangThai" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="DM_GiaoVien">
           <Key>
@@ -2015,6 +2028,7 @@
           <NavigationProperty Name="DS_ViTriGiaoVien" Relationship="Data.FK_DM_GiaoVien_DS_ViTriGiaoVien" FromRole="DM_GiaoVien" ToRole="DS_ViTriGiaoVien" />
           <NavigationProperty Name="TB_PhieuMuonPhong" Relationship="Data.FK_TB_PhieuMuonPhong_DM_GiaoVien" FromRole="DM_GiaoVien" ToRole="TB_PhieuMuonPhong" />
           <NavigationProperty Name="TB_PhieuMuonTB" Relationship="Data.FK_TB_PhieuMuonTB_DM_GiaoVien" FromRole="DM_GiaoVien" ToRole="TB_PhieuMuonTB" />
+          <Property Name="TrangThai" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="DM_KhoiLop">
           <Key>
@@ -2090,6 +2104,7 @@
           <NavigationProperty Name="DS_LoaiPhongTN" Relationship="Data.FK_DM_PhongHocBoMon_DS_LoaiPhongTN" FromRole="DM_PhongHocBoMon" ToRole="DS_LoaiPhongTN" />
           <NavigationProperty Name="DS_XepLoaiPhongHocBM" Relationship="Data.FK_DM_PhongHocBoMon_DS_XepLoaiPhongHocBM" FromRole="DM_PhongHocBoMon" ToRole="DS_XepLoaiPhongHocBM" />
           <NavigationProperty Name="TB_PhieuMuonPhong" Relationship="Data.FK_TB_PhieuMuonPhong_DM_PhongHocBoMon" FromRole="DM_PhongHocBoMon" ToRole="TB_PhieuMuonPhong" />
+          <Property Name="TrangThai" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="DM_ThietBiToiThieu">
           <Key>
@@ -2113,6 +2128,7 @@
           <NavigationProperty Name="DS_DonViTinh" Relationship="Data.FK_DM_ThietBiToiThieu_DS_DonViTinh" FromRole="DM_ThietBiToiThieu" ToRole="DS_DonViTinh" />
           <NavigationProperty Name="DS_LoaiThietBi" Relationship="Data.FK_DM_ThietBiToiThieu_DS_LoaiThietBi" FromRole="DM_ThietBiToiThieu" ToRole="DS_LoaiThietBi" />
           <NavigationProperty Name="TB_ThongTinThietBi" Relationship="Data.FK_TB_ThongTinThietBi_DM_ThietBiToiThieu" FromRole="DM_ThietBiToiThieu" ToRole="TB_ThongTinThietBi" />
+          <Property Name="TrangThai" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="DM_ToBoMon">
           <Key>
@@ -2436,6 +2452,7 @@
           <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="HT_UserRole" Relationship="Data.FK_HT_User_HT_UserRole" FromRole="HT_User" ToRole="HT_UserRole" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="HT_UserRole">
           <Key>
@@ -2514,6 +2531,7 @@
           <Property Name="CreatedOnDate" Type="DateTime" Precision="3" />
           <Property Name="UpdatedByUserId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="UpdatedOnDate" Type="DateTime" Precision="3" />
+          <Property Name="IsDelete" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="TB_PhieuGiamTB">
           <Key>
@@ -2526,6 +2544,7 @@
           <Property Name="CreatedOnDate" Type="DateTime" Precision="3" />
           <Property Name="UpdatedByUserId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="UpdatedOnDate" Type="DateTime" Precision="3" />
+          <Property Name="IsDelete" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="TB_PhieuMuonPhong">
           <Key>
@@ -2558,6 +2577,7 @@
           <NavigationProperty Name="DM_PhongHocBoMon" Relationship="Data.FK_TB_PhieuMuonPhong_DM_PhongHocBoMon" FromRole="TB_PhieuMuonPhong" ToRole="DM_PhongHocBoMon" />
           <NavigationProperty Name="DS_BaiGiang" Relationship="Data.FK_TB_PhieuMuonPhong_DS_BaiGiang" FromRole="TB_PhieuMuonPhong" ToRole="DS_BaiGiang" />
           <NavigationProperty Name="DS_MucDichSDPHong" Relationship="Data.FK_TB_PhieuMuonPhong_DS_MucDichSDPHong" FromRole="TB_PhieuMuonPhong" ToRole="DS_MucDichSDPHong" />
+          <Property Name="IsDelete" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="TB_PhieuMuonTB">
           <Key>
@@ -2589,6 +2609,7 @@
           <NavigationProperty Name="DS_MucDichSDThietBi" Relationship="Data.FK_TB_PhieuMuonTB_DS_MucDichSDThietBi" FromRole="TB_PhieuMuonTB" ToRole="DS_MucDichSDThietBi" />
           <NavigationProperty Name="DS_ThoiGianTrongNgay" Relationship="Data.FK_TB_PhieuMuonTB_DS_ThoiGianTrongNganh" FromRole="TB_PhieuMuonTB" ToRole="DS_ThoiGianTrongNgay" />
           <NavigationProperty Name="DS_TrangThaiPhieuMuon" Relationship="Data.FK_TB_PhieuMuonTB_DS_TrangThaiPhieuMuon" FromRole="TB_PhieuMuonTB" ToRole="DS_TrangThaiPhieuMuon" />
+          <Property Name="IsDelete" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="TB_PhieuThanhLyTB">
           <Key>
@@ -2602,6 +2623,7 @@
           <Property Name="CreatedOnDate" Type="DateTime" Precision="3" />
           <Property Name="UpdatedByUserId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="UpdatedOnDate" Type="DateTime" Precision="3" />
+          <Property Name="IsDelete" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="TB_ThongTinThietBi">
           <Key>
@@ -2637,6 +2659,8 @@
           <NavigationProperty Name="QH_PhieuMuonPhong_ThietBi" Relationship="Data.FK_QH_PhieuMuonPhong_ThietBi_TB_ThongTinThietBi" FromRole="TB_ThongTinThietBi" ToRole="QH_PhieuMuonPhong_ThietBi" />
           <NavigationProperty Name="QH_PhieuMuonTB_ThietBi" Relationship="Data.FK_QH_PhieuMuonTB_ThietBi_TB_ThongTinThietBi" FromRole="TB_ThongTinThietBi" ToRole="QH_PhieuMuonTB_ThietBi" />
           <NavigationProperty Name="QH_PhieuThanhLyTB_ThietBi" Relationship="Data.FK_QH_PhieuThanhLyTB_ThietBi_TB_ThongTinThietBi" FromRole="TB_ThongTinThietBi" ToRole="QH_PhieuThanhLyTB_ThietBi" />
+          <Property Name="NgayDuaVaoSD" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="TrangThai" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="ThongTinDonVi">
           <Key>
@@ -3420,6 +3444,7 @@
           <EntitySetMapping Name="DM_CanBoThietBi">
             <EntityTypeMapping TypeName="Data.DM_CanBoThietBi">
               <MappingFragment StoreEntitySet="DM_CanBoThietBi">
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
                 <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
                 <ScalarProperty Name="IsCoTrinhDoNghiepVu" ColumnName="IsCoTrinhDoNghiepVu" />
                 <ScalarProperty Name="ThoiGianKetThuc" ColumnName="ThoiGianKetThuc" />
@@ -3436,6 +3461,7 @@
           <EntitySetMapping Name="DM_GiaoVien">
             <EntityTypeMapping TypeName="Data.DM_GiaoVien">
               <MappingFragment StoreEntitySet="DM_GiaoVien">
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
                 <ScalarProperty Name="NgayVaoDang" ColumnName="NgayVaoDang" />
                 <ScalarProperty Name="LyLuanChinhTriId" ColumnName="LyLuanChinhTriId" />
                 <ScalarProperty Name="IsLaDangVien" ColumnName="IsLaDangVien" />
@@ -3512,6 +3538,7 @@
           <EntitySetMapping Name="DM_PhongHocBoMon">
             <EntityTypeMapping TypeName="Data.DM_PhongHocBoMon">
               <MappingFragment StoreEntitySet="DM_PhongHocBoMon">
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
                 <ScalarProperty Name="XepLoaiId" ColumnName="XepLoaiId" />
                 <ScalarProperty Name="IsPhongChucNang" ColumnName="IsPhongChucNang" />
                 <ScalarProperty Name="NamDuaVaoSD" ColumnName="NamDuaVaoSD" />
@@ -3527,6 +3554,7 @@
           <EntitySetMapping Name="DM_ThietBiToiThieu">
             <EntityTypeMapping TypeName="Data.DM_ThietBiToiThieu">
               <MappingFragment StoreEntitySet="DM_ThietBiToiThieu">
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
                 <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
                 <ScalarProperty Name="IsDanhChoHS" ColumnName="IsDanhChoHS" />
                 <ScalarProperty Name="IsDanhChoGV" ColumnName="IsDanhChoGV" />
@@ -3849,6 +3877,7 @@
           <EntitySetMapping Name="HT_User">
             <EntityTypeMapping TypeName="Data.HT_User">
               <MappingFragment StoreEntitySet="HT_User">
+                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Note" ColumnName="Note" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
@@ -3921,6 +3950,7 @@
           <EntitySetMapping Name="TB_PhieuBaoHong">
             <EntityTypeMapping TypeName="Data.TB_PhieuBaoHong">
               <MappingFragment StoreEntitySet="TB_PhieuBaoHong">
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
                 <ScalarProperty Name="UpdatedOnDate" ColumnName="UpdatedOnDate" />
                 <ScalarProperty Name="UpdatedByUserId" ColumnName="UpdatedByUserId" />
                 <ScalarProperty Name="CreatedOnDate" ColumnName="CreatedOnDate" />
@@ -3935,6 +3965,7 @@
           <EntitySetMapping Name="TB_PhieuGiamTB">
             <EntityTypeMapping TypeName="Data.TB_PhieuGiamTB">
               <MappingFragment StoreEntitySet="TB_PhieuGiamTB">
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
                 <ScalarProperty Name="UpdatedOnDate" ColumnName="UpdatedOnDate" />
                 <ScalarProperty Name="UpdatedByUserId" ColumnName="UpdatedByUserId" />
                 <ScalarProperty Name="CreatedOnDate" ColumnName="CreatedOnDate" />
@@ -3948,6 +3979,7 @@
           <EntitySetMapping Name="TB_PhieuMuonPhong">
             <EntityTypeMapping TypeName="Data.TB_PhieuMuonPhong">
               <MappingFragment StoreEntitySet="TB_PhieuMuonPhong">
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
                 <ScalarProperty Name="UpdatedOnDate" ColumnName="UpdatedOnDate" />
                 <ScalarProperty Name="UpdatedByUserId" ColumnName="UpdatedByUserId" />
                 <ScalarProperty Name="CreatedOnDate" ColumnName="CreatedOnDate" />
@@ -3974,6 +4006,7 @@
           <EntitySetMapping Name="TB_PhieuMuonTB">
             <EntityTypeMapping TypeName="Data.TB_PhieuMuonTB">
               <MappingFragment StoreEntitySet="TB_PhieuMuonTB">
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
                 <ScalarProperty Name="UpdatedOnDate" ColumnName="UpdatedOnDate" />
                 <ScalarProperty Name="UpdatedByUserId" ColumnName="UpdatedByUserId" />
                 <ScalarProperty Name="CreatedOnDate" ColumnName="CreatedOnDate" />
@@ -3998,6 +4031,7 @@
           <EntitySetMapping Name="TB_PhieuThanhLyTB">
             <EntityTypeMapping TypeName="Data.TB_PhieuThanhLyTB">
               <MappingFragment StoreEntitySet="TB_PhieuThanhLyTB">
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
                 <ScalarProperty Name="UpdatedOnDate" ColumnName="UpdatedOnDate" />
                 <ScalarProperty Name="UpdatedByUserId" ColumnName="UpdatedByUserId" />
                 <ScalarProperty Name="CreatedOnDate" ColumnName="CreatedOnDate" />
@@ -4012,6 +4046,8 @@
           <EntitySetMapping Name="TB_ThongTinThietBi">
             <EntityTypeMapping TypeName="Data.TB_ThongTinThietBi">
               <MappingFragment StoreEntitySet="TB_ThongTinThietBi">
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+                <ScalarProperty Name="NgayDuaVaoSD" ColumnName="NgayDuaVaoSD" />
                 <ScalarProperty Name="UpdatedOnDate" ColumnName="UpdatedOnDate" />
                 <ScalarProperty Name="UpdatedByUserId" ColumnName="UpdatedByUserId" />
                 <ScalarProperty Name="CreatedOnDate" ColumnName="CreatedOnDate" />

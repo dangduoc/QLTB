@@ -34,6 +34,8 @@
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
             this.pnlBack = new DevComponents.DotNetBar.PanelEx();
             this.dataGridView = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
+            this.panelEx2.SuspendLayout();
             this.pnlBack.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
@@ -42,6 +44,7 @@
             // 
             this.panelEx2.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx2.Controls.Add(this.buttonX1);
             this.panelEx2.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelEx2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelEx2.Location = new System.Drawing.Point(0, 380);
@@ -109,6 +112,7 @@
             this.dataGridView.Size = new System.Drawing.Size(777, 380);
             this.dataGridView.TabIndex = 0;
             // 
+            // 
             // frmDialogDSThietBi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -121,6 +125,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Danh sách thiết bị";
             this.Load += new System.EventHandler(this.frmDialogDSThietBi_Load);
+            this.panelEx2.ResumeLayout(false);
             this.pnlBack.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
@@ -132,5 +137,6 @@
         private DevComponents.DotNetBar.PanelEx panelEx2;
         private DevComponents.DotNetBar.PanelEx pnlBack;
         private DevComponents.DotNetBar.Controls.DataGridViewX dataGridView;
+        private DevComponents.DotNetBar.ButtonX buttonX1;
     }
 }

@@ -22,5 +22,6 @@ namespace QLTB.DAL.Data
         public Nullable<System.DateTime> CreatedOnDate { get; set; }
         public string UpdatedByUserId { get; set; }
         public Nullable<System.DateTime> UpdatedOnDate { get; set; }
+        public bool IsDelete { get; set; }
     }
 }

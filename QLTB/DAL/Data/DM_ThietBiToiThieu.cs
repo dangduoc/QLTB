@@ -33,6 +33,7 @@ namespace QLTB.DAL.Data
         public bool IsDanhChoGV { get; set; }
         public bool IsDanhChoHS { get; set; }
         public string GhiChu { get; set; }
+        public int TrangThai { get; set; }
     
         public virtual DM_MonHoc DM_MonHoc { get; set; }
         public virtual DS_DauMucThietBi DS_DauMucThietBi { get; set; }

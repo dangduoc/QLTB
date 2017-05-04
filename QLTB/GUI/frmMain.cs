@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QLTB.Model;
+using QLTB.Utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,12 +14,22 @@ namespace QLTB.GUI
 {
     public partial class frmMain : DevComponents.DotNetBar.Office2007Form
     {
+        private UserModel WorkingUser;
         public frmMain()
         {
             InitializeComponent();
+            WorkingUser = GlobalVariable.GetUser();
         }
         private void frmMain_Load(object sender, EventArgs e)
         {
+            if (WorkingUser == null) Close();
+            SetInformation();
+        }
+        private void SetInformation()
+        {
+            statusCurrentDay.Text = DateTime.Today.ToString("dd/M/yyyy");
+            statusUser.Text = WorkingUser.UserName;
+            //Set up role
 
         }
         public bool CheckExistForm(string formName)
@@ -263,6 +275,27 @@ namespace QLTB.GUI
                 this.Cursor = Cursors.Default;
             }
         }
+        private void btnThongTinDV_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Cursor = Cursors.WaitCursor;
+                if (!CheckExistForm("frmThongTinDonVi"))
+                {
+                    Application.DoEvents();
+                    frmThongTinDonVi childForm = new frmThongTinDonVi();
+                    childForm.MdiParent = this;
+                    childForm.WindowState = FormWindowState.Maximized;
+                    childForm.Show();
+
+                }
+                this.Cursor = Cursors.Default;
+            }
+            catch (Exception ex)
+            {
+                this.Cursor = Cursors.Default;
+            }
+        }
         private void TreeView_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             if (TreeView.SelectedNode == null) return;
@@ -311,6 +344,10 @@ namespace QLTB.GUI
                     case "btnDMNguonKinhPhi":
                         btnDMNguonKinhPhi_Click(null, null);
                         break;
+                    case "btnThongTinDV":
+                        btnThongTinDV_Click(null, null);
+                        break;
+                        
                     default:
                         MessageBox.Show("Chức năng này chưa được xây dựng ....");
                         break;
