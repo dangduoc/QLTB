@@ -567,7 +567,7 @@
             this.IsMdiContainer = true;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Phần mềm quản lý thiết vị trường học - Vsmart Estimation";
+            this.Text = "PHẦN MỀM QUẢN LÝ THIẾT BỊ TRƯỜNG HỌC - Vsmart Estimation";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);

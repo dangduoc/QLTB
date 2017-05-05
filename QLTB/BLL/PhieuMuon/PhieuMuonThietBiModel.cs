@@ -22,6 +22,7 @@ namespace QLTB.Model
         public bool IsNgoaiQuyDinh { get; set; }
         public int TrangThaiId { get; set; }
         public string GhiChu { get; set; }
+        public List<ThietBiMuonGridDisplayModel> ThietBis { get; set; }
         public string CreatedByUserId { get; set; }
         public Nullable<System.DateTime> CreatedOnDate { get; set; }
         public string UpdatedByUserId { get; set; }
@@ -72,5 +73,23 @@ namespace QLTB.Model
         public string LopHoc { get; set; }
         public string GiaoVien { get; set; }
         public string TrangThai { get; set; }
+    }
+    public class ThietBiMuonGridDisplayModel
+    {
+        public string ThietBiId { get; set; }
+        public string Ten { get; set; }
+        public string SoHieu { get; set; }
+        public string PhongBM { get; set; }
+        public string SoLuongMuon { get; set; }
+        public string DVT { get; set; }
+       
+    }
+    public class ThietBiMuonCreateModel
+    {
+
+    }
+    public class ThietBiMuonUpdateModel
+    {
+
     }
 }

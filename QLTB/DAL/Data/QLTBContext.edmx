@@ -592,7 +592,7 @@
           <Key>
             <PropertyRef Name="MaDonVi" />
           </Key>
-          <Property Name="MaDonVi" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MaDonVi" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="Ten" Type="nvarchar" MaxLength="200" />
           <Property Name="DonViChuQuan" Type="nvarchar" MaxLength="200" />
           <Property Name="KhoiTruongId" Type="int" Nullable="false" />
@@ -2666,7 +2666,7 @@
           <Key>
             <PropertyRef Name="MaDonVi" />
           </Key>
-          <Property Name="MaDonVi" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MaDonVi" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="Ten" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="DonViChuQuan" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="KhoiTruongId" Type="Int32" Nullable="false" />
