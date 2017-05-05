@@ -37,7 +37,7 @@
             this.cboxNgoaiQuyDinh = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.txtGhiChu = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.CbbMucDichSD = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.txtTenBaiDay = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.cbbTenBaiDay = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.dPickerNgayTra = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.txtSoTiet = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.CbbMonHoc = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -120,7 +120,7 @@
             this.layoutControl1.Controls.Add(this.cboxNgoaiQuyDinh);
             this.layoutControl1.Controls.Add(this.txtGhiChu);
             this.layoutControl1.Controls.Add(this.CbbMucDichSD);
-            this.layoutControl1.Controls.Add(this.txtTenBaiDay);
+            this.layoutControl1.Controls.Add(this.cbbTenBaiDay);
             this.layoutControl1.Controls.Add(this.dPickerNgayTra);
             this.layoutControl1.Controls.Add(this.txtSoTiet);
             this.layoutControl1.Controls.Add(this.CbbMonHoc);
@@ -197,18 +197,18 @@
             this.CbbMucDichSD.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.CbbMucDichSD.TabIndex = 12;
             // 
-            // txtTenBaiDay
+            // cbbTenBaiDay
             // 
-            this.txtTenBaiDay.DisplayMember = "Text";
-            this.txtTenBaiDay.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.txtTenBaiDay.FormattingEnabled = true;
-            this.txtTenBaiDay.ItemHeight = 16;
-            this.txtTenBaiDay.Location = new System.Drawing.Point(98, 109);
-            this.txtTenBaiDay.Margin = new System.Windows.Forms.Padding(0);
-            this.txtTenBaiDay.Name = "txtTenBaiDay";
-            this.txtTenBaiDay.Size = new System.Drawing.Size(516, 22);
-            this.txtTenBaiDay.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.txtTenBaiDay.TabIndex = 11;
+            this.cbbTenBaiDay.DisplayMember = "Text";
+            this.cbbTenBaiDay.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbTenBaiDay.FormattingEnabled = true;
+            this.cbbTenBaiDay.ItemHeight = 16;
+            this.cbbTenBaiDay.Location = new System.Drawing.Point(98, 109);
+            this.cbbTenBaiDay.Margin = new System.Windows.Forms.Padding(0);
+            this.cbbTenBaiDay.Name = "cbbTenBaiDay";
+            this.cbbTenBaiDay.Size = new System.Drawing.Size(516, 22);
+            this.cbbTenBaiDay.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cbbTenBaiDay.TabIndex = 11;
             // 
             // dPickerNgayTra
             // 
@@ -525,7 +525,7 @@
             // 
             // layoutControlItem11
             // 
-            this.layoutControlItem11.Control = this.txtTenBaiDay;
+            this.layoutControlItem11.Control = this.cbbTenBaiDay;
             this.layoutControlItem11.Height = 35;
             this.layoutControlItem11.MinSize = new System.Drawing.Size(64, 18);
             this.layoutControlItem11.Name = "layoutControlItem11";
@@ -843,7 +843,7 @@
         private DevComponents.DotNetBar.Controls.CheckBoxX cboxNgoaiQuyDinh;
         private DevComponents.DotNetBar.Controls.TextBoxX txtGhiChu;
         private DevComponents.DotNetBar.Controls.ComboBoxEx CbbMucDichSD;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx txtTenBaiDay;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx cbbTenBaiDay;
         private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem11;
         private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem12;
         private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem13;

@@ -23,6 +23,7 @@ namespace QLTB.Model
         public bool IsNgoaiQuyDinh { get; set; }
         public bool IsSuDungChoGD { get; set; }
         public string GhiChu { get; set; }
+        public List<ThietBiMuonGridDisplayModel> ThietBis { get; set; }
         public string CreatedByUserId { get; set; }
         public Nullable<System.DateTime> CreatedOnDate { get; set; }
         public string UpdatedByUserId { get; set; }

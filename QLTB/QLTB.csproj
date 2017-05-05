@@ -141,6 +141,8 @@
     <Compile Include="BLL\DanhSach\DSVungMien.cs" />
     <Compile Include="BLL\DanhSach\DSXepLoaiPhongBM.cs" />
     <Compile Include="BLL\Login\LoginHandler.cs" />
+    <Compile Include="BLL\PhieuMuon\DbPhieuMuonPhongHandler.cs" />
+    <Compile Include="BLL\PhieuMuon\DbPhieuMuonTBHandler.cs" />
     <Compile Include="BLL\PhieuMuon\PhieuBaoHongModel.cs" />
     <Compile Include="BLL\PhieuMuon\PhieuGiamTBModel.cs" />
     <Compile Include="BLL\PhieuMuon\PhieuMuonPhongModel.cs" />
@@ -151,6 +153,7 @@
     <Compile Include="BLL\QuanHe\QH_PhieuMuonTB_ThietBi.cs" />
     <Compile Include="BLL\ThietBi\DbThietBiHandler.cs" />
     <Compile Include="BLL\ThietBi\ThietBiModel.cs" />
+    <Compile Include="BLL\ThongTinDonVi\DbThongTinDVHandler.cs" />
     <Compile Include="BLL\ThongTinDonVi\ThongTinDonViModel.cs" />
     <Compile Include="BLL\User\UserModel.cs" />
     <Compile Include="DAL\DatabaseFactory.cs" />
