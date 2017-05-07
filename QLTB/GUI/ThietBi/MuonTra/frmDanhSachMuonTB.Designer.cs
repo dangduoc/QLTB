@@ -110,6 +110,7 @@
             this.btnXem.ShowSubItems = false;
             this.btnXem.Text = "Xem";
             this.btnXem.Tooltip = "Xem thông tin chi tiết";
+            this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
             // 
             // btnThem
             // 
@@ -303,6 +304,7 @@
             this.advancedDataGridView.FilterStringChanged += new System.EventHandler(this.advancedDataGridView_FilterStringChanged);
             this.advancedDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.advancedDataGridView_CellContentClick);
             this.advancedDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.advancedDataGridView_CellContentDoubleClick);
+            this.advancedDataGridView.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.advancedDataGridView_KeyPress);
             // 
             // searchToolBar
             // 

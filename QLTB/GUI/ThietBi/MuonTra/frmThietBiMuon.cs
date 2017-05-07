@@ -63,24 +63,57 @@ namespace QLTB.GUI
                 CbbDayLop.SelectedValue = Phieu.LopHocId;
                 CbbBuoiTrongNgay.SelectedValue = Phieu.ThoiGianTrongNgay;
                 cboxNgoaiQuyDinh.Checked = Phieu.IsNgoaiQuyDinh;
+                if (Phieu.ThietBis == null)
+                {
+                    Phieu.ThietBis = new List<ThietBiMuonGridDisplayModel>();
+                }
+                source.DataSource = Phieu.ThietBis;
             }
             else
             {
                 txtSoPhieu.Text = handler.GenerateCode();
                 CbbMonHoc.SelectedIndex = 0;
-               
+                source.DataSource = dsThietBi;
             }
+        
+            DataGridViewLinkColumn linkColEdit = new DataGridViewLinkColumn();
+            linkColEdit.Text = "Thay đổi";
+            linkColEdit.Name = "Edit";
+            linkColEdit.LinkColor = Color.Blue;
+            linkColEdit.LinkBehavior = LinkBehavior.NeverUnderline;
+            linkColEdit.UseColumnTextForLinkValue = true;
+            linkColEdit.HeaderText = "";
+            DataGridViewLinkColumn linkColDelete = new DataGridViewLinkColumn();
+            linkColDelete.Text = "Xóa bỏ";
+            linkColDelete.Name = "Delete";
+            linkColDelete.LinkColor = Color.Red;
+            linkColDelete.LinkBehavior = LinkBehavior.NeverUnderline;
+            linkColDelete.UseColumnTextForLinkValue = true;
+            linkColDelete.HeaderText = "";
+
+            gridDSThietBiMuon.Columns.Add(linkColEdit);
+            gridDSThietBiMuon.Columns.Add(linkColDelete);
+            //load danh sach thiet bi muon
+            gridDSThietBiMuon.DataSource = source;
+            gridDSThietBiMuon.Columns[2].HeaderText = "Mã thiết bị";
+            gridDSThietBiMuon.Columns[3].HeaderText = "Tên thiết bị";
+            gridDSThietBiMuon.Columns[4].HeaderText = "Số hiệu";
+            gridDSThietBiMuon.Columns[5].HeaderText = "Phòng bộ môn";
+            gridDSThietBiMuon.Columns[6].HeaderText = "Số lượng mượn";
+            gridDSThietBiMuon.Columns[7].HeaderText = "Đơn vị tính";
+            gridDSThietBiMuon.Columns[2].DisplayIndex = 1;
+            gridDSThietBiMuon.Columns[3].DisplayIndex = 2;
+            gridDSThietBiMuon.Columns[4].DisplayIndex = 3;
+            gridDSThietBiMuon.Columns[5].DisplayIndex = 4;
+            gridDSThietBiMuon.Columns[6].DisplayIndex = 5;
+            gridDSThietBiMuon.Columns[7].DisplayIndex = 6;
+            gridDSThietBiMuon.Columns[0].DisplayIndex = 7;
+            gridDSThietBiMuon.Columns[1].DisplayIndex = 8;
+         
+         
+            //
             cbbTenBaiDay.DataSource = dshandler.GetBaiGiang((int)CbbMonHoc.SelectedValue).Select(p => new { key = p.BaiGiangId, value = p.Ten }).ToList();
             DisableHighlightCBB();
-            //load danh sach thiet bi muon
-            gridDSThietBiMuon.DataSource = Phieu.ThietBis;
-            gridDSThietBiMuon.Columns[0].HeaderText = "Mã thiết bị";
-            gridDSThietBiMuon.Columns[1].HeaderText = "Tên thiết bị";
-            gridDSThietBiMuon.Columns[2].HeaderText = "Số hiệu";
-            gridDSThietBiMuon.Columns[3].HeaderText = "Phòng bộ môn";
-            gridDSThietBiMuon.Columns[4].HeaderText = "Số lượng mượn";
-            gridDSThietBiMuon.Columns[5].HeaderText = "Đơn vị tính";
-            //
 
         }
 
@@ -97,7 +130,7 @@ namespace QLTB.GUI
                 SoTiet = MyConvert.To<int>(txtSoTiet.Text),
                 MucDichSuDungId = MyConvert.To<int>(CbbMucDichSD.SelectedValue),
                 GhiChu = txtGhiChu.Text,
-                BaiDayId=MyConvert.To<int?>(cbbTenBaiDay.SelectedValue),
+                BaiDayId = MyConvert.To<int?>(cbbTenBaiDay.SelectedValue),
                 IsNgoaiQuyDinh = cboxNgoaiQuyDinh.Checked,
                 KhoiLopId = MyConvert.To<int>(CbbKhoiLop.SelectedValue),
                 LopHocId = MyConvert.To<int>(CbbDayLop.SelectedValue),
@@ -114,7 +147,7 @@ namespace QLTB.GUI
                 PhieuMoi.UpdatedByUserId = PhieuMoi.CreatedByUserId;
                 PhieuMoi.UpdatedOnDate = PhieuMoi.CreatedOnDate;
                 PhieuMoi.ThietBis = dsThietBi;
-                int result=handler.Create(PhieuMoi);
+                int result = handler.Create(PhieuMoi);
                 if (result == 1)
                 {
                     MessageBox.Show("Đăng ký phiếu mượn thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -132,7 +165,19 @@ namespace QLTB.GUI
             {
                 PhieuMoi.UpdatedByUserId = GlobalVariable.GetUser().UserName;
                 PhieuMoi.UpdatedOnDate = DateTime.Now;
-                //PhieuMoi.ThietBis = dsThietBi;
+                int result = handler.Update(PhieuMoi);
+                if (result == 1)
+                {
+                    MessageBox.Show("Cập nhật thông tin phiếu mượn thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (result == 0)
+                {
+                    MessageBox.Show("Cập nhật thông tin phiếu mượn không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Có lỗi xảy ra, xin thử lại khi khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
 
         }
@@ -147,65 +192,84 @@ namespace QLTB.GUI
         {
             loadForm();
         }
+
         public void AddToGrid(List<ThietBiMuonGridDisplayModel> list)
         {
             #region Truing hop tao phieu moi
             if (Phieu == null)
             {
-                List<string> listRepeat = new List<string>();
-                //
-                if (dsThietBi.Count > 0)
-                {
-                    foreach (var item in list)
-                    {
-                        if (Phieu.ThietBis.Where(p => p.SoHieu.Equals(item.SoHieu)).Count() > 0) listRepeat.Add(item.SoHieu);
-                        list.Remove(item);
-                    }
-                }
+                var listSoHieu = dsThietBi.Select(p1 => p1.SoHieu).ToList();
+                var repeatList = list.Where(p => listSoHieu.Contains(p.SoHieu)).ToList();
+                list.RemoveAll(p => listSoHieu.Contains(p.SoHieu));
                 dsThietBi.AddRange(list);
                 //
-                gridDSThietBiMuon.Refresh();
+                
+                source = new BindingSource();
                 source.DataSource = dsThietBi;
                 gridDSThietBiMuon.DataSource = source;
+                gridDSThietBiMuon.Refresh();
+                gridDSThietBiMuon.Update();
                 //
-                DataGridViewLinkColumn linkColEdit = new DataGridViewLinkColumn();
-                linkColEdit.Text = "Thay đổi";
-                linkColEdit.Name = "Edit";
-                linkColEdit.LinkColor = Color.Blue;
-                linkColEdit.LinkBehavior = LinkBehavior.NeverUnderline;
-                linkColEdit.UseColumnTextForLinkValue = true;
-                linkColEdit.HeaderText = "";
-                DataGridViewLinkColumn linkColDelete = new DataGridViewLinkColumn();
-                linkColDelete.Text = "Xóa bỏ";
-                linkColDelete.Name = "Delete";
-                linkColDelete.LinkColor = Color.Red;
-                linkColDelete.LinkBehavior = LinkBehavior.NeverUnderline;
-                linkColDelete.UseColumnTextForLinkValue = true;
-                linkColDelete.HeaderText = "";
+                //DataGridViewLinkColumn linkColEdit = new DataGridViewLinkColumn();
+                //linkColEdit.Text = "Thay đổi";
+                //linkColEdit.Name = "Edit";
+                //linkColEdit.LinkColor = Color.Blue;
+                //linkColEdit.LinkBehavior = LinkBehavior.NeverUnderline;
+                //linkColEdit.UseColumnTextForLinkValue = true;
+                //linkColEdit.HeaderText = "";
+                //DataGridViewLinkColumn linkColDelete = new DataGridViewLinkColumn();
+                //linkColDelete.Text = "Xóa bỏ";
+                //linkColDelete.Name = "Delete";
+                //linkColDelete.LinkColor = Color.Red;
+                //linkColDelete.LinkBehavior = LinkBehavior.NeverUnderline;
+                //linkColDelete.UseColumnTextForLinkValue = true;
+                //linkColDelete.HeaderText = "";
 
-                gridDSThietBiMuon.Columns.Add(linkColEdit);
-                gridDSThietBiMuon.Columns.Add(linkColDelete);
+                //gridDSThietBiMuon.Columns.Add(linkColEdit);
+                //gridDSThietBiMuon.Columns.Add(linkColDelete);
+                ////
+                //gridDSThietBiMuon.Columns[0].HeaderText = "Mã thiết bị";
+                //gridDSThietBiMuon.Columns[1].HeaderText = "Tên thiết bị";
+                //gridDSThietBiMuon.Columns[2].HeaderText = "Số hiệu";
+                //gridDSThietBiMuon.Columns[3].HeaderText = "Phòng bộ môn";
+                //gridDSThietBiMuon.Columns[4].HeaderText = "Số lượng mượn";
+                //gridDSThietBiMuon.Columns[5].HeaderText = "Đơn vị tính";
+                //gridDSThietBiMuon.Columns[6].Width = 50;
+                //gridDSThietBiMuon.Columns[7].Width = 50;
                 //
-                gridDSThietBiMuon.Columns[0].HeaderText = "Mã thiết bị";
-                gridDSThietBiMuon.Columns[1].HeaderText = "Tên thiết bị";
-                gridDSThietBiMuon.Columns[2].HeaderText = "Số hiệu";
-                gridDSThietBiMuon.Columns[3].HeaderText = "Phòng bộ môn";
-                gridDSThietBiMuon.Columns[4].HeaderText = "Số lượng mượn";
-                gridDSThietBiMuon.Columns[5].HeaderText = "Đơn vị tính";
-                gridDSThietBiMuon.Columns[6].Width = 50;
-                gridDSThietBiMuon.Columns[7].Width = 50;
-                //
-                if (listRepeat.Count > 0)
+                if (repeatList.Count > 0)
                 {
                     string str = "";
-                    foreach (var item in listRepeat)
+                    foreach (var item in repeatList)
                     {
-                        str = str + ", " + item;
+                        str = str + item.SoHieu + ", ";
                     }
-                    MessageBox.Show("Các số hiệu đã có trong danh sách: ");
+                    MessageBox.Show("Các số hiệu đã có trong danh sách: " + str, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             #endregion
+            #region Truong hop chinh sua phieu muon
+            else
+            {
+                var listSoHieu = Phieu.ThietBis.Select(p1 => p1.SoHieu).ToList();
+                var repeatList = list.Where(p => listSoHieu.Contains(p.SoHieu)).ToList();
+                list.RemoveAll(p => listSoHieu.Contains(p.SoHieu));
+                Phieu.ThietBis.AddRange(list);
+                DataGridViewRow row = new DataGridViewRow();
+                source = new BindingSource();
+                source.DataSource = Phieu.ThietBis;
+                gridDSThietBiMuon.DataSource = source;
+                if (repeatList.Count > 0)
+                {
+                    string str = "";
+                    foreach (var item in repeatList)
+                    {
+                        str = str + item.SoHieu + ", ";
+                    }
+                    MessageBox.Show("Các số hiệu đã có trong danh sách: " + str, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            #endregion        
         }
 
         private void buttonX3_Click(object sender, EventArgs e)
@@ -222,6 +286,39 @@ namespace QLTB.GUI
         private void btnLuu_Click(object sender, EventArgs e)
         {
             saveData();
+        }
+
+        private void gridDSThietBiMuon_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var id = gridDSThietBiMuon.Rows[e.RowIndex].Cells[4].Value.ToString();
+            if ((e.RowIndex >= 0) && (e.ColumnIndex == gridDSThietBiMuon.Columns["Delete"].Index))
+            {
+                DialogResult dr = MessageBox.Show("Xóa thiết bị có số hiệu: " + id + " khỏi danh sách", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (dr == DialogResult.OK)
+                {
+                    if (Phieu != null)
+                    {
+                        if (handler.RemoveFromList(id, Phieu.PhieuMuonTBId) == 1)
+                        {
+                            gridDSThietBiMuon.Rows.Remove(gridDSThietBiMuon.Rows[e.RowIndex]);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Xóa không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        if (dsThietBi.Remove(dsThietBi.Where(p => p.SoHieu.Equals(id)).FirstOrDefault()))
+                            gridDSThietBiMuon.Rows.Remove(gridDSThietBiMuon.Rows[e.RowIndex]);
+                    }
+                }
+
+            }
+            else if ((e.RowIndex >= 0) && (e.ColumnIndex == gridDSThietBiMuon.Columns["Edit"].Index))
+            {
+
+            }
         }
     }
 }

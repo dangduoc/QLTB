@@ -361,6 +361,12 @@
     <Compile Include="GUI\DialogBox\frmDialogDSThietBi.Designer.cs">
       <DependentUpon>frmDialogDSThietBi.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\DialogBox\frmDialogTDTBMuon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DialogBox\frmDialogTDTBMuon.Designer.cs">
+      <DependentUpon>frmDialogTDTBMuon.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\DialogBox\frmFilterGrid.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -483,6 +489,9 @@
     <Compile Include="Utils\MyConvert.cs" />
     <EmbeddedResource Include="GUI\DialogBox\frmDialogDSThietBi.resx">
       <DependentUpon>frmDialogDSThietBi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DialogBox\frmDialogTDTBMuon.resx">
+      <DependentUpon>frmDialogTDTBMuon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DialogBox\frmFilterGrid.resx">
       <DependentUpon>frmFilterGrid.cs</DependentUpon>

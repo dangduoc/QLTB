@@ -49,7 +49,7 @@ namespace QLTB.Handler
                                   ).Join(unitOfWork.GetRepository<DS_TrangThaiPhieuMuon>().GetAll(),
                                       tb => tb.TrangThaiId,
                                       tt => tt.TrangThaiPMTBId,
-                                      (tb, tt) => new 
+                                      (tb, tt) => new
                                       {
                                           PhieuMuonTBId = tb.PhieuMuonTBId,
                                           NgayMuon = tb.NgayMuon,
@@ -205,34 +205,106 @@ namespace QLTB.Handler
 
             }
         }
-        //public int Update(PhieuMuonThietBiCreateModel model)
-        //{
-        //    try
-        //    {
-        //        using (var unitOfWork = new UnitOfWork())
-        //        {
+        public int Update(PhieuMuonThietBiModel model)
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    var data = unitOfWork.GetRepository<TB_PhieuMuonTB>().GetById(model.PhieuMuonTBId);
+                    if (data != null)
+                    {
+                        MyConvert.TransferValues(data, model);
+                        unitOfWork.GetRepository<TB_PhieuMuonTB>().Update(data);
+                        if (unitOfWork.Save() >= 1)
+                        {
+                            return 1;
+                        }
+                    }
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+        }
+        public int AddToList(List<ThietBiMuonGridDisplayModel> list, string PhieuMuonId)
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    foreach (var item in list)
+                    {
+                        DAL.Data.QH_PhieuMuonTB_ThietBi tmp = new DAL.Data.QH_PhieuMuonTB_ThietBi
+                        {
+                            PhieuMuonTBId = PhieuMuonId,
+                            IsDaTra = false,
+                            SoHieuTB = item.SoHieu,
+                            SoLuong = Convert.ToInt32(item.SoLuongMuon),
+                        };
+                        unitOfWork.GetRepository<DAL.Data.QH_PhieuMuonTB_ThietBi>().Add(tmp);
+                    }
 
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //    }
-        //}
-        //public int Delete(PhieuMuonThietBiCreateModel model)
-        //{
-        //    try
-        //    {
-        //        using (var unitOfWork = new UnitOfWork())
-        //        {
-
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //    }
-        //}
+                    if (unitOfWork.Save() >= 1)
+                    {
+                        return 1;
+                    }
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+        }
+        public int RemoveFromList(string SoHieu, string PhieuMuonId)
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    var data=unitOfWork.GetRepository<DAL.Data.QH_PhieuMuonTB_ThietBi>().GetAll().Where(p => p.SoHieuTB.Equals(SoHieu) && p.PhieuMuonTBId.Equals(PhieuMuonId)).FirstOrDefault();
+                    if (data != null)
+                    {
+                        unitOfWork.GetRepository<DAL.Data.QH_PhieuMuonTB_ThietBi>().Delete(data);
+                        if (unitOfWork.Save() >= 1)
+                        {
+                            return 1;
+                        }
+                    }
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+        }
+        public int Delete(string PhieuMuonId)
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    var data=unitOfWork.GetRepository<TB_PhieuMuonTB>().GetById(PhieuMuonId);
+                    if(data!=null)
+                    {
+                        data.IsDelete = true;
+                        if (unitOfWork.Save() >= 1)
+                        {
+                            return 1;
+                        }
+                    }
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+        }
         public string GenerateCode()
         {
             try

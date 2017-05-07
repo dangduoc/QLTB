@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThietBiMuon));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.expandablePanel1 = new DevComponents.DotNetBar.ExpandablePanel();
             this.layoutControl1 = new DevComponents.DotNetBar.Layout.LayoutControl();
             this.cboxNgoaiQuyDinh = new DevComponents.DotNetBar.Controls.CheckBoxX();
@@ -63,9 +63,12 @@
             this.layoutControlItem13 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
             this.layoutControlItem14 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
             this.expandablePanel2 = new DevComponents.DotNetBar.ExpandablePanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.gridDSThietBiMuon = new ADGV.AdvancedDataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.buttonX3 = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
+            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             this.rbChucNang = new DevComponents.DotNetBar.RibbonBar();
             this.btnLuu = new DevComponents.DotNetBar.ButtonItem();
             this.btnBaoHong = new DevComponents.DotNetBar.ButtonItem();
@@ -77,19 +80,16 @@
             this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.gridDSThietBiMuon = new ADGV.AdvancedDataGridView();
             this.expandablePanel1.SuspendLayout();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dPickerNgayTra)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dPickerNgayMuon)).BeginInit();
             this.expandablePanel2.SuspendLayout();
-            this.panelEx1.SuspendLayout();
-            this.panelEx2.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridDSThietBiMuon)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panelEx1.SuspendLayout();
+            this.panelEx2.SuspendLayout();
             this.SuspendLayout();
             // 
             // expandablePanel1
@@ -596,6 +596,58 @@
             this.expandablePanel2.TitleStyle.MarginLeft = 5;
             this.expandablePanel2.TitleText = "Danh sách thiết bị";
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.gridDSThietBiMuon);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 65);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(884, 132);
+            this.panel2.TabIndex = 17;
+            // 
+            // gridDSThietBiMuon
+            // 
+            this.gridDSThietBiMuon.AllowUserToAddRows = false;
+            this.gridDSThietBiMuon.AllowUserToDeleteRows = false;
+            this.gridDSThietBiMuon.AutoGenerateContextFilters = true;
+            this.gridDSThietBiMuon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridDSThietBiMuon.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridDSThietBiMuon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.gridDSThietBiMuon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridDSThietBiMuon.DateWithTime = false;
+            this.gridDSThietBiMuon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridDSThietBiMuon.Location = new System.Drawing.Point(0, 0);
+            this.gridDSThietBiMuon.Name = "gridDSThietBiMuon";
+            this.gridDSThietBiMuon.ReadOnly = true;
+            this.gridDSThietBiMuon.RowHeadersVisible = false;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridDSThietBiMuon.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.gridDSThietBiMuon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridDSThietBiMuon.Size = new System.Drawing.Size(884, 132);
+            this.gridDSThietBiMuon.TabIndex = 28;
+            this.gridDSThietBiMuon.TimeFilter = false;
+            this.gridDSThietBiMuon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridDSThietBiMuon_CellContentClick);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.buttonX3);
+            this.panel1.Controls.Add(this.buttonX1);
+            this.panel1.Controls.Add(this.buttonX2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 26);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(884, 39);
+            this.panel1.TabIndex = 16;
+            // 
             // buttonX3
             // 
             this.buttonX3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -610,18 +662,6 @@
             this.buttonX3.Text = "Chọn từ danh sách";
             this.buttonX3.Click += new System.EventHandler(this.buttonX3_Click);
             // 
-            // buttonX2
-            // 
-            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonX2.Location = new System.Drawing.Point(90, 7);
-            this.buttonX2.Name = "buttonX2";
-            this.buttonX2.Size = new System.Drawing.Size(161, 25);
-            this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX2.TabIndex = 1;
-            this.buttonX2.Text = "Lấy thiết bị thường dùng";
-            // 
             // buttonX1
             // 
             this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -634,6 +674,18 @@
             this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonX1.TabIndex = 0;
             this.buttonX1.Text = "Thêm";
+            // 
+            // buttonX2
+            // 
+            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonX2.Location = new System.Drawing.Point(90, 7);
+            this.buttonX2.Name = "buttonX2";
+            this.buttonX2.Size = new System.Drawing.Size(161, 25);
+            this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonX2.TabIndex = 1;
+            this.buttonX2.Text = "Lấy thiết bị thường dùng";
             // 
             // rbChucNang
             // 
@@ -800,56 +852,6 @@
             this.panelEx2.TabIndex = 9;
             this.panelEx2.Text = "panelEx2";
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.buttonX3);
-            this.panel1.Controls.Add(this.buttonX1);
-            this.panel1.Controls.Add(this.buttonX2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 26);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(884, 39);
-            this.panel1.TabIndex = 16;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.gridDSThietBiMuon);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 65);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(884, 132);
-            this.panel2.TabIndex = 17;
-            // 
-            // gridDSThietBiMuon
-            // 
-            this.gridDSThietBiMuon.AllowUserToAddRows = false;
-            this.gridDSThietBiMuon.AllowUserToDeleteRows = false;
-            this.gridDSThietBiMuon.AutoGenerateContextFilters = false;
-            this.gridDSThietBiMuon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gridDSThietBiMuon.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridDSThietBiMuon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
-            this.gridDSThietBiMuon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridDSThietBiMuon.DateWithTime = false;
-            this.gridDSThietBiMuon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridDSThietBiMuon.Location = new System.Drawing.Point(0, 0);
-            this.gridDSThietBiMuon.Name = "gridDSThietBiMuon";
-            this.gridDSThietBiMuon.RowHeadersVisible = false;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridDSThietBiMuon.RowsDefaultCellStyle = dataGridViewCellStyle16;
-            this.gridDSThietBiMuon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridDSThietBiMuon.Size = new System.Drawing.Size(884, 132);
-            this.gridDSThietBiMuon.TabIndex = 28;
-            this.gridDSThietBiMuon.TimeFilter = false;
-            // 
             // frmThietBiMuon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -867,11 +869,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dPickerNgayTra)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dPickerNgayMuon)).EndInit();
             this.expandablePanel2.ResumeLayout(false);
-            this.panelEx1.ResumeLayout(false);
-            this.panelEx2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridDSThietBiMuon)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panelEx1.ResumeLayout(false);
+            this.panelEx2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
