@@ -73,6 +73,16 @@ namespace QLTB.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add1 {
+            get {
+                object obj = ResourceManager.GetObject("add1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Apps_session_logout_icon {
             get {
                 object obj = ResourceManager.GetObject("Apps-session-logout-icon", resourceCulture);
@@ -86,6 +96,16 @@ namespace QLTB.Properties {
         internal static System.Drawing.Bitmap AQUA_ICONS_SYSTEM_KEYS {
             get {
                 object obj = ResourceManager.GetObject("AQUA ICONS SYSTEM KEYS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap b_drop {
+            get {
+                object obj = ResourceManager.GetObject("b_drop", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -366,6 +386,16 @@ namespace QLTB.Properties {
         internal static System.Drawing.Bitmap stop_f2 {
             get {
                 object obj = ResourceManager.GetObject("stop_f2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tick {
+            get {
+                object obj = ResourceManager.GetObject("tick", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

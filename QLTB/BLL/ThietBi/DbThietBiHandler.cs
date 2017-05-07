@@ -31,7 +31,8 @@ namespace QLTB.Handler
                                         MonHoc = tbtt.MonHocId,
                                         SoLuong = tttb.SoLuong.ToString(),
                                         SoLuongMat = tttb.SoLuongMat.ToString(),
-                                        SoLuongHong = tttb.SoLuongHong.ToString()
+                                        SoLuongHong = tttb.SoLuongHong.ToString(),
+                                        DonViTinh=tttb.DonViTinhId
                                     }
                                 )
                                 .Join(unitOfWork.GetRepository<DM_PhongHocBoMon>().GetAll(),
@@ -42,16 +43,33 @@ namespace QLTB.Handler
                                 .Join(unitOfWork.GetRepository<DM_MonHoc>().GetAll(),
                                     tb => tb.ThietBi.MonHoc,
                                     mh => mh.MonHocId,
-                                    (tmp1, mh) => new ThietBiGridDisplayModel
+                                    (tb, mh) => new 
                                     {
-                                        ThietBiId = tmp1.ThietBi.ThietBiId,
-                                        SoHieu = tmp1.ThietBi.SoHieu,
-                                        Ten = tmp1.ThietBi.Ten,
-                                        KhoPhong = tmp1.PhongHoc.Ten,
+                                        ThietBiId = tb.ThietBi.ThietBiId,
+                                        SoHieu = tb.ThietBi.SoHieu,
+                                        Ten = tb.ThietBi.Ten,
+                                        KhoPhong = tb.PhongHoc.Ten,
                                         MonHoc = mh.Ten,
-                                        SoLuong = tmp1.ThietBi.SoLuong.ToString(),
-                                        SoLuongMat = tmp1.ThietBi.SoLuongMat.ToString(),
-                                        SoLuongHong = tmp1.ThietBi.SoLuongHong.ToString()
+                                        SoLuong = tb.ThietBi.SoLuong.ToString(),
+                                        SoLuongMat = tb.ThietBi.SoLuongMat.ToString(),
+                                        SoLuongHong = tb.ThietBi.SoLuongHong.ToString(),
+                                        DonViTinh = tb.ThietBi.DonViTinh
+                                    }
+                                )
+                                .Join(unitOfWork.GetRepository<DS_DonViTinh>().GetAll(),
+                                    tb => tb.DonViTinh,
+                                    dvt => dvt.DonViTinhId,
+                                    (tb, dvt) => new ThietBiGridDisplayModel
+                                    {
+                                        ThietBiId = tb.ThietBiId,
+                                        SoHieu = tb.SoHieu,
+                                        Ten = tb.Ten,
+                                        KhoPhong = tb.KhoPhong,
+                                        MonHoc = tb.MonHoc,
+                                        SoLuong = tb.SoLuong.ToString(),
+                                        SoLuongMat = tb.SoLuongMat.ToString(),
+                                        SoLuongHong = tb.SoLuongHong.ToString(),
+                                        DonViTinh = dvt.Ten
                                     }
                                 )
                                 .ToList();

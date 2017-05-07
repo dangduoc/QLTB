@@ -31,9 +31,9 @@ namespace QLTB.Utils
         {
             if (date == null) return "";
             else
-            return ((DateTime)date).ToString("dd/M/yyyy", CultureInfo.InvariantCulture);
+                return ((DateTime)date).ToString("dd/M/yyyy", CultureInfo.InvariantCulture);
         }
-        public static string BoolToString(bool value, string iftrue,string iffalse)
+        public static string BoolToString(bool value, string iftrue, string iffalse)
         {
             return value == true ? iftrue : iffalse;
         }
@@ -49,23 +49,32 @@ namespace QLTB.Utils
             var result = Activator.CreateInstance<T>();
             foreach (var item in typeof(T).GetProperties())
             {
-                if(!item.GetMethod.IsVirtual)
-                item.SetValue(result, source.GetType().GetProperty(item.Name).GetValue(source)??null);
+                if (!item.GetMethod.IsVirtual)
+                    if(source.GetType().GetProperty(item.Name)!=null)
+                    item.SetValue(result, source.GetType().GetProperty(item.Name).GetValue(source) ?? null);
             }
             return result;
         }
         public static T To<T>(object value)
         {
-            if (value.GetType() == typeof(string))
+            try
             {
-                if (String.IsNullOrEmpty(value.ToString()))
+                if (value == null) return default(T);
+                if (value.GetType() == typeof(string))
                 {
-                    return default(T);
+                    if (String.IsNullOrEmpty(value.ToString()))
+                    {
+                        return default(T);
+                    }
                 }
+                return (T)Convert.ChangeType(value, typeof(T));
             }
-            return (T)Convert.ChangeType(value, typeof(T));
+            catch(Exception ex)
+            {
+                return default(T);
+            }
         }
-        public static void TransferValues(object value1,object value2)
+        public static void TransferValues(object value1, object value2)
         {
             foreach (var item in value1.GetType().GetProperties())
             {

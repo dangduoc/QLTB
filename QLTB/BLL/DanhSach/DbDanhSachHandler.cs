@@ -409,5 +409,26 @@ namespace QLTB.Handler
                 return null;
             }
         }
+        public List<DSBaiGiang> GetBaiGiang(int MonHocId)
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    var data = unitOfWork.GetRepository<DS_BaiGiang>().GetAll().Where(p=>p.MonHocId==MonHocId)
+                        .Select(p => new DSBaiGiang
+                        {
+                            BaiGiangId = p.BaiGiangId,
+                            Ten = p.Ten
+                        }).ToList();
+                    return data;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }

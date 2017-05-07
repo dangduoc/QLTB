@@ -36,7 +36,6 @@ namespace QLTB.DAL.Data
     
         public virtual DM_GiaoVien DM_GiaoVien { get; set; }
         public virtual DM_KhoiLop DM_KhoiLop { get; set; }
-        public virtual DM_LopHoc DM_LopHoc { get; set; }
         public virtual DM_MonHoc DM_MonHoc { get; set; }
         public virtual DS_BaiGiang DS_BaiGiang { get; set; }
         public virtual DS_MucDichSDThietBi DS_MucDichSDThietBi { get; set; }

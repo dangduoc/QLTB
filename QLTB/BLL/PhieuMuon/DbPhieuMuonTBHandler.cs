@@ -19,20 +19,6 @@ namespace QLTB.Handler
                 using (var unitOfWork = new UnitOfWork())
                 {
                     var data = unitOfWork.GetRepository<TB_PhieuMuonTB>().GetAll()
-                                  .Join(unitOfWork.GetRepository<DS_BaiGiang>().GetAll(),
-                                      tb => tb.BaiDayId,
-                                      dvt => dvt.BaiGiangId,
-                                      (tb, dvt) => new
-                                      {
-                                          PhieuMuonTBId = tb.PhieuMuonTBId,
-                                          NgayMuon = tb.NgayMuon,
-                                          NgayTra = tb.NgayTra,
-                                          BaiDay = dvt.Ten,
-                                          LopHocId = tb.LopHocId,
-                                          GiaoVienId = tb.GiaoVienId,
-                                          TrangThaiId = tb.TrangThaiId
-                                      }
-                                  )
                                   .Join(unitOfWork.GetRepository<DM_LopHoc>().GetAll(),
                                       tb => tb.LopHocId,
                                       lh => lh.LopHocId,
@@ -41,7 +27,7 @@ namespace QLTB.Handler
                                           PhieuMuonTBId = tb.PhieuMuonTBId,
                                           NgayMuon = tb.NgayMuon,
                                           NgayTra = tb.NgayTra,
-                                          BaiDay = tb.BaiDay,
+                                          BaiDayId = tb.BaiDayId,
                                           LopHoc = lh.Ten,
                                           GiaoVienId = tb.GiaoVienId,
                                           TrangThaiId = tb.TrangThaiId
@@ -49,31 +35,64 @@ namespace QLTB.Handler
                                   )
                                    .Join(unitOfWork.GetRepository<DM_GiaoVien>().GetAll(),
                                       tb => tb.GiaoVienId,
-                                      ltb => ltb.GiaoVienId,
-                                      (tb, ltb) => new
+                                      gv => gv.GiaoVienId,
+                                      (tb, gv) => new
                                       {
                                           PhieuMuonTBId = tb.PhieuMuonTBId,
                                           NgayMuon = tb.NgayMuon,
                                           NgayTra = tb.NgayTra,
-                                          BaiDay = tb.BaiDay,
+                                          BaiDayId = tb.BaiDayId,
                                           LopHoc = tb.LopHoc,
-                                          GiaoVien = ltb.Ten,
+                                          GiaoVien = gv.Ten,
                                           TrangThaiId = tb.TrangThaiId
                                       }
                                   ).Join(unitOfWork.GetRepository<DS_TrangThaiPhieuMuon>().GetAll(),
                                       tb => tb.TrangThaiId,
-                                      ltb => ltb.TrangThaiPMTBId,
-                                      (tb, ltb) => new PhieuMuonTBGridDisplayModel
+                                      tt => tt.TrangThaiPMTBId,
+                                      (tb, tt) => new 
                                       {
                                           PhieuMuonTBId = tb.PhieuMuonTBId,
-                                          NgayMuon = tb.NgayMuon.ToString("dd/M/yyyy"),
-                                          NgayTra = tb.NgayTra.ToString("dd/M/yyyy"),
-                                          BaiDay = tb.BaiDay,
+                                          NgayMuon = tb.NgayMuon,
+                                          NgayTra = tb.NgayTra,
+                                          BaiDay = tb.BaiDayId,
                                           LopHoc = tb.LopHoc,
-                                          GiaoVien = ltb.Ten,
-                                          TrangThai = ltb.Ten
+                                          GiaoVien = tb.GiaoVien,
+                                          TrangThai = tt.Ten
                                       }
-                                  ).ToList();
+                                    ).GroupJoin(unitOfWork.GetRepository<DS_BaiGiang>().GetAll(),
+                                      tb => tb.BaiDay,
+                                      bg => bg.BaiGiangId,
+                                      (tb, g) => g
+                                      .Select(bg => new
+                                      {
+                                          PhieuMuonTBId = tb.PhieuMuonTBId,
+                                          NgayMuon = tb.NgayMuon,
+                                          NgayTra = tb.NgayTra,
+                                          BaiDay = bg.Ten,
+                                          LopHoc = tb.LopHoc,
+                                          GiaoVien = tb.GiaoVien,
+                                          TrangThai = tb.TrangThai
+                                      }).DefaultIfEmpty(new
+                                      {
+                                          PhieuMuonTBId = tb.PhieuMuonTBId,
+                                          NgayMuon = tb.NgayMuon,
+                                          NgayTra = tb.NgayTra,
+                                          BaiDay = "",
+                                          LopHoc = tb.LopHoc,
+                                          GiaoVien = tb.GiaoVien,
+                                          TrangThai = tb.TrangThai
+                                      })
+                                  ).SelectMany(g => g).ToList()
+                                    .Select(tb => new PhieuMuonTBGridDisplayModel
+                                    {
+                                        PhieuMuonTBId = tb.PhieuMuonTBId,
+                                        NgayMuon = MyConvert.DateToString(tb.NgayMuon),
+                                        NgayTra = MyConvert.DateToString(tb.NgayTra),
+                                        BaiDay = tb.BaiDay,
+                                        LopHoc = tb.LopHoc,
+                                        GiaoVien = tb.GiaoVien,
+                                        TrangThai = tb.TrangThai
+                                    }).ToList();
 
                     return data;
 
@@ -146,20 +165,46 @@ namespace QLTB.Handler
                 return null;
             }
         }
-        //public int Create(PhieuMuonThietBiCreateModel model)
-        //{
-        //    try
-        //    {
-        //        using (var unitOfWork= new UnitOfWork())
-        //        {
+        public int Create(PhieuMuonThietBiModel model)
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    var data = new TB_PhieuMuonTB();
+                    MyConvert.TransferValues(data, model);
+                    data.IsDelete = false;
+                    data.TrangThaiId = 1;
+                    unitOfWork.GetRepository<TB_PhieuMuonTB>().Add(data);
+                    if (unitOfWork.Save() >= 1)
+                    {
+                        //saveing devices
+                        foreach (var item in model.ThietBis)
+                        {
+                            var ThietBi = new DAL.Data.QH_PhieuMuonTB_ThietBi
+                            {
+                                IsDaTra = false,
+                                SoHieuTB = item.SoHieu,
+                                SoLuong = Convert.ToInt32(item.SoLuongMuon),
+                                PhieuMuonTBId = model.PhieuMuonTBId
+                            };
+                            unitOfWork.GetRepository<DAL.Data.QH_PhieuMuonTB_ThietBi>().Add(ThietBi);
+                        }
+                        if (unitOfWork.Save() >= 1)
+                        {
+                            return 1;
+                        }
+                        else return 2;
+                    }
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                return -1;
 
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //    }
-        //}
+            }
+        }
         //public int Update(PhieuMuonThietBiCreateModel model)
         //{
         //    try
@@ -188,5 +233,42 @@ namespace QLTB.Handler
 
         //    }
         //}
+        public string GenerateCode()
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    string newCode = "";
+                    var last = unitOfWork.GetRepository<TB_PhieuMuonTB>().GetAll().OrderByDescending(p => p.PhieuMuonTBId).FirstOrDefault();
+                    if (last != null)
+                    {
+                        var lastCode = last.PhieuMuonTBId;
+                        var numberPart = lastCode.Remove(0, 4);
+                        var prefixPart = lastCode.Substring(0, 4);
+                        var number = Convert.ToInt32(numberPart.TrimStart('0'));
+                        var suffix = number + 1;
+                        int sizePrefix = prefixPart.Length;
+                        int sizeSuffix = suffix.ToString().Length;
+                        string middle = "";
+                        for (int i = 0; i < (10 - sizePrefix - sizeSuffix); i++)
+                        {
+                            middle += "0";
+                        }
+                        newCode = prefixPart + middle + suffix;
+                        return newCode;
+                    }
+                    else
+                    {
+                        newCode = "PMTB000001";
+                    }
+                    return newCode;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }

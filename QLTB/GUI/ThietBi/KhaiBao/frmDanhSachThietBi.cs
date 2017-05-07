@@ -141,6 +141,7 @@ namespace QLTB.GUI
             headers.Add("Kho/Phòng bộ môn");
             headers.Add("Bộ môn");
             headers.Add("Số lượng");
+            headers.Add("Đơn vị tính");
             headers.Add("Mất");
             headers.Add("Hỏng");
             //

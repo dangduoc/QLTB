@@ -109,8 +109,8 @@ namespace QLTB.Handler
                     if (last != null)
                     {
                         var lastCode = last.MaDonVi;
-                        var numberPart = lastCode.Substring(lastCode.LastIndexOf('.') + 1);
-                        var prefixPart = lastCode.Remove(lastCode.LastIndexOf('.'));
+                        var numberPart = lastCode.Remove(0, 4);
+                        var prefixPart = lastCode.Substring(0,4);
                         var number = Convert.ToInt32(numberPart.TrimStart('0'));
                         var suffix = number + 1;
                         int sizePrefix = prefixPart.Length;

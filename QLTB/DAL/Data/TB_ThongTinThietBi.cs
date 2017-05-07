@@ -31,6 +31,7 @@ namespace QLTB.DAL.Data
         public int PhongHocId { get; set; }
         public int NguonKinhPhiId { get; set; }
         public short NamDuaVaoSD { get; set; }
+        public System.DateTime NgayDuaVaoSD { get; set; }
         public short NamTheoDoi { get; set; }
         public int DonViTinhId { get; set; }
         public short SoLuong { get; set; }
@@ -44,12 +45,11 @@ namespace QLTB.DAL.Data
         public Nullable<System.DateTime> NgaySanXuat { get; set; }
         public Nullable<System.DateTime> HanSD { get; set; }
         public string GhiChu { get; set; }
+        public int TrangThai { get; set; }
         public string CreateByUserId { get; set; }
         public Nullable<System.DateTime> CreatedOnDate { get; set; }
         public string UpdatedByUserId { get; set; }
         public Nullable<System.DateTime> UpdatedOnDate { get; set; }
-        public System.DateTime NgayDuaVaoSD { get; set; }
-        public int TrangThai { get; set; }
     
         public virtual DM_ThietBiToiThieu DM_ThietBiToiThieu { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

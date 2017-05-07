@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThietBiMuon));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.expandablePanel1 = new DevComponents.DotNetBar.ExpandablePanel();
             this.layoutControl1 = new DevComponents.DotNetBar.Layout.LayoutControl();
             this.cboxNgoaiQuyDinh = new DevComponents.DotNetBar.Controls.CheckBoxX();
@@ -63,8 +62,10 @@
             this.layoutControlItem12 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
             this.layoutControlItem13 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
             this.layoutControlItem14 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
-            this.gridDSThietBiMuon = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.expandablePanel2 = new DevComponents.DotNetBar.ExpandablePanel();
+            this.buttonX3 = new DevComponents.DotNetBar.ButtonX();
+            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
+            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.rbChucNang = new DevComponents.DotNetBar.RibbonBar();
             this.btnLuu = new DevComponents.DotNetBar.ButtonItem();
             this.btnBaoHong = new DevComponents.DotNetBar.ButtonItem();
@@ -76,14 +77,19 @@
             this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.gridDSThietBiMuon = new ADGV.AdvancedDataGridView();
             this.expandablePanel1.SuspendLayout();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dPickerNgayTra)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dPickerNgayMuon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridDSThietBiMuon)).BeginInit();
             this.expandablePanel2.SuspendLayout();
             this.panelEx1.SuspendLayout();
             this.panelEx2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridDSThietBiMuon)).BeginInit();
             this.SuspendLayout();
             // 
             // expandablePanel1
@@ -187,26 +193,24 @@
             // CbbMucDichSD
             // 
             this.CbbMucDichSD.DisplayMember = "Text";
-            this.CbbMucDichSD.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.CbbMucDichSD.FormattingEnabled = true;
-            this.CbbMucDichSD.ItemHeight = 16;
+            this.CbbMucDichSD.ItemHeight = 15;
             this.CbbMucDichSD.Location = new System.Drawing.Point(716, 109);
             this.CbbMucDichSD.Margin = new System.Windows.Forms.Padding(0);
             this.CbbMucDichSD.Name = "CbbMucDichSD";
-            this.CbbMucDichSD.Size = new System.Drawing.Size(164, 22);
+            this.CbbMucDichSD.Size = new System.Drawing.Size(164, 23);
             this.CbbMucDichSD.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.CbbMucDichSD.TabIndex = 12;
             // 
             // cbbTenBaiDay
             // 
             this.cbbTenBaiDay.DisplayMember = "Text";
-            this.cbbTenBaiDay.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbTenBaiDay.FormattingEnabled = true;
-            this.cbbTenBaiDay.ItemHeight = 16;
+            this.cbbTenBaiDay.ItemHeight = 15;
             this.cbbTenBaiDay.Location = new System.Drawing.Point(98, 109);
             this.cbbTenBaiDay.Margin = new System.Windows.Forms.Padding(0);
             this.cbbTenBaiDay.Name = "cbbTenBaiDay";
-            this.cbbTenBaiDay.Size = new System.Drawing.Size(516, 22);
+            this.cbbTenBaiDay.Size = new System.Drawing.Size(516, 23);
             this.cbbTenBaiDay.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbbTenBaiDay.TabIndex = 11;
             // 
@@ -219,6 +223,7 @@
             this.dPickerNgayTra.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.dPickerNgayTra.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.dPickerNgayTra.ButtonDropDown.Visible = true;
+            this.dPickerNgayTra.CustomFormat = "dd/mm/yyyy";
             this.dPickerNgayTra.IsPopupCalendarOpen = false;
             this.dPickerNgayTra.Location = new System.Drawing.Point(716, 74);
             this.dPickerNgayTra.Margin = new System.Windows.Forms.Padding(0);
@@ -254,6 +259,7 @@
             this.dPickerNgayTra.Size = new System.Drawing.Size(164, 21);
             this.dPickerNgayTra.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dPickerNgayTra.TabIndex = 10;
+            this.dPickerNgayTra.WatermarkText = "dd/mm/yyyy";
             // 
             // txtSoTiet
             // 
@@ -272,26 +278,24 @@
             // CbbMonHoc
             // 
             this.CbbMonHoc.DisplayMember = "Text";
-            this.CbbMonHoc.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.CbbMonHoc.FormattingEnabled = true;
-            this.CbbMonHoc.ItemHeight = 16;
+            this.CbbMonHoc.ItemHeight = 15;
             this.CbbMonHoc.Location = new System.Drawing.Point(98, 74);
             this.CbbMonHoc.Margin = new System.Windows.Forms.Padding(0);
             this.CbbMonHoc.Name = "CbbMonHoc";
-            this.CbbMonHoc.Size = new System.Drawing.Size(251, 22);
+            this.CbbMonHoc.Size = new System.Drawing.Size(251, 23);
             this.CbbMonHoc.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.CbbMonHoc.TabIndex = 8;
             // 
             // CbbBuoiTrongNgay
             // 
             this.CbbBuoiTrongNgay.DisplayMember = "Text";
-            this.CbbBuoiTrongNgay.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.CbbBuoiTrongNgay.FormattingEnabled = true;
-            this.CbbBuoiTrongNgay.ItemHeight = 16;
+            this.CbbBuoiTrongNgay.ItemHeight = 15;
             this.CbbBuoiTrongNgay.Location = new System.Drawing.Point(780, 43);
             this.CbbBuoiTrongNgay.Margin = new System.Windows.Forms.Padding(0);
             this.CbbBuoiTrongNgay.Name = "CbbBuoiTrongNgay";
-            this.CbbBuoiTrongNgay.Size = new System.Drawing.Size(96, 22);
+            this.CbbBuoiTrongNgay.Size = new System.Drawing.Size(96, 23);
             this.CbbBuoiTrongNgay.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.CbbBuoiTrongNgay.TabIndex = 6;
             // 
@@ -312,26 +316,24 @@
             // CbbDayLop
             // 
             this.CbbDayLop.DisplayMember = "Text";
-            this.CbbDayLop.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.CbbDayLop.FormattingEnabled = true;
-            this.CbbDayLop.ItemHeight = 16;
+            this.CbbDayLop.ItemHeight = 15;
             this.CbbDayLop.Location = new System.Drawing.Point(451, 39);
             this.CbbDayLop.Margin = new System.Windows.Forms.Padding(0);
             this.CbbDayLop.Name = "CbbDayLop";
-            this.CbbDayLop.Size = new System.Drawing.Size(163, 22);
+            this.CbbDayLop.Size = new System.Drawing.Size(163, 23);
             this.CbbDayLop.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.CbbDayLop.TabIndex = 4;
             // 
             // CbbGiaoVien
             // 
             this.CbbGiaoVien.DisplayMember = "Text";
-            this.CbbGiaoVien.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.CbbGiaoVien.FormattingEnabled = true;
-            this.CbbGiaoVien.ItemHeight = 16;
+            this.CbbGiaoVien.ItemHeight = 15;
             this.CbbGiaoVien.Location = new System.Drawing.Point(98, 39);
             this.CbbGiaoVien.Margin = new System.Windows.Forms.Padding(0);
             this.CbbGiaoVien.Name = "CbbGiaoVien";
-            this.CbbGiaoVien.Size = new System.Drawing.Size(251, 22);
+            this.CbbGiaoVien.Size = new System.Drawing.Size(251, 23);
             this.CbbGiaoVien.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.CbbGiaoVien.TabIndex = 3;
             // 
@@ -344,6 +346,7 @@
             this.dPickerNgayMuon.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.dPickerNgayMuon.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.dPickerNgayMuon.ButtonDropDown.Visible = true;
+            this.dPickerNgayMuon.CustomFormat = "dd/mm/yyyy";
             this.dPickerNgayMuon.IsPopupCalendarOpen = false;
             this.dPickerNgayMuon.Location = new System.Drawing.Point(718, 4);
             this.dPickerNgayMuon.Margin = new System.Windows.Forms.Padding(0);
@@ -379,17 +382,17 @@
             this.dPickerNgayMuon.Size = new System.Drawing.Size(162, 21);
             this.dPickerNgayMuon.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dPickerNgayMuon.TabIndex = 2;
+            this.dPickerNgayMuon.WatermarkText = "dd/mm/yyyy";
             // 
             // CbbKhoiLop
             // 
             this.CbbKhoiLop.DisplayMember = "Text";
-            this.CbbKhoiLop.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.CbbKhoiLop.FormattingEnabled = true;
-            this.CbbKhoiLop.ItemHeight = 16;
+            this.CbbKhoiLop.ItemHeight = 15;
             this.CbbKhoiLop.Location = new System.Drawing.Point(451, 4);
             this.CbbKhoiLop.Margin = new System.Windows.Forms.Padding(0);
             this.CbbKhoiLop.Name = "CbbKhoiLop";
-            this.CbbKhoiLop.Size = new System.Drawing.Size(163, 22);
+            this.CbbKhoiLop.Size = new System.Drawing.Size(163, 23);
             this.CbbKhoiLop.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.CbbKhoiLop.TabIndex = 1;
             // 
@@ -404,6 +407,7 @@
             this.txtSoPhieu.Margin = new System.Windows.Forms.Padding(0);
             this.txtSoPhieu.Name = "txtSoPhieu";
             this.txtSoPhieu.PreventEnterBeep = true;
+            this.txtSoPhieu.ReadOnly = true;
             this.txtSoPhieu.Size = new System.Drawing.Size(251, 21);
             this.txtSoPhieu.TabIndex = 0;
             // 
@@ -562,46 +566,12 @@
             this.layoutControlItem14.Width = 30;
             this.layoutControlItem14.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
             // 
-            // gridDSThietBiMuon
-            // 
-            this.gridDSThietBiMuon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gridDSThietBiMuon.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridDSThietBiMuon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.gridDSThietBiMuon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridDSThietBiMuon.DefaultCellStyle = dataGridViewCellStyle2;
-            this.gridDSThietBiMuon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridDSThietBiMuon.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
-            this.gridDSThietBiMuon.Location = new System.Drawing.Point(0, 26);
-            this.gridDSThietBiMuon.MultiSelect = false;
-            this.gridDSThietBiMuon.Name = "gridDSThietBiMuon";
-            this.gridDSThietBiMuon.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridDSThietBiMuon.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.gridDSThietBiMuon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridDSThietBiMuon.Size = new System.Drawing.Size(884, 171);
-            this.gridDSThietBiMuon.TabIndex = 4;
-            // 
             // expandablePanel2
             // 
             this.expandablePanel2.CanvasColor = System.Drawing.SystemColors.Control;
             this.expandablePanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.expandablePanel2.Controls.Add(this.gridDSThietBiMuon);
+            this.expandablePanel2.Controls.Add(this.panel2);
+            this.expandablePanel2.Controls.Add(this.panel1);
             this.expandablePanel2.DisabledBackColor = System.Drawing.Color.Empty;
             this.expandablePanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.expandablePanel2.HideControlsWhenCollapsed = true;
@@ -624,7 +594,46 @@
             this.expandablePanel2.TitleStyle.ForeColor.Color = System.Drawing.Color.Black;
             this.expandablePanel2.TitleStyle.GradientAngle = 90;
             this.expandablePanel2.TitleStyle.MarginLeft = 5;
-            this.expandablePanel2.TitleText = "Danh sách các thiết bị đã mượn";
+            this.expandablePanel2.TitleText = "Danh sách thiết bị";
+            // 
+            // buttonX3
+            // 
+            this.buttonX3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonX3.Image = global::QLTB.Properties.Resources.tick;
+            this.buttonX3.Location = new System.Drawing.Point(262, 7);
+            this.buttonX3.Name = "buttonX3";
+            this.buttonX3.Size = new System.Drawing.Size(139, 25);
+            this.buttonX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonX3.TabIndex = 2;
+            this.buttonX3.Text = "Chọn từ danh sách";
+            this.buttonX3.Click += new System.EventHandler(this.buttonX3_Click);
+            // 
+            // buttonX2
+            // 
+            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonX2.Location = new System.Drawing.Point(90, 7);
+            this.buttonX2.Name = "buttonX2";
+            this.buttonX2.Size = new System.Drawing.Size(161, 25);
+            this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonX2.TabIndex = 1;
+            this.buttonX2.Text = "Lấy thiết bị thường dùng";
+            // 
+            // buttonX1
+            // 
+            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonX1.Image = global::QLTB.Properties.Resources.add;
+            this.buttonX1.Location = new System.Drawing.Point(6, 7);
+            this.buttonX1.Name = "buttonX1";
+            this.buttonX1.Size = new System.Drawing.Size(74, 25);
+            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonX1.TabIndex = 0;
+            this.buttonX1.Text = "Thêm";
             // 
             // rbChucNang
             // 
@@ -677,6 +686,7 @@
             this.btnLuu.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlN);
             this.btnLuu.Text = "Lưu lại";
             this.btnLuu.Tooltip = "Khai báo thiết bị";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnBaoHong
             // 
@@ -743,6 +753,7 @@
             this.buttonItem1});
             this.btnThoat.Text = "Đóng";
             this.btnThoat.Tooltip = "Đóng";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // buttonItem1
             // 
@@ -789,6 +800,56 @@
             this.panelEx2.TabIndex = 9;
             this.panelEx2.Text = "panelEx2";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.buttonX3);
+            this.panel1.Controls.Add(this.buttonX1);
+            this.panel1.Controls.Add(this.buttonX2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 26);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(884, 39);
+            this.panel1.TabIndex = 16;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.gridDSThietBiMuon);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 65);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(884, 132);
+            this.panel2.TabIndex = 17;
+            // 
+            // gridDSThietBiMuon
+            // 
+            this.gridDSThietBiMuon.AllowUserToAddRows = false;
+            this.gridDSThietBiMuon.AllowUserToDeleteRows = false;
+            this.gridDSThietBiMuon.AutoGenerateContextFilters = false;
+            this.gridDSThietBiMuon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridDSThietBiMuon.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridDSThietBiMuon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            this.gridDSThietBiMuon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridDSThietBiMuon.DateWithTime = false;
+            this.gridDSThietBiMuon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridDSThietBiMuon.Location = new System.Drawing.Point(0, 0);
+            this.gridDSThietBiMuon.Name = "gridDSThietBiMuon";
+            this.gridDSThietBiMuon.RowHeadersVisible = false;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridDSThietBiMuon.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            this.gridDSThietBiMuon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridDSThietBiMuon.Size = new System.Drawing.Size(884, 132);
+            this.gridDSThietBiMuon.TabIndex = 28;
+            this.gridDSThietBiMuon.TimeFilter = false;
+            // 
             // frmThietBiMuon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -805,10 +866,12 @@
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dPickerNgayTra)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dPickerNgayMuon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridDSThietBiMuon)).EndInit();
             this.expandablePanel2.ResumeLayout(false);
             this.panelEx1.ResumeLayout(false);
             this.panelEx2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridDSThietBiMuon)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -816,7 +879,6 @@
         #endregion
 
         private DevComponents.DotNetBar.ExpandablePanel expandablePanel1;
-        private DevComponents.DotNetBar.Controls.DataGridViewX gridDSThietBiMuon;
         private DevComponents.DotNetBar.Layout.LayoutControl layoutControl1;
         private DevComponents.DotNetBar.ExpandablePanel expandablePanel2;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dPickerNgayTra;
@@ -859,5 +921,11 @@
         private DevComponents.DotNetBar.PanelEx panelEx1;
         private DevComponents.DotNetBar.PanelEx panelEx2;
         private DevComponents.DotNetBar.ButtonItem btnTroGiup;
+        private DevComponents.DotNetBar.ButtonX buttonX3;
+        private DevComponents.DotNetBar.ButtonX buttonX2;
+        private DevComponents.DotNetBar.ButtonX buttonX1;
+        private System.Windows.Forms.Panel panel2;
+        private ADGV.AdvancedDataGridView gridDSThietBiMuon;
+        private System.Windows.Forms.Panel panel1;
     }
 }
