@@ -296,6 +296,48 @@ namespace QLTB.GUI
                 this.Cursor = Cursors.Default;
             }
         }
+        private void btnDSMuonThietBi_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Cursor = Cursors.WaitCursor;
+                if (!CheckExistForm("frmDanhSachMuonTB"))
+                {
+                    Application.DoEvents();
+                    frmDanhSachMuonTB childForm = new frmDanhSachMuonTB();
+                    childForm.MdiParent = this;
+                    childForm.WindowState = FormWindowState.Maximized;
+                    childForm.Show();
+
+                }
+                this.Cursor = Cursors.Default;
+            }
+            catch (Exception ex)
+            {
+                this.Cursor = Cursors.Default;
+            }
+        }
+        private void btnDKMuonThietBi_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Cursor = Cursors.WaitCursor;
+                if (!CheckExistForm("frmThietBiMuon"))
+                {
+                    Application.DoEvents();
+                    frmThietBiMuon childForm = new frmThietBiMuon();
+                    childForm.MdiParent = this;
+                    childForm.WindowState = FormWindowState.Maximized;
+                    childForm.Show();
+
+                }
+                this.Cursor = Cursors.Default;
+            }
+            catch (Exception ex)
+            {
+                this.Cursor = Cursors.Default;
+            }
+        }
         private void TreeView_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             if (TreeView.SelectedNode == null) return;
@@ -347,7 +389,12 @@ namespace QLTB.GUI
                     case "btnThongTinDV":
                         btnThongTinDV_Click(null, null);
                         break;
-                        
+                    case "btnDSMuonThietBi":
+                        btnDSMuonThietBi_Click(null, null);
+                        break;
+                    case "btnDKMuonThietBi":
+                        btnDKMuonThietBi_Click(null, null);
+                        break;
                     default:
                         MessageBox.Show("Chức năng này chưa được xây dựng ....");
                         break;

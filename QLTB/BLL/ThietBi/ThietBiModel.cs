@@ -46,6 +46,7 @@ namespace QLTB.Model
         public string KhoPhong { get; set; }
         public string MonHoc { get; set; }
         public string SoLuong { get; set; }
+        public string DonViTinh { get; set; }
         public string SoLuongMat { get; set; }
         public string SoLuongHong { get; set; }
     }

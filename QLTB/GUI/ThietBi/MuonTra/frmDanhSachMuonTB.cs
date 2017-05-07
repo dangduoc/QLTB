@@ -1,4 +1,5 @@
-﻿using QLTB.Model;
+﻿using QLTB.Handler;
+using QLTB.Model;
 using QLTB.Utils;
 using System;
 using System.Collections.Generic;
@@ -52,6 +53,7 @@ namespace QLTB.GUI
             columns.ComboBox.DataSource = columValues;
             columns.ComboBox.SelectedValueChanged += SearchOptionChanged;
             columns.SelectedIndexChanged += SearchOptionChanged;
+        
             return Table;
         }
         private void SetHeaderForGrid(ADGV.AdvancedDataGridView grid, List<string> headers)
@@ -126,58 +128,16 @@ namespace QLTB.GUI
         private void LoadForm()
         {
             //Clone
-            List<CanBoTBGridDisplayModel> list = new List<CanBoTBGridDisplayModel>();
-            list.Add(new CanBoTBGridDisplayModel
-            {
-                CanBoThietBiId = "CBTB0001",
-                HoVaDem = "Đặng Minh",
-                Ten = "Được",
-                GioiTinh = "Nam",
-                IsCoTrinhDoNghiepVu = "Có",
-                TrinhDoVanHoa = "Đại học",
-                TGBatDauQL = "21/11/2010",
-                TGKetThucQL = "22/1/2017",
-                PhuTrach = "Chuyên trách",
-                GhiChu = ""
-            });
-            list.Add(new CanBoTBGridDisplayModel
-            {
-                CanBoThietBiId = "CBTB0002",
-                HoVaDem = "Ngô Hoàng",
-                Ten = "Huy",
-                GioiTinh = "Nam",
-                IsCoTrinhDoNghiepVu = "Có",
-                TrinhDoVanHoa = "Đại học",
-                TGBatDauQL = "1/3/2013",
-                TGKetThucQL = "8/5/2016",
-                PhuTrach = "Chuyên trách",
-                GhiChu = ""
-            });
-            list.Add(new CanBoTBGridDisplayModel
-            {
-                CanBoThietBiId = "CBTB0003",
-                HoVaDem = "Đặng Thu",
-                Ten = "Thảo",
-                GioiTinh = "Nữ",
-                IsCoTrinhDoNghiepVu = "Có",
-                TrinhDoVanHoa = "Đại học",
-                TGBatDauQL = "11/4/2013",
-                TGKetThucQL = "12/3/2016",
-                PhuTrach = "Chuyên trách",
-                GhiChu = "Là hoa hậu Việt Nam 2012"
-            });
-            //
+            List<PhieuMuonTBGridDisplayModel> list = new DbPhieuMuonTBHandler().GetAll();
             List<string> headers = new List<string>();
-            headers.Add("Mã cán bộ");
-            headers.Add("Họ và tên đêm");
-            headers.Add("Tên cán bộ");
-            headers.Add("Giới tính");
-            headers.Add("Phụ trách");
-            headers.Add("Trinh độ văn hóa");
-            headers.Add("Thời gian bắt đầu quản lý");
-            headers.Add("Thời gian kết thúc quản lý");
-            headers.Add("Trình độ nghiệp vụ");
-            headers.Add("Ghi chú");
+            headers.Add("Số phiếu");
+            headers.Add("Ngày mượn");
+            headers.Add("Ngày trả");
+            headers.Add("Bài dạy");
+            headers.Add("Lớp học");
+            headers.Add("Giáo viên");
+            headers.Add("Trạng thái");
+            
             //
             DataTable tb = MyConvert.ToDataTable(list);
             source.DataSource = SetUpSearch(tb, headers);
@@ -198,6 +158,24 @@ namespace QLTB.GUI
         private void btnThoat_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void frmDanhSachMuonTB_Load(object sender, EventArgs e)
+        {
+            LoadForm();
+        }
+
+        private void advancedDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void advancedDataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var Id = advancedDataGridView.Rows[e.RowIndex].Cells["PhieuMuonTBId"].Value.ToString();
+            frmThietBiMuon frm = new frmThietBiMuon(Id);
+            frm.MdiParent = MdiParent;
+            frm.Show();
         }
     }
 }

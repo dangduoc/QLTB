@@ -147,9 +147,9 @@
             treeNode2.Name = "btnNhapTB";
             treeNode2.SelectedImageIndex = 6;
             treeNode2.Text = "Nhập thiết bị giáo dục";
-            treeNode3.Name = "Node0";
+            treeNode3.Name = "btnDSMuonThietBi";
             treeNode3.Text = "Lịch đăng ký mượn thiết bị";
-            treeNode4.Name = "Node1";
+            treeNode4.Name = "btnDKMuonThietBi";
             treeNode4.Text = "Đăng ký mượn thiết bị";
             treeNode5.Name = "Node2";
             treeNode5.Text = "Ghi nhận tình trạng trả thiết bị";

@@ -136,8 +136,8 @@
   <data name="Collap" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Collap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="message_f2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\message_f2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="DuyetGiaoDich" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DuyetGiaoDich.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="properties_f2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\properties_f2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,11 +157,17 @@
   <data name="cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cancel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon_datetime" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_datetime.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="message_f2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\message_f2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="save" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_about" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_about.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="stop_f2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\stop_f2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,8 +193,11 @@
   <data name="reload_f2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\reload_f2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DuyetGiaoDich" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DuyetGiaoDich.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Settings-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Settings-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,8 +211,8 @@
   <data name="icon_pagesetup" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_pagesetup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="save" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_datetime" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_datetime.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="XọaPG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\XọaPG.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -217,7 +226,7 @@
   <data name="groups_f2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\groups_f2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Settings-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Settings-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="b_drop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\b_drop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
