@@ -177,5 +177,32 @@ namespace QLTB.GUI
             frm.MdiParent = MdiParent;
             frm.Show();
         }
+
+        private void btnXem_Click(object sender, EventArgs e)
+        {
+            var row=advancedDataGridView.SelectedRows[0];
+            if (row != null)
+            {
+                var Id= row.Cells["PhieuMuonTBId"].Value.ToString();
+                frmThietBiMuon frm = new frmThietBiMuon(Id);
+                frm.MdiParent = MdiParent;
+                frm.Show();
+            }
+        }
+
+        private void advancedDataGridView_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                var row = advancedDataGridView.SelectedRows[0];
+                if (row != null)
+                {
+                    var Id = row.Cells["PhieuMuonTBId"].Value.ToString();
+                    frmThietBiMuon frm = new frmThietBiMuon(Id);
+                    frm.MdiParent = MdiParent;
+                    frm.Show();
+                }
+            }
+        }
     }
 }
