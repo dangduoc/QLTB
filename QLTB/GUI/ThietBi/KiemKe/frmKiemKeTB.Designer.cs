@@ -1,6 +1,6 @@
 ﻿namespace QLTB.GUI
 {
-    partial class frmDanhSachThietBi
+    partial class frmKiemKeTB
     {
         /// <summary>
         /// Required designer variable.
@@ -28,33 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDanhSachThietBi));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKiemKeTB));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.rbChucNang = new DevComponents.DotNetBar.RibbonBar();
-            this.btnXem = new DevComponents.DotNetBar.ButtonItem();
             this.btnThem = new DevComponents.DotNetBar.ButtonItem();
+            this.btnSua = new DevComponents.DotNetBar.ButtonItem();
             this.btnXoa = new DevComponents.DotNetBar.ButtonItem();
-            this.btnLamMoi = new DevComponents.DotNetBar.ButtonItem();
-            this.btnImportTuExcel = new DevComponents.DotNetBar.ButtonItem();
-            this.btnExportFileExcel = new DevComponents.DotNetBar.ButtonItem();
+            this.btnNap = new DevComponents.DotNetBar.ButtonItem();
+            this.btnIn = new DevComponents.DotNetBar.ButtonItem();
+            this.btnTroGiup = new DevComponents.DotNetBar.ButtonItem();
             this.btnThoat = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
             this.pnlBack = new DevComponents.DotNetBar.PanelEx();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
-            this.advancedDataGridView = new ADGV.AdvancedDataGridView();
-            this.searchToolBar = new ADGV.SearchToolBar();
-            this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
             this.panelEx3 = new DevComponents.DotNetBar.PanelEx();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.advancedDataGridView = new ADGV.AdvancedDataGridView();
+            this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
+            this.statusStrip2 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.searchToolBar = new ADGV.SearchToolBar();
             this.pnlBack.SuspendLayout();
             this.panelEx1.SuspendLayout();
+            this.panelEx3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView)).BeginInit();
             this.panelEx2.SuspendLayout();
-            this.panelEx3.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
+            this.statusStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // rbChucNang
@@ -75,21 +75,21 @@
             this.rbChucNang.DragDropSupport = true;
             this.rbChucNang.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F);
             this.rbChucNang.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btnXem,
             this.btnThem,
+            this.btnSua,
             this.btnXoa,
-            this.btnLamMoi,
-            this.btnImportTuExcel,
-            this.btnExportFileExcel,
+            this.btnNap,
+            this.btnIn,
+            this.btnTroGiup,
             this.btnThoat});
             this.rbChucNang.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
             this.rbChucNang.Location = new System.Drawing.Point(0, 0);
-            this.rbChucNang.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.rbChucNang.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
             this.rbChucNang.Name = "rbChucNang";
             this.rbChucNang.ShowShortcutKeysInToolTips = true;
-            this.rbChucNang.Size = new System.Drawing.Size(1050, 80);
+            this.rbChucNang.Size = new System.Drawing.Size(937, 80);
             this.rbChucNang.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.rbChucNang.TabIndex = 8;
+            this.rbChucNang.TabIndex = 10;
             // 
             // 
             // 
@@ -99,29 +99,23 @@
             // 
             this.rbChucNang.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
-            // btnXem
-            // 
-            this.btnXem.BeginGroup = true;
-            this.btnXem.Image = global::QLTB.Properties.Resources.xem;
-            this.btnXem.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnXem.Name = "btnXem";
-            this.btnXem.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F3);
-            this.btnXem.ShowSubItems = false;
-            this.btnXem.Text = "Xem";
-            this.btnXem.Tooltip = "Xem thông tin chi tiết";
-            this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
-            // 
             // btnThem
             // 
             this.btnThem.BeginGroup = true;
-            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
-            this.btnThem.ImagePaddingHorizontal = 50;
+            this.btnThem.Image = global::QLTB.Properties.Resources.add1;
             this.btnThem.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
             this.btnThem.Name = "btnThem";
-            this.btnThem.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlN);
-            this.btnThem.Text = "Khai báo thiết bị";
-            this.btnThem.Tooltip = "Khai báo thiết bị";
+            this.btnThem.SubItemsExpandWidth = 14;
+            this.btnThem.Text = "Thêm";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.Image = global::QLTB.Properties.Resources.edit;
+            this.btnSua.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnSua.Name = "btnSua";
+            this.btnSua.SubItemsExpandWidth = 14;
+            this.btnSua.Text = "Sửa";
             // 
             // btnXoa
             // 
@@ -130,41 +124,36 @@
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlD);
             this.btnXoa.Text = "Xóa";
-            this.btnXoa.Tooltip = "Xóa thiết bị";
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            this.btnXoa.Tooltip = "Xóa đối tượng";
             // 
-            // btnLamMoi
+            // btnNap
             // 
-            this.btnLamMoi.BeginGroup = true;
-            this.btnLamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnLamMoi.Image")));
-            this.btnLamMoi.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.RibbonWordWrap = false;
-            this.btnLamMoi.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F5);
-            this.btnLamMoi.Text = "Làm mới dữ liệu";
-            this.btnLamMoi.Tooltip = "Làm mới dữ liệu";
+            this.btnNap.BeginGroup = true;
+            this.btnNap.Image = global::QLTB.Properties.Resources.reload_f2;
+            this.btnNap.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnNap.Name = "btnNap";
+            this.btnNap.SubItemsExpandWidth = 14;
+            this.btnNap.Text = "Nạp";
             // 
-            // btnImportTuExcel
+            // btnIn
             // 
-            this.btnImportTuExcel.BeginGroup = true;
-            this.btnImportTuExcel.Image = global::QLTB.Properties.Resources.Expand;
-            this.btnImportTuExcel.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnImportTuExcel.Name = "btnImportTuExcel";
-            this.btnImportTuExcel.RibbonWordWrap = false;
-            this.btnImportTuExcel.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F6);
-            this.btnImportTuExcel.Text = "Import từ file Excel";
-            this.btnImportTuExcel.Tooltip = "Nhập dữ liệu từ file excel";
+            this.btnIn.BeginGroup = true;
+            this.btnIn.Image = global::QLTB.Properties.Resources.icon_pagesetup;
+            this.btnIn.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnIn.Name = "btnIn";
+            this.btnIn.SubItemsExpandWidth = 14;
+            this.btnIn.Text = "In";
             // 
-            // btnExportFileExcel
+            // btnTroGiup
             // 
-            this.btnExportFileExcel.BeginGroup = true;
-            this.btnExportFileExcel.Image = global::QLTB.Properties.Resources.Collap;
-            this.btnExportFileExcel.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnExportFileExcel.Name = "btnExportFileExcel";
-            this.btnExportFileExcel.RibbonWordWrap = false;
-            this.btnExportFileExcel.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F7);
-            this.btnExportFileExcel.Text = "Export ra file Excel";
-            this.btnExportFileExcel.Tooltip = "Xuất dữ liệu ra file excel";
+            this.btnTroGiup.BeginGroup = true;
+            this.btnTroGiup.Image = global::QLTB.Properties.Resources.icon_about;
+            this.btnTroGiup.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnTroGiup.Name = "btnTroGiup";
+            this.btnTroGiup.RibbonWordWrap = false;
+            this.btnTroGiup.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F1);
+            this.btnTroGiup.Text = "Trợ giúp";
+            this.btnTroGiup.Tooltip = "Thông tin trợ giúp";
             // 
             // btnThoat
             // 
@@ -195,7 +184,7 @@
             this.pnlBack.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBack.Location = new System.Drawing.Point(0, 80);
             this.pnlBack.Name = "pnlBack";
-            this.pnlBack.Size = new System.Drawing.Size(1050, 450);
+            this.pnlBack.Size = new System.Drawing.Size(937, 417);
             this.pnlBack.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.pnlBack.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.pnlBack.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -203,7 +192,7 @@
             this.pnlBack.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
             this.pnlBack.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.pnlBack.Style.GradientAngle = 90;
-            this.pnlBack.TabIndex = 22;
+            this.pnlBack.TabIndex = 26;
             // 
             // panelEx1
             // 
@@ -213,9 +202,9 @@
             this.panelEx1.Controls.Add(this.panelEx2);
             this.panelEx1.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelEx1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelEx1.Location = new System.Drawing.Point(0, 27);
+            this.panelEx1.Location = new System.Drawing.Point(0, 31);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(1050, 423);
+            this.panelEx1.Size = new System.Drawing.Size(937, 386);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -224,6 +213,26 @@
             this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 29;
+            // 
+            // panelEx3
+            // 
+            this.panelEx3.CanvasColor = System.Drawing.SystemColors.Control;
+            this.panelEx3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx3.Controls.Add(this.advancedDataGridView);
+            this.panelEx3.DisabledBackColor = System.Drawing.Color.Empty;
+            this.panelEx3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelEx3.Location = new System.Drawing.Point(0, 0);
+            this.panelEx3.Name = "panelEx3";
+            this.panelEx3.Size = new System.Drawing.Size(937, 341);
+            this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.panelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.panelEx3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.panelEx3.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.panelEx3.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.panelEx3.Style.GradientAngle = 90;
+            this.panelEx3.TabIndex = 32;
+            this.panelEx3.Text = "panelEx3";
             // 
             // advancedDataGridView
             // 
@@ -252,38 +261,20 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.advancedDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.advancedDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.advancedDataGridView.Size = new System.Drawing.Size(1050, 384);
+            this.advancedDataGridView.Size = new System.Drawing.Size(937, 341);
             this.advancedDataGridView.TabIndex = 27;
             this.advancedDataGridView.TimeFilter = false;
-            this.advancedDataGridView.SortStringChanged += new System.EventHandler(this.advancedDataGridView_SortStringChanged);
-            this.advancedDataGridView.FilterStringChanged += new System.EventHandler(this.advancedDataGridView_FilterStringChanged);
-            this.advancedDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.advancedDataGridView_CellContentDoubleClick);
-            this.advancedDataGridView.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.advancedDataGridView_KeyPress);
-            // 
-            // searchToolBar
-            // 
-            this.searchToolBar.AllowMerge = false;
-            this.searchToolBar.Font = new System.Drawing.Font("Arial", 9F);
-            this.searchToolBar.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.searchToolBar.Location = new System.Drawing.Point(0, 0);
-            this.searchToolBar.MaximumSize = new System.Drawing.Size(0, 27);
-            this.searchToolBar.MinimumSize = new System.Drawing.Size(0, 27);
-            this.searchToolBar.Name = "searchToolBar";
-            this.searchToolBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.searchToolBar.Size = new System.Drawing.Size(1050, 27);
-            this.searchToolBar.TabIndex = 28;
-            this.searchToolBar.Text = "searchToolBar1";
             // 
             // panelEx2
             // 
             this.panelEx2.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.panelEx2.Controls.Add(this.statusStrip1);
+            this.panelEx2.Controls.Add(this.statusStrip2);
             this.panelEx2.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelEx2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelEx2.Location = new System.Drawing.Point(0, 384);
+            this.panelEx2.Location = new System.Drawing.Point(0, 341);
             this.panelEx2.Name = "panelEx2";
-            this.panelEx2.Size = new System.Drawing.Size(1050, 39);
+            this.panelEx2.Size = new System.Drawing.Size(937, 45);
             this.panelEx2.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -293,75 +284,69 @@
             this.panelEx2.Style.GradientAngle = 90;
             this.panelEx2.TabIndex = 28;
             // 
-            // panelEx3
+            // statusStrip2
             // 
-            this.panelEx3.CanvasColor = System.Drawing.SystemColors.Control;
-            this.panelEx3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.panelEx3.Controls.Add(this.advancedDataGridView);
-            this.panelEx3.DisabledBackColor = System.Drawing.Color.Empty;
-            this.panelEx3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelEx3.Location = new System.Drawing.Point(0, 0);
-            this.panelEx3.Name = "panelEx3";
-            this.panelEx3.Size = new System.Drawing.Size(1050, 384);
-            this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.panelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.panelEx3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.panelEx3.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.panelEx3.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.panelEx3.Style.GradientAngle = 90;
-            this.panelEx3.TabIndex = 32;
-            this.panelEx3.Text = "panelEx3";
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.statusStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statusStrip2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.statusStrip2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.statusStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 0);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1050, 39);
-            this.statusStrip1.TabIndex = 0;
-            this.statusStrip1.Text = "statusStrip1";
+            this.statusStrip2.Location = new System.Drawing.Point(0, 0);
+            this.statusStrip2.Name = "statusStrip2";
+            this.statusStrip2.Padding = new System.Windows.Forms.Padding(1, 0, 16, 0);
+            this.statusStrip2.Size = new System.Drawing.Size(937, 45);
+            this.statusStrip2.TabIndex = 0;
+            this.statusStrip2.Text = "statusStrip2";
             // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Font = new System.Drawing.Font("Arial", 9F);
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(124, 34);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(124, 40);
             this.toolStripStatusLabel1.Text = "Tổng số thiết bị: 9";
             // 
             // toolStripStatusLabel2
             // 
             this.toolStripStatusLabel2.ForeColor = System.Drawing.Color.Red;
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(44, 34);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(44, 40);
             this.toolStripStatusLabel2.Text = "Chú ý: ";
             // 
-            // frmDanhSachThietBi
+            // searchToolBar
+            // 
+            this.searchToolBar.AllowMerge = false;
+            this.searchToolBar.Font = new System.Drawing.Font("Arial", 9F);
+            this.searchToolBar.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.searchToolBar.Location = new System.Drawing.Point(0, 0);
+            this.searchToolBar.MaximumSize = new System.Drawing.Size(0, 31);
+            this.searchToolBar.MinimumSize = new System.Drawing.Size(0, 31);
+            this.searchToolBar.Name = "searchToolBar";
+            this.searchToolBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.searchToolBar.Size = new System.Drawing.Size(937, 31);
+            this.searchToolBar.TabIndex = 28;
+            this.searchToolBar.Text = "searchToolBar1";
+            // 
+            // frmKiemKeTB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1050, 530);
+            this.ClientSize = new System.Drawing.Size(937, 497);
             this.Controls.Add(this.pnlBack);
             this.Controls.Add(this.rbChucNang);
-            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "frmDanhSachThietBi";
-            this.Text = "Danh sách thiết bị";
-            this.Load += new System.EventHandler(this.frmDanhSachThietBi_Load);
+            this.Name = "frmKiemKeTB";
+            this.Text = "Dánh sách phiếu kiểm kê thiết bị";
+            this.Load += new System.EventHandler(this.frmKiemKeTB_Load);
             this.pnlBack.ResumeLayout(false);
             this.pnlBack.PerformLayout();
             this.panelEx1.ResumeLayout(false);
+            this.panelEx3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView)).EndInit();
             this.panelEx2.ResumeLayout(false);
             this.panelEx2.PerformLayout();
-            this.panelEx3.ResumeLayout(false);
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
+            this.statusStrip2.ResumeLayout(false);
+            this.statusStrip2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -369,22 +354,22 @@
         #endregion
 
         private DevComponents.DotNetBar.RibbonBar rbChucNang;
-        private DevComponents.DotNetBar.ButtonItem btnXem;
-        private DevComponents.DotNetBar.ButtonItem btnThem;
         private DevComponents.DotNetBar.ButtonItem btnXoa;
-        private DevComponents.DotNetBar.ButtonItem btnLamMoi;
-        private DevComponents.DotNetBar.ButtonItem btnImportTuExcel;
-        private DevComponents.DotNetBar.ButtonItem btnExportFileExcel;
+        private DevComponents.DotNetBar.ButtonItem btnTroGiup;
         private DevComponents.DotNetBar.ButtonItem btnThoat;
         private DevComponents.DotNetBar.ButtonItem buttonItem1;
         private DevComponents.DotNetBar.PanelEx pnlBack;
         private DevComponents.DotNetBar.PanelEx panelEx1;
-        private ADGV.AdvancedDataGridView advancedDataGridView;
-        private ADGV.SearchToolBar searchToolBar;
         private DevComponents.DotNetBar.PanelEx panelEx3;
+        private ADGV.AdvancedDataGridView advancedDataGridView;
         private DevComponents.DotNetBar.PanelEx panelEx2;
-        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.StatusStrip statusStrip2;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private ADGV.SearchToolBar searchToolBar;
+        private DevComponents.DotNetBar.ButtonItem btnThem;
+        private DevComponents.DotNetBar.ButtonItem btnSua;
+        private DevComponents.DotNetBar.ButtonItem btnNap;
+        private DevComponents.DotNetBar.ButtonItem btnIn;
     }
 }

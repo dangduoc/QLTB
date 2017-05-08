@@ -119,10 +119,10 @@
             this.btnThoat});
             this.rbChucNang.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
             this.rbChucNang.Location = new System.Drawing.Point(0, 0);
-            this.rbChucNang.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.rbChucNang.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
             this.rbChucNang.Name = "rbChucNang";
             this.rbChucNang.ShowShortcutKeysInToolTips = true;
-            this.rbChucNang.Size = new System.Drawing.Size(1131, 70);
+            this.rbChucNang.Size = new System.Drawing.Size(1319, 80);
             this.rbChucNang.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.rbChucNang.TabIndex = 9;
             // 
@@ -196,9 +196,9 @@
             this.panelEx1.Controls.Add(this.layoutControl1);
             this.panelEx1.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelEx1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelEx1.Location = new System.Drawing.Point(0, 70);
+            this.panelEx1.Location = new System.Drawing.Point(0, 80);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(1131, 435);
+            this.panelEx1.Size = new System.Drawing.Size(1319, 503);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -232,7 +232,7 @@
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControl1.MinimumSize = new System.Drawing.Size(800, 0);
+            this.layoutControl1.MinimumSize = new System.Drawing.Size(933, 0);
             this.layoutControl1.Name = "layoutControl1";
             // 
             // 
@@ -262,7 +262,7 @@
             this.layoutSpacerItem7,
             this.layoutControlItem18,
             this.layoutSpacerItem8});
-            this.layoutControl1.Size = new System.Drawing.Size(1131, 435);
+            this.layoutControl1.Size = new System.Drawing.Size(1319, 503);
             this.layoutControl1.TabIndex = 0;
             // 
             // cbbDVT
@@ -270,10 +270,10 @@
             this.cbbDVT.DisplayMember = "Text";
             this.cbbDVT.FormattingEnabled = true;
             this.cbbDVT.ItemHeight = 15;
-            this.cbbDVT.Location = new System.Drawing.Point(628, 54);
+            this.cbbDVT.Location = new System.Drawing.Point(708, 62);
             this.cbbDVT.Margin = new System.Windows.Forms.Padding(0);
             this.cbbDVT.Name = "cbbDVT";
-            this.cbbDVT.Size = new System.Drawing.Size(159, 23);
+            this.cbbDVT.Size = new System.Drawing.Size(210, 23);
             this.cbbDVT.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbbDVT.TabIndex = 2;
             this.cbbDVT.Tag = "Đơn vị tính";
@@ -294,7 +294,7 @@
             this.labelX1.Margin = new System.Windows.Forms.Padding(0);
             this.labelX1.Name = "labelX1";
             this.labelX1.PaddingLeft = 10;
-            this.labelX1.Size = new System.Drawing.Size(1123, 42);
+            this.labelX1.Size = new System.Drawing.Size(1311, 50);
             this.labelX1.TabIndex = 0;
             this.labelX1.Text = "THÔNG TIN THIẾT BỊ";
             // 
@@ -305,11 +305,11 @@
             // 
             this.txtNamTheoDoi.Border.Class = "TextBoxBorder";
             this.txtNamTheoDoi.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtNamTheoDoi.Location = new System.Drawing.Point(156, 374);
+            this.txtNamTheoDoi.Location = new System.Drawing.Point(158, 385);
             this.txtNamTheoDoi.Margin = new System.Windows.Forms.Padding(0);
             this.txtNamTheoDoi.Name = "txtNamTheoDoi";
             this.txtNamTheoDoi.PreventEnterBeep = true;
-            this.txtNamTheoDoi.Size = new System.Drawing.Size(292, 21);
+            this.txtNamTheoDoi.Size = new System.Drawing.Size(365, 21);
             this.txtNamTheoDoi.TabIndex = 27;
             this.txtNamTheoDoi.Tag = "Năm theo dõi";
             // 
@@ -324,7 +324,7 @@
             this.dpickerNgaySD.ButtonDropDown.Visible = true;
             this.dpickerNgaySD.CustomFormat = "dd/mm/yyyy";
             this.dpickerNgaySD.IsPopupCalendarOpen = false;
-            this.dpickerNgaySD.Location = new System.Drawing.Point(279, 339);
+            this.dpickerNgaySD.Location = new System.Drawing.Point(316, 349);
             this.dpickerNgaySD.Margin = new System.Windows.Forms.Padding(0);
             // 
             // 
@@ -355,7 +355,7 @@
             this.dpickerNgaySD.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.dpickerNgaySD.MonthCalendar.TodayButtonVisible = true;
             this.dpickerNgaySD.Name = "dpickerNgaySD";
-            this.dpickerNgaySD.Size = new System.Drawing.Size(169, 21);
+            this.dpickerNgaySD.Size = new System.Drawing.Size(207, 21);
             this.dpickerNgaySD.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dpickerNgaySD.TabIndex = 23;
             this.dpickerNgaySD.WatermarkText = "dd/mm/yyyy";
@@ -367,11 +367,11 @@
             // 
             this.txtNamSD.Border.Class = "TextBoxBorder";
             this.txtNamSD.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtNamSD.Location = new System.Drawing.Point(155, 339);
+            this.txtNamSD.Location = new System.Drawing.Point(157, 349);
             this.txtNamSD.Margin = new System.Windows.Forms.Padding(0);
             this.txtNamSD.Name = "txtNamSD";
             this.txtNamSD.PreventEnterBeep = true;
-            this.txtNamSD.Size = new System.Drawing.Size(67, 21);
+            this.txtNamSD.Size = new System.Drawing.Size(102, 21);
             this.txtNamSD.TabIndex = 22;
             this.txtNamSD.Tag = "Năm đưa vào sử dụng";
             // 
@@ -386,7 +386,7 @@
             this.dpickerHanSD.ButtonDropDown.Visible = true;
             this.dpickerHanSD.CustomFormat = "dd/mm/yyyy";
             this.dpickerHanSD.IsPopupCalendarOpen = false;
-            this.dpickerHanSD.Location = new System.Drawing.Point(628, 344);
+            this.dpickerHanSD.Location = new System.Drawing.Point(708, 354);
             this.dpickerHanSD.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             // 
             // 
@@ -417,7 +417,7 @@
             this.dpickerHanSD.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.dpickerHanSD.MonthCalendar.TodayButtonVisible = true;
             this.dpickerHanSD.Name = "dpickerHanSD";
-            this.dpickerHanSD.Size = new System.Drawing.Size(159, 21);
+            this.dpickerHanSD.Size = new System.Drawing.Size(210, 21);
             this.dpickerHanSD.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dpickerHanSD.TabIndex = 25;
             this.dpickerHanSD.WatermarkText = "dd/mm/yyyy";
@@ -433,7 +433,7 @@
             this.dpickNgaySX.ButtonDropDown.Visible = true;
             this.dpickNgaySX.CustomFormat = "dd/mm/yyyy";
             this.dpickNgaySX.IsPopupCalendarOpen = false;
-            this.dpickNgaySX.Location = new System.Drawing.Point(628, 304);
+            this.dpickNgaySX.Location = new System.Drawing.Point(708, 313);
             this.dpickNgaySX.Margin = new System.Windows.Forms.Padding(0);
             // 
             // 
@@ -464,7 +464,7 @@
             this.dpickNgaySX.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.dpickNgaySX.MonthCalendar.TodayButtonVisible = true;
             this.dpickNgaySX.Name = "dpickNgaySX";
-            this.dpickNgaySX.Size = new System.Drawing.Size(159, 21);
+            this.dpickNgaySX.Size = new System.Drawing.Size(210, 21);
             this.dpickNgaySX.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dpickNgaySX.TabIndex = 20;
             this.dpickNgaySX.WatermarkText = "dd/mm/yyyy";
@@ -474,10 +474,10 @@
             this.cbbNguonKinhPhi.DisplayMember = "Text";
             this.cbbNguonKinhPhi.FormattingEnabled = true;
             this.cbbNguonKinhPhi.ItemHeight = 15;
-            this.cbbNguonKinhPhi.Location = new System.Drawing.Point(156, 304);
+            this.cbbNguonKinhPhi.Location = new System.Drawing.Point(158, 313);
             this.cbbNguonKinhPhi.Margin = new System.Windows.Forms.Padding(0);
             this.cbbNguonKinhPhi.Name = "cbbNguonKinhPhi";
-            this.cbbNguonKinhPhi.Size = new System.Drawing.Size(292, 23);
+            this.cbbNguonKinhPhi.Size = new System.Drawing.Size(365, 23);
             this.cbbNguonKinhPhi.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbbNguonKinhPhi.TabIndex = 19;
             this.cbbNguonKinhPhi.Tag = "Nguồn kinh phí";
@@ -489,10 +489,10 @@
             // 
             // 
             this.cboxThietBiTuLam.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.cboxThietBiTuLam.Location = new System.Drawing.Point(628, 269);
-            this.cboxThietBiTuLam.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.cboxThietBiTuLam.Location = new System.Drawing.Point(708, 277);
+            this.cboxThietBiTuLam.Margin = new System.Windows.Forms.Padding(0, 0, 0, 12);
             this.cboxThietBiTuLam.Name = "cboxThietBiTuLam";
-            this.cboxThietBiTuLam.Size = new System.Drawing.Size(159, 17);
+            this.cboxThietBiTuLam.Size = new System.Drawing.Size(210, 16);
             this.cboxThietBiTuLam.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cboxThietBiTuLam.TabIndex = 17;
             this.cboxThietBiTuLam.TextColor = System.Drawing.Color.Black;
@@ -502,10 +502,10 @@
             this.cbbPhongBM.DisplayMember = "Text";
             this.cbbPhongBM.FormattingEnabled = true;
             this.cbbPhongBM.ItemHeight = 15;
-            this.cbbPhongBM.Location = new System.Drawing.Point(156, 269);
+            this.cbbPhongBM.Location = new System.Drawing.Point(158, 277);
             this.cbbPhongBM.Margin = new System.Windows.Forms.Padding(0);
             this.cbbPhongBM.Name = "cbbPhongBM";
-            this.cbbPhongBM.Size = new System.Drawing.Size(292, 23);
+            this.cbbPhongBM.Size = new System.Drawing.Size(365, 23);
             this.cbbPhongBM.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbbPhongBM.TabIndex = 16;
             this.cbbPhongBM.Tag = "Kho, phòng bộ môn";
@@ -515,10 +515,10 @@
             this.cbbMucDichSD.DisplayMember = "Text";
             this.cbbMucDichSD.FormattingEnabled = true;
             this.cbbMucDichSD.ItemHeight = 15;
-            this.cbbMucDichSD.Location = new System.Drawing.Point(630, 229);
+            this.cbbMucDichSD.Location = new System.Drawing.Point(713, 237);
             this.cbbMucDichSD.Margin = new System.Windows.Forms.Padding(0);
             this.cbbMucDichSD.Name = "cbbMucDichSD";
-            this.cbbMucDichSD.Size = new System.Drawing.Size(157, 23);
+            this.cbbMucDichSD.Size = new System.Drawing.Size(205, 23);
             this.cbbMucDichSD.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbbMucDichSD.TabIndex = 13;
             // 
@@ -529,11 +529,11 @@
             // 
             this.txtNuocSX.Border.Class = "TextBoxBorder";
             this.txtNuocSX.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtNuocSX.Location = new System.Drawing.Point(628, 194);
+            this.txtNuocSX.Location = new System.Drawing.Point(711, 202);
             this.txtNuocSX.Margin = new System.Windows.Forms.Padding(0);
             this.txtNuocSX.Name = "txtNuocSX";
             this.txtNuocSX.PreventEnterBeep = true;
-            this.txtNuocSX.Size = new System.Drawing.Size(159, 21);
+            this.txtNuocSX.Size = new System.Drawing.Size(207, 21);
             this.txtNuocSX.TabIndex = 12;
             // 
             // txtThanhTien
@@ -543,11 +543,11 @@
             // 
             this.txtThanhTien.Border.Class = "TextBoxBorder";
             this.txtThanhTien.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtThanhTien.Location = new System.Drawing.Point(628, 159);
+            this.txtThanhTien.Location = new System.Drawing.Point(711, 167);
             this.txtThanhTien.Margin = new System.Windows.Forms.Padding(0);
             this.txtThanhTien.Name = "txtThanhTien";
             this.txtThanhTien.PreventEnterBeep = true;
-            this.txtThanhTien.Size = new System.Drawing.Size(159, 21);
+            this.txtThanhTien.Size = new System.Drawing.Size(207, 21);
             this.txtThanhTien.TabIndex = 11;
             // 
             // txtQuyCach
@@ -557,12 +557,12 @@
             // 
             this.txtQuyCach.BackgroundStyle.Class = "RichTextBoxBorder";
             this.txtQuyCach.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtQuyCach.Location = new System.Drawing.Point(156, 159);
+            this.txtQuyCach.Location = new System.Drawing.Point(158, 167);
             this.txtQuyCach.Margin = new System.Windows.Forms.Padding(0);
             this.txtQuyCach.Name = "txtQuyCach";
             this.txtQuyCach.Rtf = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}\r\n\\" +
     "viewkind4\\uc1\\pard\\fs18\\par\r\n}\r\n";
-            this.txtQuyCach.Size = new System.Drawing.Size(292, 102);
+            this.txtQuyCach.Size = new System.Drawing.Size(365, 102);
             this.txtQuyCach.TabIndex = 10;
             // 
             // txtDonGia
@@ -572,11 +572,11 @@
             // 
             this.txtDonGia.Border.Class = "TextBoxBorder";
             this.txtDonGia.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtDonGia.Location = new System.Drawing.Point(628, 124);
+            this.txtDonGia.Location = new System.Drawing.Point(708, 132);
             this.txtDonGia.Margin = new System.Windows.Forms.Padding(0);
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.PreventEnterBeep = true;
-            this.txtDonGia.Size = new System.Drawing.Size(159, 21);
+            this.txtDonGia.Size = new System.Drawing.Size(210, 21);
             this.txtDonGia.TabIndex = 8;
             // 
             // txtSoHieu
@@ -586,11 +586,11 @@
             // 
             this.txtSoHieu.Border.Class = "TextBoxBorder";
             this.txtSoHieu.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtSoHieu.Location = new System.Drawing.Point(156, 124);
+            this.txtSoHieu.Location = new System.Drawing.Point(158, 132);
             this.txtSoHieu.Margin = new System.Windows.Forms.Padding(0);
             this.txtSoHieu.Name = "txtSoHieu";
             this.txtSoHieu.PreventEnterBeep = true;
-            this.txtSoHieu.Size = new System.Drawing.Size(292, 21);
+            this.txtSoHieu.Size = new System.Drawing.Size(365, 21);
             this.txtSoHieu.TabIndex = 7;
             this.txtSoHieu.Tag = "Số hiệu";
             // 
@@ -601,11 +601,11 @@
             // 
             this.txtSoLuong.Border.Class = "TextBoxBorder";
             this.txtSoLuong.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtSoLuong.Location = new System.Drawing.Point(628, 89);
+            this.txtSoLuong.Location = new System.Drawing.Point(708, 97);
             this.txtSoLuong.Margin = new System.Windows.Forms.Padding(0);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.PreventEnterBeep = true;
-            this.txtSoLuong.Size = new System.Drawing.Size(159, 21);
+            this.txtSoLuong.Size = new System.Drawing.Size(210, 21);
             this.txtSoLuong.TabIndex = 5;
             this.txtSoLuong.Tag = "Số lượng";
             // 
@@ -616,11 +616,11 @@
             // 
             this.txtTen.Border.Class = "TextBoxBorder";
             this.txtTen.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtTen.Location = new System.Drawing.Point(156, 89);
+            this.txtTen.Location = new System.Drawing.Point(158, 97);
             this.txtTen.Margin = new System.Windows.Forms.Padding(0);
             this.txtTen.Name = "txtTen";
             this.txtTen.PreventEnterBeep = true;
-            this.txtTen.Size = new System.Drawing.Size(292, 21);
+            this.txtTen.Size = new System.Drawing.Size(365, 21);
             this.txtTen.TabIndex = 4;
             // 
             // cbbMaThietBi
@@ -628,10 +628,10 @@
             this.cbbMaThietBi.DisplayMember = "Text";
             this.cbbMaThietBi.FormattingEnabled = true;
             this.cbbMaThietBi.ItemHeight = 15;
-            this.cbbMaThietBi.Location = new System.Drawing.Point(156, 54);
+            this.cbbMaThietBi.Location = new System.Drawing.Point(158, 62);
             this.cbbMaThietBi.Margin = new System.Windows.Forms.Padding(0);
             this.cbbMaThietBi.Name = "cbbMaThietBi";
-            this.cbbMaThietBi.Size = new System.Drawing.Size(292, 23);
+            this.cbbMaThietBi.Size = new System.Drawing.Size(365, 23);
             this.cbbMaThietBi.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbbMaThietBi.TabIndex = 1;
             this.cbbMaThietBi.Tag = "Mã thiết bị";
@@ -640,8 +640,8 @@
             // layoutControlItem19
             // 
             this.layoutControlItem19.Control = this.labelX1;
-            this.layoutControlItem19.Height = 50;
-            this.layoutControlItem19.MinSize = new System.Drawing.Size(64, 18);
+            this.layoutControlItem19.Height = 58;
+            this.layoutControlItem19.MinSize = new System.Drawing.Size(74, 20);
             this.layoutControlItem19.Name = "layoutControlItem19";
             this.layoutControlItem19.Width = 100;
             this.layoutControlItem19.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
@@ -650,10 +650,10 @@
             // 
             this.layoutControlItem1.Control = this.cbbMaThietBi;
             this.layoutControlItem1.Height = 35;
-            this.layoutControlItem1.MinSize = new System.Drawing.Size(430, 35);
+            this.layoutControlItem1.MinSize = new System.Drawing.Size(501, 39);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Text = "<b>Mã thiết bị <font color=\"#ED1C24\">(*)</font></b>";
-            this.layoutControlItem1.TextPadding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.layoutControlItem1.TextPadding = new System.Windows.Forms.Padding(11, 0, 0, 0);
             this.layoutControlItem1.Width = 40;
             this.layoutControlItem1.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
             // 
@@ -661,16 +661,16 @@
             // 
             this.layoutControlItem2.Control = this.cbbDVT;
             this.layoutControlItem2.Height = 35;
-            this.layoutControlItem2.MinSize = new System.Drawing.Size(64, 18);
+            this.layoutControlItem2.MinSize = new System.Drawing.Size(74, 20);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Text = "<b>Đơn vị tính <font color=\"#ED1C24\">(*)</font></b>";
-            this.layoutControlItem2.TextPadding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.layoutControlItem2.TextPadding = new System.Windows.Forms.Padding(34, 0, 0, 0);
             this.layoutControlItem2.Width = 30;
             this.layoutControlItem2.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
             // 
             // layoutSpacerItem1
             // 
-            this.layoutSpacerItem1.Height = 32;
+            this.layoutSpacerItem1.Height = 35;
             this.layoutSpacerItem1.Name = "layoutSpacerItem1";
             this.layoutSpacerItem1.Width = 30;
             this.layoutSpacerItem1.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
@@ -679,10 +679,10 @@
             // 
             this.layoutControlItem3.Control = this.txtTen;
             this.layoutControlItem3.Height = 35;
-            this.layoutControlItem3.MinSize = new System.Drawing.Size(430, 35);
+            this.layoutControlItem3.MinSize = new System.Drawing.Size(501, 39);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Text = "<b>Tên thiết bị</b>";
-            this.layoutControlItem3.TextPadding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.layoutControlItem3.TextPadding = new System.Windows.Forms.Padding(11, 0, 0, 0);
             this.layoutControlItem3.Width = 40;
             this.layoutControlItem3.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
             // 
@@ -690,16 +690,16 @@
             // 
             this.layoutControlItem4.Control = this.txtSoLuong;
             this.layoutControlItem4.Height = 35;
-            this.layoutControlItem4.MinSize = new System.Drawing.Size(320, 35);
+            this.layoutControlItem4.MinSize = new System.Drawing.Size(373, 39);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Text = "<b>Số lượng <font color=\"#ED1C24\">(*)</font></b>";
-            this.layoutControlItem4.TextPadding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.layoutControlItem4.TextPadding = new System.Windows.Forms.Padding(34, 0, 0, 0);
             this.layoutControlItem4.Width = 30;
             this.layoutControlItem4.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
             // 
             // layoutSpacerItem2
             // 
-            this.layoutSpacerItem2.Height = 32;
+            this.layoutSpacerItem2.Height = 35;
             this.layoutSpacerItem2.Name = "layoutSpacerItem2";
             this.layoutSpacerItem2.Width = 30;
             this.layoutSpacerItem2.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
@@ -708,10 +708,10 @@
             // 
             this.layoutControlItem5.Control = this.txtSoHieu;
             this.layoutControlItem5.Height = 35;
-            this.layoutControlItem5.MinSize = new System.Drawing.Size(430, 35);
+            this.layoutControlItem5.MinSize = new System.Drawing.Size(501, 39);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Text = "<b>Số hiệu <font color=\"#ED1C24\">(*)</font></b>";
-            this.layoutControlItem5.TextPadding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.layoutControlItem5.TextPadding = new System.Windows.Forms.Padding(11, 0, 0, 0);
             this.layoutControlItem5.Width = 40;
             this.layoutControlItem5.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
             // 
@@ -719,16 +719,16 @@
             // 
             this.layoutControlItem6.Control = this.txtDonGia;
             this.layoutControlItem6.Height = 35;
-            this.layoutControlItem6.MinSize = new System.Drawing.Size(320, 35);
+            this.layoutControlItem6.MinSize = new System.Drawing.Size(373, 39);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Text = "<b>Đơn giá</b>";
-            this.layoutControlItem6.TextPadding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.layoutControlItem6.TextPadding = new System.Windows.Forms.Padding(34, 0, 0, 0);
             this.layoutControlItem6.Width = 30;
             this.layoutControlItem6.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
             // 
             // layoutSpacerItem3
             // 
-            this.layoutSpacerItem3.Height = 32;
+            this.layoutSpacerItem3.Height = 35;
             this.layoutSpacerItem3.Name = "layoutSpacerItem3";
             this.layoutSpacerItem3.Width = 30;
             this.layoutSpacerItem3.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
@@ -737,10 +737,10 @@
             // 
             this.layoutControlItem7.Control = this.txtQuyCach;
             this.layoutControlItem7.Height = 110;
-            this.layoutControlItem7.MinSize = new System.Drawing.Size(430, 110);
+            this.layoutControlItem7.MinSize = new System.Drawing.Size(501, 126);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Text = "<b>Quy cách</b>";
-            this.layoutControlItem7.TextPadding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.layoutControlItem7.TextPadding = new System.Windows.Forms.Padding(11, 0, 0, 0);
             this.layoutControlItem7.Width = 40;
             this.layoutControlItem7.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
             // 
@@ -751,7 +751,7 @@
             this.layoutControlItem8,
             this.layoutControlItem9,
             this.layoutControlItem10});
-            this.layoutGroup1.MinSize = new System.Drawing.Size(320, 100);
+            this.layoutGroup1.MinSize = new System.Drawing.Size(373, 114);
             this.layoutGroup1.Name = "layoutGroup1";
             this.layoutGroup1.Padding = new System.Windows.Forms.Padding(0);
             this.layoutGroup1.TextPosition = DevComponents.DotNetBar.Layout.eLayoutPosition.Top;
@@ -762,11 +762,11 @@
             // 
             this.layoutControlItem8.Control = this.txtThanhTien;
             this.layoutControlItem8.Height = 35;
-            this.layoutControlItem8.MinSize = new System.Drawing.Size(120, 0);
+            this.layoutControlItem8.MinSize = new System.Drawing.Size(139, 0);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Text = "<b>Thành tiền</b>";
             this.layoutControlItem8.TextControlSpacing = 38;
-            this.layoutControlItem8.TextPadding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.layoutControlItem8.TextPadding = new System.Windows.Forms.Padding(34, 0, 0, 0);
             this.layoutControlItem8.Width = 100;
             this.layoutControlItem8.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
             // 
@@ -774,11 +774,11 @@
             // 
             this.layoutControlItem9.Control = this.txtNuocSX;
             this.layoutControlItem9.Height = 35;
-            this.layoutControlItem9.MinSize = new System.Drawing.Size(120, 0);
+            this.layoutControlItem9.MinSize = new System.Drawing.Size(139, 0);
             this.layoutControlItem9.Name = "layoutControlItem9";
             this.layoutControlItem9.Text = "<b>Nước SX</b>";
             this.layoutControlItem9.TextControlSpacing = 38;
-            this.layoutControlItem9.TextPadding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.layoutControlItem9.TextPadding = new System.Windows.Forms.Padding(34, 0, 0, 0);
             this.layoutControlItem9.Width = 100;
             this.layoutControlItem9.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
             // 
@@ -786,17 +786,17 @@
             // 
             this.layoutControlItem10.Control = this.cbbMucDichSD;
             this.layoutControlItem10.Height = 35;
-            this.layoutControlItem10.MinSize = new System.Drawing.Size(64, 18);
+            this.layoutControlItem10.MinSize = new System.Drawing.Size(74, 20);
             this.layoutControlItem10.Name = "layoutControlItem10";
             this.layoutControlItem10.Text = "<b>Mục đích SD</b>";
             this.layoutControlItem10.TextControlSpacing = 40;
-            this.layoutControlItem10.TextPadding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.layoutControlItem10.TextPadding = new System.Windows.Forms.Padding(34, 0, 0, 0);
             this.layoutControlItem10.Width = 100;
             this.layoutControlItem10.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
             // 
             // layoutSpacerItem4
             // 
-            this.layoutSpacerItem4.Height = 32;
+            this.layoutSpacerItem4.Height = 36;
             this.layoutSpacerItem4.Name = "layoutSpacerItem4";
             this.layoutSpacerItem4.Width = 30;
             this.layoutSpacerItem4.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
@@ -805,10 +805,10 @@
             // 
             this.layoutControlItem11.Control = this.cbbPhongBM;
             this.layoutControlItem11.Height = 35;
-            this.layoutControlItem11.MinSize = new System.Drawing.Size(430, 35);
+            this.layoutControlItem11.MinSize = new System.Drawing.Size(501, 39);
             this.layoutControlItem11.Name = "layoutControlItem11";
             this.layoutControlItem11.Text = "<b>Kho/Phòng bộ môn <font color=\"#ED1C24\">(*)</font></b>";
-            this.layoutControlItem11.TextPadding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.layoutControlItem11.TextPadding = new System.Windows.Forms.Padding(11, 0, 0, 0);
             this.layoutControlItem11.Width = 40;
             this.layoutControlItem11.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
             // 
@@ -816,16 +816,16 @@
             // 
             this.layoutControlItem12.Control = this.cboxThietBiTuLam;
             this.layoutControlItem12.Height = 35;
-            this.layoutControlItem12.MinSize = new System.Drawing.Size(320, 18);
+            this.layoutControlItem12.MinSize = new System.Drawing.Size(373, 20);
             this.layoutControlItem12.Name = "layoutControlItem12";
             this.layoutControlItem12.Text = "<b>Là thiết bị tự làm</b>";
-            this.layoutControlItem12.TextPadding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.layoutControlItem12.TextPadding = new System.Windows.Forms.Padding(34, 0, 0, 0);
             this.layoutControlItem12.Width = 30;
             this.layoutControlItem12.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
             // 
             // layoutSpacerItem5
             // 
-            this.layoutSpacerItem5.Height = 32;
+            this.layoutSpacerItem5.Height = 36;
             this.layoutSpacerItem5.Name = "layoutSpacerItem5";
             this.layoutSpacerItem5.Width = 30;
             this.layoutSpacerItem5.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
@@ -834,10 +834,10 @@
             // 
             this.layoutControlItem13.Control = this.cbbNguonKinhPhi;
             this.layoutControlItem13.Height = 35;
-            this.layoutControlItem13.MinSize = new System.Drawing.Size(430, 35);
+            this.layoutControlItem13.MinSize = new System.Drawing.Size(501, 39);
             this.layoutControlItem13.Name = "layoutControlItem13";
             this.layoutControlItem13.Text = "<b>Nguồn kinh phí <font color=\"#ED1C24\">(*)</font></b>";
-            this.layoutControlItem13.TextPadding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.layoutControlItem13.TextPadding = new System.Windows.Forms.Padding(11, 0, 0, 0);
             this.layoutControlItem13.Width = 40;
             this.layoutControlItem13.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
             // 
@@ -845,16 +845,16 @@
             // 
             this.layoutControlItem14.Control = this.dpickNgaySX;
             this.layoutControlItem14.Height = 35;
-            this.layoutControlItem14.MinSize = new System.Drawing.Size(320, 35);
+            this.layoutControlItem14.MinSize = new System.Drawing.Size(373, 39);
             this.layoutControlItem14.Name = "layoutControlItem14";
             this.layoutControlItem14.Text = "<b>Ngày SX</b>";
-            this.layoutControlItem14.TextPadding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.layoutControlItem14.TextPadding = new System.Windows.Forms.Padding(34, 0, 0, 0);
             this.layoutControlItem14.Width = 30;
             this.layoutControlItem14.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
             // 
             // layoutSpacerItem6
             // 
-            this.layoutSpacerItem6.Height = 32;
+            this.layoutSpacerItem6.Height = 36;
             this.layoutSpacerItem6.Name = "layoutSpacerItem6";
             this.layoutSpacerItem6.Width = 30;
             this.layoutSpacerItem6.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
@@ -865,7 +865,7 @@
             this.layoutGroup2.Items.AddRange(new DevComponents.DotNetBar.Layout.LayoutItemBase[] {
             this.layoutControlItem16,
             this.layoutControlItem17});
-            this.layoutGroup2.MinSize = new System.Drawing.Size(430, 35);
+            this.layoutGroup2.MinSize = new System.Drawing.Size(501, 39);
             this.layoutGroup2.Name = "layoutGroup2";
             this.layoutGroup2.Padding = new System.Windows.Forms.Padding(0);
             this.layoutGroup2.TextPosition = DevComponents.DotNetBar.Layout.eLayoutPosition.Top;
@@ -875,20 +875,20 @@
             // layoutControlItem16
             // 
             this.layoutControlItem16.Control = this.txtNamSD;
-            this.layoutControlItem16.Height = 28;
-            this.layoutControlItem16.MinSize = new System.Drawing.Size(120, 0);
+            this.layoutControlItem16.Height = 32;
+            this.layoutControlItem16.MinSize = new System.Drawing.Size(139, 0);
             this.layoutControlItem16.Name = "layoutControlItem16";
             this.layoutControlItem16.Text = "<b>Năm đưa vào SD <font color=\"#ED1C24\">(*)</font></b>";
             this.layoutControlItem16.TextControlSpacing = 15;
-            this.layoutControlItem16.TextPadding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.layoutControlItem16.TextPadding = new System.Windows.Forms.Padding(11, 0, 0, 0);
             this.layoutControlItem16.Width = 50;
             this.layoutControlItem16.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
             // 
             // layoutControlItem17
             // 
             this.layoutControlItem17.Control = this.dpickerNgaySD;
-            this.layoutControlItem17.Height = 28;
-            this.layoutControlItem17.MinSize = new System.Drawing.Size(64, 18);
+            this.layoutControlItem17.Height = 32;
+            this.layoutControlItem17.MinSize = new System.Drawing.Size(74, 20);
             this.layoutControlItem17.Name = "layoutControlItem17";
             this.layoutControlItem17.SharedTextSizeEnabled = false;
             this.layoutControlItem17.Text = "<b>Ngày <font color=\"#ED1C24\">(*)</font></b>";
@@ -899,16 +899,16 @@
             // 
             this.layoutControlItem15.Control = this.dpickerHanSD;
             this.layoutControlItem15.Height = 35;
-            this.layoutControlItem15.MinSize = new System.Drawing.Size(320, 35);
+            this.layoutControlItem15.MinSize = new System.Drawing.Size(373, 39);
             this.layoutControlItem15.Name = "layoutControlItem15";
             this.layoutControlItem15.Text = "<b>Hạn SD</b>";
-            this.layoutControlItem15.TextPadding = new System.Windows.Forms.Padding(30, 6, 0, 0);
+            this.layoutControlItem15.TextPadding = new System.Windows.Forms.Padding(34, 6, 0, 0);
             this.layoutControlItem15.Width = 30;
             this.layoutControlItem15.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
             // 
             // layoutSpacerItem7
             // 
-            this.layoutSpacerItem7.Height = 32;
+            this.layoutSpacerItem7.Height = 36;
             this.layoutSpacerItem7.Name = "layoutSpacerItem7";
             this.layoutSpacerItem7.Width = 30;
             this.layoutSpacerItem7.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
@@ -917,16 +917,16 @@
             // 
             this.layoutControlItem18.Control = this.txtNamTheoDoi;
             this.layoutControlItem18.Height = 35;
-            this.layoutControlItem18.MinSize = new System.Drawing.Size(430, 35);
+            this.layoutControlItem18.MinSize = new System.Drawing.Size(501, 39);
             this.layoutControlItem18.Name = "layoutControlItem18";
             this.layoutControlItem18.Text = "<b>Năm theo dõi <font color=\"#ED1C24\">(*)</font></b>";
-            this.layoutControlItem18.TextPadding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.layoutControlItem18.TextPadding = new System.Windows.Forms.Padding(11, 0, 0, 0);
             this.layoutControlItem18.Width = 40;
             this.layoutControlItem18.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
             // 
             // layoutSpacerItem8
             // 
-            this.layoutSpacerItem8.Height = 32;
+            this.layoutSpacerItem8.Height = 35;
             this.layoutSpacerItem8.Name = "layoutSpacerItem8";
             this.layoutSpacerItem8.Width = 60;
             this.layoutSpacerItem8.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
@@ -937,11 +937,12 @@
             // 
             // frmKhaiBaoThietBi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1131, 505);
+            this.ClientSize = new System.Drawing.Size(1319, 583);
             this.Controls.Add(this.panelEx1);
             this.Controls.Add(this.rbChucNang);
+            this.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmKhaiBaoThietBi";
             this.Text = "Khai báo thiết bị";
             this.Load += new System.EventHandler(this.frmKhaiBaoThietBi_Load);

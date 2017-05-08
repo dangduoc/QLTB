@@ -22,18 +22,15 @@ namespace QLTB.Model
         public string NgayLap { get; set; }
         public string GhiChu { get; set; }
     }
-    public class PhieuGiamTBCreateModel
+    public class ThietBiGiamGridDisplayModel
     {
-        public Nullable<System.DateTime> NgayLap { get; set; }
-        public string GhiChu { get; set; }
-        public string CreatedByUserId { get; set; }
-        public Nullable<System.DateTime> CreatedOnDate { get; set; }
-    }
-    public class PhieuGiamTBUpdateModel
-    {
-        public Nullable<System.DateTime> NgayLap { get; set; }
-        public string GhiChu { get; set; }
-        public string UpdatedByUserId { get; set; }
-        public Nullable<System.DateTime> UpdatedOnDate { get; set; }
+        public string MaThietBi { get; set; }
+        public string Ten { get; set; }
+        public string LoaiTB { get; set; }
+        public string PhongBM { get; set; }
+        public string SoLuong { get; set; }
+        public string DonViTinh { get; set; }
+        public string LyDoGiam { get; set; }
+        public string SoPhieuBaoHong { get; set; }
     }
 }

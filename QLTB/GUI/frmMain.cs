@@ -338,6 +338,154 @@ namespace QLTB.GUI
                 this.Cursor = Cursors.Default;
             }
         }
+        private void btnKiemKeTB_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Cursor = Cursors.WaitCursor;
+                if (!CheckExistForm("frmKiemKeTB"))
+                {
+                    Application.DoEvents();
+                    frmKiemKeTB childForm = new frmKiemKeTB();
+                    childForm.MdiParent = this;
+                    childForm.WindowState = FormWindowState.Maximized;
+                    childForm.Show();
+
+                }
+                this.Cursor = Cursors.Default;
+            }
+            catch (Exception ex)
+            {
+                this.Cursor = Cursors.Default;
+            }
+        }
+        private void btnTheoDoiHongMat_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Cursor = Cursors.WaitCursor;
+                if (!CheckExistForm("frmDSThietBiHongMat"))
+                {
+                    Application.DoEvents();
+                    frmDSThietBiHongMat childForm = new frmDSThietBiHongMat();
+                    childForm.MdiParent = this;
+                    childForm.WindowState = FormWindowState.Maximized;
+                    childForm.Show();
+
+                }
+                this.Cursor = Cursors.Default;
+            }
+            catch (Exception ex)
+            {
+                this.Cursor = Cursors.Default;
+            }
+        }
+        private void btnTheoDoiSuaChua_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Cursor = Cursors.WaitCursor;
+                if (!CheckExistForm("frmDSSuaChuaThietBi"))
+                {
+                    Application.DoEvents();
+                    frmDSSuaChuaThietBi childForm = new frmDSSuaChuaThietBi();
+                    childForm.MdiParent = this;
+                    childForm.WindowState = FormWindowState.Maximized;
+                    childForm.Show();
+
+                }
+                this.Cursor = Cursors.Default;
+            }
+            catch (Exception ex)
+            {
+                this.Cursor = Cursors.Default;
+            }
+        }
+        private void btnTheoDoiGiam_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Cursor = Cursors.WaitCursor;
+                if (!CheckExistForm("frmDSGiamThietBi"))
+                {
+                    Application.DoEvents();
+                    frmDSGiamThietBi childForm = new frmDSGiamThietBi();
+                    childForm.MdiParent = this;
+                    childForm.WindowState = FormWindowState.Maximized;
+                    childForm.Show();
+
+                }
+                this.Cursor = Cursors.Default;
+            }
+            catch (Exception ex)
+            {
+                this.Cursor = Cursors.Default;
+            }
+        }
+        private void btnTheoDoiThanhLy_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Cursor = Cursors.WaitCursor;
+                if (!CheckExistForm("frmDSThanhLyTB"))
+                {
+                    Application.DoEvents();
+                    frmDSThanhLyTB  childForm = new frmDSThanhLyTB();
+                    childForm.MdiParent = this;
+                    childForm.WindowState = FormWindowState.Maximized;
+                    childForm.Show();
+
+                }
+                this.Cursor = Cursors.Default;
+            }
+            catch (Exception ex)
+            {
+                this.Cursor = Cursors.Default;
+            }
+        }
+        private void btnDSMuonPhongBM_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Cursor = Cursors.WaitCursor;
+                if (!CheckExistForm("frmDSMuonPhongBM"))
+                {
+                    Application.DoEvents();
+                    frmDSMuonPhongBM childForm = new frmDSMuonPhongBM();
+                    childForm.MdiParent = this;
+                    childForm.WindowState = FormWindowState.Maximized;
+                    childForm.Show();
+
+                }
+                this.Cursor = Cursors.Default;
+            }
+            catch (Exception ex)
+            {
+                this.Cursor = Cursors.Default;
+            }
+        }
+        private void btnDKMuonPhongBM_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Cursor = Cursors.WaitCursor;
+                if (!CheckExistForm("frmCTPhieuMuonPhong"))
+                {
+                    Application.DoEvents();
+                    frmCTPhieuMuonPhong childForm = new frmCTPhieuMuonPhong();
+                    childForm.MdiParent = this;
+                    childForm.WindowState = FormWindowState.Maximized;
+                    childForm.Show();
+
+                }
+                this.Cursor = Cursors.Default;
+            }
+            catch (Exception ex)
+            {
+                this.Cursor = Cursors.Default;
+            }
+        }
+
         private void TreeView_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             if (TreeView.SelectedNode == null) return;
@@ -394,6 +542,27 @@ namespace QLTB.GUI
                         break;
                     case "btnDKMuonThietBi":
                         btnDKMuonThietBi_Click(null, null);
+                        break;
+                    case "btnKiemKeTB":
+                        btnKiemKeTB_Click(null, null);
+                        break;
+                    case "btnTheoDoiHongMat":
+                        btnTheoDoiHongMat_Click(null, null);
+                        break;
+                    case "btnTheoDoiGiam":
+                        btnTheoDoiGiam_Click(null, null);
+                        break;
+                    case "btnTheoDoiThanhLy":
+                        btnTheoDoiThanhLy_Click(null, null);
+                        break;
+                    case "btnTheoDoiSuaChua":
+                        btnTheoDoiSuaChua_Click(null, null);
+                        break;
+                    case "btnDSMuonPhongBM":
+                        btnDSMuonPhongBM_Click(null, null);
+                        break;
+                    case "btnDKMuonPhongBM":
+                        btnDKMuonPhongBM_Click(null, null);
                         break;
                     default:
                         MessageBox.Show("Chức năng này chưa được xây dựng ....");

@@ -22,12 +22,14 @@ namespace QLTB.Model
         public int MucDichSDId { get; set; }
         public bool IsNgoaiQuyDinh { get; set; }
         public bool IsSuDungChoGD { get; set; }
+        public Nullable<int> TrangThaiId { get; set; }
         public string GhiChu { get; set; }
-        public List<ThietBiMuonGridDisplayModel> ThietBis { get; set; }
         public string CreatedByUserId { get; set; }
         public Nullable<System.DateTime> CreatedOnDate { get; set; }
         public string UpdatedByUserId { get; set; }
         public Nullable<System.DateTime> UpdatedOnDate { get; set; }
+        public bool IsDelete { get; set; }
+        public List<ThietBiMuonGridDisplayModel> ThietBis { get; set; }
     }
     public class PhieuMuonPhongGridDisplayModel
     {
@@ -38,7 +40,7 @@ namespace QLTB.Model
         public string MonHoc { get; set; }
         public string LopHoc { get; set; }
         public string GiaoVien { get; set; }
-        //Trang thais
+        public string TrangThai { get; set; }
     }
     public class PhieuMuonPhongCreateModel
     {

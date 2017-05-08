@@ -144,17 +144,21 @@
     <Compile Include="BLL\DanhSach\DSViTriGiaoVien.cs" />
     <Compile Include="BLL\DanhSach\DSVungMien.cs" />
     <Compile Include="BLL\DanhSach\DSXepLoaiPhongBM.cs" />
+    <Compile Include="BLL\KiemKe\KiemKeThietBiModel.cs" />
     <Compile Include="BLL\Login\LoginHandler.cs" />
     <Compile Include="BLL\PhieuMuon\DbPhieuMuonPhongHandler.cs" />
     <Compile Include="BLL\PhieuMuon\DbPhieuMuonTBHandler.cs" />
-    <Compile Include="BLL\PhieuMuon\PhieuBaoHongModel.cs" />
-    <Compile Include="BLL\PhieuMuon\PhieuGiamTBModel.cs" />
+    <Compile Include="BLL\TheoDoi\HongMat\PhieuBaoHongModel.cs" />
+    <Compile Include="BLL\TheoDoi\Giam\PhieuGiamTBModel.cs" />
     <Compile Include="BLL\PhieuMuon\PhieuMuonPhongModel.cs" />
     <Compile Include="BLL\PhieuMuon\PhieuMuonThietBiModel.cs" />
+    <Compile Include="BLL\PhieuTra\PhieuTraTBModel.cs" />
     <Compile Include="BLL\QuanHe\QH_PhieuBaoHong_ThietBi.cs" />
     <Compile Include="BLL\QuanHe\QH_PhieuGiamTB_ThietBi.cs" />
     <Compile Include="BLL\QuanHe\QH_PhieuMuonPhong_ThietBi.cs" />
     <Compile Include="BLL\QuanHe\QH_PhieuMuonTB_ThietBi.cs" />
+    <Compile Include="BLL\TheoDoi\SuaChua\PhieuSuaChuaTBModel.cs" />
+    <Compile Include="BLL\TheoDoi\ThanhLy\PhieuThanhLyModel.cs" />
     <Compile Include="BLL\ThietBi\DbThietBiHandler.cs" />
     <Compile Include="BLL\ThietBi\ThietBiModel.cs" />
     <Compile Include="BLL\ThongTinDonVi\DbThongTinDVHandler.cs" />
@@ -361,6 +365,12 @@
     <Compile Include="GUI\DialogBox\frmDialogDSThietBi.Designer.cs">
       <DependentUpon>frmDialogDSThietBi.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\DialogBox\frmDialogTBSuaChua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DialogBox\frmDialogTBSuaChua.Designer.cs">
+      <DependentUpon>frmDialogTBSuaChua.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\DialogBox\frmDialogTDTBMuon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -391,16 +401,16 @@
     <Compile Include="GUI\frmThongTinDonVi.Designer.cs">
       <DependentUpon>frmThongTinDonVi.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\PhieuMuon\PhongBoMon\frmCTPhieuMuonPhong.cs">
+    <Compile Include="GUI\PhongBoMon\frmCTPhieuMuonPhong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\PhieuMuon\PhongBoMon\frmCTPhieuMuonPhong.Designer.cs">
+    <Compile Include="GUI\PhongBoMon\frmCTPhieuMuonPhong.Designer.cs">
       <DependentUpon>frmCTPhieuMuonPhong.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\PhieuMuon\PhongBoMon\frmDSMuonPhongBM.cs">
+    <Compile Include="GUI\PhongBoMon\frmDSMuonPhongBM.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\PhieuMuon\PhongBoMon\frmDSMuonPhongBM.Designer.cs">
+    <Compile Include="GUI\PhongBoMon\frmDSMuonPhongBM.Designer.cs">
       <DependentUpon>frmDSMuonPhongBM.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\DanhMuc\CanBoThietBi\frmDMCanBoThietBi.cs">
@@ -457,6 +467,24 @@
     <Compile Include="GUI\DanhMuc\ToBoMon\frmDMToBoMon.Designer.cs">
       <DependentUpon>frmDMToBoMon.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ThietBi\GiamTB\frmPhieGiamThietBi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBi\GiamTB\frmPhieGiamThietBi.Designer.cs">
+      <DependentUpon>frmPhieGiamThietBi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThietBi\KiemKe\frmChiTietKiemKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBi\KiemKe\frmChiTietKiemKe.Designer.cs">
+      <DependentUpon>frmChiTietKiemKe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThietBi\KiemKe\frmKiemKeTB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBi\KiemKe\frmKiemKeTB.Designer.cs">
+      <DependentUpon>frmKiemKeTB.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ThietBi\MuonTra\frmDanhSachMuonTB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -475,11 +503,59 @@
     <Compile Include="GUI\ThietBi\KhaiBao\frmKhaiBaoThietBi.Designer.cs">
       <DependentUpon>frmKhaiBaoThietBi.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ThietBi\MuonTra\frmGhiNhanTraTB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBi\MuonTra\frmGhiNhanTraTB.Designer.cs">
+      <DependentUpon>frmGhiNhanTraTB.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ThietBi\MuonTra\frmThietBiMuon.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\ThietBi\MuonTra\frmThietBiMuon.Designer.cs">
       <DependentUpon>frmThietBiMuon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThietBi\PhieuBaoHong\frmDSThietBiHongMat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBi\PhieuBaoHong\frmDSThietBiHongMat.Designer.cs">
+      <DependentUpon>frmDSThietBiHongMat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThietBi\PhieuBaoHong\frmPhieuBaoHong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBi\PhieuBaoHong\frmPhieuBaoHong.Designer.cs">
+      <DependentUpon>frmPhieuBaoHong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThietBi\SuaChua\frmChiTietSuaChuaTB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBi\SuaChua\frmChiTietSuaChuaTB.Designer.cs">
+      <DependentUpon>frmChiTietSuaChuaTB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThietBi\SuaChua\frmDSSuaChuaThietBi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBi\SuaChua\frmDSSuaChuaThietBi.Designer.cs">
+      <DependentUpon>frmDSSuaChuaThietBi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThietBi\GiamTB\frmDSGiamThietBi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBi\GiamTB\frmDSGiamThietBi.Designer.cs">
+      <DependentUpon>frmDSGiamThietBi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThietBi\ThanhLy\frmDSThanhLyTB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBi\ThanhLy\frmDSThanhLyTB.Designer.cs">
+      <DependentUpon>frmDSThanhLyTB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThietBi\ThanhLy\frmPhieuThanhLyTB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBi\ThanhLy\frmPhieuThanhLyTB.Designer.cs">
+      <DependentUpon>frmPhieuThanhLyTB.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -489,6 +565,9 @@
     <Compile Include="Utils\MyConvert.cs" />
     <EmbeddedResource Include="GUI\DialogBox\frmDialogDSThietBi.resx">
       <DependentUpon>frmDialogDSThietBi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DialogBox\frmDialogTBSuaChua.resx">
+      <DependentUpon>frmDialogTBSuaChua.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DialogBox\frmDialogTDTBMuon.resx">
       <DependentUpon>frmDialogTDTBMuon.cs</DependentUpon>
@@ -505,10 +584,10 @@
     <EmbeddedResource Include="GUI\frmThongTinDonVi.resx">
       <DependentUpon>frmThongTinDonVi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\PhieuMuon\PhongBoMon\frmCTPhieuMuonPhong.resx">
+    <EmbeddedResource Include="GUI\PhongBoMon\frmCTPhieuMuonPhong.resx">
       <DependentUpon>frmCTPhieuMuonPhong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\PhieuMuon\PhongBoMon\frmDSMuonPhongBM.resx">
+    <EmbeddedResource Include="GUI\PhongBoMon\frmDSMuonPhongBM.resx">
       <DependentUpon>frmDSMuonPhongBM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DanhMuc\CanBoThietBi\frmDMCanBoThietBi.resx">
@@ -538,6 +617,15 @@
     <EmbeddedResource Include="GUI\DanhMuc\ToBoMon\frmDMToBoMon.resx">
       <DependentUpon>frmDMToBoMon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBi\GiamTB\frmPhieGiamThietBi.resx">
+      <DependentUpon>frmPhieGiamThietBi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBi\KiemKe\frmChiTietKiemKe.resx">
+      <DependentUpon>frmChiTietKiemKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBi\KiemKe\frmKiemKeTB.resx">
+      <DependentUpon>frmKiemKeTB.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\ThietBi\MuonTra\frmDanhSachMuonTB.resx">
       <DependentUpon>frmDanhSachMuonTB.cs</DependentUpon>
     </EmbeddedResource>
@@ -547,8 +635,32 @@
     <EmbeddedResource Include="GUI\ThietBi\KhaiBao\frmKhaiBaoThietBi.resx">
       <DependentUpon>frmKhaiBaoThietBi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBi\MuonTra\frmGhiNhanTraTB.resx">
+      <DependentUpon>frmGhiNhanTraTB.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\ThietBi\MuonTra\frmThietBiMuon.resx">
       <DependentUpon>frmThietBiMuon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBi\PhieuBaoHong\frmDSThietBiHongMat.resx">
+      <DependentUpon>frmDSThietBiHongMat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBi\PhieuBaoHong\frmPhieuBaoHong.resx">
+      <DependentUpon>frmPhieuBaoHong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBi\SuaChua\frmChiTietSuaChuaTB.resx">
+      <DependentUpon>frmChiTietSuaChuaTB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBi\SuaChua\frmDSSuaChuaThietBi.resx">
+      <DependentUpon>frmDSSuaChuaThietBi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBi\GiamTB\frmDSGiamThietBi.resx">
+      <DependentUpon>frmDSGiamThietBi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBi\ThanhLy\frmDSThanhLyTB.resx">
+      <DependentUpon>frmDSThanhLyTB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBi\ThanhLy\frmPhieuThanhLyTB.resx">
+      <DependentUpon>frmPhieuThanhLyTB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
