@@ -126,63 +126,76 @@ namespace QLTB.GUI
         private void LoadForm()
         {
             //Clone
-            List<CanBoTBGridDisplayModel> list = new List<CanBoTBGridDisplayModel>();
-            list.Add(new CanBoTBGridDisplayModel
+            List<PhieuMuonPhongGridDisplayModel> list = new List<PhieuMuonPhongGridDisplayModel>();
+            list.Add(new PhieuMuonPhongGridDisplayModel
             {
-                CanBoThietBiId = "CBTB0001",
-                HoVaDem = "Đặng Minh",
-                Ten = "Được",
-                GioiTinh = "Nam",
-                IsCoTrinhDoNghiepVu = "Có",
-                TrinhDoVanHoa = "Đại học",
-                TGBatDauQL = "21/11/2010",
-                TGKetThucQL = "22/1/2017",
-                PhuTrach = "Chuyên trách",
-                GhiChu = ""
+                PhieuMuonPhongId="PMPBM00001",
+                BaiDay="Phản ứng hóa học số 1",
+                MonHoc="Hóa học",
+                SoTiet="3",
+                GiaoVien="Đặng Minh Được",
+                LopHoc="Lớp 7A1",
+                NgayMuon="21/11/2010",
+                TrangThai="Đang sử dụng"
             });
-            list.Add(new CanBoTBGridDisplayModel
-            {
-                CanBoThietBiId = "CBTB0002",
-                HoVaDem = "Ngô Hoàng",
-                Ten = "Huy",
-                GioiTinh = "Nam",
-                IsCoTrinhDoNghiepVu = "Có",
-                TrinhDoVanHoa = "Đại học",
-                TGBatDauQL = "1/3/2013",
-                TGKetThucQL = "8/5/2016",
-                PhuTrach = "Chuyên trách",
-                GhiChu = ""
-            });
-            list.Add(new CanBoTBGridDisplayModel
-            {
-                CanBoThietBiId = "CBTB0003",
-                HoVaDem = "Đặng Thu",
-                Ten = "Thảo",
-                GioiTinh = "Nữ",
-                IsCoTrinhDoNghiepVu = "Có",
-                TrinhDoVanHoa = "Đại học",
-                TGBatDauQL = "11/4/2013",
-                TGKetThucQL = "12/3/2016",
-                PhuTrach = "Chuyên trách",
-                GhiChu = "Là hoa hậu Việt Nam 2012"
-            });
-            //
             List<string> headers = new List<string>();
-            headers.Add("Mã cán bộ");
-            headers.Add("Họ và tên đêm");
-            headers.Add("Tên cán bộ");
-            headers.Add("Giới tính");
-            headers.Add("Phụ trách");
-            headers.Add("Trinh độ văn hóa");
-            headers.Add("Thời gian bắt đầu quản lý");
-            headers.Add("Thời gian kết thúc quản lý");
-            headers.Add("Trình độ nghiệp vụ");
-            headers.Add("Ghi chú");
+            headers.Add("Số phiếu");
+            headers.Add("Ngày mượn");
+            headers.Add("Số tiết");
+            headers.Add("Bài dạy");
+            headers.Add("Môn học");
+            headers.Add("Lớp học");
+            headers.Add("Giáo viên");
+            headers.Add("Trạng thái");
             //
             DataTable tb = MyConvert.ToDataTable(list);
             source.DataSource = SetUpSearch(tb, headers);
             advancedDataGridView.DataSource = source;
             SetHeaderForGrid(advancedDataGridView, headers);
+            //
+            List<ThietBiMuonGridDisplayModel> listTB = new List<ThietBiMuonGridDisplayModel>();
+            gridDSThietBiMuon.DataSource = listTB;
+            listTB.Add(new ThietBiMuonGridDisplayModel {
+                ThietBiId="CSCN00001",
+                SoHieu="CSCN00001.01",
+                Ten="Giỏ hoa cảnh",
+                DVT="Cái",
+                SoLuongMuon="2",
+                PhongBM="Phòng thực hành công nghệ"
+            });
+            listTB.Add(new ThietBiMuonGridDisplayModel
+            {
+                ThietBiId = "CSCN00001",
+                SoHieu = "CSCN00001.02",
+                Ten = "Chậu đất",
+                DVT = "Cái",
+                SoLuongMuon = "4",
+                PhongBM = "Phòng thực hành công nghệ"
+            });
+            DataGridViewLinkColumn linkColEdit = new DataGridViewLinkColumn();
+            linkColEdit.Text = "Thay đổi";
+            linkColEdit.Name = "Edit";
+            linkColEdit.LinkColor = Color.Blue;
+            linkColEdit.LinkBehavior = LinkBehavior.NeverUnderline;
+            linkColEdit.UseColumnTextForLinkValue = true;
+            linkColEdit.HeaderText = "";
+            DataGridViewLinkColumn linkColDelete = new DataGridViewLinkColumn();
+            linkColDelete.Text = "Xóa bỏ";
+            linkColDelete.Name = "Delete";
+            linkColDelete.LinkColor = Color.Red;
+            linkColDelete.LinkBehavior = LinkBehavior.NeverUnderline;
+            linkColDelete.UseColumnTextForLinkValue = true;
+            linkColDelete.HeaderText = "";
+
+            gridDSThietBiMuon.Columns.Add(linkColEdit);
+            gridDSThietBiMuon.Columns.Add(linkColDelete);
+            //
+            gridDSThietBiMuon.Columns[1].HeaderText = "Mã thiết bị";
+            gridDSThietBiMuon.Columns[2].HeaderText = "Tên thiết bị";
+            gridDSThietBiMuon.Columns[3].HeaderText = "Số hiệu";
+            gridDSThietBiMuon.Columns[4].HeaderText = "Phòng bộ môn";
+            gridDSThietBiMuon.Columns[5].HeaderText = "Số lượng mượn";
+            gridDSThietBiMuon.Columns[6].HeaderText = "Đơn vị tính";
         }
 
         private void advancedDataGridView_SortStringChanged(object sender, EventArgs e)
@@ -198,6 +211,18 @@ namespace QLTB.GUI
         private void btnThoat_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            frmCTPhieuMuonPhong frm = new frmCTPhieuMuonPhong();
+            frm.MdiParent = MdiParent;
+            frm.Show();
+        }
+
+        private void frmDSMuonPhongBM_Load(object sender, EventArgs e)
+        {
+            LoadForm();
         }
     }
 }

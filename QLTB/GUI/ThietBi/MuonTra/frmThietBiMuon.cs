@@ -101,14 +101,14 @@ namespace QLTB.GUI
             gridDSThietBiMuon.Columns[5].HeaderText = "Phòng bộ môn";
             gridDSThietBiMuon.Columns[6].HeaderText = "Số lượng mượn";
             gridDSThietBiMuon.Columns[7].HeaderText = "Đơn vị tính";
-            gridDSThietBiMuon.Columns[2].DisplayIndex = 1;
-            gridDSThietBiMuon.Columns[3].DisplayIndex = 2;
-            gridDSThietBiMuon.Columns[4].DisplayIndex = 3;
-            gridDSThietBiMuon.Columns[5].DisplayIndex = 4;
-            gridDSThietBiMuon.Columns[6].DisplayIndex = 5;
-            gridDSThietBiMuon.Columns[7].DisplayIndex = 6;
-            gridDSThietBiMuon.Columns[0].DisplayIndex = 7;
-            gridDSThietBiMuon.Columns[1].DisplayIndex = 8;
+            gridDSThietBiMuon.Columns[2].DisplayIndex = 0;
+            gridDSThietBiMuon.Columns[3].DisplayIndex = 1;
+            gridDSThietBiMuon.Columns[4].DisplayIndex = 2;
+            gridDSThietBiMuon.Columns[5].DisplayIndex = 3;
+            gridDSThietBiMuon.Columns[6].DisplayIndex = 4;
+            gridDSThietBiMuon.Columns[7].DisplayIndex = 5;
+            gridDSThietBiMuon.Columns[0].DisplayIndex = 6;
+            gridDSThietBiMuon.Columns[1].DisplayIndex = 7;
          
          
             //
@@ -274,7 +274,7 @@ namespace QLTB.GUI
 
         private void buttonX3_Click(object sender, EventArgs e)
         {
-            frmDialogDSThietBi frm = new frmDialogDSThietBi();
+            frmDialogDSThietBi frm = new frmDialogDSThietBi(1);
             frm.ShowDialog(this);
         }
 
@@ -282,12 +282,6 @@ namespace QLTB.GUI
         {
             Close();
         }
-
-        private void btnLuu_Click(object sender, EventArgs e)
-        {
-            saveData();
-        }
-
         private void gridDSThietBiMuon_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var id = gridDSThietBiMuon.Rows[e.RowIndex].Cells[4].Value.ToString();
@@ -319,6 +313,18 @@ namespace QLTB.GUI
             {
 
             }
+        }
+
+        private void btnLuu_Click_1(object sender, EventArgs e)
+        {
+            saveData();
+        }
+
+        private void btnBaoHong_Click(object sender, EventArgs e)
+        {
+            frmPhieuBaoHong frm = new frmPhieuBaoHong();
+            frm.MdiParent = MdiParent;
+            frm.Show();
         }
     }
 }

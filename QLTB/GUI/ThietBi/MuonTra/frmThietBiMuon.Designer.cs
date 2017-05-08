@@ -72,7 +72,6 @@
             this.rbChucNang = new DevComponents.DotNetBar.RibbonBar();
             this.btnLuu = new DevComponents.DotNetBar.ButtonItem();
             this.btnBaoHong = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem2 = new DevComponents.DotNetBar.ButtonItem();
             this.btnXoa = new DevComponents.DotNetBar.ButtonItem();
             this.btnIn = new DevComponents.DotNetBar.ButtonItem();
             this.btnTroGiup = new DevComponents.DotNetBar.ButtonItem();
@@ -732,45 +731,31 @@
             // 
             this.btnLuu.BeginGroup = true;
             this.btnLuu.Image = global::QLTB.Properties.Resources.save;
-            this.btnLuu.ImagePaddingHorizontal = 20;
+            this.btnLuu.ImagePaddingHorizontal = 12;
             this.btnLuu.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlN);
-            this.btnLuu.Text = "Lưu lại";
-            this.btnLuu.Tooltip = "Khai báo thiết bị";
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            this.btnLuu.SubItemsExpandWidth = 14;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click_1);
             // 
             // btnBaoHong
             // 
-            this.btnBaoHong.Image = ((System.Drawing.Image)(resources.GetObject("btnBaoHong.Image")));
-            this.btnBaoHong.ImagePaddingHorizontal = 40;
+            this.btnBaoHong.BeginGroup = true;
+            this.btnBaoHong.Image = global::QLTB.Properties.Resources.properties_f2;
             this.btnBaoHong.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
             this.btnBaoHong.Name = "btnBaoHong";
-            this.btnBaoHong.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F2);
-            this.btnBaoHong.ShowSubItems = false;
-            this.btnBaoHong.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.buttonItem2});
-            this.btnBaoHong.Text = "Báo hỏng/mất";
-            this.btnBaoHong.Tooltip = "Sửa thông tin";
-            // 
-            // buttonItem2
-            // 
-            this.buttonItem2.BeginGroup = true;
-            this.buttonItem2.Image = ((System.Drawing.Image)(resources.GetObject("buttonItem2.Image")));
-            this.buttonItem2.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.buttonItem2.Name = "buttonItem2";
-            this.buttonItem2.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F2);
-            this.buttonItem2.Text = "Sửa";
-            this.buttonItem2.Tooltip = "Sửa thông tin";
+            this.btnBaoHong.SubItemsExpandWidth = 14;
+            this.btnBaoHong.Text = "Báo hỏng / mất";
+            this.btnBaoHong.Click += new System.EventHandler(this.btnBaoHong_Click);
             // 
             // btnXoa
             // 
-            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
+            this.btnXoa.BeginGroup = true;
+            this.btnXoa.Image = global::QLTB.Properties.Resources.stop_f2;
             this.btnXoa.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlD);
+            this.btnXoa.SubItemsExpandWidth = 14;
             this.btnXoa.Text = "Xóa";
-            this.btnXoa.Tooltip = "Xóa thiết bị";
             // 
             // btnIn
             // 
@@ -913,10 +898,6 @@
         private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem13;
         private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem14;
         private DevComponents.DotNetBar.RibbonBar rbChucNang;
-        private DevComponents.DotNetBar.ButtonItem btnLuu;
-        private DevComponents.DotNetBar.ButtonItem btnBaoHong;
-        private DevComponents.DotNetBar.ButtonItem buttonItem2;
-        private DevComponents.DotNetBar.ButtonItem btnXoa;
         private DevComponents.DotNetBar.ButtonItem btnIn;
         private DevComponents.DotNetBar.ButtonItem btnThoat;
         private DevComponents.DotNetBar.ButtonItem buttonItem1;
@@ -929,5 +910,8 @@
         private System.Windows.Forms.Panel panel2;
         private ADGV.AdvancedDataGridView gridDSThietBiMuon;
         private System.Windows.Forms.Panel panel1;
+        private DevComponents.DotNetBar.ButtonItem btnLuu;
+        private DevComponents.DotNetBar.ButtonItem btnBaoHong;
+        private DevComponents.DotNetBar.ButtonItem btnXoa;
     }
 }

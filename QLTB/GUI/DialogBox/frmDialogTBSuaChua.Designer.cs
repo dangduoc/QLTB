@@ -1,6 +1,6 @@
-﻿namespace QLTB.GUI
+﻿namespace QLTB.GUI.DialogBox
 {
-    partial class frmDialogDSThietBi
+    partial class frmDialogTBSuaChua
     {
         /// <summary>
         /// Required designer variable.
@@ -56,9 +56,9 @@
             this.panelEx2.Controls.Add(this.buttonX1);
             this.panelEx2.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelEx2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelEx2.Location = new System.Drawing.Point(0, 396);
+            this.panelEx2.Location = new System.Drawing.Point(0, 326);
             this.panelEx2.Name = "panelEx2";
-            this.panelEx2.Size = new System.Drawing.Size(924, 40);
+            this.panelEx2.Size = new System.Drawing.Size(746, 40);
             this.panelEx2.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -66,7 +66,7 @@
             this.panelEx2.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
             this.panelEx2.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.panelEx2.Style.GradientAngle = 90;
-            this.panelEx2.TabIndex = 4;
+            this.panelEx2.TabIndex = 8;
             // 
             // btnThem
             // 
@@ -74,13 +74,12 @@
             this.btnThem.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnThem.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnThem.Image = global::QLTB.Properties.Resources.tick;
-            this.btnThem.Location = new System.Drawing.Point(758, 9);
+            this.btnThem.Location = new System.Drawing.Point(580, 9);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
             this.btnThem.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnThem.TabIndex = 2;
             this.btnThem.Text = "Đồng ý";
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnClose
             // 
@@ -88,7 +87,7 @@
             this.btnClose.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnClose.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnClose.Image = global::QLTB.Properties.Resources.b_drop;
-            this.btnClose.Location = new System.Drawing.Point(844, 9);
+            this.btnClose.Location = new System.Drawing.Point(666, 9);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -112,7 +111,7 @@
             this.pnlBack.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBack.Location = new System.Drawing.Point(0, 0);
             this.pnlBack.Name = "pnlBack";
-            this.pnlBack.Size = new System.Drawing.Size(924, 396);
+            this.pnlBack.Size = new System.Drawing.Size(746, 326);
             this.pnlBack.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.pnlBack.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.pnlBack.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -120,7 +119,7 @@
             this.pnlBack.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
             this.pnlBack.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.pnlBack.Style.GradientAngle = 90;
-            this.pnlBack.TabIndex = 8;
+            this.pnlBack.TabIndex = 12;
             // 
             // panelEx1
             // 
@@ -132,7 +131,7 @@
             this.panelEx1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEx1.Location = new System.Drawing.Point(0, 0);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(924, 396);
+            this.panelEx1.Size = new System.Drawing.Size(746, 326);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -151,7 +150,7 @@
             this.panelEx3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEx3.Location = new System.Drawing.Point(0, 27);
             this.panelEx3.Name = "panelEx3";
-            this.panelEx3.Size = new System.Drawing.Size(924, 369);
+            this.panelEx3.Size = new System.Drawing.Size(746, 299);
             this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -194,13 +193,9 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.advancedDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.advancedDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.advancedDataGridView.Size = new System.Drawing.Size(924, 369);
+            this.advancedDataGridView.Size = new System.Drawing.Size(746, 299);
             this.advancedDataGridView.TabIndex = 27;
             this.advancedDataGridView.TimeFilter = false;
-            this.advancedDataGridView.SortStringChanged += new System.EventHandler(this.advancedDataGridView_SortStringChanged);
-            this.advancedDataGridView.FilterStringChanged += new System.EventHandler(this.advancedDataGridView_FilterStringChanged);
-            this.advancedDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.advancedDataGridView_CellContentClick);
-            this.advancedDataGridView.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.advancedDataGridView_RowsAdded);
             // 
             // searchToolBar
             // 
@@ -212,24 +207,22 @@
             this.searchToolBar.MinimumSize = new System.Drawing.Size(0, 27);
             this.searchToolBar.Name = "searchToolBar";
             this.searchToolBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.searchToolBar.Size = new System.Drawing.Size(924, 27);
+            this.searchToolBar.Size = new System.Drawing.Size(746, 27);
             this.searchToolBar.TabIndex = 28;
             this.searchToolBar.Text = "searchToolBar1";
             // 
-            // frmDialogDSThietBi
+            // frmDialogTBSuaChua
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(924, 436);
+            this.ClientSize = new System.Drawing.Size(746, 366);
             this.Controls.Add(this.pnlBack);
             this.Controls.Add(this.panelEx2);
             this.DoubleBuffered = true;
             this.EnableGlass = false;
-            this.Name = "frmDialogDSThietBi";
+            this.Name = "frmDialogTBSuaChua";
             this.ShowIcon = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Danh sách thiết bị giáo dục";
-            this.Load += new System.EventHandler(this.frmDialogDSThietBi_Load);
+            this.Text = "Chọn thiết bị cần sửa chữa";
             this.panelEx2.ResumeLayout(false);
             this.pnlBack.ResumeLayout(false);
             this.panelEx1.ResumeLayout(false);
@@ -243,13 +236,13 @@
         #endregion
 
         private DevComponents.DotNetBar.PanelEx panelEx2;
-        private DevComponents.DotNetBar.PanelEx pnlBack;
+        private DevComponents.DotNetBar.ButtonX btnThem;
+        private DevComponents.DotNetBar.ButtonX btnClose;
         private DevComponents.DotNetBar.ButtonX buttonX1;
+        private DevComponents.DotNetBar.PanelEx pnlBack;
         private DevComponents.DotNetBar.PanelEx panelEx1;
         private DevComponents.DotNetBar.PanelEx panelEx3;
         private ADGV.AdvancedDataGridView advancedDataGridView;
         private ADGV.SearchToolBar searchToolBar;
-        private DevComponents.DotNetBar.ButtonX btnThem;
-        private DevComponents.DotNetBar.ButtonX btnClose;
     }
 }

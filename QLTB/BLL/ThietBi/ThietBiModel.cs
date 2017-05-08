@@ -50,4 +50,8 @@ namespace QLTB.Model
         public string SoLuongMat { get; set; }
         public string SoLuongHong { get; set; }
     }
+ 
+
+   
+    
 }

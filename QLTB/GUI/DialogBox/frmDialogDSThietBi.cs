@@ -15,12 +15,14 @@ namespace QLTB.GUI
 {
     public partial class frmDialogDSThietBi : DevComponents.DotNetBar.Office2007Form
     {
+        private int type;
         private BindingSource source = new BindingSource();
         private string defaultSearchValue = "Value for search";
         //
-        public frmDialogDSThietBi()
+        public frmDialogDSThietBi(int type)
         {
             InitializeComponent();
+            this.type = type;
         }
         private DataTable SetUpSearch(DataTable tb, List<string> headers)
         {
@@ -128,23 +130,46 @@ namespace QLTB.GUI
         }
         private void LoadForm()
         {
-
-            //Clone
-            List<ThietBiGridDisplayModel> list = new DbThietBiHandler().GetAll();
-           
-            //
             List<string> headers = new List<string>();
-            headers.Add("Số hiệu");
-            headers.Add("Mã thiết bị");
-            headers.Add("Tên thiết bị");
-            headers.Add("Kho/Phòng bộ môn");
-            headers.Add("Bộ môn");
-            headers.Add("Số lượng");
-            headers.Add("Đơn vị tính");
-            headers.Add("Mất");
-            headers.Add("Hỏng");
+            DataTable tb = null;
+            //trường hợp type=1
+            if (type == 1)
+            {
+                List<ThietBiGridDisplayModel> list = new DbThietBiHandler().GetAll();
+                //
 
-            DataTable tb = MyConvert.ToDataTable(list);
+                headers.Add("Số hiệu");
+                headers.Add("Mã thiết bị");
+                headers.Add("Tên thiết bị");
+                headers.Add("Kho/Phòng bộ môn");
+                headers.Add("Bộ môn");
+                headers.Add("Số lượng");
+                headers.Add("Đơn vị tính");
+                headers.Add("Mất");
+                headers.Add("Hỏng");
+                tb = MyConvert.ToDataTable(list);
+                this.Text = "Danh sách thiết bị giáo dục";
+            }
+            //Truong hop type=2
+            else if (type == 2)
+            {
+                List<DSThietBiHongMatGridDisplayModel> list = new List<DSThietBiHongMatGridDisplayModel>();
+                headers.Add("Mã thiết bị");
+                headers.Add("Tên thiết bị");
+                headers.Add("Số hiệu");
+                headers.Add("Đơn vị tính");
+                headers.Add("Số lượng");
+                headers.Add("Kho/Phòng bộ môn");
+                headers.Add("Bộ môn");
+                tb = MyConvert.ToDataTable(list);
+                this.Text = "Chọn thiết bị hỏng/mất";
+            }
+
+
+
+
+
+
             DataGridViewCheckBoxColumn col = new DataGridViewCheckBoxColumn();
             col.Name = "checkBtn";
             col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -153,11 +178,11 @@ namespace QLTB.GUI
             advancedDataGridView.DataSource = source;
             SetHeaderForGrid(advancedDataGridView, headers);
             advancedDataGridView.Columns.Add(col);
-  
+
             advancedDataGridView.Columns["checkBtn"].Width = 20;
             advancedDataGridView.Columns["checkBtn"].HeaderText = "";
             advancedDataGridView.Columns["checkBtn"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            advancedDataGridView.Columns["checkBtn"].DefaultCellStyle.Padding = new Padding(5,0,0,0);
+            advancedDataGridView.Columns["checkBtn"].DefaultCellStyle.Padding = new Padding(5, 0, 0, 0);
             advancedDataGridView.Columns["Ten"].Width = 170;
             advancedDataGridView.Columns["KhoPhong"].Width = 170;
             advancedDataGridView.Columns["SoLuong"].Width = 80;
@@ -182,15 +207,15 @@ namespace QLTB.GUI
 
         private void advancedDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if ((e.RowIndex > 0)&&(e.ColumnIndex==advancedDataGridView.Columns["checkBtn"].Index))
+            if ((e.RowIndex > 0) && (e.ColumnIndex == advancedDataGridView.Columns["checkBtn"].Index))
             {
             }
         }
 
         private void advancedDataGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-           // DataGridViewButtonCell cell = advancedDataGridView.Rows[e.RowIndex].Cells["btnCol"] as DataGridViewButtonCell;
-           
+            // DataGridViewButtonCell cell = advancedDataGridView.Rows[e.RowIndex].Cells["btnCol"] as DataGridViewButtonCell;
+
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -198,7 +223,7 @@ namespace QLTB.GUI
             var list = new List<ThietBiMuonGridDisplayModel>();
             foreach (DataGridViewRow item in advancedDataGridView.Rows)
             {
-                if (item.Cells[9].Value!=null)
+                if (item.Cells[9].Value != null)
                 {
                     var tmp = new ThietBiMuonGridDisplayModel
                     {

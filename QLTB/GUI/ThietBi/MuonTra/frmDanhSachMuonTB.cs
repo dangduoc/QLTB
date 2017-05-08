@@ -204,5 +204,24 @@ namespace QLTB.GUI
                 }
             }
         }
+
+        private void btnGhiTra_Click(object sender, EventArgs e)
+        {
+            var row = advancedDataGridView.SelectedRows[0];
+            if (row != null)
+            {
+                var Id = row.Cells["PhieuMuonTBId"].Value.ToString();
+                frmGhiNhanTraTB frm = new frmGhiNhanTraTB(Id);
+                frm.MdiParent = MdiParent;
+                frm.Show();
+            }
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            frmCTPhieuMuonPhong frm = new frmCTPhieuMuonPhong();
+            frm.MdiParent = MdiParent;
+            frm.Show();
+        }
     }
 }
