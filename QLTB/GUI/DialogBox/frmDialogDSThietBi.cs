@@ -153,7 +153,7 @@ namespace QLTB.GUI
             //Truong hop type=2
             else if (type == 2)
             {
-                List<DSThietBiHongMatGridDisplayModel> list = new List<DSThietBiHongMatGridDisplayModel>();
+                List<ThietBiHongDialogModel> list = new List<ThietBiHongDialogModel>();
                 headers.Add("Mã thiết bị");
                 headers.Add("Tên thiết bị");
                 headers.Add("Số hiệu");
@@ -230,8 +230,8 @@ namespace QLTB.GUI
                         ThietBiId = item.Cells["ThietBiId"].Value.ToString(),
                         Ten = item.Cells["Ten"].Value.ToString(),
                         SoHieu = item.Cells["SoHieu"].Value.ToString(),
-                        PhongBM = item.Cells["KhoPhong"].Value.ToString(),
-                        DVT = item.Cells["DonViTinh"].Value.ToString(),
+                        PhongHoc = item.Cells["KhoPhong"].Value.ToString(),
+                        DonViTinh = item.Cells["DonViTinh"].Value.ToString(),
                         SoLuongMuon = item.Cells["SoLuongMat"].Value.ToString()
                     };
                     list.Add(tmp);

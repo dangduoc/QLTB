@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChiTietKiemKe));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.rbChucNang = new DevComponents.DotNetBar.RibbonBar();
             this.btnLuu = new DevComponents.DotNetBar.ButtonItem();
             this.btnXoa = new DevComponents.DotNetBar.ButtonItem();
@@ -56,12 +58,18 @@
             this.tabItem1 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel2 = new DevComponents.DotNetBar.TabControlPanel();
             this.tabItem2 = new DevComponents.DotNetBar.TabItem(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
+            this.gridBanKiemKe = new ADGV.AdvancedDataGridView();
             this.expandablePanel1.SuspendLayout();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
+            this.tabControlPanel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridBanKiemKe)).BeginInit();
             this.SuspendLayout();
             // 
             // rbChucNang
@@ -411,8 +419,8 @@
             // tabControl1
             // 
             this.tabControl1.CanReorderTabs = true;
-            this.tabControl1.Controls.Add(this.tabControlPanel1);
             this.tabControl1.Controls.Add(this.tabControlPanel2);
+            this.tabControl1.Controls.Add(this.tabControlPanel1);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 307);
@@ -453,6 +461,8 @@
             // 
             // tabControlPanel2
             // 
+            this.tabControlPanel2.Controls.Add(this.gridBanKiemKe);
+            this.tabControlPanel2.Controls.Add(this.panel1);
             this.tabControlPanel2.DisabledBackColor = System.Drawing.Color.Empty;
             this.tabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlPanel2.Location = new System.Drawing.Point(0, 25);
@@ -475,6 +485,59 @@
             this.tabItem2.Name = "tabItem2";
             this.tabItem2.Text = "Ban kiểm kê";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            this.panel1.Controls.Add(this.buttonX1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(1, 1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(851, 39);
+            this.panel1.TabIndex = 17;
+            // 
+            // buttonX1
+            // 
+            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonX1.Image = global::QLTB.Properties.Resources.add;
+            this.buttonX1.Location = new System.Drawing.Point(6, 7);
+            this.buttonX1.Name = "buttonX1";
+            this.buttonX1.Size = new System.Drawing.Size(74, 25);
+            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonX1.TabIndex = 0;
+            this.buttonX1.Text = "Thêm";
+            // 
+            // gridBanKiemKe
+            // 
+            this.gridBanKiemKe.AllowUserToAddRows = false;
+            this.gridBanKiemKe.AllowUserToDeleteRows = false;
+            this.gridBanKiemKe.AutoGenerateContextFilters = true;
+            this.gridBanKiemKe.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridBanKiemKe.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridBanKiemKe.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.gridBanKiemKe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridBanKiemKe.DateWithTime = false;
+            this.gridBanKiemKe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridBanKiemKe.Location = new System.Drawing.Point(1, 40);
+            this.gridBanKiemKe.Name = "gridBanKiemKe";
+            this.gridBanKiemKe.ReadOnly = true;
+            this.gridBanKiemKe.RowHeadersVisible = false;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridBanKiemKe.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.gridBanKiemKe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridBanKiemKe.Size = new System.Drawing.Size(851, 111);
+            this.gridBanKiemKe.TabIndex = 29;
+            this.gridBanKiemKe.TimeFilter = false;
+            // 
             // frmChiTietKiemKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -486,12 +549,16 @@
             this.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmChiTietKiemKe";
             this.Text = "Phiếu kiểm kê thiết bị";
+            this.Load += new System.EventHandler(this.frmChiTietKiemKe_Load);
             this.expandablePanel1.ResumeLayout(false);
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).EndInit();
             this.tabControl1.ResumeLayout(false);
+            this.tabControlPanel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridBanKiemKe)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -524,5 +591,8 @@
         private DevComponents.DotNetBar.TabItem tabItem1;
         private DevComponents.DotNetBar.TabControlPanel tabControlPanel2;
         private DevComponents.DotNetBar.TabItem tabItem2;
+        private System.Windows.Forms.Panel panel1;
+        private DevComponents.DotNetBar.ButtonX buttonX1;
+        private ADGV.AdvancedDataGridView gridBanKiemKe;
     }
 }

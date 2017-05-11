@@ -159,18 +159,18 @@ namespace QLTB.GUI
                 ThietBiId="CSCN00001",
                 SoHieu="CSCN00001.01",
                 Ten="Giỏ hoa cảnh",
-                DVT="Cái",
+                DonViTinh="Cái",
                 SoLuongMuon="2",
-                PhongBM="Phòng thực hành công nghệ"
+                PhongHoc="Phòng thực hành công nghệ"
             });
             listTB.Add(new ThietBiMuonGridDisplayModel
             {
                 ThietBiId = "CSCN00001",
                 SoHieu = "CSCN00001.02",
                 Ten = "Chậu đất",
-                DVT = "Cái",
+                DonViTinh = "Cái",
                 SoLuongMuon = "4",
-                PhongBM = "Phòng thực hành công nghệ"
+                PhongHoc = "Phòng thực hành công nghệ"
             });
             DataGridViewLinkColumn linkColEdit = new DataGridViewLinkColumn();
             linkColEdit.Text = "Thay đổi";

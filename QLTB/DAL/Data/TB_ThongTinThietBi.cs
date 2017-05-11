@@ -18,6 +18,7 @@ namespace QLTB.DAL.Data
         public TB_ThongTinThietBi()
         {
             this.QH_PhieuBaoHong_ThietBi = new HashSet<QH_PhieuBaoHong_ThietBi>();
+            this.QH_PhieuGhiTang_ThietBi = new HashSet<QH_PhieuGhiTang_ThietBi>();
             this.QH_PhieuGiamTB_ThietBi = new HashSet<QH_PhieuGiamTB_ThietBi>();
             this.QH_PhieuMuonPhong_ThietBi = new HashSet<QH_PhieuMuonPhong_ThietBi>();
             this.QH_PhieuMuonTB_ThietBi = new HashSet<QH_PhieuMuonTB_ThietBi>();
@@ -30,13 +31,14 @@ namespace QLTB.DAL.Data
         public string QuyCachSD { get; set; }
         public int PhongHocId { get; set; }
         public int NguonKinhPhiId { get; set; }
-        public short NamDuaVaoSD { get; set; }
+        public int NamDuaVaoSD { get; set; }
         public System.DateTime NgayDuaVaoSD { get; set; }
-        public short NamTheoDoi { get; set; }
+        public int NamTheoDoi { get; set; }
         public int DonViTinhId { get; set; }
-        public short SoLuong { get; set; }
-        public short SoLuongMat { get; set; }
-        public short SoLuongHong { get; set; }
+        public int SoLuong { get; set; }
+        public int SoLuongCon { get; set; }
+        public int SoLuongMat { get; set; }
+        public int SoLuongHong { get; set; }
         public Nullable<double> DonGia { get; set; }
         public Nullable<decimal> ThanhTien { get; set; }
         public string NuocSanXuat { get; set; }
@@ -54,6 +56,8 @@ namespace QLTB.DAL.Data
         public virtual DM_ThietBiToiThieu DM_ThietBiToiThieu { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<QH_PhieuBaoHong_ThietBi> QH_PhieuBaoHong_ThietBi { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<QH_PhieuGhiTang_ThietBi> QH_PhieuGhiTang_ThietBi { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<QH_PhieuGiamTB_ThietBi> QH_PhieuGiamTB_ThietBi { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace QLTB.Model
 {
-    public class ThietBiTraGridDisplayModel
+    public class ThietBiTraModel
     {
-        public string MaThietBi { get; set; }
-        public string TenThietBi { get; set; }
         public string SoHieu { get; set; }
-        public string PhongBM { get; set; }
+        public double? TieuHao { get; set; }
+        public string TinhTrangKhiTra { get; set; }
+    }
+    public class ThietBiTraGridDisplayModel: BaseThietBiGridDisplayModel
+    {
         public string SoLuongMuon { get; set; }
-        public string DonViTinh { get; set; }
         public string TinhTrangKhiTra { get; set; }
         public string TieuHao { get; set; }
     }

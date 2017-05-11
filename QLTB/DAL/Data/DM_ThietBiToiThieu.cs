@@ -17,6 +17,7 @@ namespace QLTB.DAL.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public DM_ThietBiToiThieu()
         {
+            this.QH_PhieuDenNghiMS_ThietBi = new HashSet<QH_PhieuDenNghiMS_ThietBi>();
             this.TB_ThongTinThietBi = new HashSet<TB_ThongTinThietBi>();
         }
     
@@ -39,6 +40,8 @@ namespace QLTB.DAL.Data
         public virtual DS_DauMucThietBi DS_DauMucThietBi { get; set; }
         public virtual DS_DonViTinh DS_DonViTinh { get; set; }
         public virtual DS_LoaiThietBi DS_LoaiThietBi { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<QH_PhieuDenNghiMS_ThietBi> QH_PhieuDenNghiMS_ThietBi { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_ThongTinThietBi> TB_ThongTinThietBi { get; set; }
     }

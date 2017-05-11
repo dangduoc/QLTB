@@ -21,26 +21,26 @@ namespace QLTB.GUI
             List<PhieuGiamTBGridDisplayModel> list = new List<PhieuGiamTBGridDisplayModel>();
             list.Add(new PhieuGiamTBGridDisplayModel
             {
-                PhieuGiamTBId="PGTB000001",
+                SoPhieu="PGTB000001",
                 NgayLap="21/11/2010",
                 GhiChu=""
             });
             list.Add(new PhieuGiamTBGridDisplayModel
             {
-                PhieuGiamTBId = "PGTB000002",
+                SoPhieu = "PGTB000002",
                 NgayLap = "21/11/2010",
                 GhiChu = ""
             });
             list.Add(new PhieuGiamTBGridDisplayModel
             {
-                PhieuGiamTBId = "PGTB000003",
+                SoPhieu = "PGTB000003",
                 NgayLap = "21/11/2010",
                 GhiChu = ""
 
             });
             list.Add(new PhieuGiamTBGridDisplayModel
             {
-                PhieuGiamTBId = "PGTB000004",
+                SoPhieu = "PGTB000004",
                 NgayLap = "21/11/2010",
                 GhiChu = ""
             });

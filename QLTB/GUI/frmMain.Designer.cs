@@ -31,81 +31,91 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Danh sách thiết bị", 4, 4);
             System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Nhập thiết bị giáo dục", 6, 6);
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Lịch đăng ký mượn thiết bị");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Đăng ký mượn thiết bị");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Ghi nhận tình trạng trả thiết bị");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Các thiết bị mượn quá hạn");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Quản lý mượn, trả thiết bị", new System.Windows.Forms.TreeNode[] {
-            treeNode3,
-            treeNode4,
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Ghi tăng thiết bị");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Kiểm kê thiết bị");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Thiết bị hỏng, mất");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Sửa chữa thiết bị");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Giảm thiết bị");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Thanh lý thiết bị");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Theo dõi ", new System.Windows.Forms.TreeNode[] {
             treeNode5,
-            treeNode6});
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("QUẢN LÝ THIẾT BỊ", new System.Windows.Forms.TreeNode[] {
+            treeNode6,
+            treeNode7,
+            treeNode8});
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Lịch đăng ký mượn thiết bị");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Đăng ký mượn thiết bị");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Ghi nhận tình trạng trả thiết bị");
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Các thiết bị mượn quá hạn");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Quản lý mượn, trả", new System.Windows.Forms.TreeNode[] {
+            treeNode10,
+            treeNode11,
+            treeNode12,
+            treeNode13});
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Danh sách hóa chất hết hạn");
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Đề xuất mua sắm thiết bị");
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Xem báo cáo, sổ sách");
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("QUẢN LÝ THIẾT BỊ", new System.Windows.Forms.TreeNode[] {
             treeNode1,
             treeNode2,
-            treeNode7});
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Kiểm tra lịch sử dụng phòng BM");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Đăng ký mượn phòng bộ môn");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Ghi nhận tình trang trả phòng BM");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("QUẢN LÝ PHÒNG HỌC BỘ MÔN", new System.Windows.Forms.TreeNode[] {
+            treeNode3,
+            treeNode4,
             treeNode9,
-            treeNode10,
-            treeNode11});
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("KIỂM KÊ THIẾT BỊ GIÁO DỤC");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Theo dõi thiết bị hỏng, mất");
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Theo dõi sửa chữa thiết bị");
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Theo dõi giảm thiết bị");
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Theo dõi thanh lý thiết bị");
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("THEO DÕI THIẾT BỊ", new System.Windows.Forms.TreeNode[] {
             treeNode14,
             treeNode15,
             treeNode16,
             treeNode17});
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Thiết bị giáo dục");
-            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Kho/Phòng bộ môn");
-            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Khối lớp");
-            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Lớp học");
-            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Tổ bộ môn");
-            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Môn học");
-            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Giáo viên");
-            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Cán bộ thiết bị");
-            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Nguồn kinh phí");
-            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("THIẾT LẬP CÁC DANH MỤC", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Kiểm tra lịch sử dụng phòng BM");
+            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Đăng ký mượn phòng bộ môn");
+            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Ghi nhận tình trang trả phòng BM");
+            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("QUẢN LÝ PHÒNG HỌC BỘ MÔN", new System.Windows.Forms.TreeNode[] {
             treeNode19,
             treeNode20,
-            treeNode21,
-            treeNode22,
+            treeNode21});
+            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Thiết bị giáo dục");
+            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Kho/Phòng bộ môn");
+            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Khối lớp");
+            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Lớp học");
+            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Tổ bộ môn");
+            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Môn học");
+            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("Giáo viên");
+            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Cán bộ thiết bị");
+            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Nguồn kinh phí");
+            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("THIẾT LẬP CÁC DANH MỤC", new System.Windows.Forms.TreeNode[] {
             treeNode23,
             treeNode24,
             treeNode25,
             treeNode26,
-            treeNode27});
-            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("Thông tin đơn vị");
-            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Thông tin năm học");
-            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Quy định số tiết sử dụng thiết bị");
-            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("THIẾT LẬP THÔNG TIN HỆ THỐNG", new System.Windows.Forms.TreeNode[] {
+            treeNode27,
+            treeNode28,
             treeNode29,
             treeNode30,
             treeNode31});
-            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("Người dùng - Phân quyền");
-            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("Thiết lập hệ thống");
-            System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("QUẢN TRỊ HỆ THỐNG", 1, 1, new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("Thông tin đơn vị");
+            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("Thông tin năm học");
+            System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("Quy định số tiết sử dụng thiết bị");
+            System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("THIẾT LẬP THÔNG TIN HỆ THỐNG", new System.Windows.Forms.TreeNode[] {
             treeNode33,
-            treeNode34});
-            System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("Sao lưu dữ liệu");
-            System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("Phục hồi dữ liệu");
-            System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("Đồng bộ dữ liệu");
-            System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("CƠ SỞ DỮ LIỆU", 2, 2, new System.Windows.Forms.TreeNode[] {
-            treeNode36,
+            treeNode34,
+            treeNode35});
+            System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("Người dùng - Phân quyền");
+            System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("Thiết lập hệ thống");
+            System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("QUẢN TRỊ HỆ THỐNG", 1, 1, new System.Windows.Forms.TreeNode[] {
             treeNode37,
             treeNode38});
-            System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("Giới thiệu chung");
-            System.Windows.Forms.TreeNode treeNode41 = new System.Windows.Forms.TreeNode("Hướng dẫn sử dụng");
-            System.Windows.Forms.TreeNode treeNode42 = new System.Windows.Forms.TreeNode("Thông tin phần mềm");
-            System.Windows.Forms.TreeNode treeNode43 = new System.Windows.Forms.TreeNode("HƯỚNG DẪN SỬ DỤNG", 4, 4, new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("Sao lưu dữ liệu");
+            System.Windows.Forms.TreeNode treeNode41 = new System.Windows.Forms.TreeNode("Phục hồi dữ liệu");
+            System.Windows.Forms.TreeNode treeNode42 = new System.Windows.Forms.TreeNode("Đồng bộ dữ liệu");
+            System.Windows.Forms.TreeNode treeNode43 = new System.Windows.Forms.TreeNode("CƠ SỞ DỮ LIỆU", 2, 2, new System.Windows.Forms.TreeNode[] {
             treeNode40,
             treeNode41,
             treeNode42});
+            System.Windows.Forms.TreeNode treeNode44 = new System.Windows.Forms.TreeNode("Giới thiệu chung");
+            System.Windows.Forms.TreeNode treeNode45 = new System.Windows.Forms.TreeNode("Hướng dẫn sử dụng");
+            System.Windows.Forms.TreeNode treeNode46 = new System.Windows.Forms.TreeNode("Thông tin phần mềm");
+            System.Windows.Forms.TreeNode treeNode47 = new System.Windows.Forms.TreeNode("HƯỚNG DẪN SỬ DỤNG", 4, 4, new System.Windows.Forms.TreeNode[] {
+            treeNode44,
+            treeNode45,
+            treeNode46});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.TreeView = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -154,104 +164,110 @@
             treeNode2.Name = "btnNhapTB";
             treeNode2.SelectedImageIndex = 6;
             treeNode2.Text = "Nhập thiết bị giáo dục";
-            treeNode3.Name = "btnDSMuonThietBi";
-            treeNode3.Text = "Lịch đăng ký mượn thiết bị";
-            treeNode4.Name = "btnDKMuonThietBi";
-            treeNode4.Text = "Đăng ký mượn thiết bị";
-            treeNode5.Name = "Node2";
-            treeNode5.Text = "Ghi nhận tình trạng trả thiết bị";
-            treeNode6.Name = "Node3";
-            treeNode6.Text = "Các thiết bị mượn quá hạn";
-            treeNode7.Name = "Node3";
-            treeNode7.Text = "Quản lý mượn, trả thiết bị";
-            treeNode8.Name = "Node0";
-            treeNode8.Text = "QUẢN LÝ THIẾT BỊ";
-            treeNode9.Name = "btnDSMuonPhongBM";
-            treeNode9.Text = "Kiểm tra lịch sử dụng phòng BM";
-            treeNode10.Name = "btnDKMuonPhongBM";
-            treeNode10.Text = "Đăng ký mượn phòng bộ môn";
-            treeNode11.Name = "Node2";
-            treeNode11.Text = "Ghi nhận tình trang trả phòng BM";
-            treeNode12.Name = "Node4";
-            treeNode12.Text = "QUẢN LÝ PHÒNG HỌC BỘ MÔN";
-            treeNode13.Name = "btnKiemKeTB";
-            treeNode13.Text = "KIỂM KÊ THIẾT BỊ GIÁO DỤC";
-            treeNode14.Name = "btnTheoDoiHongMat";
-            treeNode14.Text = "Theo dõi thiết bị hỏng, mất";
-            treeNode15.Name = "btnTheoDoiSuaChua";
-            treeNode15.Text = "Theo dõi sửa chữa thiết bị";
-            treeNode16.Name = "btnTheoDoiGiam";
-            treeNode16.Text = "Theo dõi giảm thiết bị";
-            treeNode17.Name = "btnTheoDoiThanhLy";
-            treeNode17.Text = "Theo dõi thanh lý thiết bị";
-            treeNode18.Name = "Node3";
-            treeNode18.Text = "THEO DÕI THIẾT BỊ";
-            treeNode19.Name = "btnDMThietBi";
-            treeNode19.Text = "Thiết bị giáo dục";
-            treeNode20.Name = "btnDMPhongBM";
-            treeNode20.Text = "Kho/Phòng bộ môn";
-            treeNode21.Name = "btnDMKhoiLop";
-            treeNode21.Text = "Khối lớp";
-            treeNode22.Name = "btnDMLopHoc";
-            treeNode22.Text = "Lớp học";
-            treeNode23.Name = "btnDMToBM";
-            treeNode23.Text = "Tổ bộ môn";
-            treeNode24.Name = "btnDMMonHoc";
-            treeNode24.Text = "Môn học";
-            treeNode25.Name = "btnDMGiaoVien";
-            treeNode25.Text = "Giáo viên";
-            treeNode26.Name = "btnDMCanBoTB";
-            treeNode26.Text = "Cán bộ thiết bị";
-            treeNode27.Name = "btnDMNguonKinhPhi";
-            treeNode27.Text = "Nguồn kinh phí";
-            treeNode28.Name = "Node10";
-            treeNode28.Text = "THIẾT LẬP CÁC DANH MỤC";
-            treeNode29.Name = "btnThongTinDV";
-            treeNode29.Text = "Thông tin đơn vị";
-            treeNode30.Name = "Node23";
-            treeNode30.Text = "Thông tin năm học";
-            treeNode31.Name = "Node24";
-            treeNode31.Text = "Quy định số tiết sử dụng thiết bị";
-            treeNode32.Name = "Node11";
-            treeNode32.Text = "THIẾT LẬP THÔNG TIN HỆ THỐNG";
-            treeNode33.Name = "Node11";
-            treeNode33.Text = "Người dùng - Phân quyền";
-            treeNode34.Name = "Node12";
-            treeNode34.Text = "Thiết lập hệ thống";
-            treeNode35.ImageIndex = 1;
-            treeNode35.Name = "Node8";
-            treeNode35.SelectedImageIndex = 1;
-            treeNode35.Text = "QUẢN TRỊ HỆ THỐNG";
-            treeNode36.Name = "Node13";
-            treeNode36.Text = "Sao lưu dữ liệu";
-            treeNode37.Name = "Node14";
-            treeNode37.Text = "Phục hồi dữ liệu";
-            treeNode38.Name = "Node15";
-            treeNode38.Text = "Đồng bộ dữ liệu";
-            treeNode39.ImageIndex = 2;
-            treeNode39.Name = "Node9";
-            treeNode39.SelectedImageIndex = 2;
-            treeNode39.Text = "CƠ SỞ DỮ LIỆU";
-            treeNode40.Name = "Node17";
-            treeNode40.Text = "Giới thiệu chung";
-            treeNode41.Name = "Node18";
-            treeNode41.Text = "Hướng dẫn sử dụng";
-            treeNode42.Name = "Node19";
-            treeNode42.Text = "Thông tin phần mềm";
-            treeNode43.ImageIndex = 4;
-            treeNode43.Name = "Node10";
-            treeNode43.SelectedImageIndex = 4;
-            treeNode43.Text = "HƯỚNG DẪN SỬ DỤNG";
+            treeNode3.Name = "Node0";
+            treeNode3.Text = "Ghi tăng thiết bị";
+            treeNode4.Name = "btnKiemKeTB";
+            treeNode4.Text = "Kiểm kê thiết bị";
+            treeNode5.Name = "btnTheoDoiHongMat";
+            treeNode5.Text = "Thiết bị hỏng, mất";
+            treeNode6.Name = "btnTheoDoiSuaChua";
+            treeNode6.Text = "Sửa chữa thiết bị";
+            treeNode7.Name = "btnTheoDoiGiam";
+            treeNode7.Text = "Giảm thiết bị";
+            treeNode8.Name = "btnTheoDoiThanhLy";
+            treeNode8.Text = "Thanh lý thiết bị";
+            treeNode9.Name = "Node3";
+            treeNode9.Text = "Theo dõi ";
+            treeNode10.Name = "btnDSMuonThietBi";
+            treeNode10.Text = "Lịch đăng ký mượn thiết bị";
+            treeNode11.Name = "btnDKMuonThietBi";
+            treeNode11.Text = "Đăng ký mượn thiết bị";
+            treeNode12.Name = "Node2";
+            treeNode12.Text = "Ghi nhận tình trạng trả thiết bị";
+            treeNode13.Name = "Node3";
+            treeNode13.Text = "Các thiết bị mượn quá hạn";
+            treeNode14.Name = "Node3";
+            treeNode14.Text = "Quản lý mượn, trả";
+            treeNode15.Name = "Node1";
+            treeNode15.Text = "Danh sách hóa chất hết hạn";
+            treeNode16.Name = "Node2";
+            treeNode16.Text = "Đề xuất mua sắm thiết bị";
+            treeNode17.Name = "Node4";
+            treeNode17.Text = "Xem báo cáo, sổ sách";
+            treeNode18.Name = "Node0";
+            treeNode18.Text = "QUẢN LÝ THIẾT BỊ";
+            treeNode19.Name = "btnDSMuonPhongBM";
+            treeNode19.Text = "Kiểm tra lịch sử dụng phòng BM";
+            treeNode20.Name = "btnDKMuonPhongBM";
+            treeNode20.Text = "Đăng ký mượn phòng bộ môn";
+            treeNode21.Name = "Node2";
+            treeNode21.Text = "Ghi nhận tình trang trả phòng BM";
+            treeNode22.Name = "Node4";
+            treeNode22.Text = "QUẢN LÝ PHÒNG HỌC BỘ MÔN";
+            treeNode23.Name = "btnDMThietBi";
+            treeNode23.Text = "Thiết bị giáo dục";
+            treeNode24.Name = "btnDMPhongBM";
+            treeNode24.Text = "Kho/Phòng bộ môn";
+            treeNode25.Name = "btnDMKhoiLop";
+            treeNode25.Text = "Khối lớp";
+            treeNode26.Name = "btnDMLopHoc";
+            treeNode26.Text = "Lớp học";
+            treeNode27.Name = "btnDMToBM";
+            treeNode27.Text = "Tổ bộ môn";
+            treeNode28.Name = "btnDMMonHoc";
+            treeNode28.Text = "Môn học";
+            treeNode29.Name = "btnDMGiaoVien";
+            treeNode29.Text = "Giáo viên";
+            treeNode30.Name = "btnDMCanBoTB";
+            treeNode30.Text = "Cán bộ thiết bị";
+            treeNode31.Name = "btnDMNguonKinhPhi";
+            treeNode31.Text = "Nguồn kinh phí";
+            treeNode32.Name = "Node10";
+            treeNode32.Text = "THIẾT LẬP CÁC DANH MỤC";
+            treeNode33.Name = "btnThongTinDV";
+            treeNode33.Text = "Thông tin đơn vị";
+            treeNode34.Name = "Node23";
+            treeNode34.Text = "Thông tin năm học";
+            treeNode35.Name = "Node24";
+            treeNode35.Text = "Quy định số tiết sử dụng thiết bị";
+            treeNode36.Name = "Node11";
+            treeNode36.Text = "THIẾT LẬP THÔNG TIN HỆ THỐNG";
+            treeNode37.Name = "Node11";
+            treeNode37.Text = "Người dùng - Phân quyền";
+            treeNode38.Name = "Node12";
+            treeNode38.Text = "Thiết lập hệ thống";
+            treeNode39.ImageIndex = 1;
+            treeNode39.Name = "Node8";
+            treeNode39.SelectedImageIndex = 1;
+            treeNode39.Text = "QUẢN TRỊ HỆ THỐNG";
+            treeNode40.Name = "Node13";
+            treeNode40.Text = "Sao lưu dữ liệu";
+            treeNode41.Name = "Node14";
+            treeNode41.Text = "Phục hồi dữ liệu";
+            treeNode42.Name = "Node15";
+            treeNode42.Text = "Đồng bộ dữ liệu";
+            treeNode43.ImageIndex = 2;
+            treeNode43.Name = "Node9";
+            treeNode43.SelectedImageIndex = 2;
+            treeNode43.Text = "CƠ SỞ DỮ LIỆU";
+            treeNode44.Name = "Node17";
+            treeNode44.Text = "Giới thiệu chung";
+            treeNode45.Name = "Node18";
+            treeNode45.Text = "Hướng dẫn sử dụng";
+            treeNode46.Name = "Node19";
+            treeNode46.Text = "Thông tin phần mềm";
+            treeNode47.ImageIndex = 4;
+            treeNode47.Name = "Node10";
+            treeNode47.SelectedImageIndex = 4;
+            treeNode47.Text = "HƯỚNG DẪN SỬ DỤNG";
             this.TreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode8,
-            treeNode12,
-            treeNode13,
             treeNode18,
-            treeNode28,
+            treeNode22,
             treeNode32,
-            treeNode35,
+            treeNode36,
             treeNode39,
-            treeNode43});
+            treeNode43,
+            treeNode47});
             this.TreeView.SelectedImageIndex = 0;
             this.TreeView.Size = new System.Drawing.Size(279, 361);
             this.TreeView.TabIndex = 1;

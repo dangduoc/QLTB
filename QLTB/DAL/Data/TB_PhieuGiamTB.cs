@@ -14,6 +14,12 @@ namespace QLTB.DAL.Data
     
     public partial class TB_PhieuGiamTB
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TB_PhieuGiamTB()
+        {
+            this.QH_PhieuGiamTB_ThietBi = new HashSet<QH_PhieuGiamTB_ThietBi>();
+        }
+    
         public string PhieuGiamTBId { get; set; }
         public Nullable<System.DateTime> NgayLap { get; set; }
         public string GhiChu { get; set; }
@@ -22,5 +28,8 @@ namespace QLTB.DAL.Data
         public string UpdatedByUserId { get; set; }
         public Nullable<System.DateTime> UpdatedOnDate { get; set; }
         public bool IsDelete { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<QH_PhieuGiamTB_ThietBi> QH_PhieuGiamTB_ThietBi { get; set; }
     }
 }

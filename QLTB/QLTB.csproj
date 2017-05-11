@@ -144,25 +144,25 @@
     <Compile Include="BLL\DanhSach\DSViTriGiaoVien.cs" />
     <Compile Include="BLL\DanhSach\DSVungMien.cs" />
     <Compile Include="BLL\DanhSach\DSXepLoaiPhongBM.cs" />
-    <Compile Include="BLL\KiemKe\KiemKeThietBiModel.cs" />
+    <Compile Include="BLL\ThietBi\KiemKe\KiemKeThietBiModel.cs" />
     <Compile Include="BLL\Login\LoginHandler.cs" />
-    <Compile Include="BLL\PhieuMuon\DbPhieuMuonPhongHandler.cs" />
-    <Compile Include="BLL\PhieuMuon\DbPhieuMuonTBHandler.cs" />
-    <Compile Include="BLL\TheoDoi\HongMat\PhieuBaoHongModel.cs" />
-    <Compile Include="BLL\TheoDoi\Giam\PhieuGiamTBModel.cs" />
-    <Compile Include="BLL\PhieuMuon\PhieuMuonPhongModel.cs" />
-    <Compile Include="BLL\PhieuMuon\PhieuMuonThietBiModel.cs" />
-    <Compile Include="BLL\PhieuTra\PhieuTraTBModel.cs" />
-    <Compile Include="BLL\QuanHe\QH_PhieuBaoHong_ThietBi.cs" />
-    <Compile Include="BLL\QuanHe\QH_PhieuGiamTB_ThietBi.cs" />
-    <Compile Include="BLL\QuanHe\QH_PhieuMuonPhong_ThietBi.cs" />
-    <Compile Include="BLL\QuanHe\QH_PhieuMuonTB_ThietBi.cs" />
-    <Compile Include="BLL\TheoDoi\SuaChua\PhieuSuaChuaTBModel.cs" />
-    <Compile Include="BLL\TheoDoi\ThanhLy\PhieuThanhLyModel.cs" />
+    <Compile Include="BLL\PhongHocBM\MuonTra\DbPhieuMuonPhongHandler.cs" />
+    <Compile Include="BLL\ThietBi\MuaSam\PhieuMuaSamTBModel.cs" />
+    <Compile Include="BLL\ThietBi\PhieuMuon\DbPhieuMuonTBHandler.cs" />
+    <Compile Include="BLL\ThietBi\TheoDoi\HongMat\PhieuBaoHongModel.cs" />
+    <Compile Include="BLL\ThietBi\TheoDoi\Giam\PhieuGiamTBModel.cs" />
+    <Compile Include="BLL\PhongHocBM\MuonTra\PhieuMuonPhongModel.cs" />
+    <Compile Include="BLL\ThietBi\PhieuMuon\PhieuMuonThietBiModel.cs" />
+    <Compile Include="BLL\ThietBi\PhieuTra\PhieuTraTBModel.cs" />
+    <Compile Include="BLL\ThietBi\TheoDoi\SuaChua\PhieuSuaChuaTBModel.cs" />
+    <Compile Include="BLL\ThietBi\TheoDoi\Tang\DbGhiTangTBHandler.cs" />
+    <Compile Include="BLL\ThietBi\TheoDoi\Tang\GhiTangThietBiModel.cs" />
+    <Compile Include="BLL\ThietBi\TheoDoi\ThanhLy\PhieuThanhLyModel.cs" />
     <Compile Include="BLL\ThietBi\DbThietBiHandler.cs" />
     <Compile Include="BLL\ThietBi\ThietBiModel.cs" />
-    <Compile Include="BLL\ThongTinDonVi\DbThongTinDVHandler.cs" />
-    <Compile Include="BLL\ThongTinDonVi\ThongTinDonViModel.cs" />
+    <Compile Include="BLL\ThongTinHeThong\ThongTinDonVi\DbThongTinDVHandler.cs" />
+    <Compile Include="BLL\ThongTinHeThong\ThongTinDonVi\ThongTinDonViModel.cs" />
+    <Compile Include="BLL\ThongTinHeThong\ThongTinNamHoc\ThongTinNamHocModel.cs" />
     <Compile Include="BLL\User\UserModel.cs" />
     <Compile Include="DAL\DatabaseFactory.cs" />
     <Compile Include="DAL\Data\DM_CanBoThietBi.cs">
@@ -306,6 +306,12 @@
     <Compile Include="DAL\Data\QH_PhieuBaoHong_ThietBi.cs">
       <DependentUpon>QLTBContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\Data\QH_PhieuDenNghiMS_ThietBi.cs">
+      <DependentUpon>QLTBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Data\QH_PhieuGhiTang_ThietBi.cs">
+      <DependentUpon>QLTBContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAL\Data\QH_PhieuGiamTB_ThietBi.cs">
       <DependentUpon>QLTBContext.tt</DependentUpon>
     </Compile>
@@ -336,6 +342,12 @@
     <Compile Include="DAL\Data\TB_PhieuBaoHong.cs">
       <DependentUpon>QLTBContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\Data\TB_PhieuDeNghiMuaSam.cs">
+      <DependentUpon>QLTBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Data\TB_PhieuGhiTang.cs">
+      <DependentUpon>QLTBContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAL\Data\TB_PhieuGiamTB.cs">
       <DependentUpon>QLTBContext.tt</DependentUpon>
     </Compile>
@@ -352,6 +364,9 @@
       <DependentUpon>QLTBContext.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\ThongTinDonVi.cs">
+      <DependentUpon>QLTBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Data\ThongTinNamHoc.cs">
       <DependentUpon>QLTBContext.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\IDatabaseFactory.cs" />

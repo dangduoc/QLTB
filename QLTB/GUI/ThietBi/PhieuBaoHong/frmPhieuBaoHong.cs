@@ -19,7 +19,7 @@ namespace QLTB.GUI
         }
         private void loadForm()
         {
-            List<ThietBiHongMatGridDisplayModel> list = new List<ThietBiHongMatGridDisplayModel>();
+            List<ThietBiHongGridDisplayModel> list = new List<ThietBiHongGridDisplayModel>();
             gridDSThietBiMuon.DataSource = list;
 
 
