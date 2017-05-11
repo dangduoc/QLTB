@@ -165,11 +165,6 @@ namespace QLTB.GUI
                 this.Text = "Chọn thiết bị hỏng/mất";
             }
 
-
-
-
-
-
             DataGridViewCheckBoxColumn col = new DataGridViewCheckBoxColumn();
             col.Name = "checkBtn";
             col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
