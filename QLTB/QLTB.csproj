@@ -380,6 +380,12 @@
     <Compile Include="GUI\DialogBox\frmDialogDSThietBi.Designer.cs">
       <DependentUpon>frmDialogDSThietBi.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\DialogBox\frmDialogHCHetHan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DialogBox\frmDialogHCHetHan.Designer.cs">
+      <DependentUpon>frmDialogHCHetHan.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\DialogBox\frmDialogTBSuaChua.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -397,6 +403,18 @@
     </Compile>
     <Compile Include="GUI\DialogBox\frmFilterGrid.Designer.cs">
       <DependentUpon>frmFilterGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\DialogBox\frmKhaiBaoNamHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DialogBox\frmKhaiBaoNamHoc.Designer.cs">
+      <DependentUpon>frmKhaiBaoNamHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmDanhSachNamHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmDanhSachNamHoc.Designer.cs">
+      <DependentUpon>frmDanhSachNamHoc.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmLogin.cs">
       <SubType>Form</SubType>
@@ -500,6 +518,18 @@
     <Compile Include="GUI\ThietBi\KiemKe\frmKiemKeTB.Designer.cs">
       <DependentUpon>frmKiemKeTB.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ThietBi\MuaSam\frmDSDeNghiMuaThietBi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBi\MuaSam\frmDSDeNghiMuaThietBi.Designer.cs">
+      <DependentUpon>frmDSDeNghiMuaThietBi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThietBi\MuaSam\frmPhieuMuaThietBi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBi\MuaSam\frmPhieuMuaThietBi.Designer.cs">
+      <DependentUpon>frmPhieuMuaThietBi.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ThietBi\MuonTra\frmDanhSachMuonTB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -560,6 +590,18 @@
     <Compile Include="GUI\ThietBi\GiamTB\frmDSGiamThietBi.Designer.cs">
       <DependentUpon>frmDSGiamThietBi.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ThietBi\TangTB\frmDSPhieuTangTB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBi\TangTB\frmDSPhieuTangTB.Designer.cs">
+      <DependentUpon>frmDSPhieuTangTB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThietBi\TangTB\frmPhieuTangThietBi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBi\TangTB\frmPhieuTangThietBi.Designer.cs">
+      <DependentUpon>frmPhieuTangThietBi.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ThietBi\ThanhLy\frmDSThanhLyTB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -572,6 +614,12 @@
     <Compile Include="GUI\ThietBi\ThanhLy\frmPhieuThanhLyTB.Designer.cs">
       <DependentUpon>frmPhieuThanhLyTB.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ThongKe\frmThongKeBaoCao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThongKe\frmThongKeBaoCao.Designer.cs">
+      <DependentUpon>frmThongKeBaoCao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\ConnectiongStringBuilder.cs" />
@@ -581,6 +629,9 @@
     <EmbeddedResource Include="GUI\DialogBox\frmDialogDSThietBi.resx">
       <DependentUpon>frmDialogDSThietBi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DialogBox\frmDialogHCHetHan.resx">
+      <DependentUpon>frmDialogHCHetHan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\DialogBox\frmDialogTBSuaChua.resx">
       <DependentUpon>frmDialogTBSuaChua.cs</DependentUpon>
     </EmbeddedResource>
@@ -589,6 +640,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DialogBox\frmFilterGrid.resx">
       <DependentUpon>frmFilterGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DialogBox\frmKhaiBaoNamHoc.resx">
+      <DependentUpon>frmKhaiBaoNamHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmDanhSachNamHoc.resx">
+      <DependentUpon>frmDanhSachNamHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -641,6 +698,12 @@
     <EmbeddedResource Include="GUI\ThietBi\KiemKe\frmKiemKeTB.resx">
       <DependentUpon>frmKiemKeTB.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBi\MuaSam\frmDSDeNghiMuaThietBi.resx">
+      <DependentUpon>frmDSDeNghiMuaThietBi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBi\MuaSam\frmPhieuMuaThietBi.resx">
+      <DependentUpon>frmPhieuMuaThietBi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\ThietBi\MuonTra\frmDanhSachMuonTB.resx">
       <DependentUpon>frmDanhSachMuonTB.cs</DependentUpon>
     </EmbeddedResource>
@@ -671,11 +734,20 @@
     <EmbeddedResource Include="GUI\ThietBi\GiamTB\frmDSGiamThietBi.resx">
       <DependentUpon>frmDSGiamThietBi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBi\TangTB\frmDSPhieuTangTB.resx">
+      <DependentUpon>frmDSPhieuTangTB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBi\TangTB\frmPhieuTangThietBi.resx">
+      <DependentUpon>frmPhieuTangThietBi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\ThietBi\ThanhLy\frmDSThanhLyTB.resx">
       <DependentUpon>frmDSThanhLyTB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ThietBi\ThanhLy\frmPhieuThanhLyTB.resx">
       <DependentUpon>frmPhieuThanhLyTB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThongKe\frmThongKeBaoCao.resx">
+      <DependentUpon>frmThongKeBaoCao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -838,7 +910,25 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="AxFOXITREADERLib">
+      <Guid>{3A8BD65E-9922-4162-A649-83F2D5326BBE}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="FOXITREADERLib">
+      <Guid>{3A8BD65E-9922-4162-A649-83F2D5326BBE}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>

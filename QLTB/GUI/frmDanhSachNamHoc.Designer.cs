@@ -1,6 +1,6 @@
 ﻿namespace QLTB.GUI
 {
-    partial class frmDSGiamThietBi
+    partial class frmDanhSachNamHoc
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDSGiamThietBi));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDanhSachNamHoc));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.rbChucNang = new DevComponents.DotNetBar.RibbonBar();
@@ -84,12 +84,12 @@
             this.btnThoat});
             this.rbChucNang.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
             this.rbChucNang.Location = new System.Drawing.Point(0, 0);
-            this.rbChucNang.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
+            this.rbChucNang.Margin = new System.Windows.Forms.Padding(8, 5, 8, 5);
             this.rbChucNang.Name = "rbChucNang";
             this.rbChucNang.ShowShortcutKeysInToolTips = true;
-            this.rbChucNang.Size = new System.Drawing.Size(756, 80);
+            this.rbChucNang.Size = new System.Drawing.Size(783, 92);
             this.rbChucNang.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.rbChucNang.TabIndex = 13;
+            this.rbChucNang.TabIndex = 14;
             // 
             // 
             // 
@@ -107,7 +107,6 @@
             this.btnThem.Name = "btnThem";
             this.btnThem.SubItemsExpandWidth = 14;
             this.btnThem.Text = "Thêm";
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
@@ -167,7 +166,6 @@
             this.buttonItem1});
             this.btnThoat.Text = "Thoát";
             this.btnThoat.Tooltip = "Thoát";
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // buttonItem1
             // 
@@ -182,9 +180,9 @@
             this.pnlBack.Controls.Add(this.searchToolBar);
             this.pnlBack.DisabledBackColor = System.Drawing.Color.Empty;
             this.pnlBack.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlBack.Location = new System.Drawing.Point(0, 80);
+            this.pnlBack.Location = new System.Drawing.Point(0, 92);
             this.pnlBack.Name = "pnlBack";
-            this.pnlBack.Size = new System.Drawing.Size(756, 320);
+            this.pnlBack.Size = new System.Drawing.Size(783, 407);
             this.pnlBack.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.pnlBack.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.pnlBack.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -192,7 +190,7 @@
             this.pnlBack.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
             this.pnlBack.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.pnlBack.Style.GradientAngle = 90;
-            this.pnlBack.TabIndex = 38;
+            this.pnlBack.TabIndex = 42;
             // 
             // panelEx1
             // 
@@ -202,9 +200,9 @@
             this.panelEx1.Controls.Add(this.panelEx2);
             this.panelEx1.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelEx1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelEx1.Location = new System.Drawing.Point(0, 31);
+            this.panelEx1.Location = new System.Drawing.Point(0, 35);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(756, 289);
+            this.panelEx1.Size = new System.Drawing.Size(783, 372);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -223,7 +221,7 @@
             this.panelEx3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEx3.Location = new System.Drawing.Point(0, 0);
             this.panelEx3.Name = "panelEx3";
-            this.panelEx3.Size = new System.Drawing.Size(756, 244);
+            this.panelEx3.Size = new System.Drawing.Size(783, 321);
             this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -261,11 +259,9 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.advancedDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.advancedDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.advancedDataGridView.Size = new System.Drawing.Size(756, 244);
+            this.advancedDataGridView.Size = new System.Drawing.Size(783, 321);
             this.advancedDataGridView.TabIndex = 27;
             this.advancedDataGridView.TimeFilter = false;
-            this.advancedDataGridView.SortStringChanged += new System.EventHandler(this.advancedDataGridView_SortStringChanged);
-            this.advancedDataGridView.FilterStringChanged += new System.EventHandler(this.advancedDataGridView_FilterStringChanged);
             // 
             // panelEx2
             // 
@@ -274,9 +270,9 @@
             this.panelEx2.Controls.Add(this.statusStrip2);
             this.panelEx2.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelEx2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelEx2.Location = new System.Drawing.Point(0, 244);
+            this.panelEx2.Location = new System.Drawing.Point(0, 321);
             this.panelEx2.Name = "panelEx2";
-            this.panelEx2.Size = new System.Drawing.Size(756, 45);
+            this.panelEx2.Size = new System.Drawing.Size(783, 51);
             this.panelEx2.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -295,8 +291,8 @@
             this.toolStripStatusLabel2});
             this.statusStrip2.Location = new System.Drawing.Point(0, 0);
             this.statusStrip2.Name = "statusStrip2";
-            this.statusStrip2.Padding = new System.Windows.Forms.Padding(1, 0, 16, 0);
-            this.statusStrip2.Size = new System.Drawing.Size(756, 45);
+            this.statusStrip2.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
+            this.statusStrip2.Size = new System.Drawing.Size(783, 51);
             this.statusStrip2.TabIndex = 0;
             this.statusStrip2.Text = "statusStrip2";
             // 
@@ -305,14 +301,14 @@
             this.toolStripStatusLabel1.Font = new System.Drawing.Font("Arial", 9F);
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(124, 40);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(124, 46);
             this.toolStripStatusLabel1.Text = "Tổng số thiết bị: 9";
             // 
             // toolStripStatusLabel2
             // 
             this.toolStripStatusLabel2.ForeColor = System.Drawing.Color.Red;
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(44, 40);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(44, 46);
             this.toolStripStatusLabel2.Text = "Chú ý: ";
             // 
             // searchToolBar
@@ -321,25 +317,24 @@
             this.searchToolBar.Font = new System.Drawing.Font("Arial", 9F);
             this.searchToolBar.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.searchToolBar.Location = new System.Drawing.Point(0, 0);
-            this.searchToolBar.MaximumSize = new System.Drawing.Size(0, 31);
-            this.searchToolBar.MinimumSize = new System.Drawing.Size(0, 31);
+            this.searchToolBar.MaximumSize = new System.Drawing.Size(0, 35);
+            this.searchToolBar.MinimumSize = new System.Drawing.Size(0, 35);
             this.searchToolBar.Name = "searchToolBar";
             this.searchToolBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.searchToolBar.Size = new System.Drawing.Size(756, 31);
+            this.searchToolBar.Size = new System.Drawing.Size(783, 35);
             this.searchToolBar.TabIndex = 28;
             this.searchToolBar.Text = "searchToolBar1";
             // 
-            // frmDSGiamThietBi
+            // frmDanhSachNamHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(756, 400);
+            this.ClientSize = new System.Drawing.Size(783, 499);
             this.Controls.Add(this.pnlBack);
             this.Controls.Add(this.rbChucNang);
             this.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "frmDSGiamThietBi";
-            this.Text = "frmDSGiamThietBi";
-            this.Load += new System.EventHandler(this.frmDSGiamThietBi_Load);
+            this.Name = "frmDanhSachNamHoc";
+            this.Text = "Danh sách các năm học";
             this.pnlBack.ResumeLayout(false);
             this.pnlBack.PerformLayout();
             this.panelEx1.ResumeLayout(false);
