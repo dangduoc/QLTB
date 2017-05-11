@@ -47,7 +47,8 @@ namespace QLTB.GUI
             gridDSThietBiMuon.Columns[5].HeaderText = "Số lượng cần sửa";
             gridDSThietBiMuon.Columns[6].HeaderText = "Đơn vị tính";
             gridDSThietBiMuon.Columns[7].HeaderText = "Giá trị";
-            gridDSThietBiMuon.Columns[8].HeaderText = "Thành tiền";
+            gridDSThietBiMuon.Columns[8].HeaderText = "Đơn giá";
+            gridDSThietBiMuon.Columns[9].HeaderText = "Thành tiền";
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

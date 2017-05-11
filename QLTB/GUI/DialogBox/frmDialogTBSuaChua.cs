@@ -19,7 +19,7 @@ namespace QLTB.GUI.DialogBox
         }
         private void loadForm()
         {
-            List<DSThietBiSuaGridDisplayModel> list = new List<DSThietBiSuaGridDisplayModel>();
+            List<ThietBiSuaGridDisplayModel> list = new List<ThietBiSuaGridDisplayModel>();
             advancedDataGridView.DataSource = list;
             advancedDataGridView.Columns[0].HeaderText = "Số hiệu";
             advancedDataGridView.Columns[0].HeaderText = "Mã thiết bị";

@@ -24,26 +24,25 @@ namespace QLTB.Model
         public string NguoiLamHong { get; set; }
         public string GhiChu { get; set; }
     }
-    public class DSThietBiHongMatGridDisplayModel
+    public class ThietBiHongDialogModel: BaseThietBiModel
     {
-        public string MaThietbi { get; set; }
-        public string Ten { get; set; }
-        public string SoHieu { get; set; }
-        public string DonVitinh { get; set; }
-        public string SoLuong { get; set; }
-        public string PhongBM { get; set; }
+        public string SoLuongHong { get; set; }
         public string MonHoc { get; set; }
     }
-    public class ThietBiHongMatGridDisplayModel
+    public class ThietBiHongGridDisplayModel:BaseThietBiGridDisplayModel
     {
-        public string SoHieu { get; set; }
-        public string MaThietbi { get; set; }
-        public string Ten { get; set; }
-        public string PhongBM { get; set; }
         public string SoLuongMuon { get; set; }
-        public string DonViTinh { get; set; }
         public string TinhTrang { get; set; }
         public string LyDo { get; set; }
         public string TinhTrangHong { get; set; }
+    }
+    public class ThietBiHongModel
+    {
+        public string SoHieu { get; set; }
+        public int SoLuongHong { get; set; }
+        public string LyDo { get; set; }
+        public string TinhTrangHong { get; set; }
+        public int TinhTrangId { get; set; }
+
     }
 }

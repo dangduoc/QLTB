@@ -18,6 +18,7 @@ namespace QLTB.DAL.Data
         public string SoHieuTB { get; set; }
         public Nullable<int> SoLuong { get; set; }
     
+        public virtual TB_PhieuGiamTB TB_PhieuGiamTB { get; set; }
         public virtual TB_ThongTinThietBi TB_ThongTinThietBi { get; set; }
     }
 }

@@ -16,4 +16,11 @@ namespace QLTB.Model
         public string NgayKiemKe { get; set; }
         public string GhiChu { get; set; }
     }
+    public class BanKiemKeGridDisplayModel
+    {
+        public string HoTen { get; set; }
+        public string ChucVu { get; set; }
+        public string DaiDien { get; set; }
+        public string VaiTro { get; set; }
+    }
 }

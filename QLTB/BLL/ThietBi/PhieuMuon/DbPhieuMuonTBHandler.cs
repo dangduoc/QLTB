@@ -148,8 +148,8 @@ namespace QLTB.Handler
                                 Ten = tb.Ten,
                                 SoHieu = tb.SoHieu,
                                 SoLuongMuon = tb.SoLuongMuon.ToString(),
-                                DVT = tb.DVT,
-                                PhongBM = ph.Ten
+                                DonViTinh = tb.DVT,
+                                PhongHoc = ph.Ten
                             }
                             ).ToList();
                         //
