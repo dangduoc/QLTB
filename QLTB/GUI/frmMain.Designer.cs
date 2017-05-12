@@ -117,7 +117,7 @@
             treeNode45,
             treeNode46});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            this.TreeView = new System.Windows.Forms.TreeView();
+            this.tvMainMenu = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.ribbonBar1 = new DevComponents.DotNetBar.RibbonBar();
             this.btnReLogin = new DevComponents.DotNetBar.ButtonItem();
@@ -148,14 +148,14 @@
             this.groupPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // TreeView
+            // tvMainMenu
             // 
-            this.TreeView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TreeView.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TreeView.ImageIndex = 0;
-            this.TreeView.ImageList = this.imageList1;
-            this.TreeView.Location = new System.Drawing.Point(0, 75);
-            this.TreeView.Name = "TreeView";
+            this.tvMainMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tvMainMenu.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tvMainMenu.ImageIndex = 0;
+            this.tvMainMenu.ImageList = this.imageList1;
+            this.tvMainMenu.Location = new System.Drawing.Point(0, 75);
+            this.tvMainMenu.Name = "tvMainMenu";
             treeNode1.ImageIndex = 4;
             treeNode1.Name = "btnDanhSachTB";
             treeNode1.SelectedImageIndex = 4;
@@ -232,7 +232,7 @@
             treeNode35.Text = "Quy định số tiết sử dụng thiết bị";
             treeNode36.Name = "Node11";
             treeNode36.Text = "THIẾT LẬP THÔNG TIN HỆ THỐNG";
-            treeNode37.Name = "Node11";
+            treeNode37.Name = "btnPhanQuyen";
             treeNode37.Text = "Người dùng - Phân quyền";
             treeNode38.Name = "Node12";
             treeNode38.Text = "Thiết lập hệ thống";
@@ -260,7 +260,7 @@
             treeNode47.Name = "Node10";
             treeNode47.SelectedImageIndex = 4;
             treeNode47.Text = "HƯỚNG DẪN SỬ DỤNG";
-            this.TreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            this.tvMainMenu.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode18,
             treeNode22,
             treeNode32,
@@ -268,12 +268,12 @@
             treeNode39,
             treeNode43,
             treeNode47});
-            this.TreeView.SelectedImageIndex = 0;
-            this.TreeView.Size = new System.Drawing.Size(279, 361);
-            this.TreeView.TabIndex = 1;
-            this.TreeView.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.TreeView_NodeMouseDoubleClick);
-            this.TreeView.DoubleClick += new System.EventHandler(this.TreeView_DoubleClick);
-            this.TreeView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TreeView_KeyDown);
+            this.tvMainMenu.SelectedImageIndex = 0;
+            this.tvMainMenu.Size = new System.Drawing.Size(279, 361);
+            this.tvMainMenu.TabIndex = 1;
+            this.tvMainMenu.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.TreeView_NodeMouseDoubleClick);
+            this.tvMainMenu.DoubleClick += new System.EventHandler(this.TreeView_DoubleClick);
+            this.tvMainMenu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TreeView_KeyDown);
             // 
             // imageList1
             // 
@@ -516,7 +516,7 @@
             // 
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.groupPanel1.Controls.Add(this.TreeView);
+            this.groupPanel1.Controls.Add(this.tvMainMenu);
             this.groupPanel1.Controls.Add(this.ribbonBar1);
             this.groupPanel1.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -612,7 +612,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.TreeView TreeView;
         private DevComponents.DotNetBar.RibbonBar ribbonBar1;
         private System.Windows.Forms.ImageList imageList1;
         private DevComponents.DotNetBar.ButtonItem btnReLogin;
@@ -639,5 +638,6 @@
         private System.Windows.Forms.ToolStripStatusLabel statusUser;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
         private System.Windows.Forms.ToolStripStatusLabel statusCurrentDay;
+        public System.Windows.Forms.TreeView tvMainMenu;
     }
 }
