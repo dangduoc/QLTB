@@ -18,10 +18,13 @@ namespace QLTB.DAL.Data
         public string DiaDiem { get; set; }
         public string HoiDongThanhLy { get; set; }
         public string NoiDung { get; set; }
-        public string CreatedByUserId { get; set; }
-        public Nullable<System.DateTime> CreatedOnDate { get; set; }
-        public string UpdatedByUserId { get; set; }
-        public Nullable<System.DateTime> UpdatedOnDate { get; set; }
         public bool IsDelete { get; set; }
+        public Nullable<int> CreatedByUserId { get; set; }
+        public Nullable<System.DateTime> CreatedOnDate { get; set; }
+        public Nullable<int> UpdatedByUserId { get; set; }
+        public Nullable<System.DateTime> UpdatedOnDate { get; set; }
+    
+        public virtual HT_User HT_User { get; set; }
+        public virtual HT_User HT_User1 { get; set; }
     }
 }

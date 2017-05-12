@@ -485,11 +485,31 @@ namespace QLTB.GUI
                 this.Cursor = Cursors.Default;
             }
         }
+        private void btnPhanQuyen_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Cursor = Cursors.WaitCursor;
+                if (!CheckExistForm("frmPhanQuyenTaiKhoan"))
+                {
+                    Application.DoEvents();
+                    frmPhanQuyenTaiKhoan childForm = new frmPhanQuyenTaiKhoan();
+                    childForm.MdiParent = this;
+                    childForm.WindowState = FormWindowState.Maximized;
+                    childForm.Show();
 
+                }
+                this.Cursor = Cursors.Default;
+            }
+            catch (Exception ex)
+            {
+                this.Cursor = Cursors.Default;
+            }
+        }
         private void TreeView_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-            if (TreeView.SelectedNode == null) return;
-            Done_Function_Menu(TreeView.SelectedNode.Name.Trim());
+            if (tvMainMenu.SelectedNode == null) return;
+            Done_Function_Menu(tvMainMenu.SelectedNode.Name.Trim());
         }
        
         private void Done_Function_Menu(string NameFunction)
@@ -563,6 +583,9 @@ namespace QLTB.GUI
                         break;
                     case "btnDKMuonPhongBM":
                         btnDKMuonPhongBM_Click(null, null);
+                        break;
+                    case "btnPhanQuyen":
+                        btnPhanQuyen_Click(null, null);
                         break;
                     default:
                         MessageBox.Show("Chức năng này chưa được xây dựng ....");

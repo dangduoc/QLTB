@@ -24,11 +24,13 @@ namespace QLTB.DAL.Data
         public string Ten { get; set; }
         public Nullable<int> NamHocId { get; set; }
         public Nullable<int> TrangThaiId { get; set; }
-        public string CreatedByUserId { get; set; }
+        public Nullable<int> CreatedByUserId { get; set; }
         public Nullable<System.DateTime> CreatedOnDate { get; set; }
-        public string UpdatedByUserId { get; set; }
+        public Nullable<int> UpdatedByUserId { get; set; }
         public Nullable<System.DateTime> UpdatedOnDate { get; set; }
     
+        public virtual HT_User HT_User { get; set; }
+        public virtual HT_User HT_User1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<QH_PhieuDenNghiMS_ThietBi> QH_PhieuDenNghiMS_ThietBi { get; set; }
         public virtual ThongTinNamHoc ThongTinNamHoc { get; set; }

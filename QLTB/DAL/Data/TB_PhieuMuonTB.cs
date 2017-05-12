@@ -28,11 +28,11 @@ namespace QLTB.DAL.Data
         public bool IsNgoaiQuyDinh { get; set; }
         public int TrangThaiId { get; set; }
         public string GhiChu { get; set; }
-        public string CreatedByUserId { get; set; }
-        public Nullable<System.DateTime> CreatedOnDate { get; set; }
-        public string UpdatedByUserId { get; set; }
-        public Nullable<System.DateTime> UpdatedOnDate { get; set; }
         public bool IsDelete { get; set; }
+        public Nullable<int> CreatedByUserId { get; set; }
+        public Nullable<System.DateTime> CreatedOnDate { get; set; }
+        public Nullable<int> UpdatedByUserId { get; set; }
+        public Nullable<System.DateTime> UpdatedOnDate { get; set; }
     
         public virtual DM_GiaoVien DM_GiaoVien { get; set; }
         public virtual DM_KhoiLop DM_KhoiLop { get; set; }
@@ -41,5 +41,7 @@ namespace QLTB.DAL.Data
         public virtual DS_MucDichSDThietBi DS_MucDichSDThietBi { get; set; }
         public virtual DS_ThoiGianTrongNgay DS_ThoiGianTrongNgay { get; set; }
         public virtual DS_TrangThaiPhieuMuon DS_TrangThaiPhieuMuon { get; set; }
+        public virtual HT_User HT_User { get; set; }
+        public virtual HT_User HT_User1 { get; set; }
     }
 }

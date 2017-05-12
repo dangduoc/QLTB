@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace QLTB.Handler
 {
@@ -18,7 +19,7 @@ namespace QLTB.Handler
             {
                 using (var unitOfWork= new UnitOfWork())
                 {
-                    var entity=unitOfWork.GetRepository<HT_User>().GetById(username);
+                    var entity = unitOfWork.GetRepository<HT_User>().GetById(1);
                     if (entity != null) {
                         if (entity.PassWord.Equals(password))
                         {
@@ -42,6 +43,26 @@ namespace QLTB.Handler
             {
                 message = "Có lỗi xảy ra, vui lòng thử lại lúc khác";
                 return null;
+            }
+        }
+
+        //public void loadPermissions(TreeView menu,int roleId)
+        //{
+        //    List<string> Keys = new List<string>();
+        //    foreach(TreeNode item in menu.Nodes)
+        //    {
+        //        string permissionKey = item.Name;
+        //        if (!Keys.Contains(permissionKey)){
+        //            item.Remove();
+        //        }
+        //    }
+        //}
+        public void loadPermissions(TreeView menu)
+        {
+            int permissionKey = 0;
+            foreach(TreeNode item in menu.Nodes)
+            {
+                
             }
         }
     }

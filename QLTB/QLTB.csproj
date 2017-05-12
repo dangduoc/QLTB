@@ -145,7 +145,7 @@
     <Compile Include="BLL\DanhSach\DSVungMien.cs" />
     <Compile Include="BLL\DanhSach\DSXepLoaiPhongBM.cs" />
     <Compile Include="BLL\ThietBi\KiemKe\KiemKeThietBiModel.cs" />
-    <Compile Include="BLL\Login\LoginHandler.cs" />
+    <Compile Include="BLL\TaiKhoan\LoginHandler.cs" />
     <Compile Include="BLL\PhongHocBM\MuonTra\DbPhieuMuonPhongHandler.cs" />
     <Compile Include="BLL\ThietBi\MuaSam\PhieuMuaSamTBModel.cs" />
     <Compile Include="BLL\ThietBi\PhieuMuon\DbPhieuMuonTBHandler.cs" />
@@ -163,6 +163,7 @@
     <Compile Include="BLL\ThongTinHeThong\ThongTinDonVi\DbThongTinDVHandler.cs" />
     <Compile Include="BLL\ThongTinHeThong\ThongTinDonVi\ThongTinDonViModel.cs" />
     <Compile Include="BLL\ThongTinHeThong\ThongTinNamHoc\ThongTinNamHocModel.cs" />
+    <Compile Include="BLL\User\UserHandler.cs" />
     <Compile Include="BLL\User\UserModel.cs" />
     <Compile Include="DAL\DatabaseFactory.cs" />
     <Compile Include="DAL\Data\DM_CanBoThietBi.cs">
@@ -297,6 +298,9 @@
     <Compile Include="DAL\Data\DS_XepLoaiPhongHocBM.cs">
       <DependentUpon>QLTBContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\Data\HT_Permission.cs">
+      <DependentUpon>QLTBContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAL\Data\HT_User.cs">
       <DependentUpon>QLTBContext.tt</DependentUpon>
     </Compile>
@@ -324,6 +328,9 @@
     <Compile Include="DAL\Data\QH_PhieuThanhLyTB_ThietBi.cs">
       <DependentUpon>QLTBContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\Data\QH_User_Permission.cs">
+      <DependentUpon>QLTBContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAL\Data\QLTBContext.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -338,6 +345,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QLTBContext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Data\sysdiagram.cs">
+      <DependentUpon>QLTBContext.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\TB_PhieuBaoHong.cs">
       <DependentUpon>QLTBContext.tt</DependentUpon>
@@ -499,6 +509,12 @@
     </Compile>
     <Compile Include="GUI\DanhMuc\ToBoMon\frmDMToBoMon.Designer.cs">
       <DependentUpon>frmDMToBoMon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QuanTri\frmPhanQuyenTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuanTri\frmPhanQuyenTaiKhoan.Designer.cs">
+      <DependentUpon>frmPhanQuyenTaiKhoan.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\ThietBi\GiamTB\frmPhieGiamThietBi.cs">
       <SubType>Form</SubType>
@@ -688,6 +704,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DanhMuc\ToBoMon\frmDMToBoMon.resx">
       <DependentUpon>frmDMToBoMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QuanTri\frmPhanQuyenTaiKhoan.resx">
+      <DependentUpon>frmPhanQuyenTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ThietBi\GiamTB\frmPhieGiamThietBi.resx">
       <DependentUpon>frmPhieGiamThietBi.cs</DependentUpon>
@@ -894,6 +913,9 @@
       <LastGenOutput>QLTBContext.cs</LastGenOutput>
     </Content>
     <Content Include="icon.ico" />
+    <None Include="Resources\switch_f2.png" />
+    <None Include="Resources\security_f2.png" />
+    <None Include="Resources\save_icon.gif" />
     <None Include="Resources\b_drop.png" />
     <None Include="Resources\tick.png" />
     <None Include="Resources\add1.png" />
