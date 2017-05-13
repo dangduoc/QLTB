@@ -1,4 +1,4 @@
-﻿namespace QLTB.GUI.DialogBox
+﻿namespace QLTB.GUI
 {
     partial class frmDialogHCHetHan
     {

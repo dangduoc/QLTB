@@ -138,7 +138,7 @@ namespace QLTB.GUI
         }
         private void AddPermission(UserPermission pms)
         {
-            list.Add(pms);
+            listPermission.Add(pms);
         }
 
         private void btnAddPermissions_Click(object sender, EventArgs e)

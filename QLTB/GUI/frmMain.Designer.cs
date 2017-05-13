@@ -138,10 +138,10 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusTenSP = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusUser = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusCurrentDay = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.expandableSplitter1 = new DevComponents.DotNetBar.ExpandableSplitter();
             this.statusStrip1.SuspendLayout();
@@ -164,7 +164,7 @@
             treeNode2.Name = "btnNhapTB";
             treeNode2.SelectedImageIndex = 6;
             treeNode2.Text = "Nhập thiết bị giáo dục";
-            treeNode3.Name = "Node0";
+            treeNode3.Name = "btnGhiTangTB";
             treeNode3.Text = "Ghi tăng thiết bị";
             treeNode4.Name = "btnKiemKeTB";
             treeNode4.Text = "Kiểm kê thiết bị";
@@ -188,11 +188,11 @@
             treeNode13.Text = "Các thiết bị mượn quá hạn";
             treeNode14.Name = "Node3";
             treeNode14.Text = "Quản lý mượn, trả";
-            treeNode15.Name = "Node1";
+            treeNode15.Name = "btnDSHoaChatHH";
             treeNode15.Text = "Danh sách hóa chất hết hạn";
-            treeNode16.Name = "Node2";
+            treeNode16.Name = "btnMuaSamThietBi";
             treeNode16.Text = "Đề xuất mua sắm thiết bị";
-            treeNode17.Name = "Node4";
+            treeNode17.Name = "btnXemBaoCao";
             treeNode17.Text = "Xem báo cáo, sổ sách";
             treeNode18.Name = "Node0";
             treeNode18.Text = "QUẢN LÝ THIẾT BỊ";
@@ -449,15 +449,16 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusTenSP,
             this.toolStripStatusLabel1,
-            this.toolStripStatusLabel2,
             this.statusUser,
             this.toolStripStatusLabel4,
-            this.statusCurrentDay});
+            this.statusCurrentDay,
+            this.toolStripStatusLabel3});
             this.statusStrip1.Location = new System.Drawing.Point(0, 442);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(986, 24);
+            this.statusStrip1.Size = new System.Drawing.Size(1231, 24);
             this.statusStrip1.TabIndex = 13;
             this.statusStrip1.Text = "statusStrip1";
+            this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked);
             // 
             // statusTenSP
             // 
@@ -476,11 +477,6 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(71, 19);
             this.toolStripStatusLabel1.Text = "Người dùng";
-            // 
-            // toolStripStatusLabel2
-            // 
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(0, 19);
             // 
             // statusUser
             // 
@@ -511,6 +507,18 @@
             this.statusCurrentDay.Name = "statusCurrentDay";
             this.statusCurrentDay.Size = new System.Drawing.Size(69, 19);
             this.statusCurrentDay.Text = "03/05/2017";
+            // 
+            // toolStripStatusLabel3
+            // 
+            this.toolStripStatusLabel3.ForeColor = System.Drawing.Color.Red;
+            this.toolStripStatusLabel3.Image = global::QLTB.Properties.Resources.icon_about;
+            this.toolStripStatusLabel3.LinkColor = System.Drawing.Color.Red;
+            this.toolStripStatusLabel3.Margin = new System.Windows.Forms.Padding(20, 3, 0, 2);
+            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(458, 19);
+            this.toolStripStatusLabel3.Spring = true;
+            this.toolStripStatusLabel3.Text = "Hiện đang có 10 hóa chất đã hết hạn";
+            this.toolStripStatusLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // groupPanel1
             // 
@@ -589,7 +597,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(986, 466);
+            this.ClientSize = new System.Drawing.Size(1231, 466);
             this.Controls.Add(this.expandableSplitter1);
             this.Controls.Add(this.groupPanel1);
             this.Controls.Add(this.statusStrip1);
@@ -634,10 +642,10 @@
         private DevComponents.DotNetBar.ButtonItem btnOption;
         private System.Windows.Forms.ToolStripStatusLabel statusTenSP;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.ToolStripStatusLabel statusUser;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
         private System.Windows.Forms.ToolStripStatusLabel statusCurrentDay;
         public System.Windows.Forms.TreeView tvMainMenu;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
     }
 }

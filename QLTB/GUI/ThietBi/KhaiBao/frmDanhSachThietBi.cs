@@ -229,5 +229,10 @@ namespace QLTB.GUI
                 }
             }
         }
+
+        private void advancedDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            contextMenuStrip.Show(Cursor.Position);
+        }
     }
 }
