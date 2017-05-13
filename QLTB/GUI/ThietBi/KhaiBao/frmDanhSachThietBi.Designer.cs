@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDanhSachThietBi));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -42,19 +43,27 @@
             this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
             this.pnlBack = new DevComponents.DotNetBar.PanelEx();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
-            this.advancedDataGridView = new ADGV.AdvancedDataGridView();
-            this.searchToolBar = new ADGV.SearchToolBar();
-            this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
             this.panelEx3 = new DevComponents.DotNetBar.PanelEx();
+            this.advancedDataGridView = new ADGV.AdvancedDataGridView();
+            this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.searchToolBar = new ADGV.SearchToolBar();
+            this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.nhânBảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sửaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.báoMấthỏngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ghiTăngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.giảmThiếtBịToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlBack.SuspendLayout();
             this.panelEx1.SuspendLayout();
+            this.panelEx3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView)).BeginInit();
             this.panelEx2.SuspendLayout();
-            this.panelEx3.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            this.contextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // rbChucNang
@@ -225,6 +234,26 @@
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 29;
             // 
+            // panelEx3
+            // 
+            this.panelEx3.CanvasColor = System.Drawing.SystemColors.Control;
+            this.panelEx3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx3.Controls.Add(this.advancedDataGridView);
+            this.panelEx3.DisabledBackColor = System.Drawing.Color.Empty;
+            this.panelEx3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelEx3.Location = new System.Drawing.Point(0, 0);
+            this.panelEx3.Name = "panelEx3";
+            this.panelEx3.Size = new System.Drawing.Size(1050, 384);
+            this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.panelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.panelEx3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.panelEx3.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.panelEx3.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.panelEx3.Style.GradientAngle = 90;
+            this.panelEx3.TabIndex = 32;
+            this.panelEx3.Text = "panelEx3";
+            // 
             // advancedDataGridView
             // 
             this.advancedDataGridView.AllowUserToAddRows = false;
@@ -257,22 +286,9 @@
             this.advancedDataGridView.TimeFilter = false;
             this.advancedDataGridView.SortStringChanged += new System.EventHandler(this.advancedDataGridView_SortStringChanged);
             this.advancedDataGridView.FilterStringChanged += new System.EventHandler(this.advancedDataGridView_FilterStringChanged);
+            this.advancedDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.advancedDataGridView_CellClick);
             this.advancedDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.advancedDataGridView_CellContentDoubleClick);
             this.advancedDataGridView.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.advancedDataGridView_KeyPress);
-            // 
-            // searchToolBar
-            // 
-            this.searchToolBar.AllowMerge = false;
-            this.searchToolBar.Font = new System.Drawing.Font("Arial", 9F);
-            this.searchToolBar.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.searchToolBar.Location = new System.Drawing.Point(0, 0);
-            this.searchToolBar.MaximumSize = new System.Drawing.Size(0, 27);
-            this.searchToolBar.MinimumSize = new System.Drawing.Size(0, 27);
-            this.searchToolBar.Name = "searchToolBar";
-            this.searchToolBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.searchToolBar.Size = new System.Drawing.Size(1050, 27);
-            this.searchToolBar.TabIndex = 28;
-            this.searchToolBar.Text = "searchToolBar1";
             // 
             // panelEx2
             // 
@@ -292,26 +308,6 @@
             this.panelEx2.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.panelEx2.Style.GradientAngle = 90;
             this.panelEx2.TabIndex = 28;
-            // 
-            // panelEx3
-            // 
-            this.panelEx3.CanvasColor = System.Drawing.SystemColors.Control;
-            this.panelEx3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.panelEx3.Controls.Add(this.advancedDataGridView);
-            this.panelEx3.DisabledBackColor = System.Drawing.Color.Empty;
-            this.panelEx3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelEx3.Location = new System.Drawing.Point(0, 0);
-            this.panelEx3.Name = "panelEx3";
-            this.panelEx3.Size = new System.Drawing.Size(1050, 384);
-            this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.panelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.panelEx3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.panelEx3.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.panelEx3.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.panelEx3.Style.GradientAngle = 90;
-            this.panelEx3.TabIndex = 32;
-            this.panelEx3.Text = "panelEx3";
             // 
             // statusStrip1
             // 
@@ -341,6 +337,71 @@
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(44, 34);
             this.toolStripStatusLabel2.Text = "Chú ý: ";
             // 
+            // searchToolBar
+            // 
+            this.searchToolBar.AllowMerge = false;
+            this.searchToolBar.Font = new System.Drawing.Font("Arial", 9F);
+            this.searchToolBar.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.searchToolBar.Location = new System.Drawing.Point(0, 0);
+            this.searchToolBar.MaximumSize = new System.Drawing.Size(0, 27);
+            this.searchToolBar.MinimumSize = new System.Drawing.Size(0, 27);
+            this.searchToolBar.Name = "searchToolBar";
+            this.searchToolBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.searchToolBar.Size = new System.Drawing.Size(1050, 27);
+            this.searchToolBar.TabIndex = 28;
+            this.searchToolBar.Text = "searchToolBar1";
+            // 
+            // contextMenuStrip
+            // 
+            this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nhânBảnToolStripMenuItem,
+            this.sửaToolStripMenuItem,
+            this.xóaToolStripMenuItem,
+            this.báoMấthỏngToolStripMenuItem,
+            this.ghiTăngToolStripMenuItem,
+            this.giảmThiếtBịToolStripMenuItem});
+            this.contextMenuStrip.Name = "contextMenuStrip";
+            this.contextMenuStrip.Size = new System.Drawing.Size(152, 136);
+            // 
+            // nhânBảnToolStripMenuItem
+            // 
+            this.nhânBảnToolStripMenuItem.Image = global::QLTB.Properties.Resources.tick;
+            this.nhânBảnToolStripMenuItem.Name = "nhânBảnToolStripMenuItem";
+            this.nhânBảnToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.nhânBảnToolStripMenuItem.Text = "Nhân bản";
+            // 
+            // sửaToolStripMenuItem
+            // 
+            this.sửaToolStripMenuItem.Image = global::QLTB.Properties.Resources.save_icon;
+            this.sửaToolStripMenuItem.Name = "sửaToolStripMenuItem";
+            this.sửaToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.sửaToolStripMenuItem.Text = "Sửa";
+            // 
+            // xóaToolStripMenuItem
+            // 
+            this.xóaToolStripMenuItem.Image = global::QLTB.Properties.Resources.b_drop;
+            this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
+            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.xóaToolStripMenuItem.Text = "Xóa";
+            // 
+            // báoMấthỏngToolStripMenuItem
+            // 
+            this.báoMấthỏngToolStripMenuItem.Name = "báoMấthỏngToolStripMenuItem";
+            this.báoMấthỏngToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.báoMấthỏngToolStripMenuItem.Text = "Báo mất/hỏng";
+            // 
+            // ghiTăngToolStripMenuItem
+            // 
+            this.ghiTăngToolStripMenuItem.Name = "ghiTăngToolStripMenuItem";
+            this.ghiTăngToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.ghiTăngToolStripMenuItem.Text = "Tăng thiết bị";
+            // 
+            // giảmThiếtBịToolStripMenuItem
+            // 
+            this.giảmThiếtBịToolStripMenuItem.Name = "giảmThiếtBịToolStripMenuItem";
+            this.giảmThiếtBịToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.giảmThiếtBịToolStripMenuItem.Text = "Giảm thiết bị";
+            // 
             // frmDanhSachThietBi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -356,12 +417,13 @@
             this.pnlBack.ResumeLayout(false);
             this.pnlBack.PerformLayout();
             this.panelEx1.ResumeLayout(false);
+            this.panelEx3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView)).EndInit();
             this.panelEx2.ResumeLayout(false);
             this.panelEx2.PerformLayout();
-            this.panelEx3.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.contextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -386,5 +448,12 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem nhânBảnToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sửaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem xóaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem báoMấthỏngToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ghiTăngToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem giảmThiếtBịToolStripMenuItem;
     }
 }

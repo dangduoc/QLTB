@@ -430,7 +430,7 @@ namespace QLTB.GUI
                 if (!CheckExistForm("frmDSThanhLyTB"))
                 {
                     Application.DoEvents();
-                    frmDSThanhLyTB  childForm = new frmDSThanhLyTB();
+                    frmDSThanhLyTB childForm = new frmDSThanhLyTB();
                     childForm.MdiParent = this;
                     childForm.WindowState = FormWindowState.Maximized;
                     childForm.Show();
@@ -506,12 +506,81 @@ namespace QLTB.GUI
                 this.Cursor = Cursors.Default;
             }
         }
+        private void btnGhiTangTB_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Cursor = Cursors.WaitCursor;
+                if (!CheckExistForm("frmPhieuTangThietBi"))
+                {
+                    Application.DoEvents();
+                    frmPhieuTangThietBi childForm = new frmPhieuTangThietBi();
+                    childForm.MdiParent = this;
+                    childForm.WindowState = FormWindowState.Maximized;
+                    childForm.Show();
+
+                }
+                this.Cursor = Cursors.Default;
+            }
+            catch (Exception ex)
+            {
+                this.Cursor = Cursors.Default;
+            }
+        }
+        private void btnMuaSamThietBi_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Cursor = Cursors.WaitCursor;
+                if (!CheckExistForm("frmPhieuMuaThietBi"))
+                {
+                    Application.DoEvents();
+                    frmPhieuMuaThietBi childForm = new frmPhieuMuaThietBi();
+                    childForm.MdiParent = this;
+                    childForm.WindowState = FormWindowState.Maximized;
+                    childForm.Show();
+
+                }
+                this.Cursor = Cursors.Default;
+            }
+            catch (Exception ex)
+            {
+                this.Cursor = Cursors.Default;
+            }
+        }
+        private void btnXemBaoCao_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Cursor = Cursors.WaitCursor;
+                if (!CheckExistForm("frmThongKeBaoCao"))
+                {
+                    Application.DoEvents();
+                    frmThongKeBaoCao childForm = new frmThongKeBaoCao();
+                    childForm.MdiParent = this;
+                    childForm.WindowState = FormWindowState.Maximized;
+                    childForm.Show();
+
+                }
+                this.Cursor = Cursors.Default;
+            }
+            catch (Exception ex)
+            {
+                this.Cursor = Cursors.Default;
+            }
+        }
+        private void btnDSHoaChatHH_Click(object sender, EventArgs e)
+        {
+            frmDialogHCHetHan childForm = new frmDialogHCHetHan();
+            childForm.ShowDialog(this);
+        }
+
         private void TreeView_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             if (tvMainMenu.SelectedNode == null) return;
             Done_Function_Menu(tvMainMenu.SelectedNode.Name.Trim());
         }
-       
+
         private void Done_Function_Menu(string NameFunction)
         {
             try
@@ -587,6 +656,19 @@ namespace QLTB.GUI
                     case "btnPhanQuyen":
                         btnPhanQuyen_Click(null, null);
                         break;
+                    case "btnGhiTangTB":
+                        btnGhiTangTB_Click(null, null);
+                        break;
+                    case "btnMuaSamThietBi":
+                        btnMuaSamThietBi_Click(null, null);
+                        break;
+                    case "btnXemBaoCao":
+                        btnXemBaoCao_Click(null, null);
+                        break;
+                    case "btnDSHoaChatHH":
+                        btnDSHoaChatHH_Click(null, null);
+                        break;
+
                     default:
                         MessageBox.Show("Chức năng này chưa được xây dựng ....");
                         break;
@@ -595,13 +677,13 @@ namespace QLTB.GUI
             }
             catch (Exception ex)
             {
-               
+
             }
         }
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult dr= MessageBox.Show("Bạn có chắc muốn đóng phần mềm lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dr = MessageBox.Show("Bạn có chắc muốn đóng phần mềm lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.No)
             {
                 e.Cancel = true;
@@ -629,9 +711,14 @@ namespace QLTB.GUI
             //DialogResult dr = MessageBox.Show("Bạn có chắc muốn đăng nhập lại chứ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             //if(dr==DialogResult.Yes)
             //{ 
-                 
+
             //}
             Application.Restart();
+        }
+
+        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

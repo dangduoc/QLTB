@@ -1,4 +1,4 @@
-﻿namespace QLTB.GUI.ThongKe
+﻿namespace QLTB.GUI
 {
     partial class frmThongKeBaoCao
     {

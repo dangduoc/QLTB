@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QLTB.GUI.ThietBi.TangTB
+namespace QLTB.GUI
 {
     public partial class frmPhieuTangThietBi : Form
     {
