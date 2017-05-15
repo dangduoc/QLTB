@@ -23,15 +23,16 @@ namespace QLTB
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            frmLogin fLogin = new frmLogin();
-            if (fLogin.ShowDialog() == DialogResult.OK)
-            {
-                Application.Run(new frmMain());
-            }
-            else
-            {
-                Application.Exit();
-            }
+            Application.Run(new Form1());
+            //frmLogin fLogin = new frmLogin();
+            //if (fLogin.ShowDialog() == DialogResult.OK)
+            //{
+            //    Application.Run(new Form1());
+            //}
+            //else
+            //{
+            //    Application.Exit();
+            //}
         }
     }
 }
