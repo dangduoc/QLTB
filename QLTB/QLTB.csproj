@@ -420,6 +420,18 @@
     <Compile Include="GUI\DialogBox\frmKhaiBaoNamHoc.Designer.cs">
       <DependentUpon>frmKhaiBaoNamHoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmDanhSachNamHoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -443,6 +455,12 @@
     </Compile>
     <Compile Include="GUI\frmThongTinDonVi.Designer.cs">
       <DependentUpon>frmThongTinDonVi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\LoadingScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\LoadingScreen.Designer.cs">
+      <DependentUpon>LoadingScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\PhongBoMon\frmCTPhieuMuonPhong.cs">
       <SubType>Form</SubType>
@@ -515,6 +533,12 @@
     </Compile>
     <Compile Include="GUI\QuanTri\frmPhanQuyenTaiKhoan.Designer.cs">
       <DependentUpon>frmPhanQuyenTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThietBi\frmThietBi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBi\frmThietBi.Designer.cs">
+      <DependentUpon>frmThietBi.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\ThietBi\GiamTB\frmPhieGiamThietBi.cs">
       <SubType>Form</SubType>
@@ -660,6 +684,12 @@
     <EmbeddedResource Include="GUI\DialogBox\frmKhaiBaoNamHoc.resx">
       <DependentUpon>frmKhaiBaoNamHoc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmDanhSachNamHoc.resx">
       <DependentUpon>frmDanhSachNamHoc.cs</DependentUpon>
     </EmbeddedResource>
@@ -671,6 +701,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmThongTinDonVi.resx">
       <DependentUpon>frmThongTinDonVi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\LoadingScreen.resx">
+      <DependentUpon>LoadingScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\PhongBoMon\frmCTPhieuMuonPhong.resx">
       <DependentUpon>frmCTPhieuMuonPhong.cs</DependentUpon>
@@ -707,6 +740,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\QuanTri\frmPhanQuyenTaiKhoan.resx">
       <DependentUpon>frmPhanQuyenTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBi\frmThietBi.resx">
+      <DependentUpon>frmThietBi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ThietBi\GiamTB\frmPhieGiamThietBi.resx">
       <DependentUpon>frmPhieGiamThietBi.cs</DependentUpon>
@@ -913,6 +949,12 @@
       <LastGenOutput>QLTBContext.cs</LastGenOutput>
     </Content>
     <Content Include="icon.ico" />
+    <None Include="Resources\Refresh16.png" />
+    <None Include="Resources\print16.png" />
+    <None Include="Resources\import16.png" />
+    <None Include="Resources\edit16.png" />
+    <None Include="Resources\checklist-icon.png" />
+    <None Include="Resources\Help-icon.png" />
     <None Include="Resources\switch_f2.png" />
     <None Include="Resources\security_f2.png" />
     <None Include="Resources\save_icon.gif" />
