@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace QLTB.GUI
 {
-    public partial class frmKhaiBaoThietBi : Form
+    public partial class frmKhaiBaoThietBi : DevComponents.DotNetBar.Office2007Form
     {
         private ThietBiModel ThietBi;
         private DbThietBiHandler handler = new DbThietBiHandler();
@@ -28,7 +28,6 @@ namespace QLTB.GUI
         {
             InitializeComponent();
             ThietBi = null;
-            btnXoa.Visible = false;
         }
         private bool Validate(out string message)
         {
@@ -200,10 +199,6 @@ namespace QLTB.GUI
                 }
             }
         }
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
 
         private void frmKhaiBaoThietBi_Load(object sender, EventArgs e)
         {
@@ -244,6 +239,11 @@ namespace QLTB.GUI
                 if (result == 1) MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else MessageBox.Show("Xóa không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

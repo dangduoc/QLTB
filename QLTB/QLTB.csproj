@@ -949,6 +949,16 @@
       <LastGenOutput>QLTBContext.cs</LastGenOutput>
     </Content>
     <Content Include="icon.ico" />
+    <None Include="Resources\delete16.png" />
+    <None Include="Resources\cancel16.png" />
+    <None Include="Resources\back16.png" />
+    <None Include="Resources\usericon.png" />
+    <None Include="Resources\passwordicon.png" />
+    <None Include="Resources\logo_1_256.png" />
+    <None Include="Resources\logo_1_48.png" />
+    <None Include="Resources\logo48.png" />
+    <None Include="Resources\logo512.png" />
+    <None Include="Resources\logo32.png" />
     <None Include="Resources\Refresh16.png" />
     <None Include="Resources\print16.png" />
     <None Include="Resources\import16.png" />
