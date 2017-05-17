@@ -236,5 +236,19 @@ namespace QLTB.GUI
         {
             loadForm();
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnThemDSTB_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+            frmPhieuBaoHong frm = new frmPhieuBaoHong();
+            frm.MdiParent = MdiParent;
+            frm.Show();
+            Cursor = Cursors.Default;
+        }
     }
 }

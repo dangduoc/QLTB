@@ -33,5 +33,13 @@ namespace QLTB.GUI
             progressBarX1.Visible = true;
             Task.Delay(4000).ContinueWith(t => CloseForm());
         }
+
+        private void textBoxX1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)13)
+            {
+                button1.PerformClick();
+            }
+        }
     }
 }

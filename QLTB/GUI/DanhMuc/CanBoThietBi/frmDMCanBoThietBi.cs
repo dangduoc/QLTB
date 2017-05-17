@@ -248,5 +248,10 @@ namespace QLTB.GUI
         {
             LoadForm();
         }
+
+        private void buttonItem1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

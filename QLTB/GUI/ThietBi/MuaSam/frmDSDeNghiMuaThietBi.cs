@@ -208,5 +208,17 @@ namespace QLTB.GUI
         {
             LoadForm();
         }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            frmPhieuMuaThietBi frm = new frmPhieuMuaThietBi();
+            frm.MdiParent = MdiParent;
+            frm.Show();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

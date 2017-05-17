@@ -205,8 +205,10 @@ namespace QLTB.GUI
         private void LoadForm()
         {
             //Clone
-            List<LopHocGridDisplayModel> list = new DbLopHocHandler().GetAll();
+            //List<LopHocGridDisplayModel> list = new DbLopHocHandler().GetAll();
             //
+            List<LopHocGridDisplayModel> list = new List<LopHocGridDisplayModel>();
+
             List<string> headers = new List<string>();
             headers.Add("Khối lớp");
             headers.Add("Mã lớp");
@@ -227,6 +229,11 @@ namespace QLTB.GUI
         private void frmDMLopHoc_Load(object sender, EventArgs e)
         {
             LoadForm();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

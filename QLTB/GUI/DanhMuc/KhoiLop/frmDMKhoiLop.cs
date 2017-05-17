@@ -206,8 +206,8 @@ namespace QLTB.GUI
         private void LoadForm()
         {
             //Clone
-            List<KhoiLopGridDisplayModel> list = new DbKhoiLopHandler().GetAll();
-            
+            //List<KhoiLopGridDisplayModel> list = new DbKhoiLopHandler().GetAll();
+            List<KhoiLopGridDisplayModel> list = new List<KhoiLopGridDisplayModel>();
             //
             List<string> headers = new List<string>();
             headers.Add("Cấp trường");
@@ -228,6 +228,11 @@ namespace QLTB.GUI
         private void frmDMKhoiLop_Load(object sender, EventArgs e)
         {
             LoadForm();
-        }     
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

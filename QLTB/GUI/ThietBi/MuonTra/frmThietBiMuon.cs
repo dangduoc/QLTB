@@ -32,7 +32,9 @@ namespace QLTB.GUI
         }
         private void loadForm()
         {
-            //
+            #region Loading
+            /*
+           
             foreach (var item in layoutControl1.Controls.OfType<DevComponents.DotNetBar.Controls.ComboBoxEx>())
             {
                 item.DisplayMember = "value";
@@ -91,30 +93,30 @@ namespace QLTB.GUI
             linkColDelete.UseColumnTextForLinkValue = true;
             linkColDelete.HeaderText = "";
 
-            gridDSThietBiMuon.Columns.Add(linkColEdit);
-            gridDSThietBiMuon.Columns.Add(linkColDelete);
+            ADGVDSTB.Columns.Add(linkColEdit);
+            ADGVDSTB.Columns.Add(linkColDelete);
             //load danh sach thiet bi muon
-            gridDSThietBiMuon.DataSource = source;
-            gridDSThietBiMuon.Columns[2].HeaderText = "Mã thiết bị";
-            gridDSThietBiMuon.Columns[3].HeaderText = "Tên thiết bị";
-            gridDSThietBiMuon.Columns[4].HeaderText = "Số hiệu";
-            gridDSThietBiMuon.Columns[5].HeaderText = "Phòng bộ môn";
-            gridDSThietBiMuon.Columns[6].HeaderText = "Số lượng mượn";
-            gridDSThietBiMuon.Columns[7].HeaderText = "Đơn vị tính";
-            gridDSThietBiMuon.Columns[2].DisplayIndex = 0;
-            gridDSThietBiMuon.Columns[3].DisplayIndex = 1;
-            gridDSThietBiMuon.Columns[4].DisplayIndex = 2;
-            gridDSThietBiMuon.Columns[5].DisplayIndex = 3;
-            gridDSThietBiMuon.Columns[6].DisplayIndex = 4;
-            gridDSThietBiMuon.Columns[7].DisplayIndex = 5;
-            gridDSThietBiMuon.Columns[0].DisplayIndex = 6;
-            gridDSThietBiMuon.Columns[1].DisplayIndex = 7;
+            ADGVDSTB.DataSource = source;
+            ADGVDSTB.Columns[2].HeaderText = "Mã thiết bị";
+            ADGVDSTB.Columns[3].HeaderText = "Tên thiết bị";
+            ADGVDSTB.Columns[4].HeaderText = "Số hiệu";
+            ADGVDSTB.Columns[5].HeaderText = "Phòng bộ môn";
+            ADGVDSTB.Columns[6].HeaderText = "Số lượng mượn";
+            ADGVDSTB.Columns[7].HeaderText = "Đơn vị tính";
+            ADGVDSTB.Columns[2].DisplayIndex = 0;
+            ADGVDSTB.Columns[3].DisplayIndex = 1;
+            ADGVDSTB.Columns[4].DisplayIndex = 2;
+            ADGVDSTB.Columns[5].DisplayIndex = 3;
+            ADGVDSTB.Columns[6].DisplayIndex = 4;
+            ADGVDSTB.Columns[7].DisplayIndex = 5;
+            ADGVDSTB.Columns[0].DisplayIndex = 6;
+            ADGVDSTB.Columns[1].DisplayIndex = 7;
          
          
             //
             cbbTenBaiDay.DataSource = dshandler.GetBaiGiang((int)CbbMonHoc.SelectedValue).Select(p => new { key = p.BaiGiangId, value = p.Ten }).ToList();
             DisableHighlightCBB();
-
+            #endregion
         }
 
         private void CbbMonHoc_SelectedValueChanged(object sender, EventArgs e)
@@ -190,7 +192,16 @@ namespace QLTB.GUI
         }
         private void frmThietBiMuon_Load(object sender, EventArgs e)
         {
+            ADGVDSTB.CellContentClick += gridDSThietBiMuon_CellContentClick;
+            btnLuu.Click += BtnLuu_Click;
+            btnBaoHong.Click += btnBaoHong_Click;
             loadForm();
+
+        }
+
+        private void BtnLuu_Click(object sender, EventArgs e)
+        {
+            saveData();
         }
 
         public void AddToGrid(List<ThietBiMuonGridDisplayModel> list)
@@ -206,9 +217,9 @@ namespace QLTB.GUI
                 
                 source = new BindingSource();
                 source.DataSource = dsThietBi;
-                gridDSThietBiMuon.DataSource = source;
-                gridDSThietBiMuon.Refresh();
-                gridDSThietBiMuon.Update();
+                ADGVDSTB.DataSource = source;
+                ADGVDSTB.Refresh();
+                ADGVDSTB.Update();
                 //
                 //DataGridViewLinkColumn linkColEdit = new DataGridViewLinkColumn();
                 //linkColEdit.Text = "Thay đổi";
@@ -225,17 +236,17 @@ namespace QLTB.GUI
                 //linkColDelete.UseColumnTextForLinkValue = true;
                 //linkColDelete.HeaderText = "";
 
-                //gridDSThietBiMuon.Columns.Add(linkColEdit);
-                //gridDSThietBiMuon.Columns.Add(linkColDelete);
+                //ADGVDSTB.Columns.Add(linkColEdit);
+                //ADGVDSTB.Columns.Add(linkColDelete);
                 ////
-                //gridDSThietBiMuon.Columns[0].HeaderText = "Mã thiết bị";
-                //gridDSThietBiMuon.Columns[1].HeaderText = "Tên thiết bị";
-                //gridDSThietBiMuon.Columns[2].HeaderText = "Số hiệu";
-                //gridDSThietBiMuon.Columns[3].HeaderText = "Phòng bộ môn";
-                //gridDSThietBiMuon.Columns[4].HeaderText = "Số lượng mượn";
-                //gridDSThietBiMuon.Columns[5].HeaderText = "Đơn vị tính";
-                //gridDSThietBiMuon.Columns[6].Width = 50;
-                //gridDSThietBiMuon.Columns[7].Width = 50;
+                //ADGVDSTB.Columns[0].HeaderText = "Mã thiết bị";
+                //ADGVDSTB.Columns[1].HeaderText = "Tên thiết bị";
+                //ADGVDSTB.Columns[2].HeaderText = "Số hiệu";
+                //ADGVDSTB.Columns[3].HeaderText = "Phòng bộ môn";
+                //ADGVDSTB.Columns[4].HeaderText = "Số lượng mượn";
+                //ADGVDSTB.Columns[5].HeaderText = "Đơn vị tính";
+                //ADGVDSTB.Columns[6].Width = 50;
+                //ADGVDSTB.Columns[7].Width = 50;
                 //
                 if (repeatList.Count > 0)
                 {
@@ -258,7 +269,7 @@ namespace QLTB.GUI
                 DataGridViewRow row = new DataGridViewRow();
                 source = new BindingSource();
                 source.DataSource = Phieu.ThietBis;
-                gridDSThietBiMuon.DataSource = source;
+                ADGVDSTB.DataSource = source;
                 if (repeatList.Count > 0)
                 {
                     string str = "";
@@ -269,23 +280,49 @@ namespace QLTB.GUI
                     MessageBox.Show("Các số hiệu đã có trong danh sách: " + str, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-            #endregion        
-        }
+              
+            */
+            #endregion
 
-        private void buttonX3_Click(object sender, EventArgs e)
-        {
-            frmDialogDSThietBi frm = new frmDialogDSThietBi(1);
-            frm.ShowDialog(this);
-        }
+            List<ThietBiMuonGridDisplayModel> listTB = new List<ThietBiMuonGridDisplayModel>();
+            DataGridViewLinkColumn linkColEdit = new DataGridViewLinkColumn();
+            linkColEdit.Text = "Thay đổi";
+            linkColEdit.Name = "Edit";
+            linkColEdit.LinkColor = Color.Blue;
+            linkColEdit.LinkBehavior = LinkBehavior.NeverUnderline;
+            linkColEdit.UseColumnTextForLinkValue = true;
+            linkColEdit.HeaderText = "";
+            DataGridViewLinkColumn linkColDelete = new DataGridViewLinkColumn();
+            linkColDelete.Text = "Xóa bỏ";
+            linkColDelete.Name = "Delete";
+            linkColDelete.LinkColor = Color.Red;
+            linkColDelete.LinkBehavior = LinkBehavior.NeverUnderline;
+            linkColDelete.UseColumnTextForLinkValue = true;
+            linkColDelete.HeaderText = "";
 
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            Close();
+            ADGVDSTB.Columns.Add(linkColEdit);
+            ADGVDSTB.Columns.Add(linkColDelete);
+            //load danh sach thiet bi muon
+            ADGVDSTB.DataSource = listTB;
+            ADGVDSTB.Columns[2].HeaderText = "Mã thiết bị";
+            ADGVDSTB.Columns[3].HeaderText = "Tên thiết bị";
+            ADGVDSTB.Columns[4].HeaderText = "Số hiệu";
+            ADGVDSTB.Columns[5].HeaderText = "Phòng bộ môn";
+            ADGVDSTB.Columns[6].HeaderText = "Số lượng mượn";
+            ADGVDSTB.Columns[7].HeaderText = "Đơn vị tính";
+            ADGVDSTB.Columns[2].DisplayIndex = 0;
+            ADGVDSTB.Columns[3].DisplayIndex = 1;
+            ADGVDSTB.Columns[4].DisplayIndex = 2;
+            ADGVDSTB.Columns[5].DisplayIndex = 3;
+            ADGVDSTB.Columns[6].DisplayIndex = 4;
+            ADGVDSTB.Columns[7].DisplayIndex = 5;
+            ADGVDSTB.Columns[0].DisplayIndex = 6;
+            ADGVDSTB.Columns[1].DisplayIndex = 7;
         }
         private void gridDSThietBiMuon_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            var id = gridDSThietBiMuon.Rows[e.RowIndex].Cells[4].Value.ToString();
-            if ((e.RowIndex >= 0) && (e.ColumnIndex == gridDSThietBiMuon.Columns["Delete"].Index))
+            var id = ADGVDSTB.Rows[e.RowIndex].Cells[4].Value.ToString();
+            if ((e.RowIndex >= 0) && (e.ColumnIndex == ADGVDSTB.Columns["Delete"].Index))
             {
                 DialogResult dr = MessageBox.Show("Xóa thiết bị có số hiệu: " + id + " khỏi danh sách", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 if (dr == DialogResult.OK)
@@ -294,7 +331,7 @@ namespace QLTB.GUI
                     {
                         if (handler.RemoveFromList(id, Phieu.PhieuMuonTBId) == 1)
                         {
-                            gridDSThietBiMuon.Rows.Remove(gridDSThietBiMuon.Rows[e.RowIndex]);
+                            ADGVDSTB.Rows.Remove(ADGVDSTB.Rows[e.RowIndex]);
                         }
                         else
                         {
@@ -304,27 +341,41 @@ namespace QLTB.GUI
                     else
                     {
                         if (dsThietBi.Remove(dsThietBi.Where(p => p.SoHieu.Equals(id)).FirstOrDefault()))
-                            gridDSThietBiMuon.Rows.Remove(gridDSThietBiMuon.Rows[e.RowIndex]);
+                            ADGVDSTB.Rows.Remove(ADGVDSTB.Rows[e.RowIndex]);
                     }
                 }
 
             }
-            else if ((e.RowIndex >= 0) && (e.ColumnIndex == gridDSThietBiMuon.Columns["Edit"].Index))
+            else if ((e.RowIndex >= 0) && (e.ColumnIndex == ADGVDSTB.Columns["Edit"].Index))
             {
 
             }
         }
 
-        private void btnLuu_Click_1(object sender, EventArgs e)
-        {
-            saveData();
-        }
 
         private void btnBaoHong_Click(object sender, EventArgs e)
         {
             frmPhieuBaoHong frm = new frmPhieuBaoHong();
             frm.MdiParent = MdiParent;
             frm.Show();
+        }
+
+        private void btnLayTB_Click(object sender, EventArgs e)
+        {
+            frmDialogDSThietBi frm = new frmDialogDSThietBi(1);
+            frm.ShowDialog(this);
+        }
+
+        private void frmThietBiMuon_Load(object sender, EventArgs e)
+        {
+            ADGVDSTB.CellContentClick += gridDSThietBiMuon_CellContentClick;
+            btnBaoHong.Click += btnBaoHong_Click;
+            loadForm();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

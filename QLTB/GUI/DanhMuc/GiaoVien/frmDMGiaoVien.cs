@@ -181,8 +181,99 @@ namespace QLTB.GUI
         private void LoadForm()
         {
             //Clone
-            List<GiaoVienGirdDisplayModel> list = new DbGiaoVienHandler().GetAll();
-           
+            //List<GiaoVienGirdDisplayModel> list = new DbGiaoVienHandler().GetAll();
+            List<GiaoVienGirdDisplayModel> list = new List<GiaoVienGirdDisplayModel>();
+            list.Add(new GiaoVienGirdDisplayModel
+            {
+                GiaoVienId="GV00001",
+                NgaySinh="21/11/1995",
+                ChucVu="Giáo viên bộ môn",
+                DayMon="Hóa học",
+                GioiTinh="Nam",
+                LoaiHopDong="Biên chế",
+                PhongBan="Tổ bộ môn",
+                TenDayDu="Đặng Minh Được",
+                TrinhDoChuyenMon="Đại học sư phạm Hà Nội",
+                ViTriViecLam=""
+            });
+            list.Add(new GiaoVienGirdDisplayModel
+            {
+                GiaoVienId = "GV00001",
+                NgaySinh = "21/11/1995",
+                ChucVu = "Giáo viên bộ môn",
+                DayMon = "Hóa học",
+                GioiTinh = "Nam",
+                LoaiHopDong = "Biên chế",
+                PhongBan = "Tổ bộ môn",
+                TenDayDu = "Đặng Minh Được",
+                TrinhDoChuyenMon = "Đại học sư phạm Hà Nội",
+                ViTriViecLam = ""
+            });
+            list.Add(new GiaoVienGirdDisplayModel
+            {
+                GiaoVienId = "GV00001",
+                NgaySinh = "21/11/1995",
+                ChucVu = "Giáo viên bộ môn",
+                DayMon = "Hóa học",
+                GioiTinh = "Nam",
+                LoaiHopDong = "Biên chế",
+                PhongBan = "Tổ bộ môn",
+                TenDayDu = "Đặng Minh Được",
+                TrinhDoChuyenMon = "Đại học sư phạm Hà Nội",
+                ViTriViecLam = ""
+            });
+            list.Add(new GiaoVienGirdDisplayModel
+            {
+                GiaoVienId = "GV00001",
+                NgaySinh = "21/11/1995",
+                ChucVu = "Giáo viên bộ môn",
+                DayMon = "Hóa học",
+                GioiTinh = "Nam",
+                LoaiHopDong = "Biên chế",
+                PhongBan = "Tổ bộ môn",
+                TenDayDu = "Đặng Minh Được",
+                TrinhDoChuyenMon = "Đại học sư phạm Hà Nội",
+                ViTriViecLam = ""
+            });
+            list.Add(new GiaoVienGirdDisplayModel
+            {
+                GiaoVienId = "GV00001",
+                NgaySinh = "21/11/1995",
+                ChucVu = "Giáo viên bộ môn",
+                DayMon = "Hóa học",
+                GioiTinh = "Nam",
+                LoaiHopDong = "Biên chế",
+                PhongBan = "Tổ bộ môn",
+                TenDayDu = "Đặng Minh Được",
+                TrinhDoChuyenMon = "Đại học sư phạm Hà Nội",
+                ViTriViecLam = ""
+            });
+            list.Add(new GiaoVienGirdDisplayModel
+            {
+                GiaoVienId = "GV00001",
+                NgaySinh = "21/11/1995",
+                ChucVu = "Giáo viên bộ môn",
+                DayMon = "Hóa học",
+                GioiTinh = "Nam",
+                LoaiHopDong = "Biên chế",
+                PhongBan = "Tổ bộ môn",
+                TenDayDu = "Đặng Minh Được",
+                TrinhDoChuyenMon = "Đại học sư phạm Hà Nội",
+                ViTriViecLam = ""
+            });
+            list.Add(new GiaoVienGirdDisplayModel
+            {
+                GiaoVienId = "GV00001",
+                NgaySinh = "21/11/1995",
+                ChucVu = "Giáo viên bộ môn",
+                DayMon = "Hóa học",
+                GioiTinh = "Nam",
+                LoaiHopDong = "Biên chế",
+                PhongBan = "Tổ bộ môn",
+                TenDayDu = "Đặng Minh Được",
+                TrinhDoChuyenMon = "Đại học sư phạm Hà Nội",
+                ViTriViecLam = ""
+            });
             //
             List<string> headers = new List<string>();
             headers.Add("Mã cán bộ");
@@ -213,6 +304,11 @@ namespace QLTB.GUI
         {
             LoadForm();
 
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

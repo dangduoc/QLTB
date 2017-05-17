@@ -28,17 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThongKeBaoCao));
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Thông kế tình hình mượn thiết bị theo môn học");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Thống kê tình hình mượn thiết bị theo giáo viên");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Báo cáo", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2});
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Sổ thiết bị giáo dục");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Sổ sách", new System.Windows.Forms.TreeNode[] {
+            treeNode4});
             this.rbChucNang = new DevComponents.DotNetBar.RibbonBar();
+            this.buttonItem2 = new DevComponents.DotNetBar.ButtonItem();
             this.btnTroGiup = new DevComponents.DotNetBar.ButtonItem();
             this.btnThoat = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
             this.expandablePanel1 = new DevComponents.DotNetBar.ExpandablePanel();
-            this.axFoxitCtl1 = new AxFOXITREADERLib.AxFoxitCtl();
             this.treeView1 = new System.Windows.Forms.TreeView();
-            this.buttonItem2 = new DevComponents.DotNetBar.ButtonItem();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.expandablePanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.axFoxitCtl1)).BeginInit();
             this.SuspendLayout();
             // 
             // rbChucNang
@@ -67,7 +73,7 @@
             this.rbChucNang.Margin = new System.Windows.Forms.Padding(9, 5, 9, 5);
             this.rbChucNang.Name = "rbChucNang";
             this.rbChucNang.ShowShortcutKeysInToolTips = true;
-            this.rbChucNang.Size = new System.Drawing.Size(995, 121);
+            this.rbChucNang.Size = new System.Drawing.Size(995, 38);
             this.rbChucNang.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.rbChucNang.TabIndex = 14;
             // 
@@ -79,12 +85,21 @@
             // 
             this.rbChucNang.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
+            // buttonItem2
+            // 
+            this.buttonItem2.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.buttonItem2.Image = global::QLTB.Properties.Resources.tick;
+            this.buttonItem2.ImagePaddingHorizontal = 30;
+            this.buttonItem2.ImagePaddingVertical = 15;
+            this.buttonItem2.Name = "buttonItem2";
+            this.buttonItem2.SubItemsExpandWidth = 14;
+            this.buttonItem2.Text = "Xem báo cáo";
+            // 
             // btnTroGiup
             // 
-            this.btnTroGiup.BeginGroup = true;
-            this.btnTroGiup.Image = global::QLTB.Properties.Resources.icon_about;
+            this.btnTroGiup.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnTroGiup.Image = global::QLTB.Properties.Resources.Help_icon;
             this.btnTroGiup.ImagePaddingHorizontal = 20;
-            this.btnTroGiup.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
             this.btnTroGiup.Name = "btnTroGiup";
             this.btnTroGiup.SubItemsExpandWidth = 14;
             this.btnTroGiup.Text = "Trợ giúp";
@@ -92,8 +107,8 @@
             // btnThoat
             // 
             this.btnThoat.BeginGroup = true;
-            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
-            this.btnThoat.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnThoat.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnThoat.Image = global::QLTB.Properties.Resources.close16;
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlF4);
             this.btnThoat.ShowSubItems = false;
@@ -101,6 +116,7 @@
             this.buttonItem1});
             this.btnThoat.Text = "Đóng";
             this.btnThoat.Tooltip = "Đóng";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // buttonItem1
             // 
@@ -116,20 +132,17 @@
             this.expandablePanel1.DisabledBackColor = System.Drawing.Color.Empty;
             this.expandablePanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.expandablePanel1.HideControlsWhenCollapsed = true;
-            this.expandablePanel1.Location = new System.Drawing.Point(0, 121);
+            this.expandablePanel1.Location = new System.Drawing.Point(0, 38);
             this.expandablePanel1.Name = "expandablePanel1";
-            this.expandablePanel1.Size = new System.Drawing.Size(296, 419);
+            this.expandablePanel1.Size = new System.Drawing.Size(319, 502);
             this.expandablePanel1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.expandablePanel1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.expandablePanel1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
             this.expandablePanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.expandablePanel1.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
             this.expandablePanel1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
             this.expandablePanel1.Style.GradientAngle = 90;
             this.expandablePanel1.TabIndex = 15;
             this.expandablePanel1.TitleHeight = 30;
             this.expandablePanel1.TitleStyle.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.expandablePanel1.TitleStyle.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
             this.expandablePanel1.TitleStyle.Border = DevComponents.DotNetBar.eBorderType.RaisedInner;
             this.expandablePanel1.TitleStyle.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
             this.expandablePanel1.TitleStyle.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -138,46 +151,50 @@
             this.expandablePanel1.TitleStyle.MarginLeft = 5;
             this.expandablePanel1.TitleText = "Danh sách tập tin";
             // 
-            // axFoxitCtl1
-            // 
-            this.axFoxitCtl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.axFoxitCtl1.Enabled = true;
-            this.axFoxitCtl1.Location = new System.Drawing.Point(296, 121);
-            this.axFoxitCtl1.Name = "axFoxitCtl1";
-            this.axFoxitCtl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axFoxitCtl1.OcxState")));
-            this.axFoxitCtl1.Size = new System.Drawing.Size(699, 419);
-            this.axFoxitCtl1.TabIndex = 19;
-            // 
             // treeView1
             // 
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView1.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeView1.Location = new System.Drawing.Point(0, 30);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(296, 389);
+            treeNode1.Name = "Node2";
+            treeNode1.Text = "Thông kế tình hình mượn thiết bị theo môn học";
+            treeNode2.Name = "Node3";
+            treeNode2.Text = "Thống kê tình hình mượn thiết bị theo giáo viên";
+            treeNode3.Name = "Node0";
+            treeNode3.Text = "Báo cáo";
+            treeNode4.Name = "Node5";
+            treeNode4.Text = "Sổ thiết bị giáo dục";
+            treeNode5.Name = "Node1";
+            treeNode5.Text = "Sổ sách";
+            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode3,
+            treeNode5});
+            this.treeView1.Size = new System.Drawing.Size(319, 472);
             this.treeView1.TabIndex = 4;
             // 
-            // buttonItem2
+            // reportViewer1
             // 
-            this.buttonItem2.Image = global::QLTB.Properties.Resources.xem;
-            this.buttonItem2.ImagePaddingHorizontal = 30;
-            this.buttonItem2.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.buttonItem2.Name = "buttonItem2";
-            this.buttonItem2.SubItemsExpandWidth = 14;
-            this.buttonItem2.Text = "Xem báo cáo";
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer1.Location = new System.Drawing.Point(319, 38);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(676, 502);
+            this.reportViewer1.TabIndex = 23;
             // 
             // frmThongKeBaoCao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(995, 540);
-            this.Controls.Add(this.axFoxitCtl1);
+            this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.expandablePanel1);
             this.Controls.Add(this.rbChucNang);
-            this.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DoubleBuffered = true;
+            this.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmThongKeBaoCao";
-            this.Text = "frmThongKeBaoCao";
+            this.Text = "Thống kê báo cáo";
+            this.Load += new System.EventHandler(this.frmThongKeBaoCao_Load);
             this.expandablePanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.axFoxitCtl1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -190,7 +207,7 @@
         private DevComponents.DotNetBar.ButtonItem buttonItem1;
         private DevComponents.DotNetBar.ExpandablePanel expandablePanel1;
         private System.Windows.Forms.TreeView treeView1;
-        private AxFOXITREADERLib.AxFoxitCtl axFoxitCtl1;
         private DevComponents.DotNetBar.ButtonItem buttonItem2;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

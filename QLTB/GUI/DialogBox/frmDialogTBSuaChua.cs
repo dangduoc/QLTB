@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QLTB.Model;
 
-namespace QLTB.GUI.DialogBox
+namespace QLTB.GUI
 {
     public partial class frmDialogTBSuaChua : DevComponents.DotNetBar.Office2007Form
     {

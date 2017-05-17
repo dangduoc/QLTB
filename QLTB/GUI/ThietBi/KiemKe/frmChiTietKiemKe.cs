@@ -11,7 +11,7 @@ using QLTB.Model;
 
 namespace QLTB.GUI
 {
-    public partial class frmChiTietKiemKe : Form
+    public partial class frmChiTietKiemKe : DevComponents.DotNetBar.Office2007Form
     {
         public frmChiTietKiemKe()
         {
@@ -56,6 +56,11 @@ namespace QLTB.GUI
         private void frmChiTietKiemKe_Load(object sender, EventArgs e)
         {
             loadForm();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

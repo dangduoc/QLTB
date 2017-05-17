@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QLTB.GUI.DialogBox
+namespace QLTB.GUI
 {
-    public partial class frmKhaiBaoNamHoc : Form
+    public partial class frmKhaiBaoNamHoc : DevComponents.DotNetBar.Office2007Form
     {
         public frmKhaiBaoNamHoc()
         {

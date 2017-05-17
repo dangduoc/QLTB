@@ -33,6 +33,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.nhânBảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sửaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.báoMấthỏngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ghiTăngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.giảmThiếtBịToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,9 +64,6 @@
             this.btnImportDSTB = new DevComponents.DotNetBar.ButtonItem();
             this.btnInDSTB = new DevComponents.DotNetBar.ButtonItem();
             this.btnHelpDSTB = new DevComponents.DotNetBar.ButtonItem();
-            this.nhânBảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sửaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip.SuspendLayout();
             this.pnlBackDS.SuspendLayout();
             this.pnlContentDSTB.SuspendLayout();
@@ -84,6 +84,27 @@
             this.giảmThiếtBịToolStripMenuItem});
             this.contextMenuStrip.Name = "contextMenuStrip";
             this.contextMenuStrip.Size = new System.Drawing.Size(152, 136);
+            // 
+            // nhânBảnToolStripMenuItem
+            // 
+            this.nhânBảnToolStripMenuItem.Image = global::QLTB.Properties.Resources.tick;
+            this.nhânBảnToolStripMenuItem.Name = "nhânBảnToolStripMenuItem";
+            this.nhânBảnToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.nhânBảnToolStripMenuItem.Text = "Nhân bản";
+            // 
+            // sửaToolStripMenuItem
+            // 
+            this.sửaToolStripMenuItem.Image = global::QLTB.Properties.Resources.save_icon;
+            this.sửaToolStripMenuItem.Name = "sửaToolStripMenuItem";
+            this.sửaToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.sửaToolStripMenuItem.Text = "Sửa";
+            // 
+            // xóaToolStripMenuItem
+            // 
+            this.xóaToolStripMenuItem.Image = global::QLTB.Properties.Resources.b_drop;
+            this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
+            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.xóaToolStripMenuItem.Text = "Xóa";
             // 
             // báoMấthỏngToolStripMenuItem
             // 
@@ -419,6 +440,7 @@
             this.btnThemDSTB.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlN);
             this.btnThemDSTB.Text = "Khai báo thiết bị";
             this.btnThemDSTB.Tooltip = "Khai báo thiết bị";
+            this.btnThemDSTB.Click += new System.EventHandler(this.btnThemDSTB_Click_1);
             // 
             // btnSuaDSTB
             // 
@@ -484,27 +506,6 @@
             this.btnHelpDSTB.Name = "btnHelpDSTB";
             this.btnHelpDSTB.SubItemsExpandWidth = 14;
             this.btnHelpDSTB.Text = "Trợ giúp";
-            // 
-            // nhânBảnToolStripMenuItem
-            // 
-            this.nhânBảnToolStripMenuItem.Image = global::QLTB.Properties.Resources.tick;
-            this.nhânBảnToolStripMenuItem.Name = "nhânBảnToolStripMenuItem";
-            this.nhânBảnToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.nhânBảnToolStripMenuItem.Text = "Nhân bản";
-            // 
-            // sửaToolStripMenuItem
-            // 
-            this.sửaToolStripMenuItem.Image = global::QLTB.Properties.Resources.save_icon;
-            this.sửaToolStripMenuItem.Name = "sửaToolStripMenuItem";
-            this.sửaToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.sửaToolStripMenuItem.Text = "Sửa";
-            // 
-            // xóaToolStripMenuItem
-            // 
-            this.xóaToolStripMenuItem.Image = global::QLTB.Properties.Resources.b_drop;
-            this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
-            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.xóaToolStripMenuItem.Text = "Xóa";
             // 
             // frmDanhSachThietBi
             // 

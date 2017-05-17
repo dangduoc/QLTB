@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace QLTB.GUI
 {
-    public partial class frmPhanQuyenTaiKhoan : Form
+    public partial class frmPhanQuyenTaiKhoan : DevComponents.DotNetBar.Office2007Form
     {
         private UserRole WorkingRole;
         private int WorkingType;
@@ -162,7 +162,7 @@ namespace QLTB.GUI
         private void frmPhanQuyenTaiKhoan_Load(object sender, EventArgs e)
         {
             loadtvUser();
-            loadtvPermission();
+           // loadtvPermission();
         }
 
         private void tvPermisions_AfterCheck(object sender, TreeViewEventArgs e)
@@ -251,6 +251,11 @@ namespace QLTB.GUI
         private void btnLuu_Click(object sender, EventArgs e)
         {
             LuuQuyen();
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

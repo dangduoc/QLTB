@@ -17,6 +17,7 @@ namespace QLTB.GUI
             InitializeComponent();
             bar1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
 
+
             //
             btnDMCanBo.Click += BtnDMCanBo_Click;
             btnDMGiaoVien.Click += BtnDMGiaoVien_Click;
@@ -27,11 +28,84 @@ namespace QLTB.GUI
             btnDMPhongBM.Click += BtnDMPhongBM_Click;
             btnDMTB.Click += BtnDMTB_Click;
             btnDMToBoMon.Click += BtnDMToBoMon_Click;
+            //
+            btnTLThongTinDV.Click += BtnTLThongTinDV_Click;
+            btnTLThongTinNamHoc.Click += BtnTLThongTinNamHoc_Click;
+            btnPhanQuyen.Click += btnPhanQuyen_Click;
+            btnTaiKhoan.Click += BtnTaiKhoan_Click;
+        }
+
+        private void BtnTaiKhoan_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Chức năng đang xây dựng....");
+        }
+
+        private void btnPhanQuyen_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+            try
+            {
+                if (!CheckExistForm("frmPhanQuyenTaiKhoan"))
+                {
+                    frmPhanQuyenTaiKhoan frm = new frmPhanQuyenTaiKhoan();
+                    frm.MdiParent = this;
+                    frm.WindowState = FormWindowState.Maximized;
+                    frm.Show();
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            Cursor = Cursors.Default;
+        }
+
+        private void BtnTLThongTinNamHoc_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+            try
+            {
+                if (!CheckExistForm("frmDanhSachNamHoc"))
+                {
+                    frmDanhSachNamHoc frm = new frmDanhSachNamHoc();
+                    frm.MdiParent = this;
+                    frm.WindowState = FormWindowState.Maximized;
+                    frm.Show();
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            Cursor = Cursors.Default;
+        }
+
+        private void BtnTLThongTinDV_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+            try
+            {
+                if (!CheckExistForm("frmThongTinDonVi"))
+                {
+                    frmThongTinDonVi frm = new frmThongTinDonVi();
+                    frm.MdiParent = this;
+                    frm.WindowState = FormWindowState.Maximized;
+                    frm.Show();
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            Cursor = Cursors.Default;
         }
 
         private void BtnDMToBoMon_Click(object sender, EventArgs e)
         {
-            
+            MessageBox.Show("Chức năng đang xây dựng...");
         }
 
         private void BtnDMTB_Click(object sender, EventArgs e)
@@ -440,6 +514,50 @@ namespace QLTB.GUI
             }
             Cursor = Cursors.Default;
 
+        }
+
+        private void btnPhongBM_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+            try
+            {
+                if (!CheckExistForm("frmDSMuonPhongBM"))
+                {
+                    frmDSMuonPhongBM frm = new frmDSMuonPhongBM();
+                    frm.SuspendLayout();
+                    frm.MdiParent = this;
+                    frm.WindowState = FormWindowState.Maximized;
+                    frm.Show();
+                    frm.ResumeLayout();
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            Cursor = Cursors.Default;
+        }
+
+        private void buttonItem9_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+            try
+            {
+                if (!CheckExistForm("frmThongKeBaoCao"))
+                {
+                    frmThongKeBaoCao frm = new frmThongKeBaoCao();
+                    frm.SuspendLayout();
+                    frm.MdiParent = this;
+                    frm.WindowState = FormWindowState.Maximized;
+                    frm.Show();
+                    frm.ResumeLayout();
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            Cursor = Cursors.Default;
         }
     }
 }

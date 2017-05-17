@@ -233,12 +233,13 @@ namespace QLTB.GUI
             headers.Add("Mã thiết bị");
             headers.Add("Số hiệu");
             headers.Add("Tên thiết bị");
-            headers.Add("Đơn vị tính");
+            headers.Add("Nguồn kinh phí");
             headers.Add("Kho/Phòng bộ môn");
             headers.Add("Số lượng tăng");
             headers.Add("Đơn giá");
             headers.Add("Thành tiền");
-            headers.Add("Nguồn kinh phí");
+            headers.Add("Đơn vị tính");
+            
             //
             DataTable tb = MyConvert.ToDataTable(list);
             SetUpSearch(SearchDSTB, tb, headers, ADGVDanhSach);
@@ -253,6 +254,20 @@ namespace QLTB.GUI
         private void frmDSPhieuTangTB_Load(object sender, EventArgs e)
         {
             LoadForm();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+            frmPhieuTangThietBi frm = new frmPhieuTangThietBi();
+            frm.MdiParent = MdiParent;
+            frm.Show();
+            Cursor = Cursors.Default;
         }
     }
 }

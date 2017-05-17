@@ -71,6 +71,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\PagedList.dll</HintPath>
@@ -80,6 +82,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -384,6 +387,12 @@
     <Compile Include="DAL\IUnitOfWork.cs" />
     <Compile Include="DAL\Repository.cs" />
     <Compile Include="DAL\UnitOfWork.cs" />
+    <Compile Include="GUI\DanhMuc\PhongBoMon\frmTaoPhongBM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DanhMuc\PhongBoMon\frmTaoPhongBM.Designer.cs">
+      <DependentUpon>frmTaoPhongBM.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\DialogBox\frmDialogDSThietBi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -402,18 +411,6 @@
     <Compile Include="GUI\DialogBox\frmDialogTBSuaChua.Designer.cs">
       <DependentUpon>frmDialogTBSuaChua.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\DialogBox\frmDialogTDTBMuon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\DialogBox\frmDialogTDTBMuon.Designer.cs">
-      <DependentUpon>frmDialogTDTBMuon.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\DialogBox\frmFilterGrid.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\DialogBox\frmFilterGrid.Designer.cs">
-      <DependentUpon>frmFilterGrid.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\DialogBox\frmKhaiBaoNamHoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -425,12 +422,6 @@
     </Compile>
     <Compile Include="GUI\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Form2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmDanhSachNamHoc.cs">
       <SubType>Form</SubType>
@@ -666,6 +657,9 @@
     <Compile Include="Utils\DatagridViewCheckBoxHeaderCell.cs" />
     <Compile Include="Utils\GlobalVariable.cs" />
     <Compile Include="Utils\MyConvert.cs" />
+    <EmbeddedResource Include="GUI\DanhMuc\PhongBoMon\frmTaoPhongBM.resx">
+      <DependentUpon>frmTaoPhongBM.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\DialogBox\frmDialogDSThietBi.resx">
       <DependentUpon>frmDialogDSThietBi.cs</DependentUpon>
     </EmbeddedResource>
@@ -675,20 +669,11 @@
     <EmbeddedResource Include="GUI\DialogBox\frmDialogTBSuaChua.resx">
       <DependentUpon>frmDialogTBSuaChua.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\DialogBox\frmDialogTDTBMuon.resx">
-      <DependentUpon>frmDialogTDTBMuon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\DialogBox\frmFilterGrid.resx">
-      <DependentUpon>frmFilterGrid.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\DialogBox\frmKhaiBaoNamHoc.resx">
       <DependentUpon>frmKhaiBaoNamHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmDanhSachNamHoc.resx">
       <DependentUpon>frmDanhSachNamHoc.cs</DependentUpon>
@@ -949,6 +934,8 @@
       <LastGenOutput>QLTBContext.cs</LastGenOutput>
     </Content>
     <Content Include="icon.ico" />
+    <Content Include="mainIcon.ico" />
+    <None Include="Resources\close16.png" />
     <None Include="Resources\delete16.png" />
     <None Include="Resources\cancel16.png" />
     <None Include="Resources\back16.png" />
@@ -985,14 +972,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <COMReference Include="AxFOXITREADERLib">
-      <Guid>{3A8BD65E-9922-4162-A649-83F2D5326BBE}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>aximp</WrapperTool>
-      <Isolated>False</Isolated>
-    </COMReference>
     <COMReference Include="FOXITREADERLib">
       <Guid>{3A8BD65E-9922-4162-A649-83F2D5326BBE}</Guid>
       <VersionMajor>1</VersionMajor>

@@ -28,17 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoadingScreen));
             this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.textBoxX2 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.checkBoxX1 = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.progressBarX1 = new DevComponents.DotNetBar.Controls.ProgressBarX();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -62,9 +63,11 @@
             this.textBoxX1.PreventEnterBeep = true;
             this.textBoxX1.Size = new System.Drawing.Size(187, 34);
             this.textBoxX1.TabIndex = 2;
+            this.textBoxX1.Text = "admin";
             this.textBoxX1.WatermarkFont = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxX1.WatermarkImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.textBoxX1.WatermarkText = "TÊN TÀI KHOẢN";
+            this.textBoxX1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxX1_KeyPress);
             // 
             // textBoxX2
             // 
@@ -83,10 +86,12 @@
             this.textBoxX2.PreventEnterBeep = true;
             this.textBoxX2.Size = new System.Drawing.Size(187, 34);
             this.textBoxX2.TabIndex = 3;
+            this.textBoxX2.Text = "123456";
             this.textBoxX2.UseSystemPasswordChar = true;
             this.textBoxX2.WatermarkFont = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxX2.WatermarkImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.textBoxX2.WatermarkText = "MẬT KHẨU";
+            this.textBoxX2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxX1_KeyPress);
             // 
             // button1
             // 
@@ -122,12 +127,29 @@
             this.panel1.Size = new System.Drawing.Size(471, 221);
             this.panel1.TabIndex = 5;
             // 
+            // labelX2
+            // 
+            // 
+            // 
+            // 
+            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX2.Location = new System.Drawing.Point(24, 182);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(185, 27);
+            this.labelX2.TabIndex = 10;
+            this.labelX2.Text = "Vsmart Estimation System";
+            this.labelX2.TextAlignment = System.Drawing.StringAlignment.Center;
+            // 
             // checkBoxX1
             // 
             // 
             // 
             // 
             this.checkBoxX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.checkBoxX1.Checked = true;
+            this.checkBoxX1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxX1.CheckValue = "Y";
             this.checkBoxX1.Location = new System.Drawing.Point(346, 189);
             this.checkBoxX1.Name = "checkBoxX1";
             this.checkBoxX1.Size = new System.Drawing.Size(117, 27);
@@ -204,20 +226,6 @@
             this.progressBarX1.TextVisible = true;
             this.progressBarX1.Visible = false;
             // 
-            // labelX2
-            // 
-            // 
-            // 
-            // 
-            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX2.Location = new System.Drawing.Point(24, 182);
-            this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(185, 27);
-            this.labelX2.TabIndex = 10;
-            this.labelX2.Text = "Vsmart Estimation System";
-            this.labelX2.TextAlignment = System.Drawing.StringAlignment.Center;
-            // 
             // LoadingScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -228,7 +236,9 @@
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoadingScreen";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
