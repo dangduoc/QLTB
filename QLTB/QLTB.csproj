@@ -934,7 +934,6 @@
       <LastGenOutput>QLTBContext.cs</LastGenOutput>
     </Content>
     <Content Include="icon.ico" />
-    <Content Include="mainIcon.ico" />
     <None Include="Resources\close16.png" />
     <None Include="Resources\delete16.png" />
     <None Include="Resources\cancel16.png" />

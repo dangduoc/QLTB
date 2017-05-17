@@ -216,11 +216,6 @@ namespace QLTB.GUI
             DataTable tb = MyConvert.ToDataTable(list);
             SetUpSearch(SearchDSTB, tb, headers, ADGVDanhSach);
             SetHeaderForGrid(ADGVDanhSach, headers);
-            ADGVDanhSach.Columns[2].Width = 170;
-            ADGVDanhSach.Columns["KhoPhong"].Width = 170;
-            ADGVDanhSach.Columns["SoLuong"].Width = 80;
-            ADGVDanhSach.Columns["SoLuongHong"].Width = 50;
-            ADGVDanhSach.Columns["SoLuongMat"].Width = 50;
             ADGVDanhSach.FilterStringChanged += advancedDataGridView_FilterStringChanged;
             ADGVDanhSach.SortStringChanged += advancedDataGridView_SortStringChanged;
             ADGVDanhSach.CellContentDoubleClick += ADGVDanhSach_CellContentDoubleClick;

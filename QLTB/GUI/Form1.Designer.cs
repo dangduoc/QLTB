@@ -283,47 +283,56 @@
             this.btnDMTB.Name = "btnDMTB";
             this.btnDMTB.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor();
             this.btnDMTB.Text = "Thiết bị giáo dục";
+            this.btnDMTB.Click += new System.EventHandler(this.btnDMTB_Click_1);
             // 
             // btnDMPhongBM
             // 
             this.btnDMPhongBM.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
             this.btnDMPhongBM.Name = "btnDMPhongBM";
             this.btnDMPhongBM.Text = "Kho/ phòng bộ môn";
+            this.btnDMPhongBM.Click += new System.EventHandler(this.btnDMTB_Click_1);
             // 
             // btnDMKhoiLop
             // 
             this.btnDMKhoiLop.Name = "btnDMKhoiLop";
             this.btnDMKhoiLop.Text = "Khối lớp";
+            this.btnDMKhoiLop.Click += new System.EventHandler(this.btnDMTB_Click_1);
             // 
             // btnDMLopHoc
             // 
             this.btnDMLopHoc.Name = "btnDMLopHoc";
             this.btnDMLopHoc.Text = "Lớp học";
+            this.btnDMLopHoc.Click += new System.EventHandler(this.btnDMTB_Click_1);
             // 
             // btnDMToBoMon
             // 
             this.btnDMToBoMon.Name = "btnDMToBoMon";
             this.btnDMToBoMon.Text = "Tổ bổ môn";
+            this.btnDMToBoMon.Click += new System.EventHandler(this.btnDMTB_Click_1);
             // 
             // btnDMMonHoc
             // 
             this.btnDMMonHoc.Name = "btnDMMonHoc";
             this.btnDMMonHoc.Text = "Môn Học";
+            this.btnDMMonHoc.Click += new System.EventHandler(this.btnDMTB_Click_1);
             // 
             // btnDMGiaoVien
             // 
             this.btnDMGiaoVien.Name = "btnDMGiaoVien";
             this.btnDMGiaoVien.Text = "Giáo viên";
+            this.btnDMGiaoVien.Click += new System.EventHandler(this.btnDMTB_Click_1);
             // 
             // btnDMCanBo
             // 
             this.btnDMCanBo.Name = "btnDMCanBo";
             this.btnDMCanBo.Text = "Cán bộ thiết bị";
+            this.btnDMCanBo.Click += new System.EventHandler(this.btnDMTB_Click_1);
             // 
             // btnDMNguonKP
             // 
             this.btnDMNguonKP.Name = "btnDMNguonKP";
             this.btnDMNguonKP.Text = "Nguồn kinh phí";
+            this.btnDMNguonKP.Click += new System.EventHandler(this.btnDMTB_Click_1);
             // 
             // buttonItem8
             // 
@@ -342,11 +351,13 @@
             // 
             this.btnTLThongTinDV.Name = "btnTLThongTinDV";
             this.btnTLThongTinDV.Text = "Thông tin đơn vị";
+            this.btnTLThongTinDV.Click += new System.EventHandler(this.btnDMTB_Click_1);
             // 
             // btnTLThongTinNamHoc
             // 
             this.btnTLThongTinNamHoc.Name = "btnTLThongTinNamHoc";
             this.btnTLThongTinNamHoc.Text = "Thông tin năm học";
+            this.btnTLThongTinNamHoc.Click += new System.EventHandler(this.btnDMTB_Click_1);
             // 
             // buttonItem2
             // 
@@ -378,6 +389,7 @@
             // 
             this.btnPhanQuyen.Name = "btnPhanQuyen";
             this.btnPhanQuyen.Text = "Phần quyền - người dùng";
+            this.btnPhanQuyen.Click += new System.EventHandler(this.btnDMTB_Click_1);
             // 
             // labelItem1
             // 

@@ -161,7 +161,7 @@ namespace QLTB.GUI
 
         private void frmPhanQuyenTaiKhoan_Load(object sender, EventArgs e)
         {
-            loadtvUser();
+            //loadtvUser();
            // loadtvPermission();
         }
 
