@@ -152,23 +152,24 @@ namespace QLTB.GUI
 
         private void BtnDMNguonKP_Click(object sender, EventArgs e)
         {
-            Cursor = Cursors.WaitCursor;
-            try
-            {
-                if (!CheckExistForm("frmDMNguonKinhPhi"))
-                {
-                    frmDMNguonKinhPhi frm = new frmDMNguonKinhPhi();
-                    frm.MdiParent = this;
-                    frm.WindowState = FormWindowState.Maximized;
-                    frm.Show();
-                }
+            MessageBox.Show("Chức năng đang được xây dựng...");
+            //Cursor = Cursors.WaitCursor;
+            //try
+            //{
+            //    if (!CheckExistForm("frmDMNguonKinhPhi"))
+            //    {
+            //        frmDMNguonKinhPhi frm = new frmDMNguonKinhPhi();
+            //        frm.MdiParent = this;
+            //        frm.WindowState = FormWindowState.Maximized;
+            //        frm.Show();
+            //    }
 
-            }
-            catch (Exception ex)
-            {
+            //}
+            //catch (Exception ex)
+            //{
 
-            }
-            Cursor = Cursors.Default;
+            //}
+            //Cursor = Cursors.Default;
         }
 
         private void BtnDMMonHoc_Click(object sender, EventArgs e)
@@ -495,6 +496,7 @@ namespace QLTB.GUI
 
         private void btnMuonTra_Click(object sender, EventArgs e)
         {
+            toolmenuTB.Visible = false;
             Cursor = Cursors.WaitCursor;
             try
             {
@@ -518,6 +520,7 @@ namespace QLTB.GUI
 
         private void btnPhongBM_Click(object sender, EventArgs e)
         {
+            toolmenuTB.Visible = false;
             Cursor = Cursors.WaitCursor;
             try
             {
@@ -540,6 +543,7 @@ namespace QLTB.GUI
 
         private void buttonItem9_Click(object sender, EventArgs e)
         {
+            toolmenuTB.Visible = false;
             Cursor = Cursors.WaitCursor;
             try
             {
@@ -559,5 +563,11 @@ namespace QLTB.GUI
             }
             Cursor = Cursors.Default;
         }
+
+        private void btnDMTB_Click_1(object sender, EventArgs e)
+        {
+            toolmenuTB.Visible = false;
+        }
+
     }
 }

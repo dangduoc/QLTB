@@ -21,7 +21,7 @@ namespace QLTB.GUI
         public frmThongTinDonVi()
         {
             InitializeComponent();
-            DonVi = handler.Get();
+           // DonVi = handler.Get();
         }
         private void DisableHighlightCBB()
         {
@@ -175,12 +175,12 @@ namespace QLTB.GUI
 
         private void frmThongTinDonVi_Load(object sender, EventArgs e)
         {
-            loadForm();
+            //loadForm();
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            saveData();
+            //saveData();
         }
 
         private void btnClose_Click(object sender, EventArgs e)

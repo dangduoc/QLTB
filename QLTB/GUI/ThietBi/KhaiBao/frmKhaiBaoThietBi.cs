@@ -202,7 +202,7 @@ namespace QLTB.GUI
 
         private void frmKhaiBaoThietBi_Load(object sender, EventArgs e)
         {
-            loadData();
+           // loadData();
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
