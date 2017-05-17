@@ -181,8 +181,8 @@ namespace QLTB.GUI
         private void LoadForm()
         {
             //Clone
-            List<ThietBiTTGridDisplayModel> list = new DbThietBiTTHandler().GetAll();
-           
+            //List<ThietBiTTGridDisplayModel> list = new DbThietBiTTHandler().GetAll();
+            List<ThietBiTTGridDisplayModel> list = new List<ThietBiTTGridDisplayModel>();
             //
             List<string> headers = new List<string>();
             headers.Add("Mã thiết bị");
@@ -209,6 +209,11 @@ namespace QLTB.GUI
         private void frmDMThietBiTT_Load(object sender, EventArgs e)
         {
             LoadForm();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

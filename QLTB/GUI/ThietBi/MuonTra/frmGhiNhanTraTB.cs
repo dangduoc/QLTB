@@ -13,25 +13,25 @@ namespace QLTB.GUI
 {
     public partial class frmGhiNhanTraTB : Form
     {
-        public frmGhiNhanTraTB(string Id)
+        public frmGhiNhanTraTB()
         {
             InitializeComponent();
         }
         private void loadForm()
         {
             List<ThietBiTraGridDisplayModel> list = new List<ThietBiTraGridDisplayModel>();
-            gridDSThietBiMuon.DataSource = list;
-            gridDSThietBiMuon.Columns[0].HeaderText = "Mã thiết bị";
-            gridDSThietBiMuon.Columns[1].HeaderText = "Tên thiết bị";
-            gridDSThietBiMuon.Columns[2].HeaderText = "Số hiệu";
-            gridDSThietBiMuon.Columns[3].HeaderText = "Kho/ phòng";
-            gridDSThietBiMuon.Columns[4].HeaderText = "Số lượng mượn";
-            gridDSThietBiMuon.Columns[5].HeaderText = "Đơn vị tính";
-            gridDSThietBiMuon.Columns[6].HeaderText = "Tình trạng khi trả";
-            gridDSThietBiMuon.Columns[7].HeaderText = "Tiêu hao";
+            ADGVDSTB.DataSource = list;
+            ADGVDSTB.Columns[0].HeaderText = "Mã thiết bị";
+            ADGVDSTB.Columns[1].HeaderText = "Tên thiết bị";
+            ADGVDSTB.Columns[2].HeaderText = "Số hiệu";
+            ADGVDSTB.Columns[3].HeaderText = "Kho/ phòng";
+            ADGVDSTB.Columns[4].HeaderText = "Số lượng mượn";
+            ADGVDSTB.Columns[5].HeaderText = "Đơn vị tính";
+            ADGVDSTB.Columns[6].HeaderText = "Tình trạng khi trả";
+            ADGVDSTB.Columns[7].HeaderText = "Tiêu hao";
         }
 
-        private void btnThoat_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
         }

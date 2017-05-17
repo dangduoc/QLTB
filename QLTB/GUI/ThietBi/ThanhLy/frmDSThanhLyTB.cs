@@ -219,10 +219,13 @@ namespace QLTB.GUI
             ADGVDanhSach.CellContentDoubleClick += ADGVDanhSach_CellContentDoubleClick;
             ADGVDanhSach.KeyPress += ADGVDanhSach_KeyPress;
             ADGVDanhSach.MouseClick += ADGVDanhSach_MouseClick;
-            btnThemDSTB.Click += btnThem_Click;
+        }     
+        private void frmDSThanhLyTB_Load(object sender, EventArgs e)
+        {
+            loadForm();
         }
-      
-        private void btnThem_Click(object sender, EventArgs e)
+
+        private void btnThemDSTB_Click(object sender, EventArgs e)
         {
             Cursor = Cursors.WaitCursor;
             frmPhieuThanhLyTB frm = new frmPhieuThanhLyTB();
@@ -230,9 +233,10 @@ namespace QLTB.GUI
             frm.Show();
             Cursor = Cursors.Default;
         }
-        private void frmDSThanhLyTB_Load(object sender, EventArgs e)
+
+        private void btnClose_Click(object sender, EventArgs e)
         {
-            loadForm();
+            Close();
         }
     }
 }

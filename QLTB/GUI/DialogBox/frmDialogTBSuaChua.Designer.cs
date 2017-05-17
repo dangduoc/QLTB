@@ -1,4 +1,4 @@
-﻿namespace QLTB.GUI.DialogBox
+﻿namespace QLTB.GUI
 {
     partial class frmDialogTBSuaChua
     {
@@ -30,7 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDialogTBSuaChua));
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
             this.btnThem = new DevComponents.DotNetBar.ButtonX();
             this.btnClose = new DevComponents.DotNetBar.ButtonX();
@@ -56,9 +56,9 @@
             this.panelEx2.Controls.Add(this.buttonX1);
             this.panelEx2.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelEx2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelEx2.Location = new System.Drawing.Point(0, 326);
+            this.panelEx2.Location = new System.Drawing.Point(0, 378);
             this.panelEx2.Name = "panelEx2";
-            this.panelEx2.Size = new System.Drawing.Size(746, 40);
+            this.panelEx2.Size = new System.Drawing.Size(848, 46);
             this.panelEx2.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -74,9 +74,9 @@
             this.btnThem.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnThem.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnThem.Image = global::QLTB.Properties.Resources.tick;
-            this.btnThem.Location = new System.Drawing.Point(580, 9);
+            this.btnThem.Location = new System.Drawing.Point(655, 11);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(75, 23);
+            this.btnThem.Size = new System.Drawing.Size(87, 27);
             this.btnThem.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnThem.TabIndex = 2;
             this.btnThem.Text = "Đồng ý";
@@ -87,9 +87,9 @@
             this.btnClose.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnClose.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnClose.Image = global::QLTB.Properties.Resources.b_drop;
-            this.btnClose.Location = new System.Drawing.Point(666, 9);
+            this.btnClose.Location = new System.Drawing.Point(755, 11);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.Size = new System.Drawing.Size(87, 27);
             this.btnClose.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnClose.TabIndex = 1;
             this.btnClose.Text = "Hủy bỏ";
@@ -111,7 +111,7 @@
             this.pnlBack.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBack.Location = new System.Drawing.Point(0, 0);
             this.pnlBack.Name = "pnlBack";
-            this.pnlBack.Size = new System.Drawing.Size(746, 326);
+            this.pnlBack.Size = new System.Drawing.Size(848, 378);
             this.pnlBack.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.pnlBack.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.pnlBack.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -131,7 +131,7 @@
             this.panelEx1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEx1.Location = new System.Drawing.Point(0, 0);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(746, 326);
+            this.panelEx1.Size = new System.Drawing.Size(848, 378);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -148,9 +148,9 @@
             this.panelEx3.Controls.Add(this.advancedDataGridView);
             this.panelEx3.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelEx3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelEx3.Location = new System.Drawing.Point(0, 27);
+            this.panelEx3.Location = new System.Drawing.Point(0, 31);
             this.panelEx3.Name = "panelEx3";
-            this.panelEx3.Size = new System.Drawing.Size(746, 299);
+            this.panelEx3.Size = new System.Drawing.Size(848, 347);
             this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -169,7 +169,7 @@
             this.advancedDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -177,23 +177,15 @@
             this.advancedDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.advancedDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.advancedDataGridView.DateWithTime = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.advancedDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.advancedDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.advancedDataGridView.Location = new System.Drawing.Point(0, 0);
             this.advancedDataGridView.Name = "advancedDataGridView";
             this.advancedDataGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advancedDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advancedDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.advancedDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.advancedDataGridView.Size = new System.Drawing.Size(746, 299);
+            this.advancedDataGridView.Size = new System.Drawing.Size(848, 347);
             this.advancedDataGridView.TabIndex = 27;
             this.advancedDataGridView.TimeFilter = false;
             // 
@@ -203,25 +195,27 @@
             this.searchToolBar.Font = new System.Drawing.Font("Arial", 9F);
             this.searchToolBar.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.searchToolBar.Location = new System.Drawing.Point(0, 0);
-            this.searchToolBar.MaximumSize = new System.Drawing.Size(0, 27);
-            this.searchToolBar.MinimumSize = new System.Drawing.Size(0, 27);
+            this.searchToolBar.MaximumSize = new System.Drawing.Size(0, 31);
+            this.searchToolBar.MinimumSize = new System.Drawing.Size(0, 31);
             this.searchToolBar.Name = "searchToolBar";
             this.searchToolBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.searchToolBar.Size = new System.Drawing.Size(746, 27);
+            this.searchToolBar.Size = new System.Drawing.Size(848, 31);
             this.searchToolBar.TabIndex = 28;
             this.searchToolBar.Text = "searchToolBar1";
             // 
             // frmDialogTBSuaChua
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(746, 366);
+            this.ClientSize = new System.Drawing.Size(848, 424);
             this.Controls.Add(this.pnlBack);
             this.Controls.Add(this.panelEx2);
             this.DoubleBuffered = true;
             this.EnableGlass = false;
+            this.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmDialogTBSuaChua";
-            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Chọn thiết bị cần sửa chữa";
             this.panelEx2.ResumeLayout(false);
             this.pnlBack.ResumeLayout(false);

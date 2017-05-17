@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QLTB.GUI.DialogBox
+namespace QLTB.GUI
 {
-    public partial class frmFilterGrid : Form
+    public partial class frmTaoPhongBM : DevComponents.DotNetBar.Office2007Form
     {
-        public frmFilterGrid()
+        public frmTaoPhongBM()
         {
             InitializeComponent();
         }

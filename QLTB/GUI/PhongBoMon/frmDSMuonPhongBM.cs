@@ -14,32 +14,50 @@ namespace QLTB.GUI
 {
     public partial class frmDSMuonPhongBM : DevComponents.DotNetBar.Office2007Form
     {
-        private BindingSource source = new BindingSource();
-        private string defaultSearchValue = "Value for search";
+       
         public frmDSMuonPhongBM()
         {
             InitializeComponent();
         }
-        private DataTable SetUpSearch(DataTable tb, List<string> headers)
+        #region ADGV Setup
+        private BindingSource source = new BindingSource();
+        private string defaultSearchValue = "Value for search";
+        private void advancedDataGridView_FilterStringChanged(object sender, EventArgs e)
+        {
+            var grid = sender as ADGV.AdvancedDataGridView;
+            ((BindingSource)grid.DataSource).Filter = grid.FilterString;
+        }
+        private void advancedDataGridView_SortStringChanged(object sender, EventArgs e)
+        {
+            var grid = sender as ADGV.AdvancedDataGridView;
+            ((BindingSource)grid.DataSource).Sort = grid.SortString;
+        }
+        private void SetUpSearch(ADGV.SearchToolBar toolBar, DataTable tb, List<string> headers, ADGV.AdvancedDataGridView grid)
         {
             DataTable Table = tb;
-            ToolStripTextBox textSearch = searchToolBar.Items[3] as ToolStripTextBox;
-            ToolStripButton searchCaseSensitive = searchToolBar.Items[6] as ToolStripButton;
-            ToolStripButton searchWholeText = searchToolBar.Items[5] as ToolStripButton;
-            ToolStripButton searchBegin = searchToolBar.Items[4] as ToolStripButton;
-            ToolStripComboBox columns = searchToolBar.Items[2] as ToolStripComboBox;
-            ToolStripLabel label = searchToolBar.Items[1] as ToolStripLabel;
+            ToolStripTextBox textSearch = toolBar.Items[3] as ToolStripTextBox;
+            ToolStripButton searchCaseSensitive = toolBar.Items[6] as ToolStripButton;
+            ToolStripButton searchWholeText = toolBar.Items[5] as ToolStripButton;
+            ToolStripButton searchBegin = toolBar.Items[4] as ToolStripButton;
+            ToolStripComboBox columns = toolBar.Items[2] as ToolStripComboBox;
+            ToolStripLabel label = toolBar.Items[1] as ToolStripLabel;
             label.Text = "Tìm kiếm";
+            label.ForeColor = Color.Black;
+            columns.DropDownStyle = ComboBoxStyle.DropDown;
+            columns.FlatStyle = FlatStyle.Flat;
             //
             //
             searchBegin.Checked = false;
             //
-            textSearch.TextChanged += SearchStringChanged;
+            textSearch.TextChanged += (sender, e) => SearchStringChanged(sender, e, toolBar, grid);
             //textSearch.ToolTipText = "Nhập vào giá trị tìm kiếm";
             //
-            searchCaseSensitive.CheckedChanged += SearchOptionChanged;
-            searchWholeText.CheckedChanged += SearchOptionChanged;
-            searchBegin.CheckedChanged += SearchOptionChanged;
+            searchCaseSensitive.CheckedChanged += (sender, e) => SearchOptionChanged(sender, e, toolBar, grid);
+            searchWholeText.CheckedChanged += (sender, e) => SearchOptionChanged(sender, e, toolBar, grid);
+            searchBegin.CheckedChanged += (sender, e) => SearchOptionChanged(sender, e, toolBar, grid);
+            //
+
+            //
 
             columns.ComboBox.DisplayMember = "value";
             columns.ComboBox.ValueMember = "key";
@@ -50,9 +68,11 @@ namespace QLTB.GUI
                 columValues.Add(new { key = Table.Columns[i].ColumnName, value = headers[i] });
             }
             columns.ComboBox.DataSource = columValues;
-            columns.ComboBox.SelectedValueChanged += SearchOptionChanged;
-            columns.SelectedIndexChanged += SearchOptionChanged;
-            return Table;
+            columns.ComboBox.SelectedValueChanged += (sender, e) => SearchOptionChanged(sender, e, toolBar, grid);
+            columns.SelectedIndexChanged += (sender, e) => SearchOptionChanged(sender, e, toolBar, grid);
+            BindingSource source = new BindingSource();
+            source.DataSource = tb;
+            grid.DataSource = source;
         }
         private void SetHeaderForGrid(ADGV.AdvancedDataGridView grid, List<string> headers)
         {
@@ -61,42 +81,42 @@ namespace QLTB.GUI
                 grid.Columns[i].HeaderText = headers[i];
             }
         }
-        private void SearchOptionChanged(object sender, EventArgs e)
+        private void SearchOptionChanged(object sender, EventArgs e, ADGV.SearchToolBar toolBar, ADGV.AdvancedDataGridView grid)
         {
-            searchChanged();
+            searchChanged(toolBar, grid);
         }
-
-        private void SearchStringChanged(object sender, EventArgs e)
+        private void SearchStringChanged(object sender, EventArgs e, ADGV.SearchToolBar toolBar, ADGV.AdvancedDataGridView grid)
         {
             ToolStripTextBox textSearch = sender as ToolStripTextBox;
             if (textSearch.Selected)
             {
-                searchChanged();
+                searchChanged(toolBar, grid);
             }
-            else if (String.IsNullOrEmpty(textSearch.SelectedText))
+            else if (String.IsNullOrEmpty(textSearch.Control.Text))
             {
-                source.Filter = null;
+                ((BindingSource)grid.DataSource).Filter = null;
             }
         }
-        public void searchChanged()
+        public void searchChanged(ADGV.SearchToolBar toolBar, ADGV.AdvancedDataGridView grid)
         {
-            ToolStripTextBox textSearch = searchToolBar.Items[3] as ToolStripTextBox;
-            if (!textSearch.Equals(defaultSearchValue))
+            ToolStripTextBox textSearch = toolBar.Items[3] as ToolStripTextBox;
+            if (!textSearch.Text.Equals(defaultSearchValue))
             {
-                ToolStripComboBox columns = searchToolBar.Items[2] as ToolStripComboBox;
-                ToolStripButton searchBegin = searchToolBar.Items[4] as ToolStripButton;
-                ToolStripButton searchWholeText = searchToolBar.Items[5] as ToolStripButton;
-                ToolStripButton searchCaseSensitive = searchToolBar.Items[6] as ToolStripButton;
+                ToolStripComboBox columns = toolBar.Items[2] as ToolStripComboBox;
+                ToolStripButton searchBegin = toolBar.Items[4] as ToolStripButton;
+                ToolStripButton searchWholeText = toolBar.Items[5] as ToolStripButton;
+                ToolStripButton searchCaseSensitive = toolBar.Items[6] as ToolStripButton;
                 string lastString = "%";
                 string firstString = "%";
                 if (searchBegin.Checked) firstString = string.Empty;
                 if (searchWholeText.Checked) lastString = string.Empty;
+                var source = (BindingSource)grid.DataSource;
                 ((DataTable)source.DataSource).CaseSensitive = searchCaseSensitive.Checked;
                 //
                 StringBuilder filter = new StringBuilder();
                 if (columns.ComboBox.SelectedValue.ToString().Equals("All"))
                 {
-                    foreach (DataGridViewColumn column in advancedDataGridView.Columns)
+                    foreach (DataGridViewColumn column in grid.Columns)
                     {
                         string colName = column.Name;
                         if (column.ValueType != typeof(String))
@@ -123,6 +143,17 @@ namespace QLTB.GUI
                 source.Filter = filter.ToString();
             }
         }
+        private void ADGVDanhSach_MouseClick(object sender, MouseEventArgs e)
+        {
+            //if (ADGVDanhSach.SelectedRows[0] != null)
+            //{
+            //    if (e.Button == MouseButtons.Right)
+            //    {
+            //        contextMenuStrip.Show(ADGVDanhSach, e.Location);
+            //    }
+            //}
+        }
+        #endregion
         private void LoadForm()
         {
             //Clone
@@ -149,19 +180,34 @@ namespace QLTB.GUI
             headers.Add("Trạng thái");
             //
             DataTable tb = MyConvert.ToDataTable(list);
-            source.DataSource = SetUpSearch(tb, headers);
-            advancedDataGridView.DataSource = source;
-            SetHeaderForGrid(advancedDataGridView, headers);
+            SetUpSearch(SearchDSTB, tb, headers, ADGVDanhSach);
+            SetHeaderForGrid(ADGVDanhSach, headers);
+            ADGVDanhSach.FilterStringChanged += advancedDataGridView_FilterStringChanged;
+            ADGVDanhSach.SortStringChanged += advancedDataGridView_SortStringChanged;
+            //ADGVDanhSach.CellContentDoubleClick += advancedDataGridView_CellContentDoubleClick;
+            //ADGVDanhSach.KeyPress += advancedDataGridView_KeyPress;
+            ADGVDanhSach.MouseClick += ADGVDanhSach_MouseClick;
+            ADGVDanhSach.CellClick += ADGVDanhSach_CellClick;
             //
+
+            //
+           
+        }
+
+        private void ADGVDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
             List<ThietBiMuonGridDisplayModel> listTB = new List<ThietBiMuonGridDisplayModel>();
-            gridDSThietBiMuon.DataSource = listTB;
-            listTB.Add(new ThietBiMuonGridDisplayModel {
-                ThietBiId="CSCN00001",
-                SoHieu="CSCN00001.01",
-                Ten="Giỏ hoa cảnh",
-                DonViTinh="Cái",
-                SoLuongMuon="2",
-                PhongHoc="Phòng thực hành công nghệ"
+            BindingSource source = new BindingSource();
+            source.DataSource = MyConvert.ToDataTable<ThietBiMuonGridDisplayModel>(listTB);
+            ADGVDSTB.DataSource = source;
+            listTB.Add(new ThietBiMuonGridDisplayModel
+            {
+                ThietBiId = "CSCN00001",
+                SoHieu = "CSCN00001.01",
+                Ten = "Giỏ hoa cảnh",
+                DonViTinh = "Cái",
+                SoLuongMuon = "2",
+                PhongHoc = "Phòng thực hành công nghệ"
             });
             listTB.Add(new ThietBiMuonGridDisplayModel
             {
@@ -187,30 +233,20 @@ namespace QLTB.GUI
             linkColDelete.UseColumnTextForLinkValue = true;
             linkColDelete.HeaderText = "";
 
-            gridDSThietBiMuon.Columns.Add(linkColEdit);
-            gridDSThietBiMuon.Columns.Add(linkColDelete);
+            ADGVDSTB.Columns.Add(linkColEdit);
+            ADGVDSTB.Columns.Add(linkColDelete);
             //
-            gridDSThietBiMuon.Columns[1].HeaderText = "Mã thiết bị";
-            gridDSThietBiMuon.Columns[2].HeaderText = "Tên thiết bị";
-            gridDSThietBiMuon.Columns[3].HeaderText = "Số hiệu";
-            gridDSThietBiMuon.Columns[4].HeaderText = "Phòng bộ môn";
-            gridDSThietBiMuon.Columns[5].HeaderText = "Số lượng mượn";
-            gridDSThietBiMuon.Columns[6].HeaderText = "Đơn vị tính";
+            ADGVDSTB.Columns[1].HeaderText = "Mã thiết bị";
+            ADGVDSTB.Columns[2].HeaderText = "Tên thiết bị";
+            ADGVDSTB.Columns[3].HeaderText = "Số hiệu";
+            ADGVDSTB.Columns[4].HeaderText = "Phòng bộ môn";
+            ADGVDSTB.Columns[5].HeaderText = "Số lượng mượn";
+            ADGVDSTB.Columns[6].HeaderText = "Đơn vị tính";
         }
 
-        private void advancedDataGridView_SortStringChanged(object sender, EventArgs e)
+        private void frmDSMuonPhongBM_Load(object sender, EventArgs e)
         {
-            source.Sort = advancedDataGridView.SortString;
-        }
-
-        private void advancedDataGridView_FilterStringChanged(object sender, EventArgs e)
-        {
-            source.Filter = advancedDataGridView.FilterString;
-        }
-
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            Close();
+            LoadForm();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -220,9 +256,16 @@ namespace QLTB.GUI
             frm.Show();
         }
 
-        private void frmDSMuonPhongBM_Load(object sender, EventArgs e)
+        private void btnBaoHong_Click(object sender, EventArgs e)
         {
-            LoadForm();
+            frmPhieuBaoHong frm = new frmPhieuBaoHong();
+            frm.MdiParent = MdiParent;
+            frm.Show();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

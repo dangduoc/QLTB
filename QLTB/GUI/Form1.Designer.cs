@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
@@ -36,6 +37,8 @@
             this.bar2 = new DevComponents.DotNetBar.Bar();
             this.buttonItem3 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem4 = new DevComponents.DotNetBar.ButtonItem();
+            this.buttonItem5 = new DevComponents.DotNetBar.ButtonItem();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.bar1 = new DevComponents.DotNetBar.Bar();
             this.btnThietBi = new DevComponents.DotNetBar.ButtonItem();
             this.btnMuonTra = new DevComponents.DotNetBar.ButtonItem();
@@ -45,9 +48,23 @@
             this.btnDMPhongBM = new DevComponents.DotNetBar.ButtonItem();
             this.btnDMKhoiLop = new DevComponents.DotNetBar.ButtonItem();
             this.btnDMLopHoc = new DevComponents.DotNetBar.ButtonItem();
+            this.btnDMToBoMon = new DevComponents.DotNetBar.ButtonItem();
+            this.btnDMMonHoc = new DevComponents.DotNetBar.ButtonItem();
+            this.btnDMGiaoVien = new DevComponents.DotNetBar.ButtonItem();
+            this.btnDMCanBo = new DevComponents.DotNetBar.ButtonItem();
+            this.btnDMNguonKP = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem8 = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem14 = new DevComponents.DotNetBar.ButtonItem();
+            this.btnTLThongTinDV = new DevComponents.DotNetBar.ButtonItem();
+            this.btnTLThongTinNamHoc = new DevComponents.DotNetBar.ButtonItem();
+            this.buttonItem2 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem9 = new DevComponents.DotNetBar.ButtonItem();
+            this.btnQuanTri = new DevComponents.DotNetBar.ButtonItem();
+            this.btnTaiKhoan = new DevComponents.DotNetBar.ButtonItem();
+            this.btnPhanQuyen = new DevComponents.DotNetBar.ButtonItem();
+            this.labelItem1 = new DevComponents.DotNetBar.LabelItem();
+            this.textBoxItem1 = new DevComponents.DotNetBar.TextBoxItem();
+            this.labelItem2 = new DevComponents.DotNetBar.LabelItem();
+            this.textBoxItem2 = new DevComponents.DotNetBar.TextBoxItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel7 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -57,28 +74,14 @@
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolmenuTB = new DevComponents.DotNetBar.PanelEx();
-            this.btnDSThietBi = new System.Windows.Forms.Button();
-            this.btnTangTB = new System.Windows.Forms.Button();
-            this.btnKiemKe = new System.Windows.Forms.Button();
-            this.btnTheoDoiHong = new System.Windows.Forms.Button();
-            this.btnThanhLy = new System.Windows.Forms.Button();
-            this.btnSuaChua = new System.Windows.Forms.Button();
-            this.btnGiamTB = new System.Windows.Forms.Button();
             this.btnDeNghiMua = new System.Windows.Forms.Button();
-            this.textBoxItem1 = new DevComponents.DotNetBar.TextBoxItem();
-            this.labelItem1 = new DevComponents.DotNetBar.LabelItem();
-            this.textBoxItem2 = new DevComponents.DotNetBar.TextBoxItem();
-            this.labelItem2 = new DevComponents.DotNetBar.LabelItem();
-            this.buttonItem5 = new DevComponents.DotNetBar.ButtonItem();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.btnDMToBoMon = new DevComponents.DotNetBar.ButtonItem();
-            this.btnDMMonHoc = new DevComponents.DotNetBar.ButtonItem();
-            this.btnDMGiaoVien = new DevComponents.DotNetBar.ButtonItem();
-            this.btnDMCanBo = new DevComponents.DotNetBar.ButtonItem();
-            this.btnDMNguonKP = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem2 = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem6 = new DevComponents.DotNetBar.ButtonItem();
+            this.btnGiamTB = new System.Windows.Forms.Button();
+            this.btnSuaChua = new System.Windows.Forms.Button();
+            this.btnThanhLy = new System.Windows.Forms.Button();
+            this.btnTheoDoiHong = new System.Windows.Forms.Button();
+            this.btnKiemKe = new System.Windows.Forms.Button();
+            this.btnTangTB = new System.Windows.Forms.Button();
+            this.btnDSThietBi = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).BeginInit();
@@ -89,7 +92,7 @@
             // styleManager1
             // 
             this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2010Blue;
-            this.styleManager1.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(115)))), ((int)(((byte)(199))))));
+            this.styleManager1.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.White, System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(87)))), ((int)(((byte)(154))))));
             // 
             // panel1
             // 
@@ -174,6 +177,29 @@
             this.buttonItem4.Name = "buttonItem4";
             this.buttonItem4.Text = "buttonItem4";
             // 
+            // buttonItem5
+            // 
+            this.buttonItem5.Image = global::QLTB.Properties.Resources.Help_icon;
+            this.buttonItem5.Name = "buttonItem5";
+            this.buttonItem5.Text = "buttonItem5";
+            // 
+            // labelX1
+            // 
+            // 
+            // 
+            // 
+            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.labelX1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX1.Image = global::QLTB.Properties.Resources.logo_1_48;
+            this.labelX1.Location = new System.Drawing.Point(0, 0);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.PaddingLeft = 5;
+            this.labelX1.Size = new System.Drawing.Size(269, 63);
+            this.labelX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.labelX1.TabIndex = 11;
+            this.labelX1.Text = "<b>VSMART ESTIMATION</b>";
+            // 
             // bar1
             // 
             this.bar1.AccessibleDescription = "bar1 (bar1)";
@@ -190,6 +216,7 @@
             this.btnDanhMuc,
             this.buttonItem8,
             this.buttonItem9,
+            this.btnQuanTri,
             this.labelItem1,
             this.textBoxItem1,
             this.labelItem2,
@@ -228,6 +255,7 @@
             // 
             this.btnPhongBM.Name = "btnPhongBM";
             this.btnPhongBM.Text = "PHÒNG BỘ MÔN";
+            this.btnPhongBM.Click += new System.EventHandler(this.btnPhongBM_Click);
             // 
             // btnDanhMuc
             // 
@@ -272,6 +300,31 @@
             this.btnDMLopHoc.Name = "btnDMLopHoc";
             this.btnDMLopHoc.Text = "Lớp học";
             // 
+            // btnDMToBoMon
+            // 
+            this.btnDMToBoMon.Name = "btnDMToBoMon";
+            this.btnDMToBoMon.Text = "Tổ bổ môn";
+            // 
+            // btnDMMonHoc
+            // 
+            this.btnDMMonHoc.Name = "btnDMMonHoc";
+            this.btnDMMonHoc.Text = "Môn Học";
+            // 
+            // btnDMGiaoVien
+            // 
+            this.btnDMGiaoVien.Name = "btnDMGiaoVien";
+            this.btnDMGiaoVien.Text = "Giáo viên";
+            // 
+            // btnDMCanBo
+            // 
+            this.btnDMCanBo.Name = "btnDMCanBo";
+            this.btnDMCanBo.Text = "Cán bộ thiết bị";
+            // 
+            // btnDMNguonKP
+            // 
+            this.btnDMNguonKP.Name = "btnDMNguonKP";
+            this.btnDMNguonKP.Text = "Nguồn kinh phí";
+            // 
             // buttonItem8
             // 
             this.buttonItem8.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
@@ -280,21 +333,80 @@
             this.buttonItem8.PersonalizedMenus = DevComponents.DotNetBar.ePersonalizedMenus.Both;
             this.buttonItem8.PopupAnimation = DevComponents.DotNetBar.ePopupAnimation.Slide;
             this.buttonItem8.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.buttonItem14,
-            this.buttonItem1,
-            this.buttonItem6,
+            this.btnTLThongTinDV,
+            this.btnTLThongTinNamHoc,
             this.buttonItem2});
             this.buttonItem8.Text = "THIẾT LẬP";
             // 
-            // buttonItem14
+            // btnTLThongTinDV
             // 
-            this.buttonItem14.Name = "buttonItem14";
-            this.buttonItem14.Text = "Thông tin đơn vị";
+            this.btnTLThongTinDV.Name = "btnTLThongTinDV";
+            this.btnTLThongTinDV.Text = "Thông tin đơn vị";
+            // 
+            // btnTLThongTinNamHoc
+            // 
+            this.btnTLThongTinNamHoc.Name = "btnTLThongTinNamHoc";
+            this.btnTLThongTinNamHoc.Text = "Thông tin năm học";
+            // 
+            // buttonItem2
+            // 
+            this.buttonItem2.BeginGroup = true;
+            this.buttonItem2.Name = "buttonItem2";
+            this.buttonItem2.Text = "Tùy chọn";
             // 
             // buttonItem9
             // 
             this.buttonItem9.Name = "buttonItem9";
             this.buttonItem9.Text = "BÁO CÁO";
+            this.buttonItem9.Click += new System.EventHandler(this.buttonItem9_Click);
+            // 
+            // btnQuanTri
+            // 
+            this.btnQuanTri.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
+            this.btnQuanTri.Name = "btnQuanTri";
+            this.btnQuanTri.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.btnTaiKhoan,
+            this.btnPhanQuyen});
+            this.btnQuanTri.Text = "QUẢN TRỊ";
+            // 
+            // btnTaiKhoan
+            // 
+            this.btnTaiKhoan.Name = "btnTaiKhoan";
+            this.btnTaiKhoan.Text = "Tài khoản hệ thống";
+            // 
+            // btnPhanQuyen
+            // 
+            this.btnPhanQuyen.Name = "btnPhanQuyen";
+            this.btnPhanQuyen.Text = "Phần quyền - người dùng";
+            // 
+            // labelItem1
+            // 
+            this.labelItem1.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.labelItem1.ItemAlignment = DevComponents.DotNetBar.eItemAlignment.Far;
+            this.labelItem1.Name = "labelItem1";
+            this.labelItem1.Text = "Năm học";
+            // 
+            // textBoxItem1
+            // 
+            this.textBoxItem1.ItemAlignment = DevComponents.DotNetBar.eItemAlignment.Far;
+            this.textBoxItem1.Name = "textBoxItem1";
+            this.textBoxItem1.Text = "2016";
+            this.textBoxItem1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxItem1.TextBoxWidth = 50;
+            this.textBoxItem1.WatermarkColor = System.Drawing.SystemColors.GrayText;
+            // 
+            // labelItem2
+            // 
+            this.labelItem2.Name = "labelItem2";
+            this.labelItem2.Text = "-";
+            // 
+            // textBoxItem2
+            // 
+            this.textBoxItem2.Name = "textBoxItem2";
+            this.textBoxItem2.Text = "2017";
+            this.textBoxItem2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxItem2.TextBoxWidth = 50;
+            this.textBoxItem2.WatermarkColor = System.Drawing.SystemColors.GrayText;
             // 
             // statusStrip1
             // 
@@ -385,96 +497,20 @@
             this.toolmenuTB.TabIndex = 17;
             this.toolmenuTB.Visible = false;
             // 
-            // btnDSThietBi
+            // btnDeNghiMua
             // 
-            this.btnDSThietBi.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnDSThietBi.FlatAppearance.BorderSize = 0;
-            this.btnDSThietBi.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
-            this.btnDSThietBi.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
-            this.btnDSThietBi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDSThietBi.Location = new System.Drawing.Point(0, 0);
-            this.btnDSThietBi.Name = "btnDSThietBi";
-            this.btnDSThietBi.Size = new System.Drawing.Size(120, 35);
-            this.btnDSThietBi.TabIndex = 0;
-            this.btnDSThietBi.Tag = "frmDanhSachThietBi";
-            this.btnDSThietBi.Text = "Danh sách thiết bị";
-            this.btnDSThietBi.UseVisualStyleBackColor = true;
-            this.btnDSThietBi.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnTangTB
-            // 
-            this.btnTangTB.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnTangTB.FlatAppearance.BorderSize = 0;
-            this.btnTangTB.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
-            this.btnTangTB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
-            this.btnTangTB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTangTB.Location = new System.Drawing.Point(120, 0);
-            this.btnTangTB.Name = "btnTangTB";
-            this.btnTangTB.Size = new System.Drawing.Size(120, 35);
-            this.btnTangTB.TabIndex = 1;
-            this.btnTangTB.Text = "Tăng thiết bị";
-            this.btnTangTB.UseVisualStyleBackColor = true;
-            this.btnTangTB.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnKiemKe
-            // 
-            this.btnKiemKe.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnKiemKe.FlatAppearance.BorderSize = 0;
-            this.btnKiemKe.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
-            this.btnKiemKe.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
-            this.btnKiemKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKiemKe.Location = new System.Drawing.Point(240, 0);
-            this.btnKiemKe.Name = "btnKiemKe";
-            this.btnKiemKe.Size = new System.Drawing.Size(120, 35);
-            this.btnKiemKe.TabIndex = 2;
-            this.btnKiemKe.Text = "Kiểm kê";
-            this.btnKiemKe.UseVisualStyleBackColor = true;
-            this.btnKiemKe.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnTheoDoiHong
-            // 
-            this.btnTheoDoiHong.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnTheoDoiHong.FlatAppearance.BorderSize = 0;
-            this.btnTheoDoiHong.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
-            this.btnTheoDoiHong.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
-            this.btnTheoDoiHong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTheoDoiHong.Location = new System.Drawing.Point(360, 0);
-            this.btnTheoDoiHong.Name = "btnTheoDoiHong";
-            this.btnTheoDoiHong.Size = new System.Drawing.Size(120, 35);
-            this.btnTheoDoiHong.TabIndex = 3;
-            this.btnTheoDoiHong.Text = "Theo dõi hỏng/ mất";
-            this.btnTheoDoiHong.UseVisualStyleBackColor = true;
-            this.btnTheoDoiHong.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnThanhLy
-            // 
-            this.btnThanhLy.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnThanhLy.FlatAppearance.BorderSize = 0;
-            this.btnThanhLy.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
-            this.btnThanhLy.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
-            this.btnThanhLy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThanhLy.Location = new System.Drawing.Point(480, 0);
-            this.btnThanhLy.Name = "btnThanhLy";
-            this.btnThanhLy.Size = new System.Drawing.Size(120, 35);
-            this.btnThanhLy.TabIndex = 4;
-            this.btnThanhLy.Text = "Thanh lý";
-            this.btnThanhLy.UseVisualStyleBackColor = true;
-            this.btnThanhLy.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnSuaChua
-            // 
-            this.btnSuaChua.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnSuaChua.FlatAppearance.BorderSize = 0;
-            this.btnSuaChua.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
-            this.btnSuaChua.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
-            this.btnSuaChua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSuaChua.Location = new System.Drawing.Point(600, 0);
-            this.btnSuaChua.Name = "btnSuaChua";
-            this.btnSuaChua.Size = new System.Drawing.Size(120, 35);
-            this.btnSuaChua.TabIndex = 5;
-            this.btnSuaChua.Text = "Sửa chữa";
-            this.btnSuaChua.UseVisualStyleBackColor = true;
-            this.btnSuaChua.Click += new System.EventHandler(this.button1_Click);
+            this.btnDeNghiMua.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnDeNghiMua.FlatAppearance.BorderSize = 0;
+            this.btnDeNghiMua.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
+            this.btnDeNghiMua.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
+            this.btnDeNghiMua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeNghiMua.Location = new System.Drawing.Point(840, 0);
+            this.btnDeNghiMua.Name = "btnDeNghiMua";
+            this.btnDeNghiMua.Size = new System.Drawing.Size(120, 35);
+            this.btnDeNghiMua.TabIndex = 7;
+            this.btnDeNghiMua.Text = "Đề nghị mua sắm";
+            this.btnDeNghiMua.UseVisualStyleBackColor = true;
+            this.btnDeNghiMua.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnGiamTB
             // 
@@ -491,114 +527,96 @@
             this.btnGiamTB.UseVisualStyleBackColor = true;
             this.btnGiamTB.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btnDeNghiMua
+            // btnSuaChua
             // 
-            this.btnDeNghiMua.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnDeNghiMua.FlatAppearance.BorderSize = 0;
-            this.btnDeNghiMua.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
-            this.btnDeNghiMua.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
-            this.btnDeNghiMua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeNghiMua.Location = new System.Drawing.Point(840, 0);
-            this.btnDeNghiMua.Name = "btnDeNghiMua";
-            this.btnDeNghiMua.Size = new System.Drawing.Size(120, 35);
-            this.btnDeNghiMua.TabIndex = 7;
-            this.btnDeNghiMua.Text = "Đề nghị mua sắm";
-            this.btnDeNghiMua.UseVisualStyleBackColor = true;
-            this.btnDeNghiMua.Click += new System.EventHandler(this.button1_Click);
+            this.btnSuaChua.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnSuaChua.FlatAppearance.BorderSize = 0;
+            this.btnSuaChua.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
+            this.btnSuaChua.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
+            this.btnSuaChua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSuaChua.Location = new System.Drawing.Point(600, 0);
+            this.btnSuaChua.Name = "btnSuaChua";
+            this.btnSuaChua.Size = new System.Drawing.Size(120, 35);
+            this.btnSuaChua.TabIndex = 5;
+            this.btnSuaChua.Text = "Sửa chữa";
+            this.btnSuaChua.UseVisualStyleBackColor = true;
+            this.btnSuaChua.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBoxItem1
+            // btnThanhLy
             // 
-            this.textBoxItem1.ItemAlignment = DevComponents.DotNetBar.eItemAlignment.Far;
-            this.textBoxItem1.Name = "textBoxItem1";
-            this.textBoxItem1.Text = "2016";
-            this.textBoxItem1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBoxItem1.TextBoxWidth = 50;
-            this.textBoxItem1.WatermarkColor = System.Drawing.SystemColors.GrayText;
+            this.btnThanhLy.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnThanhLy.FlatAppearance.BorderSize = 0;
+            this.btnThanhLy.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
+            this.btnThanhLy.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
+            this.btnThanhLy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThanhLy.Location = new System.Drawing.Point(480, 0);
+            this.btnThanhLy.Name = "btnThanhLy";
+            this.btnThanhLy.Size = new System.Drawing.Size(120, 35);
+            this.btnThanhLy.TabIndex = 4;
+            this.btnThanhLy.Text = "Thanh lý";
+            this.btnThanhLy.UseVisualStyleBackColor = true;
+            this.btnThanhLy.Click += new System.EventHandler(this.button1_Click);
             // 
-            // labelItem1
+            // btnTheoDoiHong
             // 
-            this.labelItem1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.labelItem1.ItemAlignment = DevComponents.DotNetBar.eItemAlignment.Far;
-            this.labelItem1.Name = "labelItem1";
-            this.labelItem1.Text = "Năm học";
+            this.btnTheoDoiHong.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnTheoDoiHong.FlatAppearance.BorderSize = 0;
+            this.btnTheoDoiHong.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
+            this.btnTheoDoiHong.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
+            this.btnTheoDoiHong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTheoDoiHong.Location = new System.Drawing.Point(360, 0);
+            this.btnTheoDoiHong.Name = "btnTheoDoiHong";
+            this.btnTheoDoiHong.Size = new System.Drawing.Size(120, 35);
+            this.btnTheoDoiHong.TabIndex = 3;
+            this.btnTheoDoiHong.Text = "Theo dõi hỏng/ mất";
+            this.btnTheoDoiHong.UseVisualStyleBackColor = true;
+            this.btnTheoDoiHong.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBoxItem2
+            // btnKiemKe
             // 
-            this.textBoxItem2.Name = "textBoxItem2";
-            this.textBoxItem2.Text = "2017";
-            this.textBoxItem2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBoxItem2.TextBoxWidth = 50;
-            this.textBoxItem2.WatermarkColor = System.Drawing.SystemColors.GrayText;
+            this.btnKiemKe.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnKiemKe.FlatAppearance.BorderSize = 0;
+            this.btnKiemKe.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
+            this.btnKiemKe.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
+            this.btnKiemKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKiemKe.Location = new System.Drawing.Point(240, 0);
+            this.btnKiemKe.Name = "btnKiemKe";
+            this.btnKiemKe.Size = new System.Drawing.Size(120, 35);
+            this.btnKiemKe.TabIndex = 2;
+            this.btnKiemKe.Text = "Kiểm kê";
+            this.btnKiemKe.UseVisualStyleBackColor = true;
+            this.btnKiemKe.Click += new System.EventHandler(this.button1_Click);
             // 
-            // labelItem2
+            // btnTangTB
             // 
-            this.labelItem2.Name = "labelItem2";
-            this.labelItem2.Text = "-";
+            this.btnTangTB.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnTangTB.FlatAppearance.BorderSize = 0;
+            this.btnTangTB.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
+            this.btnTangTB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
+            this.btnTangTB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTangTB.Location = new System.Drawing.Point(120, 0);
+            this.btnTangTB.Name = "btnTangTB";
+            this.btnTangTB.Size = new System.Drawing.Size(120, 35);
+            this.btnTangTB.TabIndex = 1;
+            this.btnTangTB.Text = "Tăng thiết bị";
+            this.btnTangTB.UseVisualStyleBackColor = true;
+            this.btnTangTB.Click += new System.EventHandler(this.button1_Click);
             // 
-            // buttonItem5
+            // btnDSThietBi
             // 
-            this.buttonItem5.Image = global::QLTB.Properties.Resources.Help_icon;
-            this.buttonItem5.Name = "buttonItem5";
-            this.buttonItem5.Text = "buttonItem5";
-            // 
-            // labelX1
-            // 
-            // 
-            // 
-            // 
-            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.labelX1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX1.Image = global::QLTB.Properties.Resources.logo_1_48;
-            this.labelX1.Location = new System.Drawing.Point(0, 0);
-            this.labelX1.Name = "labelX1";
-            this.labelX1.PaddingLeft = 5;
-            this.labelX1.Size = new System.Drawing.Size(269, 63);
-            this.labelX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.labelX1.TabIndex = 11;
-            this.labelX1.Text = "<b>VSMART ESTIMATION</b>";
-            // 
-            // btnDMToBoMon
-            // 
-            this.btnDMToBoMon.Name = "btnDMToBoMon";
-            this.btnDMToBoMon.Text = "Tổ bổ môn";
-            // 
-            // btnDMMonHoc
-            // 
-            this.btnDMMonHoc.Name = "btnDMMonHoc";
-            this.btnDMMonHoc.Text = "Môn Học";
-            // 
-            // btnDMGiaoVien
-            // 
-            this.btnDMGiaoVien.Name = "btnDMGiaoVien";
-            this.btnDMGiaoVien.Text = "Giáo viên";
-            // 
-            // btnDMCanBo
-            // 
-            this.btnDMCanBo.Name = "btnDMCanBo";
-            this.btnDMCanBo.Text = "Cán bộ thiết bị";
-            // 
-            // btnDMNguonKP
-            // 
-            this.btnDMNguonKP.Name = "btnDMNguonKP";
-            this.btnDMNguonKP.Text = "Nguồn kinh phí";
-            // 
-            // buttonItem1
-            // 
-            this.buttonItem1.Name = "buttonItem1";
-            this.buttonItem1.Text = "Thông tin năm học";
-            // 
-            // buttonItem2
-            // 
-            this.buttonItem2.BeginGroup = true;
-            this.buttonItem2.Name = "buttonItem2";
-            this.buttonItem2.Text = "Tùy chọn";
-            // 
-            // buttonItem6
-            // 
-            this.buttonItem6.BeginGroup = true;
-            this.buttonItem6.Name = "buttonItem6";
-            this.buttonItem6.Text = "Tài khoản hệ thống";
+            this.btnDSThietBi.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnDSThietBi.FlatAppearance.BorderSize = 0;
+            this.btnDSThietBi.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
+            this.btnDSThietBi.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
+            this.btnDSThietBi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDSThietBi.Location = new System.Drawing.Point(0, 0);
+            this.btnDSThietBi.Name = "btnDSThietBi";
+            this.btnDSThietBi.Size = new System.Drawing.Size(120, 35);
+            this.btnDSThietBi.TabIndex = 0;
+            this.btnDSThietBi.Tag = "frmDanhSachThietBi";
+            this.btnDSThietBi.Text = "Danh sách thiết bị";
+            this.btnDSThietBi.UseVisualStyleBackColor = true;
+            this.btnDSThietBi.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -613,6 +631,7 @@
             this.DoubleBuffered = true;
             this.FlattenMDIBorder = false;
             this.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "Form1";
             this.ShowIcon = false;
@@ -649,7 +668,7 @@
         private DevComponents.DotNetBar.ButtonItem btnDMKhoiLop;
         private DevComponents.DotNetBar.ButtonItem btnDMLopHoc;
         private DevComponents.DotNetBar.ButtonItem buttonItem8;
-        private DevComponents.DotNetBar.ButtonItem buttonItem14;
+        private DevComponents.DotNetBar.ButtonItem btnTLThongTinDV;
         private DevComponents.DotNetBar.ButtonItem buttonItem9;
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.Controls.Line line1;
@@ -679,8 +698,10 @@
         private DevComponents.DotNetBar.ButtonItem btnDMGiaoVien;
         private DevComponents.DotNetBar.ButtonItem btnDMCanBo;
         private DevComponents.DotNetBar.ButtonItem btnDMNguonKP;
-        private DevComponents.DotNetBar.ButtonItem buttonItem1;
-        private DevComponents.DotNetBar.ButtonItem buttonItem6;
+        private DevComponents.DotNetBar.ButtonItem btnTLThongTinNamHoc;
         private DevComponents.DotNetBar.ButtonItem buttonItem2;
+        private DevComponents.DotNetBar.ButtonItem btnQuanTri;
+        private DevComponents.DotNetBar.ButtonItem btnTaiKhoan;
+        private DevComponents.DotNetBar.ButtonItem btnPhanQuyen;
     }
 }

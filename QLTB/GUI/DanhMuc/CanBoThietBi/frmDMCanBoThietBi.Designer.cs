@@ -55,6 +55,7 @@
             this.btnNapDSTB = new DevComponents.DotNetBar.ButtonItem();
             this.btnImportDSTB = new DevComponents.DotNetBar.ButtonItem();
             this.btnHelpDSTB = new DevComponents.DotNetBar.ButtonItem();
+            this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -107,9 +108,9 @@
             this.panelEx1.Controls.Add(this.panelEx2);
             this.panelEx1.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelEx1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelEx1.Location = new System.Drawing.Point(0, 31);
+            this.panelEx1.Location = new System.Drawing.Point(0, 30);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(1010, 391);
+            this.panelEx1.Size = new System.Drawing.Size(1010, 392);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -128,7 +129,7 @@
             this.panelEx3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEx3.Location = new System.Drawing.Point(0, 0);
             this.panelEx3.Name = "panelEx3";
-            this.panelEx3.Size = new System.Drawing.Size(1010, 356);
+            this.panelEx3.Size = new System.Drawing.Size(1010, 357);
             this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -176,7 +177,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.ADGVDanhSach.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.ADGVDanhSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ADGVDanhSach.Size = new System.Drawing.Size(1010, 356);
+            this.ADGVDanhSach.Size = new System.Drawing.Size(1010, 357);
             this.ADGVDanhSach.TabIndex = 27;
             this.ADGVDanhSach.TimeFilter = false;
             // 
@@ -193,7 +194,7 @@
             this.panelEx2.Controls.Add(this.comboBoxEx1);
             this.panelEx2.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelEx2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelEx2.Location = new System.Drawing.Point(0, 356);
+            this.panelEx2.Location = new System.Drawing.Point(0, 357);
             this.panelEx2.Name = "panelEx2";
             this.panelEx2.Size = new System.Drawing.Size(1010, 35);
             this.panelEx2.Style.Alignment = System.Drawing.StringAlignment.Center;
@@ -327,11 +328,11 @@
             this.SearchDSTB.Font = new System.Drawing.Font("Arial", 9F);
             this.SearchDSTB.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.SearchDSTB.Location = new System.Drawing.Point(0, 0);
-            this.SearchDSTB.MaximumSize = new System.Drawing.Size(0, 31);
-            this.SearchDSTB.MinimumSize = new System.Drawing.Size(0, 31);
+            this.SearchDSTB.MaximumSize = new System.Drawing.Size(0, 30);
+            this.SearchDSTB.MinimumSize = new System.Drawing.Size(0, 30);
             this.SearchDSTB.Name = "SearchDSTB";
             this.SearchDSTB.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.SearchDSTB.Size = new System.Drawing.Size(1010, 31);
+            this.SearchDSTB.Size = new System.Drawing.Size(1010, 30);
             this.SearchDSTB.TabIndex = 28;
             this.SearchDSTB.Text = "searchToolBar1";
             // 
@@ -358,7 +359,8 @@
             this.btnXoaDSTB,
             this.btnNapDSTB,
             this.btnImportDSTB,
-            this.btnHelpDSTB});
+            this.btnHelpDSTB,
+            this.buttonItem1});
             this.ribBarDSThietBi.ItemSpacing = 10;
             this.ribBarDSThietBi.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
             this.ribBarDSThietBi.Location = new System.Drawing.Point(0, 0);
@@ -443,6 +445,16 @@
             this.btnHelpDSTB.Name = "btnHelpDSTB";
             this.btnHelpDSTB.SubItemsExpandWidth = 14;
             this.btnHelpDSTB.Text = "Trợ giúp";
+            // 
+            // buttonItem1
+            // 
+            this.buttonItem1.BeginGroup = true;
+            this.buttonItem1.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.buttonItem1.Image = global::QLTB.Properties.Resources.close16;
+            this.buttonItem1.Name = "buttonItem1";
+            this.buttonItem1.SubItemsExpandWidth = 14;
+            this.buttonItem1.Text = "Đóng";
+            this.buttonItem1.Click += new System.EventHandler(this.buttonItem1_Click);
             // 
             // panel1
             // 
@@ -530,5 +542,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
+        private DevComponents.DotNetBar.ButtonItem buttonItem1;
     }
 }

@@ -135,9 +135,140 @@ namespace QLTB.GUI
             //trường hợp type=1
             if (type == 1)
             {
-                List<ThietBiGridDisplayModel> list = new DbThietBiHandler().GetAll();
+                //List<ThietBiGridDisplayModel> list = new DbThietBiHandler().GetAll();
                 //
-
+                List<ThietBiGridDisplayModel> list = new List<ThietBiGridDisplayModel>();
+                list.Add(new ThietBiGridDisplayModel {
+                    ThietBiId="CSCN00001",
+                    SoHieu="CSCN00001.01",
+                    SoLuong="10",
+                    Ten="Thiết bị số 1",
+                    SoLuongHong="0",
+                    SoLuongMat="0",
+                    DonViTinh="Cái",
+                    KhoPhong="Phòng thực hành công nghệ",
+                    MonHoc="Công nghệ"
+                });
+                list.Add(new ThietBiGridDisplayModel
+                {
+                    ThietBiId = "CSCN00001",
+                    SoHieu = "CSCN00001.01",
+                    SoLuong = "10",
+                    Ten = "Thiết bị số 1",
+                    SoLuongHong = "0",
+                    SoLuongMat = "0",
+                    DonViTinh = "Cái",
+                    KhoPhong = "Phòng thực hành công nghệ",
+                    MonHoc = "Công nghệ"
+                });
+                list.Add(new ThietBiGridDisplayModel
+                {
+                    ThietBiId = "CSCN00001",
+                    SoHieu = "CSCN00001.01",
+                    SoLuong = "10",
+                    Ten = "Thiết bị số 1",
+                    SoLuongHong = "0",
+                    SoLuongMat = "0",
+                    DonViTinh = "Cái",
+                    KhoPhong = "Phòng thực hành công nghệ",
+                    MonHoc = "Công nghệ"
+                });
+                list.Add(new ThietBiGridDisplayModel
+                {
+                    ThietBiId = "CSCN00001",
+                    SoHieu = "CSCN00001.01",
+                    SoLuong = "10",
+                    Ten = "Thiết bị số 1",
+                    SoLuongHong = "0",
+                    SoLuongMat = "0",
+                    DonViTinh = "Cái",
+                    KhoPhong = "Phòng thực hành công nghệ",
+                    MonHoc = "Công nghệ"
+                });
+                list.Add(new ThietBiGridDisplayModel
+                {
+                    ThietBiId = "CSCN00001",
+                    SoHieu = "CSCN00001.01",
+                    SoLuong = "10",
+                    Ten = "Thiết bị số 1",
+                    SoLuongHong = "0",
+                    SoLuongMat = "0",
+                    DonViTinh = "Cái",
+                    KhoPhong = "Phòng thực hành công nghệ",
+                    MonHoc = "Công nghệ"
+                });
+                list.Add(new ThietBiGridDisplayModel
+                {
+                    ThietBiId = "CSCN00001",
+                    SoHieu = "CSCN00001.01",
+                    SoLuong = "10",
+                    Ten = "Thiết bị số 1",
+                    SoLuongHong = "0",
+                    SoLuongMat = "0",
+                    DonViTinh = "Cái",
+                    KhoPhong = "Phòng thực hành công nghệ",
+                    MonHoc = "Công nghệ"
+                });
+                list.Add(new ThietBiGridDisplayModel
+                {
+                    ThietBiId = "CSCN00001",
+                    SoHieu = "CSCN00001.01",
+                    SoLuong = "10",
+                    Ten = "Thiết bị số 1",
+                    SoLuongHong = "0",
+                    SoLuongMat = "0",
+                    DonViTinh = "Cái",
+                    KhoPhong = "Phòng thực hành công nghệ",
+                    MonHoc = "Công nghệ"
+                });
+                list.Add(new ThietBiGridDisplayModel
+                {
+                    ThietBiId = "CSCN00001",
+                    SoHieu = "CSCN00001.01",
+                    SoLuong = "10",
+                    Ten = "Thiết bị số 1",
+                    SoLuongHong = "0",
+                    SoLuongMat = "0",
+                    DonViTinh = "Cái",
+                    KhoPhong = "Phòng thực hành công nghệ",
+                    MonHoc = "Công nghệ"
+                });
+                list.Add(new ThietBiGridDisplayModel
+                {
+                    ThietBiId = "CSCN00001",
+                    SoHieu = "CSCN00001.01",
+                    SoLuong = "10",
+                    Ten = "Thiết bị số 1",
+                    SoLuongHong = "0",
+                    SoLuongMat = "0",
+                    DonViTinh = "Cái",
+                    KhoPhong = "Phòng thực hành công nghệ",
+                    MonHoc = "Công nghệ"
+                });
+                list.Add(new ThietBiGridDisplayModel
+                {
+                    ThietBiId = "CSCN00001",
+                    SoHieu = "CSCN00001.01",
+                    SoLuong = "10",
+                    Ten = "Thiết bị số 1",
+                    SoLuongHong = "0",
+                    SoLuongMat = "0",
+                    DonViTinh = "Cái",
+                    KhoPhong = "Phòng thực hành công nghệ",
+                    MonHoc = "Công nghệ"
+                });
+                list.Add(new ThietBiGridDisplayModel
+                {
+                    ThietBiId = "CSCN00001",
+                    SoHieu = "CSCN00001.01",
+                    SoLuong = "10",
+                    Ten = "Thiết bị số 1",
+                    SoLuongHong = "0",
+                    SoLuongMat = "0",
+                    DonViTinh = "Cái",
+                    KhoPhong = "Phòng thực hành công nghệ",
+                    MonHoc = "Công nghệ"
+                });
                 headers.Add("Số hiệu");
                 headers.Add("Mã thiết bị");
                 headers.Add("Tên thiết bị");
@@ -215,29 +346,29 @@ namespace QLTB.GUI
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            var list = new List<ThietBiMuonGridDisplayModel>();
-            foreach (DataGridViewRow item in advancedDataGridView.Rows)
-            {
-                if (item.Cells[9].Value != null)
-                {
-                    var tmp = new ThietBiMuonGridDisplayModel
-                    {
-                        ThietBiId = item.Cells["ThietBiId"].Value.ToString(),
-                        Ten = item.Cells["Ten"].Value.ToString(),
-                        SoHieu = item.Cells["SoHieu"].Value.ToString(),
-                        PhongHoc = item.Cells["KhoPhong"].Value.ToString(),
-                        DonViTinh = item.Cells["DonViTinh"].Value.ToString(),
-                        SoLuongMuon = item.Cells["SoLuongMat"].Value.ToString()
-                    };
-                    list.Add(tmp);
-                }
-            }
-            if (list.Count > 0)
-            {
-                var owner = this.Owner.ActiveControl as frmThietBiMuon;
-                owner.AddToGrid(list);
-            }
-            Close();
+            //var list = new List<ThietBiMuonGridDisplayModel>();
+            //foreach (DataGridViewRow item in advancedDataGridView.Rows)
+            //{
+            //    if (item.Cells[9].Value != null)
+            //    {
+            //        var tmp = new ThietBiMuonGridDisplayModel
+            //        {
+            //            ThietBiId = item.Cells["ThietBiId"].Value.ToString(),
+            //            Ten = item.Cells["Ten"].Value.ToString(),
+            //            SoHieu = item.Cells["SoHieu"].Value.ToString(),
+            //            PhongHoc = item.Cells["KhoPhong"].Value.ToString(),
+            //            DonViTinh = item.Cells["DonViTinh"].Value.ToString(),
+            //            SoLuongMuon = item.Cells["SoLuongMat"].Value.ToString()
+            //        };
+            //        list.Add(tmp);
+            //    }
+            //}
+            //if (list.Count > 0)
+            //{
+            //    var owner = this.Owner.ActiveControl as frmThietBiMuon;
+            //    owner.AddToGrid(list);
+            //}
+            //Close();
         }
     }
 }

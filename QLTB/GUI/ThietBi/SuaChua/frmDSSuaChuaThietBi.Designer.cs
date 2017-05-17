@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlBackDS = new System.Windows.Forms.Panel();
             this.pnlContentDSTB = new DevComponents.DotNetBar.PanelEx();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
@@ -64,6 +64,7 @@
             this.báoMấthỏngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ghiTăngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.giảmThiếtBịToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnClose = new DevComponents.DotNetBar.ButtonItem();
             this.pnlBackDS.SuspendLayout();
             this.pnlContentDSTB.SuspendLayout();
             this.panelEx1.SuspendLayout();
@@ -153,33 +154,33 @@
             this.ADGVDanhSach.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.ADGVDanhSach.BackgroundColor = System.Drawing.Color.White;
             this.ADGVDanhSach.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ADGVDanhSach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ADGVDanhSach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.ADGVDanhSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ADGVDanhSach.DateWithTime = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ADGVDanhSach.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ADGVDanhSach.DefaultCellStyle = dataGridViewCellStyle5;
             this.ADGVDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ADGVDanhSach.GridColor = System.Drawing.Color.Black;
             this.ADGVDanhSach.Location = new System.Drawing.Point(0, 0);
             this.ADGVDanhSach.Name = "ADGVDanhSach";
             this.ADGVDanhSach.ReadOnly = true;
             this.ADGVDanhSach.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ADGVDanhSach.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ADGVDanhSach.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.ADGVDanhSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ADGVDanhSach.Size = new System.Drawing.Size(894, 354);
             this.ADGVDanhSach.TabIndex = 27;
@@ -359,7 +360,8 @@
             this.btnNapDSTB,
             this.btnImportDSTB,
             this.btnInDSTB,
-            this.btnHelpDSTB});
+            this.btnHelpDSTB,
+            this.btnClose});
             this.ribBarDSThietBi.ItemSpacing = 10;
             this.ribBarDSThietBi.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
             this.ribBarDSThietBi.Location = new System.Drawing.Point(0, 0);
@@ -387,8 +389,9 @@
             this.btnThemDSTB.ImagePaddingVertical = 10;
             this.btnThemDSTB.Name = "btnThemDSTB";
             this.btnThemDSTB.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlN);
-            this.btnThemDSTB.Text = "Thê";
+            this.btnThemDSTB.Text = "Thêm";
             this.btnThemDSTB.Tooltip = "Khai báo thiết bị";
+            this.btnThemDSTB.Click += new System.EventHandler(this.btnThemDSTB_Click);
             // 
             // btnSuaDSTB
             // 
@@ -506,6 +509,16 @@
             this.giảmThiếtBịToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.giảmThiếtBịToolStripMenuItem.Text = "Giảm thiết bị";
             // 
+            // btnClose
+            // 
+            this.btnClose.BeginGroup = true;
+            this.btnClose.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnClose.Image = global::QLTB.Properties.Resources.close16;
+            this.btnClose.Name = "btnClose";
+            this.btnClose.SubItemsExpandWidth = 14;
+            this.btnClose.Text = "Đóng";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // frmDSSuaChuaThietBi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -564,5 +577,6 @@
         private System.Windows.Forms.ToolStripMenuItem báoMấthỏngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ghiTăngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem giảmThiếtBịToolStripMenuItem;
+        private DevComponents.DotNetBar.ButtonItem btnClose;
     }
 }

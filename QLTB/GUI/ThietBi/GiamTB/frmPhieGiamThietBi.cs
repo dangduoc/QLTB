@@ -11,7 +11,7 @@ using QLTB.Model;
 
 namespace QLTB.GUI
 {
-    public partial class frmPhieGiamThietBi : Form
+    public partial class frmPhieGiamThietBi : DevComponents.DotNetBar.Office2007Form
     {
         public frmPhieGiamThietBi()
         {
@@ -20,7 +20,7 @@ namespace QLTB.GUI
         private void loadForm()
         {
             List<ThietBiGiamGridDisplayModel> list = new List<ThietBiGiamGridDisplayModel>();
-            gridDSThietBiMuon.DataSource = list;
+            ADGVDSTB.DataSource = list;
             DataGridViewLinkColumn linkColEdit = new DataGridViewLinkColumn();
             linkColEdit.Text = "Thay đổi";
             linkColEdit.Name = "Edit";
@@ -36,27 +36,29 @@ namespace QLTB.GUI
             linkColDelete.UseColumnTextForLinkValue = true;
             linkColDelete.HeaderText = "";
 
-            gridDSThietBiMuon.Columns.Add(linkColEdit);
-            gridDSThietBiMuon.Columns.Add(linkColDelete);
-            gridDSThietBiMuon.Columns[0].HeaderText = "Mã thiết bị";
-            gridDSThietBiMuon.Columns[1].HeaderText = "Tên thiết bị";
-            gridDSThietBiMuon.Columns[2].HeaderText = "Loại thiết bị";
-            gridDSThietBiMuon.Columns[3].HeaderText = "Số hiệu";
-            gridDSThietBiMuon.Columns[4].HeaderText = "Kho/Phòng bộ môn";
-            gridDSThietBiMuon.Columns[5].HeaderText = "Số lượng";
-            gridDSThietBiMuon.Columns[6].HeaderText = "Đơn vị tính";
-            gridDSThietBiMuon.Columns[7].HeaderText = "Lý do giảm";
-            gridDSThietBiMuon.Columns[8].HeaderText = "Số phiếu báo hỏng/mất";
+            ADGVDSTB.Columns.Add(linkColEdit);
+            ADGVDSTB.Columns.Add(linkColDelete);
+            ADGVDSTB.Columns[0].HeaderText = "Mã thiết bị";
+            ADGVDSTB.Columns[1].HeaderText = "Tên thiết bị";
+            ADGVDSTB.Columns[2].HeaderText = "Loại thiết bị";
+            ADGVDSTB.Columns[3].HeaderText = "Số hiệu";
+            ADGVDSTB.Columns[4].HeaderText = "Kho/Phòng bộ môn";
+            ADGVDSTB.Columns[5].HeaderText = "Số lượng";
+            ADGVDSTB.Columns[6].HeaderText = "Đơn vị tính";
+            ADGVDSTB.Columns[7].HeaderText = "Lý do giảm";
+            ADGVDSTB.Columns[8].HeaderText = "Số phiếu báo hỏng/mất";
         }
 
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+        
 
         private void frmPhieGiamThietBi_Load(object sender, EventArgs e)
         {
             loadForm();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

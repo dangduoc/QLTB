@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace QLTB.GUI
 {
-    public partial class frmPhieuMuaThietBi : Form
+    public partial class frmPhieuMuaThietBi : DevComponents.DotNetBar.Office2007Form
     {
         public frmPhieuMuaThietBi()
         {
             InitializeComponent();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

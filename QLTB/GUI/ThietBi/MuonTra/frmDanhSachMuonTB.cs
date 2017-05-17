@@ -158,7 +158,38 @@ namespace QLTB.GUI
         private void LoadForm()
         {
             //Clone
-            List<PhieuMuonTBGridDisplayModel> list = new DbPhieuMuonTBHandler().GetAll();
+            //List<PhieuMuonTBGridDisplayModel> list = new DbPhieuMuonTBHandler().GetAll();
+            List<PhieuMuonTBGridDisplayModel> list = new List<PhieuMuonTBGridDisplayModel>();
+            list.Add(new PhieuMuonTBGridDisplayModel
+            {
+                PhieuMuonTBId="PMTB00001",
+                BaiDay="Công nghệ tiết 1",
+                GiaoVien="Đặng Minh Được",
+                LopHoc="Lớp 7A1",
+                NgayMuon="21/11/2015",
+                NgayTra="22/11/2015",
+                TrangThai="Đang sử dụng"
+            });
+            list.Add(new PhieuMuonTBGridDisplayModel
+            {
+                PhieuMuonTBId = "PMTB00002",
+                BaiDay = "Công nghệ tiết 2",
+                GiaoVien = "Đặng Minh Được",
+                LopHoc = "Lớp 7A1",
+                NgayMuon = "21/11/2015",
+                NgayTra = "22/11/2015",
+                TrangThai = "Đang sử dụng"
+            });
+            list.Add(new PhieuMuonTBGridDisplayModel
+            {
+                PhieuMuonTBId = "PMTB00003",
+                BaiDay = "Công nghệ tiết 3",
+                GiaoVien = "Đặng Minh Được",
+                LopHoc = "Lớp 7A1",
+                NgayMuon = "21/11/2015",
+                NgayTra = "22/11/2015",
+                TrangThai = "Đang sử dụng"
+            });
             List<string> headers = new List<string>();
             headers.Add("Số phiếu");
             headers.Add("Ngày mượn");
@@ -231,7 +262,7 @@ namespace QLTB.GUI
             if (row != null)
             {
                 var Id = row.Cells["PhieuMuonTBId"].Value.ToString();
-                frmGhiNhanTraTB frm = new frmGhiNhanTraTB(Id);
+                frmGhiNhanTraTB frm = new frmGhiNhanTraTB();
                 frm.MdiParent = MdiParent;
                 frm.Show();
             }
@@ -241,7 +272,7 @@ namespace QLTB.GUI
         private void btnThem_Click(object sender, EventArgs e)
         {
             Cursor = Cursors.WaitCursor;
-            frmCTPhieuMuonPhong frm = new frmCTPhieuMuonPhong();
+             frmThietBiMuon frm = new frmThietBiMuon();
             frm.MdiParent = MdiParent;
             frm.Show();
             Cursor = Cursors.Default;
@@ -280,6 +311,34 @@ namespace QLTB.GUI
             source.DataSource= MyConvert.ToDataTable<ThietBiMuonGridDisplayModel>(listTB);
             ADGVDSTB.DataSource = source;
             SetHeaderForGrid(ADGVDSTB, headers);
+        }
+
+        private void btnThem_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnGhiTra_Click_1(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+            frmGhiNhanTraTB frm = new frmGhiNhanTraTB();
+            frm.MdiParent = MdiParent;
+            frm.Show();
+            Cursor = Cursors.Default;
+        }
+
+        private void btnBaoHong_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+            frmPhieuBaoHong frm = new frmPhieuBaoHong();
+            frm.MdiParent = MdiParent;
+            frm.Show();
+            Cursor = Cursors.Default;
         }
     }
 }

@@ -179,7 +179,175 @@ namespace QLTB.GUI
         #endregion
         private void LoadForm()
         {
-            List<ThietBiGridDisplayModel> list = new DbThietBiHandler().GetAll();
+            //List<ThietBiGridDisplayModel> list = new DbThietBiHandler().GetAll();
+            List<ThietBiGridDisplayModel> list = new List<ThietBiGridDisplayModel>();
+            list.Add(new ThietBiGridDisplayModel {
+                ThietBiId="CSCN000001",
+                SoHieu="CSCN000001.01",
+                Ten="Thiết bị môn công nghệ số 1",
+                SoLuong="10",
+                DonViTinh="Cái",
+                SoLuongHong="0",
+                SoLuongMat="0",
+                KhoPhong="Phòng thực hành công nghệ",
+                MonHoc="Công nghệ"
+            });
+            list.Add(new ThietBiGridDisplayModel
+            {
+                ThietBiId = "CSCN000001",
+                SoHieu = "CSCN000001.01",
+                Ten = "Thiết bị môn công nghệ số 1",
+                SoLuong = "10",
+                DonViTinh = "Cái",
+                SoLuongHong = "0",
+                SoLuongMat = "0",
+                KhoPhong = "Phòng thực hành công nghệ",
+                MonHoc = "Công nghệ"
+            });
+            list.Add(new ThietBiGridDisplayModel
+            {
+                ThietBiId = "CSCN000001",
+                SoHieu = "CSCN000001.01",
+                Ten = "Thiết bị môn công nghệ số 1",
+                SoLuong = "10",
+                DonViTinh = "Cái",
+                SoLuongHong = "0",
+                SoLuongMat = "0",
+                KhoPhong = "Phòng thực hành công nghệ",
+                MonHoc = "Công nghệ"
+            });
+            list.Add(new ThietBiGridDisplayModel
+            {
+                ThietBiId = "CSCN000001",
+                SoHieu = "CSCN000001.01",
+                Ten = "Thiết bị môn công nghệ số 1",
+                SoLuong = "10",
+                DonViTinh = "Cái",
+                SoLuongHong = "0",
+                SoLuongMat = "0",
+                KhoPhong = "Phòng thực hành công nghệ",
+                MonHoc = "Công nghệ"
+            });
+            list.Add(new ThietBiGridDisplayModel
+            {
+                ThietBiId = "CSCN000001",
+                SoHieu = "CSCN000001.01",
+                Ten = "Thiết bị môn công nghệ số 1",
+                SoLuong = "10",
+                DonViTinh = "Cái",
+                SoLuongHong = "0",
+                SoLuongMat = "0",
+                KhoPhong = "Phòng thực hành công nghệ",
+                MonHoc = "Công nghệ"
+            });
+            list.Add(new ThietBiGridDisplayModel
+            {
+                ThietBiId = "CSCN000001",
+                SoHieu = "CSCN000001.01",
+                Ten = "Thiết bị môn công nghệ số 1",
+                SoLuong = "10",
+                DonViTinh = "Cái",
+                SoLuongHong = "0",
+                SoLuongMat = "0",
+                KhoPhong = "Phòng thực hành công nghệ",
+                MonHoc = "Công nghệ"
+            });
+            list.Add(new ThietBiGridDisplayModel
+            {
+                ThietBiId = "CSCN000001",
+                SoHieu = "CSCN000001.01",
+                Ten = "Thiết bị môn công nghệ số 1",
+                SoLuong = "10",
+                DonViTinh = "Cái",
+                SoLuongHong = "0",
+                SoLuongMat = "0",
+                KhoPhong = "Phòng thực hành công nghệ",
+                MonHoc = "Công nghệ"
+            });
+            list.Add(new ThietBiGridDisplayModel
+            {
+                ThietBiId = "CSCN000001",
+                SoHieu = "CSCN000001.01",
+                Ten = "Thiết bị môn công nghệ số 1",
+                SoLuong = "10",
+                DonViTinh = "Cái",
+                SoLuongHong = "0",
+                SoLuongMat = "0",
+                KhoPhong = "Phòng thực hành công nghệ",
+                MonHoc = "Công nghệ"
+            });
+            list.Add(new ThietBiGridDisplayModel
+            {
+                ThietBiId = "CSCN000001",
+                SoHieu = "CSCN000001.01",
+                Ten = "Thiết bị môn công nghệ số 1",
+                SoLuong = "10",
+                DonViTinh = "Cái",
+                SoLuongHong = "0",
+                SoLuongMat = "0",
+                KhoPhong = "Phòng thực hành công nghệ",
+                MonHoc = "Công nghệ"
+            });
+            list.Add(new ThietBiGridDisplayModel
+            {
+                ThietBiId = "CSCN000001",
+                SoHieu = "CSCN000001.01",
+                Ten = "Thiết bị môn công nghệ số 1",
+                SoLuong = "10",
+                DonViTinh = "Cái",
+                SoLuongHong = "0",
+                SoLuongMat = "0",
+                KhoPhong = "Phòng thực hành công nghệ",
+                MonHoc = "Công nghệ"
+            });
+            list.Add(new ThietBiGridDisplayModel
+            {
+                ThietBiId = "CSCN000001",
+                SoHieu = "CSCN000001.01",
+                Ten = "Thiết bị môn công nghệ số 1",
+                SoLuong = "10",
+                DonViTinh = "Cái",
+                SoLuongHong = "0",
+                SoLuongMat = "0",
+                KhoPhong = "Phòng thực hành công nghệ",
+                MonHoc = "Công nghệ"
+            });
+            list.Add(new ThietBiGridDisplayModel
+            {
+                ThietBiId = "CSCN000001",
+                SoHieu = "CSCN000001.01",
+                Ten = "Thiết bị môn công nghệ số 1",
+                SoLuong = "10",
+                DonViTinh = "Cái",
+                SoLuongHong = "0",
+                SoLuongMat = "0",
+                KhoPhong = "Phòng thực hành công nghệ",
+                MonHoc = "Công nghệ"
+            });
+            list.Add(new ThietBiGridDisplayModel
+            {
+                ThietBiId = "CSCN000001",
+                SoHieu = "CSCN000001.01",
+                Ten = "Thiết bị môn công nghệ số 1",
+                SoLuong = "10",
+                DonViTinh = "Cái",
+                SoLuongHong = "0",
+                SoLuongMat = "0",
+                KhoPhong = "Phòng thực hành công nghệ",
+                MonHoc = "Công nghệ"
+            });
+            list.Add(new ThietBiGridDisplayModel
+            {
+                ThietBiId = "CSCN000001",
+                SoHieu = "CSCN000001.01",
+                Ten = "Thiết bị môn công nghệ số 1",
+                SoLuong = "10",
+                DonViTinh = "Cái",
+                SoLuongHong = "0",
+                SoLuongMat = "0",
+                KhoPhong = "Phòng thực hành công nghệ",
+                MonHoc = "Công nghệ"
+            });
             List<string> headers = new List<string>();
             headers.Add("Số hiệu");
             headers.Add("Mã thiết bị");
@@ -241,6 +409,11 @@ namespace QLTB.GUI
         private void frmDanhSachThietBi_Load(object sender, EventArgs e)
         {
             LoadForm();
+        }
+
+        private void btnThemDSTB_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

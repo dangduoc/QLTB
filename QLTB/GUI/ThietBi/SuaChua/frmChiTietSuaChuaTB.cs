@@ -20,7 +20,7 @@ namespace QLTB.GUI
         private void loadForm()
         {
             List<ThietBiSuaGridDisplayModel> list = new List<ThietBiSuaGridDisplayModel>();
-            gridDSThietBiMuon.DataSource = list;
+            ADGVDSTB.DataSource = list;
             DataGridViewLinkColumn linkColEdit = new DataGridViewLinkColumn();
             linkColEdit.Text = "Thay đổi";
             linkColEdit.Name = "Edit";
@@ -36,29 +36,36 @@ namespace QLTB.GUI
             linkColDelete.UseColumnTextForLinkValue = true;
             linkColDelete.HeaderText = "";
 
-            gridDSThietBiMuon.Columns.Add(linkColEdit);
-            gridDSThietBiMuon.Columns.Add(linkColDelete);
+            ADGVDSTB.Columns.Add(linkColEdit);
+            ADGVDSTB.Columns.Add(linkColDelete);
 
-            gridDSThietBiMuon.Columns[0].HeaderText = "Mã thiết bị";
-            gridDSThietBiMuon.Columns[1].HeaderText = "Tên thiết bị";
-            gridDSThietBiMuon.Columns[2].HeaderText = "Loại thiết bị";
-            gridDSThietBiMuon.Columns[3].HeaderText = "Số hiệu";
-            gridDSThietBiMuon.Columns[4].HeaderText = "Kho/Phòng bộ môn";
-            gridDSThietBiMuon.Columns[5].HeaderText = "Số lượng cần sửa";
-            gridDSThietBiMuon.Columns[6].HeaderText = "Đơn vị tính";
-            gridDSThietBiMuon.Columns[7].HeaderText = "Giá trị";
-            gridDSThietBiMuon.Columns[8].HeaderText = "Đơn giá";
-            gridDSThietBiMuon.Columns[9].HeaderText = "Thành tiền";
+            ADGVDSTB.Columns[0].HeaderText = "Mã thiết bị";
+            ADGVDSTB.Columns[1].HeaderText = "Tên thiết bị";
+            ADGVDSTB.Columns[2].HeaderText = "Loại thiết bị";
+            ADGVDSTB.Columns[3].HeaderText = "Số hiệu";
+            ADGVDSTB.Columns[4].HeaderText = "Kho/Phòng bộ môn";
+            ADGVDSTB.Columns[5].HeaderText = "Số lượng cần sửa";
+            ADGVDSTB.Columns[6].HeaderText = "Đơn vị tính";
+            ADGVDSTB.Columns[7].HeaderText = "Giá trị";
+            ADGVDSTB.Columns[8].HeaderText = "Đơn giá";
+            ADGVDSTB.Columns[9].HeaderText = "Thành tiền";
         }
 
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
 
         private void frmChiTietSuaChuaTB_Load(object sender, EventArgs e)
         {
             loadForm();
+        }
+
+        private void btnLayTB_Click(object sender, EventArgs e)
+        {
+            frmDialogTBSuaChua frm = new frmDialogTBSuaChua();
+            frm.ShowDialog(this);
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

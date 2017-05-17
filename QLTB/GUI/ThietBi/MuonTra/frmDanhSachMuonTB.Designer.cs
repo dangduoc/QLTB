@@ -66,6 +66,7 @@
             this.btnNapDSTB = new DevComponents.DotNetBar.ButtonItem();
             this.btnInDSTB = new DevComponents.DotNetBar.ButtonItem();
             this.btnHelpDSTB = new DevComponents.DotNetBar.ButtonItem();
+            this.btnClose = new DevComponents.DotNetBar.ButtonItem();
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.nhânBảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sửaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -160,19 +161,15 @@
             this.panelEx4.Size = new System.Drawing.Size(1060, 32);
             this.panelEx4.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx4.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.panelEx4.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
             this.panelEx4.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.panelEx4.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
             this.panelEx4.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
             this.panelEx4.Style.GradientAngle = 90;
             this.panelEx4.StyleMouseDown.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx4.StyleMouseDown.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemPressedBackground;
-            this.panelEx4.StyleMouseDown.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemPressedBackground2;
             this.panelEx4.StyleMouseDown.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemPressedBorder;
             this.panelEx4.StyleMouseDown.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemPressedText;
             this.panelEx4.StyleMouseOver.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx4.StyleMouseOver.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemHotBackground;
-            this.panelEx4.StyleMouseOver.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemHotBackground2;
             this.panelEx4.StyleMouseOver.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemHotBorder;
             this.panelEx4.StyleMouseOver.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemHotText;
             this.panelEx4.TabIndex = 0;
@@ -205,7 +202,6 @@
             this.pnlContentDS.Size = new System.Drawing.Size(1060, 361);
             this.pnlContentDS.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.pnlContentDS.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.pnlContentDS.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
             this.pnlContentDS.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.pnlContentDS.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
             this.pnlContentDS.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
@@ -225,7 +221,6 @@
             this.panelEx1.Size = new System.Drawing.Size(1060, 334);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
             this.panelEx1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.panelEx1.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
             this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
@@ -244,7 +239,6 @@
             this.panelEx3.Size = new System.Drawing.Size(1060, 302);
             this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.panelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
             this.panelEx3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.panelEx3.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
             this.panelEx3.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
@@ -312,7 +306,6 @@
             this.panelEx2.Size = new System.Drawing.Size(1060, 32);
             this.panelEx2.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.panelEx2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
             this.panelEx2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.panelEx2.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
             this.panelEx2.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
@@ -321,12 +314,14 @@
             // 
             // textBoxX1
             // 
+            this.textBoxX1.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
             this.textBoxX1.Border.Class = "TextBoxBorder";
             this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.textBoxX1.DisabledBackColor = System.Drawing.Color.White;
+            this.textBoxX1.ForeColor = System.Drawing.Color.Black;
             this.textBoxX1.Location = new System.Drawing.Point(69, 6);
             this.textBoxX1.Name = "textBoxX1";
             this.textBoxX1.PreventEnterBeep = true;
@@ -402,6 +397,7 @@
             // 
             this.comboBoxEx1.DisplayMember = "Text";
             this.comboBoxEx1.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.comboBoxEx1.ForeColor = System.Drawing.Color.Black;
             this.comboBoxEx1.FormattingEnabled = true;
             this.comboBoxEx1.ItemHeight = 15;
             this.comboBoxEx1.Items.AddRange(new object[] {
@@ -470,7 +466,8 @@
             this.btnBaoHong,
             this.btnNapDSTB,
             this.btnInDSTB,
-            this.btnHelpDSTB});
+            this.btnHelpDSTB,
+            this.btnClose});
             this.ribBarDSThietBi.ItemSpacing = 10;
             this.ribBarDSThietBi.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
             this.ribBarDSThietBi.Location = new System.Drawing.Point(0, 0);
@@ -500,6 +497,7 @@
             this.btnThem.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlN);
             this.btnThem.Text = "Thêm";
             this.btnThem.Tooltip = "Đăng ký mới";
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click_1);
             // 
             // btnSua
             // 
@@ -537,6 +535,7 @@
             this.btnGhiTra.Name = "btnGhiTra";
             this.btnGhiTra.SubItemsExpandWidth = 14;
             this.btnGhiTra.Text = "Ghi trả";
+            this.btnGhiTra.Click += new System.EventHandler(this.btnGhiTra_Click_1);
             // 
             // btnBaoHong
             // 
@@ -545,6 +544,7 @@
             this.btnBaoHong.Name = "btnBaoHong";
             this.btnBaoHong.SubItemsExpandWidth = 14;
             this.btnBaoHong.Text = "Báo hỏng/ mất";
+            this.btnBaoHong.Click += new System.EventHandler(this.btnBaoHong_Click);
             // 
             // btnNapDSTB
             // 
@@ -577,6 +577,16 @@
             this.btnHelpDSTB.Name = "btnHelpDSTB";
             this.btnHelpDSTB.SubItemsExpandWidth = 14;
             this.btnHelpDSTB.Text = "Trợ giúp";
+            // 
+            // btnClose
+            // 
+            this.btnClose.BeginGroup = true;
+            this.btnClose.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnClose.Image = global::QLTB.Properties.Resources.close16;
+            this.btnClose.Name = "btnClose";
+            this.btnClose.SubItemsExpandWidth = 14;
+            this.btnClose.Text = "Đóng";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // contextMenuStrip
             // 
@@ -696,5 +706,6 @@
         private DevComponents.DotNetBar.ButtonItem btnBoGhiMuon;
         private DevComponents.DotNetBar.ButtonItem btnGhiTra;
         private DevComponents.DotNetBar.ButtonItem btnBaoHong;
+        private DevComponents.DotNetBar.ButtonItem btnClose;
     }
 }

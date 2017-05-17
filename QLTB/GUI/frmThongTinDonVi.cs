@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace QLTB.GUI
 {
-    public partial class frmThongTinDonVi : DevComponents.DotNetBar.Office2007Form
+    public partial class frmThongTinDonVi : Form
     {
         private ThongTinDonViModel DonVi;
         private DbThongTinDVHandler handler= new DbThongTinDVHandler();
@@ -181,6 +181,11 @@ namespace QLTB.GUI
         private void btnLuu_Click(object sender, EventArgs e)
         {
             saveData();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

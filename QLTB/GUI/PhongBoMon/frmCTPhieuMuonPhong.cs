@@ -35,24 +35,24 @@ namespace QLTB.GUI
             linkColDelete.UseColumnTextForLinkValue = true;
             linkColDelete.HeaderText = "";
 
-            gridDSThietBiMuon.Columns.Add(linkColEdit);
-            gridDSThietBiMuon.Columns.Add(linkColDelete);
+            ADGVDSTB.Columns.Add(linkColEdit);
+            ADGVDSTB.Columns.Add(linkColDelete);
             //load danh sach thiet bi muon
-            gridDSThietBiMuon.DataSource = listTB;
-            gridDSThietBiMuon.Columns[2].HeaderText = "Mã thiết bị";
-            gridDSThietBiMuon.Columns[3].HeaderText = "Tên thiết bị";
-            gridDSThietBiMuon.Columns[4].HeaderText = "Số hiệu";
-            gridDSThietBiMuon.Columns[5].HeaderText = "Phòng bộ môn";
-            gridDSThietBiMuon.Columns[6].HeaderText = "Số lượng mượn";
-            gridDSThietBiMuon.Columns[7].HeaderText = "Đơn vị tính";
-            gridDSThietBiMuon.Columns[2].DisplayIndex = 0;
-            gridDSThietBiMuon.Columns[3].DisplayIndex = 1;
-            gridDSThietBiMuon.Columns[4].DisplayIndex = 2;
-            gridDSThietBiMuon.Columns[5].DisplayIndex = 3;
-            gridDSThietBiMuon.Columns[6].DisplayIndex = 4;
-            gridDSThietBiMuon.Columns[7].DisplayIndex = 5;
-            gridDSThietBiMuon.Columns[0].DisplayIndex = 6;
-            gridDSThietBiMuon.Columns[1].DisplayIndex = 7;
+            ADGVDSTB.DataSource = listTB;
+            ADGVDSTB.Columns[2].HeaderText = "Mã thiết bị";
+            ADGVDSTB.Columns[3].HeaderText = "Tên thiết bị";
+            ADGVDSTB.Columns[4].HeaderText = "Số hiệu";
+            ADGVDSTB.Columns[5].HeaderText = "Phòng bộ môn";
+            ADGVDSTB.Columns[6].HeaderText = "Số lượng mượn";
+            ADGVDSTB.Columns[7].HeaderText = "Đơn vị tính";
+            ADGVDSTB.Columns[2].DisplayIndex = 0;
+            ADGVDSTB.Columns[3].DisplayIndex = 1;
+            ADGVDSTB.Columns[4].DisplayIndex = 2;
+            ADGVDSTB.Columns[5].DisplayIndex = 3;
+            ADGVDSTB.Columns[6].DisplayIndex = 4;
+            ADGVDSTB.Columns[7].DisplayIndex = 5;
+            ADGVDSTB.Columns[0].DisplayIndex = 6;
+            ADGVDSTB.Columns[1].DisplayIndex = 7;
         }
 
         private void frmCTPhieuMuonPhong_Load(object sender, EventArgs e)
@@ -60,9 +60,22 @@ namespace QLTB.GUI
             loadForm();
         }
 
-        private void btnThoat_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnLayTB_Click(object sender, EventArgs e)
+        {
+            frmDialogDSThietBi frm = new frmDialogDSThietBi(1);
+            frm.ShowDialog(this);
+        }
+
+        private void btnBaoHong_Click(object sender, EventArgs e)
+        {
+            frmPhieuBaoHong frm = new frmPhieuBaoHong();
+            frm.MdiParent = MdiParent;
+            frm.Show();
         }
     }
 }
