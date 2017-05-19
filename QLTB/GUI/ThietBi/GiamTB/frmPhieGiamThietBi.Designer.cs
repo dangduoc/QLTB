@@ -99,7 +99,7 @@
             this.ADGVDSTB.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -109,7 +109,7 @@
             this.ADGVDSTB.DateWithTime = false;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -145,7 +145,7 @@
             this.ribbonBar1.ContainerControlProcessDialogKey = true;
             this.ribbonBar1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribbonBar1.DragDropSupport = true;
-            this.ribbonBar1.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.ribbonBar1.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.ribbonBar1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.btnLayTB});
             this.ribbonBar1.ItemSpacing = 10;
@@ -249,12 +249,12 @@
             // 
             this.txtGhiChu.BackgroundStyle.Class = "RichTextBoxBorder";
             this.txtGhiChu.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtGhiChu.Location = new System.Drawing.Point(70, 39);
+            this.txtGhiChu.Location = new System.Drawing.Point(77, 39);
             this.txtGhiChu.Margin = new System.Windows.Forms.Padding(0);
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.Rtf = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Times New R" +
-    "oman;}}\r\n\\viewkind4\\uc1\\pard\\f0\\fs18\\par\r\n}\r\n";
-            this.txtGhiChu.Size = new System.Drawing.Size(426, 100);
+    "oman;}}\r\n\\viewkind4\\uc1\\pard\\f0\\fs20\\par\r\n}\r\n";
+            this.txtGhiChu.Size = new System.Drawing.Size(419, 100);
             this.txtGhiChu.TabIndex = 3;
             // 
             // dPickerNgayLap
@@ -269,7 +269,7 @@
             this.dPickerNgayLap.CustomFormat = "dd/mm/yyyy";
             this.dPickerNgayLap.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dPickerNgayLap.IsPopupCalendarOpen = false;
-            this.dPickerNgayLap.Location = new System.Drawing.Point(272, 4);
+            this.dPickerNgayLap.Location = new System.Drawing.Point(279, 4);
             this.dPickerNgayLap.Margin = new System.Windows.Forms.Padding(0);
             // 
             // 
@@ -300,7 +300,7 @@
             this.dPickerNgayLap.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.dPickerNgayLap.MonthCalendar.TodayButtonVisible = true;
             this.dPickerNgayLap.Name = "dPickerNgayLap";
-            this.dPickerNgayLap.Size = new System.Drawing.Size(124, 21);
+            this.dPickerNgayLap.Size = new System.Drawing.Size(117, 21);
             this.dPickerNgayLap.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dPickerNgayLap.TabIndex = 1;
             this.dPickerNgayLap.WatermarkText = "dd/mm/yyyy";
@@ -316,11 +316,11 @@
             this.txtSoPhieu.DisabledBackColor = System.Drawing.Color.White;
             this.txtSoPhieu.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoPhieu.ForeColor = System.Drawing.Color.Black;
-            this.txtSoPhieu.Location = new System.Drawing.Point(70, 4);
+            this.txtSoPhieu.Location = new System.Drawing.Point(77, 4);
             this.txtSoPhieu.Margin = new System.Windows.Forms.Padding(0);
             this.txtSoPhieu.Name = "txtSoPhieu";
             this.txtSoPhieu.PreventEnterBeep = true;
-            this.txtSoPhieu.Size = new System.Drawing.Size(126, 21);
+            this.txtSoPhieu.Size = new System.Drawing.Size(119, 21);
             this.txtSoPhieu.TabIndex = 0;
             // 
             // layoutControlItem1
@@ -406,7 +406,7 @@
             this.ribBarDSThietBi.ContainerControlProcessDialogKey = true;
             this.ribBarDSThietBi.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribBarDSThietBi.DragDropSupport = true;
-            this.ribBarDSThietBi.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.ribBarDSThietBi.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.ribBarDSThietBi.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.btnLuu,
             this.btnXoa,
@@ -447,7 +447,6 @@
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlD);
             this.btnXoa.Text = "Xóa";
-            this.btnXoa.Tooltip = "Xóa thiết bị";
             // 
             // btnHelpDSTB
             // 
@@ -476,7 +475,7 @@
             this.ClientSize = new System.Drawing.Size(950, 485);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
-            this.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmPhieGiamThietBi";
             this.Text = "Phiếu giảm thiết bị";
             this.Load += new System.EventHandler(this.frmPhieGiamThietBi_Load);

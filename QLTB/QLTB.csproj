@@ -525,12 +525,6 @@
     <Compile Include="GUI\QuanTri\frmPhanQuyenTaiKhoan.Designer.cs">
       <DependentUpon>frmPhanQuyenTaiKhoan.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ThietBi\frmThietBi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\ThietBi\frmThietBi.Designer.cs">
-      <DependentUpon>frmThietBi.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\ThietBi\GiamTB\frmPhieGiamThietBi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -590,6 +584,12 @@
     </Compile>
     <Compile Include="GUI\ThietBi\MuonTra\frmThietBiMuon.Designer.cs">
       <DependentUpon>frmThietBiMuon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThietBi\NhapKhau\frmNhapKhauTB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBi\NhapKhau\frmNhapKhauTB.Designer.cs">
+      <DependentUpon>frmNhapKhauTB.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\ThietBi\PhieuBaoHong\frmDSThietBiHongMat.cs">
       <SubType>Form</SubType>
@@ -726,9 +726,6 @@
     <EmbeddedResource Include="GUI\QuanTri\frmPhanQuyenTaiKhoan.resx">
       <DependentUpon>frmPhanQuyenTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\ThietBi\frmThietBi.resx">
-      <DependentUpon>frmThietBi.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\ThietBi\GiamTB\frmPhieGiamThietBi.resx">
       <DependentUpon>frmPhieGiamThietBi.cs</DependentUpon>
     </EmbeddedResource>
@@ -758,6 +755,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ThietBi\MuonTra\frmThietBiMuon.resx">
       <DependentUpon>frmThietBiMuon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBi\NhapKhau\frmNhapKhauTB.resx">
+      <DependentUpon>frmNhapKhauTB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ThietBi\PhieuBaoHong\frmDSThietBiHongMat.resx">
       <DependentUpon>frmDSThietBiHongMat.cs</DependentUpon>
@@ -934,6 +934,13 @@
       <LastGenOutput>QLTBContext.cs</LastGenOutput>
     </Content>
     <Content Include="icon.ico" />
+    <None Include="Resources\forward.png" />
+    <None Include="Resources\excel1997.png" />
+    <None Include="Resources\Excel-icon.png" />
+    <None Include="Resources\UserName.png" />
+    <None Include="Resources\Password.png" />
+    <None Include="Resources\user32.png" />
+    <None Include="Resources\password32.png" />
     <None Include="Resources\close16.png" />
     <None Include="Resources\delete16.png" />
     <None Include="Resources\cancel16.png" />

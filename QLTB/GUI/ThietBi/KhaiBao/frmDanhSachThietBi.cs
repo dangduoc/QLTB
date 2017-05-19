@@ -415,5 +415,19 @@ namespace QLTB.GUI
         {
 
         }
+
+        private void ADGVDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var SoHieu=ADGVDanhSach.Rows[e.RowIndex].Cells["SoHieu"];
+        }
+
+        private void btnImportDSTB_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+            frmNhapKhauTB frm = new frmNhapKhauTB();
+            frm.MdiParent = MdiParent;
+            frm.Show();
+            Cursor = Cursors.Default;
+        }
     }
 }

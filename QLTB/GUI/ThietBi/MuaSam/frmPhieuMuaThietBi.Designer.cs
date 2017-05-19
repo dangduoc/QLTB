@@ -90,10 +90,10 @@
             this.panel2.Controls.Add(this.tabControl1);
             this.panel2.Controls.Add(this.labelX1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 169);
+            this.panel2.Location = new System.Drawing.Point(0, 164);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
-            this.panel2.Size = new System.Drawing.Size(1032, 204);
+            this.panel2.Size = new System.Drawing.Size(1032, 209);
             this.panel2.TabIndex = 20;
             // 
             // tabControl1
@@ -105,9 +105,9 @@
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(6, 34);
             this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedTabFont = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.tabControl1.SelectedTabFont = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold);
             this.tabControl1.SelectedTabIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1026, 170);
+            this.tabControl1.Size = new System.Drawing.Size(1026, 175);
             this.tabControl1.Style = DevComponents.DotNetBar.eTabStripStyle.Metro;
             this.tabControl1.TabIndex = 30;
             this.tabControl1.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox;
@@ -122,7 +122,7 @@
             this.tabControlPanel1.Location = new System.Drawing.Point(0, 27);
             this.tabControlPanel1.Name = "tabControlPanel1";
             this.tabControlPanel1.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel1.Size = new System.Drawing.Size(1026, 143);
+            this.tabControlPanel1.Size = new System.Drawing.Size(1026, 148);
             this.tabControlPanel1.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(221)))), ((int)(((byte)(238)))));
             this.tabControlPanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanel1.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(157)))), ((int)(((byte)(189)))));
@@ -139,7 +139,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(1, 1);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1024, 141);
+            this.panel5.Size = new System.Drawing.Size(1024, 146);
             this.panel5.TabIndex = 0;
             // 
             // panel6
@@ -148,7 +148,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(0, 35);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1024, 106);
+            this.panel6.Size = new System.Drawing.Size(1024, 111);
             this.panel6.TabIndex = 30;
             // 
             // ADGVDSTB
@@ -162,7 +162,7 @@
             this.ADGVDSTB.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -172,7 +172,7 @@
             this.ADGVDSTB.DateWithTime = false;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -188,7 +188,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.ADGVDSTB.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.ADGVDSTB.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ADGVDSTB.Size = new System.Drawing.Size(1024, 106);
+            this.ADGVDSTB.Size = new System.Drawing.Size(1024, 111);
             this.ADGVDSTB.TabIndex = 29;
             this.ADGVDSTB.TimeFilter = false;
             // 
@@ -254,7 +254,7 @@
             this.tabControlPanel2.Location = new System.Drawing.Point(0, 27);
             this.tabControlPanel2.Name = "tabControlPanel2";
             this.tabControlPanel2.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel2.Size = new System.Drawing.Size(1026, 143);
+            this.tabControlPanel2.Size = new System.Drawing.Size(1026, 148);
             this.tabControlPanel2.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(221)))), ((int)(((byte)(238)))));
             this.tabControlPanel2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanel2.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(157)))), ((int)(((byte)(189)))));
@@ -292,7 +292,7 @@
             this.pnlTTPhieuMuon.Controls.Add(this.labelX3);
             this.pnlTTPhieuMuon.Controls.Add(this.labelX2);
             this.pnlTTPhieuMuon.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTTPhieuMuon.Location = new System.Drawing.Point(0, 40);
+            this.pnlTTPhieuMuon.Location = new System.Drawing.Point(0, 35);
             this.pnlTTPhieuMuon.Name = "pnlTTPhieuMuon";
             this.pnlTTPhieuMuon.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
             this.pnlTTPhieuMuon.Size = new System.Drawing.Size(1032, 129);
@@ -340,11 +340,11 @@
             // 
             this.textBoxX1.Border.Class = "TextBoxBorder";
             this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX1.Location = new System.Drawing.Point(552, 4);
+            this.textBoxX1.Location = new System.Drawing.Point(562, 4);
             this.textBoxX1.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxX1.Name = "textBoxX1";
             this.textBoxX1.PreventEnterBeep = true;
-            this.textBoxX1.Size = new System.Drawing.Size(144, 21);
+            this.textBoxX1.Size = new System.Drawing.Size(134, 23);
             this.textBoxX1.TabIndex = 1;
             // 
             // txtSoPhieu
@@ -355,11 +355,11 @@
             this.txtSoPhieu.Border.Class = "TextBoxBorder";
             this.txtSoPhieu.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtSoPhieu.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoPhieu.Location = new System.Drawing.Point(85, 4);
+            this.txtSoPhieu.Location = new System.Drawing.Point(95, 4);
             this.txtSoPhieu.Margin = new System.Windows.Forms.Padding(0);
             this.txtSoPhieu.Name = "txtSoPhieu";
             this.txtSoPhieu.PreventEnterBeep = true;
-            this.txtSoPhieu.Size = new System.Drawing.Size(378, 21);
+            this.txtSoPhieu.Size = new System.Drawing.Size(368, 21);
             this.txtSoPhieu.TabIndex = 0;
             // 
             // layoutControlItem1
@@ -428,7 +428,7 @@
             this.ribBarDSThietBi.ContainerControlProcessDialogKey = true;
             this.ribBarDSThietBi.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribBarDSThietBi.DragDropSupport = true;
-            this.ribBarDSThietBi.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.ribBarDSThietBi.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.ribBarDSThietBi.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.btnLuu,
             this.btnXoa,
@@ -440,7 +440,7 @@
             this.ribBarDSThietBi.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
             this.ribBarDSThietBi.Name = "ribBarDSThietBi";
             this.ribBarDSThietBi.ShowShortcutKeysInToolTips = true;
-            this.ribBarDSThietBi.Size = new System.Drawing.Size(1032, 40);
+            this.ribBarDSThietBi.Size = new System.Drawing.Size(1032, 35);
             this.ribBarDSThietBi.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribBarDSThietBi.TabIndex = 11;
             // 
@@ -469,7 +469,6 @@
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlD);
             this.btnXoa.Text = "Xóa";
-            this.btnXoa.Tooltip = "Xóa thiết bị";
             // 
             // btnHelpDSTB
             // 
@@ -498,7 +497,7 @@
             this.ClientSize = new System.Drawing.Size(1032, 373);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
-            this.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmPhieuMuaThietBi";
             this.ShowIcon = false;
             this.Text = "Đề nghị mua sắm thiết bị";

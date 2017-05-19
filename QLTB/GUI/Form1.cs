@@ -16,8 +16,22 @@ namespace QLTB.GUI
         {
             InitializeComponent();
             bar1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-
-
+            //
+            btnThietBi.Click += btnThietBi_Click;
+            btnMuonTra.Click += btnMuonTra_Click;
+            btnPhongBM.Click += btnPhongBM_Click;
+            btnBaoCao.Click += btnBaoCao_Click;
+            //
+            btnDSThietBi.Click += btnDSThietBi_Click;
+            btnKiemKe.Click += btnKiemKe_Click;
+            btnTheoDoiHong.Click += btnTheoDoiHong_Click;
+            btnThanhLy.Click += BtnThanhLy_Click;
+            btnGiamTB.Click += btnGiamTB_Click;
+            btnSuaChua.Click += btnSuaChua_Click;
+            btnTangTB.Click += btnTangTB_Click;
+            btnDeNghiMua.Click += btnDeNghiMua_Click;
+            //
+            
             //
             btnDMCanBo.Click += BtnDMCanBo_Click;
             btnDMGiaoVien.Click += BtnDMGiaoVien_Click;
@@ -33,6 +47,8 @@ namespace QLTB.GUI
             btnTLThongTinNamHoc.Click += BtnTLThongTinNamHoc_Click;
             btnPhanQuyen.Click += btnPhanQuyen_Click;
             btnTaiKhoan.Click += BtnTaiKhoan_Click;
+            //
+         
         }
 
         private void BtnTaiKhoan_Click(object sender, EventArgs e)
@@ -293,11 +309,6 @@ namespace QLTB.GUI
 
         }
 
-        private void buttonItem7_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             foreach (Button item in toolmenuTB.Controls.OfType<Button>())
@@ -482,26 +493,22 @@ namespace QLTB.GUI
         private void btnThietBi_Click(object sender, EventArgs e)
         {
             Cursor = Cursors.WaitCursor;
+            //btnDSThietBi.PerformClick();
+            btnDSThietBi_Click(null, null);
+            button1_Click(btnDSThietBi, null);
             toolmenuTB.Visible = true;
-            btnDSThietBi.Click += btnDSThietBi_Click;
-            btnKiemKe.Click += btnKiemKe_Click;
-            btnTheoDoiHong.Click += btnTheoDoiHong_Click;
-            btnThanhLy.Click += BtnThanhLy_Click;
-            btnGiamTB.Click += btnGiamTB_Click;
-            btnSuaChua.Click += btnSuaChua_Click;
-            btnTangTB.Click += btnTangTB_Click;
-            btnDeNghiMua.Click += btnDeNghiMua_Click;
-            btnDSThietBi.PerformClick();
+            Cursor = Cursors.Default;
         }
 
         private void btnMuonTra_Click(object sender, EventArgs e)
         {
-            toolmenuTB.Visible = false;
+
             Cursor = Cursors.WaitCursor;
             try
             {
                 if (!CheckExistForm("frmDanhSachMuonTB"))
                 {
+                    lbChucNang.Text = "Mượn trả";
                     frmDanhSachMuonTB frm = new frmDanhSachMuonTB();
                     frm.SuspendLayout();
                     frm.MdiParent = this;
@@ -520,12 +527,12 @@ namespace QLTB.GUI
 
         private void btnPhongBM_Click(object sender, EventArgs e)
         {
-            toolmenuTB.Visible = false;
             Cursor = Cursors.WaitCursor;
             try
             {
                 if (!CheckExistForm("frmDSMuonPhongBM"))
                 {
+                    lbChucNang.Text = "Phòng bộ môn";
                     frmDSMuonPhongBM frm = new frmDSMuonPhongBM();
                     frm.SuspendLayout();
                     frm.MdiParent = this;
@@ -541,14 +548,14 @@ namespace QLTB.GUI
             Cursor = Cursors.Default;
         }
 
-        private void buttonItem9_Click(object sender, EventArgs e)
+        private void btnBaoCao_Click(object sender, EventArgs e)
         {
-            toolmenuTB.Visible = false;
             Cursor = Cursors.WaitCursor;
             try
             {
                 if (!CheckExistForm("frmThongKeBaoCao"))
                 {
+                    lbChucNang.Text = "Báo cáo";
                     frmThongKeBaoCao frm = new frmThongKeBaoCao();
                     frm.SuspendLayout();
                     frm.MdiParent = this;
@@ -563,11 +570,17 @@ namespace QLTB.GUI
             }
             Cursor = Cursors.Default;
         }
-
-        private void btnDMTB_Click_1(object sender, EventArgs e)
+        private void btnDanhMuc_Click(object sender, EventArgs e)
         {
             toolmenuTB.Visible = false;
+            DevComponents.DotNetBar.ButtonItem btn = sender as DevComponents.DotNetBar.ButtonItem;
+            lbChucNang.Text = btn.Text;
         }
-
+        private void btnChucNang_Click(object sender, EventArgs e)
+        {
+            toolmenuTB.Visible = false;
+            DevComponents.DotNetBar.ButtonItem btn = sender as DevComponents.DotNetBar.ButtonItem;
+            lbChucNang.Text = btn.Tag.ToString();
+        }
     }
 }

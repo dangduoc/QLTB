@@ -32,11 +32,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.lbChucNang = new DevComponents.DotNetBar.LabelX();
             this.line1 = new DevComponents.DotNetBar.Controls.Line();
             this.bar2 = new DevComponents.DotNetBar.Bar();
             this.buttonItem3 = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem4 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem5 = new DevComponents.DotNetBar.ButtonItem();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.bar1 = new DevComponents.DotNetBar.Bar();
@@ -57,7 +56,7 @@
             this.btnTLThongTinDV = new DevComponents.DotNetBar.ButtonItem();
             this.btnTLThongTinNamHoc = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem2 = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem9 = new DevComponents.DotNetBar.ButtonItem();
+            this.btnBaoCao = new DevComponents.DotNetBar.ButtonItem();
             this.btnQuanTri = new DevComponents.DotNetBar.ButtonItem();
             this.btnTaiKhoan = new DevComponents.DotNetBar.ButtonItem();
             this.btnPhanQuyen = new DevComponents.DotNetBar.ButtonItem();
@@ -97,7 +96,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.labelX2);
+            this.panel1.Controls.Add(this.lbChucNang);
             this.panel1.Controls.Add(this.line1);
             this.panel1.Controls.Add(this.bar2);
             this.panel1.Controls.Add(this.labelX1);
@@ -107,22 +106,22 @@
             this.panel1.Size = new System.Drawing.Size(1083, 63);
             this.panel1.TabIndex = 12;
             // 
-            // labelX2
+            // lbChucNang
             // 
             // 
             // 
             // 
-            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.labelX2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX2.ForeColor = System.Drawing.Color.ForestGreen;
-            this.labelX2.Location = new System.Drawing.Point(274, 0);
-            this.labelX2.Name = "labelX2";
-            this.labelX2.PaddingLeft = 5;
-            this.labelX2.Size = new System.Drawing.Size(239, 63);
-            this.labelX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.labelX2.TabIndex = 15;
-            this.labelX2.Text = "Thiết bị";
+            this.lbChucNang.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbChucNang.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lbChucNang.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbChucNang.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lbChucNang.Location = new System.Drawing.Point(274, 0);
+            this.lbChucNang.Name = "lbChucNang";
+            this.lbChucNang.PaddingLeft = 5;
+            this.lbChucNang.Size = new System.Drawing.Size(239, 63);
+            this.lbChucNang.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lbChucNang.TabIndex = 15;
+            this.lbChucNang.Text = "Thiết bị";
             // 
             // line1
             // 
@@ -168,14 +167,7 @@
             this.buttonItem3.FontBold = true;
             this.buttonItem3.ItemAlignment = DevComponents.DotNetBar.eItemAlignment.Far;
             this.buttonItem3.Name = "buttonItem3";
-            this.buttonItem3.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.buttonItem4});
             this.buttonItem3.Text = "Trường THCS Nam Hà - Đặng Minh Được";
-            // 
-            // buttonItem4
-            // 
-            this.buttonItem4.Name = "buttonItem4";
-            this.buttonItem4.Text = "buttonItem4";
             // 
             // buttonItem5
             // 
@@ -215,7 +207,7 @@
             this.btnPhongBM,
             this.btnDanhMuc,
             this.buttonItem8,
-            this.buttonItem9,
+            this.btnBaoCao,
             this.btnQuanTri,
             this.labelItem1,
             this.textBoxItem1,
@@ -237,29 +229,36 @@
             // 
             // btnThietBi
             // 
+            this.btnThietBi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThietBi.ImagePaddingHorizontal = 20;
             this.btnThietBi.ImagePaddingVertical = 5;
             this.btnThietBi.ItemAlignment = DevComponents.DotNetBar.eItemAlignment.Center;
             this.btnThietBi.Name = "btnThietBi";
             this.btnThietBi.PersonalizedMenus = DevComponents.DotNetBar.ePersonalizedMenus.Both;
+            this.btnThietBi.Tag = "Thiết bị";
             this.btnThietBi.Text = "THIẾT BỊ";
-            this.btnThietBi.Click += new System.EventHandler(this.btnThietBi_Click);
+            this.btnThietBi.Click += new System.EventHandler(this.btnChucNang_Click);
             // 
             // btnMuonTra
             // 
+            this.btnMuonTra.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMuonTra.Name = "btnMuonTra";
+            this.btnMuonTra.Tag = "Mượn trả";
             this.btnMuonTra.Text = "MƯỢN TRẢ";
-            this.btnMuonTra.Click += new System.EventHandler(this.btnMuonTra_Click);
+            this.btnMuonTra.Click += new System.EventHandler(this.btnChucNang_Click);
             // 
             // btnPhongBM
             // 
+            this.btnPhongBM.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPhongBM.Name = "btnPhongBM";
+            this.btnPhongBM.Tag = "Phòng bộ môn";
             this.btnPhongBM.Text = "PHÒNG BỘ MÔN";
-            this.btnPhongBM.Click += new System.EventHandler(this.btnPhongBM_Click);
+            this.btnPhongBM.Click += new System.EventHandler(this.btnChucNang_Click);
             // 
             // btnDanhMuc
             // 
             this.btnDanhMuc.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
+            this.btnDanhMuc.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDanhMuc.FixedSize = new System.Drawing.Size(100, 35);
             this.btnDanhMuc.Name = "btnDanhMuc";
             this.btnDanhMuc.PersonalizedMenus = DevComponents.DotNetBar.ePersonalizedMenus.Both;
@@ -274,8 +273,8 @@
             this.btnDMGiaoVien,
             this.btnDMCanBo,
             this.btnDMNguonKP});
+            this.btnDanhMuc.Tag = "Danh mục";
             this.btnDanhMuc.Text = "DANH MỤC";
-            this.btnDanhMuc.Click += new System.EventHandler(this.buttonItem7_Click);
             // 
             // btnDMTB
             // 
@@ -283,60 +282,61 @@
             this.btnDMTB.Name = "btnDMTB";
             this.btnDMTB.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor();
             this.btnDMTB.Text = "Thiết bị giáo dục";
-            this.btnDMTB.Click += new System.EventHandler(this.btnDMTB_Click_1);
+            this.btnDMTB.Click += new System.EventHandler(this.btnDanhMuc_Click);
             // 
             // btnDMPhongBM
             // 
             this.btnDMPhongBM.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
             this.btnDMPhongBM.Name = "btnDMPhongBM";
             this.btnDMPhongBM.Text = "Kho/ phòng bộ môn";
-            this.btnDMPhongBM.Click += new System.EventHandler(this.btnDMTB_Click_1);
+            this.btnDMPhongBM.Click += new System.EventHandler(this.btnDanhMuc_Click);
             // 
             // btnDMKhoiLop
             // 
             this.btnDMKhoiLop.Name = "btnDMKhoiLop";
             this.btnDMKhoiLop.Text = "Khối lớp";
-            this.btnDMKhoiLop.Click += new System.EventHandler(this.btnDMTB_Click_1);
+            this.btnDMKhoiLop.Click += new System.EventHandler(this.btnDanhMuc_Click);
             // 
             // btnDMLopHoc
             // 
             this.btnDMLopHoc.Name = "btnDMLopHoc";
             this.btnDMLopHoc.Text = "Lớp học";
-            this.btnDMLopHoc.Click += new System.EventHandler(this.btnDMTB_Click_1);
+            this.btnDMLopHoc.Click += new System.EventHandler(this.btnDanhMuc_Click);
             // 
             // btnDMToBoMon
             // 
             this.btnDMToBoMon.Name = "btnDMToBoMon";
             this.btnDMToBoMon.Text = "Tổ bổ môn";
-            this.btnDMToBoMon.Click += new System.EventHandler(this.btnDMTB_Click_1);
+            this.btnDMToBoMon.Click += new System.EventHandler(this.btnDanhMuc_Click);
             // 
             // btnDMMonHoc
             // 
             this.btnDMMonHoc.Name = "btnDMMonHoc";
             this.btnDMMonHoc.Text = "Môn Học";
-            this.btnDMMonHoc.Click += new System.EventHandler(this.btnDMTB_Click_1);
+            this.btnDMMonHoc.Click += new System.EventHandler(this.btnDanhMuc_Click);
             // 
             // btnDMGiaoVien
             // 
             this.btnDMGiaoVien.Name = "btnDMGiaoVien";
             this.btnDMGiaoVien.Text = "Giáo viên";
-            this.btnDMGiaoVien.Click += new System.EventHandler(this.btnDMTB_Click_1);
+            this.btnDMGiaoVien.Click += new System.EventHandler(this.btnDanhMuc_Click);
             // 
             // btnDMCanBo
             // 
             this.btnDMCanBo.Name = "btnDMCanBo";
             this.btnDMCanBo.Text = "Cán bộ thiết bị";
-            this.btnDMCanBo.Click += new System.EventHandler(this.btnDMTB_Click_1);
+            this.btnDMCanBo.Click += new System.EventHandler(this.btnDanhMuc_Click);
             // 
             // btnDMNguonKP
             // 
             this.btnDMNguonKP.Name = "btnDMNguonKP";
             this.btnDMNguonKP.Text = "Nguồn kinh phí";
-            this.btnDMNguonKP.Click += new System.EventHandler(this.btnDMTB_Click_1);
+            this.btnDMNguonKP.Click += new System.EventHandler(this.btnDanhMuc_Click);
             // 
             // buttonItem8
             // 
             this.buttonItem8.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
+            this.buttonItem8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonItem8.FixedSize = new System.Drawing.Size(0, 35);
             this.buttonItem8.Name = "buttonItem8";
             this.buttonItem8.PersonalizedMenus = DevComponents.DotNetBar.ePersonalizedMenus.Both;
@@ -345,51 +345,58 @@
             this.btnTLThongTinDV,
             this.btnTLThongTinNamHoc,
             this.buttonItem2});
+            this.buttonItem8.Tag = "Thiết lập";
             this.buttonItem8.Text = "THIẾT LẬP";
             // 
             // btnTLThongTinDV
             // 
             this.btnTLThongTinDV.Name = "btnTLThongTinDV";
             this.btnTLThongTinDV.Text = "Thông tin đơn vị";
-            this.btnTLThongTinDV.Click += new System.EventHandler(this.btnDMTB_Click_1);
+            this.btnTLThongTinDV.Click += new System.EventHandler(this.btnDanhMuc_Click);
             // 
             // btnTLThongTinNamHoc
             // 
             this.btnTLThongTinNamHoc.Name = "btnTLThongTinNamHoc";
             this.btnTLThongTinNamHoc.Text = "Thông tin năm học";
-            this.btnTLThongTinNamHoc.Click += new System.EventHandler(this.btnDMTB_Click_1);
+            this.btnTLThongTinNamHoc.Click += new System.EventHandler(this.btnDanhMuc_Click);
             // 
             // buttonItem2
             // 
             this.buttonItem2.BeginGroup = true;
             this.buttonItem2.Name = "buttonItem2";
             this.buttonItem2.Text = "Tùy chọn";
+            this.buttonItem2.Click += new System.EventHandler(this.btnDanhMuc_Click);
             // 
-            // buttonItem9
+            // btnBaoCao
             // 
-            this.buttonItem9.Name = "buttonItem9";
-            this.buttonItem9.Text = "BÁO CÁO";
-            this.buttonItem9.Click += new System.EventHandler(this.buttonItem9_Click);
+            this.btnBaoCao.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBaoCao.Name = "btnBaoCao";
+            this.btnBaoCao.Tag = "Báo cáo";
+            this.btnBaoCao.Text = "BÁO CÁO";
+            this.btnBaoCao.Click += new System.EventHandler(this.btnChucNang_Click);
             // 
             // btnQuanTri
             // 
             this.btnQuanTri.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
+            this.btnQuanTri.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnQuanTri.Name = "btnQuanTri";
             this.btnQuanTri.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.btnTaiKhoan,
             this.btnPhanQuyen});
+            this.btnQuanTri.Tag = "Quản trị";
             this.btnQuanTri.Text = "QUẢN TRỊ";
             // 
             // btnTaiKhoan
             // 
             this.btnTaiKhoan.Name = "btnTaiKhoan";
             this.btnTaiKhoan.Text = "Tài khoản hệ thống";
+            this.btnTaiKhoan.Click += new System.EventHandler(this.btnDanhMuc_Click);
             // 
             // btnPhanQuyen
             // 
             this.btnPhanQuyen.Name = "btnPhanQuyen";
             this.btnPhanQuyen.Text = "Phần quyền - người dùng";
-            this.btnPhanQuyen.Click += new System.EventHandler(this.btnDMTB_Click_1);
+            this.btnPhanQuyen.Click += new System.EventHandler(this.btnDanhMuc_Click);
             // 
             // labelItem1
             // 
@@ -511,12 +518,13 @@
             // 
             // btnDeNghiMua
             // 
+            this.btnDeNghiMua.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDeNghiMua.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnDeNghiMua.FlatAppearance.BorderSize = 0;
             this.btnDeNghiMua.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
             this.btnDeNghiMua.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
             this.btnDeNghiMua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeNghiMua.Location = new System.Drawing.Point(840, 0);
+            this.btnDeNghiMua.Location = new System.Drawing.Point(860, 0);
             this.btnDeNghiMua.Name = "btnDeNghiMua";
             this.btnDeNghiMua.Size = new System.Drawing.Size(120, 35);
             this.btnDeNghiMua.TabIndex = 7;
@@ -526,12 +534,13 @@
             // 
             // btnGiamTB
             // 
+            this.btnGiamTB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGiamTB.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnGiamTB.FlatAppearance.BorderSize = 0;
             this.btnGiamTB.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
             this.btnGiamTB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
             this.btnGiamTB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGiamTB.Location = new System.Drawing.Point(720, 0);
+            this.btnGiamTB.Location = new System.Drawing.Point(740, 0);
             this.btnGiamTB.Name = "btnGiamTB";
             this.btnGiamTB.Size = new System.Drawing.Size(120, 35);
             this.btnGiamTB.TabIndex = 6;
@@ -541,12 +550,13 @@
             // 
             // btnSuaChua
             // 
+            this.btnSuaChua.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSuaChua.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnSuaChua.FlatAppearance.BorderSize = 0;
             this.btnSuaChua.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
             this.btnSuaChua.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
             this.btnSuaChua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSuaChua.Location = new System.Drawing.Point(600, 0);
+            this.btnSuaChua.Location = new System.Drawing.Point(620, 0);
             this.btnSuaChua.Name = "btnSuaChua";
             this.btnSuaChua.Size = new System.Drawing.Size(120, 35);
             this.btnSuaChua.TabIndex = 5;
@@ -556,12 +566,13 @@
             // 
             // btnThanhLy
             // 
+            this.btnThanhLy.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThanhLy.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnThanhLy.FlatAppearance.BorderSize = 0;
             this.btnThanhLy.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
             this.btnThanhLy.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
             this.btnThanhLy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThanhLy.Location = new System.Drawing.Point(480, 0);
+            this.btnThanhLy.Location = new System.Drawing.Point(500, 0);
             this.btnThanhLy.Name = "btnThanhLy";
             this.btnThanhLy.Size = new System.Drawing.Size(120, 35);
             this.btnThanhLy.TabIndex = 4;
@@ -571,6 +582,7 @@
             // 
             // btnTheoDoiHong
             // 
+            this.btnTheoDoiHong.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTheoDoiHong.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnTheoDoiHong.FlatAppearance.BorderSize = 0;
             this.btnTheoDoiHong.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
@@ -578,7 +590,7 @@
             this.btnTheoDoiHong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTheoDoiHong.Location = new System.Drawing.Point(360, 0);
             this.btnTheoDoiHong.Name = "btnTheoDoiHong";
-            this.btnTheoDoiHong.Size = new System.Drawing.Size(120, 35);
+            this.btnTheoDoiHong.Size = new System.Drawing.Size(140, 35);
             this.btnTheoDoiHong.TabIndex = 3;
             this.btnTheoDoiHong.Text = "Theo dõi hỏng/ mất";
             this.btnTheoDoiHong.UseVisualStyleBackColor = true;
@@ -586,6 +598,7 @@
             // 
             // btnKiemKe
             // 
+            this.btnKiemKe.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnKiemKe.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnKiemKe.FlatAppearance.BorderSize = 0;
             this.btnKiemKe.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
@@ -601,6 +614,7 @@
             // 
             // btnTangTB
             // 
+            this.btnTangTB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTangTB.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnTangTB.FlatAppearance.BorderSize = 0;
             this.btnTangTB.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
@@ -616,6 +630,7 @@
             // 
             // btnDSThietBi
             // 
+            this.btnDSThietBi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDSThietBi.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnDSThietBi.FlatAppearance.BorderSize = 0;
             this.btnDSThietBi.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
@@ -642,7 +657,7 @@
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.FlattenMDIBorder = false;
-            this.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "Form1";
@@ -668,7 +683,6 @@
         private System.Windows.Forms.Panel panel1;
         private DevComponents.DotNetBar.Bar bar2;
         private DevComponents.DotNetBar.ButtonItem buttonItem3;
-        private DevComponents.DotNetBar.ButtonItem buttonItem4;
         private DevComponents.DotNetBar.ButtonItem buttonItem5;
         private DevComponents.DotNetBar.Bar bar1;
         private DevComponents.DotNetBar.ButtonItem btnThietBi;
@@ -681,8 +695,8 @@
         private DevComponents.DotNetBar.ButtonItem btnDMLopHoc;
         private DevComponents.DotNetBar.ButtonItem buttonItem8;
         private DevComponents.DotNetBar.ButtonItem btnTLThongTinDV;
-        private DevComponents.DotNetBar.ButtonItem buttonItem9;
-        private DevComponents.DotNetBar.LabelX labelX2;
+        private DevComponents.DotNetBar.ButtonItem btnBaoCao;
+        private DevComponents.DotNetBar.LabelX lbChucNang;
         private DevComponents.DotNetBar.Controls.Line line1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;

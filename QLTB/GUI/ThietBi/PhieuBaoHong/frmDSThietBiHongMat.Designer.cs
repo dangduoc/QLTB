@@ -153,7 +153,7 @@
             this.ADGVDanhSach.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -163,14 +163,13 @@
             this.ADGVDanhSach.DateWithTime = false;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.ADGVDanhSach.DefaultCellStyle = dataGridViewCellStyle2;
             this.ADGVDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ADGVDanhSach.GridColor = System.Drawing.Color.Black;
             this.ADGVDanhSach.Location = new System.Drawing.Point(0, 0);
             this.ADGVDanhSach.Name = "ADGVDanhSach";
             this.ADGVDanhSach.ReadOnly = true;
@@ -196,6 +195,7 @@
             this.panelEx2.Controls.Add(this.comboBoxEx1);
             this.panelEx2.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelEx2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelEx2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelEx2.Location = new System.Drawing.Point(0, 362);
             this.panelEx2.Name = "panelEx2";
             this.panelEx2.Size = new System.Drawing.Size(904, 32);
@@ -351,7 +351,7 @@
             this.ribBarDSThietBi.ContainerControlProcessDialogKey = true;
             this.ribBarDSThietBi.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribBarDSThietBi.DragDropSupport = true;
-            this.ribBarDSThietBi.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.ribBarDSThietBi.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.ribBarDSThietBi.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.btnThemDSTB,
             this.btnSuaDSTB,
@@ -389,7 +389,6 @@
             this.btnThemDSTB.Name = "btnThemDSTB";
             this.btnThemDSTB.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlN);
             this.btnThemDSTB.Text = "Thêm";
-            this.btnThemDSTB.Tooltip = "Khai báo thiết bị";
             this.btnThemDSTB.Click += new System.EventHandler(this.btnThemDSTB_Click);
             // 
             // btnSuaDSTB
@@ -411,7 +410,6 @@
             this.btnXoaDSTB.Name = "btnXoaDSTB";
             this.btnXoaDSTB.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlD);
             this.btnXoaDSTB.Text = "Xóa";
-            this.btnXoaDSTB.Tooltip = "Xóa thiết bị";
             // 
             // btnNapDSTB
             // 
@@ -435,7 +433,7 @@
             this.btnImportDSTB.RibbonWordWrap = false;
             this.btnImportDSTB.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F7);
             this.btnImportDSTB.Text = "Nhập khẩu";
-            this.btnImportDSTB.Tooltip = "Xuất dữ liệu ra file excel";
+            this.btnImportDSTB.Tooltip = "Import dữ liệu";
             // 
             // btnInDSTB
             // 
@@ -525,7 +523,7 @@
             this.ClientSize = new System.Drawing.Size(904, 455);
             this.Controls.Add(this.pnlBackDS);
             this.DoubleBuffered = true;
-            this.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmDSThietBiHongMat";
             this.Text = "Danh sách thiết bị hỏng mất";
             this.Load += new System.EventHandler(this.frmDSThietBiHongMat_Load);

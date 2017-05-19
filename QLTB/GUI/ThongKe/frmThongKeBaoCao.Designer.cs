@@ -63,7 +63,7 @@
             this.rbChucNang.ContainerControlProcessDialogKey = true;
             this.rbChucNang.Dock = System.Windows.Forms.DockStyle.Top;
             this.rbChucNang.DragDropSupport = true;
-            this.rbChucNang.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F);
+            this.rbChucNang.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.rbChucNang.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.buttonItem2,
             this.btnTroGiup,
@@ -89,7 +89,6 @@
             // 
             this.buttonItem2.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
             this.buttonItem2.Image = global::QLTB.Properties.Resources.tick;
-            this.buttonItem2.ImagePaddingHorizontal = 30;
             this.buttonItem2.ImagePaddingVertical = 15;
             this.buttonItem2.Name = "buttonItem2";
             this.buttonItem2.SubItemsExpandWidth = 14;
@@ -190,7 +189,7 @@
             this.Controls.Add(this.expandablePanel1);
             this.Controls.Add(this.rbChucNang);
             this.DoubleBuffered = true;
-            this.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmThongKeBaoCao";
             this.Text = "Thống kê báo cáo";
             this.Load += new System.EventHandler(this.frmThongKeBaoCao_Load);

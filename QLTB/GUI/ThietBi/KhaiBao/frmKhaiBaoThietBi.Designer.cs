@@ -152,7 +152,7 @@
             this.layoutControl1.Controls.Add(this.txtTen);
             this.layoutControl1.Controls.Add(this.cbbMaThietBi);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutControl1.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControl1.ForeColor = System.Drawing.Color.Black;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.MinimumSize = new System.Drawing.Size(933, 0);
@@ -224,10 +224,10 @@
             this.cbbDVT.ForeColor = System.Drawing.Color.Black;
             this.cbbDVT.FormattingEnabled = true;
             this.cbbDVT.ItemHeight = 15;
-            this.cbbDVT.Location = new System.Drawing.Point(670, 74);
+            this.cbbDVT.Location = new System.Drawing.Point(684, 74);
             this.cbbDVT.Margin = new System.Windows.Forms.Padding(0);
             this.cbbDVT.Name = "cbbDVT";
-            this.cbbDVT.Size = new System.Drawing.Size(149, 23);
+            this.cbbDVT.Size = new System.Drawing.Size(135, 23);
             this.cbbDVT.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbbDVT.TabIndex = 4;
             this.cbbDVT.Tag = "Đơn vị tính";
@@ -242,11 +242,11 @@
             this.txtNamTheoDoi.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtNamTheoDoi.DisabledBackColor = System.Drawing.Color.White;
             this.txtNamTheoDoi.ForeColor = System.Drawing.Color.Black;
-            this.txtNamTheoDoi.Location = new System.Drawing.Point(146, 397);
+            this.txtNamTheoDoi.Location = new System.Drawing.Point(160, 397);
             this.txtNamTheoDoi.Margin = new System.Windows.Forms.Padding(0);
             this.txtNamTheoDoi.Name = "txtNamTheoDoi";
             this.txtNamTheoDoi.PreventEnterBeep = true;
-            this.txtNamTheoDoi.Size = new System.Drawing.Size(351, 21);
+            this.txtNamTheoDoi.Size = new System.Drawing.Size(337, 23);
             this.txtNamTheoDoi.TabIndex = 29;
             this.txtNamTheoDoi.Tag = "Năm theo dõi";
             // 
@@ -261,7 +261,7 @@
             this.dpickerNgaySD.ButtonDropDown.Visible = true;
             this.dpickerNgaySD.CustomFormat = "dd/mm/yyyy";
             this.dpickerNgaySD.IsPopupCalendarOpen = false;
-            this.dpickerNgaySD.Location = new System.Drawing.Point(301, 361);
+            this.dpickerNgaySD.Location = new System.Drawing.Point(306, 361);
             this.dpickerNgaySD.Margin = new System.Windows.Forms.Padding(0);
             // 
             // 
@@ -292,7 +292,7 @@
             this.dpickerNgaySD.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.dpickerNgaySD.MonthCalendar.TodayButtonVisible = true;
             this.dpickerNgaySD.Name = "dpickerNgaySD";
-            this.dpickerNgaySD.Size = new System.Drawing.Size(196, 21);
+            this.dpickerNgaySD.Size = new System.Drawing.Size(191, 23);
             this.dpickerNgaySD.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dpickerNgaySD.TabIndex = 25;
             this.dpickerNgaySD.WatermarkText = "dd/mm/yyyy";
@@ -307,11 +307,11 @@
             this.txtNamSD.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtNamSD.DisabledBackColor = System.Drawing.Color.White;
             this.txtNamSD.ForeColor = System.Drawing.Color.Black;
-            this.txtNamSD.Location = new System.Drawing.Point(145, 361);
+            this.txtNamSD.Location = new System.Drawing.Point(157, 361);
             this.txtNamSD.Margin = new System.Windows.Forms.Padding(0);
             this.txtNamSD.Name = "txtNamSD";
             this.txtNamSD.PreventEnterBeep = true;
-            this.txtNamSD.Size = new System.Drawing.Size(101, 21);
+            this.txtNamSD.Size = new System.Drawing.Size(89, 23);
             this.txtNamSD.TabIndex = 24;
             this.txtNamSD.Tag = "Năm đưa vào sử dụng";
             // 
@@ -326,7 +326,7 @@
             this.dpickerHanSD.ButtonDropDown.Visible = true;
             this.dpickerHanSD.CustomFormat = "dd/mm/yyyy";
             this.dpickerHanSD.IsPopupCalendarOpen = false;
-            this.dpickerHanSD.Location = new System.Drawing.Point(670, 366);
+            this.dpickerHanSD.Location = new System.Drawing.Point(684, 366);
             this.dpickerHanSD.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             // 
             // 
@@ -357,7 +357,7 @@
             this.dpickerHanSD.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.dpickerHanSD.MonthCalendar.TodayButtonVisible = true;
             this.dpickerHanSD.Name = "dpickerHanSD";
-            this.dpickerHanSD.Size = new System.Drawing.Size(200, 21);
+            this.dpickerHanSD.Size = new System.Drawing.Size(186, 23);
             this.dpickerHanSD.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dpickerHanSD.TabIndex = 27;
             this.dpickerHanSD.WatermarkText = "dd/mm/yyyy";
@@ -373,7 +373,7 @@
             this.dpickNgaySX.ButtonDropDown.Visible = true;
             this.dpickNgaySX.CustomFormat = "dd/mm/yyyy";
             this.dpickNgaySX.IsPopupCalendarOpen = false;
-            this.dpickNgaySX.Location = new System.Drawing.Point(670, 325);
+            this.dpickNgaySX.Location = new System.Drawing.Point(684, 325);
             this.dpickNgaySX.Margin = new System.Windows.Forms.Padding(0);
             // 
             // 
@@ -404,7 +404,7 @@
             this.dpickNgaySX.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.dpickNgaySX.MonthCalendar.TodayButtonVisible = true;
             this.dpickNgaySX.Name = "dpickNgaySX";
-            this.dpickNgaySX.Size = new System.Drawing.Size(200, 21);
+            this.dpickNgaySX.Size = new System.Drawing.Size(186, 23);
             this.dpickNgaySX.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dpickNgaySX.TabIndex = 22;
             this.dpickNgaySX.WatermarkText = "dd/mm/yyyy";
@@ -416,10 +416,10 @@
             this.cbbNguonKinhPhi.ForeColor = System.Drawing.Color.Black;
             this.cbbNguonKinhPhi.FormattingEnabled = true;
             this.cbbNguonKinhPhi.ItemHeight = 15;
-            this.cbbNguonKinhPhi.Location = new System.Drawing.Point(146, 325);
+            this.cbbNguonKinhPhi.Location = new System.Drawing.Point(160, 325);
             this.cbbNguonKinhPhi.Margin = new System.Windows.Forms.Padding(0);
             this.cbbNguonKinhPhi.Name = "cbbNguonKinhPhi";
-            this.cbbNguonKinhPhi.Size = new System.Drawing.Size(351, 23);
+            this.cbbNguonKinhPhi.Size = new System.Drawing.Size(337, 23);
             this.cbbNguonKinhPhi.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbbNguonKinhPhi.TabIndex = 21;
             this.cbbNguonKinhPhi.Tag = "Nguồn kinh phí";
@@ -431,10 +431,10 @@
             // 
             // 
             this.cboxThietBiTuLam.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.cboxThietBiTuLam.Location = new System.Drawing.Point(670, 289);
+            this.cboxThietBiTuLam.Location = new System.Drawing.Point(684, 289);
             this.cboxThietBiTuLam.Margin = new System.Windows.Forms.Padding(0, 0, 0, 12);
             this.cboxThietBiTuLam.Name = "cboxThietBiTuLam";
-            this.cboxThietBiTuLam.Size = new System.Drawing.Size(200, 16);
+            this.cboxThietBiTuLam.Size = new System.Drawing.Size(186, 16);
             this.cboxThietBiTuLam.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cboxThietBiTuLam.TabIndex = 19;
             this.cboxThietBiTuLam.TextColor = System.Drawing.Color.Black;
@@ -446,10 +446,10 @@
             this.cbbPhongBM.ForeColor = System.Drawing.Color.Black;
             this.cbbPhongBM.FormattingEnabled = true;
             this.cbbPhongBM.ItemHeight = 15;
-            this.cbbPhongBM.Location = new System.Drawing.Point(146, 289);
+            this.cbbPhongBM.Location = new System.Drawing.Point(160, 289);
             this.cbbPhongBM.Margin = new System.Windows.Forms.Padding(0);
             this.cbbPhongBM.Name = "cbbPhongBM";
-            this.cbbPhongBM.Size = new System.Drawing.Size(351, 23);
+            this.cbbPhongBM.Size = new System.Drawing.Size(337, 23);
             this.cbbPhongBM.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbbPhongBM.TabIndex = 18;
             this.cbbPhongBM.Tag = "Kho, phòng bộ môn";
@@ -461,10 +461,10 @@
             this.cbbMucDichSD.ForeColor = System.Drawing.Color.Black;
             this.cbbMucDichSD.FormattingEnabled = true;
             this.cbbMucDichSD.ItemHeight = 15;
-            this.cbbMucDichSD.Location = new System.Drawing.Point(680, 249);
+            this.cbbMucDichSD.Location = new System.Drawing.Point(688, 249);
             this.cbbMucDichSD.Margin = new System.Windows.Forms.Padding(0);
             this.cbbMucDichSD.Name = "cbbMucDichSD";
-            this.cbbMucDichSD.Size = new System.Drawing.Size(190, 23);
+            this.cbbMucDichSD.Size = new System.Drawing.Size(182, 23);
             this.cbbMucDichSD.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbbMucDichSD.TabIndex = 15;
             // 
@@ -478,11 +478,11 @@
             this.txtNuocSX.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtNuocSX.DisabledBackColor = System.Drawing.Color.White;
             this.txtNuocSX.ForeColor = System.Drawing.Color.Black;
-            this.txtNuocSX.Location = new System.Drawing.Point(678, 214);
+            this.txtNuocSX.Location = new System.Drawing.Point(686, 214);
             this.txtNuocSX.Margin = new System.Windows.Forms.Padding(0);
             this.txtNuocSX.Name = "txtNuocSX";
             this.txtNuocSX.PreventEnterBeep = true;
-            this.txtNuocSX.Size = new System.Drawing.Size(192, 21);
+            this.txtNuocSX.Size = new System.Drawing.Size(184, 23);
             this.txtNuocSX.TabIndex = 14;
             // 
             // txtThanhTien
@@ -495,11 +495,11 @@
             this.txtThanhTien.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtThanhTien.DisabledBackColor = System.Drawing.Color.White;
             this.txtThanhTien.ForeColor = System.Drawing.Color.Black;
-            this.txtThanhTien.Location = new System.Drawing.Point(678, 179);
+            this.txtThanhTien.Location = new System.Drawing.Point(686, 179);
             this.txtThanhTien.Margin = new System.Windows.Forms.Padding(0);
             this.txtThanhTien.Name = "txtThanhTien";
             this.txtThanhTien.PreventEnterBeep = true;
-            this.txtThanhTien.Size = new System.Drawing.Size(192, 21);
+            this.txtThanhTien.Size = new System.Drawing.Size(184, 23);
             this.txtThanhTien.TabIndex = 13;
             // 
             // txtQuyCach
@@ -509,12 +509,12 @@
             // 
             this.txtQuyCach.BackgroundStyle.Class = "RichTextBoxBorder";
             this.txtQuyCach.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtQuyCach.Location = new System.Drawing.Point(146, 179);
+            this.txtQuyCach.Location = new System.Drawing.Point(160, 179);
             this.txtQuyCach.Margin = new System.Windows.Forms.Padding(0);
             this.txtQuyCach.Name = "txtQuyCach";
             this.txtQuyCach.Rtf = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Times New R" +
-    "oman;}}\r\n\\viewkind4\\uc1\\pard\\f0\\fs18\\par\r\n}\r\n";
-            this.txtQuyCach.Size = new System.Drawing.Size(351, 102);
+    "oman;}}\r\n\\viewkind4\\uc1\\pard\\f0\\fs20\\par\r\n}\r\n";
+            this.txtQuyCach.Size = new System.Drawing.Size(337, 102);
             this.txtQuyCach.TabIndex = 12;
             // 
             // txtDonGia
@@ -527,11 +527,11 @@
             this.txtDonGia.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtDonGia.DisabledBackColor = System.Drawing.Color.White;
             this.txtDonGia.ForeColor = System.Drawing.Color.Black;
-            this.txtDonGia.Location = new System.Drawing.Point(670, 144);
+            this.txtDonGia.Location = new System.Drawing.Point(684, 144);
             this.txtDonGia.Margin = new System.Windows.Forms.Padding(0);
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.PreventEnterBeep = true;
-            this.txtDonGia.Size = new System.Drawing.Size(200, 21);
+            this.txtDonGia.Size = new System.Drawing.Size(186, 23);
             this.txtDonGia.TabIndex = 10;
             // 
             // txtSoHieu
@@ -544,11 +544,11 @@
             this.txtSoHieu.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtSoHieu.DisabledBackColor = System.Drawing.Color.White;
             this.txtSoHieu.ForeColor = System.Drawing.Color.Black;
-            this.txtSoHieu.Location = new System.Drawing.Point(146, 144);
+            this.txtSoHieu.Location = new System.Drawing.Point(160, 144);
             this.txtSoHieu.Margin = new System.Windows.Forms.Padding(0);
             this.txtSoHieu.Name = "txtSoHieu";
             this.txtSoHieu.PreventEnterBeep = true;
-            this.txtSoHieu.Size = new System.Drawing.Size(351, 21);
+            this.txtSoHieu.Size = new System.Drawing.Size(337, 23);
             this.txtSoHieu.TabIndex = 9;
             this.txtSoHieu.Tag = "Số hiệu";
             // 
@@ -562,11 +562,11 @@
             this.txtSoLuong.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtSoLuong.DisabledBackColor = System.Drawing.Color.White;
             this.txtSoLuong.ForeColor = System.Drawing.Color.Black;
-            this.txtSoLuong.Location = new System.Drawing.Point(670, 109);
+            this.txtSoLuong.Location = new System.Drawing.Point(684, 109);
             this.txtSoLuong.Margin = new System.Windows.Forms.Padding(0);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.PreventEnterBeep = true;
-            this.txtSoLuong.Size = new System.Drawing.Size(200, 21);
+            this.txtSoLuong.Size = new System.Drawing.Size(186, 23);
             this.txtSoLuong.TabIndex = 7;
             this.txtSoLuong.Tag = "Số lượng";
             // 
@@ -580,11 +580,11 @@
             this.txtTen.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtTen.DisabledBackColor = System.Drawing.Color.White;
             this.txtTen.ForeColor = System.Drawing.Color.Black;
-            this.txtTen.Location = new System.Drawing.Point(146, 109);
+            this.txtTen.Location = new System.Drawing.Point(160, 109);
             this.txtTen.Margin = new System.Windows.Forms.Padding(0);
             this.txtTen.Name = "txtTen";
             this.txtTen.PreventEnterBeep = true;
-            this.txtTen.Size = new System.Drawing.Size(351, 21);
+            this.txtTen.Size = new System.Drawing.Size(337, 23);
             this.txtTen.TabIndex = 6;
             // 
             // cbbMaThietBi
@@ -594,10 +594,10 @@
             this.cbbMaThietBi.ForeColor = System.Drawing.Color.Black;
             this.cbbMaThietBi.FormattingEnabled = true;
             this.cbbMaThietBi.ItemHeight = 15;
-            this.cbbMaThietBi.Location = new System.Drawing.Point(146, 74);
+            this.cbbMaThietBi.Location = new System.Drawing.Point(160, 74);
             this.cbbMaThietBi.Margin = new System.Windows.Forms.Padding(0);
             this.cbbMaThietBi.Name = "cbbMaThietBi";
-            this.cbbMaThietBi.Size = new System.Drawing.Size(351, 23);
+            this.cbbMaThietBi.Size = new System.Drawing.Size(337, 23);
             this.cbbMaThietBi.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbbMaThietBi.TabIndex = 3;
             this.cbbMaThietBi.Tag = "Mã thiết bị";
@@ -929,7 +929,7 @@
             this.ribBarDSThietBi.ContainerControlProcessDialogKey = true;
             this.ribBarDSThietBi.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribBarDSThietBi.DragDropSupport = true;
-            this.ribBarDSThietBi.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.ribBarDSThietBi.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.ribBarDSThietBi.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.btnLuu,
             this.btnXoaDSTB,
@@ -972,7 +972,6 @@
             this.btnXoaDSTB.Name = "btnXoaDSTB";
             this.btnXoaDSTB.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlD);
             this.btnXoaDSTB.Text = "Xóa";
-            this.btnXoaDSTB.Tooltip = "Xóa thiết bị";
             // 
             // btnHelpDSTB
             // 
@@ -1004,7 +1003,7 @@
             this.ClientSize = new System.Drawing.Size(1076, 467);
             this.Controls.Add(this.panelEx1);
             this.DoubleBuffered = true;
-            this.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmKhaiBaoThietBi";
             this.Text = "Khai báo thiết bị";
             this.Load += new System.EventHandler(this.frmKhaiBaoThietBi_Load);
