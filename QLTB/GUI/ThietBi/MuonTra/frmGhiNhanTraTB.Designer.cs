@@ -126,7 +126,7 @@
             this.ADGVDSTB.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -136,14 +136,13 @@
             this.ADGVDSTB.DateWithTime = false;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.ADGVDSTB.DefaultCellStyle = dataGridViewCellStyle2;
             this.ADGVDSTB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ADGVDSTB.GridColor = System.Drawing.Color.Black;
             this.ADGVDSTB.Location = new System.Drawing.Point(5, 65);
             this.ADGVDSTB.Name = "ADGVDSTB";
             this.ADGVDSTB.ReadOnly = true;
@@ -172,7 +171,7 @@
             this.ribbonBar1.ContainerControlProcessDialogKey = true;
             this.ribbonBar1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribbonBar1.DragDropSupport = true;
-            this.ribbonBar1.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.ribbonBar1.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.ribbonBar1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.buttonItem1,
             this.btnLayTB,
@@ -342,11 +341,11 @@
             this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.textBoxX1.DisabledBackColor = System.Drawing.Color.White;
             this.textBoxX1.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX1.Location = new System.Drawing.Point(98, 144);
+            this.textBoxX1.Location = new System.Drawing.Point(100, 144);
             this.textBoxX1.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxX1.Name = "textBoxX1";
             this.textBoxX1.PreventEnterBeep = true;
-            this.textBoxX1.Size = new System.Drawing.Size(663, 21);
+            this.textBoxX1.Size = new System.Drawing.Size(661, 23);
             this.textBoxX1.TabIndex = 13;
             // 
             // comboBoxEx1
@@ -356,10 +355,10 @@
             this.comboBoxEx1.ForeColor = System.Drawing.Color.Black;
             this.comboBoxEx1.FormattingEnabled = true;
             this.comboBoxEx1.ItemHeight = 15;
-            this.comboBoxEx1.Location = new System.Drawing.Point(863, 109);
+            this.comboBoxEx1.Location = new System.Drawing.Point(865, 109);
             this.comboBoxEx1.Margin = new System.Windows.Forms.Padding(0);
             this.comboBoxEx1.Name = "comboBoxEx1";
-            this.comboBoxEx1.Size = new System.Drawing.Size(227, 23);
+            this.comboBoxEx1.Size = new System.Drawing.Size(225, 23);
             this.comboBoxEx1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.comboBoxEx1.TabIndex = 12;
             // 
@@ -370,10 +369,10 @@
             this.comboBoxEx2.ForeColor = System.Drawing.Color.Black;
             this.comboBoxEx2.FormattingEnabled = true;
             this.comboBoxEx2.ItemHeight = 15;
-            this.comboBoxEx2.Location = new System.Drawing.Point(98, 109);
+            this.comboBoxEx2.Location = new System.Drawing.Point(100, 109);
             this.comboBoxEx2.Margin = new System.Windows.Forms.Padding(0);
             this.comboBoxEx2.Name = "comboBoxEx2";
-            this.comboBoxEx2.Size = new System.Drawing.Size(663, 23);
+            this.comboBoxEx2.Size = new System.Drawing.Size(661, 23);
             this.comboBoxEx2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.comboBoxEx2.TabIndex = 11;
             // 
@@ -388,7 +387,7 @@
             this.dateTimeInput1.ButtonDropDown.Visible = true;
             this.dateTimeInput1.CustomFormat = "dd/mm/yyyy";
             this.dateTimeInput1.IsPopupCalendarOpen = false;
-            this.dateTimeInput1.Location = new System.Drawing.Point(863, 74);
+            this.dateTimeInput1.Location = new System.Drawing.Point(865, 74);
             this.dateTimeInput1.Margin = new System.Windows.Forms.Padding(0);
             // 
             // 
@@ -419,7 +418,7 @@
             this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.dateTimeInput1.MonthCalendar.TodayButtonVisible = true;
             this.dateTimeInput1.Name = "dateTimeInput1";
-            this.dateTimeInput1.Size = new System.Drawing.Size(227, 21);
+            this.dateTimeInput1.Size = new System.Drawing.Size(225, 23);
             this.dateTimeInput1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dateTimeInput1.TabIndex = 10;
             this.dateTimeInput1.WatermarkText = "dd/mm/yyyy";
@@ -434,11 +433,11 @@
             this.textBoxX2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.textBoxX2.DisabledBackColor = System.Drawing.Color.White;
             this.textBoxX2.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX2.Location = new System.Drawing.Point(535, 74);
+            this.textBoxX2.Location = new System.Drawing.Point(537, 74);
             this.textBoxX2.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxX2.Name = "textBoxX2";
             this.textBoxX2.PreventEnterBeep = true;
-            this.textBoxX2.Size = new System.Drawing.Size(226, 21);
+            this.textBoxX2.Size = new System.Drawing.Size(224, 23);
             this.textBoxX2.TabIndex = 9;
             // 
             // comboBoxEx3
@@ -448,10 +447,10 @@
             this.comboBoxEx3.ForeColor = System.Drawing.Color.Black;
             this.comboBoxEx3.FormattingEnabled = true;
             this.comboBoxEx3.ItemHeight = 15;
-            this.comboBoxEx3.Location = new System.Drawing.Point(98, 74);
+            this.comboBoxEx3.Location = new System.Drawing.Point(100, 74);
             this.comboBoxEx3.Margin = new System.Windows.Forms.Padding(0);
             this.comboBoxEx3.Name = "comboBoxEx3";
-            this.comboBoxEx3.Size = new System.Drawing.Size(335, 23);
+            this.comboBoxEx3.Size = new System.Drawing.Size(333, 23);
             this.comboBoxEx3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.comboBoxEx3.TabIndex = 8;
             // 
@@ -479,11 +478,11 @@
             this.textBoxX3.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.textBoxX3.DisabledBackColor = System.Drawing.Color.White;
             this.textBoxX3.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX3.Location = new System.Drawing.Point(863, 43);
+            this.textBoxX3.Location = new System.Drawing.Point(866, 43);
             this.textBoxX3.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxX3.Name = "textBoxX3";
             this.textBoxX3.PreventEnterBeep = true;
-            this.textBoxX3.Size = new System.Drawing.Size(94, 21);
+            this.textBoxX3.Size = new System.Drawing.Size(91, 23);
             this.textBoxX3.TabIndex = 5;
             // 
             // comboBoxEx5
@@ -493,10 +492,10 @@
             this.comboBoxEx5.ForeColor = System.Drawing.Color.Black;
             this.comboBoxEx5.FormattingEnabled = true;
             this.comboBoxEx5.ItemHeight = 15;
-            this.comboBoxEx5.Location = new System.Drawing.Point(535, 39);
+            this.comboBoxEx5.Location = new System.Drawing.Point(537, 39);
             this.comboBoxEx5.Margin = new System.Windows.Forms.Padding(0);
             this.comboBoxEx5.Name = "comboBoxEx5";
-            this.comboBoxEx5.Size = new System.Drawing.Size(226, 23);
+            this.comboBoxEx5.Size = new System.Drawing.Size(224, 23);
             this.comboBoxEx5.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.comboBoxEx5.TabIndex = 4;
             // 
@@ -507,10 +506,10 @@
             this.comboBoxEx6.ForeColor = System.Drawing.Color.Black;
             this.comboBoxEx6.FormattingEnabled = true;
             this.comboBoxEx6.ItemHeight = 15;
-            this.comboBoxEx6.Location = new System.Drawing.Point(98, 39);
+            this.comboBoxEx6.Location = new System.Drawing.Point(100, 39);
             this.comboBoxEx6.Margin = new System.Windows.Forms.Padding(0);
             this.comboBoxEx6.Name = "comboBoxEx6";
-            this.comboBoxEx6.Size = new System.Drawing.Size(335, 23);
+            this.comboBoxEx6.Size = new System.Drawing.Size(333, 23);
             this.comboBoxEx6.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.comboBoxEx6.TabIndex = 3;
             // 
@@ -525,7 +524,7 @@
             this.dateTimeInput2.ButtonDropDown.Visible = true;
             this.dateTimeInput2.CustomFormat = "dd/mm/yyyy";
             this.dateTimeInput2.IsPopupCalendarOpen = false;
-            this.dateTimeInput2.Location = new System.Drawing.Point(865, 4);
+            this.dateTimeInput2.Location = new System.Drawing.Point(867, 4);
             this.dateTimeInput2.Margin = new System.Windows.Forms.Padding(0);
             // 
             // 
@@ -556,7 +555,7 @@
             this.dateTimeInput2.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.dateTimeInput2.MonthCalendar.TodayButtonVisible = true;
             this.dateTimeInput2.Name = "dateTimeInput2";
-            this.dateTimeInput2.Size = new System.Drawing.Size(225, 21);
+            this.dateTimeInput2.Size = new System.Drawing.Size(223, 23);
             this.dateTimeInput2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dateTimeInput2.TabIndex = 2;
             this.dateTimeInput2.WatermarkText = "dd/mm/yyyy";
@@ -568,10 +567,10 @@
             this.comboBoxEx7.ForeColor = System.Drawing.Color.Black;
             this.comboBoxEx7.FormattingEnabled = true;
             this.comboBoxEx7.ItemHeight = 15;
-            this.comboBoxEx7.Location = new System.Drawing.Point(535, 4);
+            this.comboBoxEx7.Location = new System.Drawing.Point(537, 4);
             this.comboBoxEx7.Margin = new System.Windows.Forms.Padding(0);
             this.comboBoxEx7.Name = "comboBoxEx7";
-            this.comboBoxEx7.Size = new System.Drawing.Size(226, 23);
+            this.comboBoxEx7.Size = new System.Drawing.Size(224, 23);
             this.comboBoxEx7.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.comboBoxEx7.TabIndex = 1;
             // 
@@ -585,12 +584,12 @@
             this.textBoxX4.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.textBoxX4.DisabledBackColor = System.Drawing.Color.White;
             this.textBoxX4.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX4.Location = new System.Drawing.Point(98, 4);
+            this.textBoxX4.Location = new System.Drawing.Point(100, 4);
             this.textBoxX4.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxX4.Name = "textBoxX4";
             this.textBoxX4.PreventEnterBeep = true;
             this.textBoxX4.ReadOnly = true;
-            this.textBoxX4.Size = new System.Drawing.Size(335, 21);
+            this.textBoxX4.Size = new System.Drawing.Size(333, 23);
             this.textBoxX4.TabIndex = 0;
             // 
             // layoutControlItem15
@@ -796,7 +795,7 @@
             this.ribBarDSThietBi.ContainerControlProcessDialogKey = true;
             this.ribBarDSThietBi.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribBarDSThietBi.DragDropSupport = true;
-            this.ribBarDSThietBi.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.ribBarDSThietBi.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.ribBarDSThietBi.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.btnLuu,
             this.btnBaoHong,
@@ -847,7 +846,6 @@
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlD);
             this.btnXoa.Text = "Xóa";
-            this.btnXoa.Tooltip = "Xóa thiết bị";
             // 
             // btnInDSTB
             // 
@@ -885,7 +883,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1114, 540);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmGhiNhanTraTB";
             this.Text = "Ghi nhận trả thiết bị";
             this.panel1.ResumeLayout(false);

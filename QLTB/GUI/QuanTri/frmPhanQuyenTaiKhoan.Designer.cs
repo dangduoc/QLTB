@@ -194,7 +194,7 @@
             this.MenuPhanQuyen.ContainerControlProcessDialogKey = true;
             this.MenuPhanQuyen.Dock = System.Windows.Forms.DockStyle.Top;
             this.MenuPhanQuyen.DragDropSupport = true;
-            this.MenuPhanQuyen.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.MenuPhanQuyen.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.MenuPhanQuyen.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.btnThem,
             this.btnSua,
@@ -208,7 +208,7 @@
             this.MenuPhanQuyen.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.MenuPhanQuyen.Name = "MenuPhanQuyen";
             this.MenuPhanQuyen.ShowShortcutKeysInToolTips = true;
-            this.MenuPhanQuyen.Size = new System.Drawing.Size(1112, 40);
+            this.MenuPhanQuyen.Size = new System.Drawing.Size(1112, 35);
             this.MenuPhanQuyen.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.MenuPhanQuyen.TabIndex = 33;
             this.MenuPhanQuyen.Text = "Phân quyền";
@@ -311,16 +311,17 @@
             // 
             // groupPanel1
             // 
+            this.groupPanel1.BackColor = System.Drawing.Color.White;
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.groupPanel1.Controls.Add(this.grpChiTietNhomQuyen);
             this.groupPanel1.Controls.Add(this.tvUsers);
             this.groupPanel1.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupPanel1.Location = new System.Drawing.Point(0, 40);
+            this.groupPanel1.Location = new System.Drawing.Point(0, 35);
             this.groupPanel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(389, 548);
+            this.groupPanel1.Size = new System.Drawing.Size(389, 553);
             // 
             // 
             // 
@@ -366,21 +367,18 @@
             this.grpChiTietNhomQuyen.DisabledBackColor = System.Drawing.Color.Empty;
             this.grpChiTietNhomQuyen.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.grpChiTietNhomQuyen.Enabled = false;
-            this.grpChiTietNhomQuyen.Location = new System.Drawing.Point(0, 317);
+            this.grpChiTietNhomQuyen.Location = new System.Drawing.Point(0, 321);
             this.grpChiTietNhomQuyen.Name = "grpChiTietNhomQuyen";
             this.grpChiTietNhomQuyen.Size = new System.Drawing.Size(383, 209);
             this.grpChiTietNhomQuyen.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.grpChiTietNhomQuyen.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.grpChiTietNhomQuyen.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
             this.grpChiTietNhomQuyen.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.grpChiTietNhomQuyen.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
             this.grpChiTietNhomQuyen.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
             this.grpChiTietNhomQuyen.Style.GradientAngle = 90;
             this.grpChiTietNhomQuyen.TabIndex = 64;
             this.grpChiTietNhomQuyen.TitleHeight = 30;
             this.grpChiTietNhomQuyen.TitleStyle.Alignment = System.Drawing.StringAlignment.Center;
             this.grpChiTietNhomQuyen.TitleStyle.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.grpChiTietNhomQuyen.TitleStyle.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
             this.grpChiTietNhomQuyen.TitleStyle.Border = DevComponents.DotNetBar.eBorderType.RaisedInner;
             this.grpChiTietNhomQuyen.TitleStyle.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
             this.grpChiTietNhomQuyen.TitleStyle.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
@@ -427,7 +425,7 @@
             this.dpickDateCreated.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.dpickDateCreated.MonthCalendar.TodayButtonVisible = true;
             this.dpickDateCreated.Name = "dpickDateCreated";
-            this.dpickDateCreated.Size = new System.Drawing.Size(121, 21);
+            this.dpickDateCreated.Size = new System.Drawing.Size(121, 23);
             this.dpickDateCreated.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dpickDateCreated.TabIndex = 70;
             // 
@@ -442,7 +440,7 @@
             this.labelX1.Location = new System.Drawing.Point(11, 165);
             this.labelX1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(46, 16);
+            this.labelX1.Size = new System.Drawing.Size(51, 17);
             this.labelX1.TabIndex = 69;
             this.labelX1.Text = "Ngày tạo";
             // 
@@ -456,7 +454,7 @@
             this.txtDescription.Location = new System.Drawing.Point(114, 74);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Rtf = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Times New R" +
-    "oman;}}\r\n\\viewkind4\\uc1\\pard\\f0\\fs18\\par\r\n}\r\n";
+    "oman;}}\r\n\\viewkind4\\uc1\\pard\\f0\\fs20\\par\r\n}\r\n";
             this.txtDescription.Size = new System.Drawing.Size(253, 78);
             this.txtDescription.TabIndex = 68;
             // 
@@ -471,7 +469,7 @@
             this.lbMatKhau.Location = new System.Drawing.Point(11, 74);
             this.lbMatKhau.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.lbMatKhau.Name = "lbMatKhau";
-            this.lbMatKhau.Size = new System.Drawing.Size(39, 16);
+            this.lbMatKhau.Size = new System.Drawing.Size(44, 17);
             this.lbMatKhau.TabIndex = 67;
             this.lbMatKhau.Text = "Miêu tả";
             // 
@@ -486,7 +484,7 @@
             this.lbTenDangNhap.Location = new System.Drawing.Point(11, 38);
             this.lbTenDangNhap.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.lbTenDangNhap.Name = "lbTenDangNhap";
-            this.lbTenDangNhap.Size = new System.Drawing.Size(84, 16);
+            this.lbTenDangNhap.Size = new System.Drawing.Size(93, 17);
             this.lbTenDangNhap.TabIndex = 65;
             this.lbTenDangNhap.Text = "Tên nhóm quyền";
             // 
@@ -497,7 +495,7 @@
             this.txtRoleName.Location = new System.Drawing.Point(114, 38);
             this.txtRoleName.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtRoleName.Name = "txtRoleName";
-            this.txtRoleName.Size = new System.Drawing.Size(121, 21);
+            this.txtRoleName.Size = new System.Drawing.Size(121, 23);
             this.txtRoleName.TabIndex = 0;
             // 
             // tvUsers
@@ -526,7 +524,7 @@
             treeNode3,
             treeNode4,
             treeNode5});
-            this.tvUsers.Size = new System.Drawing.Size(383, 526);
+            this.tvUsers.Size = new System.Drawing.Size(383, 530);
             this.tvUsers.TabIndex = 33;
             this.tvUsers.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tvUsers_MouseClick);
             // 
@@ -537,21 +535,18 @@
             this.grpQuyenHan.Controls.Add(this.ribbonBar1);
             this.grpQuyenHan.DisabledBackColor = System.Drawing.Color.Empty;
             this.grpQuyenHan.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.grpQuyenHan.Location = new System.Drawing.Point(0, 449);
+            this.grpQuyenHan.Location = new System.Drawing.Point(0, 454);
             this.grpQuyenHan.Name = "grpQuyenHan";
             this.grpQuyenHan.Size = new System.Drawing.Size(723, 99);
             this.grpQuyenHan.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.grpQuyenHan.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.grpQuyenHan.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
             this.grpQuyenHan.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.grpQuyenHan.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
             this.grpQuyenHan.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
             this.grpQuyenHan.Style.GradientAngle = 90;
             this.grpQuyenHan.TabIndex = 38;
             this.grpQuyenHan.TitleHeight = 30;
             this.grpQuyenHan.TitleStyle.Alignment = System.Drawing.StringAlignment.Center;
             this.grpQuyenHan.TitleStyle.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.grpQuyenHan.TitleStyle.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
             this.grpQuyenHan.TitleStyle.Border = DevComponents.DotNetBar.eBorderType.RaisedInner;
             this.grpQuyenHan.TitleStyle.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
             this.grpQuyenHan.TitleStyle.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
@@ -647,21 +642,18 @@
             this.expandablePanel1.Controls.Add(this.ribbonBar2);
             this.expandablePanel1.DisabledBackColor = System.Drawing.Color.Empty;
             this.expandablePanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.expandablePanel1.Location = new System.Drawing.Point(0, 346);
+            this.expandablePanel1.Location = new System.Drawing.Point(0, 351);
             this.expandablePanel1.Name = "expandablePanel1";
             this.expandablePanel1.Size = new System.Drawing.Size(723, 103);
             this.expandablePanel1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.expandablePanel1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.expandablePanel1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
             this.expandablePanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.expandablePanel1.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
             this.expandablePanel1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
             this.expandablePanel1.Style.GradientAngle = 90;
             this.expandablePanel1.TabIndex = 42;
             this.expandablePanel1.TitleHeight = 30;
             this.expandablePanel1.TitleStyle.Alignment = System.Drawing.StringAlignment.Center;
             this.expandablePanel1.TitleStyle.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.expandablePanel1.TitleStyle.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
             this.expandablePanel1.TitleStyle.Border = DevComponents.DotNetBar.eBorderType.RaisedInner;
             this.expandablePanel1.TitleStyle.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
             this.expandablePanel1.TitleStyle.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
@@ -784,12 +776,11 @@
             this.panelEx1.Controls.Add(this.grpQuyenHan);
             this.panelEx1.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelEx1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelEx1.Location = new System.Drawing.Point(389, 40);
+            this.panelEx1.Location = new System.Drawing.Point(389, 35);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(723, 548);
+            this.panelEx1.Size = new System.Drawing.Size(723, 553);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
             this.panelEx1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.panelEx1.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
             this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
@@ -806,10 +797,9 @@
             this.panelEx2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEx2.Location = new System.Drawing.Point(0, 0);
             this.panelEx2.Name = "panelEx2";
-            this.panelEx2.Size = new System.Drawing.Size(723, 346);
+            this.panelEx2.Size = new System.Drawing.Size(723, 351);
             this.panelEx2.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.panelEx2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
             this.panelEx2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.panelEx2.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
             this.panelEx2.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
@@ -819,6 +809,7 @@
             // 
             // groupPanel2
             // 
+            this.groupPanel2.BackColor = System.Drawing.Color.White;
             this.groupPanel2.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.groupPanel2.Controls.Add(this.tvPermisions);
@@ -826,7 +817,7 @@
             this.groupPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupPanel2.Location = new System.Drawing.Point(0, 0);
             this.groupPanel2.Name = "groupPanel2";
-            this.groupPanel2.Size = new System.Drawing.Size(723, 346);
+            this.groupPanel2.Size = new System.Drawing.Size(723, 351);
             // 
             // 
             // 
@@ -977,38 +968,40 @@
             treeNode44,
             treeNode48,
             treeNode52});
-            this.tvPermisions.Size = new System.Drawing.Size(717, 324);
+            this.tvPermisions.Size = new System.Drawing.Size(717, 328);
             this.tvPermisions.TabIndex = 2;
             this.tvPermisions.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.tvPermisions_AfterCheck);
             // 
             // expandableSplitter1
             // 
-            this.expandableSplitter1.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(108)))), ((int)(((byte)(122)))));
+            this.expandableSplitter1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.expandableSplitter1.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.expandableSplitter1.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
             this.expandableSplitter1.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.expandableSplitter1.ExpandFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(108)))), ((int)(((byte)(122)))));
+            this.expandableSplitter1.ExpandFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.expandableSplitter1.ExpandFillColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.expandableSplitter1.ExpandLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(57)))), ((int)(((byte)(120)))));
+            this.expandableSplitter1.ExpandLineColor = System.Drawing.Color.Black;
             this.expandableSplitter1.ExpandLineColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
-            this.expandableSplitter1.GripDarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(57)))), ((int)(((byte)(120)))));
+            this.expandableSplitter1.ForeColor = System.Drawing.Color.Black;
+            this.expandableSplitter1.GripDarkColor = System.Drawing.Color.Black;
             this.expandableSplitter1.GripDarkColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
-            this.expandableSplitter1.GripLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(232)))), ((int)(((byte)(246)))));
+            this.expandableSplitter1.GripLightColor = System.Drawing.Color.White;
             this.expandableSplitter1.GripLightColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.expandableSplitter1.HotBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(200)))), ((int)(((byte)(103)))));
-            this.expandableSplitter1.HotBackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(226)))), ((int)(((byte)(135)))));
+            this.expandableSplitter1.HotBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.expandableSplitter1.HotBackColor2 = System.Drawing.Color.Empty;
             this.expandableSplitter1.HotBackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemPressedBackground2;
             this.expandableSplitter1.HotBackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemPressedBackground;
-            this.expandableSplitter1.HotExpandFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(108)))), ((int)(((byte)(122)))));
+            this.expandableSplitter1.HotExpandFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.expandableSplitter1.HotExpandFillColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.expandableSplitter1.HotExpandLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(57)))), ((int)(((byte)(120)))));
+            this.expandableSplitter1.HotExpandLineColor = System.Drawing.Color.Black;
             this.expandableSplitter1.HotExpandLineColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
-            this.expandableSplitter1.HotGripDarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(108)))), ((int)(((byte)(122)))));
+            this.expandableSplitter1.HotGripDarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.expandableSplitter1.HotGripDarkColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.expandableSplitter1.HotGripLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(232)))), ((int)(((byte)(246)))));
+            this.expandableSplitter1.HotGripLightColor = System.Drawing.Color.White;
             this.expandableSplitter1.HotGripLightColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.expandableSplitter1.Location = new System.Drawing.Point(389, 40);
+            this.expandableSplitter1.Location = new System.Drawing.Point(389, 35);
             this.expandableSplitter1.Name = "expandableSplitter1";
-            this.expandableSplitter1.Size = new System.Drawing.Size(6, 548);
+            this.expandableSplitter1.Size = new System.Drawing.Size(6, 553);
             this.expandableSplitter1.Style = DevComponents.DotNetBar.eSplitterStyle.Office2007;
             this.expandableSplitter1.TabIndex = 54;
             this.expandableSplitter1.TabStop = false;
@@ -1081,7 +1074,7 @@
             this.Controls.Add(this.groupPanel1);
             this.Controls.Add(this.MenuPhanQuyen);
             this.DoubleBuffered = true;
-            this.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmPhanQuyenTaiKhoan";
             this.Text = "Phân quyền người dùng";
             this.Load += new System.EventHandler(this.frmPhanQuyenTaiKhoan_Load);
