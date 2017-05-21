@@ -18,6 +18,7 @@ namespace QLTB.DAL.Data
         public DM_NguonKinhPhi()
         {
             this.DM_NguonKinhPhi1 = new HashSet<DM_NguonKinhPhi>();
+            this.TB_ThongTinThietBi = new HashSet<TB_ThongTinThietBi>();
         }
     
         public int NguonKinhPhiId { get; set; }
@@ -31,5 +32,7 @@ namespace QLTB.DAL.Data
         public virtual ICollection<DM_NguonKinhPhi> DM_NguonKinhPhi1 { get; set; }
         public virtual DM_NguonKinhPhi DM_NguonKinhPhi2 { get; set; }
         public virtual DS_NguonNganSach DS_NguonNganSach { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TB_ThongTinThietBi> TB_ThongTinThietBi { get; set; }
     }
 }

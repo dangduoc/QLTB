@@ -67,5 +67,26 @@ namespace QLTB.Handler
                 return null;
             }
         }
+        public List<MonHocModel> GetNames()
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    var data = unitOfWork.GetRepository<DM_MonHoc>().GetAll()
+                        .Select(p => new MonHocModel
+                        {
+                            MonHocId = p.MonHocId,
+                            Ten = p.Ten,
+                            LoaiMonHocId=p.LoaiMonHocId
+                        }).ToList();
+                    return data;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }

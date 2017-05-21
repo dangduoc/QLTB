@@ -18,6 +18,7 @@ namespace QLTB.DAL.Data
         public DM_PhongHocBoMon()
         {
             this.TB_PhieuMuonPhong = new HashSet<TB_PhieuMuonPhong>();
+            this.TB_ThongTinThietBi = new HashSet<TB_ThongTinThietBi>();
         }
     
         public int PhongHocId { get; set; }
@@ -36,5 +37,7 @@ namespace QLTB.DAL.Data
         public virtual DS_XepLoaiPhongHocBM DS_XepLoaiPhongHocBM { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_PhieuMuonPhong> TB_PhieuMuonPhong { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TB_ThongTinThietBi> TB_ThongTinThietBi { get; set; }
     }
 }

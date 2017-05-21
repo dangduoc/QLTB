@@ -18,6 +18,7 @@ namespace QLTB.DAL.Data
         public DS_DonViTinh()
         {
             this.DM_ThietBiToiThieu = new HashSet<DM_ThietBiToiThieu>();
+            this.TB_ThongTinThietBi = new HashSet<TB_ThongTinThietBi>();
         }
     
         public int DonViTinhId { get; set; }
@@ -25,5 +26,7 @@ namespace QLTB.DAL.Data
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DM_ThietBiToiThieu> DM_ThietBiToiThieu { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TB_ThongTinThietBi> TB_ThongTinThietBi { get; set; }
     }
 }

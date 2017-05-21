@@ -412,6 +412,7 @@
           <Property Name="UserName" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="PassWord" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="UserRoleId" Type="int" Nullable="false" />
+          <Property Name="isActived" Type="bit" />
           <Property Name="PhoneNumber" Type="varchar" MaxLength="11" />
           <Property Name="Email" Type="varchar" MaxLength="500" />
           <Property Name="Note" Type="nvarchar" MaxLength="500" />
@@ -507,16 +508,6 @@
           <Property Name="isAdd" Type="bit" />
           <Property Name="isUpdate" Type="bit" />
           <Property Name="isDelete" Type="bit" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="TB_PhieuBaoHong">
           <Key>
@@ -644,6 +635,7 @@
           <Property Name="Ten" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="QuyCachSD" Type="nvarchar" MaxLength="1000" />
           <Property Name="PhongHocId" Type="int" Nullable="false" />
+          <Property Name="MonHocId" Type="int" />
           <Property Name="NguonKinhPhiId" Type="int" Nullable="false" />
           <Property Name="NamDuaVaoSD" Type="int" Nullable="false" />
           <Property Name="NgayDuaVaoSD" Type="date" Nullable="false" />
@@ -1560,6 +1552,42 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_TB_ThongTinThietBi_DM_MonHoc">
+          <End Role="DM_MonHoc" Type="Self.DM_MonHoc" Multiplicity="0..1" />
+          <End Role="TB_ThongTinThietBi" Type="Self.TB_ThongTinThietBi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DM_MonHoc">
+              <PropertyRef Name="MonHocId" />
+            </Principal>
+            <Dependent Role="TB_ThongTinThietBi">
+              <PropertyRef Name="MonHocId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_ThongTinThietBi_DM_NguonKinhPhi">
+          <End Role="DM_NguonKinhPhi" Type="Self.DM_NguonKinhPhi" Multiplicity="1" />
+          <End Role="TB_ThongTinThietBi" Type="Self.TB_ThongTinThietBi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DM_NguonKinhPhi">
+              <PropertyRef Name="NguonKinhPhiId" />
+            </Principal>
+            <Dependent Role="TB_ThongTinThietBi">
+              <PropertyRef Name="NguonKinhPhiId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_ThongTinThietBi_DM_PhongHocBoMon">
+          <End Role="DM_PhongHocBoMon" Type="Self.DM_PhongHocBoMon" Multiplicity="1" />
+          <End Role="TB_ThongTinThietBi" Type="Self.TB_ThongTinThietBi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DM_PhongHocBoMon">
+              <PropertyRef Name="PhongHocId" />
+            </Principal>
+            <Dependent Role="TB_ThongTinThietBi">
+              <PropertyRef Name="PhongHocId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TB_ThongTinThietBi_DM_ThietBiToiThieu">
           <End Role="DM_ThietBiToiThieu" Type="Self.DM_ThietBiToiThieu" Multiplicity="1" />
           <End Role="TB_ThongTinThietBi" Type="Self.TB_ThongTinThietBi" Multiplicity="*" />
@@ -1569,6 +1597,18 @@
             </Principal>
             <Dependent Role="TB_ThongTinThietBi">
               <PropertyRef Name="ThietBiId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_ThongTinThietBi_DS_DonViTinh">
+          <End Role="DS_DonViTinh" Type="Self.DS_DonViTinh" Multiplicity="1" />
+          <End Role="TB_ThongTinThietBi" Type="Self.TB_ThongTinThietBi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DS_DonViTinh">
+              <PropertyRef Name="DonViTinhId" />
+            </Principal>
+            <Dependent Role="TB_ThongTinThietBi">
+              <PropertyRef Name="DonViTinhId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1760,7 +1800,6 @@
           <EntitySet Name="QH_PhieuMuonTB_ThietBi" EntityType="Self.QH_PhieuMuonTB_ThietBi" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="QH_PhieuThanhLyTB_ThietBi" EntityType="Self.QH_PhieuThanhLyTB_ThietBi" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="QH_User_Permission" EntityType="Self.QH_User_Permission" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_PhieuBaoHong" EntityType="Self.TB_PhieuBaoHong" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_PhieuDeNghiMuaSam" EntityType="Self.TB_PhieuDeNghiMuaSam" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_PhieuGhiTang" EntityType="Self.TB_PhieuGhiTang" Schema="dbo" store:Type="Tables" />
@@ -2055,8 +2094,24 @@
             <End Role="HT_User" EntitySet="HT_User" />
             <End Role="TB_PhieuThanhLyTB" EntitySet="TB_PhieuThanhLyTB" />
           </AssociationSet>
+          <AssociationSet Name="FK_TB_ThongTinThietBi_DM_MonHoc" Association="Self.FK_TB_ThongTinThietBi_DM_MonHoc">
+            <End Role="DM_MonHoc" EntitySet="DM_MonHoc" />
+            <End Role="TB_ThongTinThietBi" EntitySet="TB_ThongTinThietBi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_ThongTinThietBi_DM_NguonKinhPhi" Association="Self.FK_TB_ThongTinThietBi_DM_NguonKinhPhi">
+            <End Role="DM_NguonKinhPhi" EntitySet="DM_NguonKinhPhi" />
+            <End Role="TB_ThongTinThietBi" EntitySet="TB_ThongTinThietBi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_ThongTinThietBi_DM_PhongHocBoMon" Association="Self.FK_TB_ThongTinThietBi_DM_PhongHocBoMon">
+            <End Role="DM_PhongHocBoMon" EntitySet="DM_PhongHocBoMon" />
+            <End Role="TB_ThongTinThietBi" EntitySet="TB_ThongTinThietBi" />
+          </AssociationSet>
           <AssociationSet Name="FK_TB_ThongTinThietBi_DM_ThietBiToiThieu" Association="Self.FK_TB_ThongTinThietBi_DM_ThietBiToiThieu">
             <End Role="DM_ThietBiToiThieu" EntitySet="DM_ThietBiToiThieu" />
+            <End Role="TB_ThongTinThietBi" EntitySet="TB_ThongTinThietBi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_ThongTinThietBi_DS_DonViTinh" Association="Self.FK_TB_ThongTinThietBi_DS_DonViTinh">
+            <End Role="DS_DonViTinh" EntitySet="DS_DonViTinh" />
             <End Role="TB_ThongTinThietBi" EntitySet="TB_ThongTinThietBi" />
           </AssociationSet>
           <AssociationSet Name="FK_TB_ThongTinThietBi_HT_User" Association="Self.FK_TB_ThongTinThietBi_HT_User">
@@ -2164,7 +2219,6 @@
           <EntitySet Name="QH_PhieuMuonTB_ThietBi" EntityType="Data.QH_PhieuMuonTB_ThietBi" />
           <EntitySet Name="QH_PhieuThanhLyTB_ThietBi" EntityType="Data.QH_PhieuThanhLyTB_ThietBi" />
           <EntitySet Name="QH_User_Permission" EntityType="Data.QH_User_Permission" />
-          <EntitySet Name="sysdiagrams" EntityType="Data.sysdiagram" />
           <EntitySet Name="TB_PhieuBaoHong" EntityType="Data.TB_PhieuBaoHong" />
           <EntitySet Name="TB_PhieuDeNghiMuaSam" EntityType="Data.TB_PhieuDeNghiMuaSam" />
           <EntitySet Name="TB_PhieuGhiTang" EntityType="Data.TB_PhieuGhiTang" />
@@ -2279,6 +2333,10 @@
             <End Role="DM_MonHoc" EntitySet="DM_MonHoc" />
             <End Role="TB_PhieuMuonTB" EntitySet="TB_PhieuMuonTB" />
           </AssociationSet>
+          <AssociationSet Name="FK_TB_ThongTinThietBi_DM_MonHoc" Association="Data.FK_TB_ThongTinThietBi_DM_MonHoc">
+            <End Role="DM_MonHoc" EntitySet="DM_MonHoc" />
+            <End Role="TB_ThongTinThietBi" EntitySet="TB_ThongTinThietBi" />
+          </AssociationSet>
           <AssociationSet Name="FK_DM_NguonKinhPhi_DM_NguonKinhPhi" Association="Data.FK_DM_NguonKinhPhi_DM_NguonKinhPhi">
             <End Role="DM_NguonKinhPhi" EntitySet="DM_NguonKinhPhi" />
             <End Role="DM_NguonKinhPhi1" EntitySet="DM_NguonKinhPhi" />
@@ -2286,6 +2344,10 @@
           <AssociationSet Name="FK_DM_NguonKinhPhi_DS_NguonNganSach" Association="Data.FK_DM_NguonKinhPhi_DS_NguonNganSach">
             <End Role="DS_NguonNganSach" EntitySet="DS_NguonNganSach" />
             <End Role="DM_NguonKinhPhi" EntitySet="DM_NguonKinhPhi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_ThongTinThietBi_DM_NguonKinhPhi" Association="Data.FK_TB_ThongTinThietBi_DM_NguonKinhPhi">
+            <End Role="DM_NguonKinhPhi" EntitySet="DM_NguonKinhPhi" />
+            <End Role="TB_ThongTinThietBi" EntitySet="TB_ThongTinThietBi" />
           </AssociationSet>
           <AssociationSet Name="FK_DM_PhongHocBoMon_DS_LoaiPhongTN" Association="Data.FK_DM_PhongHocBoMon_DS_LoaiPhongTN">
             <End Role="DS_LoaiPhongTN" EntitySet="DS_LoaiPhongTN" />
@@ -2298,6 +2360,10 @@
           <AssociationSet Name="FK_TB_PhieuMuonPhong_DM_PhongHocBoMon" Association="Data.FK_TB_PhieuMuonPhong_DM_PhongHocBoMon">
             <End Role="DM_PhongHocBoMon" EntitySet="DM_PhongHocBoMon" />
             <End Role="TB_PhieuMuonPhong" EntitySet="TB_PhieuMuonPhong" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_ThongTinThietBi_DM_PhongHocBoMon" Association="Data.FK_TB_ThongTinThietBi_DM_PhongHocBoMon">
+            <End Role="DM_PhongHocBoMon" EntitySet="DM_PhongHocBoMon" />
+            <End Role="TB_ThongTinThietBi" EntitySet="TB_ThongTinThietBi" />
           </AssociationSet>
           <AssociationSet Name="FK_DM_ThietBiToiThieu_DS_DauMucThietBi" Association="Data.FK_DM_ThietBiToiThieu_DS_DauMucThietBi">
             <End Role="DS_DauMucThietBi" EntitySet="DS_DauMucThietBi" />
@@ -2334,6 +2400,10 @@
           <AssociationSet Name="FK_DS_CapTruong_DS_KhoiTruong" Association="Data.FK_DS_CapTruong_DS_KhoiTruong">
             <End Role="DS_KhoiTruong" EntitySet="DS_KhoiTruong" />
             <End Role="DS_CapTruong" EntitySet="DS_CapTruong" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_ThongTinThietBi_DS_DonViTinh" Association="Data.FK_TB_ThongTinThietBi_DS_DonViTinh">
+            <End Role="DS_DonViTinh" EntitySet="DS_DonViTinh" />
+            <End Role="TB_ThongTinThietBi" EntitySet="TB_ThongTinThietBi" />
           </AssociationSet>
           <AssociationSet Name="FK_ThongTinDonVi_DS_HangTruong" Association="Data.FK_ThongTinDonVi_DS_HangTruong">
             <End Role="DS_HangTruong" EntitySet="DS_HangTruong" />
@@ -2612,6 +2682,7 @@
           <NavigationProperty Name="DM_ThietBiToiThieu" Relationship="Data.FK_DM_ThietBiToiThieu_DM_MonHoc" FromRole="DM_MonHoc" ToRole="DM_ThietBiToiThieu" />
           <NavigationProperty Name="TB_PhieuMuonPhong" Relationship="Data.FK_TB_PhieuMuonPhong_DM_MonHoc" FromRole="DM_MonHoc" ToRole="TB_PhieuMuonPhong" />
           <NavigationProperty Name="TB_PhieuMuonTB" Relationship="Data.FK_TB_PhieuMuonTB_DM_MonHoc" FromRole="DM_MonHoc" ToRole="TB_PhieuMuonTB" />
+          <NavigationProperty Name="TB_ThongTinThietBi" Relationship="Data.FK_TB_ThongTinThietBi_DM_MonHoc" FromRole="DM_MonHoc" ToRole="TB_ThongTinThietBi" />
         </EntityType>
         <EntityType Name="DM_NguonKinhPhi">
           <Key>
@@ -2626,6 +2697,7 @@
           <NavigationProperty Name="DM_NguonKinhPhi1" Relationship="Data.FK_DM_NguonKinhPhi_DM_NguonKinhPhi" FromRole="DM_NguonKinhPhi" ToRole="DM_NguonKinhPhi1" />
           <NavigationProperty Name="DM_NguonKinhPhi2" Relationship="Data.FK_DM_NguonKinhPhi_DM_NguonKinhPhi" FromRole="DM_NguonKinhPhi1" ToRole="DM_NguonKinhPhi" />
           <NavigationProperty Name="DS_NguonNganSach" Relationship="Data.FK_DM_NguonKinhPhi_DS_NguonNganSach" FromRole="DM_NguonKinhPhi" ToRole="DS_NguonNganSach" />
+          <NavigationProperty Name="TB_ThongTinThietBi" Relationship="Data.FK_TB_ThongTinThietBi_DM_NguonKinhPhi" FromRole="DM_NguonKinhPhi" ToRole="TB_ThongTinThietBi" />
         </EntityType>
         <EntityType Name="DM_PhongHocBoMon">
           <Key>
@@ -2645,6 +2717,7 @@
           <NavigationProperty Name="DS_LoaiPhongTN" Relationship="Data.FK_DM_PhongHocBoMon_DS_LoaiPhongTN" FromRole="DM_PhongHocBoMon" ToRole="DS_LoaiPhongTN" />
           <NavigationProperty Name="DS_XepLoaiPhongHocBM" Relationship="Data.FK_DM_PhongHocBoMon_DS_XepLoaiPhongHocBM" FromRole="DM_PhongHocBoMon" ToRole="DS_XepLoaiPhongHocBM" />
           <NavigationProperty Name="TB_PhieuMuonPhong" Relationship="Data.FK_TB_PhieuMuonPhong_DM_PhongHocBoMon" FromRole="DM_PhongHocBoMon" ToRole="TB_PhieuMuonPhong" />
+          <NavigationProperty Name="TB_ThongTinThietBi" Relationship="Data.FK_TB_ThongTinThietBi_DM_PhongHocBoMon" FromRole="DM_PhongHocBoMon" ToRole="TB_ThongTinThietBi" />
         </EntityType>
         <EntityType Name="DM_ThietBiToiThieu">
           <Key>
@@ -2735,6 +2808,7 @@
           <Property Name="DonViTinhId" Type="Int32" Nullable="false" />
           <Property Name="Ten" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="DM_ThietBiToiThieu" Relationship="Data.FK_DM_ThietBiToiThieu_DS_DonViTinh" FromRole="DS_DonViTinh" ToRole="DM_ThietBiToiThieu" />
+          <NavigationProperty Name="TB_ThongTinThietBi" Relationship="Data.FK_TB_ThongTinThietBi_DS_DonViTinh" FromRole="DS_DonViTinh" ToRole="TB_ThongTinThietBi" />
         </EntityType>
         <EntityType Name="DS_GioiTinh">
           <Key>
@@ -3001,6 +3075,7 @@
           <Property Name="UserName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="PassWord" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="UserRoleId" Type="Int32" Nullable="false" />
+          <Property Name="isActived" Type="Boolean" />
           <Property Name="PhoneNumber" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
           <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
@@ -3127,16 +3202,6 @@
           <Property Name="isDelete" Type="Boolean" />
           <NavigationProperty Name="HT_Permission" Relationship="Data.FK_QH_User_Permission_HT_Permission" FromRole="QH_User_Permission" ToRole="HT_Permission" />
           <NavigationProperty Name="HT_UserRole" Relationship="Data.FK_QH_User_Permission_HT_UserRole" FromRole="QH_User_Permission" ToRole="HT_UserRole" />
-        </EntityType>
-        <EntityType Name="sysdiagram">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="TB_PhieuBaoHong">
           <Key>
@@ -3295,6 +3360,7 @@
           <Property Name="Ten" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="QuyCachSD" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
           <Property Name="PhongHocId" Type="Int32" Nullable="false" />
+          <Property Name="MonHocId" Type="Int32" />
           <Property Name="NguonKinhPhiId" Type="Int32" Nullable="false" />
           <Property Name="NamDuaVaoSD" Type="Int32" Nullable="false" />
           <Property Name="NgayDuaVaoSD" Type="DateTime" Nullable="false" Precision="0" />
@@ -3317,7 +3383,11 @@
           <Property Name="CreatedOnDate" Type="DateTime" Precision="3" />
           <Property Name="UpdatedByUserId" Type="Int32" />
           <Property Name="UpdatedOnDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="DM_MonHoc" Relationship="Data.FK_TB_ThongTinThietBi_DM_MonHoc" FromRole="TB_ThongTinThietBi" ToRole="DM_MonHoc" />
+          <NavigationProperty Name="DM_NguonKinhPhi" Relationship="Data.FK_TB_ThongTinThietBi_DM_NguonKinhPhi" FromRole="TB_ThongTinThietBi" ToRole="DM_NguonKinhPhi" />
+          <NavigationProperty Name="DM_PhongHocBoMon" Relationship="Data.FK_TB_ThongTinThietBi_DM_PhongHocBoMon" FromRole="TB_ThongTinThietBi" ToRole="DM_PhongHocBoMon" />
           <NavigationProperty Name="DM_ThietBiToiThieu" Relationship="Data.FK_TB_ThongTinThietBi_DM_ThietBiToiThieu" FromRole="TB_ThongTinThietBi" ToRole="DM_ThietBiToiThieu" />
+          <NavigationProperty Name="DS_DonViTinh" Relationship="Data.FK_TB_ThongTinThietBi_DS_DonViTinh" FromRole="TB_ThongTinThietBi" ToRole="DS_DonViTinh" />
           <NavigationProperty Name="HT_User" Relationship="Data.FK_TB_ThongTinThietBi_HT_User" FromRole="TB_ThongTinThietBi" ToRole="HT_User" />
           <NavigationProperty Name="HT_User1" Relationship="Data.FK_TB_ThongTinThietBi_HT_User1" FromRole="TB_ThongTinThietBi" ToRole="HT_User" />
           <NavigationProperty Name="QH_PhieuBaoHong_ThietBi" Relationship="Data.FK_QH_PhieuBaoHong_ThietBi_TB_ThongTinThietBi" FromRole="TB_ThongTinThietBi" ToRole="QH_PhieuBaoHong_ThietBi" />
@@ -3689,6 +3759,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_TB_ThongTinThietBi_DM_MonHoc">
+          <End Type="Data.DM_MonHoc" Role="DM_MonHoc" Multiplicity="0..1" />
+          <End Type="Data.TB_ThongTinThietBi" Role="TB_ThongTinThietBi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DM_MonHoc">
+              <PropertyRef Name="MonHocId" />
+            </Principal>
+            <Dependent Role="TB_ThongTinThietBi">
+              <PropertyRef Name="MonHocId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_DM_NguonKinhPhi_DM_NguonKinhPhi">
           <End Type="Data.DM_NguonKinhPhi" Role="DM_NguonKinhPhi" Multiplicity="0..1" />
           <End Type="Data.DM_NguonKinhPhi" Role="DM_NguonKinhPhi1" Multiplicity="*" />
@@ -3710,6 +3792,18 @@
             </Principal>
             <Dependent Role="DM_NguonKinhPhi">
               <PropertyRef Name="NguonNganSachId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_ThongTinThietBi_DM_NguonKinhPhi">
+          <End Type="Data.DM_NguonKinhPhi" Role="DM_NguonKinhPhi" Multiplicity="1" />
+          <End Type="Data.TB_ThongTinThietBi" Role="TB_ThongTinThietBi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DM_NguonKinhPhi">
+              <PropertyRef Name="NguonKinhPhiId" />
+            </Principal>
+            <Dependent Role="TB_ThongTinThietBi">
+              <PropertyRef Name="NguonKinhPhiId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -3746,6 +3840,18 @@
             </Principal>
             <Dependent Role="TB_PhieuMuonPhong">
               <PropertyRef Name="PhongBoMonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_ThongTinThietBi_DM_PhongHocBoMon">
+          <End Type="Data.DM_PhongHocBoMon" Role="DM_PhongHocBoMon" Multiplicity="1" />
+          <End Type="Data.TB_ThongTinThietBi" Role="TB_ThongTinThietBi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DM_PhongHocBoMon">
+              <PropertyRef Name="PhongHocId" />
+            </Principal>
+            <Dependent Role="TB_ThongTinThietBi">
+              <PropertyRef Name="PhongHocId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -3854,6 +3960,18 @@
             </Principal>
             <Dependent Role="DS_CapTruong">
               <PropertyRef Name="KhoiTruongId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_ThongTinThietBi_DS_DonViTinh">
+          <End Type="Data.DS_DonViTinh" Role="DS_DonViTinh" Multiplicity="1" />
+          <End Type="Data.TB_ThongTinThietBi" Role="TB_ThongTinThietBi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DS_DonViTinh">
+              <PropertyRef Name="DonViTinhId" />
+            </Principal>
+            <Dependent Role="TB_ThongTinThietBi">
+              <PropertyRef Name="DonViTinhId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -4830,6 +4948,7 @@
                 <ScalarProperty Name="Note" ColumnName="Note" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="isActived" ColumnName="isActived" />
                 <ScalarProperty Name="UserRoleId" ColumnName="UserRoleId" />
                 <ScalarProperty Name="PassWord" ColumnName="PassWord" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
@@ -4926,17 +5045,6 @@
                 <ScalarProperty Name="PermissionKey" ColumnName="PermissionKey" />
                 <ScalarProperty Name="PermissionId" ColumnName="PermissionId" />
                 <ScalarProperty Name="UserRoleId" ColumnName="UserRoleId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="Data.sysdiagram">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="definition" ColumnName="definition" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -5089,6 +5197,7 @@
                 <ScalarProperty Name="NgayDuaVaoSD" ColumnName="NgayDuaVaoSD" />
                 <ScalarProperty Name="NamDuaVaoSD" ColumnName="NamDuaVaoSD" />
                 <ScalarProperty Name="NguonKinhPhiId" ColumnName="NguonKinhPhiId" />
+                <ScalarProperty Name="MonHocId" ColumnName="MonHocId" />
                 <ScalarProperty Name="PhongHocId" ColumnName="PhongHocId" />
                 <ScalarProperty Name="QuyCachSD" ColumnName="QuyCachSD" />
                 <ScalarProperty Name="Ten" ColumnName="Ten" />
