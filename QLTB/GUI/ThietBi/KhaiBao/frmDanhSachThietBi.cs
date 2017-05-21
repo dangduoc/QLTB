@@ -15,6 +15,7 @@ namespace QLTB.GUI
 {
     public partial class frmDanhSachThietBi : DevComponents.DotNetBar.Office2007Form
     {
+        DbThietBiHandler handler = new DbThietBiHandler();
         public frmDanhSachThietBi()
         {
             InitializeComponent();
@@ -34,6 +35,7 @@ namespace QLTB.GUI
         }
         private void SetUpSearch(ADGV.SearchToolBar toolBar, DataTable tb, List<string> headers, ADGV.AdvancedDataGridView grid)
         {
+            
             DataTable Table = tb;
             ToolStripTextBox textSearch = toolBar.Items[3] as ToolStripTextBox;
             ToolStripButton searchCaseSensitive = toolBar.Items[6] as ToolStripButton;
@@ -179,175 +181,34 @@ namespace QLTB.GUI
         #endregion
         private void LoadForm()
         {
-            //List<ThietBiGridDisplayModel> list = new DbThietBiHandler().GetAll();
-            List<ThietBiGridDisplayModel> list = new List<ThietBiGridDisplayModel>();
-            list.Add(new ThietBiGridDisplayModel {
-                ThietBiId="CSCN000001",
-                SoHieu="CSCN000001.01",
-                Ten="Thiết bị môn công nghệ số 1",
-                SoLuong="10",
-                DonViTinh="Cái",
-                SoLuongHong="0",
-                SoLuongMat="0",
-                KhoPhong="Phòng thực hành công nghệ",
-                MonHoc="Công nghệ"
-            });
-            list.Add(new ThietBiGridDisplayModel
+            ShowPage(1,50);
+        }
+        private void ShowPage(int page,int pageSize)
+        {
+            var data = new DbThietBiHandler().GetAll(page, pageSize);
+            List<ThietBiGridDisplayModel> list = data.data;
+            if (list.Count > 0)
             {
-                ThietBiId = "CSCN000001",
-                SoHieu = "CSCN000001.01",
-                Ten = "Thiết bị môn công nghệ số 1",
-                SoLuong = "10",
-                DonViTinh = "Cái",
-                SoLuongHong = "0",
-                SoLuongMat = "0",
-                KhoPhong = "Phòng thực hành công nghệ",
-                MonHoc = "Công nghệ"
-            });
-            list.Add(new ThietBiGridDisplayModel
-            {
-                ThietBiId = "CSCN000001",
-                SoHieu = "CSCN000001.01",
-                Ten = "Thiết bị môn công nghệ số 1",
-                SoLuong = "10",
-                DonViTinh = "Cái",
-                SoLuongHong = "0",
-                SoLuongMat = "0",
-                KhoPhong = "Phòng thực hành công nghệ",
-                MonHoc = "Công nghệ"
-            });
-            list.Add(new ThietBiGridDisplayModel
-            {
-                ThietBiId = "CSCN000001",
-                SoHieu = "CSCN000001.01",
-                Ten = "Thiết bị môn công nghệ số 1",
-                SoLuong = "10",
-                DonViTinh = "Cái",
-                SoLuongHong = "0",
-                SoLuongMat = "0",
-                KhoPhong = "Phòng thực hành công nghệ",
-                MonHoc = "Công nghệ"
-            });
-            list.Add(new ThietBiGridDisplayModel
-            {
-                ThietBiId = "CSCN000001",
-                SoHieu = "CSCN000001.01",
-                Ten = "Thiết bị môn công nghệ số 1",
-                SoLuong = "10",
-                DonViTinh = "Cái",
-                SoLuongHong = "0",
-                SoLuongMat = "0",
-                KhoPhong = "Phòng thực hành công nghệ",
-                MonHoc = "Công nghệ"
-            });
-            list.Add(new ThietBiGridDisplayModel
-            {
-                ThietBiId = "CSCN000001",
-                SoHieu = "CSCN000001.01",
-                Ten = "Thiết bị môn công nghệ số 1",
-                SoLuong = "10",
-                DonViTinh = "Cái",
-                SoLuongHong = "0",
-                SoLuongMat = "0",
-                KhoPhong = "Phòng thực hành công nghệ",
-                MonHoc = "Công nghệ"
-            });
-            list.Add(new ThietBiGridDisplayModel
-            {
-                ThietBiId = "CSCN000001",
-                SoHieu = "CSCN000001.01",
-                Ten = "Thiết bị môn công nghệ số 1",
-                SoLuong = "10",
-                DonViTinh = "Cái",
-                SoLuongHong = "0",
-                SoLuongMat = "0",
-                KhoPhong = "Phòng thực hành công nghệ",
-                MonHoc = "Công nghệ"
-            });
-            list.Add(new ThietBiGridDisplayModel
-            {
-                ThietBiId = "CSCN000001",
-                SoHieu = "CSCN000001.01",
-                Ten = "Thiết bị môn công nghệ số 1",
-                SoLuong = "10",
-                DonViTinh = "Cái",
-                SoLuongHong = "0",
-                SoLuongMat = "0",
-                KhoPhong = "Phòng thực hành công nghệ",
-                MonHoc = "Công nghệ"
-            });
-            list.Add(new ThietBiGridDisplayModel
-            {
-                ThietBiId = "CSCN000001",
-                SoHieu = "CSCN000001.01",
-                Ten = "Thiết bị môn công nghệ số 1",
-                SoLuong = "10",
-                DonViTinh = "Cái",
-                SoLuongHong = "0",
-                SoLuongMat = "0",
-                KhoPhong = "Phòng thực hành công nghệ",
-                MonHoc = "Công nghệ"
-            });
-            list.Add(new ThietBiGridDisplayModel
-            {
-                ThietBiId = "CSCN000001",
-                SoHieu = "CSCN000001.01",
-                Ten = "Thiết bị môn công nghệ số 1",
-                SoLuong = "10",
-                DonViTinh = "Cái",
-                SoLuongHong = "0",
-                SoLuongMat = "0",
-                KhoPhong = "Phòng thực hành công nghệ",
-                MonHoc = "Công nghệ"
-            });
-            list.Add(new ThietBiGridDisplayModel
-            {
-                ThietBiId = "CSCN000001",
-                SoHieu = "CSCN000001.01",
-                Ten = "Thiết bị môn công nghệ số 1",
-                SoLuong = "10",
-                DonViTinh = "Cái",
-                SoLuongHong = "0",
-                SoLuongMat = "0",
-                KhoPhong = "Phòng thực hành công nghệ",
-                MonHoc = "Công nghệ"
-            });
-            list.Add(new ThietBiGridDisplayModel
-            {
-                ThietBiId = "CSCN000001",
-                SoHieu = "CSCN000001.01",
-                Ten = "Thiết bị môn công nghệ số 1",
-                SoLuong = "10",
-                DonViTinh = "Cái",
-                SoLuongHong = "0",
-                SoLuongMat = "0",
-                KhoPhong = "Phòng thực hành công nghệ",
-                MonHoc = "Công nghệ"
-            });
-            list.Add(new ThietBiGridDisplayModel
-            {
-                ThietBiId = "CSCN000001",
-                SoHieu = "CSCN000001.01",
-                Ten = "Thiết bị môn công nghệ số 1",
-                SoLuong = "10",
-                DonViTinh = "Cái",
-                SoLuongHong = "0",
-                SoLuongMat = "0",
-                KhoPhong = "Phòng thực hành công nghệ",
-                MonHoc = "Công nghệ"
-            });
-            list.Add(new ThietBiGridDisplayModel
-            {
-                ThietBiId = "CSCN000001",
-                SoHieu = "CSCN000001.01",
-                Ten = "Thiết bị môn công nghệ số 1",
-                SoLuong = "10",
-                DonViTinh = "Cái",
-                SoLuongHong = "0",
-                SoLuongMat = "0",
-                KhoPhong = "Phòng thực hành công nghệ",
-                MonHoc = "Công nghệ"
-            });
+                loadData(list);
+                loadTVMonHoc();
+                prevBtn.Enabled = data.PreviousPage;
+                prevBtn.Tag = page - 1;
+                nextBtn.Enabled = data.NextPage;
+                nextBtn.Tag = page+1;
+                currentPage.Text = data.CurrentPage.ToString();
+                lbPaging.Text = "Trang " + currentPage.Text + "/" + data.Size;
+                lbTotalRecord.Text = "- Tổng số bản ghi: " + data.TotalRecord;
+            }
+        }
+        private void pageBtnClick(object sender, EventArgs e)
+        {
+            var btn = sender as LinkLabel;
+            int page = Convert.ToInt32(btn.Tag);
+            ShowPage(page,Convert.ToInt32(pageSize.SelectedValue.ToString()));
+            //ShowPage(page, 4);
+        }
+        private void loadData(List<ThietBiGridDisplayModel> list)
+        {
             List<string> headers = new List<string>();
             headers.Add("Số hiệu");
             headers.Add("Mã thiết bị");
@@ -358,15 +219,20 @@ namespace QLTB.GUI
             headers.Add("Đơn vị tính");
             headers.Add("Mất");
             headers.Add("Hỏng");
+            headers.Add("Trạng thái");
             //
             DataTable tb = MyConvert.ToDataTable(list);
             SetUpSearch(SearchDSTB, tb, headers, ADGVDanhSach);
             SetHeaderForGrid(ADGVDanhSach, headers);
+            ADGVDanhSach.Columns["ThietBiId"].Frozen = true;
+            ADGVDanhSach.Columns["SoHieu"].Frozen = true;
             ADGVDanhSach.Columns[2].Width = 170;
-            ADGVDanhSach.Columns["KhoPhong"].Width = 170;
-            ADGVDanhSach.Columns["SoLuong"].Width = 80;
-            ADGVDanhSach.Columns["SoLuongHong"].Width = 50;
-            ADGVDanhSach.Columns["SoLuongMat"].Width = 50;
+            ADGVDanhSach.Columns["KhoPhong"].Width = 200;
+            ADGVDanhSach.Columns["SoLuong"].Width = 120;
+            ADGVDanhSach.Columns["SoLuongHong"].Width = 80;
+            ADGVDanhSach.Columns["SoLuongMat"].Width = 80;
+            ADGVDanhSach.Columns["Ten"].Width = 300;
+            ADGVDanhSach.Columns["DonViTinh"].Width = 120;
             ADGVDanhSach.FilterStringChanged += advancedDataGridView_FilterStringChanged;
             ADGVDanhSach.SortStringChanged += advancedDataGridView_SortStringChanged;
             ADGVDanhSach.CellContentDoubleClick += ADGVDanhSach_CellContentDoubleClick;
@@ -376,8 +242,44 @@ namespace QLTB.GUI
             btnSuaDSTB.Click += btnXem_Click;
             btnXoaDSTB.Click += btnXoa_Click;
             btnThemDSTB.Click += BtnThemDSTB_Click;
+            //
         }
-
+        private void loadTVMonHoc()
+        {
+            tvFilter.Tag = 1;
+            tvFilter.Nodes.Clear();
+            var listMH = new DbMonHocHandler().GetNames();
+            TreeNode rootNode = new TreeNode();
+            rootNode.Name = "0";
+            rootNode.Text = "Tất cả";
+            foreach (var mh in listMH)
+            {
+                TreeNode childNode = new TreeNode();
+                childNode.Text = mh.Ten;
+                childNode.Name = mh.MonHocId.ToString();
+                //childNode.Tag = state.UserRoleId;
+                rootNode.Nodes.Add(childNode);
+            }
+            tvFilter.Nodes.Add(rootNode);
+            tvFilter.ExpandAll();
+        }
+        private void loadTVPhongHo()
+        {
+            tvFilter.Tag = 2;
+            tvFilter.Nodes.Clear();
+            var listPH = new DbPhongBMHandler().GetNames();
+            TreeNode rootNode = new TreeNode();
+            rootNode.Text = "Tất cả";
+            foreach (var mh in listPH)
+            {
+                TreeNode childNode = new TreeNode();
+                childNode.Text = mh.Ten;
+                childNode.Name = mh.PhongHocId.ToString();
+                //childNode.Tag = state.UserRoleId;
+                rootNode.Nodes.Add(childNode);
+            }
+            tvFilter.Nodes.Add(rootNode);
+        }
         private void BtnThemDSTB_Click(object sender, EventArgs e)
         {
             frmKhaiBaoThietBi frm = new frmKhaiBaoThietBi();
@@ -418,7 +320,20 @@ namespace QLTB.GUI
 
         private void ADGVDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var SoHieu=ADGVDanhSach.Rows[e.RowIndex].Cells["SoHieu"];
+            var SoHieu = ADGVDanhSach.Rows[e.RowIndex].Cells["SoHieu"].Value.ToString();
+            var tb = handler.GetById(SoHieu);
+            //
+            lbMaTB.Text = tb.ThietBiId;
+            lbSoHieu.Text = tb.SoHieu;
+            lbSoLuong.Text = tb.SoLuong.ToString();
+            lbConDungDuoc.Text = tb.SoLuongCon.ToString();
+            lbDangMuon.Text = (tb.SoLuong - tb.SoLuongMat - tb.SoLuongHong - tb.SoLuongCon).ToString();
+            lbTenTB.Text = tb.Ten;
+            lbQuyCach.Text = tb.QuyCachSD;
+            lbKhoiLop.Text = "";
+            lbNoiDung.Text = tb.GhiChu;
+            lbPhongBM.Text = ADGVDanhSach.Rows[e.RowIndex].Cells["KhoPhong"].Value.ToString();
+
         }
 
         private void btnImportDSTB_Click(object sender, EventArgs e)
@@ -429,5 +344,48 @@ namespace QLTB.GUI
             frm.Show();
             Cursor = Cursors.Default;
         }
+
+        private void rdioTB_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (rdioTB.Checked == true)
+            {
+                loadTVMonHoc();
+            }
+
+        }
+
+        private void tvFilter_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            ToolStripComboBox columns = SearchDSTB.Items[2] as ToolStripComboBox;
+            ToolStripTextBox textSearch = SearchDSTB.Items[3] as ToolStripTextBox;
+
+
+            var filterString = tvFilter.SelectedNode.Text.Trim();
+            int type = Convert.ToInt32(tvFilter.Tag);
+            //mon hoc
+            if (type == 1)
+            {
+                if(filterString.Equals("Tất cả"))
+                {
+                    columns.ComboBox.SelectedValue = "All";
+                    textSearch.Text = "";
+                }
+                else
+                {
+                    columns.ComboBox.SelectedValue = "MonHoc";
+                    textSearch.Text = filterString;
+                }
+                
+                searchChanged(SearchDSTB, ADGVDanhSach);
+            }
+            else if (type == 2)
+            {
+                source.Filter = "KhoPhong Like '" + filterString + "'";
+            }
+        }
+
+
+
     }
 }

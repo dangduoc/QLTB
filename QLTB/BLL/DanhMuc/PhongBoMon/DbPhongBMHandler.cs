@@ -103,6 +103,25 @@ namespace QLTB.Handler
                 return null;
             }
         }
-        
+        public List<PhongBoMonModel> GetNames()
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    var data = unitOfWork.GetRepository<DM_PhongHocBoMon>().GetAll()
+                        .Select(p => new PhongBoMonModel
+                        {
+                            PhongHocId = p.PhongHocId,
+                            Ten = p.Ten
+                        }).ToList();
+                    return data;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }

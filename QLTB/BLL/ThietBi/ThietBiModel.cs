@@ -12,6 +12,7 @@ namespace QLTB.Model
         public string SoHieu { get; set; }
         public string Ten { get; set; }
         public int PhongHocId { get; set; }
+        public Nullable<int> MonHocId { get; set; }
         public int DonViTinhId { get; set; }
     }
     public class ThietBiModel : BaseThietBiModel
@@ -34,9 +35,9 @@ namespace QLTB.Model
         public Nullable<System.DateTime> HanSD { get; set; }
         public string GhiChu { get; set; }
         public int TrangThai { get; set; }
-        public string CreateByUserId { get; set; }
+        public Nullable<int> CreateByUserId { get; set; }
         public Nullable<System.DateTime> CreatedOnDate { get; set; }
-        public string UpdatedByUserId { get; set; }
+        public Nullable<int> UpdatedByUserId { get; set; }
         public Nullable<System.DateTime> UpdatedOnDate { get; set; }
     }
     public class ThietBiGridDisplayModel
@@ -50,6 +51,7 @@ namespace QLTB.Model
         public string DonViTinh { get; set; }
         public string SoLuongMat { get; set; }
         public string SoLuongHong { get; set; }
+        public string TrangThai { get; set; }
     }
     public class BaseThietBiGridDisplayModel{
         public string ThietBiId { get; set; }

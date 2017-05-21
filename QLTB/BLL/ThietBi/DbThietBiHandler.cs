@@ -5,6 +5,7 @@ using QLTB.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,52 +13,151 @@ namespace QLTB.Handler
 {
     public class DbThietBiHandler
     {
-        public List<ThietBiGridDisplayModel> GetAll()
+        public Paging<List<ThietBiGridDisplayModel>> GetAll(int page, int pageSize)
+        {
+            using (var unitOfWork = new UnitOfWork())
+            {
+                DanhSachModel ds = new DanhSachModel();
+                try
+                {
+                    var TotalRecord = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetAll().Count();
+
+                    var data = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetAll().Where(p => p.TrangThai >= 0)
+                                .Join(unitOfWork.GetRepository<DM_PhongHocBoMon>().GetAll(),
+                                    tb => tb.PhongHocId,
+                                    ph => ph.PhongHocId,
+                                    (tb, ph) => new
+                                    {
+                                        ThietBiId = tb.ThietBiId,
+                                        SoHieu = tb.SoHieu,
+                                        Ten = tb.Ten,
+                                        KhoPhong = ph.Ten,
+                                        MonHocId = tb.MonHocId,
+                                        SoLuong = tb.SoLuong,
+                                        SoLuongMat = tb.SoLuongMat,
+                                        SoLuongHong = tb.SoLuongHong,
+                                        DonViTinhId = tb.DonViTinhId,
+                                        TrangThaiId = tb.TrangThai
+                                    }
+                                )
+                                .Join(unitOfWork.GetRepository<DM_MonHoc>().GetAll(),
+                                    tb => tb.MonHocId,
+                                    mh => mh.MonHocId,
+                                    (tb, mh) => new
+                                    {
+                                        ThietBiId = tb.ThietBiId,
+                                        SoHieu = tb.SoHieu,
+                                        Ten = tb.Ten,
+                                        KhoPhong = tb.KhoPhong,
+                                        MonHoc = mh.Ten,
+                                        SoLuong = tb.SoLuong,
+                                        SoLuongMat = tb.SoLuongMat,
+                                        SoLuongHong = tb.SoLuongHong,
+                                        DonViTinhId = tb.DonViTinhId,
+                                        TrangThaiId = tb.TrangThaiId
+                                    }
+                                )
+                                 .Join(unitOfWork.GetRepository<DS_DonViTinh>().GetAll(),
+                                    tb => tb.DonViTinhId,
+                                    dvt => dvt.DonViTinhId,
+                                    (tb, dvt) => new 
+                                    {
+                                        ThietBiId = tb.ThietBiId,
+                                        SoHieu = tb.SoHieu,
+                                        Ten = tb.Ten,
+                                        KhoPhong = tb.KhoPhong,
+                                        MonHoc = tb.MonHoc,
+                                        SoLuong = tb.SoLuong.ToString(),
+                                        SoLuongMat = tb.SoLuongMat.ToString(),
+                                        SoLuongHong = tb.SoLuongHong.ToString(),
+                                        DonViTinh = dvt.Ten,
+                                        TrangThaiId = tb.TrangThaiId
+
+                                    }
+                                )
+                                .AsEnumerable()
+                                .Join(ds.TrangThaiThietBi,
+                                    tb => tb.TrangThaiId,
+                                    tt => tt.Id,
+                                    (tb, tt) => new ThietBiGridDisplayModel
+                                    {
+                                        ThietBiId = tb.ThietBiId,
+                                        SoHieu = tb.SoHieu,
+                                        Ten = tb.Ten,
+                                        KhoPhong = tb.KhoPhong,
+                                        MonHoc = tb.MonHoc,
+                                        SoLuong = tb.SoLuong,
+                                        SoLuongMat = tb.SoLuongMat,
+                                        SoLuongHong = tb.SoLuongHong,
+                                        DonViTinh = tb.DonViTinh,
+                                        TrangThai = tt.Name
+                                    }
+                                )
+                                .OrderBy(p => p.MonHoc)
+                                .Skip(pageSize * (page - 1))
+                                .Take(pageSize)
+                                .ToList();
+                    //
+
+
+
+                    return new Paging<List<ThietBiGridDisplayModel>>
+                    {
+                        CurrentPage = page,
+                        Size = TotalRecord % pageSize == 0 ? TotalRecord / pageSize : TotalRecord / pageSize + 1,
+                        TotalRecord = TotalRecord,
+                        data = data,
+                        NextPage = (pageSize * page) < TotalRecord ? true : false,
+                        PreviousPage = page > 1 ? true : false
+                    };
+                }
+                catch (Exception ex)
+                {
+                    return null;
+                }
+            }
+        }
+        public List<ThietBiGridDisplayModel> GetAll(Expression<Func<TB_ThongTinThietBi, bool>> predicate)
         {
             using (var unitOfWork = new UnitOfWork())
             {
                 try
                 {
-                    var data = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetAll().Where(p=>p.TrangThai==1)
-                                .Join(unitOfWork.GetRepository<DM_ThietBiToiThieu>().GetAll(),
-                                    tttb => tttb.ThietBiId,
-                                    tbtt => tbtt.ThietBiId,
-                                    (tttb, tbtt) => new
-                                    {
-                                        ThietBiId = tttb.ThietBiId,
-                                        SoHieu = tttb.SoHieu,
-                                        Ten = tttb.Ten,
-                                        PhongHocId = tttb.PhongHocId,
-                                        MonHoc = tbtt.MonHocId,
-                                        SoLuong = tttb.SoLuong.ToString(),
-                                        SoLuongMat = tttb.SoLuongMat.ToString(),
-                                        SoLuongHong = tttb.SoLuongHong.ToString(),
-                                        DonViTinh=tttb.DonViTinhId
-                                    }
-                                )
-                                .Join(unitOfWork.GetRepository<DM_PhongHocBoMon>().GetAll(),
+                    var data = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetAll().Where(predicate)
+                                  .Join(unitOfWork.GetRepository<DM_PhongHocBoMon>().GetAll(),
                                     tb => tb.PhongHocId,
                                     ph => ph.PhongHocId,
-                                    (tb, ph) => new { ThietBi = tb, PhongHoc = ph }
+                                    (tb, ph) => new
+                                    {
+                                        ThietBiId = tb.ThietBiId,
+                                        SoHieu = tb.SoHieu,
+                                        Ten = tb.Ten,
+                                        KhoPhong = ph.Ten,
+                                        MonHocId = tb.MonHocId,
+                                        SoLuong = tb.SoLuong,
+                                        SoLuongMat = tb.SoLuongMat,
+                                        SoLuongHong = tb.SoLuongHong,
+                                        DonViTinhId = tb.DonViTinhId
+                                    }
                                 )
                                 .Join(unitOfWork.GetRepository<DM_MonHoc>().GetAll(),
-                                    tb => tb.ThietBi.MonHoc,
+                                    tb => tb.MonHocId,
                                     mh => mh.MonHocId,
-                                    (tb, mh) => new 
+                                    (tb, mh) => new
                                     {
-                                        ThietBiId = tb.ThietBi.ThietBiId,
-                                        SoHieu = tb.ThietBi.SoHieu,
-                                        Ten = tb.ThietBi.Ten,
-                                        KhoPhong = tb.PhongHoc.Ten,
+                                        ThietBiId = tb.ThietBiId,
+                                        SoHieu = tb.SoHieu,
+                                        Ten = tb.Ten,
+                                        KhoPhong = tb.KhoPhong,
                                         MonHoc = mh.Ten,
-                                        SoLuong = tb.ThietBi.SoLuong.ToString(),
-                                        SoLuongMat = tb.ThietBi.SoLuongMat.ToString(),
-                                        SoLuongHong = tb.ThietBi.SoLuongHong.ToString(),
-                                        DonViTinh = tb.ThietBi.DonViTinh
+                                        SoLuong = tb.SoLuong,
+                                        SoLuongMat = tb.SoLuongMat,
+                                        SoLuongHong = tb.SoLuongHong,
+                                        DonViTinhId = tb.DonViTinhId
                                     }
                                 )
                                 .Join(unitOfWork.GetRepository<DS_DonViTinh>().GetAll(),
-                                    tb => tb.DonViTinh,
+                                    tb => tb.DonViTinhId,
                                     dvt => dvt.DonViTinhId,
                                     (tb, dvt) => new ThietBiGridDisplayModel
                                     {
@@ -75,7 +175,7 @@ namespace QLTB.Handler
                                 .ToList();
                     return data;
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     return null;
                 }
@@ -85,13 +185,13 @@ namespace QLTB.Handler
         {
             try
             {
-                using (var unitOfWork= new UnitOfWork())
+                using (var unitOfWork = new UnitOfWork())
                 {
-                    var data=unitOfWork.GetRepository<TB_ThongTinThietBi>().GetById(Id);
+                    var data = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetById(Id);
                     return MyConvert.ConvertSameData<ThietBiModel>(data);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return null;
             }
@@ -134,18 +234,18 @@ namespace QLTB.Handler
                     if (last != null)
                     {
                         var lastCode = last.SoHieu;
-                        var numberPart=lastCode.Substring(lastCode.LastIndexOf('.')+1);
+                        var numberPart = lastCode.Substring(lastCode.LastIndexOf('.') + 1);
                         var prefixPart = ThietBiId;
-                        var number=Convert.ToInt32(numberPart.TrimStart('0'));
+                        var number = Convert.ToInt32(numberPart.TrimStart('0'));
                         var suffix = number + 1;
-                        
+
                         if (suffix < 10)
                         {
                             newCode = prefixPart + ".0" + suffix.ToString();
                         }
                         else
                         {
-                            newCode = prefixPart + "."+suffix.ToString();
+                            newCode = prefixPart + "." + suffix.ToString();
                         }
 
                     }
@@ -161,6 +261,8 @@ namespace QLTB.Handler
                 return null;
             }
         }
+
+
         public int Create(ThietBiModel model)
         {
             try

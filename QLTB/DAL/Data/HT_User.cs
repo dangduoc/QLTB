@@ -39,6 +39,7 @@ namespace QLTB.DAL.Data
         public string UserName { get; set; }
         public string PassWord { get; set; }
         public int UserRoleId { get; set; }
+        public Nullable<bool> isActived { get; set; }
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
         public string Note { get; set; }

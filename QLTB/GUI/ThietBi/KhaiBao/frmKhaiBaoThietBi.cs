@@ -161,13 +161,15 @@ namespace QLTB.GUI
             ThietBiMoi.NgaySanXuat = dpickNgaySX.Value;
             ThietBiMoi.IsThietBiTuLam = cboxThietBiTuLam.Checked;
             ThietBiMoi.NgayDuaVaoSD = dpickerNgaySD.Value;
+            
             //
-            ThietBiMoi.CreateByUserId = GlobalVariable.GetUser().UserName;
+           // ThietBiMoi.CreateByUserId = GlobalVariable.GetUser().UserId;
             ThietBiMoi.CreatedOnDate = DateTime.Now;
-            ThietBiMoi.UpdatedByUserId = ThietBiMoi.CreateByUserId;
+            //ThietBiMoi.UpdatedByUserId = ThietBiMoi.CreateByUserId;
             ThietBiMoi.UpdatedOnDate = ThietBiMoi.CreatedOnDate;
             if (ThietBi == null)
-            {   
+            {
+                ThietBiMoi.MonHocId = new DbThietBiTTHandler().GetById(ThietBiMoi.ThietBiId).MonHocId;
                 int result = handler.Create(ThietBiMoi);
                 if (result == 1)
                 {
@@ -202,7 +204,7 @@ namespace QLTB.GUI
 
         private void frmKhaiBaoThietBi_Load(object sender, EventArgs e)
         {
-           // loadData();
+           loadData();
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -223,10 +225,14 @@ namespace QLTB.GUI
         {
             var item = sender as DevComponents.DotNetBar.Controls.ComboBoxEx;
             if(item.SelectedIndex>=0)
-            txtSoHieu.Text= new DbThietBiHandler().GenerateCode(item.SelectedValue.ToString().Trim());
+            { 
+                txtSoHieu.Text= handler.GenerateCode(item.SelectedValue.ToString().Trim());
+              txtTen.Text = new DbThietBiTTHandler().GetById(item.SelectedValue.ToString().Trim()).Ten;
+            }
             else
             {
                 txtSoHieu.Text = "";
+                txtTen.Text = "";
             }
         }
 

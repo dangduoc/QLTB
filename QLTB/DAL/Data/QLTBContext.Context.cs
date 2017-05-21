@@ -80,7 +80,6 @@ namespace QLTB.DAL.Data
         public virtual DbSet<QH_PhieuMuonTB_ThietBi> QH_PhieuMuonTB_ThietBi { get; set; }
         public virtual DbSet<QH_PhieuThanhLyTB_ThietBi> QH_PhieuThanhLyTB_ThietBi { get; set; }
         public virtual DbSet<QH_User_Permission> QH_User_Permission { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TB_PhieuBaoHong> TB_PhieuBaoHong { get; set; }
         public virtual DbSet<TB_PhieuDeNghiMuaSam> TB_PhieuDeNghiMuaSam { get; set; }
         public virtual DbSet<TB_PhieuGhiTang> TB_PhieuGhiTang { get; set; }
