@@ -10,8 +10,9 @@ using System.Windows.Forms;
 
 namespace QLTB.GUI
 {
-    public partial class frmDMToBoMon : Form
+    public partial class frmDMToBoMon : DevComponents.DotNetBar.Office2007Form
     {
+        
         public frmDMToBoMon()
         {
             InitializeComponent();

@@ -19,6 +19,9 @@ namespace QLTB.GUI
         public frmDanhSachThietBi()
         {
             InitializeComponent();
+            toolStripXoa.Click += btnXoa_Click;
+            toolStripSua.Click += btnXem_Click;
+            
         }
         #region ADGV Setup
         private BindingSource source = new BindingSource();
@@ -45,9 +48,9 @@ namespace QLTB.GUI
             ToolStripLabel label = toolBar.Items[1] as ToolStripLabel;
             label.Text = "Tìm kiếm";
             label.ForeColor = Color.Black;
-            columns.DropDownStyle = ComboBoxStyle.DropDown;
-            columns.FlatStyle = FlatStyle.Flat;
-            //
+            columns.ComboBox.DropDownStyle = ComboBoxStyle.DropDown;
+            columns.ComboBox.FlatStyle = FlatStyle.Standard;
+            columns.ComboBox.DrawMode = DrawMode.Normal;
             //
             searchBegin.Checked = false;
             //
@@ -170,11 +173,25 @@ namespace QLTB.GUI
         }
         private void ADGVDanhSach_MouseClick(object sender, MouseEventArgs e)
         {
-            if (ADGVDanhSach.SelectedRows[0] != null)
+            var row = ADGVDanhSach.SelectedRows[0];
+            
+            if (row != null)
             {
+                var status = row.Cells["TrangThai"].Value.ToString();
                 if (e.Button == MouseButtons.Right)
                 {
+                    if(status.Equals("Chưa ghi tăng"))
+                    {
+                        toolStripGhiTang.Enabled = true;
+                        toolStripGhiGiam.Enabled = false;
+                    }
+                    else
+                    {
+                        toolStripGhiTang.Enabled = false;
+                        toolStripGhiGiam.Enabled = true;
+                    }
                     contextMenuStrip.Show(ADGVDanhSach, e.Location);
+                    
                 }
             }
         }
@@ -185,7 +202,7 @@ namespace QLTB.GUI
         }
         private void ShowPage(int page,int pageSize)
         {
-            var data = new DbThietBiHandler().GetAll(page, pageSize);
+            var data = handler.GetAll(page, pageSize);
             List<ThietBiGridDisplayModel> list = data.data;
             if (list.Count > 0)
             {
@@ -240,7 +257,6 @@ namespace QLTB.GUI
             ADGVDanhSach.MouseClick += ADGVDanhSach_MouseClick;
             //
             btnSuaDSTB.Click += btnXem_Click;
-            btnXoaDSTB.Click += btnXoa_Click;
             btnThemDSTB.Click += BtnThemDSTB_Click;
             //
         }
@@ -303,9 +319,12 @@ namespace QLTB.GUI
             if (dr == DialogResult.Yes)
             {
                 int result = new DbThietBiHandler().Delete(id);
-                if (result == 1) MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (result == 1)
+                {
+                    MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ADGVDanhSach.Rows.Remove(row);
+                }
                 else MessageBox.Show("Xóa không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                ADGVDanhSach.Rows.Remove(row);
             }
         }
         private void frmDanhSachThietBi_Load(object sender, EventArgs e)
@@ -385,7 +404,23 @@ namespace QLTB.GUI
             }
         }
 
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
 
+        private void btnNapDSTB_Click(object sender, EventArgs e)
+        {
+            ShowPage(1, 50);
+        }
 
+        private void toolStripBaoMat_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+            frmPhieuBaoHong frm = new frmPhieuBaoHong();
+            frm.MdiParent = MdiParent;
+            frm.Show();
+            Cursor = Cursors.Default;
+        }
     }
 }

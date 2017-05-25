@@ -15,7 +15,7 @@ namespace QLTB.GUI
 {
     public partial class frmDMKhoiLop : DevComponents.DotNetBar.Office2007Form
     {
-       
+        private DbKhoiLopHandler handler = new DbKhoiLopHandler();
         public frmDMKhoiLop()
         {
             InitializeComponent();
@@ -207,7 +207,7 @@ namespace QLTB.GUI
         {
             //Clone
             //List<KhoiLopGridDisplayModel> list = new DbKhoiLopHandler().GetAll();
-            List<KhoiLopGridDisplayModel> list = new List<KhoiLopGridDisplayModel>();
+            List<KhoiLopGridDisplayModel> list = handler.GetAll();
             //
             List<string> headers = new List<string>();
             headers.Add("Cấp trường");

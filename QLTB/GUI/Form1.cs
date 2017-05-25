@@ -1,10 +1,13 @@
-﻿using System;
+﻿using QLTB.Handler;
+using QLTB.Utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,8 +17,11 @@ namespace QLTB.GUI
     {
         public Form1()
         {
+            Thread t = new Thread(new ThreadStart(Loading));
+            t.Start();
+            Thread.Sleep(3000);
+            #region Init
             InitializeComponent();
-            bar1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             //
             btnThietBi.Click += btnThietBi_Click;
             btnMuonTra.Click += btnMuonTra_Click;
@@ -31,7 +37,7 @@ namespace QLTB.GUI
             btnTangTB.Click += btnTangTB_Click;
             btnDeNghiMua.Click += btnDeNghiMua_Click;
             //
-            
+
             //
             btnDMCanBo.Click += BtnDMCanBo_Click;
             btnDMGiaoVien.Click += BtnDMGiaoVien_Click;
@@ -48,9 +54,27 @@ namespace QLTB.GUI
             btnPhanQuyen.Click += btnPhanQuyen_Click;
             btnTaiKhoan.Click += BtnTaiKhoan_Click;
             //
-         
+            InitApp();
+            #endregion
+            t.Abort();
         }
+        private void Loading()
+        {
+            Application.Run(new frmLogin());
+        }
+        private void InitApp()
+        {
+            GlobalVariable.InitDanhSach();
+            GlobalVariable.SetHeThong();
+            string userfullname = GlobalVariable.GetUser().Name;
+            string tendv = GlobalVariable.GetHeThong().DonVi.Ten;
+            
+            CornerInfo.Text = userfullname + " - " + tendv;
+            //Thong tin năm hoc
+            txtStartYear.Text = GlobalVariable.GetHeThong().NamHoc.NamBatDau.ToString();
+            txtEndYear.Text = GlobalVariable.GetHeThong().NamHoc.NamKetThuc.ToString();
 
+        }
         private void BtnTaiKhoan_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Chức năng đang xây dựng....");
@@ -263,7 +287,7 @@ namespace QLTB.GUI
                     frm.WindowState = FormWindowState.Maximized;
                     frm.Show();
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -307,8 +331,15 @@ namespace QLTB.GUI
         private void Form1_Load(object sender, EventArgs e)
         {
 
+            ChangeInfo();
         }
-
+        public void ChangeInfo()
+        {
+            string userfullname = GlobalVariable.GetUser().Name;
+            string tendv = new DbThongTinDVHandler().GetTen();
+            CornerInfo.Text = userfullname + " - " + tendv;
+            //Thong tin năm hoc
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             foreach (Button item in toolmenuTB.Controls.OfType<Button>())

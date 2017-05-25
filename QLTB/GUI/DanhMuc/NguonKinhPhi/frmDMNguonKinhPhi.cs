@@ -1,4 +1,5 @@
-﻿using QLTB.Model;
+﻿using QLTB.Handler;
+using QLTB.Model;
 using QLTB.Utils;
 using System;
 using System.Collections.Generic;
@@ -12,10 +13,11 @@ using System.Windows.Forms;
 
 namespace QLTB.GUI
 {
-    public partial class frmDMNguonKinhPhi : Form
+    public partial class frmDMNguonKinhPhi : DevComponents.DotNetBar.Office2007Form
     {
         private BindingSource source = new BindingSource();
         private string defaultSearchValue = "Value for search";
+        private DbNguonKinhPhiHandler handler = new DbNguonKinhPhiHandler();
         public frmDMNguonKinhPhi()
         {
             InitializeComponent();
@@ -96,7 +98,7 @@ namespace QLTB.GUI
                 StringBuilder filter = new StringBuilder();
                 if (columns.ComboBox.SelectedValue.ToString().Equals("All"))
                 {
-                    foreach (DataGridViewColumn column in advancedDataGridView.Columns)
+                    foreach (DataGridViewColumn column in ADGVDanhSach.Columns)
                     {
                         string colName = column.Name;
                         if (column.ValueType != typeof(String))
@@ -143,8 +145,8 @@ namespace QLTB.GUI
             //
             DataTable tb = MyConvert.ToDataTable(list);
             source.DataSource = SetUpSearch(tb, headers);
-            advancedDataGridView.DataSource = source;
-            SetHeaderForGrid(advancedDataGridView, headers);
+            ADGVDanhSach.DataSource = source;
+            SetHeaderForGrid(ADGVDanhSach, headers);
         }
     }
 }

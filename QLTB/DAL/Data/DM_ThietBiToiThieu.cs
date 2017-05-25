@@ -37,9 +37,7 @@ namespace QLTB.DAL.Data
         public int TrangThai { get; set; }
     
         public virtual DM_MonHoc DM_MonHoc { get; set; }
-        public virtual DS_DauMucThietBi DS_DauMucThietBi { get; set; }
         public virtual DS_DonViTinh DS_DonViTinh { get; set; }
-        public virtual DS_LoaiThietBi DS_LoaiThietBi { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<QH_PhieuDenNghiMS_ThietBi> QH_PhieuDenNghiMS_ThietBi { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

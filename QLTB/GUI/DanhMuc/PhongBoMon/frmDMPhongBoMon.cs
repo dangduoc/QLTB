@@ -15,7 +15,7 @@ namespace QLTB.GUI
 {
     public partial class frmDMPhongBoMon : DevComponents.DotNetBar.Office2007Form
     {
-       
+        private DbPhongBMHandler handler = new DbPhongBMHandler();
         public frmDMPhongBoMon()
         {
             InitializeComponent();
@@ -178,8 +178,37 @@ namespace QLTB.GUI
             //}
         }
         #endregion
+        private void ShowPage(int page, int pageSize)
+        {
+            var data = handler.GetAll(page, pageSize);
+            List<PhongBoMonGridDisplayModel> list = data.data;
+            if (list.Count > 0)
+            {
+                loadData(list);
+                prevBtn.Enabled = data.PreviousPage;
+                prevBtn.Tag = page - 1;
+                nextBtn.Enabled = data.NextPage;
+                nextBtn.Tag = page + 1;
+                currentPage.Text = data.CurrentPage.ToString();
+                lbPaging.Text = "Trang " + currentPage.Text + "/" + data.Size;
+                lbTotalRecord.Text = "- Tổng số bản ghi: " + data.TotalRecord;
+            }
+        }
+        private void pageBtnClick(object sender, EventArgs e)
+        {
+            var btn = sender as LinkLabel;
+            int page = Convert.ToInt32(btn.Tag);
+            ShowPage(page, Convert.ToInt32(pageSize.SelectedValue.ToString()));
+        }
+        private void loadData(List<PhongBoMonGridDisplayModel> list)
+        {
+            BindingSource source = new BindingSource();
+            source.DataSource = MyConvert.ToDataTable<PhongBoMonGridDisplayModel>(list);
+            ADGVDanhSach.DataSource = source;
+        }
         private void LoadForm()
         {
+            #region InitGridview
             //Clone
             // List<PhongBoMonGridDisplayModel> list = new DbPhongBMHandler().GetAll();
             List<PhongBoMonGridDisplayModel> list = new List<PhongBoMonGridDisplayModel>();
@@ -203,6 +232,10 @@ namespace QLTB.GUI
             ADGVDanhSach.CellContentDoubleClick += ADGVDanhSach_CellContentDoubleClick;
             ADGVDanhSach.KeyPress += ADGVDanhSach_KeyPress;
             ADGVDanhSach.MouseClick += ADGVDanhSach_MouseClick;
+            prevBtn.Click += pageBtnClick;
+            nextBtn.Click += pageBtnClick;
+            #endregion
+            ShowPage(1, 50);
         }
 
         private void frmDMPhongBoMon_Load(object sender, EventArgs e)

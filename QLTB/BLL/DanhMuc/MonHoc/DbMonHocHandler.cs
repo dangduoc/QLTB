@@ -18,10 +18,10 @@ namespace QLTB.Handler
             {
                 try
                 {
-                    var data = unitOfWork.GetRepository<DM_MonHoc>().GetAll()
-                                .Join(unitOfWork.GetRepository<DS_LoaiMonHoc>().GetAll(),
+                    var data = unitOfWork.GetRepository<DM_MonHoc>().GetAll().AsEnumerable()
+                                .Join(GlobalVariable.GetDS().LoaiMonHoc,
                                     mh => mh.LoaiMonHocId,
-                                    lmh => lmh.LoaiMonHocId,
+                                    lmh => lmh.Id,
                                     (mh, lmh) => new 
                                     {
                                         MonHocId = mh.MonHocId,
@@ -31,9 +31,9 @@ namespace QLTB.Handler
                                         LoaiDanhGiaId=mh.LoaiDanhGiaId
                                     }
                                 )
-                                .Join(unitOfWork.GetRepository<DS_LoaiDanhGiaMH>().GetAll(),
+                                .Join(GlobalVariable.GetDS().DanhGiaMonHoc,
                                     mh => mh.LoaiDanhGiaId,
-                                    ldg => ldg.LoaiDanhGiaId,
+                                    ldg => ldg.Id,
                                     (mh, ldg) => new MonHocGridDisplayModel
                                     {
                                         MonHocId = mh.MonHocId.ToString(),

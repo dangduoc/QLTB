@@ -41,8 +41,5 @@ namespace QLTB.DAL.Data
         public virtual DM_MonHoc DM_MonHoc { get; set; }
         public virtual DM_PhongHocBoMon DM_PhongHocBoMon { get; set; }
         public virtual DS_BaiGiang DS_BaiGiang { get; set; }
-        public virtual DS_MucDichSDPHong DS_MucDichSDPHong { get; set; }
-        public virtual HT_User HT_User { get; set; }
-        public virtual HT_User HT_User1 { get; set; }
     }
 }

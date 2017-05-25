@@ -27,6 +27,7 @@ namespace QLTB.DAL.Data
         public System.DateTime BatDauHK2 { get; set; }
         public System.DateTime KetThucNamHoc { get; set; }
         public string GhiChu { get; set; }
+        public Nullable<bool> IsActive { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_PhieuDeNghiMuaSam> TB_PhieuDeNghiMuaSam { get; set; }

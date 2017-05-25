@@ -33,8 +33,6 @@ namespace QLTB.DAL.Data
         public int TrangThai { get; set; }
     
         public virtual DM_MonHoc DM_MonHoc { get; set; }
-        public virtual DS_LoaiPhongTN DS_LoaiPhongTN { get; set; }
-        public virtual DS_XepLoaiPhongHocBM DS_XepLoaiPhongHocBM { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_PhieuMuonPhong> TB_PhieuMuonPhong { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

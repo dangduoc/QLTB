@@ -15,6 +15,7 @@ namespace QLTB.GUI
 {
     public partial class frmDMLopHoc : DevComponents.DotNetBar.Office2007Form
     {
+        private DbLopHocHandler handler = new DbLopHocHandler();
         public frmDMLopHoc()
         {
             InitializeComponent();
@@ -207,7 +208,7 @@ namespace QLTB.GUI
             //Clone
             //List<LopHocGridDisplayModel> list = new DbLopHocHandler().GetAll();
             //
-            List<LopHocGridDisplayModel> list = new List<LopHocGridDisplayModel>();
+            List<LopHocGridDisplayModel> list = handler.GetAll();
 
             List<string> headers = new List<string>();
             headers.Add("Khối lớp");

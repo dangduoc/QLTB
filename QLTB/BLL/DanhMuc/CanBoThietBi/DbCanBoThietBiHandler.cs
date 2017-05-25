@@ -12,14 +12,15 @@ namespace QLTB.handler
 {
     public class DbCanBoThietBiHandler
     {
-        public List<CanBoTBGridDisplayModel> GetAll()
+        public Paging<List<CanBoTBGridDisplayModel>> GetAll(int page, int pageSize)
         {
             using (var unitOfWork = new UnitOfWork())
             {
                 try
                 {
-                    var data = unitOfWork.GetRepository<DM_CanBoThietBi>().GetAll()
-                                .Join(unitOfWork.GetRepository<DS_GioiTinh>().GetAll(),
+                    var TotalRecord = unitOfWork.GetRepository<DM_CanBoThietBi>().GetAll().Count();
+                    var data = unitOfWork.GetRepository<DM_CanBoThietBi>().GetAll().AsEnumerable()
+                                .Join(GlobalVariable.GetDS().GioiTinh,
                                     cb => cb.GioiTinhId,
                                     gt => gt.GioiTinhId,
                                     (cb, gt) => new
@@ -36,9 +37,9 @@ namespace QLTB.handler
                                         GhiChu=cb.GhiChu
                                     }
                                 )
-                                .Join(unitOfWork.GetRepository<DSPhuTrachCBTB>().GetAll(),
+                                .Join(GlobalVariable.GetDS().PhuTrachCanBoTB,
                                     cb => cb.PhuTrachId,
-                                    ds => ds.PhuTrachCBTBId,
+                                    ds => ds.Id,
                                     (cb, ds) => new CanBoTBGridDisplayModel
                                     {
                                         CanBoThietBiId=cb.CanBoThietBiId,
@@ -53,8 +54,19 @@ namespace QLTB.handler
                                         GhiChu=cb.GhiChu
                                     }
                                 )
+                                .OrderBy(p => p.CanBoThietBiId)
+                                .Skip(pageSize * (page - 1))
+                                .Take(pageSize)
                                 .ToList();
-                    return data;
+                    return new Paging<List<CanBoTBGridDisplayModel>>
+                    {
+                        CurrentPage = page,
+                        Size = TotalRecord % pageSize == 0 ? TotalRecord / pageSize : TotalRecord / pageSize + 1,
+                        TotalRecord = TotalRecord,
+                        data = data,
+                        NextPage = (pageSize * page) < TotalRecord ? true : false,
+                        PreviousPage = page > 1 ? true : false
+                    };
                 }
                 catch(Exception ex)
                 {

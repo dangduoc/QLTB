@@ -15,7 +15,7 @@ namespace QLTB.GUI
 {
     public partial class frmDMMonHoc : DevComponents.DotNetBar.Office2007Form
     {
-
+        private DbMonHocHandler handler = new DbMonHocHandler();
         public frmDMMonHoc()
         {
             InitializeComponent();
@@ -182,7 +182,7 @@ namespace QLTB.GUI
         {
             //Clone
             //List<MonHocGridDisplayModel> list = new DbMonHocHandler().GetAll();
-            List<MonHocGridDisplayModel> list = new List<MonHocGridDisplayModel>();
+            List<MonHocGridDisplayModel> list = handler.GetAll();
             //
             List<string> headers = new List<string>();
             headers.Add("Mã môn học");

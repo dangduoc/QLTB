@@ -27,7 +27,6 @@ namespace QLTB.DAL.Data
         public string Ten { get; set; }
         public string GhiChu { get; set; }
     
-        public virtual DS_CapTruong DS_CapTruong { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DM_LopHoc> DM_LopHoc { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

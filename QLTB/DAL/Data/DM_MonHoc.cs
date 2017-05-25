@@ -33,8 +33,6 @@ namespace QLTB.DAL.Data
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DM_GiaoVien> DM_GiaoVien { get; set; }
-        public virtual DS_LoaiDanhGiaMH DS_LoaiDanhGiaMH { get; set; }
-        public virtual DS_LoaiMonHoc DS_LoaiMonHoc { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DM_PhongHocBoMon> DM_PhongHocBoMon { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

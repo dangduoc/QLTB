@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QLTB.Handler;
+using QLTB.Utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,8 +32,25 @@ namespace QLTB.GUI
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            
             progressBarX1.Visible = true;
-            Task.Delay(4000).ContinueWith(t => CloseForm());
+            string username = txtUserName.Text.Trim();
+            string password = txtPassWord.Text.Trim();
+            string message = "";
+            var handler = new LoginHandler();
+            var WorkingUser = handler.CheckLogin(username, password, out message);
+            if (WorkingUser != null)
+            {
+                //Set global
+                GlobalVariable.SetUser(WorkingUser);
+                //
+                Task.Delay(1000).ContinueWith(t => CloseForm());
+            }
+            else
+            {
+                MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
         }
 
         private void textBoxX1_KeyPress(object sender, KeyPressEventArgs e)

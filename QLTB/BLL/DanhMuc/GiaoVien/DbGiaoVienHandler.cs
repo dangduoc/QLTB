@@ -14,23 +14,24 @@ namespace QLTB.Handler
 {
     public class DbGiaoVienHandler
     {
-        public List<GiaoVienGirdDisplayModel> GetAll()
+        public Paging<List<GiaoVienGirdDisplayModel>> GetAll(int page, int pageSize)
         {
             using (var unitOfWork = new UnitOfWork())
             {
                 try
                 {
+                    var TotalRecord = unitOfWork.GetRepository<DM_GiaoVien>().GetAll().Count();
                     var data = unitOfWork.GetRepository<DM_GiaoVien>().GetAll()
-                                .Join(unitOfWork.GetRepository<DS_GioiTinh>().GetAll(),
-                                    gv => gv.GioiTinhId,
-                                    gt => gt.GioiTinhId,
-                                    (gv, gt) => new
+                         .Join(unitOfWork.GetRepository<DS_PhongBan>().GetAll(),
+                                    gv => gv.PhongBanId,
+                                    pb => pb.PhongBanId,
+                                    (gv, pb) => new
                                     {
                                         GiaoVienId = gv.GiaoVienId,
-                                        Ten = gv.TenDayDu,
-                                        GioiTinh = gt.Ten,
+                                        Ten = gv.Ten,
+                                        GioiTinhId = gv.GioiTinhId,
                                         NgaySinh = gv.NgaySinh,
-                                        PhongBanId = gv.PhongBanId,
+                                        PhongBan = pb.Ten,
                                         ViTriId = gv.ViTriId,
                                         ChucVuId = gv.ChucVuId,
                                         MonHocId = gv.MonHocId,
@@ -38,26 +39,43 @@ namespace QLTB.Handler
                                         LoaiHopDongId = gv.LoaiHopDongId
                                     }
                                 )
-                                .Join(unitOfWork.GetRepository<DS_PhongBan>().GetAll(),
-                                    gv => gv.PhongBanId,
-                                    pb => pb.PhongBanId,
-                                    (gv, pb) => new
+                                .Join(unitOfWork.GetRepository<DM_MonHoc>().GetAll(),
+                                    gv => gv.MonHocId,
+                                    mh => mh.MonHocId,
+                                    (gv, mh) => new
                                     {
                                         GiaoVienId = gv.GiaoVienId,
                                         Ten = gv.Ten,
-                                        GioiTinh = gv.GioiTinh,
+                                        GioiTinhId = gv.GioiTinhId,
                                         NgaySinh = gv.NgaySinh,
-                                        PhongBan = pb.Ten,
+                                        PhongBan = gv.PhongBan,
                                         ViTriId = gv.ViTriId,
                                         ChucVuId = gv.ChucVuId,
-                                        MonHocId = gv.MonHocId,
+                                        MonHoc = mh.Ten,
+                                        TrinhDoCMId = gv.TrinhDoCMId,
+                                        LoaiHopDongId = gv.LoaiHopDongId
+                                    }
+                                ).AsEnumerable()
+                                .Join(GlobalVariable.GetDS().GioiTinh,
+                                    gv => gv.GioiTinhId,
+                                    gt => gt.GioiTinhId,
+                                    (gv, gt) => new
+                                    {
+                                        GiaoVienId = gv.GiaoVienId,
+                                        Ten = gv.Ten,
+                                        GioiTinh = gt.Ten,
+                                        NgaySinh = gv.NgaySinh,
+                                        PhongBan = gv.PhongBan,
+                                        ViTriId = gv.ViTriId,
+                                        ChucVuId = gv.ChucVuId,
+                                        MonHocId = gv.MonHoc,
                                         TrinhDoCMId = gv.TrinhDoCMId,
                                         LoaiHopDongId = gv.LoaiHopDongId
                                     }
                                 )
-                                .Join(unitOfWork.GetRepository<DS_ViTriGiaoVien>().GetAll(),
+                                .Join(GlobalVariable.GetDS().ViTriGiaoVien.Where(p => p.CapHocId == 2),
                                     gv => gv.ViTriId,
-                                    vt => vt.ViTriGiaoVienId,
+                                    vt => vt.Id,
                                     (gv, vt) => new
                                     {
                                         GiaoVienId = gv.GiaoVienId,
@@ -72,9 +90,9 @@ namespace QLTB.Handler
                                         LoaiHopDongId = gv.LoaiHopDongId
                                     }
                                 )
-                                 .Join(unitOfWork.GetRepository<DS_ChucVuGiaoVien>().GetAll(),
+                                 .Join(GlobalVariable.GetDS().ChucVuGiaoVien,
                                     gv => gv.ChucVuId,
-                                    cv => cv.ChucVuGiaoVienId,
+                                    cv => cv.Id,
                                     (gv, cv) => new
                                     {
                                         GiaoVienId = gv.GiaoVienId,
@@ -84,31 +102,14 @@ namespace QLTB.Handler
                                         PhongBan = gv.PhongBan,
                                         ViTri = gv.ViTri,
                                         ChucVu = cv.Ten,
-                                        MonHocId = gv.MonHocId,
+                                        MonHoc = gv.MonHocId,
                                         TrinhDoCMId = gv.TrinhDoCMId,
                                         LoaiHopDongId = gv.LoaiHopDongId
                                     }
                                 )
-                                 .Join(unitOfWork.GetRepository<DM_MonHoc>().GetAll(),
-                                    gv => gv.MonHocId,
-                                    mh => mh.MonHocId,
-                                    (gv, mh) => new
-                                    {
-                                        GiaoVienId = gv.GiaoVienId,
-                                        Ten = gv.Ten,
-                                        GioiTinh = gv.GioiTinh,
-                                        NgaySinh = gv.NgaySinh,
-                                        PhongBan = gv.PhongBan,
-                                        ViTri = gv.ViTri,
-                                        ChucVu = gv.ChucVu,
-                                        MonHoc = mh.Ten,
-                                        TrinhDoCMId = gv.TrinhDoCMId,
-                                        LoaiHopDongId = gv.LoaiHopDongId
-                                    }
-                                )
-                                .Join(unitOfWork.GetRepository<DS_TrinhDoChuyenMon>().GetAll(),
+                                .Join(GlobalVariable.GetDS().TrinhDoChuyenMon,
                                     gv => gv.TrinhDoCMId,
-                                    cd => cd.TrinhDoChuyenMonId,
+                                    cd => cd.Id,
                                     (gv, cd) => new
                                     {
                                         GiaoVienId = gv.GiaoVienId,
@@ -123,10 +124,10 @@ namespace QLTB.Handler
                                         LoaiHopDongId = gv.LoaiHopDongId
                                     }
                                 )
-                                .Join(unitOfWork.GetRepository<DS_LoaiHopDong>().GetAll(),
+                                .Join(GlobalVariable.GetDS().LoaiHopDong,
                                     gv => gv.LoaiHopDongId,
-                                    loai => loai.LoaiHopDongId,
-                                    (gv, loai) => new 
+                                    loai => loai.Id,
+                                    (gv, loai) => new
                                     {
                                         GiaoVienId = gv.GiaoVienId,
                                         TenDayDu = gv.Ten,
@@ -140,7 +141,7 @@ namespace QLTB.Handler
                                         LoaiHopDong = loai.Ten
                                     }
                                 )
-                                .ToList().Select(gv=> new GiaoVienGirdDisplayModel {
+                                .Select(gv=> new GiaoVienGirdDisplayModel {
                                     GiaoVienId = gv.GiaoVienId,
                                     TenDayDu = gv.TenDayDu,
                                     GioiTinh = gv.GioiTinh,
@@ -151,8 +152,20 @@ namespace QLTB.Handler
                                     DayMon = gv.DayMon,
                                     TrinhDoChuyenMon = gv.TrinhDoChuyenMon,
                                     LoaiHopDong = gv.LoaiHopDong
-                                }).ToList();
-                    return data;
+                                })
+                                .OrderBy(p => p.GiaoVienId)
+                                .Skip(pageSize * (page - 1))
+                                .Take(pageSize)
+                                .ToList();
+                    return new Paging<List<GiaoVienGirdDisplayModel>>
+                    {
+                        CurrentPage = page,
+                        Size = TotalRecord % pageSize == 0 ? TotalRecord / pageSize : TotalRecord / pageSize + 1,
+                        TotalRecord = TotalRecord,
+                        data = data,
+                        NextPage = (pageSize * page) < TotalRecord ? true : false,
+                        PreviousPage = page > 1 ? true : false
+                    };
                 }
                 catch (Exception ex)
                 {

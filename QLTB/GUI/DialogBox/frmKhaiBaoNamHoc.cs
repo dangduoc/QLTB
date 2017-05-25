@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QLTB.Model;
+using QLTB.Handler;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,100 @@ namespace QLTB.GUI
 {
     public partial class frmKhaiBaoNamHoc : DevComponents.DotNetBar.Office2007Form
     {
+        private DbThongTinNHHandler handler = new DbThongTinNHHandler();
+        private ThongTinNamHocModel workingObject;
         public frmKhaiBaoNamHoc()
         {
             InitializeComponent();
+            workingObject = null;
+        }
+        public frmKhaiBaoNamHoc(int Id)
+        {
+            InitializeComponent();
+            workingObject = handler.GetById(Id);
+        }
+        private void loadForm()
+        {
+            if (workingObject != null)
+            {
+                txtStartYear.Value = workingObject.NamBatDau;
+                txtEndYear.Value = workingObject.NamKetThuc;
+                dpickerStart1st.Value = workingObject.BatDauHK1;
+                dpickerStart2nd.Value = workingObject.BatDauHK2;
+                dpickerEndYear.Value = workingObject.KetThucNamHoc;
+                txtGhiChu.Text = workingObject.GhiChu;
+            }
+            else
+            {
+
+            }
+        }
+
+        private void txtStartYear_MouseLeave(object sender, EventArgs e)
+        {
+            txtEndYear.Value = txtStartYear.Value + 1;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (workingObject != null)
+            {
+                workingObject.NamBatDau = (int)txtStartYear.Value;
+                workingObject.NamKetThuc = (int)txtEndYear.Value;
+                workingObject.BatDauHK1 = dpickerStart1st.Value;
+                workingObject.BatDauHK2 = dpickerStart2nd.Value;
+                workingObject.KetThucNamHoc = dpickerEndYear.Value;
+                workingObject.GhiChu = txtGhiChu.Text;
+                int result = handler.Update(workingObject);
+                if (result == 1)
+                {
+                    MessageBox.Show("Thông tin năm học được thay đổi thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Thay đổi thông tin năm học không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                workingObject = new ThongTinNamHocModel();
+                workingObject.NamBatDau = (int)txtStartYear.Value;
+                workingObject.NamKetThuc = (int)txtEndYear.Value;
+                workingObject.BatDauHK1 = dpickerStart1st.Value;
+                workingObject.BatDauHK2 = dpickerStart2nd.Value;
+                workingObject.KetThucNamHoc = dpickerEndYear.Value;
+                workingObject.GhiChu = txtGhiChu.Text;
+
+                int result = handler.Create(workingObject);
+                if (result == 1)
+                {
+                    MessageBox.Show("Khởi tạo thông tin năm học thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Khởi tạo thông tin năm học không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void frmKhaiBaoNamHoc_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var owner = Owner as frmDanhSachNamHoc;
+            owner.ReloadData();
+        }
+
+        private void txtStartYear_ValueChanged(object sender, EventArgs e)
+        {
+            dpickerStart1st.Value.AddYears((int)txtStartYear.Value);
+            dpickerStart2nd.Value.AddYears((int)txtStartYear.Value);
+            dpickerEndYear.Value.AddYears((int)txtStartYear.Value + 1);
         }
     }
 }

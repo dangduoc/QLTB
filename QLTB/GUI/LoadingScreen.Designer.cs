@@ -29,69 +29,69 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoadingScreen));
-            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX2 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtUserName = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtPassWord = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.checkBoxX1 = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.progressBarX1 = new DevComponents.DotNetBar.Controls.ProgressBarX();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.progressBarX1 = new DevComponents.DotNetBar.Controls.ProgressBarX();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBoxX1
+            // txtUserName
             // 
-            this.textBoxX1.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.textBoxX1.Border.Class = "TextBoxBorder";
-            this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX1.DisabledBackColor = System.Drawing.Color.White;
-            this.textBoxX1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxX1.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX1.Location = new System.Drawing.Point(261, 85);
-            this.textBoxX1.MinimumSize = new System.Drawing.Size(0, 32);
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.PreventEnterBeep = true;
-            this.textBoxX1.Size = new System.Drawing.Size(187, 32);
-            this.textBoxX1.TabIndex = 2;
-            this.textBoxX1.Text = "admin";
-            this.textBoxX1.WatermarkFont = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxX1.WatermarkImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.textBoxX1.WatermarkText = "TÊN TÀI KHOẢN";
-            this.textBoxX1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxX1_KeyPress);
-            // 
-            // textBoxX2
-            // 
-            this.textBoxX2.BackColor = System.Drawing.Color.White;
+            this.txtUserName.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
-            this.textBoxX2.Border.Class = "TextBoxBorder";
-            this.textBoxX2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX2.DisabledBackColor = System.Drawing.Color.White;
-            this.textBoxX2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxX2.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX2.Location = new System.Drawing.Point(261, 132);
-            this.textBoxX2.MinimumSize = new System.Drawing.Size(0, 32);
-            this.textBoxX2.Name = "textBoxX2";
-            this.textBoxX2.PasswordChar = '*';
-            this.textBoxX2.PreventEnterBeep = true;
-            this.textBoxX2.Size = new System.Drawing.Size(187, 32);
-            this.textBoxX2.TabIndex = 3;
-            this.textBoxX2.Text = "123456";
-            this.textBoxX2.WatermarkFont = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxX2.WatermarkImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.textBoxX2.WatermarkText = "MẬT KHẨU";
-            this.textBoxX2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxX1_KeyPress);
+            this.txtUserName.Border.Class = "TextBoxBorder";
+            this.txtUserName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtUserName.DisabledBackColor = System.Drawing.Color.White;
+            this.txtUserName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserName.ForeColor = System.Drawing.Color.Black;
+            this.txtUserName.Location = new System.Drawing.Point(261, 85);
+            this.txtUserName.MinimumSize = new System.Drawing.Size(0, 32);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.PreventEnterBeep = true;
+            this.txtUserName.Size = new System.Drawing.Size(187, 32);
+            this.txtUserName.TabIndex = 2;
+            this.txtUserName.Text = "admin";
+            this.txtUserName.WatermarkFont = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserName.WatermarkImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txtUserName.WatermarkText = "TÊN TÀI KHOẢN";
+            this.txtUserName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxX1_KeyPress);
+            // 
+            // txtPassWord
+            // 
+            this.txtPassWord.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtPassWord.Border.Class = "TextBoxBorder";
+            this.txtPassWord.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtPassWord.DisabledBackColor = System.Drawing.Color.White;
+            this.txtPassWord.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassWord.ForeColor = System.Drawing.Color.Black;
+            this.txtPassWord.Location = new System.Drawing.Point(261, 132);
+            this.txtPassWord.MinimumSize = new System.Drawing.Size(0, 32);
+            this.txtPassWord.Name = "txtPassWord";
+            this.txtPassWord.PasswordChar = '*';
+            this.txtPassWord.PreventEnterBeep = true;
+            this.txtPassWord.Size = new System.Drawing.Size(187, 32);
+            this.txtPassWord.TabIndex = 3;
+            this.txtPassWord.Text = "123456";
+            this.txtPassWord.WatermarkFont = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassWord.WatermarkImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txtPassWord.WatermarkText = "MẬT KHẨU";
+            this.txtPassWord.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxX1_KeyPress);
             // 
             // button1
             // 
@@ -119,8 +119,8 @@
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.textBoxX1);
-            this.panel1.Controls.Add(this.textBoxX2);
+            this.panel1.Controls.Add(this.txtUserName);
+            this.panel1.Controls.Add(this.txtPassWord);
             this.panel1.ForeColor = System.Drawing.Color.Black;
             this.panel1.Location = new System.Drawing.Point(0, 1);
             this.panel1.Name = "panel1";
@@ -171,24 +171,6 @@
             this.labelX1.TabIndex = 8;
             this.labelX1.Text = "ĐĂNG NHẬP";
             // 
-            // progressBarX1
-            // 
-            // 
-            // 
-            // 
-            this.progressBarX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.progressBarX1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.progressBarX1.ForeColor = System.Drawing.Color.DimGray;
-            this.progressBarX1.Location = new System.Drawing.Point(0, 244);
-            this.progressBarX1.Name = "progressBarX1";
-            this.progressBarX1.ProgressType = DevComponents.DotNetBar.eProgressItemType.Marquee;
-            this.progressBarX1.Size = new System.Drawing.Size(471, 7);
-            this.progressBarX1.Step = 20;
-            this.progressBarX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.Windows7;
-            this.progressBarX1.TabIndex = 6;
-            this.progressBarX1.TextVisible = true;
-            this.progressBarX1.Visible = false;
-            // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -226,6 +208,24 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // progressBarX1
+            // 
+            // 
+            // 
+            // 
+            this.progressBarX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.progressBarX1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.progressBarX1.ForeColor = System.Drawing.Color.DimGray;
+            this.progressBarX1.Location = new System.Drawing.Point(0, 244);
+            this.progressBarX1.Name = "progressBarX1";
+            this.progressBarX1.ProgressType = DevComponents.DotNetBar.eProgressItemType.Marquee;
+            this.progressBarX1.Size = new System.Drawing.Size(471, 7);
+            this.progressBarX1.Step = 20;
+            this.progressBarX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.Windows7;
+            this.progressBarX1.TabIndex = 6;
+            this.progressBarX1.TextVisible = true;
+            this.progressBarX1.Visible = false;
+            // 
             // LoadingScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -254,8 +254,8 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX2;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtUserName;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtPassWord;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;

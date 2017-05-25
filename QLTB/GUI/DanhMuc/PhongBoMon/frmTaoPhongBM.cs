@@ -16,5 +16,15 @@ namespace QLTB.GUI
         {
             InitializeComponent();
         }
+
+        private void buttonX2_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void buttonX1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Chức năng đang xây dựng");
+        }
     }
 }

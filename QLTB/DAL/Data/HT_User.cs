@@ -25,10 +25,6 @@ namespace QLTB.DAL.Data
             this.TB_PhieuGhiTang1 = new HashSet<TB_PhieuGhiTang>();
             this.TB_PhieuGiamTB = new HashSet<TB_PhieuGiamTB>();
             this.TB_PhieuGiamTB1 = new HashSet<TB_PhieuGiamTB>();
-            this.TB_PhieuMuonPhong = new HashSet<TB_PhieuMuonPhong>();
-            this.TB_PhieuMuonPhong1 = new HashSet<TB_PhieuMuonPhong>();
-            this.TB_PhieuMuonTB = new HashSet<TB_PhieuMuonTB>();
-            this.TB_PhieuMuonTB1 = new HashSet<TB_PhieuMuonTB>();
             this.TB_PhieuThanhLyTB = new HashSet<TB_PhieuThanhLyTB>();
             this.TB_PhieuThanhLyTB1 = new HashSet<TB_PhieuThanhLyTB>();
             this.TB_ThongTinThietBi = new HashSet<TB_ThongTinThietBi>();
@@ -62,14 +58,6 @@ namespace QLTB.DAL.Data
         public virtual ICollection<TB_PhieuGiamTB> TB_PhieuGiamTB { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_PhieuGiamTB> TB_PhieuGiamTB1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TB_PhieuMuonPhong> TB_PhieuMuonPhong { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TB_PhieuMuonPhong> TB_PhieuMuonPhong1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TB_PhieuMuonTB> TB_PhieuMuonTB { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TB_PhieuMuonTB> TB_PhieuMuonTB1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_PhieuThanhLyTB> TB_PhieuThanhLyTB { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

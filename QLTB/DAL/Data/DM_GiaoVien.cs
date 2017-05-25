@@ -25,6 +25,7 @@ namespace QLTB.DAL.Data
         public string HoVaDem { get; set; }
         public string Ten { get; set; }
         public string TenDayDu { get; set; }
+        public string AnhDaiDien { get; set; }
         public int GioiTinhId { get; set; }
         public Nullable<System.DateTime> NgaySinh { get; set; }
         public string NoiSinh { get; set; }
@@ -51,17 +52,8 @@ namespace QLTB.DAL.Data
         public int TrangThai { get; set; }
     
         public virtual DM_MonHoc DM_MonHoc { get; set; }
-        public virtual DS_ChucVuGiaoVien DS_ChucVuGiaoVien { get; set; }
         public virtual DS_DanToc DS_DanToc { get; set; }
-        public virtual DS_GioiTinh DS_GioiTinh { get; set; }
-        public virtual DS_LoaiHopDong DS_LoaiHopDong { get; set; }
-        public virtual DS_LyLuanChinhTri DS_LyLuanChinhTri { get; set; }
         public virtual DS_PhongBan DS_PhongBan { get; set; }
-        public virtual DS_QuanLyGiaoDuc DS_QuanLyGiaoDuc { get; set; }
-        public virtual DS_QuanLyNhaNuoc DS_QuanLyNhaNuoc { get; set; }
-        public virtual DS_TrinhDoChuan DS_TrinhDoChuan { get; set; }
-        public virtual DS_TrinhDoChuyenMon DS_TrinhDoChuyenMon { get; set; }
-        public virtual DS_ViTriGiaoVien DS_ViTriGiaoVien { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_PhieuMuonPhong> TB_PhieuMuonPhong { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
