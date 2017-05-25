@@ -50,13 +50,13 @@
             this.layoutSpacerItem1 = new DevComponents.DotNetBar.Layout.LayoutSpacerItem();
             this.layoutControlItem4 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
             this.layoutControlItem2 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
-            this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.ribBarDSThietBi = new DevComponents.DotNetBar.RibbonBar();
             this.btnLuu = new DevComponents.DotNetBar.ButtonItem();
             this.btnXoa = new DevComponents.DotNetBar.ButtonItem();
             this.btnHelpDSTB = new DevComponents.DotNetBar.ButtonItem();
             this.btnClose = new DevComponents.DotNetBar.ButtonItem();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ADGVDSTB)).BeginInit();
@@ -65,6 +65,7 @@
             this.panel4.SuspendLayout();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dPickerNgayLap)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -84,10 +85,10 @@
             this.panel2.Controls.Add(this.ribbonBar1);
             this.panel2.Controls.Add(this.labelX1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 315);
+            this.panel2.Location = new System.Drawing.Point(0, 298);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
-            this.panel2.Size = new System.Drawing.Size(909, 184);
+            this.panel2.Size = new System.Drawing.Size(909, 201);
             this.panel2.TabIndex = 20;
             // 
             // ADGVDSTB
@@ -126,7 +127,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.ADGVDSTB.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.ADGVDSTB.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ADGVDSTB.Size = new System.Drawing.Size(903, 115);
+            this.ADGVDSTB.Size = new System.Drawing.Size(903, 132);
             this.ADGVDSTB.TabIndex = 29;
             this.ADGVDSTB.TimeFilter = false;
             // 
@@ -186,7 +187,7 @@
             this.labelX1.ForeColor = System.Drawing.Color.Black;
             this.labelX1.Location = new System.Drawing.Point(6, 0);
             this.labelX1.Name = "labelX1";
-            this.labelX1.PaddingLeft = 10;
+            this.labelX1.PaddingLeft = 15;
             this.labelX1.Size = new System.Drawing.Size(903, 34);
             this.labelX1.TabIndex = 0;
             this.labelX1.Text = "Danh sách thiết bị";
@@ -194,32 +195,31 @@
             // pnlTTPhieuMuon
             // 
             this.pnlTTPhieuMuon.Controls.Add(this.panel3);
-            this.pnlTTPhieuMuon.Controls.Add(this.labelX3);
             this.pnlTTPhieuMuon.Controls.Add(this.labelX2);
             this.pnlTTPhieuMuon.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTTPhieuMuon.Location = new System.Drawing.Point(0, 35);
             this.pnlTTPhieuMuon.Name = "pnlTTPhieuMuon";
             this.pnlTTPhieuMuon.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
-            this.pnlTTPhieuMuon.Size = new System.Drawing.Size(909, 280);
+            this.pnlTTPhieuMuon.Size = new System.Drawing.Size(909, 263);
             this.pnlTTPhieuMuon.TabIndex = 19;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(6, 80);
+            this.panel3.Location = new System.Drawing.Point(6, 46);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(903, 200);
+            this.panel3.Size = new System.Drawing.Size(903, 217);
             this.panel3.TabIndex = 3;
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.layoutControl1);
+            this.panel4.Controls.Add(this.groupBox1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(17, 0, 0, 0);
-            this.panel4.Size = new System.Drawing.Size(903, 200);
+            this.panel4.Size = new System.Drawing.Size(903, 217);
             this.panel4.TabIndex = 1;
             // 
             // layoutControl1
@@ -230,8 +230,9 @@
             this.layoutControl1.Controls.Add(this.dPickerNgayLap);
             this.layoutControl1.Controls.Add(this.txtSoPhieu);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl1.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControl1.ForeColor = System.Drawing.Color.Black;
-            this.layoutControl1.Location = new System.Drawing.Point(17, 0);
+            this.layoutControl1.Location = new System.Drawing.Point(3, 19);
             this.layoutControl1.Name = "layoutControl1";
             // 
             // 
@@ -242,7 +243,7 @@
             this.layoutSpacerItem1,
             this.layoutControlItem4,
             this.layoutControlItem2});
-            this.layoutControl1.Size = new System.Drawing.Size(886, 200);
+            this.layoutControl1.Size = new System.Drawing.Size(725, 187);
             this.layoutControl1.TabIndex = 4;
             // 
             // txtChungTu
@@ -387,22 +388,6 @@
             this.layoutControlItem2.Text = "<b>Ghi chú</b>";
             this.layoutControlItem2.Width = 700;
             // 
-            // labelX3
-            // 
-            // 
-            // 
-            // 
-            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelX3.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX3.ForeColor = System.Drawing.Color.Black;
-            this.labelX3.Location = new System.Drawing.Point(6, 46);
-            this.labelX3.Name = "labelX3";
-            this.labelX3.PaddingLeft = 10;
-            this.labelX3.Size = new System.Drawing.Size(903, 34);
-            this.labelX3.TabIndex = 2;
-            this.labelX3.Text = "Thông tin chung";
-            // 
             // labelX2
             // 
             // 
@@ -497,6 +482,17 @@
             this.btnClose.Text = "Đóng";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.layoutControl1);
+            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(9, 4);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(731, 209);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Thông tin chung";
+            // 
             // frmPhieuTangThietBi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -517,6 +513,7 @@
             this.panel4.ResumeLayout(false);
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dPickerNgayLap)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -542,12 +539,12 @@
         private DevComponents.DotNetBar.Layout.LayoutSpacerItem layoutSpacerItem1;
         private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem4;
         private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem2;
-        private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.RibbonBar ribBarDSThietBi;
         private DevComponents.DotNetBar.ButtonItem btnLuu;
         private DevComponents.DotNetBar.ButtonItem btnXoa;
         private DevComponents.DotNetBar.ButtonItem btnHelpDSTB;
         private DevComponents.DotNetBar.ButtonItem btnClose;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

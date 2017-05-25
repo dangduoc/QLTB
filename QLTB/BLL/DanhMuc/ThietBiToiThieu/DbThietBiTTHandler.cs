@@ -12,12 +12,13 @@ namespace QLTB.Handler
 {
     public class DbThietBiTTHandler
     {
-        public List<ThietBiTTGridDisplayModel> GetAll()
+        public Paging<List<ThietBiTTGridDisplayModel>> GetAll(int page, int pageSize)
         {
             using (var unitOfWork = new UnitOfWork())
             {
                 try
                 {
+                    var TotalRecord = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetAll().Count();
                     var data = unitOfWork.GetRepository<DM_ThietBiToiThieu>().GetAll()
                                 .Join(unitOfWork.GetRepository<DS_DonViTinh>().GetAll(),
                                     tb => tb.DonViTinhId,
@@ -50,10 +51,10 @@ namespace QLTB.Handler
                                         SoLuong = tb.SoLuong,
                                         MoTa = tb.MoTa
                                     }
-                                )
-                                 .Join(unitOfWork.GetRepository<DS_LoaiThietBi>().GetAll(),
+                                ).AsEnumerable()
+                                 .Join(GlobalVariable.GetDS().LoaiThietBi,
                                     tb => tb.LoaiThietBiId,
-                                    ltb => ltb.LoaiThietBiId,
+                                    ltb => ltb.Id,
                                     (tb, ltb) => new
                                     {
                                         ThietBiId = tb.ThietBiId,
@@ -67,9 +68,9 @@ namespace QLTB.Handler
                                         MoTa = tb.MoTa
                                     }
                                 )
-                                 .Join(unitOfWork.GetRepository<DS_DauMucThietBi>().GetAll(),
+                                 .Join(GlobalVariable.GetDS().DauMucThietBi,
                                     tb => tb.DauMucId,
-                                    dm => dm.DauMucThietBiId,
+                                    dm => dm.Id,
                                     (tb, dm) => new ThietBiTTGridDisplayModel
                                     {
                                         ThietBiId = tb.ThietBiId,
@@ -83,9 +84,20 @@ namespace QLTB.Handler
                                         MoTa = tb.MoTa
                                     }
                                 )
-                                .OrderBy(ph => ph.MonHoc).ToList();
-                               
-                    return data;
+                                 .OrderBy(p => p.MonHoc)
+                                .Skip(pageSize * (page - 1))
+                                .Take(pageSize)
+                                .ToList();
+
+                    return new Paging<List<ThietBiTTGridDisplayModel>>
+                    {
+                        CurrentPage = page,
+                        Size = TotalRecord % pageSize == 0 ? TotalRecord / pageSize : TotalRecord / pageSize + 1,
+                        TotalRecord = TotalRecord,
+                        data = data,
+                        NextPage = (pageSize * page) < TotalRecord ? true : false,
+                        PreviousPage = page > 1 ? true : false
+                    };
                 }
                 catch (Exception ex)
                 {
@@ -93,6 +105,7 @@ namespace QLTB.Handler
                 }
             }
         }
+        
         public ThietBiToiThieuModel GetById(string Id)
         {
             try

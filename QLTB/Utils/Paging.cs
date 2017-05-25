@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QLTB.Utils
 {
-    public class Paging<T> where T:class
+    public class Paging<T> where T : class
     {
         public int Size { get; set; }
         public int CurrentPage { get; set; }
@@ -15,4 +15,5 @@ namespace QLTB.Utils
         public int TotalRecord { get; set; }
         public T data { get; set; }
     }
+    
 }

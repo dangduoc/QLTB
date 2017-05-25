@@ -39,13 +39,8 @@ namespace QLTB.DAL.Data
         public string CanBoTb { get; set; }
         public string NguoiLapBieu { get; set; }
     
-        public virtual DS_HangTruong DS_HangTruong { get; set; }
-        public virtual DS_HinhThucDaoTao DS_HinhThucDaoTao { get; set; }
-        public virtual DS_LoaiHinhTruong DS_LoaiHinhTruong { get; set; }
-        public virtual DS_LoaiTruongChuyenBiet DS_LoaiTruongChuyenBiet { get; set; }
         public virtual DS_PhuongXa DS_PhuongXa { get; set; }
         public virtual DS_QuanHuyen DS_QuanHuyen { get; set; }
         public virtual DS_TinhThanh DS_TinhThanh { get; set; }
-        public virtual DS_VungMien DS_VungMien { get; set; }
     }
 }

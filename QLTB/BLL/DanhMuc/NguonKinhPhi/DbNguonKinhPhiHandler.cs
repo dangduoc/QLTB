@@ -11,22 +11,6 @@ namespace QLTB.Handler
 {
     public class DbNguonKinhPhiHandler
     {
-        public List<NguonKinhPhiModel> GetForCBB()
-        {
-            try
-            {
-                using (var unitOfWork = new UnitOfWork())
-                {
-                    var data = unitOfWork.GetRepository<DM_NguonKinhPhi>()
-                        .GetAll().Select(p => new NguonKinhPhiModel { NguonKinhPhiId = p.NguonKinhPhiId, Ten = p.Ten }).ToList();
-                    return data;
-
-                }
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
-        }
+        
     }
 }

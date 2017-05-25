@@ -15,7 +15,7 @@ namespace QLTB.GUI
 {
     public partial class frmDMThietBiTT : DevComponents.DotNetBar.Office2007Form
     {
-
+        private DbThietBiTTHandler handler = new DbThietBiTTHandler();
         public frmDMThietBiTT()
         {
             InitializeComponent();
@@ -178,10 +178,38 @@ namespace QLTB.GUI
             //}
         }
         #endregion
+        private void ShowPage(int page, int pageSize)
+        {
+            var data = handler.GetAll(page, pageSize);
+            List<ThietBiTTGridDisplayModel> list = data.data;
+            if (list.Count > 0)
+            {
+                loadData(list);
+                prevBtn.Enabled = data.PreviousPage;
+                prevBtn.Tag = page - 1;
+                nextBtn.Enabled = data.NextPage;
+                nextBtn.Tag = page + 1;
+                currentPage.Text = data.CurrentPage.ToString();
+                lbPaging.Text = "Trang " + currentPage.Text + "/" + data.Size;
+                lbTotalRecord.Text = "- Tổng số bản ghi: " + data.TotalRecord;
+            }
+        }
+        private void pageBtnClick(object sender, EventArgs e)
+        {
+            var btn = sender as LinkLabel;
+            int page = Convert.ToInt32(btn.Tag);
+            ShowPage(page, Convert.ToInt32(pageSize.SelectedValue.ToString()));
+        }
+        private void loadData(List<ThietBiTTGridDisplayModel> list)
+        {
+            BindingSource source = new BindingSource();
+            source.DataSource = MyConvert.ToDataTable<ThietBiTTGridDisplayModel>(list);
+            ADGVDanhSach.DataSource = source;
+        }
+
         private void LoadForm()
         {
-            //Clone
-            //List<ThietBiTTGridDisplayModel> list = new DbThietBiTTHandler().GetAll();
+            #region Init Gridview
             List<ThietBiTTGridDisplayModel> list = new List<ThietBiTTGridDisplayModel>();
             //
             List<string> headers = new List<string>();
@@ -199,11 +227,27 @@ namespace QLTB.GUI
             DataTable tb = MyConvert.ToDataTable(list);
             SetUpSearch(SearchDSTB, tb, headers, ADGVDanhSach);
             SetHeaderForGrid(ADGVDanhSach, headers);
+
+            ADGVDanhSach.Columns["ThietBiId"].Width = 60;
+            ADGVDanhSach.Columns["DungChoLop"].Width = 80;
+            ADGVDanhSach.Columns["LoaiThietBi"].Width = 60;
+            ADGVDanhSach.Columns["DauMuc"].Width = 60;
+            ADGVDanhSach.Columns["SoLuong"].Width = 60;
+            ADGVDanhSach.Columns["DonViTinh"].Width = 60;
+            ADGVDanhSach.Columns["MonHoc"].Width = 80;
+
+
+
             ADGVDanhSach.FilterStringChanged += advancedDataGridView_FilterStringChanged;
             ADGVDanhSach.SortStringChanged += advancedDataGridView_SortStringChanged;
             ADGVDanhSach.CellContentDoubleClick += ADGVDanhSach_CellContentDoubleClick;
             ADGVDanhSach.KeyPress += ADGVDanhSach_KeyPress;
             ADGVDanhSach.MouseClick += ADGVDanhSach_MouseClick;
+            prevBtn.Click += pageBtnClick;
+            nextBtn.Click += pageBtnClick;
+            #endregion
+           
+            ShowPage(1, 50);
         }
 
         private void frmDMThietBiTT_Load(object sender, EventArgs e)
@@ -214,6 +258,12 @@ namespace QLTB.GUI
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnThemDSTB_Click(object sender, EventArgs e)
+        {
+            frmTaoThietBiTT frm = new frmTaoThietBiTT();
+            frm.ShowDialog(this);
         }
     }
 }

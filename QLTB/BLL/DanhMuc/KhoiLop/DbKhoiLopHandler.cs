@@ -18,8 +18,8 @@ namespace QLTB.Handler
             {
                 try
                 {
-                    var data = unitOfWork.GetRepository<DM_KhoiLop>().GetAll()
-                                .Join(unitOfWork.GetRepository<DS_CapTruong>().GetAll(),
+                    var data = unitOfWork.GetRepository<DM_KhoiLop>().GetAll().AsEnumerable()
+                                .Join(GlobalVariable.GetDS().CapTruong,
                                     kl => kl.CapTruongId,
                                     ct => ct.CapTruongId,
                                     (kl, ct) => new KhoiLopGridDisplayModel

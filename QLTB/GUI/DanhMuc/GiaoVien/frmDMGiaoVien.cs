@@ -15,7 +15,7 @@ namespace QLTB.GUI
 {
     public partial class frmDMGiaoVien : DevComponents.DotNetBar.Office2007Form
     {
-        
+        private DbGiaoVienHandler handler = new DbGiaoVienHandler();
         public frmDMGiaoVien()
         {
             InitializeComponent();
@@ -178,102 +178,40 @@ namespace QLTB.GUI
             //}
         }
         #endregion
+        private void ShowPage(int page, int pageSize)
+        {
+            var data = handler.GetAll(page, pageSize);
+            List<GiaoVienGirdDisplayModel> list = data.data;
+            if (list.Count > 0)
+            {
+                loadData(list);
+                prevBtn.Enabled = data.PreviousPage;
+                prevBtn.Tag = page - 1;
+                nextBtn.Enabled = data.NextPage;
+                nextBtn.Tag = page + 1;
+                currentPage.Text = data.CurrentPage.ToString();
+                lbPaging.Text = "Trang " + currentPage.Text + "/" + data.Size;
+                lbTotalRecord.Text = "- Tổng số bản ghi: " + data.TotalRecord;
+            }
+        }
+        private void pageBtnClick(object sender, EventArgs e)
+        {
+            var btn = sender as LinkLabel;
+            int page = Convert.ToInt32(btn.Tag);
+            ShowPage(page, Convert.ToInt32(pageSize.SelectedValue.ToString()));
+        }
+        private void loadData(List<GiaoVienGirdDisplayModel> list)
+        {
+            BindingSource source = new BindingSource();
+            source.DataSource = MyConvert.ToDataTable<GiaoVienGirdDisplayModel>(list);
+            ADGVDanhSach.DataSource = source;
+        }
         private void LoadForm()
         {
+            #region InitGridview
             //Clone
-            //List<GiaoVienGirdDisplayModel> list = new DbGiaoVienHandler().GetAll();
             List<GiaoVienGirdDisplayModel> list = new List<GiaoVienGirdDisplayModel>();
-            list.Add(new GiaoVienGirdDisplayModel
-            {
-                GiaoVienId="GV00001",
-                NgaySinh="21/11/1995",
-                ChucVu="Giáo viên bộ môn",
-                DayMon="Hóa học",
-                GioiTinh="Nam",
-                LoaiHopDong="Biên chế",
-                PhongBan="Tổ bộ môn",
-                TenDayDu="Đặng Minh Được",
-                TrinhDoChuyenMon="Đại học sư phạm Hà Nội",
-                ViTriViecLam=""
-            });
-            list.Add(new GiaoVienGirdDisplayModel
-            {
-                GiaoVienId = "GV00001",
-                NgaySinh = "21/11/1995",
-                ChucVu = "Giáo viên bộ môn",
-                DayMon = "Hóa học",
-                GioiTinh = "Nam",
-                LoaiHopDong = "Biên chế",
-                PhongBan = "Tổ bộ môn",
-                TenDayDu = "Đặng Minh Được",
-                TrinhDoChuyenMon = "Đại học sư phạm Hà Nội",
-                ViTriViecLam = ""
-            });
-            list.Add(new GiaoVienGirdDisplayModel
-            {
-                GiaoVienId = "GV00001",
-                NgaySinh = "21/11/1995",
-                ChucVu = "Giáo viên bộ môn",
-                DayMon = "Hóa học",
-                GioiTinh = "Nam",
-                LoaiHopDong = "Biên chế",
-                PhongBan = "Tổ bộ môn",
-                TenDayDu = "Đặng Minh Được",
-                TrinhDoChuyenMon = "Đại học sư phạm Hà Nội",
-                ViTriViecLam = ""
-            });
-            list.Add(new GiaoVienGirdDisplayModel
-            {
-                GiaoVienId = "GV00001",
-                NgaySinh = "21/11/1995",
-                ChucVu = "Giáo viên bộ môn",
-                DayMon = "Hóa học",
-                GioiTinh = "Nam",
-                LoaiHopDong = "Biên chế",
-                PhongBan = "Tổ bộ môn",
-                TenDayDu = "Đặng Minh Được",
-                TrinhDoChuyenMon = "Đại học sư phạm Hà Nội",
-                ViTriViecLam = ""
-            });
-            list.Add(new GiaoVienGirdDisplayModel
-            {
-                GiaoVienId = "GV00001",
-                NgaySinh = "21/11/1995",
-                ChucVu = "Giáo viên bộ môn",
-                DayMon = "Hóa học",
-                GioiTinh = "Nam",
-                LoaiHopDong = "Biên chế",
-                PhongBan = "Tổ bộ môn",
-                TenDayDu = "Đặng Minh Được",
-                TrinhDoChuyenMon = "Đại học sư phạm Hà Nội",
-                ViTriViecLam = ""
-            });
-            list.Add(new GiaoVienGirdDisplayModel
-            {
-                GiaoVienId = "GV00001",
-                NgaySinh = "21/11/1995",
-                ChucVu = "Giáo viên bộ môn",
-                DayMon = "Hóa học",
-                GioiTinh = "Nam",
-                LoaiHopDong = "Biên chế",
-                PhongBan = "Tổ bộ môn",
-                TenDayDu = "Đặng Minh Được",
-                TrinhDoChuyenMon = "Đại học sư phạm Hà Nội",
-                ViTriViecLam = ""
-            });
-            list.Add(new GiaoVienGirdDisplayModel
-            {
-                GiaoVienId = "GV00001",
-                NgaySinh = "21/11/1995",
-                ChucVu = "Giáo viên bộ môn",
-                DayMon = "Hóa học",
-                GioiTinh = "Nam",
-                LoaiHopDong = "Biên chế",
-                PhongBan = "Tổ bộ môn",
-                TenDayDu = "Đặng Minh Được",
-                TrinhDoChuyenMon = "Đại học sư phạm Hà Nội",
-                ViTriViecLam = ""
-            });
+           
             //
             List<string> headers = new List<string>();
             headers.Add("Mã cán bộ");
@@ -297,9 +235,11 @@ namespace QLTB.GUI
             ADGVDanhSach.MouseClick += ADGVDanhSach_MouseClick;
             //
             treeView1.ExpandAll();
+            #endregion
+            ShowPage(1, 50);
         }
 
-      
+
         private void frmDMGiaoVien_Load(object sender, EventArgs e)
         {
             LoadForm();

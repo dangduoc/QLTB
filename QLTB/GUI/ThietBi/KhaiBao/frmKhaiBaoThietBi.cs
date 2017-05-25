@@ -17,12 +17,13 @@ namespace QLTB.GUI
     {
         private ThietBiModel ThietBi;
         private DbThietBiHandler handler = new DbThietBiHandler();
+        private DbDanhSachHandler dshandler = new DbDanhSachHandler();
         List<object> listValidate;
         public frmKhaiBaoThietBi(string Id)
         {
             InitializeComponent();
             ThietBi = handler.GetById(Id);
-            
+
         }
         public frmKhaiBaoThietBi()
         {
@@ -65,6 +66,7 @@ namespace QLTB.GUI
                 txtSoHieu,
                 cbbPhongBM,
                 txtNamSD,
+                
                 txtNamTheoDoi,
                 cbbNguonKinhPhi,
                 cbbDVT,
@@ -81,16 +83,16 @@ namespace QLTB.GUI
             cbbMaThietBi.DataSource = new DbThietBiTTHandler().GetMaTB();
             cbbPhongBM.DisplayMember = "value";
             cbbPhongBM.ValueMember = "key";
-            cbbPhongBM.DataSource = new DbDanhSachHandler().GetPhongBM().Select(p => new { key = p.PhongHocId, value = p.Ten }).ToList();
+            cbbPhongBM.DataSource = dshandler.GetPhongBM().Select(p => new { key = p.PhongHocId, value = p.Ten }).ToList();
             cbbNguonKinhPhi.DisplayMember = "value";
             cbbNguonKinhPhi.ValueMember = "key";
-            cbbNguonKinhPhi.DataSource = new DbNguonKinhPhiHandler().GetForCBB().Select(p => new { key = p.NguonKinhPhiId, value = p.Ten }).ToList();
+            cbbNguonKinhPhi.DataSource = dshandler.GetNguonKP().Select(p => new { key = p.NguonKinhPhiId, value = p.Ten }).ToList();
             cbbMucDichSD.DisplayMember = "value";
             cbbMucDichSD.ValueMember = "key";
-            cbbMucDichSD.DataSource = new DbDanhSachHandler().GetMucDichSDPhong().Select(p => new { key = p.MucDichSDPhongId, value = p.Ten }).ToList();
+            cbbMucDichSD.DataSource = dshandler.DanhSachCoDinh.MucDichSDThietBi.Select(p => new { key = p.Id, value = p.Ten }).ToList();
             cbbDVT.DisplayMember = "value";
             cbbDVT.ValueMember = "key";
-            cbbDVT.DataSource = new DbDanhSachHandler().GetDVT().Select(p => new { key = p.DonViTinhId, value = p.Ten }).ToList();
+            cbbDVT.DataSource = dshandler.GetDVT().Select(p => new { key = p.DonViTinhId, value = p.Ten }).ToList();
             #endregion
             #region Load data khi sửa
             if (ThietBi != null)
@@ -118,15 +120,15 @@ namespace QLTB.GUI
                 {
                     dpickNgaySX.Value = ThietBi.NgaySanXuat.Value;
                 }
-                    cbbMaThietBi.Enabled = false;
-                    txtSoHieu.Enabled = false;
+                cbbMaThietBi.Enabled = false;
+                txtSoHieu.Enabled = false;
             }
             #endregion
             DisableHighlightCBB();
         }
         private void DisableHighlightCBB()
         {
-            foreach(var item in layoutControl1.Controls.OfType<DevComponents.DotNetBar.Controls.ComboBoxEx>())
+            foreach (var item in layoutControl1.Controls.OfType<DevComponents.DotNetBar.Controls.ComboBoxEx>())
             {
                 BeginInvoke(new Action(() => { item.Select(0, 0); }));
             }
@@ -161,19 +163,27 @@ namespace QLTB.GUI
             ThietBiMoi.NgaySanXuat = dpickNgaySX.Value;
             ThietBiMoi.IsThietBiTuLam = cboxThietBiTuLam.Checked;
             ThietBiMoi.NgayDuaVaoSD = dpickerNgaySD.Value;
-            
-            //
-           // ThietBiMoi.CreateByUserId = GlobalVariable.GetUser().UserId;
+            ThietBiMoi.CreateByUserId = GlobalVariable.GetUser().UserId;
             ThietBiMoi.CreatedOnDate = DateTime.Now;
-            //ThietBiMoi.UpdatedByUserId = ThietBiMoi.CreateByUserId;
+            ThietBiMoi.UpdatedByUserId = ThietBiMoi.CreateByUserId;
             ThietBiMoi.UpdatedOnDate = ThietBiMoi.CreatedOnDate;
             if (ThietBi == null)
             {
                 ThietBiMoi.MonHocId = new DbThietBiTTHandler().GetById(ThietBiMoi.ThietBiId).MonHocId;
+                ThietBiMoi.TrangThai = 0;
                 int result = handler.Create(ThietBiMoi);
                 if (result == 1)
                 {
                     MessageBox.Show("Thiết bị được khai báo thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    foreach (var item in layoutControl1.Controls.OfType<DevComponents.DotNetBar.Controls.TextBoxX>())
+                    {
+                        item.Text = "";
+                    }
+                    foreach (var item in layoutControl1.Controls.OfType<DevComponents.DotNetBar.Controls.ComboBoxEx>())
+                    {
+                        item.SelectedIndex = 0;
+                    }
+                    txtQuyCach.Text = "";
                 }
                 else if (result == 0)
                 {
@@ -204,7 +214,7 @@ namespace QLTB.GUI
 
         private void frmKhaiBaoThietBi_Load(object sender, EventArgs e)
         {
-           loadData();
+            loadData();
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -224,10 +234,10 @@ namespace QLTB.GUI
         private void cbbMaThietBi_SelectedIndexChanged(object sender, EventArgs e)
         {
             var item = sender as DevComponents.DotNetBar.Controls.ComboBoxEx;
-            if(item.SelectedIndex>=0)
-            { 
-                txtSoHieu.Text= handler.GenerateCode(item.SelectedValue.ToString().Trim());
-              txtTen.Text = new DbThietBiTTHandler().GetById(item.SelectedValue.ToString().Trim()).Ten;
+            if (item.SelectedIndex >= 0)
+            {
+                txtSoHieu.Text = handler.GenerateCode(item.SelectedValue.ToString().Trim());
+                txtTen.Text = new DbThietBiTTHandler().GetById(item.SelectedValue.ToString().Trim()).Ten;
             }
             else
             {
@@ -238,7 +248,7 @@ namespace QLTB.GUI
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            DialogResult dr= MessageBox.Show("Bạn chắc chắn muốn xóa thiết bị này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dr = MessageBox.Show("Bạn chắc chắn muốn xóa thiết bị này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
             {
                 int result = new DbThietBiHandler().Delete(ThietBi.SoHieu);
@@ -251,5 +261,66 @@ namespace QLTB.GUI
         {
             Close();
         }
+        #region Xử lý sự kiện
+        private void txtThanhTien_Enter(object sender, EventArgs e)
+        {
+            int dongia, soluong, thanhtien;
+            if (int.TryParse(txtDonGia.Text, out dongia) && int.TryParse(txtSoLuong.Text, out soluong))
+            {
+                thanhtien = dongia * soluong;
+                txtThanhTien.Text = thanhtien.ToString();
+            }
+            else
+            {
+                txtThanhTien.Text = "";
+            }
+        }
+
+        private void txtDonGia_MouseLeave(object sender, EventArgs e)
+        {
+            txtThanhTien_Enter(null, null);
+        }
+
+        private void dpickerNgaySD_Enter(object sender, EventArgs e)
+        {
+            int nam;
+            if (int.TryParse(txtNamSD.Text, out nam))
+            {
+                dpickerNgaySD.MinDate = new DateTime(nam, 1, 1);
+                dpickerNgaySD.Value = dpickerNgaySD.MinDate;
+            }
+        }
+        private void txtNamSD_MouseLeave(object sender, EventArgs e)
+        {
+            int nam;
+            if (int.TryParse(txtNamSD.Text, out nam))
+            {
+                dpickerNgaySD.MinDate = new DateTime(nam, 1, 1);
+                dpickerNgaySD.Value = dpickerNgaySD.MinDate;
+            }
+        }
+        private void dpickerNgaySD_ValueChanged(object sender, EventArgs e)
+        {
+            txtNamSD.Text = dpickerNgaySD.Value.Year.ToString();
+        }
+        private void txtNamTheoDoi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+        private void btnAddTB_Click(object sender, EventArgs e)
+        {
+            frmTaoThietBiTT frm = new frmTaoThietBiTT();
+            frm.ShowDialog(this);
+        }
+
+        private void btnAddPhongBM_Click(object sender, EventArgs e)
+        {
+            frmTaoPhongBM frm = new frmTaoPhongBM();
+            frm.ShowDialog(this);
+        }
+
+        #endregion
+
+
     }
 }

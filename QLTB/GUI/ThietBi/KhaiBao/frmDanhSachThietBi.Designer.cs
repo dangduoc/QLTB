@@ -45,12 +45,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDanhSachThietBi));
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.nhânBảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sửaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.báoMấthỏngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ghiTăngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.giảmThiếtBịToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripNhanBan = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSua = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripXoa = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripBaoMat = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripGhiTang = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripGhiGiam = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tvFilter = new System.Windows.Forms.TreeView();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -65,6 +65,7 @@
             this.btnImportDSTB = new DevComponents.DotNetBar.ButtonItem();
             this.btnInDSTB = new DevComponents.DotNetBar.ButtonItem();
             this.btnHelpDSTB = new DevComponents.DotNetBar.ButtonItem();
+            this.btnClose = new DevComponents.DotNetBar.ButtonItem();
             this.pnlContentDSTB = new DevComponents.DotNetBar.PanelEx();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.panelEx3 = new DevComponents.DotNetBar.PanelEx();
@@ -108,6 +109,8 @@
             this.layoutControlItem5 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
             this.layoutControlItem6 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
             this.tabItem1 = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel2 = new DevComponents.DotNetBar.TabControlPanel();
+            this.tabItem2 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel3 = new DevComponents.DotNetBar.TabControlPanel();
             this.advancedDataGridView1 = new ADGV.AdvancedDataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -115,8 +118,6 @@
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.tabItem3 = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabControlPanel2 = new DevComponents.DotNetBar.TabControlPanel();
-            this.tabItem2 = new DevComponents.DotNetBar.TabItem(this.components);
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.contextMenuStrip.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -141,53 +142,54 @@
             // contextMenuStrip
             // 
             this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nhânBảnToolStripMenuItem,
-            this.sửaToolStripMenuItem,
-            this.xóaToolStripMenuItem,
-            this.báoMấthỏngToolStripMenuItem,
-            this.ghiTăngToolStripMenuItem,
-            this.giảmThiếtBịToolStripMenuItem});
+            this.toolStripNhanBan,
+            this.toolStripSua,
+            this.toolStripXoa,
+            this.toolStripBaoMat,
+            this.toolStripGhiTang,
+            this.toolStripGhiGiam});
             this.contextMenuStrip.Name = "contextMenuStrip";
             this.contextMenuStrip.Size = new System.Drawing.Size(152, 136);
             // 
-            // nhânBảnToolStripMenuItem
+            // toolStripNhanBan
             // 
-            this.nhânBảnToolStripMenuItem.Image = global::QLTB.Properties.Resources.tick;
-            this.nhânBảnToolStripMenuItem.Name = "nhânBảnToolStripMenuItem";
-            this.nhânBảnToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.nhânBảnToolStripMenuItem.Text = "Nhân bản";
+            this.toolStripNhanBan.Image = global::QLTB.Properties.Resources.tick;
+            this.toolStripNhanBan.Name = "toolStripNhanBan";
+            this.toolStripNhanBan.Size = new System.Drawing.Size(151, 22);
+            this.toolStripNhanBan.Text = "Nhân bản";
             // 
-            // sửaToolStripMenuItem
+            // toolStripSua
             // 
-            this.sửaToolStripMenuItem.Image = global::QLTB.Properties.Resources.save_icon;
-            this.sửaToolStripMenuItem.Name = "sửaToolStripMenuItem";
-            this.sửaToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.sửaToolStripMenuItem.Text = "Sửa";
+            this.toolStripSua.Image = global::QLTB.Properties.Resources.save_icon;
+            this.toolStripSua.Name = "toolStripSua";
+            this.toolStripSua.Size = new System.Drawing.Size(151, 22);
+            this.toolStripSua.Text = "Sửa";
             // 
-            // xóaToolStripMenuItem
+            // toolStripXoa
             // 
-            this.xóaToolStripMenuItem.Image = global::QLTB.Properties.Resources.b_drop;
-            this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
-            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.xóaToolStripMenuItem.Text = "Xóa";
+            this.toolStripXoa.Image = global::QLTB.Properties.Resources.b_drop;
+            this.toolStripXoa.Name = "toolStripXoa";
+            this.toolStripXoa.Size = new System.Drawing.Size(151, 22);
+            this.toolStripXoa.Text = "Xóa";
             // 
-            // báoMấthỏngToolStripMenuItem
+            // toolStripBaoMat
             // 
-            this.báoMấthỏngToolStripMenuItem.Name = "báoMấthỏngToolStripMenuItem";
-            this.báoMấthỏngToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.báoMấthỏngToolStripMenuItem.Text = "Báo mất/hỏng";
+            this.toolStripBaoMat.Name = "toolStripBaoMat";
+            this.toolStripBaoMat.Size = new System.Drawing.Size(151, 22);
+            this.toolStripBaoMat.Text = "Báo mất/hỏng";
+            this.toolStripBaoMat.Click += new System.EventHandler(this.toolStripBaoMat_Click);
             // 
-            // ghiTăngToolStripMenuItem
+            // toolStripGhiTang
             // 
-            this.ghiTăngToolStripMenuItem.Name = "ghiTăngToolStripMenuItem";
-            this.ghiTăngToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.ghiTăngToolStripMenuItem.Text = "Tăng thiết bị";
+            this.toolStripGhiTang.Name = "toolStripGhiTang";
+            this.toolStripGhiTang.Size = new System.Drawing.Size(151, 22);
+            this.toolStripGhiTang.Text = "Tăng thiết bị";
             // 
-            // giảmThiếtBịToolStripMenuItem
+            // toolStripGhiGiam
             // 
-            this.giảmThiếtBịToolStripMenuItem.Name = "giảmThiếtBịToolStripMenuItem";
-            this.giảmThiếtBịToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.giảmThiếtBịToolStripMenuItem.Text = "Giảm thiết bị";
+            this.toolStripGhiGiam.Name = "toolStripGhiGiam";
+            this.toolStripGhiGiam.Size = new System.Drawing.Size(151, 22);
+            this.toolStripGhiGiam.Text = "Giảm thiết bị";
             // 
             // panel1
             // 
@@ -314,7 +316,8 @@
             this.btnNapDSTB,
             this.btnImportDSTB,
             this.btnInDSTB,
-            this.btnHelpDSTB});
+            this.btnHelpDSTB,
+            this.btnClose});
             this.ribBarDSThietBi.ItemSpacing = 10;
             this.ribBarDSThietBi.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
             this.ribBarDSThietBi.Location = new System.Drawing.Point(0, 0);
@@ -369,6 +372,7 @@
             this.btnXoaDSTB.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlD);
             this.btnXoaDSTB.Text = "Xóa";
             this.btnXoaDSTB.Tooltip = "Xóa thiết bị";
+            this.btnXoaDSTB.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnNapDSTB
             // 
@@ -382,6 +386,7 @@
             this.btnNapDSTB.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F5);
             this.btnNapDSTB.Text = "Nạp";
             this.btnNapDSTB.Tooltip = "Làm mới dữ liệu";
+            this.btnNapDSTB.Click += new System.EventHandler(this.btnNapDSTB_Click);
             // 
             // btnImportDSTB
             // 
@@ -418,6 +423,16 @@
             this.btnHelpDSTB.Name = "btnHelpDSTB";
             this.btnHelpDSTB.SubItemsExpandWidth = 14;
             this.btnHelpDSTB.Text = "Trợ giúp";
+            // 
+            // btnClose
+            // 
+            this.btnClose.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.Image = global::QLTB.Properties.Resources.close16;
+            this.btnClose.Name = "btnClose";
+            this.btnClose.SubItemsExpandWidth = 14;
+            this.btnClose.Text = "Đóng";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // pnlContentDSTB
             // 
@@ -746,7 +761,7 @@
             this.tabControlPanel1.Name = "tabControlPanel1";
             this.tabControlPanel1.Padding = new System.Windows.Forms.Padding(1);
             this.tabControlPanel1.Size = new System.Drawing.Size(879, 195);
-            this.tabControlPanel1.Style.BackColor1.Color = System.Drawing.SystemColors.Control;
+            this.tabControlPanel1.Style.BackColor1.Color = System.Drawing.Color.White;
             this.tabControlPanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanel1.Style.BorderColor.Color = System.Drawing.SystemColors.ControlDark;
             this.tabControlPanel1.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
@@ -1059,6 +1074,29 @@
             this.tabItem1.Name = "tabItem1";
             this.tabItem1.Text = "Thông tin chi tiết";
             // 
+            // tabControlPanel2
+            // 
+            this.tabControlPanel2.DisabledBackColor = System.Drawing.Color.Empty;
+            this.tabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel2.Location = new System.Drawing.Point(0, 25);
+            this.tabControlPanel2.Name = "tabControlPanel2";
+            this.tabControlPanel2.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel2.Size = new System.Drawing.Size(879, 195);
+            this.tabControlPanel2.Style.BackColor1.Color = System.Drawing.Color.White;
+            this.tabControlPanel2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel2.Style.BorderColor.Color = System.Drawing.SystemColors.ControlDark;
+            this.tabControlPanel2.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel2.Style.GradientAngle = 90;
+            this.tabControlPanel2.TabIndex = 5;
+            this.tabControlPanel2.TabItem = this.tabItem2;
+            // 
+            // tabItem2
+            // 
+            this.tabItem2.AttachedControl = this.tabControlPanel2;
+            this.tabItem2.Name = "tabItem2";
+            this.tabItem2.Text = "Lịch sử biến động";
+            // 
             // tabControlPanel3
             // 
             this.tabControlPanel3.Controls.Add(this.advancedDataGridView1);
@@ -1069,7 +1107,7 @@
             this.tabControlPanel3.Name = "tabControlPanel3";
             this.tabControlPanel3.Padding = new System.Windows.Forms.Padding(1);
             this.tabControlPanel3.Size = new System.Drawing.Size(879, 195);
-            this.tabControlPanel3.Style.BackColor1.Color = System.Drawing.SystemColors.Control;
+            this.tabControlPanel3.Style.BackColor1.Color = System.Drawing.Color.White;
             this.tabControlPanel3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanel3.Style.BorderColor.Color = System.Drawing.SystemColors.ControlDark;
             this.tabControlPanel3.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
@@ -1146,29 +1184,6 @@
             this.tabItem3.Name = "tabItem3";
             this.tabItem3.Text = "Lịch sử mượn trả";
             // 
-            // tabControlPanel2
-            // 
-            this.tabControlPanel2.DisabledBackColor = System.Drawing.Color.Empty;
-            this.tabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel2.Location = new System.Drawing.Point(0, 25);
-            this.tabControlPanel2.Name = "tabControlPanel2";
-            this.tabControlPanel2.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel2.Size = new System.Drawing.Size(879, 195);
-            this.tabControlPanel2.Style.BackColor1.Color = System.Drawing.SystemColors.Control;
-            this.tabControlPanel2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel2.Style.BorderColor.Color = System.Drawing.SystemColors.ControlDark;
-            this.tabControlPanel2.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel2.Style.GradientAngle = 90;
-            this.tabControlPanel2.TabIndex = 5;
-            this.tabControlPanel2.TabItem = this.tabItem2;
-            // 
-            // tabItem2
-            // 
-            this.tabItem2.AttachedControl = this.tabControlPanel2;
-            this.tabItem2.Name = "tabItem2";
-            this.tabItem2.Text = "Lịch sử biến động";
-            // 
             // imageList1
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
@@ -1220,12 +1235,12 @@
 
         #endregion
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
-        private System.Windows.Forms.ToolStripMenuItem nhânBảnToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sửaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem xóaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem báoMấthỏngToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ghiTăngToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem giảmThiếtBịToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripNhanBan;
+        private System.Windows.Forms.ToolStripMenuItem toolStripSua;
+        private System.Windows.Forms.ToolStripMenuItem toolStripXoa;
+        private System.Windows.Forms.ToolStripMenuItem toolStripBaoMat;
+        private System.Windows.Forms.ToolStripMenuItem toolStripGhiTang;
+        private System.Windows.Forms.ToolStripMenuItem toolStripGhiGiam;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TreeView tvFilter;
         private System.Windows.Forms.Panel panel2;
@@ -1293,5 +1308,6 @@
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.ImageList imageList1;
+        private DevComponents.DotNetBar.ButtonItem btnClose;
     }
 }

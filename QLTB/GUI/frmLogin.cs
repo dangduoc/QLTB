@@ -23,34 +23,7 @@ namespace QLTB.GUI
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            string username = txtUserName.Text.Trim();
-            string password = txtPassWord.Text.Trim();
-            string message = "";     
-            var handler = new LoginHandler();
-            var WorkingUser=handler.CheckLogin(username, password,out message);
-            if (WorkingUser != null)
-            {
-                //Set global
-                GlobalVariable.SetUser(WorkingUser);
-                //
-                DialogResult = DialogResult.OK;
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            
-        }
+            circularProgress1.IsRunning = true;
+        } 
     }
 }

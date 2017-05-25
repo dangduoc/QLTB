@@ -1,4 +1,5 @@
-﻿using QLTB.Model;
+﻿using QLTB.handler;
+using QLTB.Model;
 using QLTB.Utils;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,8 @@ namespace QLTB.GUI
 {
     public partial class frmDMCanBoThietBi : DevComponents.DotNetBar.Office2007Form
     {
- 
+        private DbCanBoThietBiHandler handler = new DbCanBoThietBiHandler();
+
         public frmDMCanBoThietBi()
         {
             InitializeComponent();
@@ -178,49 +180,40 @@ namespace QLTB.GUI
             //}
         }
         #endregion
+        private void ShowPage(int page, int pageSize)
+        {
+            var data = handler.GetAll(page, pageSize);
+            List<CanBoTBGridDisplayModel> list = data.data;
+            if (list.Count > 0)
+            {
+                loadData(list);
+                prevBtn.Enabled = data.PreviousPage;
+                prevBtn.Tag = page - 1;
+                nextBtn.Enabled = data.NextPage;
+                nextBtn.Tag = page + 1;
+                currentPage.Text = data.CurrentPage.ToString();
+                lbPaging.Text = "Trang " + currentPage.Text + "/" + data.Size;
+                lbTotalRecord.Text = "- Tổng số bản ghi: " + data.TotalRecord;
+            }
+        }
+        private void pageBtnClick(object sender, EventArgs e)
+        {
+            var btn = sender as LinkLabel;
+            int page = Convert.ToInt32(btn.Tag);
+            ShowPage(page, Convert.ToInt32(pageSize.SelectedValue.ToString()));
+        }
+        private void loadData(List<CanBoTBGridDisplayModel> list)
+        {
+            BindingSource source = new BindingSource();
+            source.DataSource = MyConvert.ToDataTable<CanBoTBGridDisplayModel>(list);
+            ADGVDanhSach.DataSource = source;
+        }
         private void LoadForm()
         {
             //Clone
+            #region InitGridview
             List<CanBoTBGridDisplayModel> list = new List<CanBoTBGridDisplayModel>();
-            list.Add(new CanBoTBGridDisplayModel
-            {
-                CanBoThietBiId = "CBTB0001",
-                HoVaDem = "Đặng Minh",
-                Ten = "Được",
-                GioiTinh = "Nam",
-                IsCoTrinhDoNghiepVu = "Có",
-                TrinhDoVanHoa = "Đại học",
-                TGBatDauQL = "21/11/2010",
-                TGKetThucQL = "22/1/2017",
-                PhuTrach = "Chuyên trách",
-                GhiChu = ""
-            });
-            list.Add(new CanBoTBGridDisplayModel
-            {
-                CanBoThietBiId = "CBTB0002",
-                HoVaDem = "Ngô Hoàng",
-                Ten = "Huy",
-                GioiTinh = "Nam",
-                IsCoTrinhDoNghiepVu = "Có",
-                TrinhDoVanHoa = "Đại học",
-                TGBatDauQL = "1/3/2013",
-                TGKetThucQL = "8/5/2016",
-                PhuTrach = "Chuyên trách",
-                GhiChu = ""
-            });
-            list.Add(new CanBoTBGridDisplayModel
-            {
-                CanBoThietBiId = "CBTB0003",
-                HoVaDem = "Đặng Thu",
-                Ten = "Thảo",
-                GioiTinh = "Nữ",
-                IsCoTrinhDoNghiepVu = "Có",
-                TrinhDoVanHoa = "Đại học",
-                TGBatDauQL = "11/4/2013",
-                TGKetThucQL = "12/3/2016",
-                PhuTrach = "Chuyên trách",
-                GhiChu = "Là hoa hậu Việt Nam 2012"
-            });
+
             //
             List<string> headers = new List<string>();
             headers.Add("Mã cán bộ");
@@ -242,6 +235,10 @@ namespace QLTB.GUI
             ADGVDanhSach.CellContentDoubleClick += ADGVDanhSach_CellContentDoubleClick;
             ADGVDanhSach.KeyPress += ADGVDanhSach_KeyPress;
             ADGVDanhSach.MouseClick += ADGVDanhSach_MouseClick;
+            prevBtn.Click += pageBtnClick;
+            nextBtn.Click += pageBtnClick;
+            #endregion
+            ShowPage(1, 50);
         }
         //
         private void frmDMCanBoThietBi_Load(object sender, EventArgs e)

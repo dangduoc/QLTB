@@ -35,7 +35,7 @@
             this.lbChucNang = new DevComponents.DotNetBar.LabelX();
             this.line1 = new DevComponents.DotNetBar.Controls.Line();
             this.bar2 = new DevComponents.DotNetBar.Bar();
-            this.buttonItem3 = new DevComponents.DotNetBar.ButtonItem();
+            this.CornerInfo = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem5 = new DevComponents.DotNetBar.ButtonItem();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.bar1 = new DevComponents.DotNetBar.Bar();
@@ -61,9 +61,9 @@
             this.btnTaiKhoan = new DevComponents.DotNetBar.ButtonItem();
             this.btnPhanQuyen = new DevComponents.DotNetBar.ButtonItem();
             this.labelItem1 = new DevComponents.DotNetBar.LabelItem();
-            this.textBoxItem1 = new DevComponents.DotNetBar.TextBoxItem();
+            this.txtStartYear = new DevComponents.DotNetBar.TextBoxItem();
             this.labelItem2 = new DevComponents.DotNetBar.LabelItem();
-            this.textBoxItem2 = new DevComponents.DotNetBar.TextBoxItem();
+            this.txtEndYear = new DevComponents.DotNetBar.TextBoxItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel7 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -121,7 +121,6 @@
             this.lbChucNang.Size = new System.Drawing.Size(239, 63);
             this.lbChucNang.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.lbChucNang.TabIndex = 15;
-            this.lbChucNang.Text = "Thiết bị";
             // 
             // line1
             // 
@@ -147,7 +146,7 @@
             this.bar2.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bar2.IsMaximized = false;
             this.bar2.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.buttonItem3,
+            this.CornerInfo,
             this.buttonItem5});
             this.bar2.Location = new System.Drawing.Point(614, 0);
             this.bar2.Name = "bar2";
@@ -162,12 +161,12 @@
             this.bar2.TabIndex = 12;
             this.bar2.TabStop = false;
             // 
-            // buttonItem3
+            // CornerInfo
             // 
-            this.buttonItem3.FontBold = true;
-            this.buttonItem3.ItemAlignment = DevComponents.DotNetBar.eItemAlignment.Far;
-            this.buttonItem3.Name = "buttonItem3";
-            this.buttonItem3.Text = "Trường THCS Nam Hà - Đặng Minh Được";
+            this.CornerInfo.FontBold = true;
+            this.CornerInfo.ItemAlignment = DevComponents.DotNetBar.eItemAlignment.Far;
+            this.CornerInfo.Name = "CornerInfo";
+            this.CornerInfo.Text = "Trường THCS Nam Hà - Đặng Minh Được";
             // 
             // buttonItem5
             // 
@@ -210,9 +209,9 @@
             this.btnBaoCao,
             this.btnQuanTri,
             this.labelItem1,
-            this.textBoxItem1,
+            this.txtStartYear,
             this.labelItem2,
-            this.textBoxItem2});
+            this.txtEndYear});
             this.bar1.ItemSpacing = 5;
             this.bar1.Location = new System.Drawing.Point(0, 63);
             this.bar1.Name = "bar1";
@@ -405,27 +404,25 @@
             this.labelItem1.Name = "labelItem1";
             this.labelItem1.Text = "Năm học";
             // 
-            // textBoxItem1
+            // txtStartYear
             // 
-            this.textBoxItem1.ItemAlignment = DevComponents.DotNetBar.eItemAlignment.Far;
-            this.textBoxItem1.Name = "textBoxItem1";
-            this.textBoxItem1.Text = "2016";
-            this.textBoxItem1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBoxItem1.TextBoxWidth = 50;
-            this.textBoxItem1.WatermarkColor = System.Drawing.SystemColors.GrayText;
+            this.txtStartYear.ItemAlignment = DevComponents.DotNetBar.eItemAlignment.Far;
+            this.txtStartYear.Name = "txtStartYear";
+            this.txtStartYear.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtStartYear.TextBoxWidth = 50;
+            this.txtStartYear.WatermarkColor = System.Drawing.SystemColors.GrayText;
             // 
             // labelItem2
             // 
             this.labelItem2.Name = "labelItem2";
             this.labelItem2.Text = "-";
             // 
-            // textBoxItem2
+            // txtEndYear
             // 
-            this.textBoxItem2.Name = "textBoxItem2";
-            this.textBoxItem2.Text = "2017";
-            this.textBoxItem2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBoxItem2.TextBoxWidth = 50;
-            this.textBoxItem2.WatermarkColor = System.Drawing.SystemColors.GrayText;
+            this.txtEndYear.Name = "txtEndYear";
+            this.txtEndYear.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtEndYear.TextBoxWidth = 50;
+            this.txtEndYear.WatermarkColor = System.Drawing.SystemColors.GrayText;
             // 
             // statusStrip1
             // 
@@ -510,7 +507,6 @@
             this.toolmenuTB.Size = new System.Drawing.Size(1083, 35);
             this.toolmenuTB.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.toolmenuTB.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.toolmenuTB.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
             this.toolmenuTB.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
             this.toolmenuTB.Style.GradientAngle = 90;
             this.toolmenuTB.TabIndex = 17;
@@ -682,7 +678,7 @@
         private DevComponents.DotNetBar.LabelX labelX1;
         private System.Windows.Forms.Panel panel1;
         private DevComponents.DotNetBar.Bar bar2;
-        private DevComponents.DotNetBar.ButtonItem buttonItem3;
+        private DevComponents.DotNetBar.ButtonItem CornerInfo;
         private DevComponents.DotNetBar.ButtonItem buttonItem5;
         private DevComponents.DotNetBar.Bar bar1;
         private DevComponents.DotNetBar.ButtonItem btnThietBi;
@@ -716,9 +712,9 @@
         private System.Windows.Forms.Button btnSuaChua;
         private System.Windows.Forms.Button btnDeNghiMua;
         private DevComponents.DotNetBar.LabelItem labelItem1;
-        private DevComponents.DotNetBar.TextBoxItem textBoxItem1;
+        private DevComponents.DotNetBar.TextBoxItem txtStartYear;
         private DevComponents.DotNetBar.LabelItem labelItem2;
-        private DevComponents.DotNetBar.TextBoxItem textBoxItem2;
+        private DevComponents.DotNetBar.TextBoxItem txtEndYear;
         private DevComponents.DotNetBar.ButtonItem btnDMToBoMon;
         private DevComponents.DotNetBar.ButtonItem btnDMMonHoc;
         private DevComponents.DotNetBar.ButtonItem btnDMGiaoVien;

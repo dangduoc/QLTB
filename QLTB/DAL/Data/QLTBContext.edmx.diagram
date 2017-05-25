@@ -5,93 +5,52 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="7412802041844af294d1dd9a298c9e01" Name="Diagram1">
-        <EntityTypeShape EntityType="Data.DM_CanBoThietBi" Width="1.5" PointX="9" PointY="82.625" />
-        <EntityTypeShape EntityType="Data.DM_GiaoVien" Width="1.5" PointX="6" PointY="79.75" />
-        <EntityTypeShape EntityType="Data.DM_KhoiLop" Width="1.5" PointX="6" PointY="12.875" />
-        <EntityTypeShape EntityType="Data.DM_LopHoc" Width="1.5" PointX="8.25" PointY="12.125" />
-        <EntityTypeShape EntityType="Data.DM_MonHoc" Width="1.5" PointX="3.75" PointY="69.375" />
-        <EntityTypeShape EntityType="Data.DM_NguonKinhPhi" Width="1.5" PointX="3" PointY="43.25" />
-        <EntityTypeShape EntityType="Data.DM_PhongHocBoMon" Width="1.5" PointX="3" PointY="17.625" />
-        <EntityTypeShape EntityType="Data.DM_ThietBiToiThieu" Width="1.5" PointX="3" PointY="36.25" />
-        <EntityTypeShape EntityType="Data.DM_ToBoMon" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="Data.DS_BaiGiang" Width="1.5" PointX="6" PointY="7.75" />
-        <EntityTypeShape EntityType="Data.DS_CapTruong" Width="1.5" PointX="3.75" PointY="13.125" />
-        <EntityTypeShape EntityType="Data.DS_ChucVuGiaoVien" Width="1.5" PointX="3.75" PointY="78.75" />
-        <EntityTypeShape EntityType="Data.DS_DanToc" Width="1.5" PointX="3.75" PointY="81.125" />
-        <EntityTypeShape EntityType="Data.DS_DauMucThietBi" Width="1.5" PointX="0.75" PointY="35.375" />
-        <EntityTypeShape EntityType="Data.DS_DonViTinh" Width="1.5" PointX="0.75" PointY="37.75" />
-        <EntityTypeShape EntityType="Data.DS_GioiTinh" Width="1.5" PointX="3.75" PointY="83.5" />
-        <EntityTypeShape EntityType="Data.DS_HangTruong" Width="1.5" PointX="13.25" PointY="16.5" />
-        <EntityTypeShape EntityType="Data.DS_HinhThucDaoTao" Width="1.5" PointX="13.25" PointY="14.125" />
-        <EntityTypeShape EntityType="Data.DS_KhoiTruong" Width="1.5" PointX="1.5" PointY="13.375" />
-        <EntityTypeShape EntityType="Data.DS_LoaiDanhGiaMH" Width="1.5" PointX="1.5" PointY="69.25" />
-        <EntityTypeShape EntityType="Data.DS_LoaiHinhTruong" Width="1.5" PointX="13.25" PointY="7.125" />
-        <EntityTypeShape EntityType="Data.DS_LoaiHopDong" Width="1.5" PointX="3.75" PointY="90.75" />
-        <EntityTypeShape EntityType="Data.DS_LoaiMonHoc" Width="1.5" PointX="1.5" PointY="71.5" />
-        <EntityTypeShape EntityType="Data.DS_LoaiPhongTN" Width="1.5" PointX="0.75" PointY="17.625" />
-        <EntityTypeShape EntityType="Data.DS_LoaiThietBi" Width="1.5" PointX="0.75" PointY="40.25" />
-        <EntityTypeShape EntityType="Data.DS_LoaiTruongChuyenBiet" Width="1.5" PointX="13.25" PointY="9.5" />
-        <EntityTypeShape EntityType="Data.DS_LyLuanChinhTri" Width="1.5" PointX="3.75" PointY="88.375" />
-        <EntityTypeShape EntityType="Data.DS_MucDichSDPHong" Width="1.5" PointX="9" PointY="15" />
-        <EntityTypeShape EntityType="Data.DS_MucDichSDThietBi" Width="1.5" PointX="6" PointY="3.125" />
-        <EntityTypeShape EntityType="Data.DS_NguonNganSach" Width="1.5" PointX="0.75" PointY="44" />
-        <EntityTypeShape EntityType="Data.DS_PhongBan" Width="1.5" PointX="3.75" PointY="73.875" />
-        <EntityTypeShape EntityType="Data.DS_PhuongXa" Width="1.5" PointX="13.25" PointY="3.625" />
-        <EntityTypeShape EntityType="Data.DS_PhuTrachCBTB" Width="1.5" PointX="6.75" PointY="76.5" />
-        <EntityTypeShape EntityType="Data.DS_QuanHuyen" Width="1.5" PointX="11" PointY="3.5" />
-        <EntityTypeShape EntityType="Data.DS_QuanLyGiaoDuc" Width="1.5" PointX="3.75" PointY="86" />
-        <EntityTypeShape EntityType="Data.DS_QuanLyNhaNuoc" Width="1.5" PointX="3.75" PointY="95.375" />
-        <EntityTypeShape EntityType="Data.DS_ThoiGianTrongNgay" Width="1.5" PointX="6" PointY="5.5" />
-        <EntityTypeShape EntityType="Data.DS_TinhThanh" Width="1.5" PointX="8.75" PointY="3.75" />
-        <EntityTypeShape EntityType="Data.DS_TrangThaiPhieuMuon" Width="1.5" PointX="6" PointY="10.5" />
-        <EntityTypeShape EntityType="Data.DS_TrinhDoChuan" Width="1.5" PointX="3.75" PointY="93" />
-        <EntityTypeShape EntityType="Data.DS_TrinhDoChuyenMon" Width="1.5" PointX="3.75" PointY="76.375" />
-        <EntityTypeShape EntityType="Data.DS_ViTriGiaoVien" Width="1.5" PointX="3.75" PointY="97.75" />
-        <EntityTypeShape EntityType="Data.DS_VungMien" Width="1.5" PointX="13.25" PointY="11.75" />
-        <EntityTypeShape EntityType="Data.DS_XepLoaiPhongHocBM" Width="1.5" PointX="0.75" PointY="20" />
-        <EntityTypeShape EntityType="Data.HT_Permission" Width="1.5" PointX="0.75" PointY="23.25" />
-        <EntityTypeShape EntityType="Data.HT_User" Width="1.5" PointX="3" PointY="27.75" />
-        <EntityTypeShape EntityType="Data.HT_UserRole" Width="1.5" PointX="0.75" PointY="26.375" />
-        <EntityTypeShape EntityType="Data.QH_PhieuBaoHong_ThietBi" Width="1.5" PointX="7.5" PointY="17.5" />
-        <EntityTypeShape EntityType="Data.QH_PhieuDenNghiMS_ThietBi" Width="1.5" PointX="13.5" PointY="29.75" />
-        <EntityTypeShape EntityType="Data.QH_PhieuGhiTang_ThietBi" Width="1.5" PointX="7.5" PointY="44.25" />
-        <EntityTypeShape EntityType="Data.QH_PhieuGiamTB_ThietBi" Width="1.5" PointX="7.5" PointY="41.375" />
-        <EntityTypeShape EntityType="Data.QH_PhieuMuonPhong_ThietBi" Width="1.5" PointX="7.5" PointY="47.25" />
-        <EntityTypeShape EntityType="Data.QH_PhieuMuonTB_ThietBi" Width="1.5" PointX="7.5" PointY="36.25" />
-        <EntityTypeShape EntityType="Data.QH_PhieuThanhLyTB_ThietBi" Width="1.5" PointX="7.5" PointY="33.625" />
-        <EntityTypeShape EntityType="Data.QH_User_Permission" Width="1.5" PointX="3" PointY="24" />
-        <EntityTypeShape EntityType="Data.TB_PhieuBaoHong" Width="1.5" PointX="5.25" PointY="65" />
-        <EntityTypeShape EntityType="Data.TB_PhieuDeNghiMuaSam" Width="1.5" PointX="8.25" PointY="29.125" />
-        <EntityTypeShape EntityType="Data.TB_PhieuGhiTang" Width="1.5" PointX="5.25" PointY="61.125" />
-        <EntityTypeShape EntityType="Data.TB_PhieuGiamTB" Width="1.5" PointX="5.25" PointY="57.25" />
-        <EntityTypeShape EntityType="Data.TB_PhieuMuonPhong" Width="1.5" PointX="11.25" PointY="27.5" />
-        <EntityTypeShape EntityType="Data.TB_PhieuMuonTB" Width="1.5" PointX="8.25" PointY="21.625" />
-        <EntityTypeShape EntityType="Data.TB_PhieuThanhLyTB" Width="1.5" PointX="5.25" PointY="34.75" />
-        <EntityTypeShape EntityType="Data.TB_ThongTinThietBi" Width="1.5" PointX="5.25" PointY="24.375" />
-        <EntityTypeShape EntityType="Data.ThongTinDonVi" Width="1.5" PointX="15.5" PointY="1.125" />
-        <EntityTypeShape EntityType="Data.ThongTinNamHoc" Width="1.5" PointX="6" PointY="50.5" />
-        <AssociationConnector Association="Data.FK_DM_CanBoThietBi_DS_GioiTinh" />
-        <AssociationConnector Association="Data.FK_DM_CanBoThietBi_DS_PhuTrachCBTB" />
+        <EntityTypeShape EntityType="Data.DM_CanBoThietBi" Width="1.5" PointX="0.75" PointY="13" />
+        <EntityTypeShape EntityType="Data.DM_GiaoVien" Width="1.5" PointX="6" PointY="19.125" />
+        <EntityTypeShape EntityType="Data.DM_KhoiLop" Width="1.5" PointX="6" PointY="13.125" />
+        <EntityTypeShape EntityType="Data.DM_LopHoc" Width="1.5" PointX="8.25" PointY="3.25" />
+        <EntityTypeShape EntityType="Data.DM_MonHoc" Width="1.5" PointX="0.75" PointY="21.375" />
+        <EntityTypeShape EntityType="Data.DM_NguonKinhPhi" Width="1.5" PointX="3" PointY="31" />
+        <EntityTypeShape EntityType="Data.DM_PhongHocBoMon" Width="1.5" PointX="3" PointY="34.625" />
+        <EntityTypeShape EntityType="Data.DM_ThietBiToiThieu" Width="1.5" PointX="3" PointY="20.625" />
+        <EntityTypeShape EntityType="Data.DM_ToBoMon" Width="1.5" PointX="8.75" PointY="10" />
+        <EntityTypeShape EntityType="Data.DS_BaiGiang" Width="1.5" PointX="6" PointY="16.375" />
+        <EntityTypeShape EntityType="Data.DS_DanToc" Width="1.5" PointX="3.75" PointY="15.375" />
+        <EntityTypeShape EntityType="Data.DS_DonViTinh" Width="1.5" PointX="0.75" PointY="18" />
+        <EntityTypeShape EntityType="Data.DS_NguonNganSach" Width="1.5" PointX="0.75" PointY="31.625" />
+        <EntityTypeShape EntityType="Data.DS_PhongBan" Width="1.5" PointX="3.75" PointY="17.875" />
+        <EntityTypeShape EntityType="Data.DS_PhuongXa" Width="1.5" PointX="13.25" PointY="6.25" />
+        <EntityTypeShape EntityType="Data.DS_QuanHuyen" Width="1.5" PointX="11" PointY="6.25" />
+        <EntityTypeShape EntityType="Data.DS_TinhThanh" Width="1.5" PointX="8.75" PointY="6.5" />
+        <EntityTypeShape EntityType="Data.HT_Permission" Width="1.5" PointX="1.5" PointY="9.25" />
+        <EntityTypeShape EntityType="Data.HT_User" Width="1.5" PointX="3.75" PointY="4.5" />
+        <EntityTypeShape EntityType="Data.HT_UserRole" Width="1.5" PointX="1.5" PointY="6.125" />
+        <EntityTypeShape EntityType="Data.QH_PhieuBaoHong_ThietBi" Width="1.5" PointX="7.5" PointY="33.25" />
+        <EntityTypeShape EntityType="Data.QH_PhieuDenNghiMS_ThietBi" Width="1.5" PointX="8.25" PointY="16.75" />
+        <EntityTypeShape EntityType="Data.QH_PhieuGhiTang_ThietBi" Width="1.5" PointX="10.5" PointY="33.375" />
+        <EntityTypeShape EntityType="Data.QH_PhieuGiamTB_ThietBi" Width="1.5" PointX="7.5" PointY="36.375" />
+        <EntityTypeShape EntityType="Data.QH_PhieuMuonPhong_ThietBi" Width="1.5" PointX="7.5" PointY="30.625" />
+        <EntityTypeShape EntityType="Data.QH_PhieuMuonTB_ThietBi" Width="1.5" PointX="7.5" PointY="40.75" />
+        <EntityTypeShape EntityType="Data.QH_PhieuThanhLyTB_ThietBi" Width="1.5" PointX="7.5" PointY="28.125" />
+        <EntityTypeShape EntityType="Data.QH_User_Permission" Width="1.5" PointX="3.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Data.TB_PhieuBaoHong" Width="1.5" PointX="6" PointY="44.875" />
+        <EntityTypeShape EntityType="Data.TB_PhieuDeNghiMuaSam" Width="1.5" PointX="6" PointY="6.25" />
+        <EntityTypeShape EntityType="Data.TB_PhieuGhiTang" Width="1.5" PointX="8.25" PointY="44.875" />
+        <EntityTypeShape EntityType="Data.TB_PhieuGiamTB" Width="1.5" PointX="5.25" PointY="37.875" />
+        <EntityTypeShape EntityType="Data.TB_PhieuMuonPhong" Width="1.5" PointX="10.25" PointY="26.625" />
+        <EntityTypeShape EntityType="Data.TB_PhieuMuonTB" Width="1.5" PointX="8.25" PointY="20.125" />
+        <EntityTypeShape EntityType="Data.TB_PhieuThanhLyTB" Width="1.5" PointX="6" PointY="2" />
+        <EntityTypeShape EntityType="Data.TB_ThongTinThietBi" Width="1.5" PointX="5.25" PointY="28" />
+        <EntityTypeShape EntityType="Data.ThongTinDonVi" Width="1.5" PointX="15.5" PointY="4.375" />
+        <EntityTypeShape EntityType="Data.ThongTinNamHoc" Width="1.5" PointX="3.75" PointY="11.25" />
         <AssociationConnector Association="Data.FK_DM_GiaoVien_DM_MonHoc" />
-        <AssociationConnector Association="Data.FK_DM_GiaoVien_DS_ChucVuGiaoVien" />
         <AssociationConnector Association="Data.FK_DM_GiaoVien_DS_DanToc" />
-        <AssociationConnector Association="Data.FK_DM_GiaoVien_DS_GioiTinh" />
-        <AssociationConnector Association="Data.FK_DM_GiaoVien_DS_LoaiHopDong" />
-        <AssociationConnector Association="Data.FK_DM_GiaoVien_DS_LyLuanChinhTri" />
         <AssociationConnector Association="Data.FK_DM_GiaoVien_DS_PhongBan" />
-        <AssociationConnector Association="Data.FK_DM_GiaoVien_DS_QuanLyGiaoDuc" />
-        <AssociationConnector Association="Data.FK_DM_GiaoVien_DS_QuanLyNhaNuoc" />
-        <AssociationConnector Association="Data.FK_DM_GiaoVien_DS_TrinhDoChuan" />
-        <AssociationConnector Association="Data.FK_DM_GiaoVien_DS_TrinhDoChuyenMon" />
-        <AssociationConnector Association="Data.FK_DM_GiaoVien_DS_ViTriGiaoVien" />
         <AssociationConnector Association="Data.FK_TB_PhieuMuonPhong_DM_GiaoVien" />
         <AssociationConnector Association="Data.FK_TB_PhieuMuonTB_DM_GiaoVien" />
-        <AssociationConnector Association="Data.FK_DM_KhoiLop_DS_CapTruong" />
         <AssociationConnector Association="Data.FK_DM_LopHoc_DM_KhoiLop" />
         <AssociationConnector Association="Data.FK_TB_PhieuMuonPhong_DM_KhoiLop" />
         <AssociationConnector Association="Data.FK_TB_PhieuMuonTB_DM_KhoiLop" />
-        <AssociationConnector Association="Data.FK_DM_MonHoc_DS_LoaiDanhGiaMH" />
-        <AssociationConnector Association="Data.FK_DM_MonHoc_DS_LoaiMonHoc" />
         <AssociationConnector Association="Data.FK_DM_PhongHocBoMon_DM_MonHoc" />
         <AssociationConnector Association="Data.FK_DM_ThietBiToiThieu_DM_MonHoc" />
         <AssociationConnector Association="Data.FK_TB_PhieuMuonPhong_DM_MonHoc" />
@@ -100,34 +59,20 @@
         <AssociationConnector Association="Data.FK_DM_NguonKinhPhi_DM_NguonKinhPhi" />
         <AssociationConnector Association="Data.FK_DM_NguonKinhPhi_DS_NguonNganSach" />
         <AssociationConnector Association="Data.FK_TB_ThongTinThietBi_DM_NguonKinhPhi" />
-        <AssociationConnector Association="Data.FK_DM_PhongHocBoMon_DS_LoaiPhongTN" />
-        <AssociationConnector Association="Data.FK_DM_PhongHocBoMon_DS_XepLoaiPhongHocBM" />
         <AssociationConnector Association="Data.FK_TB_PhieuMuonPhong_DM_PhongHocBoMon" />
         <AssociationConnector Association="Data.FK_TB_ThongTinThietBi_DM_PhongHocBoMon" />
-        <AssociationConnector Association="Data.FK_DM_ThietBiToiThieu_DS_DauMucThietBi" />
         <AssociationConnector Association="Data.FK_DM_ThietBiToiThieu_DS_DonViTinh" />
-        <AssociationConnector Association="Data.FK_DM_ThietBiToiThieu_DS_LoaiThietBi" />
         <AssociationConnector Association="Data.FK_QH_PhieuDenNghiMS_ThietBi_DM_ThietBiToiThieu" />
         <AssociationConnector Association="Data.FK_TB_ThongTinThietBi_DM_ThietBiToiThieu" />
         <AssociationConnector Association="Data.FK_DM_ToBoMon_DM_ToBoMon" />
         <AssociationConnector Association="Data.FK_TB_PhieuMuonPhong_DS_BaiGiang" />
         <AssociationConnector Association="Data.FK_TB_PhieuMuonTB_DS_BaiGiang" />
-        <AssociationConnector Association="Data.FK_DS_CapTruong_DS_KhoiTruong" />
         <AssociationConnector Association="Data.FK_TB_ThongTinThietBi_DS_DonViTinh" />
-        <AssociationConnector Association="Data.FK_ThongTinDonVi_DS_HangTruong" />
-        <AssociationConnector Association="Data.FK_ThongTinDonVi_DS_HinhThucDaoTao" />
-        <AssociationConnector Association="Data.FK_ThongTinDonVi_DS_LoaiHinhTruong" />
-        <AssociationConnector Association="Data.FK_ThongTinDonVi_DS_LoaiTruongChuyenBiet" />
-        <AssociationConnector Association="Data.FK_TB_PhieuMuonPhong_DS_MucDichSDPHong" />
-        <AssociationConnector Association="Data.FK_TB_PhieuMuonTB_DS_MucDichSDThietBi" />
         <AssociationConnector Association="Data.FK_ThongTinDonVi_DS_PhuongXa" />
         <AssociationConnector Association="Data.FK_ward_district" />
         <AssociationConnector Association="Data.FK_district_province" />
         <AssociationConnector Association="Data.FK_ThongTinDonVi_DS_QuanHuyen" />
-        <AssociationConnector Association="Data.FK_TB_PhieuMuonTB_DS_ThoiGianTrongNganh" />
         <AssociationConnector Association="Data.FK_ThongTinDonVi_DS_TinhThanh" />
-        <AssociationConnector Association="Data.FK_TB_PhieuMuonTB_DS_TrangThaiPhieuMuon" />
-        <AssociationConnector Association="Data.FK_ThongTinDonVi_DS_VungMien" />
         <AssociationConnector Association="Data.FK_QH_User_Permission_HT_Permission" />
         <AssociationConnector Association="Data.FK_HT_User_HT_UserRole" />
         <AssociationConnector Association="Data.FK_TB_PhieuBaoHong_HT_User" />
@@ -138,10 +83,6 @@
         <AssociationConnector Association="Data.FK_TB_PhieuGhiTang_HT_User1" />
         <AssociationConnector Association="Data.FK_TB_PhieuGiamTB_HT_User" />
         <AssociationConnector Association="Data.FK_TB_PhieuGiamTB_HT_User1" />
-        <AssociationConnector Association="Data.FK_TB_PhieuMuonPhong_HT_User" />
-        <AssociationConnector Association="Data.FK_TB_PhieuMuonPhong_HT_User1" />
-        <AssociationConnector Association="Data.FK_TB_PhieuMuonTB_HT_User" />
-        <AssociationConnector Association="Data.FK_TB_PhieuMuonTB_HT_User1" />
         <AssociationConnector Association="Data.FK_TB_PhieuThanhLyTB_HT_User" />
         <AssociationConnector Association="Data.FK_TB_PhieuThanhLyTB_HT_User1" />
         <AssociationConnector Association="Data.FK_TB_ThongTinThietBi_HT_User" />

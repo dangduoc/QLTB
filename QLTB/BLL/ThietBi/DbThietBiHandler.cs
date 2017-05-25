@@ -17,10 +17,9 @@ namespace QLTB.Handler
         {
             using (var unitOfWork = new UnitOfWork())
             {
-                DanhSachModel ds = new DanhSachModel();
                 try
                 {
-                    var TotalRecord = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetAll().Count();
+                    var TotalRecord = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetAll().Where(p=>p.TrangThai>=0).Count();
 
                     var data = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetAll().Where(p => p.TrangThai >= 0)
                                 .Join(unitOfWork.GetRepository<DM_PhongHocBoMon>().GetAll(),
@@ -76,7 +75,7 @@ namespace QLTB.Handler
                                     }
                                 )
                                 .AsEnumerable()
-                                .Join(ds.TrangThaiThietBi,
+                                .Join(GlobalVariable.GetDS().TrangThaiThietBi,
                                     tb => tb.TrangThaiId,
                                     tt => tt.Id,
                                     (tb, tt) => new ThietBiGridDisplayModel
@@ -261,8 +260,6 @@ namespace QLTB.Handler
                 return null;
             }
         }
-
-
         public int Create(ThietBiModel model)
         {
             try
@@ -327,7 +324,7 @@ namespace QLTB.Handler
                 using (var unitOfWork = new UnitOfWork())
                 {
                     var data = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetById(Id);
-                    data.TrangThai = 0;
+                    data.TrangThai = -1;
                     unitOfWork.GetRepository<TB_ThongTinThietBi>().Update(data);
                     if (unitOfWork.Save() >= 1)
                     {

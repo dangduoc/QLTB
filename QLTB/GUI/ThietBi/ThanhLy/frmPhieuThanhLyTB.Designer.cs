@@ -52,13 +52,13 @@
             this.layoutControlItem8 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
             this.layoutControlItem9 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
             this.layoutControlItem10 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
-            this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.ribBarDSThietBi = new DevComponents.DotNetBar.RibbonBar();
             this.btnLuu = new DevComponents.DotNetBar.ButtonItem();
             this.btnXoa = new DevComponents.DotNetBar.ButtonItem();
             this.btnHelpDSTB = new DevComponents.DotNetBar.ButtonItem();
             this.btnClose = new DevComponents.DotNetBar.ButtonItem();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ADGVDSTB)).BeginInit();
@@ -67,6 +67,7 @@
             this.panel4.SuspendLayout();
             this.layoutControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput2)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -189,7 +190,7 @@
             this.labelX1.ForeColor = System.Drawing.Color.Black;
             this.labelX1.Location = new System.Drawing.Point(5, 0);
             this.labelX1.Name = "labelX1";
-            this.labelX1.PaddingLeft = 10;
+            this.labelX1.PaddingLeft = 15;
             this.labelX1.Size = new System.Drawing.Size(956, 30);
             this.labelX1.TabIndex = 0;
             this.labelX1.Text = "Danh sách thiết bị";
@@ -197,7 +198,6 @@
             // pnlTTPhieuMuon
             // 
             this.pnlTTPhieuMuon.Controls.Add(this.panel3);
-            this.pnlTTPhieuMuon.Controls.Add(this.labelX3);
             this.pnlTTPhieuMuon.Controls.Add(this.labelX2);
             this.pnlTTPhieuMuon.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTTPhieuMuon.Location = new System.Drawing.Point(0, 34);
@@ -210,19 +210,19 @@
             // 
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(5, 70);
+            this.panel3.Location = new System.Drawing.Point(5, 40);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(956, 238);
+            this.panel3.Size = new System.Drawing.Size(956, 268);
             this.panel3.TabIndex = 3;
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.layoutControl2);
+            this.panel4.Controls.Add(this.groupBox1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.panel4.Size = new System.Drawing.Size(956, 238);
+            this.panel4.Size = new System.Drawing.Size(956, 268);
             this.panel4.TabIndex = 1;
             // 
             // layoutControl2
@@ -234,8 +234,9 @@
             this.layoutControl2.Controls.Add(this.dateTimeInput2);
             this.layoutControl2.Controls.Add(this.textBoxX3);
             this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl2.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControl2.ForeColor = System.Drawing.Color.Black;
-            this.layoutControl2.Location = new System.Drawing.Point(15, 0);
+            this.layoutControl2.Location = new System.Drawing.Point(5, 19);
             this.layoutControl2.Name = "layoutControl2";
             // 
             // 
@@ -247,7 +248,7 @@
             this.layoutControlItem8,
             this.layoutControlItem9,
             this.layoutControlItem10});
-            this.layoutControl2.Size = new System.Drawing.Size(941, 238);
+            this.layoutControl2.Size = new System.Drawing.Size(901, 234);
             this.layoutControl2.TabIndex = 5;
             // 
             // richTextBoxEx3
@@ -262,7 +263,7 @@
             this.richTextBoxEx3.Name = "richTextBoxEx3";
             this.richTextBoxEx3.Rtf = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Times New R" +
     "oman;}}\r\n\\viewkind4\\uc1\\pard\\f0\\fs20\\par\r\n}\r\n";
-            this.richTextBoxEx3.Size = new System.Drawing.Size(826, 42);
+            this.richTextBoxEx3.Size = new System.Drawing.Size(786, 42);
             this.richTextBoxEx3.TabIndex = 4;
             // 
             // textBoxX2
@@ -279,7 +280,7 @@
             this.textBoxX2.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxX2.Name = "textBoxX2";
             this.textBoxX2.PreventEnterBeep = true;
-            this.textBoxX2.Size = new System.Drawing.Size(826, 23);
+            this.textBoxX2.Size = new System.Drawing.Size(786, 23);
             this.textBoxX2.TabIndex = 3;
             // 
             // richTextBoxEx4
@@ -294,7 +295,7 @@
             this.richTextBoxEx4.Name = "richTextBoxEx4";
             this.richTextBoxEx4.Rtf = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Times New R" +
     "oman;}}\r\n\\viewkind4\\uc1\\pard\\f0\\fs20\\par\r\n}\r\n";
-            this.richTextBoxEx4.Size = new System.Drawing.Size(826, 92);
+            this.richTextBoxEx4.Size = new System.Drawing.Size(786, 92);
             this.richTextBoxEx4.TabIndex = 5;
             // 
             // dateTimeInput2
@@ -414,22 +415,6 @@
             this.layoutControlItem10.Width = 100;
             this.layoutControlItem10.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
             // 
-            // labelX3
-            // 
-            // 
-            // 
-            // 
-            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelX3.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX3.ForeColor = System.Drawing.Color.Black;
-            this.labelX3.Location = new System.Drawing.Point(5, 40);
-            this.labelX3.Name = "labelX3";
-            this.labelX3.PaddingLeft = 10;
-            this.labelX3.Size = new System.Drawing.Size(956, 30);
-            this.labelX3.TabIndex = 2;
-            this.labelX3.Text = "Thông tin chung";
-            // 
             // labelX2
             // 
             // 
@@ -523,6 +508,18 @@
             this.btnClose.Text = "Đóng";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.layoutControl2);
+            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(10, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(5, 3, 20, 3);
+            this.groupBox1.Size = new System.Drawing.Size(926, 256);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Thông tin chung";
+            // 
             // frmPhieuThanhLyTB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -543,6 +540,7 @@
             this.panel4.ResumeLayout(false);
             this.layoutControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput2)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -570,12 +568,12 @@
         private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem8;
         private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem9;
         private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem10;
-        private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.RibbonBar ribBarDSThietBi;
         private DevComponents.DotNetBar.ButtonItem btnLuu;
         private DevComponents.DotNetBar.ButtonItem btnXoa;
         private DevComponents.DotNetBar.ButtonItem btnHelpDSTB;
         private DevComponents.DotNetBar.ButtonItem btnClose;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

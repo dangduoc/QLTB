@@ -11,6 +11,7 @@ namespace QLTB.Handler
 {
     public class DbDanhSachHandler
     {
+        public DanhSachModel DanhSachCoDinh = new DanhSachModel();
         public List<PhongBoMonModel> GetPhongBM()
         {
             try
@@ -44,24 +45,7 @@ namespace QLTB.Handler
             {
                 return null;
             }
-        }
-        public List<DSMucDichSDPhong> GetMucDichSDPhong()
-        {
-            try
-            {
-                using (var unitOfWork = new UnitOfWork())
-                {
-                    var data = unitOfWork.GetRepository<DS_MucDichSDPHong>()
-                        .GetAll().Select(p => new DSMucDichSDPhong { MucDichSDPhongId = p.MucDichSDPhongId, Ten = p.Ten }).ToList();
-                    return data;
-
-                }
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
-        }
+        }     
         public List<DSDonViTinh> GetDVT()
         {
             try
@@ -70,125 +54,6 @@ namespace QLTB.Handler
                 {
                     var data = unitOfWork.GetRepository<DS_DonViTinh>()
                         .GetAll().Select(p => new DSDonViTinh { DonViTinhId = p.DonViTinhId, Ten = p.Ten }).ToList();
-                    return data;
-
-                }
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
-        }
-        public List<DSCapTruong> GetCapTruong()
-        {
-            try
-            {
-                using (var unitOfWork = new UnitOfWork())
-                {
-                    var data = unitOfWork.GetRepository<DS_CapTruong>()
-                        .GetAll().Select(p => new DSCapTruong { CapTruongId = p.CapTruongId, Ten = p.Ten }).ToList();
-                    return data;
-
-                }
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
-        }
-        public List<DSHangTruong> GetHangTruong()
-        {
-            try
-            {
-                using (var unitOfWork = new UnitOfWork())
-                {
-                    var data = unitOfWork.GetRepository<DS_HangTruong>()
-                        .GetAll().Select(p => new DSHangTruong { HangTruongId = p.HangTruongId, Ten = p.Ten }).ToList();
-                    return data;
-
-                }
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
-        }
-        public List<DSHinhThucDaoTao> GetHinhThucDaoTao()
-        {
-            try
-            {
-                using (var unitOfWork = new UnitOfWork())
-                {
-                    var data = unitOfWork.GetRepository<DS_HinhThucDaoTao>()
-                        .GetAll().Select(p => new DSHinhThucDaoTao { HinhThucDaoTaoId = p.HinhThucDaoTaoId, Ten = p.Ten }).ToList();
-                    return data;
-
-                }
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
-        }
-        public List<DSLoaiHinhTruong> GetLoaiHinhTruong()
-        {
-            try
-            {
-                using (var unitOfWork = new UnitOfWork())
-                {
-                    var data = unitOfWork.GetRepository<DS_LoaiHinhTruong>()
-                        .GetAll().Select(p => new DSLoaiHinhTruong { LoaiHinhTruongId = p.LoaiHinhTruongId, Ten = p.Ten }).ToList();
-                    return data;
-
-                }
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
-        }
-        public List<DSLoaiTruongChuyenBiet> GetLoaiTruongChuyenBiet()
-        {
-            try
-            {
-                using (var unitOfWork = new UnitOfWork())
-                {
-                    var data = unitOfWork.GetRepository<DS_LoaiTruongChuyenBiet>()
-                        .GetAll().Select(p => new DSLoaiTruongChuyenBiet { LoaiTruongChuyenBietId = p.LoaiTruongChuyenBietId, Ten = p.Ten }).ToList();
-                    return data;
-
-                }
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
-        }
-        public List<DSKhoiTruong> GetKhoiTruong()
-        {
-            try
-            {
-                using (var unitOfWork = new UnitOfWork())
-                {
-                    var data = unitOfWork.GetRepository<DS_KhoiTruong>()
-                        .GetAll().Select(p => new DSKhoiTruong { KhoiTruongId = p.KhoiTruongId, Ten = p.Ten }).ToList();
-                    return data;
-
-                }
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
-        }
-        public List<DSVungMien> GetVungMien()
-        {
-            try
-            {
-                using (var unitOfWork = new UnitOfWork())
-                {
-                    var data = unitOfWork.GetRepository<DS_VungMien>()
-                        .GetAll().Select(p => new DSVungMien { VungMienId = p.VungMienId, Ten = p.Ten }).ToList();
                     return data;
 
                 }
@@ -346,27 +211,6 @@ namespace QLTB.Handler
                 return null;
             }
         }
-        public List<DSMucDichSDThietBi> GetMucDichSDThietBi()
-        {
-            try
-            {
-                using (var unitOfWork = new UnitOfWork())
-                {
-                    var data = unitOfWork.GetRepository<DS_MucDichSDThietBi>().GetAll()
-                        .Select(p => new DSMucDichSDThietBi
-                        {
-                            MucDichSDTBId=p.MucDichSDTBId,
-                            Ten=p.Ten
-                        }).ToList();
-                    return data;
-
-                }
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
-        }
         public List<MonHocModel> GetMonHoc()
         {
             try
@@ -377,27 +221,6 @@ namespace QLTB.Handler
                         .Select(p => new MonHocModel
                         {
                             MonHocId=p.MonHocId,
-                            Ten=p.Ten
-                        }).ToList();
-                    return data;
-
-                }
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
-        }
-        public List<DSThoiGianTrongNganh> GetTGTrongNgay()
-        {
-            try
-            {
-                using (var unitOfWork = new UnitOfWork())
-                {
-                    var data = unitOfWork.GetRepository<DS_ThoiGianTrongNgay>().GetAll()
-                        .Select(p => new DSThoiGianTrongNganh
-                        {
-                            BuoiId=p.BuoiId,
                             Ten=p.Ten
                         }).ToList();
                     return data;

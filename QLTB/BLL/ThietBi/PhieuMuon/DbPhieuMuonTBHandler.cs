@@ -46,9 +46,10 @@ namespace QLTB.Handler
                                           GiaoVien = gv.Ten,
                                           TrangThaiId = tb.TrangThaiId
                                       }
-                                  ).Join(unitOfWork.GetRepository<DS_TrangThaiPhieuMuon>().GetAll(),
+                                  ).AsEnumerable()
+                                  .Join(GlobalVariable.GetDS().TrangThaiPhieuMuon,
                                       tb => tb.TrangThaiId,
-                                      tt => tt.TrangThaiPMTBId,
+                                      tt => tt.Id,
                                       (tb, tt) => new
                                       {
                                           PhieuMuonTBId = tb.PhieuMuonTBId,

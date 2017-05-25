@@ -38,13 +38,13 @@
             this.panelEx3 = new DevComponents.DotNetBar.PanelEx();
             this.ADGVDanhSach = new ADGV.AdvancedDataGridView();
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
-            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.currentPage = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.nextBtn = new System.Windows.Forms.LinkLabel();
+            this.prevBtn = new System.Windows.Forms.LinkLabel();
+            this.lbTotalRecord = new DevComponents.DotNetBar.LabelX();
+            this.lbPaging = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.comboBoxEx1 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.pageSize = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.comboItem3 = new DevComponents.Editors.ComboItem();
             this.comboItem1 = new DevComponents.Editors.ComboItem();
             this.comboItem2 = new DevComponents.Editors.ComboItem();
@@ -76,7 +76,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(766, 400);
+            this.panel1.Size = new System.Drawing.Size(894, 462);
             this.panel1.TabIndex = 23;
             // 
             // pnlBackDS
@@ -85,9 +85,9 @@
             this.pnlBackDS.Controls.Add(this.pnlContentDSTB);
             this.pnlBackDS.Controls.Add(this.ribBarDSThietBi);
             this.pnlBackDS.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlBackDS.Location = new System.Drawing.Point(0, 40);
+            this.pnlBackDS.Location = new System.Drawing.Point(0, 46);
             this.pnlBackDS.Name = "pnlBackDS";
-            this.pnlBackDS.Size = new System.Drawing.Size(766, 360);
+            this.pnlBackDS.Size = new System.Drawing.Size(894, 416);
             this.pnlBackDS.TabIndex = 29;
             // 
             // pnlContentDSTB
@@ -100,10 +100,9 @@
             this.pnlContentDSTB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContentDSTB.Location = new System.Drawing.Point(0, 35);
             this.pnlContentDSTB.Name = "pnlContentDSTB";
-            this.pnlContentDSTB.Size = new System.Drawing.Size(766, 325);
+            this.pnlContentDSTB.Size = new System.Drawing.Size(894, 381);
             this.pnlContentDSTB.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.pnlContentDSTB.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.pnlContentDSTB.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
             this.pnlContentDSTB.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.pnlContentDSTB.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
             this.pnlContentDSTB.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
@@ -118,12 +117,11 @@
             this.panelEx1.Controls.Add(this.panelEx2);
             this.panelEx1.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelEx1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelEx1.Location = new System.Drawing.Point(0, 30);
+            this.panelEx1.Location = new System.Drawing.Point(0, 35);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(766, 295);
+            this.panelEx1.Size = new System.Drawing.Size(894, 346);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
             this.panelEx1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.panelEx1.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
             this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
@@ -139,10 +137,9 @@
             this.panelEx3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEx3.Location = new System.Drawing.Point(0, 0);
             this.panelEx3.Name = "panelEx3";
-            this.panelEx3.Size = new System.Drawing.Size(766, 260);
+            this.panelEx3.Size = new System.Drawing.Size(894, 311);
             this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.panelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
             this.panelEx3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.panelEx3.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
             this.panelEx3.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
@@ -161,7 +158,7 @@
             this.ADGVDanhSach.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -171,7 +168,7 @@
             this.ADGVDanhSach.DateWithTime = false;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -187,7 +184,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.ADGVDanhSach.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.ADGVDanhSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ADGVDanhSach.Size = new System.Drawing.Size(766, 260);
+            this.ADGVDanhSach.Size = new System.Drawing.Size(894, 311);
             this.ADGVDanhSach.TabIndex = 27;
             this.ADGVDanhSach.TimeFilter = false;
             // 
@@ -195,94 +192,96 @@
             // 
             this.panelEx2.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.panelEx2.Controls.Add(this.textBoxX1);
-            this.panelEx2.Controls.Add(this.linkLabel2);
-            this.panelEx2.Controls.Add(this.linkLabel1);
-            this.panelEx2.Controls.Add(this.labelX3);
-            this.panelEx2.Controls.Add(this.labelX2);
+            this.panelEx2.Controls.Add(this.currentPage);
+            this.panelEx2.Controls.Add(this.nextBtn);
+            this.panelEx2.Controls.Add(this.prevBtn);
+            this.panelEx2.Controls.Add(this.lbTotalRecord);
+            this.panelEx2.Controls.Add(this.lbPaging);
             this.panelEx2.Controls.Add(this.labelX1);
-            this.panelEx2.Controls.Add(this.comboBoxEx1);
+            this.panelEx2.Controls.Add(this.pageSize);
             this.panelEx2.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelEx2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelEx2.Location = new System.Drawing.Point(0, 260);
+            this.panelEx2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelEx2.Location = new System.Drawing.Point(0, 311);
             this.panelEx2.Name = "panelEx2";
-            this.panelEx2.Size = new System.Drawing.Size(766, 35);
+            this.panelEx2.Size = new System.Drawing.Size(894, 35);
             this.panelEx2.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.panelEx2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
             this.panelEx2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.panelEx2.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
             this.panelEx2.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.panelEx2.Style.GradientAngle = 90;
             this.panelEx2.TabIndex = 28;
             // 
-            // textBoxX1
+            // currentPage
             // 
-            this.textBoxX1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            // 
-            // 
-            // 
-            this.textBoxX1.Border.Class = "TextBoxBorder";
-            this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX1.DisabledBackColor = System.Drawing.Color.White;
-            this.textBoxX1.Location = new System.Drawing.Point(73, 7);
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.PreventEnterBeep = true;
-            this.textBoxX1.Size = new System.Drawing.Size(37, 20);
-            this.textBoxX1.TabIndex = 7;
-            this.textBoxX1.Text = "1";
-            this.textBoxX1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // linkLabel2
-            // 
-            this.linkLabel2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(116, 9);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(55, 13);
-            this.linkLabel2.TabIndex = 6;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Trang sau";
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(4, 9);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(62, 13);
-            this.linkLabel1.TabIndex = 5;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Trang trước";
-            // 
-            // labelX3
-            // 
-            this.labelX3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.currentPage.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.currentPage.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
-            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX3.ForeColor = System.Drawing.Color.Black;
-            this.labelX3.Location = new System.Drawing.Point(639, -1);
-            this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(121, 35);
-            this.labelX3.TabIndex = 4;
-            this.labelX3.Text = "- Tổng số: 9 bản ghi";
+            this.currentPage.Border.Class = "TextBoxBorder";
+            this.currentPage.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.currentPage.DisabledBackColor = System.Drawing.Color.White;
+            this.currentPage.ForeColor = System.Drawing.Color.Black;
+            this.currentPage.Location = new System.Drawing.Point(75, 7);
+            this.currentPage.Name = "currentPage";
+            this.currentPage.PreventEnterBeep = true;
+            this.currentPage.Size = new System.Drawing.Size(30, 21);
+            this.currentPage.TabIndex = 7;
+            this.currentPage.Text = "1";
+            this.currentPage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // labelX2
+            // nextBtn
             // 
-            this.labelX2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.nextBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.nextBtn.AutoSize = true;
+            this.nextBtn.Location = new System.Drawing.Point(111, 9);
+            this.nextBtn.Name = "nextBtn";
+            this.nextBtn.Size = new System.Drawing.Size(54, 15);
+            this.nextBtn.TabIndex = 6;
+            this.nextBtn.TabStop = true;
+            this.nextBtn.Text = "Trang sau";
+            // 
+            // prevBtn
+            // 
+            this.prevBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.prevBtn.AutoSize = true;
+            this.prevBtn.Location = new System.Drawing.Point(5, 8);
+            this.prevBtn.Name = "prevBtn";
+            this.prevBtn.Size = new System.Drawing.Size(64, 15);
+            this.prevBtn.TabIndex = 5;
+            this.prevBtn.TabStop = true;
+            this.prevBtn.Text = "Trang trước";
+            // 
+            // lbTotalRecord
+            // 
+            this.lbTotalRecord.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
-            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.ForeColor = System.Drawing.Color.Black;
-            this.labelX2.Location = new System.Drawing.Point(591, -1);
-            this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(48, 35);
-            this.labelX2.TabIndex = 3;
-            this.labelX2.Text = "Trang 1/1";
+            this.lbTotalRecord.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbTotalRecord.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotalRecord.ForeColor = System.Drawing.Color.Black;
+            this.lbTotalRecord.Location = new System.Drawing.Point(751, 3);
+            this.lbTotalRecord.Name = "lbTotalRecord";
+            this.lbTotalRecord.Size = new System.Drawing.Size(125, 28);
+            this.lbTotalRecord.TabIndex = 4;
+            this.lbTotalRecord.Text = "- Tổng số: 9 bản ghi";
+            // 
+            // lbPaging
+            // 
+            this.lbPaging.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            // 
+            // 
+            // 
+            this.lbPaging.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbPaging.ForeColor = System.Drawing.Color.Black;
+            this.lbPaging.Location = new System.Drawing.Point(700, -3);
+            this.lbPaging.Name = "lbPaging";
+            this.lbPaging.Size = new System.Drawing.Size(56, 41);
+            this.lbPaging.TabIndex = 3;
+            this.lbPaging.Text = "Trang 1/1";
             // 
             // labelX1
             // 
@@ -293,29 +292,30 @@
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX1.ForeColor = System.Drawing.Color.Black;
-            this.labelX1.Location = new System.Drawing.Point(192, -1);
+            this.labelX1.Location = new System.Drawing.Point(224, -4);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(60, 35);
+            this.labelX1.Size = new System.Drawing.Size(59, 41);
             this.labelX1.TabIndex = 2;
             this.labelX1.Text = "Số bản ghi:";
             // 
-            // comboBoxEx1
+            // pageSize
             // 
-            this.comboBoxEx1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.comboBoxEx1.DisplayMember = "Text";
-            this.comboBoxEx1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.comboBoxEx1.FormattingEnabled = true;
-            this.comboBoxEx1.ItemHeight = 13;
-            this.comboBoxEx1.Items.AddRange(new object[] {
+            this.pageSize.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pageSize.DisplayMember = "Text";
+            this.pageSize.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.pageSize.ForeColor = System.Drawing.Color.Black;
+            this.pageSize.FormattingEnabled = true;
+            this.pageSize.ItemHeight = 15;
+            this.pageSize.Items.AddRange(new object[] {
             this.comboItem3,
             this.comboItem1,
             this.comboItem2});
-            this.comboBoxEx1.Location = new System.Drawing.Point(258, 7);
-            this.comboBoxEx1.Name = "comboBoxEx1";
-            this.comboBoxEx1.Size = new System.Drawing.Size(49, 21);
-            this.comboBoxEx1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.comboBoxEx1.TabIndex = 0;
-            this.comboBoxEx1.Text = "50";
+            this.pageSize.Location = new System.Drawing.Point(289, 6);
+            this.pageSize.Name = "pageSize";
+            this.pageSize.Size = new System.Drawing.Size(56, 23);
+            this.pageSize.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.pageSize.TabIndex = 0;
+            this.pageSize.Text = "50";
             // 
             // comboItem3
             // 
@@ -339,11 +339,11 @@
             this.SearchDSTB.Font = new System.Drawing.Font("Arial", 9F);
             this.SearchDSTB.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.SearchDSTB.Location = new System.Drawing.Point(0, 0);
-            this.SearchDSTB.MaximumSize = new System.Drawing.Size(0, 41);
-            this.SearchDSTB.MinimumSize = new System.Drawing.Size(0, 30);
+            this.SearchDSTB.MaximumSize = new System.Drawing.Size(0, 47);
+            this.SearchDSTB.MinimumSize = new System.Drawing.Size(0, 34);
             this.SearchDSTB.Name = "SearchDSTB";
             this.SearchDSTB.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.SearchDSTB.Size = new System.Drawing.Size(766, 30);
+            this.SearchDSTB.Size = new System.Drawing.Size(894, 35);
             this.SearchDSTB.TabIndex = 28;
             this.SearchDSTB.Text = "searchToolBar1";
             // 
@@ -375,10 +375,10 @@
             this.ribBarDSThietBi.ItemSpacing = 10;
             this.ribBarDSThietBi.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
             this.ribBarDSThietBi.Location = new System.Drawing.Point(0, 0);
-            this.ribBarDSThietBi.Margin = new System.Windows.Forms.Padding(9, 5, 9, 5);
+            this.ribBarDSThietBi.Margin = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.ribBarDSThietBi.Name = "ribBarDSThietBi";
             this.ribBarDSThietBi.ShowShortcutKeysInToolTips = true;
-            this.ribBarDSThietBi.Size = new System.Drawing.Size(766, 35);
+            this.ribBarDSThietBi.Size = new System.Drawing.Size(894, 35);
             this.ribBarDSThietBi.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribBarDSThietBi.TabIndex = 10;
             // 
@@ -475,7 +475,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(766, 40);
+            this.panel2.Size = new System.Drawing.Size(894, 46);
             this.panel2.TabIndex = 0;
             // 
             // label1
@@ -484,19 +484,20 @@
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.label1.Size = new System.Drawing.Size(243, 40);
+            this.label1.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.label1.Size = new System.Drawing.Size(283, 46);
             this.label1.TabIndex = 0;
             this.label1.Text = "KHO/ PHÒNG BỘ MÔN";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // frmDMPhongBoMon
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(766, 400);
+            this.ClientSize = new System.Drawing.Size(894, 462);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
+            this.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmDMPhongBoMon";
             this.Text = "Danh mục phòng bộ môn";
             this.Load += new System.EventHandler(this.frmDMPhongBoMon_Load);
@@ -522,13 +523,13 @@
         private DevComponents.DotNetBar.PanelEx panelEx3;
         private ADGV.AdvancedDataGridView ADGVDanhSach;
         private DevComponents.DotNetBar.PanelEx panelEx2;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
-        private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private DevComponents.DotNetBar.LabelX labelX3;
-        private DevComponents.DotNetBar.LabelX labelX2;
+        private DevComponents.DotNetBar.Controls.TextBoxX currentPage;
+        private System.Windows.Forms.LinkLabel nextBtn;
+        private System.Windows.Forms.LinkLabel prevBtn;
+        private DevComponents.DotNetBar.LabelX lbTotalRecord;
+        private DevComponents.DotNetBar.LabelX lbPaging;
         private DevComponents.DotNetBar.LabelX labelX1;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx comboBoxEx1;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx pageSize;
         private DevComponents.Editors.ComboItem comboItem3;
         private DevComponents.Editors.ComboItem comboItem1;
         private DevComponents.Editors.ComboItem comboItem2;

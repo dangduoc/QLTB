@@ -31,6 +31,26 @@ namespace QLTB.Handler
                 return null;
             }
         }
+
+        public string GetTen()
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    var data = unitOfWork.GetRepository<ThongTinDonVi>().GetAll().Select(p => p.Ten).FirstOrDefault();
+                     if(data!=null)
+                    return data;
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+
         public ThongTinDonViModel GetById(string Id)
         {
             try

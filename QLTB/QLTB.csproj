@@ -114,40 +114,13 @@
     <Compile Include="BLL\DanhSach\DanhSachModel.cs" />
     <Compile Include="BLL\DanhSach\DbDanhSachHandler.cs" />
     <Compile Include="BLL\DanhSach\DSBaiGiang.cs" />
-    <Compile Include="BLL\DanhSach\DSCapTruong.cs" />
-    <Compile Include="BLL\DanhSach\DSChucVuGiaoVien.cs" />
     <Compile Include="BLL\DanhSach\DSDanToc.cs" />
-    <Compile Include="BLL\DanhSach\DSDauMucThietBi.cs" />
     <Compile Include="BLL\DanhSach\DSDonViTinh.cs" />
-    <Compile Include="BLL\DanhSach\DSGioiTinh.cs" />
-    <Compile Include="BLL\DanhSach\DSHangTruong.cs" />
-    <Compile Include="BLL\DanhSach\DSHinhThucDaoTao.cs" />
-    <Compile Include="BLL\DanhSach\DSKhoiTruong.cs" />
-    <Compile Include="BLL\DanhSach\DSLoaiDanhGiaMH.cs" />
-    <Compile Include="BLL\DanhSach\DSLoaiHinhTruong.cs" />
-    <Compile Include="BLL\DanhSach\DSLoaiHopDong.cs" />
-    <Compile Include="BLL\DanhSach\DSLoaiMonHoc.cs" />
-    <Compile Include="BLL\DanhSach\DSLoaiPhongTN.cs" />
-    <Compile Include="BLL\DanhSach\DSLoaiThietBi.cs" />
-    <Compile Include="BLL\DanhSach\DSLoaiTruongChuyenBiet.cs" />
-    <Compile Include="BLL\DanhSach\DSLyLuanChinhTri.cs" />
-    <Compile Include="BLL\DanhSach\DSMucDichSDPhong.cs" />
-    <Compile Include="BLL\DanhSach\DSMucDichSDThietBi.cs" />
     <Compile Include="BLL\DanhSach\DSNguonNganSach.cs" />
     <Compile Include="BLL\DanhSach\DSPhongBan.cs" />
     <Compile Include="BLL\DanhSach\DSPhuongXa.cs" />
-    <Compile Include="BLL\DanhSach\DSPhuTrachCBTB.cs" />
     <Compile Include="BLL\DanhSach\DSQuanHuyen.cs" />
-    <Compile Include="BLL\DanhSach\DSQuanLyGD.cs" />
-    <Compile Include="BLL\DanhSach\DSQuanLyNhaNuoc.cs" />
-    <Compile Include="BLL\DanhSach\DSThoiGianTrongNganh.cs" />
     <Compile Include="BLL\DanhSach\DSTinhThanh.cs" />
-    <Compile Include="BLL\DanhSach\DSTrangThaiPhieuMuon.cs" />
-    <Compile Include="BLL\DanhSach\DSTrinhDoChuan.cs" />
-    <Compile Include="BLL\DanhSach\DSTrinhDoChuyenMon.cs" />
-    <Compile Include="BLL\DanhSach\DSViTriGiaoVien.cs" />
-    <Compile Include="BLL\DanhSach\DSVungMien.cs" />
-    <Compile Include="BLL\DanhSach\DSXepLoaiPhongBM.cs" />
     <Compile Include="BLL\ThietBi\KiemKe\KiemKeThietBiModel.cs" />
     <Compile Include="BLL\TaiKhoan\LoginHandler.cs" />
     <Compile Include="BLL\PhongHocBM\MuonTra\DbPhieuMuonPhongHandler.cs" />
@@ -166,6 +139,7 @@
     <Compile Include="BLL\ThietBi\ThietBiModel.cs" />
     <Compile Include="BLL\ThongTinHeThong\ThongTinDonVi\DbThongTinDVHandler.cs" />
     <Compile Include="BLL\ThongTinHeThong\ThongTinDonVi\ThongTinDonViModel.cs" />
+    <Compile Include="BLL\ThongTinHeThong\ThongTinNamHoc\DbThongTinNHHandler.cs" />
     <Compile Include="BLL\ThongTinHeThong\ThongTinNamHoc\ThongTinNamHocModel.cs" />
     <Compile Include="BLL\User\UserHandler.cs" />
     <Compile Include="BLL\User\UserModel.cs" />
@@ -200,61 +174,10 @@
     <Compile Include="DAL\Data\DS_BaiGiang.cs">
       <DependentUpon>QLTBContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAL\Data\DS_CapTruong.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Data\DS_ChucVuGiaoVien.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
-    </Compile>
     <Compile Include="DAL\Data\DS_DanToc.cs">
       <DependentUpon>QLTBContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAL\Data\DS_DauMucThietBi.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
-    </Compile>
     <Compile Include="DAL\Data\DS_DonViTinh.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Data\DS_GioiTinh.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Data\DS_HangTruong.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Data\DS_HinhThucDaoTao.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Data\DS_KhoiTruong.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Data\DS_LoaiDanhGiaMH.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Data\DS_LoaiHinhTruong.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Data\DS_LoaiHopDong.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Data\DS_LoaiMonHoc.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Data\DS_LoaiPhongTN.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Data\DS_LoaiThietBi.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Data\DS_LoaiTruongChuyenBiet.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Data\DS_LyLuanChinhTri.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Data\DS_MucDichSDPHong.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Data\DS_MucDichSDThietBi.cs">
       <DependentUpon>QLTBContext.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\DS_NguonNganSach.cs">
@@ -266,40 +189,10 @@
     <Compile Include="DAL\Data\DS_PhuongXa.cs">
       <DependentUpon>QLTBContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAL\Data\DS_PhuTrachCBTB.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
-    </Compile>
     <Compile Include="DAL\Data\DS_QuanHuyen.cs">
       <DependentUpon>QLTBContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAL\Data\DS_QuanLyGiaoDuc.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Data\DS_QuanLyNhaNuoc.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Data\DS_ThoiGianTrongNgay.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
-    </Compile>
     <Compile Include="DAL\Data\DS_TinhThanh.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Data\DS_TrangThaiPhieuMuon.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Data\DS_TrinhDoChuan.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Data\DS_TrinhDoChuyenMon.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Data\DS_ViTriGiaoVien.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Data\DS_VungMien.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Data\DS_XepLoaiPhongHocBM.cs">
       <DependentUpon>QLTBContext.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\HT_Permission.cs">
@@ -391,6 +284,12 @@
     <Compile Include="GUI\DanhMuc\PhongBoMon\frmTaoPhongBM.Designer.cs">
       <DependentUpon>frmTaoPhongBM.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\DanhMuc\ThietBiToiThieu\frmTaoThietBiTT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DanhMuc\ThietBiToiThieu\frmTaoThietBiTT.Designer.cs">
+      <DependentUpon>frmTaoThietBiTT.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\DialogBox\frmDialogDSThietBi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -421,10 +320,10 @@
     <Compile Include="GUI\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\frmDanhSachNamHoc.cs">
+    <Compile Include="GUI\ThongTinHeThong\frmDanhSachNamHoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\frmDanhSachNamHoc.Designer.cs">
+    <Compile Include="GUI\ThongTinHeThong\frmDanhSachNamHoc.Designer.cs">
       <DependentUpon>frmDanhSachNamHoc.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmLogin.cs">
@@ -439,10 +338,16 @@
     <Compile Include="GUI\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\frmThongTinDonVi.cs">
+    <Compile Include="GUI\ThongTinHeThong\frmTaoNamHoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\frmThongTinDonVi.Designer.cs">
+    <Compile Include="GUI\ThongTinHeThong\frmTaoNamHoc.Designer.cs">
+      <DependentUpon>frmTaoNamHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThongTinHeThong\frmThongTinDonVi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThongTinHeThong\frmThongTinDonVi.Designer.cs">
       <DependentUpon>frmThongTinDonVi.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\LoadingScreen.cs">
@@ -589,6 +494,24 @@
     <Compile Include="GUI\ThietBi\NhapKhau\frmNhapKhauTB.Designer.cs">
       <DependentUpon>frmNhapKhauTB.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ThietBi\NhapKhau\UC_ChonTiepNguon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBi\NhapKhau\UC_ChonTiepNguon.Designer.cs">
+      <DependentUpon>UC_ChonTiepNguon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThietBi\NhapKhau\UC_GhepCotDuLieu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBi\NhapKhau\UC_GhepCotDuLieu.Designer.cs">
+      <DependentUpon>UC_GhepCotDuLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThietBi\NhapKhau\UC_KhoPhongBM.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBi\NhapKhau\UC_KhoPhongBM.Designer.cs">
+      <DependentUpon>UC_KhoPhongBM.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ThietBi\PhieuBaoHong\frmDSThietBiHongMat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -659,6 +582,9 @@
     <EmbeddedResource Include="GUI\DanhMuc\PhongBoMon\frmTaoPhongBM.resx">
       <DependentUpon>frmTaoPhongBM.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DanhMuc\ThietBiToiThieu\frmTaoThietBiTT.resx">
+      <DependentUpon>frmTaoThietBiTT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\DialogBox\frmDialogDSThietBi.resx">
       <DependentUpon>frmDialogDSThietBi.cs</DependentUpon>
     </EmbeddedResource>
@@ -674,7 +600,7 @@
     <EmbeddedResource Include="GUI\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\frmDanhSachNamHoc.resx">
+    <EmbeddedResource Include="GUI\ThongTinHeThong\frmDanhSachNamHoc.resx">
       <DependentUpon>frmDanhSachNamHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmLogin.resx">
@@ -683,7 +609,10 @@
     <EmbeddedResource Include="GUI\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\frmThongTinDonVi.resx">
+    <EmbeddedResource Include="GUI\ThongTinHeThong\frmTaoNamHoc.resx">
+      <DependentUpon>frmTaoNamHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThongTinHeThong\frmThongTinDonVi.resx">
       <DependentUpon>frmThongTinDonVi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\LoadingScreen.resx">
@@ -757,6 +686,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ThietBi\NhapKhau\frmNhapKhauTB.resx">
       <DependentUpon>frmNhapKhauTB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBi\NhapKhau\UC_ChonTiepNguon.resx">
+      <DependentUpon>UC_ChonTiepNguon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBi\NhapKhau\UC_GhepCotDuLieu.resx">
+      <DependentUpon>UC_GhepCotDuLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBi\NhapKhau\UC_KhoPhongBM.resx">
+      <DependentUpon>UC_KhoPhongBM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ThietBi\PhieuBaoHong\frmDSThietBiHongMat.resx">
       <DependentUpon>frmDSThietBiHongMat.cs</DependentUpon>
@@ -933,6 +871,7 @@
       <LastGenOutput>QLTBContext.cs</LastGenOutput>
     </Content>
     <Content Include="icon.ico" />
+    <None Include="Resources\browse1.png" />
     <None Include="Resources\forward.png" />
     <None Include="Resources\excel1997.png" />
     <None Include="Resources\Excel-icon.png" />
