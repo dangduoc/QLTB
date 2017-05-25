@@ -49,6 +49,7 @@ namespace QLTB.GUI
             else
             {
                 MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Close();
             }
             
         }

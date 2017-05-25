@@ -16,7 +16,7 @@ namespace QLTB.DAL
         {
            
             dataContext = new Entities();
-
+            dataContext.Database.Connection.ConnectionString = ConnectiongStringBuilder.getConnectionString();
             // Get randomize Id
             var random = new Random(DateTime.Now.Millisecond);
             Id = random.Next(1000000).ToString();
