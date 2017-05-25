@@ -308,12 +308,6 @@
     <Compile Include="GUI\DialogBox\frmDialogTBSuaChua.Designer.cs">
       <DependentUpon>frmDialogTBSuaChua.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\DialogBox\frmKhaiBaoNamHoc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\DialogBox\frmKhaiBaoNamHoc.Designer.cs">
-      <DependentUpon>frmKhaiBaoNamHoc.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -593,9 +587,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DialogBox\frmDialogTBSuaChua.resx">
       <DependentUpon>frmDialogTBSuaChua.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\DialogBox\frmKhaiBaoNamHoc.resx">
-      <DependentUpon>frmKhaiBaoNamHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

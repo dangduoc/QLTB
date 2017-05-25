@@ -2308,8 +2308,8 @@
           <Property Name="BatDauHK2" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="KetThucNamHoc" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="GhiChu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="TB_PhieuDeNghiMuaSam" Relationship="Data.FK_TB_PhieuDeNghiMuaSam_ThongTinNamHoc" FromRole="ThongTinNamHoc" ToRole="TB_PhieuDeNghiMuaSam" />
           <Property Name="IsActive" Type="Boolean" />
+          <NavigationProperty Name="TB_PhieuDeNghiMuaSam" Relationship="Data.FK_TB_PhieuDeNghiMuaSam_ThongTinNamHoc" FromRole="ThongTinNamHoc" ToRole="TB_PhieuDeNghiMuaSam" />
         </EntityType>
         <Association Name="FK_DM_GiaoVien_DM_MonHoc">
           <End Type="Data.DM_MonHoc" Role="DM_MonHoc" Multiplicity="0..1" />
