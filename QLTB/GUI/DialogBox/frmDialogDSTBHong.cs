@@ -13,13 +13,14 @@ using System.Windows.Forms;
 
 namespace QLTB.GUI
 {
-    public partial class frmDialogDSThietBi : DevComponents.DotNetBar.Office2007Form
+    public partial class frmDialogDSTBHong : Form
     {
         private DbThietBiHandler handler = new DbThietBiHandler();
-        private List<ThietBiMuonGridDisplayModel> list= new List<ThietBiMuonGridDisplayModel>();
-        public frmDialogDSThietBi()
+        public frmDialogDSTBHong()
         {
             InitializeComponent();
+            ADGVDanhSach.SortStringChanged += advancedDataGridView_SortStringChanged;
+            ADGVDanhSach.FilterStringChanged += advancedDataGridView_FilterStringChanged;
         }
         #region ADGB
         private BindingSource source = new BindingSource();
@@ -162,35 +163,29 @@ namespace QLTB.GUI
             var btn = sender as LinkLabel;
             int page = Convert.ToInt32(btn.Tag);
             ShowPage(page, Convert.ToInt32(pageSize.SelectedValue.ToString()));
-            //ShowPage(page, 4);
         }
         private void loadData(List<ThietBiGridDisplayModel> list)
         {
             List<string> headers = new List<string>();
-            headers.Add("Số hiệu");
             headers.Add("Mã thiết bị");
             headers.Add("Tên thiết bị");
+            headers.Add("Số hiệu");
+            headers.Add("Đơn vị tính");
+            headers.Add("Số lượng");
             headers.Add("Kho/Phòng bộ môn");
             headers.Add("Bộ môn");
-            headers.Add("Số lượng");
-            headers.Add("Đơn vị tính");
-            headers.Add("Mất");
-            headers.Add("Hỏng");
             DataTable tb = MyConvert.ToDataTable(list);
-            this.Text = "Danh sách thiết bị giáo dục";
-
+            this.Text = "Chọn thiết bị hỏng/mất";
             DataGridViewCheckBoxColumn col = new DataGridViewCheckBoxColumn();
             col.Name = "checkBtn";
             col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             col.HeaderCell = new DGVColumnHeaderCheckBox();
-            col.TrueValue = "T";
-            col.FalseValue = "F";
             source.DataSource = SetUpSearch(tb, headers);
             ADGVDanhSach.DataSource = source;
             SetHeaderForGrid(ADGVDanhSach, headers);
             ADGVDanhSach.Columns.Add(col);
 
-            ADGVDanhSach.Columns["checkBtn"].Width = 40;
+            ADGVDanhSach.Columns["checkBtn"].Width = 20;
             ADGVDanhSach.Columns["checkBtn"].HeaderText = "";
             ADGVDanhSach.Columns["checkBtn"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             ADGVDanhSach.Columns["checkBtn"].DefaultCellStyle.Padding = new Padding(5, 0, 0, 0);
@@ -201,26 +196,18 @@ namespace QLTB.GUI
             ADGVDanhSach.Columns["SoLuongMat"].Width = 50;
             //
         }
-        private void frmDialogDSThietBi_Load(object sender, EventArgs e)
+
+        private void frmDialogDSTBHong_Load(object sender, EventArgs e)
         {
             LoadForm();
         }
-        private void advancedDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if ((e.RowIndex > 0) && (e.ColumnIndex == ADGVDanhSach.Columns["checkBtn"].Index))
-            {
-            }
-        }
-        private void advancedDataGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {
-            // DataGridViewButtonCell cell = advancedDataGridView.Rows[e.RowIndex].Cells["btnCol"] as DataGridViewButtonCell;
 
-        }
         private void btnThem_Click(object sender, EventArgs e)
         {
+            var list = new List<ThietBiMuonGridDisplayModel>();
             foreach (DataGridViewRow item in ADGVDanhSach.Rows)
             {
-                if ((string)item.Cells["checkBtn"].Value=="T")
+                if (item.Cells[9].Value != null)
                 {
                     var tmp = new ThietBiMuonGridDisplayModel
                     {
@@ -229,7 +216,7 @@ namespace QLTB.GUI
                         SoHieu = item.Cells["SoHieu"].Value.ToString(),
                         PhongHoc = item.Cells["KhoPhong"].Value.ToString(),
                         DonViTinh = item.Cells["DonViTinh"].Value.ToString(),
-                        SoLuongMuon = "1"
+                        SoLuongMuon = item.Cells["SoLuongMat"].Value.ToString()
                     };
                     list.Add(tmp);
                 }
@@ -241,6 +228,7 @@ namespace QLTB.GUI
             }
             Close();
         }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();

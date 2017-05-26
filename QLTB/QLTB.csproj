@@ -290,6 +290,12 @@
     <Compile Include="GUI\DanhMuc\ThietBiToiThieu\frmTaoThietBiTT.Designer.cs">
       <DependentUpon>frmTaoThietBiTT.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\DialogBox\frmDialogDSTBHong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DialogBox\frmDialogDSTBHong.Designer.cs">
+      <DependentUpon>frmDialogDSTBHong.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\DialogBox\frmDialogDSThietBi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -571,6 +577,7 @@
     <Compile Include="Utils\ConnectiongStringBuilder.cs" />
     <Compile Include="Utils\DatagridViewCheckBoxHeaderCell.cs" />
     <Compile Include="Utils\GlobalVariable.cs" />
+    <Compile Include="Utils\Methods.cs" />
     <Compile Include="Utils\MyConvert.cs" />
     <Compile Include="Utils\Paging.cs" />
     <EmbeddedResource Include="GUI\DanhMuc\PhongBoMon\frmTaoPhongBM.resx">
@@ -578,6 +585,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DanhMuc\ThietBiToiThieu\frmTaoThietBiTT.resx">
       <DependentUpon>frmTaoThietBiTT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DialogBox\frmDialogDSTBHong.resx">
+      <DependentUpon>frmDialogDSTBHong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DialogBox\frmDialogDSThietBi.resx">
       <DependentUpon>frmDialogDSThietBi.cs</DependentUpon>

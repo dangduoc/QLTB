@@ -12,12 +12,13 @@ namespace QLTB.Handler
 {
     public class DbPhieuMuonTBHandler
     {
-        public List<PhieuMuonTBGridDisplayModel> GetAll()
+        public Paging<List<PhieuMuonTBGridDisplayModel>> GetAll(int page, int pageSize)
         {
             try
             {
                 using (var unitOfWork = new UnitOfWork())
                 {
+                    var TotalRecord = unitOfWork.GetRepository<TB_PhieuMuonTB>().GetAll().Where(p => p.TrangThaiId >= 0).Count();
                     var data = unitOfWork.GetRepository<TB_PhieuMuonTB>().GetAll()
                                   .Join(unitOfWork.GetRepository<DM_LopHoc>().GetAll(),
                                       tb => tb.LopHocId,
@@ -93,9 +94,21 @@ namespace QLTB.Handler
                                         LopHoc = tb.LopHoc,
                                         GiaoVien = tb.GiaoVien,
                                         TrangThai = tb.TrangThai
-                                    }).ToList();
+                                    })
+                                    .OrderBy(p => p.PhieuMuonTBId)
+                                .Skip(pageSize * (page - 1))
+                                .Take(pageSize)
+                                .ToList();
 
-                    return data;
+                    return new Paging<List<PhieuMuonTBGridDisplayModel>>
+                    {
+                        CurrentPage = page,
+                        Size = TotalRecord % pageSize == 0 ? TotalRecord / pageSize : TotalRecord / pageSize + 1,
+                        TotalRecord = TotalRecord,
+                        data = data,
+                        NextPage = (pageSize * page) < TotalRecord ? true : false,
+                        PreviousPage = page > 1 ? true : false
+                    };
 
                 }
             }
@@ -175,21 +188,21 @@ namespace QLTB.Handler
                     var data = new TB_PhieuMuonTB();
                     MyConvert.TransferValues(data, model);
                     data.IsDelete = false;
-                    data.TrangThaiId = 1;
+                    data.TrangThaiId = 0;
                     unitOfWork.GetRepository<TB_PhieuMuonTB>().Add(data);
                     if (unitOfWork.Save() >= 1)
                     {
-                        //saveing devices
+                        //saving devices
                         foreach (var item in model.ThietBis)
                         {
-                            var ThietBi = new DAL.Data.QH_PhieuMuonTB_ThietBi
+                            var ThietBi = new QH_PhieuMuonTB_ThietBi
                             {
                                 IsDaTra = false,
                                 SoHieuTB = item.SoHieu,
                                 SoLuong = Convert.ToInt32(item.SoLuongMuon),
                                 PhieuMuonTBId = model.PhieuMuonTBId
                             };
-                            unitOfWork.GetRepository<DAL.Data.QH_PhieuMuonTB_ThietBi>().Add(ThietBi);
+                            unitOfWork.GetRepository<QH_PhieuMuonTB_ThietBi>().Add(ThietBi);
                         }
                         if (unitOfWork.Save() >= 1)
                         {
@@ -206,7 +219,7 @@ namespace QLTB.Handler
 
             }
         }
-        public int Update(PhieuMuonThietBiModel model)
+        public int Update(PhieuMuonThietBiModel model, List<ThietBiMuonGridDisplayModel> ds)
         {
             try
             {
@@ -217,6 +230,17 @@ namespace QLTB.Handler
                     {
                         MyConvert.TransferValues(data, model);
                         unitOfWork.GetRepository<TB_PhieuMuonTB>().Update(data);
+                        unitOfWork.GetRepository<QH_PhieuMuonTB_ThietBi>().Delete(p => p.PhieuMuonTBId == model.PhieuMuonTBId);
+                        foreach (var item in ds)
+                        {
+                            unitOfWork.GetRepository<QH_PhieuMuonTB_ThietBi>().Add(new QH_PhieuMuonTB_ThietBi
+                            {
+                                SoHieuTB = item.SoHieu,
+                                PhieuMuonTBId = model.PhieuMuonTBId,
+                                SoLuong = Convert.ToInt32(item.SoLuongMuon),
+                                IsDaTra = false
+                            });
+                        }
                         if (unitOfWork.Save() >= 1)
                         {
                             return 1;
@@ -266,7 +290,7 @@ namespace QLTB.Handler
             {
                 using (var unitOfWork = new UnitOfWork())
                 {
-                    var data=unitOfWork.GetRepository<DAL.Data.QH_PhieuMuonTB_ThietBi>().GetAll().Where(p => p.SoHieuTB.Equals(SoHieu) && p.PhieuMuonTBId.Equals(PhieuMuonId)).FirstOrDefault();
+                    var data = unitOfWork.GetRepository<DAL.Data.QH_PhieuMuonTB_ThietBi>().GetAll().Where(p => p.SoHieuTB.Equals(SoHieu) && p.PhieuMuonTBId.Equals(PhieuMuonId)).FirstOrDefault();
                     if (data != null)
                     {
                         unitOfWork.GetRepository<DAL.Data.QH_PhieuMuonTB_ThietBi>().Delete(data);
@@ -289,8 +313,8 @@ namespace QLTB.Handler
             {
                 using (var unitOfWork = new UnitOfWork())
                 {
-                    var data=unitOfWork.GetRepository<TB_PhieuMuonTB>().GetById(PhieuMuonId);
-                    if(data!=null)
+                    var data = unitOfWork.GetRepository<TB_PhieuMuonTB>().GetById(PhieuMuonId);
+                    if (data != null)
                     {
                         data.IsDelete = true;
                         if (unitOfWork.Save() >= 1)

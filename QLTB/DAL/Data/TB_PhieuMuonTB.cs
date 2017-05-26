@@ -20,11 +20,12 @@ namespace QLTB.DAL.Data
         public int KhoiLopId { get; set; }
         public int LopHocId { get; set; }
         public System.DateTime NgayMuon { get; set; }
+        public int MuonTuTiet { get; set; }
         public int ThoiGianTrongNgay { get; set; }
         public System.DateTime NgayTra { get; set; }
         public int MucDichSuDungId { get; set; }
         public int SoTiet { get; set; }
-        public Nullable<int> BaiDayId { get; set; }
+        public int BaiDayId { get; set; }
         public bool IsNgoaiQuyDinh { get; set; }
         public int TrangThaiId { get; set; }
         public string GhiChu { get; set; }

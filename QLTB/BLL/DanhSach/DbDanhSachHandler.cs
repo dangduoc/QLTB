@@ -1,6 +1,7 @@
 ﻿using QLTB.DAL;
 using QLTB.DAL.Data;
 using QLTB.Model;
+using QLTB.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -174,7 +175,8 @@ namespace QLTB.Handler
             {
                 using (var unitOfWork = new UnitOfWork())
                 {
-                    var data = unitOfWork.GetRepository<DM_KhoiLop>().GetAll()
+                    var captuong = GlobalVariable.GetHeThong().DonVi.CapTruongId;
+                    var data = unitOfWork.GetRepository<DM_KhoiLop>().GetAll().Where(p=>p.CapTruongId== captuong)
                         .Select(p => new KhoiLopModel
                         {
                             KhoiLopId=p.KhoiLopId,
@@ -189,13 +191,13 @@ namespace QLTB.Handler
                 return null;
             }
         }
-        public List<LopHocModel> GetLopHoc()
+        public List<LopHocModel> GetLopHoc(int KhoiLopId)
         {
             try
             {
                 using (var unitOfWork = new UnitOfWork())
                 {
-                    var data = unitOfWork.GetRepository<DM_LopHoc>().GetAll()
+                    var data = unitOfWork.GetRepository<DM_LopHoc>().GetAll().Where(p=>p.KhoiLopId==KhoiLopId)
                         .Select(p => new LopHocModel
                         {
                             LopHocId = p.LopHocId,

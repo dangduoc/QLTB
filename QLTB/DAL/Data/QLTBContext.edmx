@@ -408,11 +408,12 @@
           <Property Name="KhoiLopId" Type="int" Nullable="false" />
           <Property Name="LopHocId" Type="int" Nullable="false" />
           <Property Name="NgayMuon" Type="date" Nullable="false" />
+          <Property Name="MuonTuTiet" Type="int" Nullable="false" />
           <Property Name="ThoiGianTrongNgay" Type="int" Nullable="false" />
           <Property Name="NgayTra" Type="date" Nullable="false" />
           <Property Name="MucDichSuDungId" Type="int" Nullable="false" />
           <Property Name="SoTiet" Type="int" Nullable="false" />
-          <Property Name="BaiDayId" Type="int" />
+          <Property Name="BaiDayId" Type="int" Nullable="false" />
           <Property Name="IsNgoaiQuyDinh" Type="bit" Nullable="false" />
           <Property Name="TrangThaiId" Type="int" Nullable="false" />
           <Property Name="GhiChu" Type="nvarchar" MaxLength="500" />
@@ -1004,7 +1005,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TB_PhieuMuonTB_DS_BaiGiang">
-          <End Role="DS_BaiGiang" Type="Self.DS_BaiGiang" Multiplicity="0..1" />
+          <End Role="DS_BaiGiang" Type="Self.DS_BaiGiang" Multiplicity="1" />
           <End Role="TB_PhieuMuonTB" Type="Self.TB_PhieuMuonTB" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DS_BaiGiang">
@@ -2185,11 +2186,12 @@
           <Property Name="KhoiLopId" Type="Int32" Nullable="false" />
           <Property Name="LopHocId" Type="Int32" Nullable="false" />
           <Property Name="NgayMuon" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="MuonTuTiet" Type="Int32" Nullable="false" />
           <Property Name="ThoiGianTrongNgay" Type="Int32" Nullable="false" />
           <Property Name="NgayTra" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="MucDichSuDungId" Type="Int32" Nullable="false" />
           <Property Name="SoTiet" Type="Int32" Nullable="false" />
-          <Property Name="BaiDayId" Type="Int32" />
+          <Property Name="BaiDayId" Type="Int32" Nullable="false" />
           <Property Name="IsNgoaiQuyDinh" Type="Boolean" Nullable="false" />
           <Property Name="TrangThaiId" Type="Int32" Nullable="false" />
           <Property Name="GhiChu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
@@ -2588,7 +2590,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TB_PhieuMuonTB_DS_BaiGiang">
-          <End Type="Data.DS_BaiGiang" Role="DS_BaiGiang" Multiplicity="0..1" />
+          <End Type="Data.DS_BaiGiang" Role="DS_BaiGiang" Multiplicity="1" />
           <End Type="Data.TB_PhieuMuonTB" Role="TB_PhieuMuonTB" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DS_BaiGiang">
@@ -3411,6 +3413,7 @@
                 <ScalarProperty Name="MucDichSuDungId" ColumnName="MucDichSuDungId" />
                 <ScalarProperty Name="NgayTra" ColumnName="NgayTra" />
                 <ScalarProperty Name="ThoiGianTrongNgay" ColumnName="ThoiGianTrongNgay" />
+                <ScalarProperty Name="MuonTuTiet" ColumnName="MuonTuTiet" />
                 <ScalarProperty Name="NgayMuon" ColumnName="NgayMuon" />
                 <ScalarProperty Name="LopHocId" ColumnName="LopHocId" />
                 <ScalarProperty Name="KhoiLopId" ColumnName="KhoiLopId" />

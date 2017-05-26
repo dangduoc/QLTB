@@ -15,7 +15,7 @@ namespace QLTB.GUI
 {
     public partial class frmDanhSachMuonTB : DevComponents.DotNetBar.Office2007Form
     {
-       
+        private DbPhieuMuonTBHandler handler = new DbPhieuMuonTBHandler();
         public frmDanhSachMuonTB()
         {
             InitializeComponent();
@@ -155,41 +155,31 @@ namespace QLTB.GUI
             }
         }
         #endregion
-        private void LoadForm()
+        private void ShowPage(int page, int pageSize)
         {
-            //Clone
-            //List<PhieuMuonTBGridDisplayModel> list = new DbPhieuMuonTBHandler().GetAll();
-            List<PhieuMuonTBGridDisplayModel> list = new List<PhieuMuonTBGridDisplayModel>();
-            list.Add(new PhieuMuonTBGridDisplayModel
+            var data = handler.GetAll(page, pageSize);
+            List<PhieuMuonTBGridDisplayModel> list = data.data;
+            if (list.Count > 0)
             {
-                PhieuMuonTBId="PMTB00001",
-                BaiDay="Công nghệ tiết 1",
-                GiaoVien="Đặng Minh Được",
-                LopHoc="Lớp 7A1",
-                NgayMuon="21/11/2015",
-                NgayTra="22/11/2015",
-                TrangThai="Đang sử dụng"
-            });
-            list.Add(new PhieuMuonTBGridDisplayModel
-            {
-                PhieuMuonTBId = "PMTB00002",
-                BaiDay = "Công nghệ tiết 2",
-                GiaoVien = "Đặng Minh Được",
-                LopHoc = "Lớp 7A1",
-                NgayMuon = "21/11/2015",
-                NgayTra = "22/11/2015",
-                TrangThai = "Đang sử dụng"
-            });
-            list.Add(new PhieuMuonTBGridDisplayModel
-            {
-                PhieuMuonTBId = "PMTB00003",
-                BaiDay = "Công nghệ tiết 3",
-                GiaoVien = "Đặng Minh Được",
-                LopHoc = "Lớp 7A1",
-                NgayMuon = "21/11/2015",
-                NgayTra = "22/11/2015",
-                TrangThai = "Đang sử dụng"
-            });
+                loadData(list);
+                prevBtn.Enabled = data.PreviousPage;
+                prevBtn.Tag = page - 1;
+                nextBtn.Enabled = data.NextPage;
+                nextBtn.Tag = page + 1;
+                currentPage.Text = data.CurrentPage.ToString();
+                lbPaging.Text = "Trang " + currentPage.Text + "/" + data.Size;
+                lbTotalRecord.Text = "- Tổng số bản ghi: " + data.TotalRecord;
+            }
+        }
+        private void pageBtnClick(object sender, EventArgs e)
+        {
+            var btn = sender as LinkLabel;
+            int page = Convert.ToInt32(btn.Tag);
+            ShowPage(page, Convert.ToInt32(pageSize.SelectedValue.ToString()));
+            //ShowPage(page, 4);
+        }
+        private void loadData(List<PhieuMuonTBGridDisplayModel> list)
+        {
             List<string> headers = new List<string>();
             headers.Add("Số phiếu");
             headers.Add("Ngày mượn");
@@ -199,8 +189,8 @@ namespace QLTB.GUI
             headers.Add("Giáo viên");
             headers.Add("Trạng thái");
             //
-            
-        
+
+
 
 
             //
@@ -216,13 +206,32 @@ namespace QLTB.GUI
             //
             btnThem.Click += btnThem_Click;
             btnSua.Click += BtnSua_Click;
+            //
+        }
+        private void LoadForm()
+        {
+
+            ShowPage(1, 50);
+            //
+            List<ThietBiMuonGridDisplayModel> listTB = new List<ThietBiMuonGridDisplayModel>();
+            List<string> headers = new List<string>();
+            headers.Add("Mã thiết bị");
+            headers.Add("Tên thiết bị");
+            headers.Add("Số hiệu");
+            headers.Add("Phòng bộ môn");
+            headers.Add("Số lượng");
+            headers.Add("Đơn vị tính");
+            BindingSource source = new BindingSource();
+            source.DataSource = MyConvert.ToDataTable<ThietBiMuonGridDisplayModel>(listTB);
+            ADGVDSTB.DataSource = source;
+            SetHeaderForGrid(ADGVDSTB, headers);
         }
 
         private void BtnSua_Click(object sender, EventArgs e)
         {
             Cursor = Cursors.WaitCursor;
             var row = ADGVDanhSach.SelectedRows[0];
-            var id=row.Cells["PhieuMuonTBId"].ToString();
+            var id = row.Cells["PhieuMuonTBId"].Value.ToString();
             frmThietBiMuon frm = new frmThietBiMuon(id);
             frm.MdiParent = MdiParent;
             frm.Show();
@@ -272,7 +281,7 @@ namespace QLTB.GUI
         private void btnThem_Click(object sender, EventArgs e)
         {
             Cursor = Cursors.WaitCursor;
-             frmThietBiMuon frm = new frmThietBiMuon();
+            frmThietBiMuon frm = new frmThietBiMuon();
             frm.MdiParent = MdiParent;
             frm.Show();
             Cursor = Cursors.Default;
@@ -280,37 +289,19 @@ namespace QLTB.GUI
 
         private void ADGVDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            List<ThietBiMuonGridDisplayModel> listTB = new List<ThietBiMuonGridDisplayModel>();
-            listTB.Add(new ThietBiMuonGridDisplayModel
+            if (e.RowIndex >= 0)
             {
-                ThietBiId = "CSCN00001",
-                SoHieu = "CSCN00001.01",
-                SoLuongMuon = "2",
-                DonViTinh = "Cái",
-                Ten = "Đồ dùng môn công nghệ",
-                PhongHoc = "Phòng thực hành công nghệ"
-            });
-            listTB.Add(new ThietBiMuonGridDisplayModel
-            {
-                ThietBiId = "CSCN00002",
-                SoHieu = "CSCN00002.01",
-                SoLuongMuon = "1",
-                DonViTinh = "Cái",
-                Ten = "Đồ dùng môn công nghệ 2",
-                PhongHoc = "Phòng thực hành công nghệ"
-            });
-            List<string> headers = new List<string>();
-            headers.Add("Mã thiết bị");
-            headers.Add("Tên thiết bị");
-            headers.Add("Số hiệu");
-            headers.Add("Phòng bộ môn");
-            headers.Add("Số lượng");
-            headers.Add("Đơn vị tính");
-            
-            BindingSource source = new BindingSource();
-            source.DataSource= MyConvert.ToDataTable<ThietBiMuonGridDisplayModel>(listTB);
-            ADGVDSTB.DataSource = source;
-            SetHeaderForGrid(ADGVDSTB, headers);
+                var id = ADGVDanhSach.Rows[e.RowIndex].Cells[0].Value.ToString();
+
+                var lst = handler.GetById(id).ThietBis;
+                if (lst != null)
+                {
+                    BindingSource source = new BindingSource();
+                    source.DataSource = MyConvert.ToDataTable<ThietBiMuonGridDisplayModel>(lst);
+                    ADGVDSTB.DataSource = source;
+                }
+
+            }
         }
 
         private void btnThem_Click_1(object sender, EventArgs e)
