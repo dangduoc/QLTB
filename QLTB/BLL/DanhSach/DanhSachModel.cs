@@ -228,12 +228,12 @@ namespace QLTB.Model
             #region Trạng thái phiếu mượn
             trangthaiphieumuon.Add(new TrangThaiPhieuMuon
             {
-                Id = 1,
+                Id = 0,
                 Ten = "Chưa mượn"
             });
             trangthaiphieumuon.Add(new TrangThaiPhieuMuon
             {
-                Id = 2,
+                Id = 1,
                 Ten = "Đang sử dụng"
             });
             #endregion

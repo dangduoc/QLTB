@@ -67,8 +67,8 @@ namespace QLTB.GUI
 
         private void btnLayTB_Click(object sender, EventArgs e)
         {
-            frmDialogDSThietBi frm = new frmDialogDSThietBi(1);
-            frm.ShowDialog(this);
+            //frmDialogDSThietBi frm = new frmDialogDSThietBi();
+            //frm.ShowDialog(this);
         }
 
         private void btnBaoHong_Click(object sender, EventArgs e)

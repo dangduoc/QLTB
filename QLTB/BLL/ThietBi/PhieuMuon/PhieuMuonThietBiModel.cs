@@ -14,20 +14,21 @@ namespace QLTB.Model
         public int KhoiLopId { get; set; }
         public int LopHocId { get; set; }
         public System.DateTime NgayMuon { get; set; }
+        public int MuonTuTiet { get; set; }
         public int ThoiGianTrongNgay { get; set; }
         public System.DateTime NgayTra { get; set; }
         public int MucDichSuDungId { get; set; }
         public int SoTiet { get; set; }
-        public Nullable<int> BaiDayId { get; set; }
+        public int BaiDayId { get; set; }
         public bool IsNgoaiQuyDinh { get; set; }
         public int TrangThaiId { get; set; }
         public string GhiChu { get; set; }
         public bool IsDelete { get; set; }
-        public List<ThietBiMuonGridDisplayModel> ThietBis { get; set; }
-        public string CreatedByUserId { get; set; }
+        public Nullable<int> CreatedByUserId { get; set; }
         public Nullable<System.DateTime> CreatedOnDate { get; set; }
-        public string UpdatedByUserId { get; set; }
+        public Nullable<int> UpdatedByUserId { get; set; }
         public Nullable<System.DateTime> UpdatedOnDate { get; set; }
+        public List<ThietBiMuonGridDisplayModel> ThietBis { get; set; }
     }
     public class PhieuMuonTBGridDisplayModel
     {
@@ -43,8 +44,13 @@ namespace QLTB.Model
     {
         public short SoLuongMuon { get; set; }
     }
-    public class ThietBiMuonGridDisplayModel:BaseThietBiGridDisplayModel
+    public class ThietBiMuonGridDisplayModel
     {
+        public string ThietBiId { get; set; }
+        public string SoHieu { get; set; }
+        public string Ten { get; set; }
+        public string PhongHoc { get; set; }
+        public string DonViTinh { get; set; }
         public string SoLuongMuon { get; set; }
     }
 }
