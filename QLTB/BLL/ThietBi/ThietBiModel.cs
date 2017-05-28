@@ -23,6 +23,7 @@ namespace QLTB.Model
         public System.DateTime NgayDuaVaoSD { get; set; }
         public int NamTheoDoi { get; set; }
         public int SoLuong { get; set; }
+        public int SoLuongMuon { get; set; }
         public int SoLuongCon { get; set; }
         public int SoLuongMat { get; set; }
         public int SoLuongHong { get; set; }

@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThietBiMuon));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.ADGVDSTB = new ADGV.AdvancedDataGridView();
             this.ribbonBar1 = new DevComponents.DotNetBar.RibbonBar();
             this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
             this.btnLayTB = new DevComponents.DotNetBar.ButtonItem();
@@ -42,7 +41,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.layoutControl1 = new DevComponents.DotNetBar.Layout.LayoutControl();
+            this.layoutTTC = new DevComponents.DotNetBar.Layout.LayoutControl();
             this.cboxNgoaiQuyDinh = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.txtGhiChu = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.CbbMucDichSD = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -81,17 +80,18 @@
             this.btnInDSTB = new DevComponents.DotNetBar.ButtonItem();
             this.btnHelpDSTB = new DevComponents.DotNetBar.ButtonItem();
             this.btnClose = new DevComponents.DotNetBar.ButtonItem();
-            this.Delete = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.ADGVDSTB = new System.Windows.Forms.DataGridView();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ADGVDSTB)).BeginInit();
             this.pnlTTPhieuMuon.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.layoutControl1.SuspendLayout();
+            this.layoutTTC.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dPickerNgayTra)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dPickerNgayMuon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ADGVDSTB)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -116,40 +116,6 @@
             this.panel2.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.panel2.Size = new System.Drawing.Size(884, 161);
             this.panel2.TabIndex = 20;
-            // 
-            // ADGVDSTB
-            // 
-            this.ADGVDSTB.AllowUserToAddRows = false;
-            this.ADGVDSTB.AllowUserToDeleteRows = false;
-            this.ADGVDSTB.AutoGenerateContextFilters = false;
-            this.ADGVDSTB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.ADGVDSTB.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.ADGVDSTB.BackgroundColor = System.Drawing.Color.White;
-            this.ADGVDSTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ADGVDSTB.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.ADGVDSTB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ADGVDSTB.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Delete});
-            this.ADGVDSTB.DateWithTime = false;
-            this.ADGVDSTB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ADGVDSTB.Location = new System.Drawing.Point(5, 65);
-            this.ADGVDSTB.Name = "ADGVDSTB";
-            this.ADGVDSTB.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ADGVDSTB.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.ADGVDSTB.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ADGVDSTB.Size = new System.Drawing.Size(879, 96);
-            this.ADGVDSTB.TabIndex = 28;
-            this.ADGVDSTB.TimeFilter = false;
-            this.ADGVDSTB.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridDSThietBiMuon_CellContentClick);
             // 
             // ribbonBar1
             // 
@@ -275,7 +241,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.layoutControl1);
+            this.groupBox1.Controls.Add(this.layoutTTC);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(11, 6);
             this.groupBox1.Name = "groupBox1";
@@ -285,32 +251,32 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chung";
             // 
-            // layoutControl1
+            // layoutTTC
             // 
-            this.layoutControl1.BackColor = System.Drawing.Color.White;
-            this.layoutControl1.Controls.Add(this.cboxNgoaiQuyDinh);
-            this.layoutControl1.Controls.Add(this.txtGhiChu);
-            this.layoutControl1.Controls.Add(this.CbbMucDichSD);
-            this.layoutControl1.Controls.Add(this.cbbTenBaiDay);
-            this.layoutControl1.Controls.Add(this.dPickerNgayTra);
-            this.layoutControl1.Controls.Add(this.txtSoTiet);
-            this.layoutControl1.Controls.Add(this.CbbMonHoc);
-            this.layoutControl1.Controls.Add(this.txtMuonTuTiet);
-            this.layoutControl1.Controls.Add(this.CbbBuoiTrongNgay);
-            this.layoutControl1.Controls.Add(this.CbbDayLop);
-            this.layoutControl1.Controls.Add(this.CbbGiaoVien);
-            this.layoutControl1.Controls.Add(this.dPickerNgayMuon);
-            this.layoutControl1.Controls.Add(this.CbbKhoiLop);
-            this.layoutControl1.Controls.Add(this.txtSoPhieu);
-            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.layoutControl1.ForeColor = System.Drawing.Color.Black;
-            this.layoutControl1.Location = new System.Drawing.Point(5, 19);
-            this.layoutControl1.Name = "layoutControl1";
+            this.layoutTTC.BackColor = System.Drawing.Color.White;
+            this.layoutTTC.Controls.Add(this.cboxNgoaiQuyDinh);
+            this.layoutTTC.Controls.Add(this.txtGhiChu);
+            this.layoutTTC.Controls.Add(this.CbbMucDichSD);
+            this.layoutTTC.Controls.Add(this.cbbTenBaiDay);
+            this.layoutTTC.Controls.Add(this.dPickerNgayTra);
+            this.layoutTTC.Controls.Add(this.txtSoTiet);
+            this.layoutTTC.Controls.Add(this.CbbMonHoc);
+            this.layoutTTC.Controls.Add(this.txtMuonTuTiet);
+            this.layoutTTC.Controls.Add(this.CbbBuoiTrongNgay);
+            this.layoutTTC.Controls.Add(this.CbbDayLop);
+            this.layoutTTC.Controls.Add(this.CbbGiaoVien);
+            this.layoutTTC.Controls.Add(this.dPickerNgayMuon);
+            this.layoutTTC.Controls.Add(this.CbbKhoiLop);
+            this.layoutTTC.Controls.Add(this.txtSoPhieu);
+            this.layoutTTC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutTTC.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutTTC.ForeColor = System.Drawing.Color.Black;
+            this.layoutTTC.Location = new System.Drawing.Point(5, 19);
+            this.layoutTTC.Name = "layoutTTC";
             // 
             // 
             // 
-            this.layoutControl1.RootGroup.Items.AddRange(new DevComponents.DotNetBar.Layout.LayoutItemBase[] {
+            this.layoutTTC.RootGroup.Items.AddRange(new DevComponents.DotNetBar.Layout.LayoutItemBase[] {
             this.layoutControlItem1,
             this.layoutControlItem2,
             this.layoutControlItem3,
@@ -325,8 +291,8 @@
             this.layoutSpacerItem1,
             this.layoutControlItem14,
             this.layoutControlItem13});
-            this.layoutControl1.Size = new System.Drawing.Size(831, 217);
-            this.layoutControl1.TabIndex = 4;
+            this.layoutTTC.Size = new System.Drawing.Size(831, 217);
+            this.layoutTTC.TabIndex = 4;
             // 
             // cboxNgoaiQuyDinh
             // 
@@ -874,17 +840,26 @@
             this.btnClose.Text = "Đóng";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // Delete
+            // ADGVDSTB
             // 
-            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Delete.FillWeight = 50F;
-            this.Delete.HeaderText = "";
-            this.Delete.MinimumWidth = 22;
-            this.Delete.Name = "Delete";
-            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.Delete.Text = "Xóa bỏ";
-            this.Delete.UseColumnTextForLinkValue = true;
-            this.Delete.Width = 50;
+            this.ADGVDSTB.AllowUserToAddRows = false;
+            this.ADGVDSTB.AllowUserToDeleteRows = false;
+            this.ADGVDSTB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.ADGVDSTB.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.ADGVDSTB.BackgroundColor = System.Drawing.Color.White;
+            this.ADGVDSTB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ADGVDSTB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ADGVDSTB.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.ADGVDSTB.Location = new System.Drawing.Point(5, 65);
+            this.ADGVDSTB.Name = "ADGVDSTB";
+            this.ADGVDSTB.Size = new System.Drawing.Size(879, 96);
+            this.ADGVDSTB.TabIndex = 14;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "b_drop.png");
             // 
             // frmThietBiMuon
             // 
@@ -900,14 +875,14 @@
             this.Load += new System.EventHandler(this.frmThietBiMuon_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ADGVDSTB)).EndInit();
             this.pnlTTPhieuMuon.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            this.layoutControl1.ResumeLayout(false);
+            this.layoutTTC.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dPickerNgayTra)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dPickerNgayMuon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ADGVDSTB)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -924,7 +899,7 @@
         private System.Windows.Forms.Panel pnlTTPhieuMuon;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private DevComponents.DotNetBar.Layout.LayoutControl layoutControl1;
+        private DevComponents.DotNetBar.Layout.LayoutControl layoutTTC;
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.RibbonBar ribBarDSThietBi;
         private DevComponents.DotNetBar.ButtonItem btnLuu;
@@ -964,7 +939,7 @@
         private DevComponents.DotNetBar.Layout.LayoutSpacerItem layoutSpacerItem1;
         private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem14;
         private System.Windows.Forms.GroupBox groupBox1;
-        private ADGV.AdvancedDataGridView ADGVDSTB;
-        private System.Windows.Forms.DataGridViewLinkColumn Delete;
+        private System.Windows.Forms.DataGridView ADGVDSTB;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }

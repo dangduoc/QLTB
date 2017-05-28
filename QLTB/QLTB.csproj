@@ -126,6 +126,7 @@
     <Compile Include="BLL\PhongHocBM\MuonTra\DbPhieuMuonPhongHandler.cs" />
     <Compile Include="BLL\ThietBi\MuaSam\PhieuMuaSamTBModel.cs" />
     <Compile Include="BLL\ThietBi\PhieuMuon\DbPhieuMuonTBHandler.cs" />
+    <Compile Include="BLL\ThietBi\TheoDoi\HongMat\DbPhieuBaoHongHandler.cs" />
     <Compile Include="BLL\ThietBi\TheoDoi\HongMat\PhieuBaoHongModel.cs" />
     <Compile Include="BLL\ThietBi\TheoDoi\Giam\PhieuGiamTBModel.cs" />
     <Compile Include="BLL\PhongHocBM\MuonTra\PhieuMuonPhongModel.cs" />
@@ -320,6 +321,7 @@
     <Compile Include="GUI\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Interface\IFrmPhieu.cs" />
     <Compile Include="GUI\ThongTinHeThong\frmDanhSachNamHoc.cs">
       <SubType>Form</SubType>
     </Compile>

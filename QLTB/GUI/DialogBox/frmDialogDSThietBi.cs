@@ -16,7 +16,7 @@ namespace QLTB.GUI
     public partial class frmDialogDSThietBi : DevComponents.DotNetBar.Office2007Form
     {
         private DbThietBiHandler handler = new DbThietBiHandler();
-        private List<ThietBiMuonGridDisplayModel> list= new List<ThietBiMuonGridDisplayModel>();
+       
         public frmDialogDSThietBi()
         {
             InitializeComponent();
@@ -218,27 +218,29 @@ namespace QLTB.GUI
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow item in ADGVDanhSach.Rows)
-            {
-                if ((string)item.Cells["checkBtn"].Value=="T")
+
+                var list = new List<BaseThietBiGridDisplayModel>();
+                foreach (DataGridViewRow item in ADGVDanhSach.Rows)
                 {
-                    var tmp = new ThietBiMuonGridDisplayModel
+                    if ((string)item.Cells["checkBtn"].Value == "T")
                     {
-                        ThietBiId = item.Cells["ThietBiId"].Value.ToString(),
-                        Ten = item.Cells["Ten"].Value.ToString(),
-                        SoHieu = item.Cells["SoHieu"].Value.ToString(),
-                        PhongHoc = item.Cells["KhoPhong"].Value.ToString(),
-                        DonViTinh = item.Cells["DonViTinh"].Value.ToString(),
-                        SoLuongMuon = "1"
-                    };
-                    list.Add(tmp);
+                        var tmp = new BaseThietBiGridDisplayModel
+                        {
+                            ThietBiId = item.Cells["ThietBiId"].Value.ToString(),
+                            Ten = item.Cells["Ten"].Value.ToString(),
+                            SoHieu = item.Cells["SoHieu"].Value.ToString(),
+                            PhongHoc = item.Cells["KhoPhong"].Value.ToString(),
+                            DonViTinh = item.Cells["DonViTinh"].Value.ToString()
+                        };
+                        list.Add(tmp);
+                    }
                 }
-            }
-            if (list.Count > 0)
-            {
-                var owner = this.Owner.ActiveControl as frmThietBiMuon;
-                owner.AddToGrid(list);
-            }
+                if (list.Count > 0)
+                {
+                    var owner = this.Owner.ActiveControl as IFrmPhieu;
+                    owner.AddToGrid(list);
+                }
+            
             Close();
         }
         private void btnClose_Click(object sender, EventArgs e)

@@ -17,12 +17,12 @@ namespace QLTB.DAL.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TB_ThongTinThietBi()
         {
-            this.QH_PhieuBaoHong_ThietBi = new HashSet<QH_PhieuBaoHong_ThietBi>();
             this.QH_PhieuGhiTang_ThietBi = new HashSet<QH_PhieuGhiTang_ThietBi>();
             this.QH_PhieuGiamTB_ThietBi = new HashSet<QH_PhieuGiamTB_ThietBi>();
             this.QH_PhieuMuonPhong_ThietBi = new HashSet<QH_PhieuMuonPhong_ThietBi>();
             this.QH_PhieuMuonTB_ThietBi = new HashSet<QH_PhieuMuonTB_ThietBi>();
             this.QH_PhieuThanhLyTB_ThietBi = new HashSet<QH_PhieuThanhLyTB_ThietBi>();
+            this.QH_PhieuBaoHong_ThietBi = new HashSet<QH_PhieuBaoHong_ThietBi>();
         }
     
         public string SoHieu { get; set; }
@@ -53,6 +53,7 @@ namespace QLTB.DAL.Data
         public Nullable<System.DateTime> CreatedOnDate { get; set; }
         public Nullable<int> UpdatedByUserId { get; set; }
         public Nullable<System.DateTime> UpdatedOnDate { get; set; }
+        public int SoLuongMuon { get; set; }
     
         public virtual DM_MonHoc DM_MonHoc { get; set; }
         public virtual DM_NguonKinhPhi DM_NguonKinhPhi { get; set; }
@@ -61,8 +62,6 @@ namespace QLTB.DAL.Data
         public virtual DS_DonViTinh DS_DonViTinh { get; set; }
         public virtual HT_User HT_User { get; set; }
         public virtual HT_User HT_User1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<QH_PhieuBaoHong_ThietBi> QH_PhieuBaoHong_ThietBi { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<QH_PhieuGhiTang_ThietBi> QH_PhieuGhiTang_ThietBi { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -73,5 +72,7 @@ namespace QLTB.DAL.Data
         public virtual ICollection<QH_PhieuMuonTB_ThietBi> QH_PhieuMuonTB_ThietBi { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<QH_PhieuThanhLyTB_ThietBi> QH_PhieuThanhLyTB_ThietBi { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<QH_PhieuBaoHong_ThietBi> QH_PhieuBaoHong_ThietBi { get; set; }
     }
 }

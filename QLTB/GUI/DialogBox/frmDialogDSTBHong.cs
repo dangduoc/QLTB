@@ -204,19 +204,18 @@ namespace QLTB.GUI
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            var list = new List<ThietBiMuonGridDisplayModel>();
+            var list = new List<BaseThietBiGridDisplayModel>();
             foreach (DataGridViewRow item in ADGVDanhSach.Rows)
             {
                 if (item.Cells[9].Value != null)
                 {
-                    var tmp = new ThietBiMuonGridDisplayModel
+                    var tmp = new BaseThietBiGridDisplayModel
                     {
                         ThietBiId = item.Cells["ThietBiId"].Value.ToString(),
                         Ten = item.Cells["Ten"].Value.ToString(),
                         SoHieu = item.Cells["SoHieu"].Value.ToString(),
                         PhongHoc = item.Cells["KhoPhong"].Value.ToString(),
-                        DonViTinh = item.Cells["DonViTinh"].Value.ToString(),
-                        SoLuongMuon = item.Cells["SoLuongMat"].Value.ToString()
+                        DonViTinh = item.Cells["DonViTinh"].Value.ToString(), 
                     };
                     list.Add(tmp);
                 }
