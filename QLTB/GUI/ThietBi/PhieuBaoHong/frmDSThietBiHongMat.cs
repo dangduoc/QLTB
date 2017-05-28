@@ -9,15 +9,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QLTB.Model;
 using QLTB.Utils;
+using QLTB.Handler;
 
 namespace QLTB.GUI
 {
     public partial class frmDSThietBiHongMat : DevComponents.DotNetBar.Office2007Form
     {
-        
+        private DbPhieuBaoHongHandler handler = new DbPhieuBaoHongHandler();
         public frmDSThietBiHongMat()
         {
             InitializeComponent();
+            nextBtn.Click += pageBtnClick;
+            prevBtn.Click+=pageBtnClick;
         }
         #region ADGV Setup
         private BindingSource source = new BindingSource();
@@ -34,6 +37,7 @@ namespace QLTB.GUI
         }
         private void SetUpSearch(ADGV.SearchToolBar toolBar, DataTable tb, List<string> headers, ADGV.AdvancedDataGridView grid)
         {
+
             DataTable Table = tb;
             ToolStripTextBox textSearch = toolBar.Items[3] as ToolStripTextBox;
             ToolStripButton searchCaseSensitive = toolBar.Items[6] as ToolStripButton;
@@ -43,9 +47,9 @@ namespace QLTB.GUI
             ToolStripLabel label = toolBar.Items[1] as ToolStripLabel;
             label.Text = "Tìm kiếm";
             label.ForeColor = Color.Black;
-            columns.DropDownStyle = ComboBoxStyle.DropDown;
-            columns.FlatStyle = FlatStyle.Flat;
-            //
+            columns.ComboBox.DropDownStyle = ComboBoxStyle.DropDown;
+            columns.ComboBox.FlatStyle = FlatStyle.Standard;
+            columns.ComboBox.DrawMode = DrawMode.Normal;
             //
             searchBegin.Checked = false;
             //
@@ -168,46 +172,61 @@ namespace QLTB.GUI
         }
         private void ADGVDanhSach_MouseClick(object sender, MouseEventArgs e)
         {
-            if (ADGVDanhSach.SelectedRows[0] != null)
+            var row = ADGVDanhSach.SelectedRows[0];
+
+            if (row != null)
             {
-                if (e.Button == MouseButtons.Right)
-                {
                     contextMenuStrip.Show(ADGVDanhSach, e.Location);
-                }
             }
         }
         #endregion
         private void loadForm()
         {
-            List<PhieuBaoHongGridDisplayModel> list = new List<PhieuBaoHongGridDisplayModel>();
-            list.Add(new PhieuBaoHongGridDisplayModel
+            ShowPage(1, 50);
+            //
+            List<ThietBiHongGridDisplayModel> listTB = new List<ThietBiHongGridDisplayModel>();
+            List<string> headers = new List<string>();
+            headers.Add("Mã thiết bị");
+            headers.Add("Tên thiết bị");
+            headers.Add("Số hiệu");
+            headers.Add("Phòng bộ môn");
+            headers.Add("Đơn vị tính");
+            headers.Add("Số lượng");
+            headers.Add("Tình trạng");
+            headers.Add("Lý do hỏng/ mất");
+            headers.Add("Tình trạng hỏng hóc");
+
+            BindingSource source = new BindingSource();
+            source.DataSource = MyConvert.ToDataTable<ThietBiHongGridDisplayModel>(listTB);
+            ADGVDSTB.DataSource = source;
+            SetHeaderForGrid(ADGVDSTB, headers);
+        }
+
+        private void ShowPage(int page, int pageSize)
+        {
+            var data = handler.GetAll(page, pageSize);
+            List<PhieuBaoHongGridDisplayModel> list = data.data;
+            if (list.Count > 0)
             {
-                PhieuBaoHongId="PBHTB00001",
-                NguoiLamHong="Đặng Minh Được",
-                NgayLap="21/11/2010",
-                GhiChu="Hỏng rất nặng"
-            });
-            list.Add(new PhieuBaoHongGridDisplayModel
-            {
-                PhieuBaoHongId = "PBHTB00002",
-                NguoiLamHong = "Đặng Ngọc Bích",
-                NgayLap = "21/11/2010",
-                GhiChu = ""
-            });
-            list.Add(new PhieuBaoHongGridDisplayModel
-            {
-                PhieuBaoHongId = "PBHTB00003",
-                NguoiLamHong = "Nguyễn Văn Phú",
-                NgayLap = "21/11/2010",
-                GhiChu = "Hỏng rất nặng"
-            });
-            list.Add(new PhieuBaoHongGridDisplayModel
-            {
-                PhieuBaoHongId = "PBHTB00004",
-                NguoiLamHong = "Phạm Ngọc Phi",
-                NgayLap = "21/11/2010",
-                GhiChu = ""
-            });
+                loadData(list);
+                prevBtn.Enabled = data.PreviousPage;
+                prevBtn.Tag = page - 1;
+                nextBtn.Enabled = data.NextPage;
+                nextBtn.Tag = page + 1;
+                currentPage.Text = data.CurrentPage.ToString();
+                lbPaging.Text = "Trang " + currentPage.Text + "/" + data.Size;
+                lbTotalRecord.Text = "- Tổng số bản ghi: " + data.TotalRecord;
+            }
+        }
+        private void pageBtnClick(object sender, EventArgs e)
+        {
+            var btn = sender as LinkLabel;
+            int page = Convert.ToInt32(btn.Tag);
+            ShowPage(page, Convert.ToInt32(pageSize.SelectedValue.ToString()));
+            //ShowPage(page, 4);
+        }
+        private void loadData(List<PhieuBaoHongGridDisplayModel> list)
+        {
             List<string> headers = new List<string>();
             headers.Add("Số phiếu");
             headers.Add("Ngày lập");
@@ -217,16 +236,15 @@ namespace QLTB.GUI
             DataTable tb = MyConvert.ToDataTable(list);
             SetUpSearch(SearchDSTB, tb, headers, ADGVDanhSach);
             SetHeaderForGrid(ADGVDanhSach, headers);
-           
+
             ADGVDanhSach.FilterStringChanged += advancedDataGridView_FilterStringChanged;
             ADGVDanhSach.SortStringChanged += advancedDataGridView_SortStringChanged;
             ADGVDanhSach.CellContentDoubleClick += ADGVDanhSach_CellContentDoubleClick;
             ADGVDanhSach.KeyPress += ADGVDanhSach_KeyPress;
             ADGVDanhSach.MouseClick += ADGVDanhSach_MouseClick;
+            //
         }
 
-        
-       
 
         private void frmDSThietBiHongMat_Load(object sender, EventArgs e)
         {
@@ -242,6 +260,44 @@ namespace QLTB.GUI
         {
             Cursor = Cursors.WaitCursor;
             frmPhieuBaoHong frm = new frmPhieuBaoHong();
+            frm.MdiParent = MdiParent;
+            frm.Show();
+            Cursor = Cursors.Default;
+        }
+
+        private void ADGVDanhSach_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                var id = ADGVDanhSach.Rows[e.RowIndex].Cells[0].Value.ToString();
+
+                var lst = handler.GetById(id).ThietBis;
+                if (lst != null)
+                {
+                    BindingSource source = new BindingSource();
+                    source.DataSource = MyConvert.ToDataTable<ThietBiHongGridDisplayModel>(lst);
+                    ADGVDSTB.DataSource = source;
+                }
+
+            }
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+            var id = ADGVDanhSach.SelectedRows[0].Cells["PhieuBaoHongId"].Value.ToString();
+            frmPhieuBaoHong frm = new frmPhieuBaoHong(id);
+            frm.Text = "Phiếu báo hỏng";
+            frm.MdiParent = MdiParent;
+            frm.Show();
+            Cursor = Cursors.Default;
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+            frmPhieuBaoHong frm = new frmPhieuBaoHong();
+            frm.Text = "Phiếu báo hỏng";
             frm.MdiParent = MdiParent;
             frm.Show();
             Cursor = Cursors.Default;

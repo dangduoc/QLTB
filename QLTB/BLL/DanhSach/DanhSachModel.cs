@@ -33,6 +33,7 @@ namespace QLTB.Model
         private List<ChucVuGiaoVien> chucvugiaovien = new List<ChucVuGiaoVien>();
         private List<PhuTrachCanBoTB> phutrachcanbotb = new List<PhuTrachCanBoTB>();
         private List<DauMucThietBi> daumucthietbi = new List<DauMucThietBi>();
+        private List<TinhTrangPhieuBH> tinhtrangphieubh = new List<TinhTrangPhieuBH>();
         public DanhSachModel()
         {
             #region Trạng thái thiết bị
@@ -399,6 +400,18 @@ namespace QLTB.Model
                 Ten="Máy in"
             });
             #endregion
+            #region Tinh trạng thiết bị phiếu báo hỏng
+            tinhtrangphieubh.Add(new TinhTrangPhieuBH
+            {
+                Id=1,
+                Ten="Hỏng"
+            });
+            tinhtrangphieubh.Add(new TinhTrangPhieuBH
+            {
+                Id = 2,
+                Ten = "Mất"
+            });
+            #endregion
         }
         public IEnumerable<TrangThaiTB> TrangThaiThietBi {
             get {return trangthaitb; } set {trangthaitb=value.ToList().ToList(); }
@@ -522,6 +535,11 @@ namespace QLTB.Model
         {
             get { return daumucthietbi; }
             set { daumucthietbi = value.ToList(); }
+        }
+        public IEnumerable<TinhTrangPhieuBH> TinhTrangPhieuBH
+        {
+            get { return tinhtrangphieubh; }
+            set { tinhtrangphieubh = value.ToList(); }
         }
     }
     public class TrangThaiTB{
@@ -667,5 +685,9 @@ namespace QLTB.Model
         public int Id { get; set; }
         public string Ten { get; set; }
     }
-
+    public class TinhTrangPhieuBH
+    {
+        public int Id { get; set; }
+        public string Ten { get; set; }
+    }
 }

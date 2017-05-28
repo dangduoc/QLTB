@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace QLTB.GUI
 {
-    public partial class frmThietBiMuon : DevComponents.DotNetBar.Office2007Form
+    public partial class frmThietBiMuon : DevComponents.DotNetBar.Office2007Form,IFrmPhieu
     {
         private PhieuMuonThietBiModel Phieu;
         private List<ThietBiMuonGridDisplayModel> dsThietBi = new List<ThietBiMuonGridDisplayModel>();
@@ -32,8 +32,8 @@ namespace QLTB.GUI
         }
         private void loadForm()
         {
-            #region Loading
-            foreach (var item in layoutControl1.Controls.OfType<DevComponents.DotNetBar.Controls.ComboBoxEx>())
+            #region Loading data
+            foreach (var item in layoutTTC.Controls.OfType<DevComponents.DotNetBar.Controls.ComboBoxEx>())
             {
                 item.DisplayMember = "value";
                 item.ValueMember = "key";
@@ -85,44 +85,56 @@ namespace QLTB.GUI
 
             //load danh sach thiet bi muon
             ADGVDSTB.DataSource = source;
+            #endregion
+            #region Base Grid Display
 
-
-            ADGVDSTB.Columns[1].HeaderText = "Mã thiết bị";
-            ADGVDSTB.Columns[2].HeaderText = "Số hiệu";
-            ADGVDSTB.Columns[3].HeaderText = "Tên thiết bị";
-            ADGVDSTB.Columns[4].HeaderText = "Phòng bộ môn";
-            ADGVDSTB.Columns[5].HeaderText = "Đơn vị tính";
-            ADGVDSTB.Columns[6].HeaderText = "Số lượng mượn";
-            //
+            ADGVDSTB.Columns[0].HeaderText = "Mã thiết bị";
+            ADGVDSTB.Columns[1].HeaderText = "Số hiệu";
+            ADGVDSTB.Columns[2].HeaderText = "Tên thiết bị";
+            ADGVDSTB.Columns[3].HeaderText = "Phòng bộ môn";
+            ADGVDSTB.Columns[4].HeaderText = "Đơn vị tính";
+            ADGVDSTB.Columns[0].ReadOnly = true;
             ADGVDSTB.Columns[1].ReadOnly = true;
             ADGVDSTB.Columns[2].ReadOnly = true;
             ADGVDSTB.Columns[3].ReadOnly = true;
             ADGVDSTB.Columns[4].ReadOnly = true;
-            ADGVDSTB.Columns[5].ReadOnly = true;
-            ADGVDSTB.Columns[6].ReadOnly = false;
-            //
-            ADGVDSTB.Columns[1].DisplayIndex = 0;
-            ADGVDSTB.Columns[2].DisplayIndex = 1;
-            ADGVDSTB.Columns[3].DisplayIndex = 2;
-            ADGVDSTB.Columns[4].DisplayIndex = 3;
-            ADGVDSTB.Columns[5].DisplayIndex = 4;
-            ADGVDSTB.Columns[6].DisplayIndex = 5;
-            ADGVDSTB.Columns[0].DisplayIndex = 6;
+            #endregion
 
-            //
-            ADGVDSTB.Columns[1].Width = 70;
-            ADGVDSTB.Columns[2].Width = 100;
+            ADGVDSTB.Columns[5].HeaderText = "Số lượng mượn";
+            ADGVDSTB.Columns[5].ReadOnly = false;
+
             ADGVDSTB.Columns[0].Width = 70;
-            ADGVDSTB.Columns[6].Width = 100;
+            ADGVDSTB.Columns[1].Width = 100;
             ADGVDSTB.Columns[5].Width = 100;
+            ADGVDSTB.Columns[4].Width = 100;
 
+            //
+            /*Cột xóa button*/
+            DevComponents.DotNetBar.Controls.DataGridViewButtonXColumn col1 = new DevComponents.DotNetBar.Controls.DataGridViewButtonXColumn();
+            col1.Name = "Remove";
+            col1.Image = imageList1.Images[0];
+            col1.Text = "";
+            col1.ImagePosition = DevComponents.DotNetBar.eImagePosition.Left;
+            col1.FlatStyle = FlatStyle.Flat;
+            DevComponents.DotNetBar.ColorScheme color = new DevComponents.DotNetBar.ColorScheme();
+            color.ItemBackground = Color.White;
+            color.ItemBackground2 = Color.White;
+            color.PanelBorder = Color.White;
+            color.PanelBackground = Color.White;
+            color.PanelBackground2 = Color.White;
+            col1.Width = 30;
+            col1.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            col1.ColorScheme = color;
+            col1.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
+            col1.ToolTipText = "Xóa";
+            ADGVDSTB.Columns.Add(col1);
+            ADGVDSTB.Columns["Remove"].HeaderText = "";
             //
             ADGVDSTB.CellValueChanged -= ADGVDSTB_CellValueChanged;
             ADGVDSTB.CellValueChanged += ADGVDSTB_CellValueChanged;
             //
             cbbTenBaiDay.DataSource = dshandler.GetBaiGiang((int)CbbMonHoc.SelectedValue).Select(p => new { key = p.BaiGiangId, value = p.Ten }).ToList();
             DisableHighlightCBB();
-            #endregion
         }
 
         private void CbbMonHoc_SelectedValueChanged(object sender, EventArgs e)
@@ -193,7 +205,7 @@ namespace QLTB.GUI
         }
         private void DisableHighlightCBB()
         {
-            foreach (var item in layoutControl1.Controls.OfType<DevComponents.DotNetBar.Controls.ComboBoxEx>())
+            foreach (var item in layoutTTC.Controls.OfType<DevComponents.DotNetBar.Controls.ComboBoxEx>())
             {
                 BeginInvoke(new Action(() => { item.Select(0, 0); }));
             }
@@ -211,13 +223,25 @@ namespace QLTB.GUI
             saveData();
         }
 
-        public void AddToGrid(List<ThietBiMuonGridDisplayModel> list)
+        public void AddToGrid(List<BaseThietBiGridDisplayModel> list)
         {
 
             var listSoHieu = dsThietBi.Select(p => p.SoHieu).ToList();
             var repeatList = list.Where(p => listSoHieu.Contains(p.SoHieu)).ToList();
             list.RemoveAll(p => listSoHieu.Contains(p.SoHieu));
-            dsThietBi.AddRange(list);
+            //
+            foreach(var item in list)
+            {
+                dsThietBi.Add(new ThietBiMuonGridDisplayModel
+                {
+                    ThietBiId=item.ThietBiId,
+                    SoHieu=item.SoHieu,
+                    DonViTinh=item.DonViTinh,
+                    PhongHoc=item.PhongHoc,
+                    Ten=item.Ten,
+                    SoLuongMuon="1"
+                });
+            }
             //
 
             source = new BindingSource();
@@ -239,8 +263,8 @@ namespace QLTB.GUI
         {
             if (e.RowIndex >= 0)
             {
-                var id = ADGVDSTB.Rows[e.RowIndex].Cells[2].Value.ToString();
-                if (e.ColumnIndex == ADGVDSTB.Columns["Delete"].Index)
+                var id = ADGVDSTB.Rows[e.RowIndex].Cells["SoHieu"].Value.ToString();
+                if (e.ColumnIndex == ADGVDSTB.Columns["Remove"].Index)
                 {
                     DialogResult dr = MessageBox.Show("Xóa thiết bị có số hiệu: " + id + " khỏi danh sách", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                     if (dr == DialogResult.OK)

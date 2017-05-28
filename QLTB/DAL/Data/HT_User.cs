@@ -17,8 +17,6 @@ namespace QLTB.DAL.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public HT_User()
         {
-            this.TB_PhieuBaoHong = new HashSet<TB_PhieuBaoHong>();
-            this.TB_PhieuBaoHong1 = new HashSet<TB_PhieuBaoHong>();
             this.TB_PhieuDeNghiMuaSam = new HashSet<TB_PhieuDeNghiMuaSam>();
             this.TB_PhieuDeNghiMuaSam1 = new HashSet<TB_PhieuDeNghiMuaSam>();
             this.TB_PhieuGhiTang = new HashSet<TB_PhieuGhiTang>();
@@ -29,6 +27,8 @@ namespace QLTB.DAL.Data
             this.TB_PhieuThanhLyTB1 = new HashSet<TB_PhieuThanhLyTB>();
             this.TB_ThongTinThietBi = new HashSet<TB_ThongTinThietBi>();
             this.TB_ThongTinThietBi1 = new HashSet<TB_ThongTinThietBi>();
+            this.TB_PhieuBaoHong = new HashSet<TB_PhieuBaoHong>();
+            this.TB_PhieuBaoHong1 = new HashSet<TB_PhieuBaoHong>();
         }
     
         public int UserId { get; set; }
@@ -42,10 +42,6 @@ namespace QLTB.DAL.Data
         public string Name { get; set; }
     
         public virtual HT_UserRole HT_UserRole { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TB_PhieuBaoHong> TB_PhieuBaoHong { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TB_PhieuBaoHong> TB_PhieuBaoHong1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_PhieuDeNghiMuaSam> TB_PhieuDeNghiMuaSam { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -66,5 +62,9 @@ namespace QLTB.DAL.Data
         public virtual ICollection<TB_ThongTinThietBi> TB_ThongTinThietBi { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_ThongTinThietBi> TB_ThongTinThietBi1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TB_PhieuBaoHong> TB_PhieuBaoHong { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TB_PhieuBaoHong> TB_PhieuBaoHong1 { get; set; }
     }
 }

@@ -15,7 +15,7 @@ namespace QLTB.DAL.Data
     public partial class TB_PhieuBaoHong
     {
         public string PhieuBaoHongId { get; set; }
-        public Nullable<System.DateTime> NgayLap { get; set; }
+        public System.DateTime NgayLap { get; set; }
         public string NguoiLamHong { get; set; }
         public string GhiChu { get; set; }
         public bool IsDelete { get; set; }

@@ -19,7 +19,7 @@ namespace QLTB.Handler
             {
                 try
                 {
-                    var TotalRecord = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetAll().Where(p=>p.TrangThai>=0).Count();
+                    var TotalRecord = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetAll().Where(p => p.TrangThai >= 0).Count();
 
                     var data = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetAll().Where(p => p.TrangThai >= 0)
                                 .Join(unitOfWork.GetRepository<DM_PhongHocBoMon>().GetAll(),
@@ -59,7 +59,7 @@ namespace QLTB.Handler
                                  .Join(unitOfWork.GetRepository<DS_DonViTinh>().GetAll(),
                                     tb => tb.DonViTinhId,
                                     dvt => dvt.DonViTinhId,
-                                    (tb, dvt) => new 
+                                    (tb, dvt) => new
                                     {
                                         ThietBiId = tb.ThietBiId,
                                         SoHieu = tb.SoHieu,
@@ -339,5 +339,35 @@ namespace QLTB.Handler
                 return -1;
             }
         }
+        #region Mượn trả
+        public int UpdateLendCount(string SoHieu, int SoLuongMuon, int SoLuongMat, int SoLuongHong)
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    var data = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetById(SoHieu);
+                    if (data != null)
+                    {
+                        data.SoLuongMat = SoLuongMat;
+                        data.SoLuongMuon = SoLuongMuon;
+                        data.SoLuongHong = SoLuongHong;
+                        data.SoLuongCon = data.SoLuong - (SoLuongMat + SoLuongMuon + SoLuongHong);
+                        unitOfWork.GetRepository<TB_ThongTinThietBi>().Update(data);
+                        if (unitOfWork.Save() >= 1)
+                        {
+                            return 1;
+                        }
+                    }
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+        }
+        #endregion
+
     }
 }
