@@ -151,9 +151,9 @@
             this.panel1.Controls.Add(this.ADGVDSTB);
             this.panel1.Controls.Add(this.panelEx4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 395);
+            this.panel1.Location = new System.Drawing.Point(0, 321);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(904, 60);
+            this.panel1.Size = new System.Drawing.Size(904, 134);
             this.panel1.TabIndex = 30;
             // 
             // ADGVDSTB
@@ -192,7 +192,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.ADGVDSTB.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.ADGVDSTB.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ADGVDSTB.Size = new System.Drawing.Size(904, 28);
+            this.ADGVDSTB.Size = new System.Drawing.Size(904, 102);
             this.ADGVDSTB.TabIndex = 28;
             this.ADGVDSTB.TimeFilter = false;
             // 
@@ -246,7 +246,7 @@
             this.pnlContentDS.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlContentDS.Location = new System.Drawing.Point(0, 34);
             this.pnlContentDS.Name = "pnlContentDS";
-            this.pnlContentDS.Size = new System.Drawing.Size(904, 361);
+            this.pnlContentDS.Size = new System.Drawing.Size(904, 287);
             this.pnlContentDS.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.pnlContentDS.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.pnlContentDS.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
@@ -265,7 +265,7 @@
             this.panelEx1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEx1.Location = new System.Drawing.Point(0, 27);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(904, 334);
+            this.panelEx1.Size = new System.Drawing.Size(904, 260);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
@@ -283,7 +283,7 @@
             this.panelEx3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEx3.Location = new System.Drawing.Point(0, 0);
             this.panelEx3.Name = "panelEx3";
-            this.panelEx3.Size = new System.Drawing.Size(904, 302);
+            this.panelEx3.Size = new System.Drawing.Size(904, 225);
             this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
@@ -329,7 +329,7 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.ADGVDanhSach.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.ADGVDanhSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ADGVDanhSach.Size = new System.Drawing.Size(904, 302);
+            this.ADGVDanhSach.Size = new System.Drawing.Size(904, 225);
             this.ADGVDanhSach.TabIndex = 27;
             this.ADGVDanhSach.TimeFilter = false;
             this.ADGVDanhSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ADGVDanhSach_CellContentClick);
@@ -348,9 +348,9 @@
             this.panelEx2.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelEx2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelEx2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelEx2.Location = new System.Drawing.Point(0, 302);
+            this.panelEx2.Location = new System.Drawing.Point(0, 225);
             this.panelEx2.Name = "panelEx2";
-            this.panelEx2.Size = new System.Drawing.Size(904, 32);
+            this.panelEx2.Size = new System.Drawing.Size(904, 35);
             this.panelEx2.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
@@ -406,7 +406,7 @@
             this.lbTotalRecord.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbTotalRecord.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotalRecord.ForeColor = System.Drawing.Color.Black;
-            this.lbTotalRecord.Location = new System.Drawing.Point(787, 4);
+            this.lbTotalRecord.Location = new System.Drawing.Point(787, 7);
             this.lbTotalRecord.Name = "lbTotalRecord";
             this.lbTotalRecord.Size = new System.Drawing.Size(109, 23);
             this.lbTotalRecord.TabIndex = 4;
@@ -420,7 +420,7 @@
             // 
             this.lbPaging.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbPaging.ForeColor = System.Drawing.Color.Black;
-            this.lbPaging.Location = new System.Drawing.Point(736, 4);
+            this.lbPaging.Location = new System.Drawing.Point(736, 7);
             this.lbPaging.Name = "lbPaging";
             this.lbPaging.Size = new System.Drawing.Size(57, 23);
             this.lbPaging.TabIndex = 3;
@@ -611,6 +611,7 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.SubItemsExpandWidth = 14;
             this.btnClose.Text = "Đóng";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click_1);
             // 
             // frmDSThietBiHongMat
             // 

@@ -13,7 +13,7 @@ using QLTB.Utils;
 
 namespace QLTB.GUI
 {
-    public partial class frmPhieuBaoHong : DevComponents.DotNetBar.Office2007Form,IFrmPhieu
+    public partial class frmPhieuBaoHong : DevComponents.DotNetBar.Office2007Form, IFrmPhieu
     {
         private PhieuBaoHongModel Phieu;
         private List<ThietBiHongGridDisplayModel> dsThietBi = new List<ThietBiHongGridDisplayModel>();
@@ -31,7 +31,7 @@ namespace QLTB.GUI
         }
         private void loadForm()
         {
-         
+
             #region Loading data
             if (Phieu != null)
             {
@@ -66,7 +66,7 @@ namespace QLTB.GUI
             //    column.Name = item.Name;
             //    column.ValueType = typeof(string);
             //    column.Visible = true;
-               
+
             //    ADGVDSTB.Columns.Add(column);
             //}
             ADGVDSTB.Columns["ThietBiId"].HeaderText = "Mã thiết bị";
@@ -87,30 +87,33 @@ namespace QLTB.GUI
             #endregion
             /**/
             ADGVDSTB.Columns["SoLuongMuon"].HeaderText = "Số lượng hỏng/mất";
-           
+
             ADGVDSTB.Columns["SoLuongMuon"].ReadOnly = true;
             //
             ADGVDSTB.Columns["TinhTrang"].HeaderText = "Tình trạng";
             ADGVDSTB.Columns["TinhTrang"].Visible = false;
             ADGVDSTB.Columns["LyDo"].HeaderText = "Lý do hỏng/mất";
             ADGVDSTB.Columns["LyDo"].ReadOnly = false;
-            
+
             ADGVDSTB.Columns["TinhTrangHong"].HeaderText = "Tình trạng hỏng hóc";
             ADGVDSTB.Columns["TinhTrangHong"].ReadOnly = false;
-            
-            /*Cột tình trạng combobox*/
-            DevComponents.DotNetBar.Controls.DataGridViewComboBoxExColumn col = new DevComponents.DotNetBar.Controls.DataGridViewComboBoxExColumn();
 
-            col.DrawMode = DrawMode.Normal;
-            col.FlatStyle = FlatStyle.Standard;
-            col.DropDownStyle = ComboBoxStyle.DropDownList;
+            /*Cột tình trạng combobox*/
+            DataGridViewComboBoxColumn col = new DataGridViewComboBoxColumn();
+            //col.DrawMode = DrawMode.Normal;
+            //col.FlatStyle = FlatStyle.Flat;
+            col.DisplayStyle = DataGridViewComboBoxDisplayStyle.ComboBox;
+            //col.DropDownStyle = ComboBoxStyle.DropDownList;
             col.HeaderText = "Tinh trạng";
             col.Name = "Combo";
+            col.ValueType = typeof(int);
             col.DisplayMember = "Ten";
             col.ValueMember = "Id";
             col.DataSource = GlobalVariable.GetDS().TinhTrangPhieuBH;
+            col.DefaultCellStyle.NullValue = "Hỏng";
+           // col.Items.AddRange(GlobalVariable.GetDS().TinhTrangPhieuBH.Select(p => p.Ten).ToArray());
             ADGVDSTB.Columns.Add(col);
-            /*Cột xóa button*/ 
+            /*Cột xóa button*/
             DevComponents.DotNetBar.Controls.DataGridViewButtonXColumn col1 = new DevComponents.DotNetBar.Controls.DataGridViewButtonXColumn();
             col1.Name = "Remove";
             col1.Image = imageList1.Images[0];
@@ -128,7 +131,7 @@ namespace QLTB.GUI
             col1.ColorScheme = color;
             col1.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
             col1.ToolTipText = "Xóa";
-            
+
             /*Vị trí hiển thị cho cột xóa và tình trạng*/
             ADGVDSTB.Columns["SoLuongMuon"].DisplayIndex = 5;
             ADGVDSTB.Columns["Combo"].DisplayIndex = 6;
@@ -138,7 +141,8 @@ namespace QLTB.GUI
             ADGVDSTB.Columns.Add(col1);
             ADGVDSTB.Columns["Remove"].DisplayIndex = 10;
             ADGVDSTB.Columns["Remove"].HeaderText = "";
-          
+
+           
             /*Set lại event cellvaluechanged*/
             ADGVDSTB.CellValueChanged -= ADGVDSTB_CellValueChanged;
             ADGVDSTB.CellValueChanged += ADGVDSTB_CellValueChanged;
@@ -211,9 +215,9 @@ namespace QLTB.GUI
                     PhongHoc = item.PhongHoc,
                     Ten = item.Ten,
                     SoLuongMuon = "1",
-                    LyDo="",
-                    TinhTrang="1",
-                    TinhTrangHong="",
+                    LyDo = "",
+                    TinhTrang = "1",
+                    TinhTrangHong = "",
                 });
             }
             //
@@ -267,16 +271,36 @@ namespace QLTB.GUI
         }
         private void ADGVDSTB_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
+            var SoHieu = ADGVDSTB.Rows[e.RowIndex].Cells["SoHieu"].Value.ToString();
+            var selectedDevice = dsThietBi.Where(p => p.SoHieu.Equals(SoHieu)).FirstOrDefault();
+            if (ADGVDSTB.Columns["Combo"].Index == e.ColumnIndex)
+            {
+                var value = ADGVDSTB.Rows[e.RowIndex].Cells["Combo"] as DataGridViewComboBoxCell;
 
+                selectedDevice.TinhTrang = value.Value.ToString();
+            }
+            else if (ADGVDSTB.Columns["LyDo"].Index == e.ColumnIndex)
+            {
+                var value = ADGVDSTB.Rows[e.RowIndex].Cells["LyDo"].Value.ToString();
+                selectedDevice.LyDo = value;
+            }
+            else if (ADGVDSTB.Columns["TinhTrangHong"].Index == e.ColumnIndex)
+            {
+                var value = ADGVDSTB.Rows[e.RowIndex].Cells["TinhTrangHong"].Value.ToString();
+                selectedDevice.TinhTrangHong = value;
+            }
         }
         private void frmPhieuBaoHong_Load(object sender, EventArgs e)
         {
             loadForm();
-            foreach(DataGridViewRow item in ADGVDSTB.Rows)
+            
+            foreach (DataGridViewRow item in ADGVDSTB.Rows)
             {
-                DevComponents.DotNetBar.Controls.DataGridViewComboBoxExCell combo = item.Cells["Combo"] as DevComponents.DotNetBar.Controls.DataGridViewComboBoxExCell;
-                var value = Convert.ToInt32(item.Cells["TinhTrang"].Value.ToString());
-                combo.Value = value;
+               
+                if (item.Cells["TinhTrang"].Value != null)
+                {                   
+                    
+                }
             }
         }
         private void btnClose_Click(object sender, EventArgs e)
@@ -288,6 +312,11 @@ namespace QLTB.GUI
         {
             frmDialogDSThietBi frm = new frmDialogDSThietBi();
             frm.ShowDialog(this);
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            saveData();
         }
     }
 }
