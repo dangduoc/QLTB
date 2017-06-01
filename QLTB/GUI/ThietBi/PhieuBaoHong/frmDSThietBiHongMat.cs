@@ -20,7 +20,7 @@ namespace QLTB.GUI
         {
             InitializeComponent();
             nextBtn.Click += pageBtnClick;
-            prevBtn.Click+=pageBtnClick;
+            prevBtn.Click += pageBtnClick;
         }
         #region ADGV Setup
         private BindingSource source = new BindingSource();
@@ -149,11 +149,11 @@ namespace QLTB.GUI
         }
         private void ADGVDanhSach_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            var id = ADGVDanhSach.Rows[e.RowIndex].Cells["SoHieu"].Value.ToString();
-            frmKhaiBaoThietBi frm = new frmKhaiBaoThietBi(id);
-            frm.Text = "Chi thiết thông tin thiết bị";
-            frm.MdiParent = MdiParent;
-            frm.Show();
+            //var id = ADGVDanhSach.Rows[e.RowIndex].Cells["SoHieu"].Value.ToString();
+            //frmKhaiBaoThietBi frm = new frmKhaiBaoThietBi(id);
+            //frm.Text = "Chi thiết thông tin thiết bị";
+            //frm.MdiParent = MdiParent;
+            //frm.Show();
         }
         private void ADGVDanhSach_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -172,11 +172,14 @@ namespace QLTB.GUI
         }
         private void ADGVDanhSach_MouseClick(object sender, MouseEventArgs e)
         {
-            var row = ADGVDanhSach.SelectedRows[0];
-
-            if (row != null)
+            if (e.Button == MouseButtons.Right)
             {
+                var row = ADGVDanhSach.SelectedRows[0];
+
+                if (row != null)
+                {
                     contextMenuStrip.Show(ADGVDanhSach, e.Location);
+                }
             }
         }
         #endregion
@@ -301,6 +304,11 @@ namespace QLTB.GUI
             frm.MdiParent = MdiParent;
             frm.Show();
             Cursor = Cursors.Default;
+        }
+
+        private void btnClose_Click_1(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

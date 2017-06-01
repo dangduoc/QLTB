@@ -108,6 +108,7 @@
             this.ADGVDSTB.Name = "ADGVDSTB";
             this.ADGVDSTB.Size = new System.Drawing.Size(989, 119);
             this.ADGVDSTB.TabIndex = 13;
+            this.ADGVDSTB.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridDSThietBiMuon_CellContentClick);
             // 
             // ribbonBar1
             // 
@@ -458,6 +459,7 @@
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.SubItemsExpandWidth = 14;
             this.btnLuu.Text = "Lưu";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnXoa
             // 

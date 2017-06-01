@@ -489,6 +489,7 @@
             // 
             this.btnThem.BeginGroup = true;
             this.btnThem.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnThem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThem.Image = global::QLTB.Properties.Resources.add;
             this.btnThem.ImagePaddingHorizontal = 20;
             this.btnThem.ImagePaddingVertical = 10;
@@ -501,6 +502,7 @@
             // btnSua
             // 
             this.btnSua.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnSua.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSua.Image = global::QLTB.Properties.Resources.edit16;
             this.btnSua.ImagePaddingHorizontal = 20;
             this.btnSua.ImagePaddingVertical = 10;
@@ -511,6 +513,7 @@
             // btnXoa
             // 
             this.btnXoa.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnXoa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnXoa.Image = global::QLTB.Properties.Resources.b_drop;
             this.btnXoa.ImagePaddingHorizontal = 20;
             this.btnXoa.ImagePaddingVertical = 10;
@@ -521,6 +524,7 @@
             // btnBoGhiMuon
             // 
             this.btnBoGhiMuon.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnBoGhiMuon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBoGhiMuon.Image = global::QLTB.Properties.Resources.cancel16;
             this.btnBoGhiMuon.Name = "btnBoGhiMuon";
             this.btnBoGhiMuon.SubItemsExpandWidth = 14;
@@ -529,6 +533,7 @@
             // btnGhiTra
             // 
             this.btnGhiTra.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnGhiTra.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGhiTra.Image = global::QLTB.Properties.Resources.back16;
             this.btnGhiTra.Name = "btnGhiTra";
             this.btnGhiTra.SubItemsExpandWidth = 14;
@@ -538,6 +543,7 @@
             // btnBaoHong
             // 
             this.btnBaoHong.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnBaoHong.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBaoHong.Image = global::QLTB.Properties.Resources.delete16;
             this.btnBaoHong.Name = "btnBaoHong";
             this.btnBaoHong.SubItemsExpandWidth = 14;
@@ -547,6 +553,7 @@
             // btnNapDSTB
             // 
             this.btnNapDSTB.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnNapDSTB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNapDSTB.Image = global::QLTB.Properties.Resources.Refresh16;
             this.btnNapDSTB.ImagePaddingHorizontal = 20;
             this.btnNapDSTB.ImagePaddingVertical = 10;
@@ -559,6 +566,7 @@
             // btnInDSTB
             // 
             this.btnInDSTB.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnInDSTB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInDSTB.Image = global::QLTB.Properties.Resources.print16;
             this.btnInDSTB.ImagePaddingHorizontal = 20;
             this.btnInDSTB.ImagePaddingVertical = 10;
@@ -569,6 +577,7 @@
             // btnHelpDSTB
             // 
             this.btnHelpDSTB.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnHelpDSTB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHelpDSTB.Image = global::QLTB.Properties.Resources.Help_icon;
             this.btnHelpDSTB.ImagePaddingHorizontal = 20;
             this.btnHelpDSTB.ImagePaddingVertical = 10;
@@ -580,6 +589,7 @@
             // 
             this.btnClose.BeginGroup = true;
             this.btnClose.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.Image = global::QLTB.Properties.Resources.close16;
             this.btnClose.Name = "btnClose";
             this.btnClose.SubItemsExpandWidth = 14;
