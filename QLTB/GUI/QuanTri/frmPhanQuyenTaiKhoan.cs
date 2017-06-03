@@ -161,8 +161,10 @@ namespace QLTB.GUI
 
         private void frmPhanQuyenTaiKhoan_Load(object sender, EventArgs e)
         {
+            var parent = MdiParent as Form1;
+            parent.pnlLoading.Visible = false;
             //loadtvUser();
-           // loadtvPermission();
+            // loadtvPermission();
         }
 
         private void tvPermisions_AfterCheck(object sender, TreeViewEventArgs e)

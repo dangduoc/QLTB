@@ -20,9 +20,10 @@ namespace QLTB.Handler
             {
                 try
                 {
+                    int captruong = GlobalVariable.GetHeThong().DonVi.CapTruongId;
                     var TotalRecord = unitOfWork.GetRepository<DM_GiaoVien>().GetAll().Count();
                     var data = unitOfWork.GetRepository<DM_GiaoVien>().GetAll()
-                         .Join(unitOfWork.GetRepository<DS_PhongBan>().GetAll(),
+                         .Join(unitOfWork.GetRepository<DS_PhongBan>().GetAll().Where(p=>p.CapHocId== captruong),
                                     gv => gv.PhongBanId,
                                     pb => pb.PhongBanId,
                                     (gv, pb) => new
@@ -73,7 +74,7 @@ namespace QLTB.Handler
                                         LoaiHopDongId = gv.LoaiHopDongId
                                     }
                                 )
-                                .Join(GlobalVariable.GetDS().ViTriGiaoVien.Where(p => p.CapHocId == 2),
+                                .Join(GlobalVariable.GetDS().ViTriGiaoVien.Where(p => p.CapHocId == captruong).ToList(),
                                     gv => gv.ViTriId,
                                     vt => vt.Id,
                                     (gv, vt) => new

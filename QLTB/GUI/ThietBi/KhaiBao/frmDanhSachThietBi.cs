@@ -199,10 +199,12 @@ namespace QLTB.GUI
         private void LoadForm()
         {
             ShowPage(1,50);
+            var parent=MdiParent as Form1;
+            parent.pnlLoading.Visible = false;
         }
         private void ShowPage(int page,int pageSize)
         {
-            var data = handler.GetAll(page, pageSize);
+            var data = handler.GetAll(page, pageSize,p=>p.TrangThai>=0);
             List<ThietBiGridDisplayModel> list = data.data;
             if (list.Count > 0)
             {
@@ -256,8 +258,6 @@ namespace QLTB.GUI
             ADGVDanhSach.KeyPress += ADGVDanhSach_KeyPress;
             ADGVDanhSach.MouseClick += ADGVDanhSach_MouseClick;
             //
-            btnSuaDSTB.Click += btnXem_Click;
-            btnThemDSTB.Click += BtnThemDSTB_Click;
             //
         }
         private void loadTVMonHoc()
@@ -330,11 +330,6 @@ namespace QLTB.GUI
         private void frmDanhSachThietBi_Load(object sender, EventArgs e)
         {
             LoadForm();
-        }
-
-        private void btnThemDSTB_Click_1(object sender, EventArgs e)
-        {
-
         }
 
         private void ADGVDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)

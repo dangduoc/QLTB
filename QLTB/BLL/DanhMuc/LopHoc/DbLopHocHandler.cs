@@ -18,8 +18,9 @@ namespace QLTB.Handler
             {
                 try
                 {
+                    var khoilops = new DbKhoiLopHandler().GetAllModel();
                     var data = unitOfWork.GetRepository<DM_LopHoc>().GetAll()
-                                .Join(unitOfWork.GetRepository<DM_KhoiLop>().GetAll(),
+                                .Join(khoilops,
                                     lh => lh.KhoiLopId,
                                     kl => kl.KhoiLopId,
                                     (lh, kl) => new LopHocGridDisplayModel

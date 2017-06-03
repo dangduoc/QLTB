@@ -252,6 +252,8 @@ namespace QLTB.GUI
         private void frmDSThietBiHongMat_Load(object sender, EventArgs e)
         {
             loadForm();
+            var parent = MdiParent as Form1;
+            parent.pnlLoading.Visible = false;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -309,6 +311,11 @@ namespace QLTB.GUI
         private void btnClose_Click_1(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnNapDSTB_Click(object sender, EventArgs e)
+        {
+            ShowPage(1, 50);
         }
     }
 }

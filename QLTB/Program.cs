@@ -16,14 +16,14 @@ namespace QLTB
         static void Main()
         {
 
-
+            SqlServerTypes.Utilities.LoadNativeAssemblies(AppDomain.CurrentDomain.BaseDirectory);
             System.Globalization.CultureInfo cultureInfo = new System.Globalization.CultureInfo("vi-VN");
             System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
             System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            LoadingScreen fLogin = new LoadingScreen();
+            frmLogin fLogin = new frmLogin();
             if (fLogin.ShowDialog() == DialogResult.OK)
             {
                 Application.Run(new Form1());

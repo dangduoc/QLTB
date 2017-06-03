@@ -45,6 +45,25 @@ namespace QLTB.Handler
                 return null;
             }
         }
+        public UserModel CheckUserSaved(int Id)
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    var entity = unitOfWork.GetRepository<HT_User>().GetById(Id);
+                    if (entity != null)
+                    return MyConvert.ConvertSameData<UserModel>(entity);
+                    return null;
+                   
+                }
+            }
+            catch (Exception ex)
+            {
+               
+                return null;
+            }
+        }
 
         //public void loadPermissions(TreeView menu,int roleId)
         //{

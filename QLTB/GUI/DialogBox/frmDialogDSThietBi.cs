@@ -1,4 +1,5 @@
-﻿using QLTB.Handler;
+﻿using QLTB.DAL.Data;
+using QLTB.Handler;
 using QLTB.Model;
 using QLTB.Utils;
 using System;
@@ -7,6 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,10 +18,11 @@ namespace QLTB.GUI
     public partial class frmDialogDSThietBi : DevComponents.DotNetBar.Office2007Form
     {
         private DbThietBiHandler handler = new DbThietBiHandler();
-       
-        public frmDialogDSThietBi()
+        Expression<Func<TB_ThongTinThietBi, bool>> predicate;
+        public frmDialogDSThietBi(Expression<Func<TB_ThongTinThietBi, bool>> predicate)
         {
             InitializeComponent();
+            this.predicate = predicate;
         }
         #region ADGB
         private BindingSource source = new BindingSource();
@@ -143,7 +146,7 @@ namespace QLTB.GUI
         }
         private void ShowPage(int page, int pageSize)
         {
-            var data = handler.GetAll(page, pageSize);
+            var data = handler.GetAll(page, pageSize,predicate);
             List<ThietBiGridDisplayModel> list = data.data;
             if (list.Count > 0)
             {

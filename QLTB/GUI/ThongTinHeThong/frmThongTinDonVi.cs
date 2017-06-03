@@ -169,6 +169,8 @@ namespace QLTB.GUI
         private void frmThongTinDonVi_Load(object sender, EventArgs e)
         {
             loadForm();
+            var parent = MdiParent as Form1;
+            parent.pnlLoading.Visible = false;
         }
         private void btnClose_Click(object sender, EventArgs e)
         {

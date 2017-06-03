@@ -18,18 +18,40 @@ namespace QLTB.Handler
             {
                 try
                 {
-                    var data = unitOfWork.GetRepository<DM_KhoiLop>().GetAll().AsEnumerable()
+                    var data = unitOfWork.GetRepository<DM_KhoiLop>().GetAll().Where(p => p.CapTruongId == GlobalVariable.GetHeThong().DonVi.CapTruongId).AsEnumerable()
                                 .Join(GlobalVariable.GetDS().CapTruong,
                                     kl => kl.CapTruongId,
                                     ct => ct.CapTruongId,
                                     (kl, ct) => new KhoiLopGridDisplayModel
                                     {
-                                        KhoiLopId=kl.KhoiLopId.ToString(),
-                                        CapTruong=ct.Ten,
-                                        Ten=kl.Ten,
-                                        GhiChu=kl.Ten
+                                        KhoiLopId = kl.KhoiLopId.ToString(),
+                                        CapTruong = ct.Ten,
+                                        Ten = kl.Ten,
+                                        GhiChu = kl.Ten
                                     }
                                 )
+                                .ToList();
+                    return data;
+                }
+                catch (Exception ex)
+                {
+                    return null;
+                }
+            }
+        }
+        public List<KhoiLopModel> GetAllModel()
+        {
+            using (var unitOfWork = new UnitOfWork())
+            {
+                try
+                {
+                    var data = unitOfWork.GetRepository<DM_KhoiLop>().GetAll()
+                        .Where(p => p.CapTruongId == GlobalVariable.GetHeThong().DonVi.CapTruongId)
+                                 .Select(p => new KhoiLopModel
+                                 {
+                                     KhoiLopId = p.KhoiLopId,
+                                     Ten = p.Ten,
+                                 })
                                 .ToList();
                     return data;
                 }
@@ -54,6 +76,6 @@ namespace QLTB.Handler
                 return null;
             }
         }
-       
+
     }
 }

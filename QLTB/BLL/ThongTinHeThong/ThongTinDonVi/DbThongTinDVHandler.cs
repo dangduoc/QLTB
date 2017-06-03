@@ -99,8 +99,8 @@ namespace QLTB.Handler
             {
                 using (var unitOfWork = new UnitOfWork())
                 {
-                    
-                    var data=unitOfWork.GetRepository<ThongTinDonVi>().GetById(model.MaDonVi);
+
+                    var data = unitOfWork.GetRepository<ThongTinDonVi>().GetAll().FirstOrDefault();
                     MyConvert.TransferValues(data, model);
                     unitOfWork.GetRepository<ThongTinDonVi>().Update(data);
                     if (unitOfWork.Save() >= 1)

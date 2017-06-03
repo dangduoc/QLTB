@@ -72,7 +72,7 @@
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolmenuTB = new DevComponents.DotNetBar.PanelEx();
+            this.ss = new DevComponents.DotNetBar.PanelEx();
             this.btnDeNghiMua = new System.Windows.Forms.Button();
             this.btnGiamTB = new System.Windows.Forms.Button();
             this.btnSuaChua = new System.Windows.Forms.Button();
@@ -81,11 +81,18 @@
             this.btnKiemKe = new System.Windows.Forms.Button();
             this.btnTangTB = new System.Windows.Forms.Button();
             this.btnDSThietBi = new System.Windows.Forms.Button();
+            this.pnlTop = new System.Windows.Forms.Panel();
+            this.toolmenuTB = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnlLoading = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).BeginInit();
             this.statusStrip1.SuspendLayout();
+            this.ss.SuspendLayout();
+            this.pnlTop.SuspendLayout();
             this.toolmenuTB.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // styleManager1
@@ -197,7 +204,8 @@
             this.bar1.AccessibleName = "bar1";
             this.bar1.AccessibleRole = System.Windows.Forms.AccessibleRole.ToolBar;
             this.bar1.AntiAlias = true;
-            this.bar1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bar1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bar1.DockSide = DevComponents.DotNetBar.eDockSide.Top;
             this.bar1.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.bar1.IsMaximized = false;
             this.bar1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -213,13 +221,14 @@
             this.labelItem2,
             this.txtEndYear});
             this.bar1.ItemSpacing = 5;
-            this.bar1.Location = new System.Drawing.Point(0, 63);
+            this.bar1.Location = new System.Drawing.Point(0, 0);
+            this.bar1.Margin = new System.Windows.Forms.Padding(0);
             this.bar1.Name = "bar1";
-            this.bar1.PaddingBottom = 6;
+            this.bar1.PaddingBottom = 5;
             this.bar1.PaddingLeft = 5;
-            this.bar1.PaddingTop = 6;
+            this.bar1.PaddingTop = 8;
             this.bar1.RoundCorners = false;
-            this.bar1.Size = new System.Drawing.Size(1083, 48);
+            this.bar1.Size = new System.Drawing.Size(1083, 49);
             this.bar1.Stretch = true;
             this.bar1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.bar1.TabIndex = 13;
@@ -487,30 +496,30 @@
             this.toolStripStatusLabel6.Size = new System.Drawing.Size(145, 20);
             this.toolStripStatusLabel6.Spring = true;
             // 
-            // toolmenuTB
+            // ss
             // 
-            this.toolmenuTB.CanvasColor = System.Drawing.SystemColors.Control;
-            this.toolmenuTB.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.toolmenuTB.Controls.Add(this.btnDeNghiMua);
-            this.toolmenuTB.Controls.Add(this.btnGiamTB);
-            this.toolmenuTB.Controls.Add(this.btnSuaChua);
-            this.toolmenuTB.Controls.Add(this.btnThanhLy);
-            this.toolmenuTB.Controls.Add(this.btnTheoDoiHong);
-            this.toolmenuTB.Controls.Add(this.btnKiemKe);
-            this.toolmenuTB.Controls.Add(this.btnTangTB);
-            this.toolmenuTB.Controls.Add(this.btnDSThietBi);
-            this.toolmenuTB.DisabledBackColor = System.Drawing.Color.Empty;
-            this.toolmenuTB.Dock = System.Windows.Forms.DockStyle.Top;
-            this.toolmenuTB.Location = new System.Drawing.Point(0, 111);
-            this.toolmenuTB.Name = "toolmenuTB";
-            this.toolmenuTB.ShowFocusRectangle = true;
-            this.toolmenuTB.Size = new System.Drawing.Size(1083, 35);
-            this.toolmenuTB.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.toolmenuTB.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.toolmenuTB.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
-            this.toolmenuTB.Style.GradientAngle = 90;
-            this.toolmenuTB.TabIndex = 17;
-            this.toolmenuTB.Visible = false;
+            this.ss.CanvasColor = System.Drawing.SystemColors.Control;
+            this.ss.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ss.Controls.Add(this.btnDeNghiMua);
+            this.ss.Controls.Add(this.btnGiamTB);
+            this.ss.Controls.Add(this.btnSuaChua);
+            this.ss.Controls.Add(this.btnThanhLy);
+            this.ss.Controls.Add(this.btnTheoDoiHong);
+            this.ss.Controls.Add(this.btnKiemKe);
+            this.ss.Controls.Add(this.btnTangTB);
+            this.ss.Controls.Add(this.btnDSThietBi);
+            this.ss.DisabledBackColor = System.Drawing.Color.Empty;
+            this.ss.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ss.Location = new System.Drawing.Point(0, 0);
+            this.ss.Margin = new System.Windows.Forms.Padding(0);
+            this.ss.Name = "ss";
+            this.ss.ShowFocusRectangle = true;
+            this.ss.Size = new System.Drawing.Size(1083, 2);
+            this.ss.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.ss.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.ss.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
+            this.ss.Style.GradientAngle = 90;
+            this.ss.TabIndex = 17;
             // 
             // btnDeNghiMua
             // 
@@ -522,7 +531,7 @@
             this.btnDeNghiMua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeNghiMua.Location = new System.Drawing.Point(860, 0);
             this.btnDeNghiMua.Name = "btnDeNghiMua";
-            this.btnDeNghiMua.Size = new System.Drawing.Size(120, 35);
+            this.btnDeNghiMua.Size = new System.Drawing.Size(120, 2);
             this.btnDeNghiMua.TabIndex = 7;
             this.btnDeNghiMua.Text = "Đề nghị mua sắm";
             this.btnDeNghiMua.UseVisualStyleBackColor = true;
@@ -538,7 +547,7 @@
             this.btnGiamTB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGiamTB.Location = new System.Drawing.Point(740, 0);
             this.btnGiamTB.Name = "btnGiamTB";
-            this.btnGiamTB.Size = new System.Drawing.Size(120, 35);
+            this.btnGiamTB.Size = new System.Drawing.Size(120, 2);
             this.btnGiamTB.TabIndex = 6;
             this.btnGiamTB.Text = "Giảm thiết bị";
             this.btnGiamTB.UseVisualStyleBackColor = true;
@@ -554,7 +563,7 @@
             this.btnSuaChua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSuaChua.Location = new System.Drawing.Point(620, 0);
             this.btnSuaChua.Name = "btnSuaChua";
-            this.btnSuaChua.Size = new System.Drawing.Size(120, 35);
+            this.btnSuaChua.Size = new System.Drawing.Size(120, 2);
             this.btnSuaChua.TabIndex = 5;
             this.btnSuaChua.Text = "Sửa chữa";
             this.btnSuaChua.UseVisualStyleBackColor = true;
@@ -570,7 +579,7 @@
             this.btnThanhLy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThanhLy.Location = new System.Drawing.Point(500, 0);
             this.btnThanhLy.Name = "btnThanhLy";
-            this.btnThanhLy.Size = new System.Drawing.Size(120, 35);
+            this.btnThanhLy.Size = new System.Drawing.Size(120, 2);
             this.btnThanhLy.TabIndex = 4;
             this.btnThanhLy.Text = "Thanh lý";
             this.btnThanhLy.UseVisualStyleBackColor = true;
@@ -586,7 +595,7 @@
             this.btnTheoDoiHong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTheoDoiHong.Location = new System.Drawing.Point(360, 0);
             this.btnTheoDoiHong.Name = "btnTheoDoiHong";
-            this.btnTheoDoiHong.Size = new System.Drawing.Size(140, 35);
+            this.btnTheoDoiHong.Size = new System.Drawing.Size(140, 2);
             this.btnTheoDoiHong.TabIndex = 3;
             this.btnTheoDoiHong.Text = "Theo dõi hỏng/ mất";
             this.btnTheoDoiHong.UseVisualStyleBackColor = true;
@@ -602,7 +611,7 @@
             this.btnKiemKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKiemKe.Location = new System.Drawing.Point(240, 0);
             this.btnKiemKe.Name = "btnKiemKe";
-            this.btnKiemKe.Size = new System.Drawing.Size(120, 35);
+            this.btnKiemKe.Size = new System.Drawing.Size(120, 2);
             this.btnKiemKe.TabIndex = 2;
             this.btnKiemKe.Text = "Kiểm kê";
             this.btnKiemKe.UseVisualStyleBackColor = true;
@@ -618,7 +627,7 @@
             this.btnTangTB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTangTB.Location = new System.Drawing.Point(120, 0);
             this.btnTangTB.Name = "btnTangTB";
-            this.btnTangTB.Size = new System.Drawing.Size(120, 35);
+            this.btnTangTB.Size = new System.Drawing.Size(120, 2);
             this.btnTangTB.TabIndex = 1;
             this.btnTangTB.Text = "Tăng thiết bị";
             this.btnTangTB.UseVisualStyleBackColor = true;
@@ -634,12 +643,51 @@
             this.btnDSThietBi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDSThietBi.Location = new System.Drawing.Point(0, 0);
             this.btnDSThietBi.Name = "btnDSThietBi";
-            this.btnDSThietBi.Size = new System.Drawing.Size(120, 35);
+            this.btnDSThietBi.Size = new System.Drawing.Size(120, 2);
             this.btnDSThietBi.TabIndex = 0;
             this.btnDSThietBi.Tag = "frmDanhSachThietBi";
             this.btnDSThietBi.Text = "Danh sách thiết bị";
             this.btnDSThietBi.UseVisualStyleBackColor = true;
             this.btnDSThietBi.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pnlTop
+            // 
+            this.pnlTop.Controls.Add(this.toolmenuTB);
+            this.pnlTop.Controls.Add(this.panel3);
+            this.pnlTop.Controls.Add(this.panel1);
+            this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTop.Location = new System.Drawing.Point(0, 0);
+            this.pnlTop.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlTop.Name = "pnlTop";
+            this.pnlTop.Size = new System.Drawing.Size(1083, 115);
+            this.pnlTop.TabIndex = 32;
+            // 
+            // toolmenuTB
+            // 
+            this.toolmenuTB.Controls.Add(this.ss);
+            this.toolmenuTB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolmenuTB.Location = new System.Drawing.Point(0, 113);
+            this.toolmenuTB.Name = "toolmenuTB";
+            this.toolmenuTB.Size = new System.Drawing.Size(1083, 2);
+            this.toolmenuTB.TabIndex = 33;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.bar1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 63);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1083, 50);
+            this.panel3.TabIndex = 31;
+            // 
+            // pnlLoading
+            // 
+            this.pnlLoading.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(60)))), ((int)(((byte)(89)))));
+            this.pnlLoading.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlLoading.Location = new System.Drawing.Point(0, 115);
+            this.pnlLoading.Name = "pnlLoading";
+            this.pnlLoading.Size = new System.Drawing.Size(1083, 344);
+            this.pnlLoading.TabIndex = 33;
             // 
             // Form1
             // 
@@ -647,10 +695,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1083, 484);
-            this.Controls.Add(this.toolmenuTB);
+            this.Controls.Add(this.pnlLoading);
+            this.Controls.Add(this.pnlTop);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.bar1);
-            this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.FlattenMDIBorder = false;
             this.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -668,7 +715,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.ss.ResumeLayout(false);
+            this.pnlTop.ResumeLayout(false);
             this.toolmenuTB.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -702,7 +752,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel7;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel6;
-        private DevComponents.DotNetBar.PanelEx toolmenuTB;
+        private DevComponents.DotNetBar.PanelEx ss;
         private System.Windows.Forms.Button btnThanhLy;
         private System.Windows.Forms.Button btnTheoDoiHong;
         private System.Windows.Forms.Button btnKiemKe;
@@ -725,5 +775,9 @@
         private DevComponents.DotNetBar.ButtonItem btnQuanTri;
         private DevComponents.DotNetBar.ButtonItem btnTaiKhoan;
         private DevComponents.DotNetBar.ButtonItem btnPhanQuyen;
+        private System.Windows.Forms.Panel pnlTop;
+        private System.Windows.Forms.Panel toolmenuTB;
+        private System.Windows.Forms.Panel panel3;
+        public System.Windows.Forms.Panel pnlLoading;
     }
 }

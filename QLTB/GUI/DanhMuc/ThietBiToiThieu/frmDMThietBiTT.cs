@@ -253,6 +253,8 @@ namespace QLTB.GUI
         private void frmDMThietBiTT_Load(object sender, EventArgs e)
         {
             LoadForm();
+            var parent = MdiParent as Form1;
+            parent.pnlLoading.Visible = false;
         }
 
         private void btnClose_Click(object sender, EventArgs e)

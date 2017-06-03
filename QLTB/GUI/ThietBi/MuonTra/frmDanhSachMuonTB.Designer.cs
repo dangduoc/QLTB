@@ -497,7 +497,7 @@
             this.btnThem.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlN);
             this.btnThem.Text = "Thêm";
             this.btnThem.Tooltip = "Đăng ký mới";
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click_1);
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
@@ -509,6 +509,7 @@
             this.btnSua.Name = "btnSua";
             this.btnSua.SubItemsExpandWidth = 14;
             this.btnSua.Text = "Sửa";
+            this.btnSua.Click += new System.EventHandler(this.BtnSua_Click);
             // 
             // btnXoa
             // 
@@ -538,7 +539,7 @@
             this.btnGhiTra.Name = "btnGhiTra";
             this.btnGhiTra.SubItemsExpandWidth = 14;
             this.btnGhiTra.Text = "Ghi trả";
-            this.btnGhiTra.Click += new System.EventHandler(this.btnGhiTra_Click_1);
+            this.btnGhiTra.Click += new System.EventHandler(this.btnGhiTra_Click);
             // 
             // btnBaoHong
             // 
@@ -562,6 +563,7 @@
             this.btnNapDSTB.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F5);
             this.btnNapDSTB.Text = "Nạp";
             this.btnNapDSTB.Tooltip = "Làm mới dữ liệu";
+            this.btnNapDSTB.Click += new System.EventHandler(this.btnNapDSTB_Click);
             // 
             // btnInDSTB
             // 

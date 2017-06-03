@@ -17,5 +17,11 @@ namespace QLTB.GUI
         {
             InitializeComponent();
         }
+
+        private void frmDMToBoMon_Load(object sender, EventArgs e)
+        {
+            var parent = MdiParent as Form1;
+            parent.pnlLoading.Visible = false;
+        }
     }
 }

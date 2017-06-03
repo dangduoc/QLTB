@@ -16,6 +16,7 @@ namespace QLTB.GUI
     public partial class frmKhaiBaoThietBi : DevComponents.DotNetBar.Office2007Form
     {
         private ThietBiModel ThietBi;
+        private ThietBiModel ThietBiMoi = new ThietBiModel();
         private DbThietBiHandler handler = new DbThietBiHandler();
         private DbDanhSachHandler dshandler = new DbDanhSachHandler();
         List<object> listValidate;
@@ -58,6 +59,7 @@ namespace QLTB.GUI
         }
         private void loadData()
         {
+            
             #region Khai báo các control
             //Khai bao truong can nhap
             listValidate = new List<object>()
@@ -144,7 +146,6 @@ namespace QLTB.GUI
 
         private void saveData()
         {
-            var ThietBiMoi = new ThietBiModel();
             ThietBiMoi.ThietBiId = cbbMaThietBi.SelectedValue.ToString();
             ThietBiMoi.Ten = txtTen.Text;
             ThietBiMoi.SoHieu = txtSoHieu.Text;
@@ -159,8 +160,14 @@ namespace QLTB.GUI
             ThietBiMoi.ThanhTien = MyConvert.To<decimal>(txtThanhTien.Text);
             ThietBiMoi.NuocSanXuat = txtNuocSX.Text;
             ThietBiMoi.MucDichSDId = MyConvert.To<int>(cbbMucDichSD.SelectedValue);
-            ThietBiMoi.HanSD = dpickerHanSD.Value;
-            ThietBiMoi.NgaySanXuat = dpickNgaySX.Value;
+            if (dpickerHanSD.Value != new DateTime(1, 1, 1))
+            {
+                ThietBiMoi.HanSD = dpickerHanSD.Value;
+            }
+            if(dpickNgaySX.Value!=new DateTime(1, 1, 1))
+            {
+                ThietBiMoi.NgaySanXuat = dpickNgaySX.Value;
+            }
             ThietBiMoi.IsThietBiTuLam = cboxThietBiTuLam.Checked;
             ThietBiMoi.NgayDuaVaoSD = dpickerNgaySD.Value;
             ThietBiMoi.CreateByUserId = GlobalVariable.GetUser().UserId;
@@ -171,6 +178,7 @@ namespace QLTB.GUI
             {
                 ThietBiMoi.MonHocId = new DbThietBiTTHandler().GetById(ThietBiMoi.ThietBiId).MonHocId;
                 ThietBiMoi.TrangThai = 0;
+                ThietBiMoi.SoLuongCon = ThietBiMoi.SoLuong;
                 int result = handler.Create(ThietBiMoi);
                 if (result == 1)
                 {
@@ -236,8 +244,12 @@ namespace QLTB.GUI
             var item = sender as DevComponents.DotNetBar.Controls.ComboBoxEx;
             if (item.SelectedIndex >= 0)
             {
+                var tb = new DbThietBiTTHandler().GetById(item.SelectedValue.ToString().Trim());
                 txtSoHieu.Text = handler.GenerateCode(item.SelectedValue.ToString().Trim());
-                txtTen.Text = new DbThietBiTTHandler().GetById(item.SelectedValue.ToString().Trim()).Ten;
+                txtTen.Text = tb.Ten;
+                ThietBiMoi.MonHocId = tb.MonHocId;
+
+
             }
             else
             {

@@ -244,6 +244,8 @@ namespace QLTB.GUI
         private void frmDMCanBoThietBi_Load(object sender, EventArgs e)
         {
             LoadForm();
+            var parent = MdiParent as Form1;
+            parent.pnlLoading.Visible = false;
         }
 
         private void buttonItem1_Click(object sender, EventArgs e)

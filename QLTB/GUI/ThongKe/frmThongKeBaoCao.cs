@@ -21,6 +21,8 @@ namespace QLTB.GUI
         {
 
             this.reportViewer1.RefreshReport();
+            var parent = MdiParent as Form1;
+            parent.pnlLoading.Visible = false;
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

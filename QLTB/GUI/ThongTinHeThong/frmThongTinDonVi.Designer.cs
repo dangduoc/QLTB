@@ -96,8 +96,8 @@
             this.pnlTTLienHe = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.ribBarDSThietBi = new DevComponents.DotNetBar.RibbonBar();
-            this.btnIn = new DevComponents.DotNetBar.ButtonItem();
             this.btnLuu = new DevComponents.DotNetBar.ButtonItem();
+            this.btnIn = new DevComponents.DotNetBar.ButtonItem();
             this.btnHelpDSTB = new DevComponents.DotNetBar.ButtonItem();
             this.btnClose = new DevComponents.DotNetBar.ButtonItem();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -755,6 +755,7 @@
             this.txtMaDV.Border.Class = "TextBoxBorder";
             this.txtMaDV.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtMaDV.DisabledBackColor = System.Drawing.Color.White;
+            this.txtMaDV.Enabled = false;
             this.txtMaDV.ForeColor = System.Drawing.Color.Black;
             this.txtMaDV.Location = new System.Drawing.Point(141, 8);
             this.txtMaDV.Margin = new System.Windows.Forms.Padding(0);
@@ -1056,6 +1057,16 @@
             // 
             this.ribBarDSThietBi.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
+            // btnLuu
+            // 
+            this.btnLuu.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnLuu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLuu.Image = global::QLTB.Properties.Resources.save_icon;
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.SubItemsExpandWidth = 14;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click_1);
+            // 
             // btnIn
             // 
             this.btnIn.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
@@ -1067,16 +1078,6 @@
             this.btnIn.SubItemsExpandWidth = 14;
             this.btnIn.Text = "Xuất thông tin";
             this.btnIn.Tooltip = "Xuất thông tin ra file word";
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.btnLuu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLuu.Image = global::QLTB.Properties.Resources.save_icon;
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.SubItemsExpandWidth = 14;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click_1);
             // 
             // btnHelpDSTB
             // 
