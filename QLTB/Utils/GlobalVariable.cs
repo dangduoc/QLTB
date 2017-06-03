@@ -35,6 +35,8 @@ namespace QLTB.Utils
         public static void InitDanhSach()
         {
             DanhSach = new DanhSachModel();
+            DanhSach.ViTriGiaoVien=DanhSach.ViTriGiaoVien.Where(p => p.CapHocId == HeThong.DonVi.CapTruongId).AsEnumerable();
+            
         }
         public static DanhSachModel GetDS()
         {
@@ -45,6 +47,7 @@ namespace QLTB.Utils
             HeThong = new ThongTinHeThong();
             HeThong.DonVi = new DbThongTinDVHandler().Get();
             HeThong.NamHoc = new DbThongTinNHHandler().GetNamHocActive();
+            
         }
         public static ThongTinHeThong GetHeThong()
         {

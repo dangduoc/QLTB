@@ -148,5 +148,11 @@ namespace QLTB.GUI
             ADGVDanhSach.DataSource = source;
             SetHeaderForGrid(ADGVDanhSach, headers);
         }
+
+        private void frmDMNguonKinhPhi_Load(object sender, EventArgs e)
+        {
+            var parent = MdiParent as Form1;
+            parent.pnlLoading.Visible = false;
+        }
     }
 }

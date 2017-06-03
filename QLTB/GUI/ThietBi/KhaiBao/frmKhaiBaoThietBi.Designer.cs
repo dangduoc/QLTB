@@ -245,6 +245,7 @@
             this.txtNamTheoDoi.ForeColor = System.Drawing.Color.Black;
             this.txtNamTheoDoi.Location = new System.Drawing.Point(163, 321);
             this.txtNamTheoDoi.Margin = new System.Windows.Forms.Padding(0);
+            this.txtNamTheoDoi.MaxLength = 4;
             this.txtNamTheoDoi.Name = "txtNamTheoDoi";
             this.txtNamTheoDoi.PreventEnterBeep = true;
             this.txtNamTheoDoi.Size = new System.Drawing.Size(400, 23);
@@ -569,6 +570,7 @@
             this.txtNamSD.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtNamSD.Location = new System.Drawing.Point(163, 289);
             this.txtNamSD.Margin = new System.Windows.Forms.Padding(0);
+            this.txtNamSD.MaxLength = 4;
             this.txtNamSD.Name = "txtNamSD";
             this.txtNamSD.PreventEnterBeep = true;
             this.txtNamSD.Size = new System.Drawing.Size(116, 23);
@@ -927,6 +929,7 @@
             // btnLuu
             // 
             this.btnLuu.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnLuu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLuu.Image = global::QLTB.Properties.Resources.save_icon;
             this.btnLuu.ImagePaddingHorizontal = 20;
             this.btnLuu.ImagePaddingVertical = 10;
@@ -938,6 +941,7 @@
             // btnXoaDSTB
             // 
             this.btnXoaDSTB.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnXoaDSTB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnXoaDSTB.Image = global::QLTB.Properties.Resources.b_drop;
             this.btnXoaDSTB.ImagePaddingHorizontal = 20;
             this.btnXoaDSTB.ImagePaddingVertical = 10;
@@ -948,6 +952,7 @@
             // btnHelpDSTB
             // 
             this.btnHelpDSTB.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnHelpDSTB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHelpDSTB.Image = global::QLTB.Properties.Resources.Help_icon;
             this.btnHelpDSTB.ImagePaddingHorizontal = 20;
             this.btnHelpDSTB.ImagePaddingVertical = 10;
@@ -958,6 +963,7 @@
             // btnBack
             // 
             this.btnBack.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBack.Image = global::QLTB.Properties.Resources.back16;
             this.btnBack.Name = "btnBack";
             this.btnBack.SubItemsExpandWidth = 14;

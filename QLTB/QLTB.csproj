@@ -71,15 +71,41 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
-    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\PagedList.dll</HintPath>
+    <Reference Include="EntityFramework.SqlServerCompact, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.SqlServerCompact.6.1.3\lib\net45\EntityFramework.SqlServerCompact.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.DataVisualization.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.Design.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.WinForms.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.11.0.1\lib\net20\Microsoft.SqlServer.Types.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Compact.4.0.8876.1\lib\net40\System.Data.SqlServerCe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.Services" />
@@ -121,11 +147,14 @@
     <Compile Include="BLL\DanhSach\DSPhuongXa.cs" />
     <Compile Include="BLL\DanhSach\DSQuanHuyen.cs" />
     <Compile Include="BLL\DanhSach\DSTinhThanh.cs" />
+    <Compile Include="BLL\Report\DbThongKeHandler.cs" />
+    <Compile Include="BLL\Report\ReportModel.cs" />
     <Compile Include="BLL\ThietBi\KiemKe\KiemKeThietBiModel.cs" />
     <Compile Include="BLL\TaiKhoan\LoginHandler.cs" />
     <Compile Include="BLL\PhongHocBM\MuonTra\DbPhieuMuonPhongHandler.cs" />
     <Compile Include="BLL\ThietBi\MuaSam\PhieuMuaSamTBModel.cs" />
     <Compile Include="BLL\ThietBi\PhieuMuon\DbPhieuMuonTBHandler.cs" />
+    <Compile Include="BLL\ThietBi\PhieuTra\DbPhieuTraTBHandler.cs" />
     <Compile Include="BLL\ThietBi\TheoDoi\HongMat\DbPhieuBaoHongHandler.cs" />
     <Compile Include="BLL\ThietBi\TheoDoi\HongMat\PhieuBaoHongModel.cs" />
     <Compile Include="BLL\ThietBi\TheoDoi\Giam\PhieuGiamTBModel.cs" />
@@ -146,133 +175,133 @@
     <Compile Include="BLL\User\UserModel.cs" />
     <Compile Include="DAL\DatabaseFactory.cs" />
     <Compile Include="DAL\Data\DM_CanBoThietBi.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
+      <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\DM_GiaoVien.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
+      <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\DM_KhoiLop.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
+      <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\DM_LopHoc.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
+      <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\DM_MonHoc.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
+      <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\DM_NguonKinhPhi.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
+      <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\DM_PhongHocBoMon.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
+      <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\DM_ThietBiToiThieu.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
+      <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\DM_ToBoMon.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
+      <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\DS_BaiGiang.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
+      <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\DS_DanToc.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
+      <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\DS_DonViTinh.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
+      <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\DS_NguonNganSach.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
+      <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\DS_PhongBan.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
+      <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\DS_PhuongXa.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
+      <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\DS_QuanHuyen.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
+      <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\DS_TinhThanh.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
+      <DependentUpon>Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Data\Entities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Entities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Data\Entities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Data\Entities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Entities.edmx</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\HT_Permission.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
+      <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\HT_User.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
+      <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\HT_UserRole.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
+      <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\QH_PhieuBaoHong_ThietBi.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
+      <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\QH_PhieuDenNghiMS_ThietBi.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
+      <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\QH_PhieuGhiTang_ThietBi.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
+      <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\QH_PhieuGiamTB_ThietBi.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
+      <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\QH_PhieuMuonPhong_ThietBi.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
+      <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\QH_PhieuMuonTB_ThietBi.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
+      <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\QH_PhieuThanhLyTB_ThietBi.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
+      <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\QH_User_Permission.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Data\QLTBContext.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLTBContext.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Data\QLTBContext.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLTBContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Data\QLTBContext.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLTBContext.edmx</DependentUpon>
+      <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\TB_PhieuBaoHong.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
+      <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\TB_PhieuDeNghiMuaSam.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
+      <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\TB_PhieuGhiTang.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
+      <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\TB_PhieuGiamTB.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
+      <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\TB_PhieuMuonPhong.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
+      <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\TB_PhieuMuonTB.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
+      <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\TB_PhieuThanhLyTB.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
+      <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\TB_ThongTinThietBi.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
+      <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\ThongTinDonVi.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
+      <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\ThongTinNamHoc.cs">
-      <DependentUpon>QLTBContext.tt</DependentUpon>
+      <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\IDatabaseFactory.cs" />
     <Compile Include="DAL\IRepository.cs" />
@@ -308,6 +337,12 @@
     </Compile>
     <Compile Include="GUI\DialogBox\frmDialogHCHetHan.Designer.cs">
       <DependentUpon>frmDialogHCHetHan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\DialogBox\frmDialogTBBaoHong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DialogBox\frmDialogTBBaoHong.Designer.cs">
+      <DependentUpon>frmDialogTBBaoHong.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\DialogBox\frmDialogTBSuaChua.cs">
       <SubType>Form</SubType>
@@ -576,6 +611,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Utils\ConnectiongStringBuilder.cs" />
     <Compile Include="Utils\DatagridViewCheckBoxHeaderCell.cs" />
     <Compile Include="Utils\GlobalVariable.cs" />
@@ -596,6 +632,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DialogBox\frmDialogHCHetHan.resx">
       <DependentUpon>frmDialogHCHetHan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DialogBox\frmDialogTBBaoHong.resx">
+      <DependentUpon>frmDialogTBBaoHong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DialogBox\frmDialogTBSuaChua.resx">
       <DependentUpon>frmDialogTBSuaChua.cs</DependentUpon>
@@ -739,12 +778,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EntityDeploy Include="DAL\Data\QLTBContext.edmx">
+    <EmbeddedResource Include="ReportTemps\GhiTangThietBi.rdlc" />
+    <EntityDeploy Include="DAL\Data\Entities.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QLTBContext.Designer.cs</LastGenOutput>
+      <LastGenOutput>Entities.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DAL\Data\QLTBContext.edmx.diagram">
-      <DependentUpon>QLTBContext.edmx</DependentUpon>
+    <None Include="DAL\Data\Entities.edmx.diagram">
+      <DependentUpon>Entities.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -758,7 +798,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Settings-icon.png" />
@@ -863,17 +905,35 @@
     <None Include="Resources\DuyetGiaoDich.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DAL\Data\QLTBContext.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QLTBContext.edmx</DependentUpon>
-      <LastGenOutput>QLTBContext.Context.cs</LastGenOutput>
+    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.1\nativeBinaries\x64\msvcr100.dll">
+      <Link>SqlServerTypes\x64\msvcr100.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="DAL\Data\QLTBContext.tt">
+    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.1\nativeBinaries\x64\SqlServerSpatial110.dll">
+      <Link>SqlServerTypes\x64\SqlServerSpatial110.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.1\nativeBinaries\x86\msvcr100.dll">
+      <Link>SqlServerTypes\x86\msvcr100.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.1\nativeBinaries\x86\SqlServerSpatial110.dll">
+      <Link>SqlServerTypes\x86\SqlServerSpatial110.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DAL\Data\Entities.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QLTBContext.edmx</DependentUpon>
-      <LastGenOutput>QLTBContext.cs</LastGenOutput>
+      <DependentUpon>Entities.edmx</DependentUpon>
+      <LastGenOutput>Entities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DAL\Data\Entities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Entities.edmx</DependentUpon>
+      <LastGenOutput>Entities.cs</LastGenOutput>
     </Content>
     <Content Include="icon.ico" />
+    <None Include="Resources\Capture.jpg" />
+    <Content Include="SqlServerTypes\readme.htm" />
     <None Include="Resources\browse1.png" />
     <None Include="Resources\forward.png" />
     <None Include="Resources\excel1997.png" />
@@ -919,20 +979,17 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <COMReference Include="FOXITREADERLib">
-      <Guid>{3A8BD65E-9922-4162-A649-83F2D5326BBE}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    if not exist "$(TargetDir)x86" md "$(TargetDir)x86"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\x86\*.*" "$(TargetDir)x86"
+    if not exist "$(TargetDir)amd64" md "$(TargetDir)amd64"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\amd64\*.*" "$(TargetDir)amd64"</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -254,8 +254,8 @@ namespace QLTB.Handler
                             var thietbi = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetById(item.SoHieu);
                             if (thietbi != null)
                             {
-                                thietbi.SoLuongCon = thietbi.SoLuong - thietbi.SoLuongMuon + SoLuongMuon;
-                                thietbi.SoLuongMuon = SoLuongMuon;
+                                thietbi.SoLuongMuon += Convert.ToInt32(item.SoLuongMuon);
+                                thietbi.SoLuongCon = thietbi.SoLuong - (thietbi.SoLuongMuon + thietbi.SoLuongHong + thietbi.SoLuongMat);
                                 unitOfWork.GetRepository<TB_ThongTinThietBi>().Update(thietbi);
                             }
                         }

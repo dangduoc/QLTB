@@ -24,6 +24,7 @@
     <Property Name="HoVaDem" Type="nvarchar" MaxLength="50" />
     <Property Name="Ten" Type="nvarchar" MaxLength="50" />
     <Property Name="TenDayDu" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="AnhDaiDien" Type="varchar" MaxLength="500" />
     <Property Name="GioiTinhId" Type="int" Nullable="false" />
     <Property Name="NgaySinh" Type="date" />
     <Property Name="NoiSinh" Type="nvarchar" MaxLength="500" />
@@ -141,21 +142,6 @@
     <Property Name="MonHocId" Type="int" />
     <Property Name="Ten" Type="nvarchar" MaxLength="150" />
   </EntityType>
-  <EntityType Name="DS_CapTruong">
-    <Key>
-      <PropertyRef Name="CapTruongId" />
-    </Key>
-    <Property Name="KhoiTruongId" Type="int" Nullable="false" />
-    <Property Name="CapTruongId" Type="int" Nullable="false" />
-    <Property Name="Ten" Type="nvarchar" MaxLength="500" />
-  </EntityType>
-  <EntityType Name="DS_ChucVuGiaoVien">
-    <Key>
-      <PropertyRef Name="ChucVuGiaoVienId" />
-    </Key>
-    <Property Name="ChucVuGiaoVienId" Type="int" Nullable="false" />
-    <Property Name="Ten" Type="nvarchar" MaxLength="50" />
-  </EntityType>
   <EntityType Name="DS_DanToc">
     <Key>
       <PropertyRef Name="DanTocId" />
@@ -163,116 +149,11 @@
     <Property Name="DanTocId" Type="int" Nullable="false" />
     <Property Name="Ten" Type="nvarchar" MaxLength="50" />
   </EntityType>
-  <EntityType Name="DS_DauMucThietBi">
-    <Key>
-      <PropertyRef Name="DauMucThietBiId" />
-    </Key>
-    <Property Name="DauMucThietBiId" Type="int" Nullable="false" />
-    <Property Name="Ten" Type="nvarchar" MaxLength="100" />
-  </EntityType>
   <EntityType Name="DS_DonViTinh">
     <Key>
       <PropertyRef Name="DonViTinhId" />
     </Key>
     <Property Name="DonViTinhId" Type="int" Nullable="false" />
-    <Property Name="Ten" Type="nvarchar" MaxLength="100" />
-  </EntityType>
-  <EntityType Name="DS_GioiTinh">
-    <Key>
-      <PropertyRef Name="GioiTinhId" />
-    </Key>
-    <Property Name="GioiTinhId" Type="int" Nullable="false" />
-    <Property Name="Ten" Type="nvarchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="DS_HangTruong">
-    <Key>
-      <PropertyRef Name="HangTruongId" />
-    </Key>
-    <Property Name="HangTruongId" Type="int" Nullable="false" />
-    <Property Name="Ten" Type="nvarchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="DS_HinhThucDaoTao">
-    <Key>
-      <PropertyRef Name="HinhThucDaoTaoId" />
-    </Key>
-    <Property Name="HinhThucDaoTaoId" Type="int" Nullable="false" />
-    <Property Name="Ten" Type="nvarchar" MaxLength="500" />
-  </EntityType>
-  <EntityType Name="DS_KhoiTruong">
-    <Key>
-      <PropertyRef Name="KhoiTruongId" />
-    </Key>
-    <Property Name="KhoiTruongId" Type="int" Nullable="false" />
-    <Property Name="Ten" Type="nvarchar" MaxLength="500" />
-  </EntityType>
-  <EntityType Name="DS_LoaiDanhGiaMH">
-    <Key>
-      <PropertyRef Name="LoaiDanhGiaId" />
-    </Key>
-    <Property Name="LoaiDanhGiaId" Type="int" Nullable="false" />
-    <Property Name="Ten" Type="nvarchar" MaxLength="100" />
-  </EntityType>
-  <EntityType Name="DS_LoaiHinhTruong">
-    <Key>
-      <PropertyRef Name="LoaiHinhTruongId" />
-    </Key>
-    <Property Name="LoaiHinhTruongId" Type="int" Nullable="false" />
-    <Property Name="Ten" Type="nvarchar" MaxLength="100" />
-  </EntityType>
-  <EntityType Name="DS_LoaiHopDong">
-    <Key>
-      <PropertyRef Name="LoaiHopDongId" />
-    </Key>
-    <Property Name="LoaiHopDongId" Type="int" Nullable="false" />
-    <Property Name="Ten" Type="nvarchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="DS_LoaiMonHoc">
-    <Key>
-      <PropertyRef Name="LoaiMonHocId" />
-    </Key>
-    <Property Name="LoaiMonHocId" Type="int" Nullable="false" />
-    <Property Name="Ten" Type="nvarchar" MaxLength="100" />
-  </EntityType>
-  <EntityType Name="DS_LoaiPhongTN">
-    <Key>
-      <PropertyRef Name="LoaiPhongTNId" />
-    </Key>
-    <Property Name="LoaiPhongTNId" Type="int" Nullable="false" />
-    <Property Name="Ten" Type="nvarchar" MaxLength="100" />
-  </EntityType>
-  <EntityType Name="DS_LoaiThietBi">
-    <Key>
-      <PropertyRef Name="LoaiThietBiId" />
-    </Key>
-    <Property Name="LoaiThietBiId" Type="int" Nullable="false" />
-    <Property Name="Ten" Type="nvarchar" MaxLength="100" />
-  </EntityType>
-  <EntityType Name="DS_LoaiTruongChuyenBiet">
-    <Key>
-      <PropertyRef Name="LoaiTruongChuyenBietId" />
-    </Key>
-    <Property Name="LoaiTruongChuyenBietId" Type="int" Nullable="false" />
-    <Property Name="Ten" Type="nvarchar" MaxLength="100" />
-  </EntityType>
-  <EntityType Name="DS_LyLuanChinhTri">
-    <Key>
-      <PropertyRef Name="LyLuanChinhTriId" />
-    </Key>
-    <Property Name="LyLuanChinhTriId" Type="int" Nullable="false" />
-    <Property Name="Ten" Type="nvarchar" MaxLength="100" />
-  </EntityType>
-  <EntityType Name="DS_MucDichSDPHong">
-    <Key>
-      <PropertyRef Name="MucDichSDPhongId" />
-    </Key>
-    <Property Name="MucDichSDPhongId" Type="int" Nullable="false" />
-    <Property Name="Ten" Type="nvarchar" MaxLength="100" />
-  </EntityType>
-  <EntityType Name="DS_MucDichSDThietBi">
-    <Key>
-      <PropertyRef Name="MucDichSDTBId" />
-    </Key>
-    <Property Name="MucDichSDTBId" Type="int" Nullable="false" />
     <Property Name="Ten" Type="nvarchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="DS_NguonNganSach">
@@ -300,13 +181,6 @@
     <Property Name="ViTri" Type="nvarchar" MaxLength="255" />
     <Property Name="QuanHuyenId" Type="int" />
   </EntityType>
-  <EntityType Name="DS_PhuTrachCBTB">
-    <Key>
-      <PropertyRef Name="PhuTrachCBTBId" />
-    </Key>
-    <Property Name="PhuTrachCBTBId" Type="int" Nullable="false" />
-    <Property Name="Ten" Type="nvarchar" MaxLength="50" />
-  </EntityType>
   <EntityType Name="DS_QuanHuyen">
     <Key>
       <PropertyRef Name="QuanHuyenId" />
@@ -317,27 +191,6 @@
     <Property Name="ViTri" Type="nvarchar" MaxLength="255" />
     <Property Name="TinhThanhId" Type="int" />
   </EntityType>
-  <EntityType Name="DS_QuanLyGiaoDuc">
-    <Key>
-      <PropertyRef Name="QuanLyGiaoDucId" />
-    </Key>
-    <Property Name="QuanLyGiaoDucId" Type="int" Nullable="false" />
-    <Property Name="Ten" Type="nvarchar" MaxLength="100" />
-  </EntityType>
-  <EntityType Name="DS_QuanLyNhaNuoc">
-    <Key>
-      <PropertyRef Name="QuanLyNhaNuocId" />
-    </Key>
-    <Property Name="QuanLyNhaNuocId" Type="int" Nullable="false" />
-    <Property Name="Ten" Type="nvarchar" MaxLength="100" />
-  </EntityType>
-  <EntityType Name="DS_ThoiGianTrongNgay">
-    <Key>
-      <PropertyRef Name="BuoiId" />
-    </Key>
-    <Property Name="BuoiId" Type="int" Nullable="false" />
-    <Property Name="Ten" Type="nvarchar" MaxLength="50" />
-  </EntityType>
   <EntityType Name="DS_TinhThanh">
     <Key>
       <PropertyRef Name="TinhThanhId" />
@@ -346,56 +199,25 @@
     <Property Name="Ten" Type="nvarchar" MaxLength="255" />
     <Property Name="Loai" Type="nvarchar" MaxLength="255" />
   </EntityType>
-  <EntityType Name="DS_TrangThaiPhieuMuon">
+  <EntityType Name="HT_Permission">
     <Key>
-      <PropertyRef Name="TrangThaiPMTBId" />
+      <PropertyRef Name="PermissionId" />
     </Key>
-    <Property Name="TrangThaiPMTBId" Type="int" Nullable="false" />
-    <Property Name="Ten" Type="nvarchar" MaxLength="100" />
-  </EntityType>
-  <EntityType Name="DS_TrinhDoChuan">
-    <Key>
-      <PropertyRef Name="TrinhDoChuanId" />
-    </Key>
-    <Property Name="TrinhDoChuanId" Type="int" Nullable="false" />
-    <Property Name="Ten" Type="nvarchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="DS_TrinhDoChuyenMon">
-    <Key>
-      <PropertyRef Name="TrinhDoChuyenMonId" />
-    </Key>
-    <Property Name="TrinhDoChuyenMonId" Type="int" Nullable="false" />
-    <Property Name="Ten" Type="nvarchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="DS_ViTriGiaoVien">
-    <Key>
-      <PropertyRef Name="ViTriGiaoVienId" />
-    </Key>
-    <Property Name="ViTriGiaoVienId" Type="int" Nullable="false" />
-    <Property Name="CapHocId" Type="int" />
-    <Property Name="Ten" Type="nvarchar" MaxLength="50" Nullable="false" />
-  </EntityType>
-  <EntityType Name="DS_VungMien">
-    <Key>
-      <PropertyRef Name="VungMienId" />
-    </Key>
-    <Property Name="VungMienId" Type="int" Nullable="false" />
-    <Property Name="Ten" Type="nvarchar" MaxLength="100" />
-  </EntityType>
-  <EntityType Name="DS_XepLoaiPhongHocBM">
-    <Key>
-      <PropertyRef Name="XepLoaiPhongBMId" />
-    </Key>
-    <Property Name="XepLoaiPhongBMId" Type="int" Nullable="false" />
-    <Property Name="Ten" Type="nvarchar" MaxLength="100" />
+    <Property Name="PermissionId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="PermissionKey" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="HT_User">
     <Key>
-      <PropertyRef Name="UserName" />
+      <PropertyRef Name="UserId" />
     </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
     <Property Name="UserName" Type="varchar" MaxLength="20" Nullable="false" />
-    <Property Name="PassWord" Type="varchar" MaxLength="20" />
-    <Property Name="UserRoleId" Type="varchar" MaxLength="10" />
+    <Property Name="PassWord" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="UserRoleId" Type="int" Nullable="false" />
+    <Property Name="isActived" Type="bit" />
     <Property Name="PhoneNumber" Type="varchar" MaxLength="11" />
     <Property Name="Email" Type="varchar" MaxLength="500" />
     <Property Name="Note" Type="nvarchar" MaxLength="500" />
@@ -405,7 +227,7 @@
     <Key>
       <PropertyRef Name="UserRoleId" />
     </Key>
-    <Property Name="UserRoleId" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="UserRoleId" Type="int" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="100" />
     <Property Name="Description" Type="nvarchar" MaxLength="500" />
   </EntityType>
@@ -479,19 +301,32 @@
     <Property Name="SoHieuTB" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="SoLuong" Type="int" />
   </EntityType>
+  <EntityType Name="QH_User_Permission">
+    <Key>
+      <PropertyRef Name="UserRoleId" />
+      <PropertyRef Name="PermissionId" />
+    </Key>
+    <Property Name="UserRoleId" Type="int" Nullable="false" />
+    <Property Name="PermissionId" Type="int" Nullable="false" />
+    <Property Name="PermissionKey" Type="varchar" MaxLength="100" />
+    <Property Name="isView" Type="bit" />
+    <Property Name="isAdd" Type="bit" />
+    <Property Name="isUpdate" Type="bit" />
+    <Property Name="isDelete" Type="bit" />
+  </EntityType>
   <EntityType Name="TB_PhieuBaoHong">
     <Key>
       <PropertyRef Name="PhieuBaoHongId" />
     </Key>
     <Property Name="PhieuBaoHongId" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="NgayLap" Type="date" />
+    <Property Name="NgayLap" Type="date" Nullable="false" />
     <Property Name="NguoiLamHong" Type="nvarchar" MaxLength="200" />
     <Property Name="GhiChu" Type="nvarchar" MaxLength="500" />
-    <Property Name="CreatedByUserId" Type="varchar" MaxLength="20" />
-    <Property Name="CreatedOnDate" Type="datetime" />
-    <Property Name="UpdatedByUserId" Type="varchar" MaxLength="20" />
-    <Property Name="UpdatedOnDate" Type="datetime" />
     <Property Name="IsDelete" Type="bit" Nullable="false" />
+    <Property Name="CreatedByUserId" Type="int" />
+    <Property Name="CreatedOnDate" Type="datetime" />
+    <Property Name="UpdatedByUserId" Type="int" />
+    <Property Name="UpdatedOnDate" Type="datetime" />
   </EntityType>
   <EntityType Name="TB_PhieuDeNghiMuaSam">
     <Key>
@@ -501,9 +336,9 @@
     <Property Name="Ten" Type="nvarchar" MaxLength="200" />
     <Property Name="NamHocId" Type="int" />
     <Property Name="TrangThaiId" Type="int" />
-    <Property Name="CreatedByUserId" Type="varchar" MaxLength="20" />
+    <Property Name="CreatedByUserId" Type="int" />
     <Property Name="CreatedOnDate" Type="datetime" />
-    <Property Name="UpdatedByUserId" Type="varchar" MaxLength="20" />
+    <Property Name="UpdatedByUserId" Type="int" />
     <Property Name="UpdatedOnDate" Type="datetime" />
   </EntityType>
   <EntityType Name="TB_PhieuGhiTang">
@@ -514,9 +349,9 @@
     <Property Name="NgayLap" Type="nchar" MaxLength="10" />
     <Property Name="ChungTuLienQuan" Type="nvarchar" MaxLength="100" />
     <Property Name="NoiDung" Type="nvarchar" MaxLength="500" />
-    <Property Name="CreatedByUserId" Type="varchar" MaxLength="20" />
+    <Property Name="CreatedByUserId" Type="int" />
     <Property Name="CreatedOnDate" Type="datetime" />
-    <Property Name="UpdatedByUserId" Type="varchar" MaxLength="20" />
+    <Property Name="UpdatedByUserId" Type="int" />
     <Property Name="UpdatedOnDate" Type="datetime" />
   </EntityType>
   <EntityType Name="TB_PhieuGiamTB">
@@ -526,11 +361,11 @@
     <Property Name="PhieuGiamTBId" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="NgayLap" Type="date" />
     <Property Name="GhiChu" Type="nvarchar" MaxLength="500" />
-    <Property Name="CreatedByUserId" Type="varchar" MaxLength="20" />
-    <Property Name="CreatedOnDate" Type="datetime" />
-    <Property Name="UpdatedByUserId" Type="varchar" MaxLength="20" />
-    <Property Name="UpdatedOnDate" Type="datetime" />
     <Property Name="IsDelete" Type="bit" Nullable="false" />
+    <Property Name="CreatedByUserId" Type="int" />
+    <Property Name="CreatedOnDate" Type="datetime" />
+    <Property Name="UpdatedByUserId" Type="int" />
+    <Property Name="UpdatedOnDate" Type="datetime" />
   </EntityType>
   <EntityType Name="TB_PhieuMuonPhong">
     <Key>
@@ -552,11 +387,11 @@
     <Property Name="IsSuDungChoGD" Type="bit" Nullable="false" />
     <Property Name="TrangThaiId" Type="int" />
     <Property Name="GhiChu" Type="nvarchar" MaxLength="500" />
-    <Property Name="CreatedByUserId" Type="varchar" MaxLength="20" />
-    <Property Name="CreatedOnDate" Type="datetime" />
-    <Property Name="UpdatedByUserId" Type="nchar" MaxLength="10" />
-    <Property Name="UpdatedOnDate" Type="datetime" />
     <Property Name="IsDelete" Type="bit" Nullable="false" />
+    <Property Name="CreatedByUserId" Type="int" />
+    <Property Name="CreatedOnDate" Type="datetime" />
+    <Property Name="UpdatedByUserId" Type="int" />
+    <Property Name="UpdatedOnDate" Type="datetime" />
   </EntityType>
   <EntityType Name="TB_PhieuMuonTB">
     <Key>
@@ -568,19 +403,20 @@
     <Property Name="KhoiLopId" Type="int" Nullable="false" />
     <Property Name="LopHocId" Type="int" Nullable="false" />
     <Property Name="NgayMuon" Type="date" Nullable="false" />
+    <Property Name="MuonTuTiet" Type="int" Nullable="false" />
     <Property Name="ThoiGianTrongNgay" Type="int" Nullable="false" />
     <Property Name="NgayTra" Type="date" Nullable="false" />
     <Property Name="MucDichSuDungId" Type="int" Nullable="false" />
     <Property Name="SoTiet" Type="int" Nullable="false" />
-    <Property Name="BaiDayId" Type="int" />
+    <Property Name="BaiDayId" Type="int" Nullable="false" />
     <Property Name="IsNgoaiQuyDinh" Type="bit" Nullable="false" />
     <Property Name="TrangThaiId" Type="int" Nullable="false" />
     <Property Name="GhiChu" Type="nvarchar" MaxLength="500" />
-    <Property Name="CreatedByUserId" Type="varchar" MaxLength="20" />
-    <Property Name="CreatedOnDate" Type="datetime" />
-    <Property Name="UpdatedByUserId" Type="varchar" MaxLength="20" />
-    <Property Name="UpdatedOnDate" Type="datetime" />
     <Property Name="IsDelete" Type="bit" Nullable="false" />
+    <Property Name="CreatedByUserId" Type="int" />
+    <Property Name="CreatedOnDate" Type="datetime" />
+    <Property Name="UpdatedByUserId" Type="int" />
+    <Property Name="UpdatedOnDate" Type="datetime" />
   </EntityType>
   <EntityType Name="TB_PhieuThanhLyTB">
     <Key>
@@ -590,11 +426,11 @@
     <Property Name="DiaDiem" Type="nvarchar" MaxLength="500" />
     <Property Name="HoiDongThanhLy" Type="nvarchar" MaxLength="500" />
     <Property Name="NoiDung" Type="nvarchar" MaxLength="500" />
-    <Property Name="CreatedByUserId" Type="varchar" MaxLength="20" />
-    <Property Name="CreatedOnDate" Type="datetime" />
-    <Property Name="UpdatedByUserId" Type="varchar" MaxLength="20" />
-    <Property Name="UpdatedOnDate" Type="datetime" />
     <Property Name="IsDelete" Type="bit" Nullable="false" />
+    <Property Name="CreatedByUserId" Type="int" />
+    <Property Name="CreatedOnDate" Type="datetime" />
+    <Property Name="UpdatedByUserId" Type="int" />
+    <Property Name="UpdatedOnDate" Type="datetime" />
   </EntityType>
   <EntityType Name="TB_ThongTinThietBi">
     <Key>
@@ -605,12 +441,14 @@
     <Property Name="Ten" Type="nvarchar" MaxLength="200" Nullable="false" />
     <Property Name="QuyCachSD" Type="nvarchar" MaxLength="1000" />
     <Property Name="PhongHocId" Type="int" Nullable="false" />
+    <Property Name="MonHocId" Type="int" />
     <Property Name="NguonKinhPhiId" Type="int" Nullable="false" />
     <Property Name="NamDuaVaoSD" Type="int" Nullable="false" />
     <Property Name="NgayDuaVaoSD" Type="date" Nullable="false" />
     <Property Name="NamTheoDoi" Type="int" Nullable="false" />
     <Property Name="DonViTinhId" Type="int" Nullable="false" />
     <Property Name="SoLuong" Type="int" Nullable="false" />
+    <Property Name="SoLuongMuon" Type="int" Nullable="false" />
     <Property Name="SoLuongCon" Type="int" Nullable="false" />
     <Property Name="SoLuongMat" Type="int" Nullable="false" />
     <Property Name="SoLuongHong" Type="int" Nullable="false" />
@@ -623,16 +461,16 @@
     <Property Name="HanSD" Type="date" />
     <Property Name="GhiChu" Type="nchar" MaxLength="10" />
     <Property Name="TrangThai" Type="int" Nullable="false" />
-    <Property Name="CreateByUserId" Type="varchar" MaxLength="20" />
+    <Property Name="CreateByUserId" Type="int" />
     <Property Name="CreatedOnDate" Type="datetime" />
-    <Property Name="UpdatedByUserId" Type="varchar" MaxLength="20" />
+    <Property Name="UpdatedByUserId" Type="int" />
     <Property Name="UpdatedOnDate" Type="datetime" />
   </EntityType>
   <EntityType Name="ThongTinDonVi">
     <Key>
       <PropertyRef Name="MaDonVi" />
     </Key>
-    <Property Name="MaDonVi" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="MaDonVi" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="Ten" Type="nvarchar" MaxLength="200" />
     <Property Name="DonViChuQuan" Type="nvarchar" MaxLength="200" />
     <Property Name="KhoiTruongId" Type="int" Nullable="false" />
@@ -668,6 +506,7 @@
     <Property Name="BatDauHK2" Type="date" Nullable="false" />
     <Property Name="KetThucNamHoc" Type="date" Nullable="false" />
     <Property Name="GhiChu" Type="nvarchar" MaxLength="500" />
+    <Property Name="IsActive" Type="bit" />
   </EntityType>
   <Association Name="FK_district_province">
     <End Role="DS_TinhThanh" Type="Self.DS_TinhThanh" Multiplicity="0..1" />
@@ -678,30 +517,6 @@
       </Principal>
       <Dependent Role="DS_QuanHuyen">
         <PropertyRef Name="TinhThanhId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_DM_CanBoThietBi_DS_GioiTinh">
-    <End Role="DS_GioiTinh" Type="Self.DS_GioiTinh" Multiplicity="0..1" />
-    <End Role="DM_CanBoThietBi" Type="Self.DM_CanBoThietBi" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DS_GioiTinh">
-        <PropertyRef Name="GioiTinhId" />
-      </Principal>
-      <Dependent Role="DM_CanBoThietBi">
-        <PropertyRef Name="GioiTinhId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_DM_CanBoThietBi_DS_PhuTrachCBTB">
-    <End Role="DS_PhuTrachCBTB" Type="Self.DS_PhuTrachCBTB" Multiplicity="0..1" />
-    <End Role="DM_CanBoThietBi" Type="Self.DM_CanBoThietBi" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DS_PhuTrachCBTB">
-        <PropertyRef Name="PhuTrachCBTBId" />
-      </Principal>
-      <Dependent Role="DM_CanBoThietBi">
-        <PropertyRef Name="PhuTrachId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -717,18 +532,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_DM_GiaoVien_DS_ChucVuGiaoVien">
-    <End Role="DS_ChucVuGiaoVien" Type="Self.DS_ChucVuGiaoVien" Multiplicity="0..1" />
-    <End Role="DM_GiaoVien" Type="Self.DM_GiaoVien" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DS_ChucVuGiaoVien">
-        <PropertyRef Name="ChucVuGiaoVienId" />
-      </Principal>
-      <Dependent Role="DM_GiaoVien">
-        <PropertyRef Name="ChucVuId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_DM_GiaoVien_DS_DanToc">
     <End Role="DS_DanToc" Type="Self.DS_DanToc" Multiplicity="0..1" />
     <End Role="DM_GiaoVien" Type="Self.DM_GiaoVien" Multiplicity="*" />
@@ -738,42 +541,6 @@
       </Principal>
       <Dependent Role="DM_GiaoVien">
         <PropertyRef Name="DanTocId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_DM_GiaoVien_DS_GioiTinh">
-    <End Role="DS_GioiTinh" Type="Self.DS_GioiTinh" Multiplicity="1" />
-    <End Role="DM_GiaoVien" Type="Self.DM_GiaoVien" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DS_GioiTinh">
-        <PropertyRef Name="GioiTinhId" />
-      </Principal>
-      <Dependent Role="DM_GiaoVien">
-        <PropertyRef Name="GioiTinhId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_DM_GiaoVien_DS_LoaiHopDong">
-    <End Role="DS_LoaiHopDong" Type="Self.DS_LoaiHopDong" Multiplicity="1" />
-    <End Role="DM_GiaoVien" Type="Self.DM_GiaoVien" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DS_LoaiHopDong">
-        <PropertyRef Name="LoaiHopDongId" />
-      </Principal>
-      <Dependent Role="DM_GiaoVien">
-        <PropertyRef Name="LoaiHopDongId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_DM_GiaoVien_DS_LyLuanChinhTri">
-    <End Role="DS_LyLuanChinhTri" Type="Self.DS_LyLuanChinhTri" Multiplicity="0..1" />
-    <End Role="DM_GiaoVien" Type="Self.DM_GiaoVien" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DS_LyLuanChinhTri">
-        <PropertyRef Name="LyLuanChinhTriId" />
-      </Principal>
-      <Dependent Role="DM_GiaoVien">
-        <PropertyRef Name="LyLuanChinhTriId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -789,78 +556,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_DM_GiaoVien_DS_QuanLyGiaoDuc">
-    <End Role="DS_QuanLyGiaoDuc" Type="Self.DS_QuanLyGiaoDuc" Multiplicity="0..1" />
-    <End Role="DM_GiaoVien" Type="Self.DM_GiaoVien" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DS_QuanLyGiaoDuc">
-        <PropertyRef Name="QuanLyGiaoDucId" />
-      </Principal>
-      <Dependent Role="DM_GiaoVien">
-        <PropertyRef Name="QuanLyGiaoDucId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_DM_GiaoVien_DS_QuanLyNhaNuoc">
-    <End Role="DS_QuanLyNhaNuoc" Type="Self.DS_QuanLyNhaNuoc" Multiplicity="0..1" />
-    <End Role="DM_GiaoVien" Type="Self.DM_GiaoVien" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DS_QuanLyNhaNuoc">
-        <PropertyRef Name="QuanLyNhaNuocId" />
-      </Principal>
-      <Dependent Role="DM_GiaoVien">
-        <PropertyRef Name="QuanLyNhaNuocId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_DM_GiaoVien_DS_TrinhDoChuan">
-    <End Role="DS_TrinhDoChuan" Type="Self.DS_TrinhDoChuan" Multiplicity="0..1" />
-    <End Role="DM_GiaoVien" Type="Self.DM_GiaoVien" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DS_TrinhDoChuan">
-        <PropertyRef Name="TrinhDoChuanId" />
-      </Principal>
-      <Dependent Role="DM_GiaoVien">
-        <PropertyRef Name="TrinhDoChuanId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_DM_GiaoVien_DS_TrinhDoChuyenMon">
-    <End Role="DS_TrinhDoChuyenMon" Type="Self.DS_TrinhDoChuyenMon" Multiplicity="0..1" />
-    <End Role="DM_GiaoVien" Type="Self.DM_GiaoVien" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DS_TrinhDoChuyenMon">
-        <PropertyRef Name="TrinhDoChuyenMonId" />
-      </Principal>
-      <Dependent Role="DM_GiaoVien">
-        <PropertyRef Name="TrinhDoId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_DM_GiaoVien_DS_ViTriGiaoVien">
-    <End Role="DS_ViTriGiaoVien" Type="Self.DS_ViTriGiaoVien" Multiplicity="0..1" />
-    <End Role="DM_GiaoVien" Type="Self.DM_GiaoVien" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DS_ViTriGiaoVien">
-        <PropertyRef Name="ViTriGiaoVienId" />
-      </Principal>
-      <Dependent Role="DM_GiaoVien">
-        <PropertyRef Name="ViTriId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_DM_KhoiLop_DS_CapTruong">
-    <End Role="DS_CapTruong" Type="Self.DS_CapTruong" Multiplicity="1" />
-    <End Role="DM_KhoiLop" Type="Self.DM_KhoiLop" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DS_CapTruong">
-        <PropertyRef Name="CapTruongId" />
-      </Principal>
-      <Dependent Role="DM_KhoiLop">
-        <PropertyRef Name="CapTruongId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_DM_LopHoc_DM_KhoiLop">
     <End Role="DM_KhoiLop" Type="Self.DM_KhoiLop" Multiplicity="1" />
     <End Role="DM_LopHoc" Type="Self.DM_LopHoc" Multiplicity="*" />
@@ -870,30 +565,6 @@
       </Principal>
       <Dependent Role="DM_LopHoc">
         <PropertyRef Name="KhoiLopId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_DM_MonHoc_DS_LoaiDanhGiaMH">
-    <End Role="DS_LoaiDanhGiaMH" Type="Self.DS_LoaiDanhGiaMH" Multiplicity="0..1" />
-    <End Role="DM_MonHoc" Type="Self.DM_MonHoc" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DS_LoaiDanhGiaMH">
-        <PropertyRef Name="LoaiDanhGiaId" />
-      </Principal>
-      <Dependent Role="DM_MonHoc">
-        <PropertyRef Name="LoaiDanhGiaId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_DM_MonHoc_DS_LoaiMonHoc">
-    <End Role="DS_LoaiMonHoc" Type="Self.DS_LoaiMonHoc" Multiplicity="0..1" />
-    <End Role="DM_MonHoc" Type="Self.DM_MonHoc" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DS_LoaiMonHoc">
-        <PropertyRef Name="LoaiMonHocId" />
-      </Principal>
-      <Dependent Role="DM_MonHoc">
-        <PropertyRef Name="LoaiMonHocId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -933,30 +604,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_DM_PhongHocBoMon_DS_LoaiPhongTN">
-    <End Role="DS_LoaiPhongTN" Type="Self.DS_LoaiPhongTN" Multiplicity="0..1" />
-    <End Role="DM_PhongHocBoMon" Type="Self.DM_PhongHocBoMon" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DS_LoaiPhongTN">
-        <PropertyRef Name="LoaiPhongTNId" />
-      </Principal>
-      <Dependent Role="DM_PhongHocBoMon">
-        <PropertyRef Name="LoaiPhongTNId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_DM_PhongHocBoMon_DS_XepLoaiPhongHocBM">
-    <End Role="DS_XepLoaiPhongHocBM" Type="Self.DS_XepLoaiPhongHocBM" Multiplicity="0..1" />
-    <End Role="DM_PhongHocBoMon" Type="Self.DM_PhongHocBoMon" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DS_XepLoaiPhongHocBM">
-        <PropertyRef Name="XepLoaiPhongBMId" />
-      </Principal>
-      <Dependent Role="DM_PhongHocBoMon">
-        <PropertyRef Name="XepLoaiId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_DM_ThietBiToiThieu_DM_MonHoc">
     <End Role="DM_MonHoc" Type="Self.DM_MonHoc" Multiplicity="1" />
     <End Role="DM_ThietBiToiThieu" Type="Self.DM_ThietBiToiThieu" Multiplicity="*" />
@@ -966,18 +613,6 @@
       </Principal>
       <Dependent Role="DM_ThietBiToiThieu">
         <PropertyRef Name="MonHocId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_DM_ThietBiToiThieu_DS_DauMucThietBi">
-    <End Role="DS_DauMucThietBi" Type="Self.DS_DauMucThietBi" Multiplicity="0..1" />
-    <End Role="DM_ThietBiToiThieu" Type="Self.DM_ThietBiToiThieu" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DS_DauMucThietBi">
-        <PropertyRef Name="DauMucThietBiId" />
-      </Principal>
-      <Dependent Role="DM_ThietBiToiThieu">
-        <PropertyRef Name="DauMucId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -993,18 +628,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_DM_ThietBiToiThieu_DS_LoaiThietBi">
-    <End Role="DS_LoaiThietBi" Type="Self.DS_LoaiThietBi" Multiplicity="1" />
-    <End Role="DM_ThietBiToiThieu" Type="Self.DM_ThietBiToiThieu" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DS_LoaiThietBi">
-        <PropertyRef Name="LoaiThietBiId" />
-      </Principal>
-      <Dependent Role="DM_ThietBiToiThieu">
-        <PropertyRef Name="LoaiThietBiId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_DM_ToBoMon_DM_ToBoMon">
     <End Role="DM_ToBoMon" Type="Self.DM_ToBoMon" Multiplicity="0..1" />
     <End Role="DM_ToBoMon1" Type="Self.DM_ToBoMon" Multiplicity="*" />
@@ -1017,20 +640,8 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_DS_CapTruong_DS_KhoiTruong">
-    <End Role="DS_KhoiTruong" Type="Self.DS_KhoiTruong" Multiplicity="1" />
-    <End Role="DS_CapTruong" Type="Self.DS_CapTruong" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DS_KhoiTruong">
-        <PropertyRef Name="KhoiTruongId" />
-      </Principal>
-      <Dependent Role="DS_CapTruong">
-        <PropertyRef Name="KhoiTruongId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_HT_User_HT_UserRole">
-    <End Role="HT_UserRole" Type="Self.HT_UserRole" Multiplicity="0..1" />
+    <End Role="HT_UserRole" Type="Self.HT_UserRole" Multiplicity="1" />
     <End Role="HT_User" Type="Self.HT_User" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="HT_UserRole">
@@ -1161,6 +772,78 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_QH_User_Permission_HT_Permission">
+    <End Role="HT_Permission" Type="Self.HT_Permission" Multiplicity="1" />
+    <End Role="QH_User_Permission" Type="Self.QH_User_Permission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HT_Permission">
+        <PropertyRef Name="PermissionId" />
+      </Principal>
+      <Dependent Role="QH_User_Permission">
+        <PropertyRef Name="PermissionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QH_User_Permission_HT_UserRole">
+    <End Role="HT_UserRole" Type="Self.HT_UserRole" Multiplicity="1" />
+    <End Role="QH_User_Permission" Type="Self.QH_User_Permission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HT_UserRole">
+        <PropertyRef Name="UserRoleId" />
+      </Principal>
+      <Dependent Role="QH_User_Permission">
+        <PropertyRef Name="UserRoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_PhieuBaoHong_HT_User">
+    <End Role="HT_User" Type="Self.HT_User" Multiplicity="0..1" />
+    <End Role="TB_PhieuBaoHong" Type="Self.TB_PhieuBaoHong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HT_User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="TB_PhieuBaoHong">
+        <PropertyRef Name="CreatedByUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_PhieuBaoHong_HT_User1">
+    <End Role="HT_User" Type="Self.HT_User" Multiplicity="0..1" />
+    <End Role="TB_PhieuBaoHong" Type="Self.TB_PhieuBaoHong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HT_User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="TB_PhieuBaoHong">
+        <PropertyRef Name="UpdatedByUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_PhieuDeNghiMuaSam_HT_User">
+    <End Role="HT_User" Type="Self.HT_User" Multiplicity="0..1" />
+    <End Role="TB_PhieuDeNghiMuaSam" Type="Self.TB_PhieuDeNghiMuaSam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HT_User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="TB_PhieuDeNghiMuaSam">
+        <PropertyRef Name="CreatedByUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_PhieuDeNghiMuaSam_HT_User1">
+    <End Role="HT_User" Type="Self.HT_User" Multiplicity="0..1" />
+    <End Role="TB_PhieuDeNghiMuaSam" Type="Self.TB_PhieuDeNghiMuaSam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HT_User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="TB_PhieuDeNghiMuaSam">
+        <PropertyRef Name="UpdatedByUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_TB_PhieuDeNghiMuaSam_ThongTinNamHoc">
     <End Role="ThongTinNamHoc" Type="Self.ThongTinNamHoc" Multiplicity="0..1" />
     <End Role="TB_PhieuDeNghiMuaSam" Type="Self.TB_PhieuDeNghiMuaSam" Multiplicity="*" />
@@ -1170,6 +853,54 @@
       </Principal>
       <Dependent Role="TB_PhieuDeNghiMuaSam">
         <PropertyRef Name="NamHocId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_PhieuGhiTang_HT_User">
+    <End Role="HT_User" Type="Self.HT_User" Multiplicity="0..1" />
+    <End Role="TB_PhieuGhiTang" Type="Self.TB_PhieuGhiTang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HT_User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="TB_PhieuGhiTang">
+        <PropertyRef Name="CreatedByUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_PhieuGhiTang_HT_User1">
+    <End Role="HT_User" Type="Self.HT_User" Multiplicity="0..1" />
+    <End Role="TB_PhieuGhiTang" Type="Self.TB_PhieuGhiTang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HT_User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="TB_PhieuGhiTang">
+        <PropertyRef Name="UpdatedByUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_PhieuGiamTB_HT_User">
+    <End Role="HT_User" Type="Self.HT_User" Multiplicity="0..1" />
+    <End Role="TB_PhieuGiamTB" Type="Self.TB_PhieuGiamTB" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HT_User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="TB_PhieuGiamTB">
+        <PropertyRef Name="CreatedByUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_PhieuGiamTB_HT_User1">
+    <End Role="HT_User" Type="Self.HT_User" Multiplicity="0..1" />
+    <End Role="TB_PhieuGiamTB" Type="Self.TB_PhieuGiamTB" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HT_User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="TB_PhieuGiamTB">
+        <PropertyRef Name="UpdatedByUserId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1233,18 +964,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_TB_PhieuMuonPhong_DS_MucDichSDPHong">
-    <End Role="DS_MucDichSDPHong" Type="Self.DS_MucDichSDPHong" Multiplicity="1" />
-    <End Role="TB_PhieuMuonPhong" Type="Self.TB_PhieuMuonPhong" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DS_MucDichSDPHong">
-        <PropertyRef Name="MucDichSDPhongId" />
-      </Principal>
-      <Dependent Role="TB_PhieuMuonPhong">
-        <PropertyRef Name="MucDichSDId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_TB_PhieuMuonTB_DM_GiaoVien">
     <End Role="DM_GiaoVien" Type="Self.DM_GiaoVien" Multiplicity="1" />
     <End Role="TB_PhieuMuonTB" Type="Self.TB_PhieuMuonTB" Multiplicity="*" />
@@ -1282,7 +1001,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_TB_PhieuMuonTB_DS_BaiGiang">
-    <End Role="DS_BaiGiang" Type="Self.DS_BaiGiang" Multiplicity="0..1" />
+    <End Role="DS_BaiGiang" Type="Self.DS_BaiGiang" Multiplicity="1" />
     <End Role="TB_PhieuMuonTB" Type="Self.TB_PhieuMuonTB" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="DS_BaiGiang">
@@ -1293,39 +1012,63 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_TB_PhieuMuonTB_DS_MucDichSDThietBi">
-    <End Role="DS_MucDichSDThietBi" Type="Self.DS_MucDichSDThietBi" Multiplicity="1" />
-    <End Role="TB_PhieuMuonTB" Type="Self.TB_PhieuMuonTB" Multiplicity="*" />
+  <Association Name="FK_TB_PhieuThanhLyTB_HT_User">
+    <End Role="HT_User" Type="Self.HT_User" Multiplicity="0..1" />
+    <End Role="TB_PhieuThanhLyTB" Type="Self.TB_PhieuThanhLyTB" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="DS_MucDichSDThietBi">
-        <PropertyRef Name="MucDichSDTBId" />
+      <Principal Role="HT_User">
+        <PropertyRef Name="UserId" />
       </Principal>
-      <Dependent Role="TB_PhieuMuonTB">
-        <PropertyRef Name="MucDichSuDungId" />
+      <Dependent Role="TB_PhieuThanhLyTB">
+        <PropertyRef Name="CreatedByUserId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_TB_PhieuMuonTB_DS_ThoiGianTrongNganh">
-    <End Role="DS_ThoiGianTrongNgay" Type="Self.DS_ThoiGianTrongNgay" Multiplicity="1" />
-    <End Role="TB_PhieuMuonTB" Type="Self.TB_PhieuMuonTB" Multiplicity="*" />
+  <Association Name="FK_TB_PhieuThanhLyTB_HT_User1">
+    <End Role="HT_User" Type="Self.HT_User" Multiplicity="0..1" />
+    <End Role="TB_PhieuThanhLyTB" Type="Self.TB_PhieuThanhLyTB" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="DS_ThoiGianTrongNgay">
-        <PropertyRef Name="BuoiId" />
+      <Principal Role="HT_User">
+        <PropertyRef Name="UserId" />
       </Principal>
-      <Dependent Role="TB_PhieuMuonTB">
-        <PropertyRef Name="ThoiGianTrongNgay" />
+      <Dependent Role="TB_PhieuThanhLyTB">
+        <PropertyRef Name="UpdatedByUserId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_TB_PhieuMuonTB_DS_TrangThaiPhieuMuon">
-    <End Role="DS_TrangThaiPhieuMuon" Type="Self.DS_TrangThaiPhieuMuon" Multiplicity="1" />
-    <End Role="TB_PhieuMuonTB" Type="Self.TB_PhieuMuonTB" Multiplicity="*" />
+  <Association Name="FK_TB_ThongTinThietBi_DM_MonHoc">
+    <End Role="DM_MonHoc" Type="Self.DM_MonHoc" Multiplicity="0..1" />
+    <End Role="TB_ThongTinThietBi" Type="Self.TB_ThongTinThietBi" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="DS_TrangThaiPhieuMuon">
-        <PropertyRef Name="TrangThaiPMTBId" />
+      <Principal Role="DM_MonHoc">
+        <PropertyRef Name="MonHocId" />
       </Principal>
-      <Dependent Role="TB_PhieuMuonTB">
-        <PropertyRef Name="TrangThaiId" />
+      <Dependent Role="TB_ThongTinThietBi">
+        <PropertyRef Name="MonHocId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_ThongTinThietBi_DM_NguonKinhPhi">
+    <End Role="DM_NguonKinhPhi" Type="Self.DM_NguonKinhPhi" Multiplicity="1" />
+    <End Role="TB_ThongTinThietBi" Type="Self.TB_ThongTinThietBi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DM_NguonKinhPhi">
+        <PropertyRef Name="NguonKinhPhiId" />
+      </Principal>
+      <Dependent Role="TB_ThongTinThietBi">
+        <PropertyRef Name="NguonKinhPhiId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_ThongTinThietBi_DM_PhongHocBoMon">
+    <End Role="DM_PhongHocBoMon" Type="Self.DM_PhongHocBoMon" Multiplicity="1" />
+    <End Role="TB_ThongTinThietBi" Type="Self.TB_ThongTinThietBi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DM_PhongHocBoMon">
+        <PropertyRef Name="PhongHocId" />
+      </Principal>
+      <Dependent Role="TB_ThongTinThietBi">
+        <PropertyRef Name="PhongHocId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1341,51 +1084,39 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ThongTinDonVi_DS_HangTruong">
-    <End Role="DS_HangTruong" Type="Self.DS_HangTruong" Multiplicity="1" />
-    <End Role="ThongTinDonVi" Type="Self.ThongTinDonVi" Multiplicity="*" />
+  <Association Name="FK_TB_ThongTinThietBi_DS_DonViTinh">
+    <End Role="DS_DonViTinh" Type="Self.DS_DonViTinh" Multiplicity="1" />
+    <End Role="TB_ThongTinThietBi" Type="Self.TB_ThongTinThietBi" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="DS_HangTruong">
-        <PropertyRef Name="HangTruongId" />
+      <Principal Role="DS_DonViTinh">
+        <PropertyRef Name="DonViTinhId" />
       </Principal>
-      <Dependent Role="ThongTinDonVi">
-        <PropertyRef Name="HangTruongId" />
+      <Dependent Role="TB_ThongTinThietBi">
+        <PropertyRef Name="DonViTinhId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ThongTinDonVi_DS_HinhThucDaoTao">
-    <End Role="DS_HinhThucDaoTao" Type="Self.DS_HinhThucDaoTao" Multiplicity="1" />
-    <End Role="ThongTinDonVi" Type="Self.ThongTinDonVi" Multiplicity="*" />
+  <Association Name="FK_TB_ThongTinThietBi_HT_User">
+    <End Role="HT_User" Type="Self.HT_User" Multiplicity="0..1" />
+    <End Role="TB_ThongTinThietBi" Type="Self.TB_ThongTinThietBi" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="DS_HinhThucDaoTao">
-        <PropertyRef Name="HinhThucDaoTaoId" />
+      <Principal Role="HT_User">
+        <PropertyRef Name="UserId" />
       </Principal>
-      <Dependent Role="ThongTinDonVi">
-        <PropertyRef Name="HinhThucDaoTaoId" />
+      <Dependent Role="TB_ThongTinThietBi">
+        <PropertyRef Name="CreateByUserId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ThongTinDonVi_DS_LoaiHinhTruong">
-    <End Role="DS_LoaiHinhTruong" Type="Self.DS_LoaiHinhTruong" Multiplicity="1" />
-    <End Role="ThongTinDonVi" Type="Self.ThongTinDonVi" Multiplicity="*" />
+  <Association Name="FK_TB_ThongTinThietBi_HT_User1">
+    <End Role="HT_User" Type="Self.HT_User" Multiplicity="0..1" />
+    <End Role="TB_ThongTinThietBi" Type="Self.TB_ThongTinThietBi" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="DS_LoaiHinhTruong">
-        <PropertyRef Name="LoaiHinhTruongId" />
+      <Principal Role="HT_User">
+        <PropertyRef Name="UserId" />
       </Principal>
-      <Dependent Role="ThongTinDonVi">
-        <PropertyRef Name="LoaiHinhTruongId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ThongTinDonVi_DS_LoaiTruongChuyenBiet">
-    <End Role="DS_LoaiTruongChuyenBiet" Type="Self.DS_LoaiTruongChuyenBiet" Multiplicity="1" />
-    <End Role="ThongTinDonVi" Type="Self.ThongTinDonVi" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DS_LoaiTruongChuyenBiet">
-        <PropertyRef Name="LoaiTruongChuyenBietId" />
-      </Principal>
-      <Dependent Role="ThongTinDonVi">
-        <PropertyRef Name="LoaiTruongChuyenBietId" />
+      <Dependent Role="TB_ThongTinThietBi">
+        <PropertyRef Name="UpdatedByUserId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1425,18 +1156,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ThongTinDonVi_DS_VungMien">
-    <End Role="DS_VungMien" Type="Self.DS_VungMien" Multiplicity="1" />
-    <End Role="ThongTinDonVi" Type="Self.ThongTinDonVi" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DS_VungMien">
-        <PropertyRef Name="VungMienId" />
-      </Principal>
-      <Dependent Role="ThongTinDonVi">
-        <PropertyRef Name="VungMienId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_ward_district">
     <End Role="DS_QuanHuyen" Type="Self.DS_QuanHuyen" Multiplicity="0..1" />
     <End Role="DS_PhuongXa" Type="Self.DS_PhuongXa" Multiplicity="*" />
@@ -1460,40 +1179,14 @@
     <EntitySet Name="DM_ThietBiToiThieu" EntityType="Self.DM_ThietBiToiThieu" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DM_ToBoMon" EntityType="Self.DM_ToBoMon" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DS_BaiGiang" EntityType="Self.DS_BaiGiang" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="DS_CapTruong" EntityType="Self.DS_CapTruong" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="DS_ChucVuGiaoVien" EntityType="Self.DS_ChucVuGiaoVien" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DS_DanToc" EntityType="Self.DS_DanToc" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="DS_DauMucThietBi" EntityType="Self.DS_DauMucThietBi" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DS_DonViTinh" EntityType="Self.DS_DonViTinh" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="DS_GioiTinh" EntityType="Self.DS_GioiTinh" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="DS_HangTruong" EntityType="Self.DS_HangTruong" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="DS_HinhThucDaoTao" EntityType="Self.DS_HinhThucDaoTao" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="DS_KhoiTruong" EntityType="Self.DS_KhoiTruong" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="DS_LoaiDanhGiaMH" EntityType="Self.DS_LoaiDanhGiaMH" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="DS_LoaiHinhTruong" EntityType="Self.DS_LoaiHinhTruong" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="DS_LoaiHopDong" EntityType="Self.DS_LoaiHopDong" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="DS_LoaiMonHoc" EntityType="Self.DS_LoaiMonHoc" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="DS_LoaiPhongTN" EntityType="Self.DS_LoaiPhongTN" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="DS_LoaiThietBi" EntityType="Self.DS_LoaiThietBi" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="DS_LoaiTruongChuyenBiet" EntityType="Self.DS_LoaiTruongChuyenBiet" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="DS_LyLuanChinhTri" EntityType="Self.DS_LyLuanChinhTri" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="DS_MucDichSDPHong" EntityType="Self.DS_MucDichSDPHong" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="DS_MucDichSDThietBi" EntityType="Self.DS_MucDichSDThietBi" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DS_NguonNganSach" EntityType="Self.DS_NguonNganSach" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DS_PhongBan" EntityType="Self.DS_PhongBan" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DS_PhuongXa" EntityType="Self.DS_PhuongXa" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="DS_PhuTrachCBTB" EntityType="Self.DS_PhuTrachCBTB" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DS_QuanHuyen" EntityType="Self.DS_QuanHuyen" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="DS_QuanLyGiaoDuc" EntityType="Self.DS_QuanLyGiaoDuc" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="DS_QuanLyNhaNuoc" EntityType="Self.DS_QuanLyNhaNuoc" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="DS_ThoiGianTrongNgay" EntityType="Self.DS_ThoiGianTrongNgay" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DS_TinhThanh" EntityType="Self.DS_TinhThanh" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="DS_TrangThaiPhieuMuon" EntityType="Self.DS_TrangThaiPhieuMuon" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="DS_TrinhDoChuan" EntityType="Self.DS_TrinhDoChuan" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="DS_TrinhDoChuyenMon" EntityType="Self.DS_TrinhDoChuyenMon" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="DS_ViTriGiaoVien" EntityType="Self.DS_ViTriGiaoVien" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="DS_VungMien" EntityType="Self.DS_VungMien" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="DS_XepLoaiPhongHocBM" EntityType="Self.DS_XepLoaiPhongHocBM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HT_Permission" EntityType="Self.HT_Permission" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HT_User" EntityType="Self.HT_User" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HT_UserRole" EntityType="Self.HT_UserRole" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="QH_PhieuBaoHong_ThietBi" EntityType="Self.QH_PhieuBaoHong_ThietBi" Schema="dbo" store:Type="Tables" />
@@ -1503,6 +1196,7 @@
     <EntitySet Name="QH_PhieuMuonPhong_ThietBi" EntityType="Self.QH_PhieuMuonPhong_ThietBi" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="QH_PhieuMuonTB_ThietBi" EntityType="Self.QH_PhieuMuonTB_ThietBi" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="QH_PhieuThanhLyTB_ThietBi" EntityType="Self.QH_PhieuThanhLyTB_ThietBi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QH_User_Permission" EntityType="Self.QH_User_Permission" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TB_PhieuBaoHong" EntityType="Self.TB_PhieuBaoHong" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TB_PhieuDeNghiMuaSam" EntityType="Self.TB_PhieuDeNghiMuaSam" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TB_PhieuGhiTang" EntityType="Self.TB_PhieuGhiTang" Schema="dbo" store:Type="Tables" />
@@ -1517,77 +1211,21 @@
       <End Role="DS_TinhThanh" EntitySet="DS_TinhThanh" />
       <End Role="DS_QuanHuyen" EntitySet="DS_QuanHuyen" />
     </AssociationSet>
-    <AssociationSet Name="FK_DM_CanBoThietBi_DS_GioiTinh" Association="Self.FK_DM_CanBoThietBi_DS_GioiTinh">
-      <End Role="DS_GioiTinh" EntitySet="DS_GioiTinh" />
-      <End Role="DM_CanBoThietBi" EntitySet="DM_CanBoThietBi" />
-    </AssociationSet>
-    <AssociationSet Name="FK_DM_CanBoThietBi_DS_PhuTrachCBTB" Association="Self.FK_DM_CanBoThietBi_DS_PhuTrachCBTB">
-      <End Role="DS_PhuTrachCBTB" EntitySet="DS_PhuTrachCBTB" />
-      <End Role="DM_CanBoThietBi" EntitySet="DM_CanBoThietBi" />
-    </AssociationSet>
     <AssociationSet Name="FK_DM_GiaoVien_DM_MonHoc" Association="Self.FK_DM_GiaoVien_DM_MonHoc">
       <End Role="DM_MonHoc" EntitySet="DM_MonHoc" />
-      <End Role="DM_GiaoVien" EntitySet="DM_GiaoVien" />
-    </AssociationSet>
-    <AssociationSet Name="FK_DM_GiaoVien_DS_ChucVuGiaoVien" Association="Self.FK_DM_GiaoVien_DS_ChucVuGiaoVien">
-      <End Role="DS_ChucVuGiaoVien" EntitySet="DS_ChucVuGiaoVien" />
       <End Role="DM_GiaoVien" EntitySet="DM_GiaoVien" />
     </AssociationSet>
     <AssociationSet Name="FK_DM_GiaoVien_DS_DanToc" Association="Self.FK_DM_GiaoVien_DS_DanToc">
       <End Role="DS_DanToc" EntitySet="DS_DanToc" />
       <End Role="DM_GiaoVien" EntitySet="DM_GiaoVien" />
     </AssociationSet>
-    <AssociationSet Name="FK_DM_GiaoVien_DS_GioiTinh" Association="Self.FK_DM_GiaoVien_DS_GioiTinh">
-      <End Role="DS_GioiTinh" EntitySet="DS_GioiTinh" />
-      <End Role="DM_GiaoVien" EntitySet="DM_GiaoVien" />
-    </AssociationSet>
-    <AssociationSet Name="FK_DM_GiaoVien_DS_LoaiHopDong" Association="Self.FK_DM_GiaoVien_DS_LoaiHopDong">
-      <End Role="DS_LoaiHopDong" EntitySet="DS_LoaiHopDong" />
-      <End Role="DM_GiaoVien" EntitySet="DM_GiaoVien" />
-    </AssociationSet>
-    <AssociationSet Name="FK_DM_GiaoVien_DS_LyLuanChinhTri" Association="Self.FK_DM_GiaoVien_DS_LyLuanChinhTri">
-      <End Role="DS_LyLuanChinhTri" EntitySet="DS_LyLuanChinhTri" />
-      <End Role="DM_GiaoVien" EntitySet="DM_GiaoVien" />
-    </AssociationSet>
     <AssociationSet Name="FK_DM_GiaoVien_DS_PhongBan" Association="Self.FK_DM_GiaoVien_DS_PhongBan">
       <End Role="DS_PhongBan" EntitySet="DS_PhongBan" />
       <End Role="DM_GiaoVien" EntitySet="DM_GiaoVien" />
     </AssociationSet>
-    <AssociationSet Name="FK_DM_GiaoVien_DS_QuanLyGiaoDuc" Association="Self.FK_DM_GiaoVien_DS_QuanLyGiaoDuc">
-      <End Role="DS_QuanLyGiaoDuc" EntitySet="DS_QuanLyGiaoDuc" />
-      <End Role="DM_GiaoVien" EntitySet="DM_GiaoVien" />
-    </AssociationSet>
-    <AssociationSet Name="FK_DM_GiaoVien_DS_QuanLyNhaNuoc" Association="Self.FK_DM_GiaoVien_DS_QuanLyNhaNuoc">
-      <End Role="DS_QuanLyNhaNuoc" EntitySet="DS_QuanLyNhaNuoc" />
-      <End Role="DM_GiaoVien" EntitySet="DM_GiaoVien" />
-    </AssociationSet>
-    <AssociationSet Name="FK_DM_GiaoVien_DS_TrinhDoChuan" Association="Self.FK_DM_GiaoVien_DS_TrinhDoChuan">
-      <End Role="DS_TrinhDoChuan" EntitySet="DS_TrinhDoChuan" />
-      <End Role="DM_GiaoVien" EntitySet="DM_GiaoVien" />
-    </AssociationSet>
-    <AssociationSet Name="FK_DM_GiaoVien_DS_TrinhDoChuyenMon" Association="Self.FK_DM_GiaoVien_DS_TrinhDoChuyenMon">
-      <End Role="DS_TrinhDoChuyenMon" EntitySet="DS_TrinhDoChuyenMon" />
-      <End Role="DM_GiaoVien" EntitySet="DM_GiaoVien" />
-    </AssociationSet>
-    <AssociationSet Name="FK_DM_GiaoVien_DS_ViTriGiaoVien" Association="Self.FK_DM_GiaoVien_DS_ViTriGiaoVien">
-      <End Role="DS_ViTriGiaoVien" EntitySet="DS_ViTriGiaoVien" />
-      <End Role="DM_GiaoVien" EntitySet="DM_GiaoVien" />
-    </AssociationSet>
-    <AssociationSet Name="FK_DM_KhoiLop_DS_CapTruong" Association="Self.FK_DM_KhoiLop_DS_CapTruong">
-      <End Role="DS_CapTruong" EntitySet="DS_CapTruong" />
-      <End Role="DM_KhoiLop" EntitySet="DM_KhoiLop" />
-    </AssociationSet>
     <AssociationSet Name="FK_DM_LopHoc_DM_KhoiLop" Association="Self.FK_DM_LopHoc_DM_KhoiLop">
       <End Role="DM_KhoiLop" EntitySet="DM_KhoiLop" />
       <End Role="DM_LopHoc" EntitySet="DM_LopHoc" />
-    </AssociationSet>
-    <AssociationSet Name="FK_DM_MonHoc_DS_LoaiDanhGiaMH" Association="Self.FK_DM_MonHoc_DS_LoaiDanhGiaMH">
-      <End Role="DS_LoaiDanhGiaMH" EntitySet="DS_LoaiDanhGiaMH" />
-      <End Role="DM_MonHoc" EntitySet="DM_MonHoc" />
-    </AssociationSet>
-    <AssociationSet Name="FK_DM_MonHoc_DS_LoaiMonHoc" Association="Self.FK_DM_MonHoc_DS_LoaiMonHoc">
-      <End Role="DS_LoaiMonHoc" EntitySet="DS_LoaiMonHoc" />
-      <End Role="DM_MonHoc" EntitySet="DM_MonHoc" />
     </AssociationSet>
     <AssociationSet Name="FK_DM_NguonKinhPhi_DM_NguonKinhPhi" Association="Self.FK_DM_NguonKinhPhi_DM_NguonKinhPhi">
       <End Role="DM_NguonKinhPhi" EntitySet="DM_NguonKinhPhi" />
@@ -1601,37 +1239,17 @@
       <End Role="DM_MonHoc" EntitySet="DM_MonHoc" />
       <End Role="DM_PhongHocBoMon" EntitySet="DM_PhongHocBoMon" />
     </AssociationSet>
-    <AssociationSet Name="FK_DM_PhongHocBoMon_DS_LoaiPhongTN" Association="Self.FK_DM_PhongHocBoMon_DS_LoaiPhongTN">
-      <End Role="DS_LoaiPhongTN" EntitySet="DS_LoaiPhongTN" />
-      <End Role="DM_PhongHocBoMon" EntitySet="DM_PhongHocBoMon" />
-    </AssociationSet>
-    <AssociationSet Name="FK_DM_PhongHocBoMon_DS_XepLoaiPhongHocBM" Association="Self.FK_DM_PhongHocBoMon_DS_XepLoaiPhongHocBM">
-      <End Role="DS_XepLoaiPhongHocBM" EntitySet="DS_XepLoaiPhongHocBM" />
-      <End Role="DM_PhongHocBoMon" EntitySet="DM_PhongHocBoMon" />
-    </AssociationSet>
     <AssociationSet Name="FK_DM_ThietBiToiThieu_DM_MonHoc" Association="Self.FK_DM_ThietBiToiThieu_DM_MonHoc">
       <End Role="DM_MonHoc" EntitySet="DM_MonHoc" />
-      <End Role="DM_ThietBiToiThieu" EntitySet="DM_ThietBiToiThieu" />
-    </AssociationSet>
-    <AssociationSet Name="FK_DM_ThietBiToiThieu_DS_DauMucThietBi" Association="Self.FK_DM_ThietBiToiThieu_DS_DauMucThietBi">
-      <End Role="DS_DauMucThietBi" EntitySet="DS_DauMucThietBi" />
       <End Role="DM_ThietBiToiThieu" EntitySet="DM_ThietBiToiThieu" />
     </AssociationSet>
     <AssociationSet Name="FK_DM_ThietBiToiThieu_DS_DonViTinh" Association="Self.FK_DM_ThietBiToiThieu_DS_DonViTinh">
       <End Role="DS_DonViTinh" EntitySet="DS_DonViTinh" />
       <End Role="DM_ThietBiToiThieu" EntitySet="DM_ThietBiToiThieu" />
     </AssociationSet>
-    <AssociationSet Name="FK_DM_ThietBiToiThieu_DS_LoaiThietBi" Association="Self.FK_DM_ThietBiToiThieu_DS_LoaiThietBi">
-      <End Role="DS_LoaiThietBi" EntitySet="DS_LoaiThietBi" />
-      <End Role="DM_ThietBiToiThieu" EntitySet="DM_ThietBiToiThieu" />
-    </AssociationSet>
     <AssociationSet Name="FK_DM_ToBoMon_DM_ToBoMon" Association="Self.FK_DM_ToBoMon_DM_ToBoMon">
       <End Role="DM_ToBoMon" EntitySet="DM_ToBoMon" />
       <End Role="DM_ToBoMon1" EntitySet="DM_ToBoMon" />
-    </AssociationSet>
-    <AssociationSet Name="FK_DS_CapTruong_DS_KhoiTruong" Association="Self.FK_DS_CapTruong_DS_KhoiTruong">
-      <End Role="DS_KhoiTruong" EntitySet="DS_KhoiTruong" />
-      <End Role="DS_CapTruong" EntitySet="DS_CapTruong" />
     </AssociationSet>
     <AssociationSet Name="FK_HT_User_HT_UserRole" Association="Self.FK_HT_User_HT_UserRole">
       <End Role="HT_UserRole" EntitySet="HT_UserRole" />
@@ -1677,9 +1295,49 @@
       <End Role="TB_ThongTinThietBi" EntitySet="TB_ThongTinThietBi" />
       <End Role="QH_PhieuThanhLyTB_ThietBi" EntitySet="QH_PhieuThanhLyTB_ThietBi" />
     </AssociationSet>
+    <AssociationSet Name="FK_QH_User_Permission_HT_Permission" Association="Self.FK_QH_User_Permission_HT_Permission">
+      <End Role="HT_Permission" EntitySet="HT_Permission" />
+      <End Role="QH_User_Permission" EntitySet="QH_User_Permission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QH_User_Permission_HT_UserRole" Association="Self.FK_QH_User_Permission_HT_UserRole">
+      <End Role="HT_UserRole" EntitySet="HT_UserRole" />
+      <End Role="QH_User_Permission" EntitySet="QH_User_Permission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_PhieuBaoHong_HT_User" Association="Self.FK_TB_PhieuBaoHong_HT_User">
+      <End Role="HT_User" EntitySet="HT_User" />
+      <End Role="TB_PhieuBaoHong" EntitySet="TB_PhieuBaoHong" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_PhieuBaoHong_HT_User1" Association="Self.FK_TB_PhieuBaoHong_HT_User1">
+      <End Role="HT_User" EntitySet="HT_User" />
+      <End Role="TB_PhieuBaoHong" EntitySet="TB_PhieuBaoHong" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_PhieuDeNghiMuaSam_HT_User" Association="Self.FK_TB_PhieuDeNghiMuaSam_HT_User">
+      <End Role="HT_User" EntitySet="HT_User" />
+      <End Role="TB_PhieuDeNghiMuaSam" EntitySet="TB_PhieuDeNghiMuaSam" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_PhieuDeNghiMuaSam_HT_User1" Association="Self.FK_TB_PhieuDeNghiMuaSam_HT_User1">
+      <End Role="HT_User" EntitySet="HT_User" />
+      <End Role="TB_PhieuDeNghiMuaSam" EntitySet="TB_PhieuDeNghiMuaSam" />
+    </AssociationSet>
     <AssociationSet Name="FK_TB_PhieuDeNghiMuaSam_ThongTinNamHoc" Association="Self.FK_TB_PhieuDeNghiMuaSam_ThongTinNamHoc">
       <End Role="ThongTinNamHoc" EntitySet="ThongTinNamHoc" />
       <End Role="TB_PhieuDeNghiMuaSam" EntitySet="TB_PhieuDeNghiMuaSam" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_PhieuGhiTang_HT_User" Association="Self.FK_TB_PhieuGhiTang_HT_User">
+      <End Role="HT_User" EntitySet="HT_User" />
+      <End Role="TB_PhieuGhiTang" EntitySet="TB_PhieuGhiTang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_PhieuGhiTang_HT_User1" Association="Self.FK_TB_PhieuGhiTang_HT_User1">
+      <End Role="HT_User" EntitySet="HT_User" />
+      <End Role="TB_PhieuGhiTang" EntitySet="TB_PhieuGhiTang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_PhieuGiamTB_HT_User" Association="Self.FK_TB_PhieuGiamTB_HT_User">
+      <End Role="HT_User" EntitySet="HT_User" />
+      <End Role="TB_PhieuGiamTB" EntitySet="TB_PhieuGiamTB" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_PhieuGiamTB_HT_User1" Association="Self.FK_TB_PhieuGiamTB_HT_User1">
+      <End Role="HT_User" EntitySet="HT_User" />
+      <End Role="TB_PhieuGiamTB" EntitySet="TB_PhieuGiamTB" />
     </AssociationSet>
     <AssociationSet Name="FK_TB_PhieuMuonPhong_DM_GiaoVien" Association="Self.FK_TB_PhieuMuonPhong_DM_GiaoVien">
       <End Role="DM_GiaoVien" EntitySet="DM_GiaoVien" />
@@ -1701,10 +1359,6 @@
       <End Role="DS_BaiGiang" EntitySet="DS_BaiGiang" />
       <End Role="TB_PhieuMuonPhong" EntitySet="TB_PhieuMuonPhong" />
     </AssociationSet>
-    <AssociationSet Name="FK_TB_PhieuMuonPhong_DS_MucDichSDPHong" Association="Self.FK_TB_PhieuMuonPhong_DS_MucDichSDPHong">
-      <End Role="DS_MucDichSDPHong" EntitySet="DS_MucDichSDPHong" />
-      <End Role="TB_PhieuMuonPhong" EntitySet="TB_PhieuMuonPhong" />
-    </AssociationSet>
     <AssociationSet Name="FK_TB_PhieuMuonTB_DM_GiaoVien" Association="Self.FK_TB_PhieuMuonTB_DM_GiaoVien">
       <End Role="DM_GiaoVien" EntitySet="DM_GiaoVien" />
       <End Role="TB_PhieuMuonTB" EntitySet="TB_PhieuMuonTB" />
@@ -1721,37 +1375,41 @@
       <End Role="DS_BaiGiang" EntitySet="DS_BaiGiang" />
       <End Role="TB_PhieuMuonTB" EntitySet="TB_PhieuMuonTB" />
     </AssociationSet>
-    <AssociationSet Name="FK_TB_PhieuMuonTB_DS_MucDichSDThietBi" Association="Self.FK_TB_PhieuMuonTB_DS_MucDichSDThietBi">
-      <End Role="DS_MucDichSDThietBi" EntitySet="DS_MucDichSDThietBi" />
-      <End Role="TB_PhieuMuonTB" EntitySet="TB_PhieuMuonTB" />
+    <AssociationSet Name="FK_TB_PhieuThanhLyTB_HT_User" Association="Self.FK_TB_PhieuThanhLyTB_HT_User">
+      <End Role="HT_User" EntitySet="HT_User" />
+      <End Role="TB_PhieuThanhLyTB" EntitySet="TB_PhieuThanhLyTB" />
     </AssociationSet>
-    <AssociationSet Name="FK_TB_PhieuMuonTB_DS_ThoiGianTrongNganh" Association="Self.FK_TB_PhieuMuonTB_DS_ThoiGianTrongNganh">
-      <End Role="DS_ThoiGianTrongNgay" EntitySet="DS_ThoiGianTrongNgay" />
-      <End Role="TB_PhieuMuonTB" EntitySet="TB_PhieuMuonTB" />
+    <AssociationSet Name="FK_TB_PhieuThanhLyTB_HT_User1" Association="Self.FK_TB_PhieuThanhLyTB_HT_User1">
+      <End Role="HT_User" EntitySet="HT_User" />
+      <End Role="TB_PhieuThanhLyTB" EntitySet="TB_PhieuThanhLyTB" />
     </AssociationSet>
-    <AssociationSet Name="FK_TB_PhieuMuonTB_DS_TrangThaiPhieuMuon" Association="Self.FK_TB_PhieuMuonTB_DS_TrangThaiPhieuMuon">
-      <End Role="DS_TrangThaiPhieuMuon" EntitySet="DS_TrangThaiPhieuMuon" />
-      <End Role="TB_PhieuMuonTB" EntitySet="TB_PhieuMuonTB" />
+    <AssociationSet Name="FK_TB_ThongTinThietBi_DM_MonHoc" Association="Self.FK_TB_ThongTinThietBi_DM_MonHoc">
+      <End Role="DM_MonHoc" EntitySet="DM_MonHoc" />
+      <End Role="TB_ThongTinThietBi" EntitySet="TB_ThongTinThietBi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_ThongTinThietBi_DM_NguonKinhPhi" Association="Self.FK_TB_ThongTinThietBi_DM_NguonKinhPhi">
+      <End Role="DM_NguonKinhPhi" EntitySet="DM_NguonKinhPhi" />
+      <End Role="TB_ThongTinThietBi" EntitySet="TB_ThongTinThietBi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_ThongTinThietBi_DM_PhongHocBoMon" Association="Self.FK_TB_ThongTinThietBi_DM_PhongHocBoMon">
+      <End Role="DM_PhongHocBoMon" EntitySet="DM_PhongHocBoMon" />
+      <End Role="TB_ThongTinThietBi" EntitySet="TB_ThongTinThietBi" />
     </AssociationSet>
     <AssociationSet Name="FK_TB_ThongTinThietBi_DM_ThietBiToiThieu" Association="Self.FK_TB_ThongTinThietBi_DM_ThietBiToiThieu">
       <End Role="DM_ThietBiToiThieu" EntitySet="DM_ThietBiToiThieu" />
       <End Role="TB_ThongTinThietBi" EntitySet="TB_ThongTinThietBi" />
     </AssociationSet>
-    <AssociationSet Name="FK_ThongTinDonVi_DS_HangTruong" Association="Self.FK_ThongTinDonVi_DS_HangTruong">
-      <End Role="DS_HangTruong" EntitySet="DS_HangTruong" />
-      <End Role="ThongTinDonVi" EntitySet="ThongTinDonVi" />
+    <AssociationSet Name="FK_TB_ThongTinThietBi_DS_DonViTinh" Association="Self.FK_TB_ThongTinThietBi_DS_DonViTinh">
+      <End Role="DS_DonViTinh" EntitySet="DS_DonViTinh" />
+      <End Role="TB_ThongTinThietBi" EntitySet="TB_ThongTinThietBi" />
     </AssociationSet>
-    <AssociationSet Name="FK_ThongTinDonVi_DS_HinhThucDaoTao" Association="Self.FK_ThongTinDonVi_DS_HinhThucDaoTao">
-      <End Role="DS_HinhThucDaoTao" EntitySet="DS_HinhThucDaoTao" />
-      <End Role="ThongTinDonVi" EntitySet="ThongTinDonVi" />
+    <AssociationSet Name="FK_TB_ThongTinThietBi_HT_User" Association="Self.FK_TB_ThongTinThietBi_HT_User">
+      <End Role="HT_User" EntitySet="HT_User" />
+      <End Role="TB_ThongTinThietBi" EntitySet="TB_ThongTinThietBi" />
     </AssociationSet>
-    <AssociationSet Name="FK_ThongTinDonVi_DS_LoaiHinhTruong" Association="Self.FK_ThongTinDonVi_DS_LoaiHinhTruong">
-      <End Role="DS_LoaiHinhTruong" EntitySet="DS_LoaiHinhTruong" />
-      <End Role="ThongTinDonVi" EntitySet="ThongTinDonVi" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ThongTinDonVi_DS_LoaiTruongChuyenBiet" Association="Self.FK_ThongTinDonVi_DS_LoaiTruongChuyenBiet">
-      <End Role="DS_LoaiTruongChuyenBiet" EntitySet="DS_LoaiTruongChuyenBiet" />
-      <End Role="ThongTinDonVi" EntitySet="ThongTinDonVi" />
+    <AssociationSet Name="FK_TB_ThongTinThietBi_HT_User1" Association="Self.FK_TB_ThongTinThietBi_HT_User1">
+      <End Role="HT_User" EntitySet="HT_User" />
+      <End Role="TB_ThongTinThietBi" EntitySet="TB_ThongTinThietBi" />
     </AssociationSet>
     <AssociationSet Name="FK_ThongTinDonVi_DS_PhuongXa" Association="Self.FK_ThongTinDonVi_DS_PhuongXa">
       <End Role="DS_PhuongXa" EntitySet="DS_PhuongXa" />
@@ -1763,10 +1421,6 @@
     </AssociationSet>
     <AssociationSet Name="FK_ThongTinDonVi_DS_TinhThanh" Association="Self.FK_ThongTinDonVi_DS_TinhThanh">
       <End Role="DS_TinhThanh" EntitySet="DS_TinhThanh" />
-      <End Role="ThongTinDonVi" EntitySet="ThongTinDonVi" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ThongTinDonVi_DS_VungMien" Association="Self.FK_ThongTinDonVi_DS_VungMien">
-      <End Role="DS_VungMien" EntitySet="DS_VungMien" />
       <End Role="ThongTinDonVi" EntitySet="ThongTinDonVi" />
     </AssociationSet>
     <AssociationSet Name="FK_ward_district" Association="Self.FK_ward_district">

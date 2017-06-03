@@ -144,7 +144,7 @@ namespace QLTB.GUI
         }
         private void ShowPage(int page, int pageSize)
         {
-            var data = handler.GetAll(page, pageSize);
+            var data = handler.GetAll(page, pageSize,p=>p.TrangThai>=0);
             List<ThietBiGridDisplayModel> list = data.data;
             if (list.Count > 0)
             {

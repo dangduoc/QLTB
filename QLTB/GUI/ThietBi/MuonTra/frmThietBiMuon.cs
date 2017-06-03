@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace QLTB.GUI
 {
-    public partial class frmThietBiMuon : DevComponents.DotNetBar.Office2007Form,IFrmPhieu
+    public partial class frmThietBiMuon : DevComponents.DotNetBar.Office2007Form, IFrmPhieu
     {
         private PhieuMuonThietBiModel Phieu;
         private List<ThietBiMuonGridDisplayModel> dsThietBi = new List<ThietBiMuonGridDisplayModel>();
@@ -64,6 +64,8 @@ namespace QLTB.GUI
                 CbbDayLop.SelectedValue = Phieu.LopHocId;
                 CbbBuoiTrongNgay.SelectedValue = Phieu.ThoiGianTrongNgay;
                 cboxNgoaiQuyDinh.Checked = Phieu.IsNgoaiQuyDinh;
+                dPickerNgayMuon.Value = Phieu.NgayMuon;
+                dPickerNgayTra.Value = Phieu.NgayTra;
                 if (Phieu.ThietBis == null)
                 {
                     Phieu.ThietBis = new List<ThietBiMuonGridDisplayModel>();
@@ -230,16 +232,16 @@ namespace QLTB.GUI
             var repeatList = list.Where(p => listSoHieu.Contains(p.SoHieu)).ToList();
             list.RemoveAll(p => listSoHieu.Contains(p.SoHieu));
             //
-            foreach(var item in list)
+            foreach (var item in list)
             {
                 dsThietBi.Add(new ThietBiMuonGridDisplayModel
                 {
-                    ThietBiId=item.ThietBiId,
-                    SoHieu=item.SoHieu,
-                    DonViTinh=item.DonViTinh,
-                    PhongHoc=item.PhongHoc,
-                    Ten=item.Ten,
-                    SoLuongMuon="1"
+                    ThietBiId = item.ThietBiId,
+                    SoHieu = item.SoHieu,
+                    DonViTinh = item.DonViTinh,
+                    PhongHoc = item.PhongHoc,
+                    Ten = item.Ten,
+                    SoLuongMuon = "1"
                 });
             }
             //
@@ -300,8 +302,16 @@ namespace QLTB.GUI
 
         private void btnLayTB_Click(object sender, EventArgs e)
         {
-            frmDialogDSThietBi frm = new frmDialogDSThietBi();
-            frm.ShowDialog(this);
+            if (CbbMonHoc.SelectedValue != null)
+            {
+                int id = (int)CbbMonHoc.SelectedValue;
+                frmDialogDSThietBi frm = new frmDialogDSThietBi(p => p.TrangThai >= 0 && p.MonHocId == id);
+                frm.ShowDialog(this);
+            }
+            else
+            {
+                MessageBox.Show("Mời chọn môn học trước", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -315,8 +325,8 @@ namespace QLTB.GUI
 
         private void ADGVDSTB_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            var sohieu = ADGVDSTB.Rows[e.RowIndex].Cells[2].Value.ToString();
-            var soluong = Convert.ToInt32(ADGVDSTB.Rows[e.RowIndex].Cells[6].Value);
+            var sohieu = ADGVDSTB.Rows[e.RowIndex].Cells["SoHieu"].Value.ToString();
+            var soluong = Convert.ToInt32(ADGVDSTB.Rows[e.RowIndex].Cells["SoLuongMuon"].Value);
             dsThietBi.Where(p => p.SoHieu.Equals(sohieu)).FirstOrDefault().SoLuongMuon = soluong.ToString();
         }
 
@@ -327,7 +337,18 @@ namespace QLTB.GUI
 
         private void CbbMonHoc_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cbbTenBaiDay.DataSource = dshandler.GetBaiGiang((int)CbbMonHoc.SelectedValue).Select(p => new { key = p.BaiGiangId, value = p.Ten }).ToList();
+            var lst = dshandler.GetBaiGiang((int)CbbMonHoc.SelectedValue).Select(p => new { key = p.BaiGiangId, value = p.Ten }).ToList();
+            if (lst.Count > 0)
+                cbbTenBaiDay.DataSource = dshandler.GetBaiGiang((int)CbbMonHoc.SelectedValue).Select(p => new { key = p.BaiGiangId, value = p.Ten }).ToList();
+            else
+            {
+                cbbTenBaiDay.Text = "";
+            }
+        }
+
+        private void CbbGiaoVien_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

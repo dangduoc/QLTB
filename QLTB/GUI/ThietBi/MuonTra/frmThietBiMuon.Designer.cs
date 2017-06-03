@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThietBiMuon));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.ADGVDSTB = new System.Windows.Forms.DataGridView();
             this.ribbonBar1 = new DevComponents.DotNetBar.RibbonBar();
             this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
             this.btnLayTB = new DevComponents.DotNetBar.ButtonItem();
@@ -80,10 +81,10 @@
             this.btnInDSTB = new DevComponents.DotNetBar.ButtonItem();
             this.btnHelpDSTB = new DevComponents.DotNetBar.ButtonItem();
             this.btnClose = new DevComponents.DotNetBar.ButtonItem();
-            this.ADGVDSTB = new System.Windows.Forms.DataGridView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ADGVDSTB)).BeginInit();
             this.pnlTTPhieuMuon.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -91,7 +92,6 @@
             this.layoutTTC.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dPickerNgayTra)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dPickerNgayMuon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ADGVDSTB)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -116,6 +116,21 @@
             this.panel2.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.panel2.Size = new System.Drawing.Size(884, 161);
             this.panel2.TabIndex = 20;
+            // 
+            // ADGVDSTB
+            // 
+            this.ADGVDSTB.AllowUserToAddRows = false;
+            this.ADGVDSTB.AllowUserToDeleteRows = false;
+            this.ADGVDSTB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.ADGVDSTB.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.ADGVDSTB.BackgroundColor = System.Drawing.Color.White;
+            this.ADGVDSTB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ADGVDSTB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ADGVDSTB.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.ADGVDSTB.Location = new System.Drawing.Point(5, 65);
+            this.ADGVDSTB.Name = "ADGVDSTB";
+            this.ADGVDSTB.Size = new System.Drawing.Size(879, 96);
+            this.ADGVDSTB.TabIndex = 14;
             // 
             // ribbonBar1
             // 
@@ -490,6 +505,7 @@
             this.CbbGiaoVien.Size = new System.Drawing.Size(228, 23);
             this.CbbGiaoVien.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.CbbGiaoVien.TabIndex = 3;
+            this.CbbGiaoVien.SelectedIndexChanged += new System.EventHandler(this.CbbGiaoVien_SelectedIndexChanged);
             // 
             // dPickerNgayMuon
             // 
@@ -840,21 +856,6 @@
             this.btnClose.Text = "Đóng";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // ADGVDSTB
-            // 
-            this.ADGVDSTB.AllowUserToAddRows = false;
-            this.ADGVDSTB.AllowUserToDeleteRows = false;
-            this.ADGVDSTB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.ADGVDSTB.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.ADGVDSTB.BackgroundColor = System.Drawing.Color.White;
-            this.ADGVDSTB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ADGVDSTB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ADGVDSTB.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.ADGVDSTB.Location = new System.Drawing.Point(5, 65);
-            this.ADGVDSTB.Name = "ADGVDSTB";
-            this.ADGVDSTB.Size = new System.Drawing.Size(879, 96);
-            this.ADGVDSTB.TabIndex = 14;
-            // 
             // imageList1
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
@@ -875,6 +876,7 @@
             this.Load += new System.EventHandler(this.frmThietBiMuon_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ADGVDSTB)).EndInit();
             this.pnlTTPhieuMuon.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -882,7 +884,6 @@
             this.layoutTTC.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dPickerNgayTra)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dPickerNgayMuon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ADGVDSTB)).EndInit();
             this.ResumeLayout(false);
 
         }

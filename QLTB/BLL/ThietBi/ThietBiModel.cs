@@ -12,7 +12,7 @@ namespace QLTB.Model
         public string SoHieu { get; set; }
         public string Ten { get; set; }
         public int PhongHocId { get; set; }
-        public Nullable<int> MonHocId { get; set; }
+        public int MonHocId { get; set; }
         public int DonViTinhId { get; set; }
     }
     public class ThietBiModel : BaseThietBiModel
@@ -82,4 +82,5 @@ namespace QLTB.Model
         public string TinhTrang { get; set; }
         public string SoPhieuBaoHong { get; set; }
     }
+    
 }

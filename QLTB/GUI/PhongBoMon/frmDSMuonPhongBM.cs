@@ -247,6 +247,8 @@ namespace QLTB.GUI
         private void frmDSMuonPhongBM_Load(object sender, EventArgs e)
         {
             LoadForm();
+            var parent = MdiParent as Form1;
+            parent.pnlLoading.Visible = false;
         }
 
         private void btnThem_Click(object sender, EventArgs e)

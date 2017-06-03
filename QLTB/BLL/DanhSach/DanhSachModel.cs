@@ -72,6 +72,11 @@ namespace QLTB.Model
                 KhoiTruongId = 3,
                 Ten = "Khối các trường trung học phổ thông"
             });
+            khoitruong.Add(new KhoiTruong
+            {
+                KhoiTruongId = 4,
+                Ten = "Khối các trường mầm non"
+            });
             #endregion
             #region Cấp trường
             captruong.Add(new CapTruong
@@ -91,6 +96,12 @@ namespace QLTB.Model
                 KhoiTruongId = 3,
                 CapTruongId = 3,
                 Ten = "Trung học phổ thông"
+            });
+            captruong.Add(new CapTruong
+            {
+                KhoiTruongId=4,
+                CapTruongId=4,
+                Ten="Mầm non"
             });
             #endregion
             #region Giới tính
@@ -237,6 +248,11 @@ namespace QLTB.Model
                 Id = 1,
                 Ten = "Đang sử dụng"
             });
+            trangthaiphieumuon.Add(new TrangThaiPhieuMuon
+            {
+                Id = 2,
+                Ten="Đã trả"
+            });
             #endregion
             #region Thời gian trong ngày
             thoigiantrongngay.Add(new ThoiGianTrongNgay
@@ -289,6 +305,24 @@ namespace QLTB.Model
 
             #endregion
             #region vị trí giáo viên
+            vitrigiaovien.Add(new ViTriGiaoVien
+            {
+                CapHocId = 4,
+                Id = 1,
+                Ten = "Cô giáo lớp 3 tuổi"
+            });
+            vitrigiaovien.Add(new ViTriGiaoVien
+            {
+                CapHocId = 4,
+                Id = 2,
+                Ten = "Cô giáo lớp 4 tuổi"
+            });
+            vitrigiaovien.Add(new ViTriGiaoVien
+            {
+                CapHocId = 4,
+                Id = 3,
+                Ten = "Cô giáo lớp 5 tuổi"
+            });
             vitrigiaovien.Add(new ViTriGiaoVien
             {
                 CapHocId=1,

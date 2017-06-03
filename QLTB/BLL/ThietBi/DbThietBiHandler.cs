@@ -13,15 +13,15 @@ namespace QLTB.Handler
 {
     public class DbThietBiHandler
     {
-        public Paging<List<ThietBiGridDisplayModel>> GetAll(int page, int pageSize)
+        public Paging<List<ThietBiGridDisplayModel>> GetAll(int page, int pageSize, Expression<Func<TB_ThongTinThietBi, bool>> predicate)
         {
             using (var unitOfWork = new UnitOfWork())
             {
                 try
                 {
-                    var TotalRecord = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetAll().Where(p => p.TrangThai >= 0).Count();
-
-                    var data = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetAll().Where(p => p.TrangThai >= 0)
+                    var dstb = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetAll().Where(predicate);
+                    var TotalRecord = dstb.Count();
+                    var data = dstb
                                 .Join(unitOfWork.GetRepository<DM_PhongHocBoMon>().GetAll(),
                                     tb => tb.PhongHocId,
                                     ph => ph.PhongHocId,
@@ -73,8 +73,7 @@ namespace QLTB.Handler
                                         TrangThaiId = tb.TrangThaiId
 
                                     }
-                                )
-                                .AsEnumerable()
+                                ).AsEnumerable()
                                 .Join(GlobalVariable.GetDS().TrangThaiThietBi,
                                     tb => tb.TrangThaiId,
                                     tt => tt.Id,
@@ -116,6 +115,9 @@ namespace QLTB.Handler
                 }
             }
         }
+
+
+
         public List<ThietBiGridDisplayModel> GetAll(Expression<Func<TB_ThongTinThietBi, bool>> predicate)
         {
             using (var unitOfWork = new UnitOfWork())

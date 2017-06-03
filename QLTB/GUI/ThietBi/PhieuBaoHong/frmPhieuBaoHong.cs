@@ -310,7 +310,20 @@ namespace QLTB.GUI
 
         private void btnLayTB_Click(object sender, EventArgs e)
         {
-            frmDialogDSThietBi frm = new frmDialogDSThietBi();
+            List<BaseThietBiGridDisplayModel> ds = new List<BaseThietBiGridDisplayModel>();
+            foreach(var item in dsThietBi)
+            {
+                ds.Add(new BaseThietBiGridDisplayModel
+                {
+                    ThietBiId=item.ThietBiId,
+                    SoHieu=item.SoHieu,
+                    DonViTinh=item.DonViTinh,
+                    PhongHoc=item.PhongHoc,
+                    Ten=item.Ten
+                });
+            }
+            frmDialogTBBaoHong frm = new frmDialogTBBaoHong(ds);
+            frm.Text = "Danh sách thiết bị trong phiếu mượn";
             frm.ShowDialog(this);
         }
 

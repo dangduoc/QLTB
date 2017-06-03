@@ -202,10 +202,7 @@ namespace QLTB.GUI
             ADGVDanhSach.CellContentDoubleClick += advancedDataGridView_CellContentDoubleClick;
             ADGVDanhSach.KeyPress += advancedDataGridView_KeyPress;
             ADGVDanhSach.MouseClick += ADGVDanhSach_MouseClick;
-
-            //
-            btnThem.Click += btnThem_Click;
-            btnSua.Click += BtnSua_Click;
+            
             //
         }
         private void LoadForm()
@@ -241,6 +238,8 @@ namespace QLTB.GUI
         private void frmDanhSachMuonTB_Load(object sender, EventArgs e)
         {
             LoadForm();
+            var parent = MdiParent as Form1;
+            parent.pnlLoading.Visible = false;
         }
         private void advancedDataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -271,7 +270,7 @@ namespace QLTB.GUI
             if (row != null)
             {
                 var Id = row.Cells["PhieuMuonTBId"].Value.ToString();
-                frmGhiNhanTraTB frm = new frmGhiNhanTraTB();
+                frmGhiNhanTraTB frm = new frmGhiNhanTraTB(Id);
                 frm.MdiParent = MdiParent;
                 frm.Show();
             }
@@ -303,25 +302,12 @@ namespace QLTB.GUI
 
             }
         }
-
-        private void btnThem_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void btnGhiTra_Click_1(object sender, EventArgs e)
-        {
-            Cursor = Cursors.WaitCursor;
-            frmGhiNhanTraTB frm = new frmGhiNhanTraTB();
-            frm.MdiParent = MdiParent;
-            frm.Show();
-            Cursor = Cursors.Default;
-        }
+     
 
         private void btnBaoHong_Click(object sender, EventArgs e)
         {
@@ -330,6 +316,11 @@ namespace QLTB.GUI
             frm.MdiParent = MdiParent;
             frm.Show();
             Cursor = Cursors.Default;
+        }
+
+        private void btnNapDSTB_Click(object sender, EventArgs e)
+        {
+            ShowPage(1, 50);
         }
     }
 }

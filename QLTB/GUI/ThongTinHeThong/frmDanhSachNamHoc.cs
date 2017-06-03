@@ -230,6 +230,8 @@ namespace QLTB.GUI
         private void frmDanhSachNamHoc_Load(object sender, EventArgs e)
         {
             loadForm();
+            var parent = MdiParent as Form1;
+            parent.pnlLoading.Visible = false;
         }
     }
 }

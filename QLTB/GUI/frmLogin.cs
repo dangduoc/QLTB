@@ -19,11 +19,40 @@ namespace QLTB.GUI
         public frmLogin()
         {
             InitializeComponent();
+            //circularProgress1.IsRunning = true;
         }
+        private void CloseForm()
+        {
+            DialogResult = DialogResult.OK;
+            this.Close();
+        }
+        private void InitApp()
+        {
+            GlobalVariable.SetHeThong();
+            GlobalVariable.InitDanhSach();
+           
 
+        }
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            circularProgress1.IsRunning = true;
-        } 
+            try
+            {
+                if (ConnectiongStringBuilder.CheckConnection())
+                {
+                    if (ConnectiongStringBuilder.CheckUserSaved())
+                    {
+                        InitApp();
+                        // Task.Delay(1500).ContinueWith(t => CloseForm());
+                        CloseForm();
+                    }
+                }
+
+                Close();
+            }
+            catch (Exception ex)
+            {
+                Close();
+            }
+        }
     }
 }

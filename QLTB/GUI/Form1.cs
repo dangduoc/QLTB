@@ -17,9 +17,9 @@ namespace QLTB.GUI
     {
         public Form1()
         {
-            Thread t = new Thread(new ThreadStart(Loading));
-            t.Start();
-            Thread.Sleep(3000);
+            //Thread t = new Thread(new ThreadStart(Loading));
+            //t.Start();
+            //Thread.Sleep(3000);
             #region Init
             InitializeComponent();
             //
@@ -53,28 +53,22 @@ namespace QLTB.GUI
             btnTLThongTinNamHoc.Click += BtnTLThongTinNamHoc_Click;
             btnPhanQuyen.Click += btnPhanQuyen_Click;
             btnTaiKhoan.Click += BtnTaiKhoan_Click;
-            //
-            InitApp();
-            #endregion
-            t.Abort();
-        }
-        private void Loading()
-        {
-            Application.Run(new frmLogin());
-        }
-        private void InitApp()
-        {
-            GlobalVariable.InitDanhSach();
-            GlobalVariable.SetHeThong();
             string userfullname = GlobalVariable.GetUser().Name;
             string tendv = GlobalVariable.GetHeThong().DonVi.Ten;
-            
+
             CornerInfo.Text = userfullname + " - " + tendv;
             //Thong tin năm hoc
             txtStartYear.Text = GlobalVariable.GetHeThong().NamHoc.NamBatDau.ToString();
             txtEndYear.Text = GlobalVariable.GetHeThong().NamHoc.NamKetThuc.ToString();
-
+            //
+            #endregion
+            // t.Abort();
         }
+        private void Loading()
+        {
+           // Application.Run(new frmLogin());
+        }
+       
         private void BtnTaiKhoan_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Chức năng đang xây dựng....");
@@ -342,12 +336,14 @@ namespace QLTB.GUI
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            foreach (Button item in toolmenuTB.Controls.OfType<Button>())
+            foreach (Button item in ss.Controls.OfType<Button>())
             {
                 item.BackColor = Color.Transparent;
             }
             Button btn = sender as Button;
             btn.BackColor = Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
+            
+            pnlLoading.Visible = true;
         }
         private void btnDSThietBi_Click(object sender, EventArgs e)
         {
@@ -367,7 +363,7 @@ namespace QLTB.GUI
             catch (Exception ex)
             {
 
-            }
+            }          
             Cursor = Cursors.Default;
         }
         private void btnKiemKe_Click(object sender, EventArgs e)
@@ -525,9 +521,10 @@ namespace QLTB.GUI
         {
             Cursor = Cursors.WaitCursor;
             //btnDSThietBi.PerformClick();
-            btnDSThietBi_Click(null, null);
-            button1_Click(btnDSThietBi, null);
+           // btnDSThietBi_Click(null, null);
+            //button1_Click(btnDSThietBi, null);
             toolmenuTB.Visible = true;
+            pnlTop.Height = 150;
             Cursor = Cursors.Default;
         }
 
@@ -604,14 +601,30 @@ namespace QLTB.GUI
         private void btnDanhMuc_Click(object sender, EventArgs e)
         {
             toolmenuTB.Visible = false;
+            pnlTop.Height = 115;
             DevComponents.DotNetBar.ButtonItem btn = sender as DevComponents.DotNetBar.ButtonItem;
             lbChucNang.Text = btn.Text;
+            pnlLoading.Visible = true;
         }
         private void btnChucNang_Click(object sender, EventArgs e)
         {
             toolmenuTB.Visible = false;
+            pnlTop.Height = 115;
             DevComponents.DotNetBar.ButtonItem btn = sender as DevComponents.DotNetBar.ButtonItem;
             lbChucNang.Text = btn.Tag.ToString();
+            pnlLoading.Visible = true;
+        }
+        public void OpenFrmPhieu(Form form)
+        {
+            Cursor = Cursors.WaitCursor;
+            if (!CheckExistForm(form.Name))
+            {
+                form.MdiParent = this;
+                form.WindowState = FormWindowState.Maximized;
+                form.Show();
+            }
+            Cursor = Cursors.Default;
+            
         }
     }
 }
