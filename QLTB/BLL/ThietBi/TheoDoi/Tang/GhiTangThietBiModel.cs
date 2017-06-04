@@ -13,6 +13,7 @@ namespace QLTB.Model
         public string ChungTuLienQuan { get; set; }
         public string NoiDung { get; set; }
         public string CreatedByUserId { get; set; }
+        public List<ThietBiTangModel> ThietBis { get; set; }
         public Nullable<System.DateTime> CreatedOnDate { get; set; }
         public string UpdatedByUserId { get; set; }
         public Nullable<System.DateTime> UpdatedOnDate { get; set; }

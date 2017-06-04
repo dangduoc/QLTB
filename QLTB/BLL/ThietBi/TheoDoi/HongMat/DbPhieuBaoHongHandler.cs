@@ -169,7 +169,7 @@ namespace QLTB.Handler
                             {     
                                 thietbi.SoLuongHong += model.ThietBis.Where(p => p.TinhTrang.Equals("1")).Count();
                                 thietbi.SoLuongMat += model.ThietBis.Where(p => p.TinhTrang.Equals("2")).Count();
-                                thietbi.SoLuongCon= thietbi.SoLuong - (thietbi.SoLuongHong + thietbi.SoLuongMat+thietbi.SoLuongMuon);
+                                thietbi.SoLuongCon-=(thietbi.SoLuongHong + thietbi.SoLuongMat);
                                 unitOfWork.GetRepository<TB_ThongTinThietBi>().Update(thietbi);
                             }
                         }
@@ -202,7 +202,10 @@ namespace QLTB.Handler
                         unitOfWork.GetRepository<QH_PhieuBaoHong_ThietBi>().Delete(p => p.PhieuBaoHongId == model.PhieuBaoHongId);
                         foreach (var item in ds)
                         {
-                            int SoLuongMuon = Convert.ToInt32(item.SoLuongMuon);
+                            int tinhtrang = Convert.ToInt32(item.TinhTrang);
+                            int soluong = Convert.ToInt32(item.SoLuongMuon);
+                            int SoLuongHong = tinhtrang == 1 ? soluong : 0;
+                            int SoLuongMat= tinhtrang == 2 ? soluong : 0;
                             unitOfWork.GetRepository<QH_PhieuBaoHong_ThietBi>().Add(new QH_PhieuBaoHong_ThietBi
                             {
                                 LyDo = item.LyDo,
@@ -215,8 +218,9 @@ namespace QLTB.Handler
                             var thietbi = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetById(item.SoHieu);
                             if (thietbi != null)
                             {
-                                thietbi.SoLuongHong += model.ThietBis.Where(p => p.TinhTrang.Equals("1")).Count();
-                                thietbi.SoLuongMat += model.ThietBis.Where(p => p.TinhTrang.Equals("2")).Count();
+                                
+                                thietbi.SoLuongHong += model.ThietBis.Where(p => p.TinhTrang.Equals("1")).Count()-SoLuongHong;
+                                thietbi.SoLuongMat += model.ThietBis.Where(p => p.TinhTrang.Equals("2")).Count()-SoLuongMat;
                                 thietbi.SoLuongCon = thietbi.SoLuong - (thietbi.SoLuongHong + thietbi.SoLuongMat + thietbi.SoLuongMuon);
                                 unitOfWork.GetRepository<TB_ThongTinThietBi>().Update(thietbi);
                             }

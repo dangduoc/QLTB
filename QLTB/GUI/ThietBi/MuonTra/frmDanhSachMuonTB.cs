@@ -202,7 +202,7 @@ namespace QLTB.GUI
             ADGVDanhSach.CellContentDoubleClick += advancedDataGridView_CellContentDoubleClick;
             ADGVDanhSach.KeyPress += advancedDataGridView_KeyPress;
             ADGVDanhSach.MouseClick += ADGVDanhSach_MouseClick;
-            
+
             //
         }
         private void LoadForm()
@@ -307,15 +307,31 @@ namespace QLTB.GUI
             Close();
         }
 
-     
+
 
         private void btnBaoHong_Click(object sender, EventArgs e)
         {
-            Cursor = Cursors.WaitCursor;
-            frmPhieuBaoHong frm = new frmPhieuBaoHong();
-            frm.MdiParent = MdiParent;
-            frm.Show();
-            Cursor = Cursors.Default;
+            if (ADGVDanhSach.SelectedRows[0] != null)
+            {
+                var id = ADGVDanhSach.SelectedRows[0].Cells[0].Value.ToString();
+
+                var ds = handler.GetById(id).ThietBis;
+
+                List<BaseThietBiGridDisplayModel> lst = new List<BaseThietBiGridDisplayModel>();
+                foreach (var item in ds)
+                {
+                    lst.Add(new BaseThietBiGridDisplayModel
+                    {
+                        ThietBiId = item.ThietBiId,
+                        Ten = item.Ten,
+                        SoHieu = item.SoHieu,
+                        DonViTinh = item.DonViTinh,
+                        PhongHoc = item.PhongHoc
+                    });
+                }
+                frmDialogTBBaoHong frm = new frmDialogTBBaoHong(lst);
+                frm.ShowDialog(this);
+            }
         }
 
         private void btnNapDSTB_Click(object sender, EventArgs e)

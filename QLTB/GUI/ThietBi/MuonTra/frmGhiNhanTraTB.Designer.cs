@@ -45,14 +45,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.ribBarDSThietBi = new DevComponents.DotNetBar.RibbonBar();
-            this.btnLuu = new DevComponents.DotNetBar.ButtonItem();
-            this.btnBaoHong = new DevComponents.DotNetBar.ButtonItem();
-            this.btnXoa = new DevComponents.DotNetBar.ButtonItem();
-            this.btnInDSTB = new DevComponents.DotNetBar.ButtonItem();
-            this.btnHelpDSTB = new DevComponents.DotNetBar.ButtonItem();
-            this.btnClose = new DevComponents.DotNetBar.ButtonItem();
             this.layoutTTC = new DevComponents.DotNetBar.Layout.LayoutControl();
             this.cboxNgoaiQuyDinh = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.txtGhiChu = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -84,6 +76,14 @@
             this.layoutSpacerItem1 = new DevComponents.DotNetBar.Layout.LayoutSpacerItem();
             this.layoutControlItem14 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
             this.layoutControlItem13 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.ribBarDSThietBi = new DevComponents.DotNetBar.RibbonBar();
+            this.btnLuu = new DevComponents.DotNetBar.ButtonItem();
+            this.btnBaoHong = new DevComponents.DotNetBar.ButtonItem();
+            this.btnXoa = new DevComponents.DotNetBar.ButtonItem();
+            this.btnInDSTB = new DevComponents.DotNetBar.ButtonItem();
+            this.btnHelpDSTB = new DevComponents.DotNetBar.ButtonItem();
+            this.btnClose = new DevComponents.DotNetBar.ButtonItem();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -291,119 +291,6 @@
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chung";
-            // 
-            // labelX2
-            // 
-            // 
-            // 
-            // 
-            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelX2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX2.ForeColor = System.Drawing.Color.Black;
-            this.labelX2.Location = new System.Drawing.Point(5, 0);
-            this.labelX2.Name = "labelX2";
-            this.labelX2.PaddingLeft = 10;
-            this.labelX2.Size = new System.Drawing.Size(1109, 40);
-            this.labelX2.TabIndex = 0;
-            this.labelX2.Text = "Ghi trả thiết bị";
-            // 
-            // ribBarDSThietBi
-            // 
-            this.ribBarDSThietBi.AutoOverflowEnabled = true;
-            this.ribBarDSThietBi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(221)))), ((int)(((byte)(238)))));
-            this.ribBarDSThietBi.BackgroundHoverEnabled = false;
-            // 
-            // 
-            // 
-            this.ribBarDSThietBi.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribBarDSThietBi.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribBarDSThietBi.ContainerControlProcessDialogKey = true;
-            this.ribBarDSThietBi.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ribBarDSThietBi.DragDropSupport = true;
-            this.ribBarDSThietBi.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.ribBarDSThietBi.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btnLuu,
-            this.btnBaoHong,
-            this.btnXoa,
-            this.btnInDSTB,
-            this.btnHelpDSTB,
-            this.btnClose});
-            this.ribBarDSThietBi.ItemSpacing = 10;
-            this.ribBarDSThietBi.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
-            this.ribBarDSThietBi.Location = new System.Drawing.Point(0, 0);
-            this.ribBarDSThietBi.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.ribBarDSThietBi.Name = "ribBarDSThietBi";
-            this.ribBarDSThietBi.ShowShortcutKeysInToolTips = true;
-            this.ribBarDSThietBi.Size = new System.Drawing.Size(1114, 35);
-            this.ribBarDSThietBi.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.ribBarDSThietBi.TabIndex = 11;
-            // 
-            // 
-            // 
-            this.ribBarDSThietBi.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribBarDSThietBi.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.btnLuu.Image = global::QLTB.Properties.Resources.save_icon;
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.SubItemsExpandWidth = 14;
-            this.btnLuu.Text = "Lưu";
-            // 
-            // btnBaoHong
-            // 
-            this.btnBaoHong.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.btnBaoHong.Image = global::QLTB.Properties.Resources.delete16;
-            this.btnBaoHong.Name = "btnBaoHong";
-            this.btnBaoHong.SubItemsExpandWidth = 14;
-            this.btnBaoHong.Text = "Báo hỏng/ mất";
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.btnXoa.Image = global::QLTB.Properties.Resources.b_drop;
-            this.btnXoa.ImagePaddingHorizontal = 20;
-            this.btnXoa.ImagePaddingVertical = 10;
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlD);
-            this.btnXoa.Text = "Xóa";
-            // 
-            // btnInDSTB
-            // 
-            this.btnInDSTB.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.btnInDSTB.Image = global::QLTB.Properties.Resources.print16;
-            this.btnInDSTB.ImagePaddingHorizontal = 20;
-            this.btnInDSTB.ImagePaddingVertical = 10;
-            this.btnInDSTB.Name = "btnInDSTB";
-            this.btnInDSTB.SubItemsExpandWidth = 14;
-            this.btnInDSTB.Text = "In";
-            // 
-            // btnHelpDSTB
-            // 
-            this.btnHelpDSTB.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.btnHelpDSTB.Image = global::QLTB.Properties.Resources.Help_icon;
-            this.btnHelpDSTB.ImagePaddingHorizontal = 20;
-            this.btnHelpDSTB.ImagePaddingVertical = 10;
-            this.btnHelpDSTB.Name = "btnHelpDSTB";
-            this.btnHelpDSTB.SubItemsExpandWidth = 14;
-            this.btnHelpDSTB.Text = "Trợ giúp";
-            // 
-            // btnClose
-            // 
-            this.btnClose.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.btnClose.Image = global::QLTB.Properties.Resources.close16;
-            this.btnClose.Name = "btnClose";
-            this.btnClose.SubItemsExpandWidth = 14;
-            this.btnClose.Text = "Đóng";
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // layoutTTC
             // 
@@ -880,6 +767,120 @@
             this.layoutControlItem13.Text = "<b>Ghi chú</b>";
             this.layoutControlItem13.Width = 100;
             this.layoutControlItem13.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
+            // 
+            // labelX2
+            // 
+            // 
+            // 
+            // 
+            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelX2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX2.ForeColor = System.Drawing.Color.Black;
+            this.labelX2.Location = new System.Drawing.Point(5, 0);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.PaddingLeft = 10;
+            this.labelX2.Size = new System.Drawing.Size(1109, 40);
+            this.labelX2.TabIndex = 0;
+            this.labelX2.Text = "Ghi trả thiết bị";
+            // 
+            // ribBarDSThietBi
+            // 
+            this.ribBarDSThietBi.AutoOverflowEnabled = true;
+            this.ribBarDSThietBi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(221)))), ((int)(((byte)(238)))));
+            this.ribBarDSThietBi.BackgroundHoverEnabled = false;
+            // 
+            // 
+            // 
+            this.ribBarDSThietBi.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribBarDSThietBi.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribBarDSThietBi.ContainerControlProcessDialogKey = true;
+            this.ribBarDSThietBi.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ribBarDSThietBi.DragDropSupport = true;
+            this.ribBarDSThietBi.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.ribBarDSThietBi.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.btnLuu,
+            this.btnBaoHong,
+            this.btnXoa,
+            this.btnInDSTB,
+            this.btnHelpDSTB,
+            this.btnClose});
+            this.ribBarDSThietBi.ItemSpacing = 10;
+            this.ribBarDSThietBi.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
+            this.ribBarDSThietBi.Location = new System.Drawing.Point(0, 0);
+            this.ribBarDSThietBi.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.ribBarDSThietBi.Name = "ribBarDSThietBi";
+            this.ribBarDSThietBi.ShowShortcutKeysInToolTips = true;
+            this.ribBarDSThietBi.Size = new System.Drawing.Size(1114, 35);
+            this.ribBarDSThietBi.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.ribBarDSThietBi.TabIndex = 11;
+            // 
+            // 
+            // 
+            this.ribBarDSThietBi.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribBarDSThietBi.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnLuu.Image = global::QLTB.Properties.Resources.save_icon;
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.SubItemsExpandWidth = 14;
+            this.btnLuu.Text = "Lưu";
+            // 
+            // btnBaoHong
+            // 
+            this.btnBaoHong.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnBaoHong.Image = global::QLTB.Properties.Resources.delete16;
+            this.btnBaoHong.Name = "btnBaoHong";
+            this.btnBaoHong.SubItemsExpandWidth = 14;
+            this.btnBaoHong.Text = "Báo hỏng/ mất";
+            this.btnBaoHong.Click += new System.EventHandler(this.btnBaoHong_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnXoa.Image = global::QLTB.Properties.Resources.b_drop;
+            this.btnXoa.ImagePaddingHorizontal = 20;
+            this.btnXoa.ImagePaddingVertical = 10;
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlD);
+            this.btnXoa.Text = "Xóa";
+            // 
+            // btnInDSTB
+            // 
+            this.btnInDSTB.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnInDSTB.Image = global::QLTB.Properties.Resources.print16;
+            this.btnInDSTB.ImagePaddingHorizontal = 20;
+            this.btnInDSTB.ImagePaddingVertical = 10;
+            this.btnInDSTB.Name = "btnInDSTB";
+            this.btnInDSTB.SubItemsExpandWidth = 14;
+            this.btnInDSTB.Text = "In";
+            // 
+            // btnHelpDSTB
+            // 
+            this.btnHelpDSTB.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnHelpDSTB.Image = global::QLTB.Properties.Resources.Help_icon;
+            this.btnHelpDSTB.ImagePaddingHorizontal = 20;
+            this.btnHelpDSTB.ImagePaddingVertical = 10;
+            this.btnHelpDSTB.Name = "btnHelpDSTB";
+            this.btnHelpDSTB.SubItemsExpandWidth = 14;
+            this.btnHelpDSTB.Text = "Trợ giúp";
+            // 
+            // btnClose
+            // 
+            this.btnClose.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnClose.Image = global::QLTB.Properties.Resources.close16;
+            this.btnClose.Name = "btnClose";
+            this.btnClose.SubItemsExpandWidth = 14;
+            this.btnClose.Text = "Đóng";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // imageList1
             // 

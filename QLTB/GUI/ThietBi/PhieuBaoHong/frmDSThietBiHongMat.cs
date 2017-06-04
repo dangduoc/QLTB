@@ -203,6 +203,8 @@ namespace QLTB.GUI
             source.DataSource = MyConvert.ToDataTable<ThietBiHongGridDisplayModel>(listTB);
             ADGVDSTB.DataSource = source;
             SetHeaderForGrid(ADGVDSTB, headers);
+            //
+
         }
 
         private void ShowPage(int page, int pageSize)

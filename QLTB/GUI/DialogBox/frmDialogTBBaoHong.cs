@@ -20,9 +20,13 @@ namespace QLTB.GUI
             InitializeComponent();
             dsThietBi = ds;
         }
-    
+
         private void btnThem_Click(object sender, EventArgs e)
         {
+            var parent = Owner as Form1;
+            var childfrm = parent.ActiveControl as Form;
+
+            //
             var list = new List<BaseThietBiGridDisplayModel>();
             foreach (DataGridViewRow item in ADGVDanhSach.Rows)
             {
@@ -33,23 +37,27 @@ namespace QLTB.GUI
                         ThietBiId = item.Cells["ThietBiId"].Value.ToString(),
                         Ten = item.Cells["Ten"].Value.ToString(),
                         SoHieu = item.Cells["SoHieu"].Value.ToString(),
-                        PhongHoc = item.Cells["KhoPhong"].Value.ToString(),
+                        PhongHoc = item.Cells["PhongHoc"].Value.ToString(),
                         DonViTinh = item.Cells["DonViTinh"].Value.ToString()
                     };
                     list.Add(tmp);
                 }
             }
-            if (list.Count > 0)
-            {
-                var owner = this.Owner.ActiveControl as IFrmPhieu;
-                owner.AddToGrid(list);
-            }
             //
-            //var parent = Owner as Form1;
-            //frmPhieuBaoHong frm = new frmPhieuBaoHong();
-
-            //parent.OpenFrmPhieu(frm);
-            ////
+            if (childfrm.Name.Equals("frmPhieuBaoHong"))
+            {
+               
+                if (list.Count > 0)
+                {
+                    var owner = this.Owner.ActiveControl as IFrmPhieu;
+                    owner.AddToGrid(list);
+                }
+            }
+            else
+            {
+                frmPhieuBaoHong frm = new frmPhieuBaoHong(list);
+                parent.OpenFrmPhieu(frm);             
+            }
             Close();
         }
         private void loadForm()

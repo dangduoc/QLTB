@@ -269,5 +269,11 @@ namespace QLTB.GUI
             frm.Show();
             Cursor = Cursors.Default;
         }
+
+        private void btnInDSTB_Click(object sender, EventArgs e)
+        {
+            frmDialogTSGhiTang frm = new frmDialogTSGhiTang();
+            frm.ShowDialog(this);
+        }
     }
 }
