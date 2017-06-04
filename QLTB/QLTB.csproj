@@ -350,6 +350,12 @@
     <Compile Include="GUI\DialogBox\frmDialogTBSuaChua.Designer.cs">
       <DependentUpon>frmDialogTBSuaChua.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\DialogBox\frmDialogTSGhiTang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DialogBox\frmDialogTSGhiTang.Designer.cs">
+      <DependentUpon>frmDialogTSGhiTang.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -639,6 +645,9 @@
     <EmbeddedResource Include="GUI\DialogBox\frmDialogTBSuaChua.resx">
       <DependentUpon>frmDialogTBSuaChua.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DialogBox\frmDialogTSGhiTang.resx">
+      <DependentUpon>frmDialogTSGhiTang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -787,6 +796,7 @@
       <DependentUpon>Entities.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\QLTB.Report.Model.GhiTangReportModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

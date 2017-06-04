@@ -816,6 +816,7 @@
             this.btnBaoHong.Name = "btnBaoHong";
             this.btnBaoHong.SubItemsExpandWidth = 14;
             this.btnBaoHong.Text = "Báo hỏng/ mất";
+            this.btnBaoHong.Click += new System.EventHandler(this.btnBaoHong_Click);
             // 
             // btnXoa
             // 

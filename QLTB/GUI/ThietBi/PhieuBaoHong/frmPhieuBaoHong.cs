@@ -20,9 +20,16 @@ namespace QLTB.GUI
         private DbPhieuBaoHongHandler handler = new DbPhieuBaoHongHandler();
         private DbDanhSachHandler dshandler = new DbDanhSachHandler();
         private BindingSource source = new BindingSource();
+        private List<BaseThietBiGridDisplayModel> dsBase=null;
         public frmPhieuBaoHong()
         {
             InitializeComponent();
+ 
+        }
+        public frmPhieuBaoHong(List<BaseThietBiGridDisplayModel> ds)
+        {
+            InitializeComponent();
+            dsBase = ds;
         }
         public frmPhieuBaoHong(string Id)
         {
@@ -111,7 +118,7 @@ namespace QLTB.GUI
             col.ValueMember = "Id";
             col.DataSource = GlobalVariable.GetDS().TinhTrangPhieuBH;
             col.DefaultCellStyle.NullValue = "Hỏng";
-           // col.Items.AddRange(GlobalVariable.GetDS().TinhTrangPhieuBH.Select(p => p.Ten).ToArray());
+            // col.Items.AddRange(GlobalVariable.GetDS().TinhTrangPhieuBH.Select(p => p.Ten).ToArray());
             ADGVDSTB.Columns.Add(col);
             /*Cột xóa button*/
             DevComponents.DotNetBar.Controls.DataGridViewButtonXColumn col1 = new DevComponents.DotNetBar.Controls.DataGridViewButtonXColumn();
@@ -142,7 +149,7 @@ namespace QLTB.GUI
             ADGVDSTB.Columns["Remove"].DisplayIndex = 10;
             ADGVDSTB.Columns["Remove"].HeaderText = "";
 
-           
+
             /*Set lại event cellvaluechanged*/
             ADGVDSTB.CellValueChanged -= ADGVDSTB_CellValueChanged;
             ADGVDSTB.CellValueChanged += ADGVDSTB_CellValueChanged;
@@ -293,13 +300,16 @@ namespace QLTB.GUI
         private void frmPhieuBaoHong_Load(object sender, EventArgs e)
         {
             loadForm();
-            
+            if (dsBase != null)
+            {
+                AddToGrid(dsBase);
+            }
             foreach (DataGridViewRow item in ADGVDSTB.Rows)
             {
-               
+
                 if (item.Cells["TinhTrang"].Value != null)
-                {                   
-                    
+                {
+
                 }
             }
         }
@@ -310,21 +320,21 @@ namespace QLTB.GUI
 
         private void btnLayTB_Click(object sender, EventArgs e)
         {
-            List<BaseThietBiGridDisplayModel> ds = new List<BaseThietBiGridDisplayModel>();
-            foreach(var item in dsThietBi)
-            {
-                ds.Add(new BaseThietBiGridDisplayModel
-                {
-                    ThietBiId=item.ThietBiId,
-                    SoHieu=item.SoHieu,
-                    DonViTinh=item.DonViTinh,
-                    PhongHoc=item.PhongHoc,
-                    Ten=item.Ten
-                });
-            }
-            frmDialogTBBaoHong frm = new frmDialogTBBaoHong(ds);
-            frm.Text = "Danh sách thiết bị trong phiếu mượn";
-            frm.ShowDialog(this);
+            //List<BaseThietBiGridDisplayModel> ds = new List<BaseThietBiGridDisplayModel>();
+            //foreach (var item in dsThietBi)
+            //{
+            //    ds.Add(new BaseThietBiGridDisplayModel
+            //    {
+            //        ThietBiId = item.ThietBiId,
+            //        SoHieu = item.SoHieu,
+            //        DonViTinh = item.DonViTinh,
+            //        PhongHoc = item.PhongHoc,
+            //        Ten = item.Ten
+            //    });
+            //}
+            //frmDialogTBBaoHong frm = new frmDialogTBBaoHong();
+            //frm.Text = "Danh sách thiết bị trong phiếu mượn";
+            //frm.ShowDialog(this);
         }
 
         private void btnLuu_Click(object sender, EventArgs e)

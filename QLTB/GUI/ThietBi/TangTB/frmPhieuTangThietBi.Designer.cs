@@ -171,7 +171,6 @@
             // btnLayTB
             // 
             this.btnLayTB.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.btnLayTB.Image = global::QLTB.Properties.Resources.cancel16;
             this.btnLayTB.Name = "btnLayTB";
             this.btnLayTB.SubItemsExpandWidth = 14;
             this.btnLayTB.Text = "Chọn nhiều thiết bị";
@@ -447,7 +446,6 @@
             // btnLuu
             // 
             this.btnLuu.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.btnLuu.Image = global::QLTB.Properties.Resources.save_icon;
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.SubItemsExpandWidth = 14;
             this.btnLuu.Text = "Lưu";
@@ -455,7 +453,6 @@
             // btnXoa
             // 
             this.btnXoa.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.btnXoa.Image = global::QLTB.Properties.Resources.b_drop;
             this.btnXoa.ImagePaddingHorizontal = 20;
             this.btnXoa.ImagePaddingVertical = 10;
             this.btnXoa.Name = "btnXoa";
@@ -466,7 +463,6 @@
             // btnHelpDSTB
             // 
             this.btnHelpDSTB.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.btnHelpDSTB.Image = global::QLTB.Properties.Resources.Help_icon;
             this.btnHelpDSTB.ImagePaddingHorizontal = 20;
             this.btnHelpDSTB.ImagePaddingVertical = 10;
             this.btnHelpDSTB.Name = "btnHelpDSTB";
@@ -476,7 +472,6 @@
             // btnClose
             // 
             this.btnClose.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.btnClose.Image = global::QLTB.Properties.Resources.close16;
             this.btnClose.Name = "btnClose";
             this.btnClose.SubItemsExpandWidth = 14;
             this.btnClose.Text = "Đóng";

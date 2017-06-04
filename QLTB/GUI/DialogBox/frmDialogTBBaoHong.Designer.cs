@@ -69,9 +69,9 @@
             this.panelEx2.Controls.Add(this.buttonX1);
             this.panelEx2.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelEx2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelEx2.Location = new System.Drawing.Point(0, 326);
+            this.panelEx2.Location = new System.Drawing.Point(0, 391);
             this.panelEx2.Name = "panelEx2";
-            this.panelEx2.Size = new System.Drawing.Size(798, 78);
+            this.panelEx2.Size = new System.Drawing.Size(931, 75);
             this.panelEx2.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -88,7 +88,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 35);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(798, 43);
+            this.panel1.Size = new System.Drawing.Size(931, 40);
             this.panel1.TabIndex = 33;
             // 
             // btnThem
@@ -97,9 +97,9 @@
             this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnThem.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnThem.Image = global::QLTB.Properties.Resources.tick;
-            this.btnThem.Location = new System.Drawing.Point(601, 9);
+            this.btnThem.Location = new System.Drawing.Point(732, 6);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(87, 23);
+            this.btnThem.Size = new System.Drawing.Size(89, 26);
             this.btnThem.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnThem.TabIndex = 2;
             this.btnThem.Text = "Đồng ý";
@@ -111,9 +111,9 @@
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnClose.Image = global::QLTB.Properties.Resources.b_drop;
-            this.btnClose.Location = new System.Drawing.Point(694, 9);
+            this.btnClose.Location = new System.Drawing.Point(827, 6);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(87, 22);
+            this.btnClose.Size = new System.Drawing.Size(92, 25);
             this.btnClose.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnClose.TabIndex = 1;
             this.btnClose.Text = "Hủy bỏ";
@@ -134,7 +134,7 @@
             this.panelEx4.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelEx4.Location = new System.Drawing.Point(0, 0);
             this.panelEx4.Name = "panelEx4";
-            this.panelEx4.Size = new System.Drawing.Size(798, 35);
+            this.panelEx4.Size = new System.Drawing.Size(931, 35);
             this.panelEx4.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx4.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx4.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
@@ -154,10 +154,10 @@
             this.currentPage.DisabledBackColor = System.Drawing.Color.White;
             this.currentPage.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.currentPage.ForeColor = System.Drawing.Color.Black;
-            this.currentPage.Location = new System.Drawing.Point(70, 7);
+            this.currentPage.Location = new System.Drawing.Point(76, 6);
             this.currentPage.Name = "currentPage";
             this.currentPage.PreventEnterBeep = true;
-            this.currentPage.Size = new System.Drawing.Size(25, 21);
+            this.currentPage.Size = new System.Drawing.Size(29, 21);
             this.currentPage.TabIndex = 7;
             this.currentPage.Text = "1";
             this.currentPage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -167,7 +167,7 @@
             this.nextBtn.AutoSize = true;
             this.nextBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.nextBtn.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nextBtn.Location = new System.Drawing.Point(102, 9);
+            this.nextBtn.Location = new System.Drawing.Point(118, 9);
             this.nextBtn.Name = "nextBtn";
             this.nextBtn.Size = new System.Drawing.Size(54, 15);
             this.nextBtn.TabIndex = 6;
@@ -180,8 +180,8 @@
             this.prevBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.prevBtn.DisabledLinkColor = System.Drawing.Color.Black;
             this.prevBtn.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prevBtn.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.prevBtn.Location = new System.Drawing.Point(3, 9);
+            this.prevBtn.LinkBehavior = System.Windows.Forms.LinkBehavior.AlwaysUnderline;
+            this.prevBtn.Location = new System.Drawing.Point(4, 9);
             this.prevBtn.Name = "prevBtn";
             this.prevBtn.Size = new System.Drawing.Size(64, 15);
             this.prevBtn.TabIndex = 5;
@@ -197,9 +197,9 @@
             this.lbTotalRecord.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbTotalRecord.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotalRecord.ForeColor = System.Drawing.Color.Black;
-            this.lbTotalRecord.Location = new System.Drawing.Point(681, 7);
+            this.lbTotalRecord.Location = new System.Drawing.Point(795, 4);
             this.lbTotalRecord.Name = "lbTotalRecord";
-            this.lbTotalRecord.Size = new System.Drawing.Size(109, 23);
+            this.lbTotalRecord.Size = new System.Drawing.Size(127, 27);
             this.lbTotalRecord.TabIndex = 4;
             this.lbTotalRecord.Text = "- Tổng số: 0 bản ghi";
             // 
@@ -211,9 +211,9 @@
             // 
             this.lbPaging.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbPaging.ForeColor = System.Drawing.Color.Black;
-            this.lbPaging.Location = new System.Drawing.Point(630, 7);
+            this.lbPaging.Location = new System.Drawing.Point(745, 4);
             this.lbPaging.Name = "lbPaging";
-            this.lbPaging.Size = new System.Drawing.Size(57, 23);
+            this.lbPaging.Size = new System.Drawing.Size(53, 27);
             this.lbPaging.TabIndex = 3;
             this.lbPaging.Text = "Trang 1/1";
             // 
@@ -225,9 +225,9 @@
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX1.ForeColor = System.Drawing.Color.Black;
-            this.labelX1.Location = new System.Drawing.Point(207, 5);
+            this.labelX1.Location = new System.Drawing.Point(244, 3);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(57, 23);
+            this.labelX1.Size = new System.Drawing.Size(63, 27);
             this.labelX1.TabIndex = 2;
             this.labelX1.Text = "Số bản ghi:";
             // 
@@ -243,9 +243,9 @@
             this.comboItem3,
             this.comboItem1,
             this.comboItem2});
-            this.pageSize.Location = new System.Drawing.Point(266, 6);
+            this.pageSize.Location = new System.Drawing.Point(309, 6);
             this.pageSize.Name = "pageSize";
-            this.pageSize.Size = new System.Drawing.Size(44, 23);
+            this.pageSize.Size = new System.Drawing.Size(51, 23);
             this.pageSize.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.pageSize.TabIndex = 0;
             this.pageSize.Text = "50";
@@ -282,7 +282,7 @@
             this.pnlBack.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBack.Location = new System.Drawing.Point(0, 0);
             this.pnlBack.Name = "pnlBack";
-            this.pnlBack.Size = new System.Drawing.Size(798, 326);
+            this.pnlBack.Size = new System.Drawing.Size(931, 391);
             this.pnlBack.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.pnlBack.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.pnlBack.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -302,7 +302,7 @@
             this.panelEx1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEx1.Location = new System.Drawing.Point(0, 0);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(798, 326);
+            this.panelEx1.Size = new System.Drawing.Size(931, 391);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -319,9 +319,9 @@
             this.panelEx3.Controls.Add(this.ADGVDanhSach);
             this.panelEx3.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelEx3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelEx3.Location = new System.Drawing.Point(0, 31);
+            this.panelEx3.Location = new System.Drawing.Point(0, 35);
             this.panelEx3.Name = "panelEx3";
-            this.panelEx3.Size = new System.Drawing.Size(798, 295);
+            this.panelEx3.Size = new System.Drawing.Size(931, 356);
             this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -358,7 +358,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.ADGVDanhSach.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.ADGVDanhSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ADGVDanhSach.Size = new System.Drawing.Size(798, 295);
+            this.ADGVDanhSach.Size = new System.Drawing.Size(931, 356);
             this.ADGVDanhSach.TabIndex = 27;
             this.ADGVDanhSach.TimeFilter = false;
             // 
@@ -368,23 +368,25 @@
             this.SearchDSTB.Font = new System.Drawing.Font("Arial", 9F);
             this.SearchDSTB.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.SearchDSTB.Location = new System.Drawing.Point(0, 0);
-            this.SearchDSTB.MaximumSize = new System.Drawing.Size(0, 31);
-            this.SearchDSTB.MinimumSize = new System.Drawing.Size(0, 31);
+            this.SearchDSTB.MaximumSize = new System.Drawing.Size(0, 35);
+            this.SearchDSTB.MinimumSize = new System.Drawing.Size(0, 35);
             this.SearchDSTB.Name = "SearchDSTB";
             this.SearchDSTB.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.SearchDSTB.Size = new System.Drawing.Size(798, 31);
+            this.SearchDSTB.Size = new System.Drawing.Size(931, 35);
             this.SearchDSTB.TabIndex = 28;
             this.SearchDSTB.Text = "searchToolBar1";
             // 
             // frmDialogTBBaoHong
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(798, 404);
+            this.ClientSize = new System.Drawing.Size(931, 466);
             this.Controls.Add(this.pnlBack);
             this.Controls.Add(this.panelEx2);
             this.DoubleBuffered = true;
+            this.EnableGlass = false;
+            this.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmDialogTBBaoHong";
             this.Text = "Danh sách thiết bị";

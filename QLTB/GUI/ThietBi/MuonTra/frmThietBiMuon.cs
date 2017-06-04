@@ -215,7 +215,6 @@ namespace QLTB.GUI
         private void frmThietBiMuon_Load(object sender, EventArgs e)
         {
             btnLuu.Click += BtnLuu_Click;
-            btnBaoHong.Click += btnBaoHong_Click;
             loadForm();
 
         }
@@ -295,9 +294,20 @@ namespace QLTB.GUI
         }
         private void btnBaoHong_Click(object sender, EventArgs e)
         {
-            frmPhieuBaoHong frm = new frmPhieuBaoHong();
-            frm.MdiParent = MdiParent;
-            frm.Show();
+            List<BaseThietBiGridDisplayModel> lst = new List<BaseThietBiGridDisplayModel>();
+            foreach (var item in dsThietBi)
+            {
+                lst.Add(new BaseThietBiGridDisplayModel
+                {
+                    ThietBiId = item.ThietBiId,
+                    Ten = item.Ten,
+                    SoHieu = item.SoHieu,
+                    DonViTinh = item.DonViTinh,
+                    PhongHoc = item.PhongHoc
+                });
+            }
+            frmDialogTBBaoHong frm = new frmDialogTBBaoHong(lst);
+            frm.ShowDialog(this);
         }
 
         private void btnLayTB_Click(object sender, EventArgs e)
