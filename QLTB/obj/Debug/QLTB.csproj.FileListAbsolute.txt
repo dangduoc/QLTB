@@ -25,7 +25,10 @@ D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmTaoThietBiTT.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmDialogDSTBHong.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmDialogDSThietBi.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmDialogHCHetHan.resources
+D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmDialogTBBaoHong.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmDialogTBSuaChua.resources
+D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmDialogTSGhiTang.resources
+D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmReportGhiTang.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.Form1.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmDanhSachNamHoc.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmLogin.resources
@@ -71,7 +74,8 @@ D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmPhieuThanhLyTB.resourc
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmThongKeBaoCao.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.Properties.Resources.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.csproj.GenerateResource.Cache
+D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\RdlCompile.cache
+D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\RdlCompile.compiled
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.exe
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.pdb
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.csprojResolveAssemblyReference.cache
-D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmDialogTBBaoHong.resources

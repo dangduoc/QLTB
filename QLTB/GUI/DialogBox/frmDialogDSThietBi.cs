@@ -146,7 +146,7 @@ namespace QLTB.GUI
         }
         private void ShowPage(int page, int pageSize)
         {
-            var data = handler.GetAll(page, pageSize,predicate);
+            var data = handler.GetAll(page, pageSize, predicate);
             List<ThietBiGridDisplayModel> list = data.data;
             if (list.Count > 0)
             {
@@ -177,6 +177,7 @@ namespace QLTB.GUI
             headers.Add("Bộ môn");
             headers.Add("Số lượng");
             headers.Add("Đơn vị tính");
+            headers.Add("Còn");
             headers.Add("Mất");
             headers.Add("Hỏng");
             DataTable tb = MyConvert.ToDataTable(list);
@@ -221,7 +222,37 @@ namespace QLTB.GUI
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
-
+            var owner = Owner.ActiveControl as Form;
+            if (owner.Name.Equals("frmPhieuTangThietBi"))
+            {
+                var list = new List<ThietBiTangGridDisplayModel>();
+                foreach (DataGridViewRow item in ADGVDanhSach.Rows)
+                {
+                    if ((string)item.Cells["checkBtn"].Value == "T")
+                    {
+                        list.Add(new ThietBiTangGridDisplayModel
+                        {
+                            ThietBiId = item.Cells["ThietBiId"].Value.ToString(),
+                            Ten = item.Cells["Ten"].Value.ToString(),
+                            SoHieu = item.Cells["SoHieu"].Value.ToString(),
+                            PhongHoc = item.Cells["KhoPhong"].Value.ToString(),
+                            DonViTinh = item.Cells["DonViTinh"].Value.ToString(),
+                            SoLuongTang = item.Cells["SoLuong"].Value.ToString(),
+                            DonGia=item.Cells["DonGia"].Value.ToString(),
+                            ThanhTien=item.Cells["DonGia"].Value.ToString(),
+                            NguonKinhPhi=item.Cells["NguonKinhPhi"].Value.ToString()
+                        });
+                    }
+                }
+                if (list.Count > 0)
+                {
+                    var parent = owner as frmPhieuTangThietBi;
+                    parent.AddToGrid(list);
+                }
+            }
+            else
+            {
+                var parent = Owner.ActiveControl as IFrmPhieu;
                 var list = new List<BaseThietBiGridDisplayModel>();
                 foreach (DataGridViewRow item in ADGVDanhSach.Rows)
                 {
@@ -238,12 +269,12 @@ namespace QLTB.GUI
                         list.Add(tmp);
                     }
                 }
+
                 if (list.Count > 0)
                 {
-                    var owner = this.Owner.ActiveControl as IFrmPhieu;
-                    owner.AddToGrid(list);
+                    parent.AddToGrid(list);
                 }
-            
+            }
             Close();
         }
         private void btnClose_Click(object sender, EventArgs e)

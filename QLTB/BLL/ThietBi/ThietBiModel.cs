@@ -49,11 +49,16 @@ namespace QLTB.Model
         public string KhoPhong { get; set; }
         public string MonHoc { get; set; }
         public string SoLuong { get; set; }
+        public string DonGia { get; set; }
+        public string ThanhTien { get; set; }
+        public string NguonKinhPhi { get; set; }
         public string DonViTinh { get; set; }
+        public string SoLuongCon { get; set; }
         public string SoLuongMat { get; set; }
         public string SoLuongHong { get; set; }
         public string TrangThai { get; set; }
     }
+
     public class BaseThietBiGridDisplayModel{
         public string ThietBiId { get; set; }
         public string SoHieu { get; set; }

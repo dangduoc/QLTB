@@ -351,13 +351,14 @@
             <PropertyRef Name="PhieuGhiTangId" />
           </Key>
           <Property Name="PhieuGhiTangId" Type="nvarchar" MaxLength="10" Nullable="false" />
-          <Property Name="NgayLap" Type="nchar" MaxLength="10" />
+          <Property Name="NgayLap" Type="datetime" />
           <Property Name="ChungTuLienQuan" Type="nvarchar" MaxLength="100" />
           <Property Name="NoiDung" Type="nvarchar" MaxLength="500" />
           <Property Name="CreatedByUserId" Type="int" />
           <Property Name="CreatedOnDate" Type="datetime" />
           <Property Name="UpdatedByUserId" Type="int" />
           <Property Name="UpdatedOnDate" Type="datetime" />
+          <Property Name="IsDelete" Type="bit" />
         </EntityType>
         <EntityType Name="TB_PhieuGiamTB">
           <Key>
@@ -1073,19 +1074,6 @@
           <Property Name="UpdatedByUserId" Type="Int32" />
           <Property Name="UpdatedOnDate" Type="DateTime" Precision="3" />
         </EntityType>
-        <EntityType Name="TB_PhieuGhiTang">
-          <Key>
-            <PropertyRef Name="PhieuGhiTangId" />
-          </Key>
-          <Property Name="PhieuGhiTangId" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="NgayLap" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="ChungTuLienQuan" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="NoiDung" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="CreatedByUserId" Type="Int32" />
-          <Property Name="CreatedOnDate" Type="DateTime" Precision="3" />
-          <Property Name="UpdatedByUserId" Type="Int32" />
-          <Property Name="UpdatedOnDate" Type="DateTime" Precision="3" />
-        </EntityType>
         <EntityType Name="TB_PhieuGiamTB">
           <Key>
             <PropertyRef Name="PhieuGiamTBId" />
@@ -1396,7 +1384,6 @@
           <EntitySet Name="QH_User_Permission" EntityType="Self.QH_User_Permission" />
           <EntitySet Name="TB_PhieuBaoHong" EntityType="Self.TB_PhieuBaoHong" />
           <EntitySet Name="TB_PhieuDeNghiMuaSam" EntityType="Self.TB_PhieuDeNghiMuaSam" />
-          <EntitySet Name="TB_PhieuGhiTang" EntityType="Self.TB_PhieuGhiTang" />
           <EntitySet Name="TB_PhieuGiamTB" EntityType="Self.TB_PhieuGiamTB" />
           <EntitySet Name="TB_PhieuMuonPhong" EntityType="Self.TB_PhieuMuonPhong" />
           <EntitySet Name="TB_PhieuMuonTB" EntityType="Self.TB_PhieuMuonTB" />
@@ -1444,7 +1431,22 @@
             <End Role="HT_UserRole" EntitySet="HT_UserRole" />
             <End Role="QH_User_Permission" EntitySet="QH_User_Permission" />
           </AssociationSet>
+          <EntitySet Name="TB_PhieuGhiTang" EntityType="Model.TB_PhieuGhiTang" />
         </EntityContainer>
+        <EntityType Name="TB_PhieuGhiTang">
+          <Key>
+            <PropertyRef Name="PhieuGhiTangId" />
+          </Key>
+          <Property Name="PhieuGhiTangId" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="NgayLap" Type="DateTime" Precision="3" Nullable="false" />
+          <Property Name="ChungTuLienQuan" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NoiDung" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedByUserId" Type="Int32" />
+          <Property Name="CreatedOnDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedByUserId" Type="Int32" />
+          <Property Name="UpdatedOnDate" Type="DateTime" Precision="3" />
+          <Property Name="IsDelete" Type="Boolean" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1814,20 +1816,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TB_PhieuGhiTang">
-            <EntityTypeMapping TypeName="Model.TB_PhieuGhiTang">
-              <MappingFragment StoreEntitySet="TB_PhieuGhiTang">
-                <ScalarProperty Name="PhieuGhiTangId" ColumnName="PhieuGhiTangId" />
-                <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
-                <ScalarProperty Name="ChungTuLienQuan" ColumnName="ChungTuLienQuan" />
-                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
-                <ScalarProperty Name="CreatedByUserId" ColumnName="CreatedByUserId" />
-                <ScalarProperty Name="CreatedOnDate" ColumnName="CreatedOnDate" />
-                <ScalarProperty Name="UpdatedByUserId" ColumnName="UpdatedByUserId" />
-                <ScalarProperty Name="UpdatedOnDate" ColumnName="UpdatedOnDate" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="TB_PhieuGiamTB">
             <EntityTypeMapping TypeName="Model.TB_PhieuGiamTB">
               <MappingFragment StoreEntitySet="TB_PhieuGiamTB">
@@ -1986,6 +1974,21 @@
                 <ScalarProperty Name="KetThucNamHoc" ColumnName="KetThucNamHoc" />
                 <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
                 <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_PhieuGhiTang">
+            <EntityTypeMapping TypeName="Model.TB_PhieuGhiTang">
+              <MappingFragment StoreEntitySet="TB_PhieuGhiTang">
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="UpdatedOnDate" ColumnName="UpdatedOnDate" />
+                <ScalarProperty Name="UpdatedByUserId" ColumnName="UpdatedByUserId" />
+                <ScalarProperty Name="CreatedOnDate" ColumnName="CreatedOnDate" />
+                <ScalarProperty Name="CreatedByUserId" ColumnName="CreatedByUserId" />
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+                <ScalarProperty Name="ChungTuLienQuan" ColumnName="ChungTuLienQuan" />
+                <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
+                <ScalarProperty Name="PhieuGhiTangId" ColumnName="PhieuGhiTangId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
