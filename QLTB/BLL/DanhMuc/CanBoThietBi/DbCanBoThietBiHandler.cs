@@ -89,6 +89,76 @@ namespace QLTB.handler
                 return null;
             }
         }
+        #region Create,Remove,Update
+        public int Create(CanBoThietBiModel model)
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    var entity= MyConvert.ConvertSameData<DM_CanBoThietBi>(model);
+                    unitOfWork.GetRepository<DM_CanBoThietBi>().Add(entity);
+                    if (unitOfWork.Save() >= 1)
+                    {
+                        return 1;
+                    }
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+        }
+        public int Update(CanBoThietBiModel model)
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    var data = unitOfWork.GetRepository<DM_CanBoThietBi>().GetById(model.CanBoThietBiId);
+                    if (data != null)
+                    {
+                        MyConvert.TransferValues(data, model);
+                        unitOfWork.GetRepository<DM_CanBoThietBi>().Update(data);
+                        if (unitOfWork.Save() >= 1)
+                        {
+                            return 1;
+                        }
+                    }
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+        }
+        public int Remove(string Id)
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    var data = unitOfWork.GetRepository<DM_CanBoThietBi>().GetById(Id);
+                    if (data != null)
+                    {
+                        data.TrangThai = -1;
+                        unitOfWork.GetRepository<DM_CanBoThietBi>().Update(data);
+                        if (unitOfWork.Save() >= 1)
+                        {
+                            return 1;
+                        }
+                    }
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+        }
+        #endregion
         public CanBoThietBiModel ConvertData(DM_CanBoThietBi source)
         {
             var result = new CanBoThietBiModel

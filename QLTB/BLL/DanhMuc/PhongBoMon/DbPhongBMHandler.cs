@@ -51,7 +51,7 @@ namespace QLTB.Handler
                                         IsPhongChucNang = ph.IsPhongChucNang,
                                         XepLoaiId = ph.XepLoaiId
                                     }
-                                )                              
+                                )
                                  .Join(GlobalVariable.GetDS().XepLoaiPhongBM,
                                     ph => ph.XepLoaiId,
                                     xl => xl.Id,
@@ -80,6 +80,7 @@ namespace QLTB.Handler
                                     NamDuaVaoSD = ph.NamDuaVaoSD.ToString(),
                                     IsPhongChucNang = MyConvert.BoolToString((bool)ph.IsPhongChucNang, "Có", "Không"),
                                     XepLoai = ph.XepLoai
+
                                 })
                                 .OrderBy(p => p.PhongHocId)
                                 .Skip(pageSize * (page - 1))
@@ -137,5 +138,80 @@ namespace QLTB.Handler
                 return null;
             }
         }
+        #region Create,Update,Remove
+        public int Create(PhongBoMonModel model)
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    DM_PhongHocBoMon entity = MyConvert.ConvertSameData<DM_PhongHocBoMon>(model);
+                    unitOfWork.GetRepository<DM_PhongHocBoMon>().Add(entity);
+                    if (unitOfWork.Save() >= 1)
+                    {
+                        return 1;
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+        }
+        public int Update(PhongBoMonModel model)
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    var data = unitOfWork.GetRepository<DM_PhongHocBoMon>().GetById(model.PhongHocId);
+
+                    if (data != null)
+                    {
+                        MyConvert.TransferValues(data, model);
+                        unitOfWork.GetRepository<DM_PhongHocBoMon>().Update(data);
+                        if (unitOfWork.Save() >= 1)
+                        {
+                            return 1;
+                        }
+                    }
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+        }
+        public int Delete(string Id)
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    var data = unitOfWork.GetRepository<DM_PhongHocBoMon>().GetById(Id);
+                    if (data != null)
+                    {
+                        data.TrangThai = -1;
+                        unitOfWork.GetRepository<DM_PhongHocBoMon>().Update(data);
+                        if (unitOfWork.Save() >= 1)
+                        {
+                            return 1;
+                        }
+                    }
+                    return 0;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+        }
+        #endregion
     }
 }

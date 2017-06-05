@@ -88,5 +88,76 @@ namespace QLTB.Handler
                 return null;
             }
         }
+        #region Create,Update,Remove
+        public int Create(MonHocModel model)
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    DM_MonHoc entity = MyConvert.ConvertSameData<DM_MonHoc>(model);
+                    unitOfWork.GetRepository<DM_MonHoc>().Add(entity);
+                    if (unitOfWork.Save() >= 1)
+                    {
+                        return 1;
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+        }
+        public int Update(MonHocModel model)
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    var data = unitOfWork.GetRepository<DM_MonHoc>().GetById(model.MonHocId);
+             
+                    if (data != null)
+                    {
+                        MyConvert.TransferValues(data, model);
+                        unitOfWork.GetRepository<DM_MonHoc>().Update(data);
+                        if (unitOfWork.Save() >= 1)
+                        {
+                            return 1;
+                        }
+                    }
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+        }
+        public int Delete(string Id)
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    var data = unitOfWork.GetRepository<DM_MonHoc>().GetById(Id);
+                    unitOfWork.GetRepository<DM_MonHoc>().Delete(data);
+                    if (unitOfWork.Save() >= 1)
+                    {
+                        return 1;
+                    }
+                    return 0;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+        }
+        #endregion
     }
 }

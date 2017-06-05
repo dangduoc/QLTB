@@ -76,6 +76,76 @@ namespace QLTB.Handler
                 return null;
             }
         }
+        #region Create,Update,Remove
+        public int Create(KhoiLopModel model)
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    DM_KhoiLop entity = MyConvert.ConvertSameData<DM_KhoiLop>(model);
+                    unitOfWork.GetRepository<DM_KhoiLop>().Add(entity);
+                    if (unitOfWork.Save() >= 1)
+                    {
+                        return 1;
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+        }
+        public int Update(KhoiLopModel model)
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    var data = unitOfWork.GetRepository<DM_KhoiLop>().GetById(model.KhoiLopId);
+                   
+                    if (data != null)
+                    {
+                        MyConvert.TransferValues(data, model);
+                        unitOfWork.GetRepository<DM_KhoiLop>().Update(data);
+                        if (unitOfWork.Save() >= 1)
+                        {
+                            return 1;
+                        }
+                    }
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+        }
+        public int Delete(string Id)
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    var data = unitOfWork.GetRepository<DM_KhoiLop>().GetById(Id);
+                    unitOfWork.GetRepository<DM_KhoiLop>().Delete(data);
+                    if (unitOfWork.Save() >= 1)
+                    {
+                        return 1;
+                    }
+                    return 0;
 
+                }
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+        }
+        #endregion
     }
 }

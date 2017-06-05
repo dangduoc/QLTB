@@ -308,6 +308,30 @@
     <Compile Include="DAL\IUnitOfWork.cs" />
     <Compile Include="DAL\Repository.cs" />
     <Compile Include="DAL\UnitOfWork.cs" />
+    <Compile Include="GUI\DanhMuc\CanBoThietBi\frmTaoCanBoTB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DanhMuc\CanBoThietBi\frmTaoCanBoTB.Designer.cs">
+      <DependentUpon>frmTaoCanBoTB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\DanhMuc\LopHoc\frmTaoLopHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DanhMuc\LopHoc\frmTaoLopHoc.Designer.cs">
+      <DependentUpon>frmTaoLopHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\DanhMuc\LopHoc\frmThemLopHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DanhMuc\LopHoc\frmThemLopHoc.Designer.cs">
+      <DependentUpon>frmThemLopHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\DanhMuc\MonHoc\frmTaoMonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DanhMuc\MonHoc\frmTaoMonHoc.Designer.cs">
+      <DependentUpon>frmTaoMonHoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\DanhMuc\PhongBoMon\frmTaoPhongBM.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -630,6 +654,18 @@
     <Compile Include="Utils\Methods.cs" />
     <Compile Include="Utils\MyConvert.cs" />
     <Compile Include="Utils\Paging.cs" />
+    <EmbeddedResource Include="GUI\DanhMuc\CanBoThietBi\frmTaoCanBoTB.resx">
+      <DependentUpon>frmTaoCanBoTB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DanhMuc\LopHoc\frmTaoLopHoc.resx">
+      <DependentUpon>frmTaoLopHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DanhMuc\LopHoc\frmThemLopHoc.resx">
+      <DependentUpon>frmThemLopHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DanhMuc\MonHoc\frmTaoMonHoc.resx">
+      <DependentUpon>frmTaoMonHoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\DanhMuc\PhongBoMon\frmTaoPhongBM.resx">
       <DependentUpon>frmTaoPhongBM.cs</DependentUpon>
     </EmbeddedResource>

@@ -24,6 +24,7 @@ namespace QLTB.Model
         public bool IsDanhChoGV { get; set; }
         public bool IsDanhChoHS { get; set; }
         public string GhiChu { get; set; }
+        public int TrangThai { get; set; }
     }
     public class ThietBiTTGridDisplayModel
     {

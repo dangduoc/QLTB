@@ -136,5 +136,80 @@ namespace QLTB.Handler
                 return null;
             }
         }
+        #region Create,Update,Remove
+        public int Create(ThietBiToiThieuModel model)
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    DM_ThietBiToiThieu entity = MyConvert.ConvertSameData<DM_ThietBiToiThieu>(model);
+                    unitOfWork.GetRepository<DM_ThietBiToiThieu>().Add(entity);
+                    if (unitOfWork.Save() >= 1)
+                    {
+                        return 1;
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+        }
+        public int Update(ThietBiToiThieuModel model)
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    var data = unitOfWork.GetRepository<DM_ThietBiToiThieu>().GetById(model.ThietBiId);
+
+                    if (data != null)
+                    {
+                        MyConvert.TransferValues(data, model);
+                        unitOfWork.GetRepository<DM_ThietBiToiThieu>().Update(data);
+                        if (unitOfWork.Save() >= 1)
+                        {
+                            return 1;
+                        }
+                    }
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+        }
+        public int Delete(string Id)
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    var data = unitOfWork.GetRepository<DM_ThietBiToiThieu>().GetById(Id);
+                    if (data != null)
+                    {
+                        data.TrangThai = -1;
+                        unitOfWork.GetRepository<DM_ThietBiToiThieu>().Update(data);
+                        if (unitOfWork.Save() >= 1)
+                        {
+                            return 1;
+                        }
+                    }
+                    return 0;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+        }
+        #endregion
     }
 }
