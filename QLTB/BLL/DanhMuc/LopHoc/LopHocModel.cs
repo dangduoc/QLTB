@@ -8,8 +8,8 @@ namespace QLTB.Model
 {
     public class LopHocModel
     {
-        public int KhoiLopId { get; set; }
         public int LopHocId { get; set; }
+        public int KhoiLopId { get; set; }
         public string Ten { get; set; }
         public string GhiChu { get; set; }
     }

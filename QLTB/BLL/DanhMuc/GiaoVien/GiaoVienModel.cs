@@ -18,6 +18,7 @@ namespace QLTB.Model
     }
     public class GiaoVienModel:BaseGiaoVienModel
     {
+        public string AnhDaiDien { get; set; }
         public Nullable<System.DateTime> NgaySinh { get; set; }
         public string NoiSinh { get; set; }
         public Nullable<int> DanTocId { get; set; }
@@ -26,7 +27,6 @@ namespace QLTB.Model
         public string EmailCN { get; set; }
         public string EmailCQ { get; set; }
         public Nullable<int> ViTriId { get; set; }
-        
         public Nullable<int> ChucVuId { get; set; }
         public string ChucVuKiemNhiem { get; set; }
         public int PhongBanId { get; set; }
@@ -40,6 +40,7 @@ namespace QLTB.Model
         public Nullable<bool> IsLaDangVien { get; set; }
         public Nullable<int> LyLuanChinhTriId { get; set; }
         public Nullable<System.DateTime> NgayVaoDang { get; set; }
+        public int TrangThai { get; set; }
     }
     public class GiaoVienGirdDisplayModel
     {

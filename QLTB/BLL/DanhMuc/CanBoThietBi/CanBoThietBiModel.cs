@@ -22,6 +22,7 @@ namespace QLTB.Model
         public Nullable<System.DateTime> ThoiGianKetThuc { get; set; }
         public Nullable<bool> IsCoTrinhDoNghiepVu { get; set; }
         public string GhiChu { get; set; }
+        public int TrangThai { get; set; }
     }
     public class CanBoTBGridDisplayModel
     {

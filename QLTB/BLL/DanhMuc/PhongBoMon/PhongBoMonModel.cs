@@ -17,6 +17,7 @@ namespace QLTB.Model
         public Nullable<short> NamDuaVaoSD { get; set; }
         public Nullable<bool> IsPhongChucNang { get; set; }
         public Nullable<int> XepLoaiId { get; set; }
+        public int TrangThai { get; set; }
     }
     public class PhongBoMonGridDisplayModel
     {
