@@ -55,7 +55,6 @@ namespace QLTB.DAL.Data
         public virtual DbSet<QH_User_Permission> QH_User_Permission { get; set; }
         public virtual DbSet<TB_PhieuBaoHong> TB_PhieuBaoHong { get; set; }
         public virtual DbSet<TB_PhieuDeNghiMuaSam> TB_PhieuDeNghiMuaSam { get; set; }
-        public virtual DbSet<TB_PhieuGhiTang> TB_PhieuGhiTang { get; set; }
         public virtual DbSet<TB_PhieuGiamTB> TB_PhieuGiamTB { get; set; }
         public virtual DbSet<TB_PhieuMuonPhong> TB_PhieuMuonPhong { get; set; }
         public virtual DbSet<TB_PhieuMuonTB> TB_PhieuMuonTB { get; set; }
@@ -63,5 +62,6 @@ namespace QLTB.DAL.Data
         public virtual DbSet<TB_ThongTinThietBi> TB_ThongTinThietBi { get; set; }
         public virtual DbSet<ThongTinDonVi> ThongTinDonVis { get; set; }
         public virtual DbSet<ThongTinNamHoc> ThongTinNamHocs { get; set; }
+        public virtual DbSet<TB_PhieuGhiTang> TB_PhieuGhiTang { get; set; }
     }
 }

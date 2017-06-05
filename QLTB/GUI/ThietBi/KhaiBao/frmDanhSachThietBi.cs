@@ -235,7 +235,11 @@ namespace QLTB.GUI
             headers.Add("Kho/Phòng bộ môn");
             headers.Add("Bộ môn");
             headers.Add("Số lượng");
+            headers.Add("Đơn giá");
+            headers.Add("Thành tiền");
+            headers.Add("Nguồn kinh phí");
             headers.Add("Đơn vị tính");
+            headers.Add("Còn");
             headers.Add("Mất");
             headers.Add("Hỏng");
             headers.Add("Trạng thái");
@@ -341,7 +345,7 @@ namespace QLTB.GUI
             lbSoHieu.Text = tb.SoHieu;
             lbSoLuong.Text = tb.SoLuong.ToString();
             lbConDungDuoc.Text = tb.SoLuongCon.ToString();
-            lbDangMuon.Text = (tb.SoLuong - tb.SoLuongMat - tb.SoLuongHong - tb.SoLuongCon).ToString();
+            lbDangMuon.Text = tb.SoLuongMuon.ToString();
             lbTenTB.Text = tb.Ten;
             lbQuyCach.Text = tb.QuyCachSD;
             lbKhoiLop.Text = "";

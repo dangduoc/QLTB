@@ -364,20 +364,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="TB_PhieuGhiTang">
-      <EntityTypeMapping TypeName="Model.TB_PhieuGhiTang">
-        <MappingFragment StoreEntitySet="TB_PhieuGhiTang">
-          <ScalarProperty Name="PhieuGhiTangId" ColumnName="PhieuGhiTangId" />
-          <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
-          <ScalarProperty Name="ChungTuLienQuan" ColumnName="ChungTuLienQuan" />
-          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
-          <ScalarProperty Name="CreatedByUserId" ColumnName="CreatedByUserId" />
-          <ScalarProperty Name="CreatedOnDate" ColumnName="CreatedOnDate" />
-          <ScalarProperty Name="UpdatedByUserId" ColumnName="UpdatedByUserId" />
-          <ScalarProperty Name="UpdatedOnDate" ColumnName="UpdatedOnDate" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="TB_PhieuGiamTB">
       <EntityTypeMapping TypeName="Model.TB_PhieuGiamTB">
         <MappingFragment StoreEntitySet="TB_PhieuGiamTB">
@@ -536,6 +522,21 @@
           <ScalarProperty Name="KetThucNamHoc" ColumnName="KetThucNamHoc" />
           <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
           <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_PhieuGhiTang">
+      <EntityTypeMapping TypeName="Model.TB_PhieuGhiTang">
+        <MappingFragment StoreEntitySet="TB_PhieuGhiTang">
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="UpdatedOnDate" ColumnName="UpdatedOnDate" />
+          <ScalarProperty Name="UpdatedByUserId" ColumnName="UpdatedByUserId" />
+          <ScalarProperty Name="CreatedOnDate" ColumnName="CreatedOnDate" />
+          <ScalarProperty Name="CreatedByUserId" ColumnName="CreatedByUserId" />
+          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+          <ScalarProperty Name="ChungTuLienQuan" ColumnName="ChungTuLienQuan" />
+          <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
+          <ScalarProperty Name="PhieuGhiTangId" ColumnName="PhieuGhiTangId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

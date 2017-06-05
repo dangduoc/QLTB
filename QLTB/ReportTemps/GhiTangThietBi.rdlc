@@ -12,7 +12,7 @@
                 <Value>=Parameters!TenBaoCao.Value</Value>
                 <Style>
                   <FontFamily>times New Roman</FontFamily>
-                  <FontSize>16pt</FontSize>
+                  <FontSize>18pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -24,9 +24,9 @@
         </Paragraphs>
         <rd:DefaultName>TenBaoCao</rd:DefaultName>
         <Top>0.26958in</Top>
-        <Left>3.45709in</Left>
-        <Height>0.3125in</Height>
-        <Width>5.33333in</Width>
+        <Left>1.65499in</Left>
+        <Height>0.42014in</Height>
+        <Width>8.89585in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -47,6 +47,7 @@
                 <Value>=Parameters!NamHoc.Value</Value>
                 <Style>
                   <FontFamily>times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -56,10 +57,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>NamHoc</rd:DefaultName>
-        <Top>0.62375in</Top>
-        <Left>5.61333in</Left>
+        <Top>0.76264in</Top>
+        <Left>4.74527in</Left>
         <Height>0.25in</Height>
-        <Width>1in</Width>
+        <Width>2.7361in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -1018,7 +1019,7 @@
   <Width>12.34944in</Width>
   <Page>
     <PageHeader>
-      <Height>0.78125in</Height>
+      <Height>0.79389in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -1032,6 +1033,7 @@
                   <Value>=Parameters!DonViChuQuan.Value</Value>
                   <Style>
                     <FontFamily>times New Roman</FontFamily>
+                    <FontSize>14pt</FontSize>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -1041,7 +1043,7 @@
           <rd:DefaultName>DonViChuQuan</rd:DefaultName>
           <Top>0.11333in</Top>
           <Left>0.08902in</Left>
-          <Height>0.25in</Height>
+          <Height>0.30556in</Height>
           <Width>4.53125in</Width>
           <Style>
             <Border>
@@ -1063,6 +1065,7 @@
                   <Value>=Parameters!TenTruong.Value</Value>
                   <Style>
                     <FontFamily>times New Roman</FontFamily>
+                    <FontSize>14pt</FontSize>
                     <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
@@ -1071,9 +1074,9 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>TenTruong</rd:DefaultName>
-          <Top>0.41889in</Top>
+          <Top>0.47445in</Top>
           <Left>0.08902in</Left>
-          <Height>0.25in</Height>
+          <Height>0.30556in</Height>
           <Width>4.53125in</Width>
           <ZIndex>1</ZIndex>
           <Style>

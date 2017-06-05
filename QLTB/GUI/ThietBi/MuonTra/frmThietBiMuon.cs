@@ -315,7 +315,7 @@ namespace QLTB.GUI
             if (CbbMonHoc.SelectedValue != null)
             {
                 int id = (int)CbbMonHoc.SelectedValue;
-                frmDialogDSThietBi frm = new frmDialogDSThietBi(p => p.TrangThai >= 0 && p.MonHocId == id);
+                frmDialogDSThietBi frm = new frmDialogDSThietBi(p => p.TrangThai == 1 && p.MonHocId == id);
                 frm.ShowDialog(this);
             }
             else

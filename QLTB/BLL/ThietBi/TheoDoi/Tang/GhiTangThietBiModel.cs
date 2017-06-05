@@ -9,13 +9,14 @@ namespace QLTB.Model
     public class PhieuTangTBModel
     {
         public string PhieuGhiTangId { get; set; }
-        public string NgayLap { get; set; }
+        public DateTime NgayLap { get; set; }
         public string ChungTuLienQuan { get; set; }
         public string NoiDung { get; set; }
-        public string CreatedByUserId { get; set; }
-        public List<ThietBiTangModel> ThietBis { get; set; }
+        public bool? IsDelete { get; set; }
+        public List<ThietBiTangGridDisplayModel> ThietBis { get; set; }
+        public Nullable<int> CreatedByUserId { get; set; }
         public Nullable<System.DateTime> CreatedOnDate { get; set; }
-        public string UpdatedByUserId { get; set; }
+        public Nullable<int> UpdatedByUserId { get; set; }
         public Nullable<System.DateTime> UpdatedOnDate { get; set; }
     }
     public class PhieuTangTBGridDisplayModel
@@ -27,6 +28,11 @@ namespace QLTB.Model
     }
     public class ThietBiTangGridDisplayModel:BaseThietBiGridDisplayModel
     {
+        public new string ThietBiId { get; set; }
+        public new string SoHieu { get; set; }
+        public new string Ten { get; set; }
+        public new string PhongHoc { get; set; }
+        public new string DonViTinh { get; set; }
         public string SoLuongTang { get; set; }
         public string DonGia { get; set; }
         public string ThanhTien { get; set; }

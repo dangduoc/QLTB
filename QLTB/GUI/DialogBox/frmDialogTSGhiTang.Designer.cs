@@ -32,12 +32,12 @@
             this.line1 = new DevComponents.DotNetBar.Controls.Line();
             this.line2 = new DevComponents.DotNetBar.Controls.Line();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.rdioThoiGian = new System.Windows.Forms.RadioButton();
+            this.ridoNamHoc = new System.Windows.Forms.RadioButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.comboBoxEx1 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.label1 = new System.Windows.Forms.Label();
+            this.cbbNamHoc = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.btnThem = new DevComponents.DotNetBar.ButtonX();
             this.btnClose = new DevComponents.DotNetBar.ButtonX();
             this.panel1.SuspendLayout();
@@ -65,14 +65,36 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.radioButton2);
-            this.panel1.Controls.Add(this.radioButton1);
+            this.panel1.Controls.Add(this.rdioThoiGian);
+            this.panel1.Controls.Add(this.ridoNamHoc);
             this.panel1.Controls.Add(this.line1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(15, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(284, 50);
             this.panel1.TabIndex = 2;
+            // 
+            // rdioThoiGian
+            // 
+            this.rdioThoiGian.AutoSize = true;
+            this.rdioThoiGian.Location = new System.Drawing.Point(111, 12);
+            this.rdioThoiGian.Name = "rdioThoiGian";
+            this.rdioThoiGian.Size = new System.Drawing.Size(79, 20);
+            this.rdioThoiGian.TabIndex = 2;
+            this.rdioThoiGian.Text = "Thời gian";
+            this.rdioThoiGian.UseVisualStyleBackColor = true;
+            // 
+            // ridoNamHoc
+            // 
+            this.ridoNamHoc.AutoSize = true;
+            this.ridoNamHoc.Checked = true;
+            this.ridoNamHoc.Location = new System.Drawing.Point(14, 12);
+            this.ridoNamHoc.Name = "ridoNamHoc";
+            this.ridoNamHoc.Size = new System.Drawing.Size(80, 20);
+            this.ridoNamHoc.TabIndex = 1;
+            this.ridoNamHoc.TabStop = true;
+            this.ridoNamHoc.Text = "Năm Học";
+            this.ridoNamHoc.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -88,46 +110,12 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.comboBoxEx1);
+            this.panel3.Controls.Add(this.cbbNamHoc);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(15, 50);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(284, 52);
             this.panel3.TabIndex = 4;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(14, 12);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(80, 20);
-            this.radioButton1.TabIndex = 1;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Năm Học";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(111, 12);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(79, 20);
-            this.radioButton2.TabIndex = 2;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Thời gian";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // comboBoxEx1
-            // 
-            this.comboBoxEx1.DisplayMember = "Text";
-            this.comboBoxEx1.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
-            this.comboBoxEx1.FormattingEnabled = true;
-            this.comboBoxEx1.ItemHeight = 15;
-            this.comboBoxEx1.Location = new System.Drawing.Point(95, 9);
-            this.comboBoxEx1.Name = "comboBoxEx1";
-            this.comboBoxEx1.Size = new System.Drawing.Size(185, 23);
-            this.comboBoxEx1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.comboBoxEx1.TabIndex = 0;
             // 
             // label1
             // 
@@ -138,11 +126,24 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Năm học";
             // 
+            // cbbNamHoc
+            // 
+            this.cbbNamHoc.DisplayMember = "Text";
+            this.cbbNamHoc.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
+            this.cbbNamHoc.FormattingEnabled = true;
+            this.cbbNamHoc.ItemHeight = 15;
+            this.cbbNamHoc.Location = new System.Drawing.Point(80, 10);
+            this.cbbNamHoc.Name = "cbbNamHoc";
+            this.cbbNamHoc.Size = new System.Drawing.Size(200, 23);
+            this.cbbNamHoc.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cbbNamHoc.TabIndex = 0;
+            // 
             // btnThem
             // 
             this.btnThem.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnThem.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnThem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThem.Image = global::QLTB.Properties.Resources.tick;
             this.btnThem.Location = new System.Drawing.Point(128, 20);
             this.btnThem.Name = "btnThem";
@@ -150,12 +151,14 @@
             this.btnThem.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnThem.TabIndex = 4;
             this.btnThem.Text = "Đồng ý";
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnClose
             // 
             this.btnClose.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.Image = global::QLTB.Properties.Resources.b_drop;
             this.btnClose.Location = new System.Drawing.Point(205, 20);
             this.btnClose.Name = "btnClose";
@@ -173,6 +176,8 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.DoubleBuffered = true;
+            this.EnableGlass = false;
             this.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -180,6 +185,7 @@
             this.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Tham số báo cáo";
+            this.Load += new System.EventHandler(this.frmDialogTSGhiTang_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -194,12 +200,12 @@
         private DevComponents.DotNetBar.Controls.Line line1;
         private DevComponents.DotNetBar.Controls.Line line2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rdioThoiGian;
+        private System.Windows.Forms.RadioButton ridoNamHoc;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx comboBoxEx1;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx cbbNamHoc;
         private DevComponents.DotNetBar.ButtonX btnThem;
         private DevComponents.DotNetBar.ButtonX btnClose;
     }

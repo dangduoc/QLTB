@@ -356,19 +356,6 @@
     <Property Name="UpdatedByUserId" Type="Int32" />
     <Property Name="UpdatedOnDate" Type="DateTime" Precision="3" />
   </EntityType>
-  <EntityType Name="TB_PhieuGhiTang">
-    <Key>
-      <PropertyRef Name="PhieuGhiTangId" />
-    </Key>
-    <Property Name="PhieuGhiTangId" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="NgayLap" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="ChungTuLienQuan" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="NoiDung" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="CreatedByUserId" Type="Int32" />
-    <Property Name="CreatedOnDate" Type="DateTime" Precision="3" />
-    <Property Name="UpdatedByUserId" Type="Int32" />
-    <Property Name="UpdatedOnDate" Type="DateTime" Precision="3" />
-  </EntityType>
   <EntityType Name="TB_PhieuGiamTB">
     <Key>
       <PropertyRef Name="PhieuGiamTBId" />
@@ -679,7 +666,6 @@
     <EntitySet Name="QH_User_Permission" EntityType="Self.QH_User_Permission" />
     <EntitySet Name="TB_PhieuBaoHong" EntityType="Self.TB_PhieuBaoHong" />
     <EntitySet Name="TB_PhieuDeNghiMuaSam" EntityType="Self.TB_PhieuDeNghiMuaSam" />
-    <EntitySet Name="TB_PhieuGhiTang" EntityType="Self.TB_PhieuGhiTang" />
     <EntitySet Name="TB_PhieuGiamTB" EntityType="Self.TB_PhieuGiamTB" />
     <EntitySet Name="TB_PhieuMuonPhong" EntityType="Self.TB_PhieuMuonPhong" />
     <EntitySet Name="TB_PhieuMuonTB" EntityType="Self.TB_PhieuMuonTB" />
@@ -727,5 +713,20 @@
       <End Role="HT_UserRole" EntitySet="HT_UserRole" />
       <End Role="QH_User_Permission" EntitySet="QH_User_Permission" />
     </AssociationSet>
+    <EntitySet Name="TB_PhieuGhiTang" EntityType="Model.TB_PhieuGhiTang" />
   </EntityContainer>
+  <EntityType Name="TB_PhieuGhiTang">
+    <Key>
+      <PropertyRef Name="PhieuGhiTangId" />
+    </Key>
+    <Property Name="PhieuGhiTangId" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NgayLap" Type="DateTime" Precision="3" Nullable="false" />
+    <Property Name="ChungTuLienQuan" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NoiDung" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedByUserId" Type="Int32" />
+    <Property Name="CreatedOnDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedByUserId" Type="Int32" />
+    <Property Name="UpdatedOnDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDelete" Type="Boolean" />
+  </EntityType>
 </Schema>

@@ -36,7 +36,11 @@ namespace QLTB.Handler
                                         SoLuongMat = tb.SoLuongMat,
                                         SoLuongHong = tb.SoLuongHong,
                                         DonViTinhId = tb.DonViTinhId,
-                                        TrangThaiId = tb.TrangThai
+                                        TrangThaiId = tb.TrangThai,
+                                        SoLuongCon = tb.SoLuongCon,
+                                        DonGia = tb.DonGia,
+                                        ThanhTien = tb.ThanhTien,
+                                        NguonKP = tb.NguonKinhPhiId
                                     }
                                 )
                                 .Join(unitOfWork.GetRepository<DM_MonHoc>().GetAll(),
@@ -53,7 +57,11 @@ namespace QLTB.Handler
                                         SoLuongMat = tb.SoLuongMat,
                                         SoLuongHong = tb.SoLuongHong,
                                         DonViTinhId = tb.DonViTinhId,
-                                        TrangThaiId = tb.TrangThaiId
+                                        TrangThaiId = tb.TrangThaiId,
+                                        SoLuongCon = tb.SoLuongCon,
+                                        DonGia = tb.DonGia,
+                                        ThanhTien = tb.ThanhTien,
+                                        NguonKP = tb.NguonKP
                                     }
                                 )
                                  .Join(unitOfWork.GetRepository<DS_DonViTinh>().GetAll(),
@@ -70,10 +78,36 @@ namespace QLTB.Handler
                                         SoLuongMat = tb.SoLuongMat.ToString(),
                                         SoLuongHong = tb.SoLuongHong.ToString(),
                                         DonViTinh = dvt.Ten,
-                                        TrangThaiId = tb.TrangThaiId
+                                        TrangThaiId = tb.TrangThaiId,
+                                        SoLuongCon = tb.SoLuongCon,
+                                        DonGia = tb.DonGia,
+                                        ThanhTien = tb.ThanhTien,
+                                        NguonKP = tb.NguonKP
 
                                     }
-                                ).AsEnumerable()
+                                )
+                                .Join(unitOfWork.GetRepository<DM_NguonKinhPhi>().GetAll(),
+                                tb => tb.NguonKP,
+                                tmp => tmp.NguonKinhPhiId,
+                                (tb, tmp) => new
+                                {
+                                    ThietBiId = tb.ThietBiId,
+                                    SoHieu = tb.SoHieu,
+                                    Ten = tb.Ten,
+                                    KhoPhong = tb.KhoPhong,
+                                    MonHoc = tb.MonHoc,
+                                    SoLuong = tb.SoLuong,
+                                    SoLuongCon = tb.SoLuongCon.ToString(),
+                                    SoLuongMat = tb.SoLuongMat,
+                                    SoLuongHong = tb.SoLuongHong,
+                                    DonViTinh = tb.DonViTinh,
+                                    TrangThaiId = tb.TrangThaiId,
+                                    DonGia = tb.DonGia,
+                                    ThanhTien = tb.ThanhTien,
+                                    NguonKinhPhi = tmp.Ten
+                                }
+                                )
+                                .AsEnumerable()
                                 .Join(GlobalVariable.GetDS().TrangThaiThietBi,
                                     tb => tb.TrangThaiId,
                                     tt => tt.Id,
@@ -85,10 +119,14 @@ namespace QLTB.Handler
                                         KhoPhong = tb.KhoPhong,
                                         MonHoc = tb.MonHoc,
                                         SoLuong = tb.SoLuong,
+                                        SoLuongCon = tb.SoLuongCon.ToString(),
                                         SoLuongMat = tb.SoLuongMat,
                                         SoLuongHong = tb.SoLuongHong,
                                         DonViTinh = tb.DonViTinh,
-                                        TrangThai = tt.Name
+                                        TrangThai = tt.Name,
+                                        DonGia = tb.DonGia.ToString(),
+                                        ThanhTien = tb.ThanhTien.ToString(),
+                                        NguonKinhPhi = tb.NguonKinhPhi
                                     }
                                 )
                                 .OrderBy(p => p.MonHoc)
@@ -108,73 +146,6 @@ namespace QLTB.Handler
                         NextPage = (pageSize * page) < TotalRecord ? true : false,
                         PreviousPage = page > 1 ? true : false
                     };
-                }
-                catch (Exception ex)
-                {
-                    return null;
-                }
-            }
-        }
-
-
-
-        public List<ThietBiGridDisplayModel> GetAll(Expression<Func<TB_ThongTinThietBi, bool>> predicate)
-        {
-            using (var unitOfWork = new UnitOfWork())
-            {
-                try
-                {
-                    var data = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetAll().Where(predicate)
-                                  .Join(unitOfWork.GetRepository<DM_PhongHocBoMon>().GetAll(),
-                                    tb => tb.PhongHocId,
-                                    ph => ph.PhongHocId,
-                                    (tb, ph) => new
-                                    {
-                                        ThietBiId = tb.ThietBiId,
-                                        SoHieu = tb.SoHieu,
-                                        Ten = tb.Ten,
-                                        KhoPhong = ph.Ten,
-                                        MonHocId = tb.MonHocId,
-                                        SoLuong = tb.SoLuong,
-                                        SoLuongMat = tb.SoLuongMat,
-                                        SoLuongHong = tb.SoLuongHong,
-                                        DonViTinhId = tb.DonViTinhId
-                                    }
-                                )
-                                .Join(unitOfWork.GetRepository<DM_MonHoc>().GetAll(),
-                                    tb => tb.MonHocId,
-                                    mh => mh.MonHocId,
-                                    (tb, mh) => new
-                                    {
-                                        ThietBiId = tb.ThietBiId,
-                                        SoHieu = tb.SoHieu,
-                                        Ten = tb.Ten,
-                                        KhoPhong = tb.KhoPhong,
-                                        MonHoc = mh.Ten,
-                                        SoLuong = tb.SoLuong,
-                                        SoLuongMat = tb.SoLuongMat,
-                                        SoLuongHong = tb.SoLuongHong,
-                                        DonViTinhId = tb.DonViTinhId
-                                    }
-                                )
-                                .Join(unitOfWork.GetRepository<DS_DonViTinh>().GetAll(),
-                                    tb => tb.DonViTinhId,
-                                    dvt => dvt.DonViTinhId,
-                                    (tb, dvt) => new ThietBiGridDisplayModel
-                                    {
-                                        ThietBiId = tb.ThietBiId,
-                                        SoHieu = tb.SoHieu,
-                                        Ten = tb.Ten,
-                                        KhoPhong = tb.KhoPhong,
-                                        MonHoc = tb.MonHoc,
-                                        SoLuong = tb.SoLuong.ToString(),
-                                        SoLuongMat = tb.SoLuongMat.ToString(),
-                                        SoLuongHong = tb.SoLuongHong.ToString(),
-                                        DonViTinh = dvt.Ten
-                                    }
-                                )
-                                .ToList();
-                    return data;
                 }
                 catch (Exception ex)
                 {

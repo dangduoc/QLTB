@@ -15,6 +15,7 @@ namespace QLTB.GUI
 {
     public partial class frmDSPhieuTangTB : DevComponents.DotNetBar.Office2007Form
     {
+        private DbGhiTangTBHandler handler = new DbGhiTangTBHandler();
         public frmDSPhieuTangTB()
         {
             InitializeComponent();
@@ -177,70 +178,36 @@ namespace QLTB.GUI
             }
         }
         #endregion
-        private void LoadForm()
+        private void ShowPage(int page, int pageSize)
         {
-            List<ThietBiTangGridDisplayModel> list = new List<ThietBiTangGridDisplayModel>();
-            list.Add(new ThietBiTangGridDisplayModel
+            var data = handler.GetAll(page, pageSize);
+            List<PhieuTangTBGridDisplayModel> list = data.data;
+            if (list.Count > 0)
             {
-                ThietBiId = "CSCN00001",
-                SoHieu = "01",
-                DonGia = "35000",
-                DonViTinh = "Cây",
-                NguonKinhPhi = "Kinh phí hàng năm",
-                PhongHoc = "Phòng thì nghiệm công nghệ",
-                SoLuongTang = "2",
-                Ten = "Cây sen đá",
-                ThanhTien = "70000"
-            });
-            list.Add(new ThietBiTangGridDisplayModel
-            {
-                ThietBiId = "CSCN00001",
-                SoHieu = "02",
-                DonGia = "35000",
-                DonViTinh = "Cây",
-                NguonKinhPhi = "Kinh phí hàng năm",
-                PhongHoc = "Phòng thì nghiệm công nghệ",
-                SoLuongTang = "2",
-                Ten = "Cây sen đá",
-                ThanhTien = "70000"
-            });
-            list.Add(new ThietBiTangGridDisplayModel
-            {
-                ThietBiId = "CSCN00001",
-                SoHieu = "03",
-                DonGia = "35000",
-                DonViTinh = "Cây",
-                NguonKinhPhi = "Kinh phí hàng năm",
-                PhongHoc = "Phòng thì nghiệm công nghệ",
-                SoLuongTang = "2",
-                Ten = "Cây sen đá",
-                ThanhTien = "70000"
-            });
-            list.Add(new ThietBiTangGridDisplayModel
-            {
-                ThietBiId = "CSCN00001",
-                SoHieu = "04",
-                DonGia = "35000",
-                DonViTinh = "Cây",
-                NguonKinhPhi = "Kinh phí hàng năm",
-                PhongHoc = "Phòng thì nghiệm công nghệ",
-                SoLuongTang = "2",
-                Ten = "Cây sen đá",
-                ThanhTien = "70000"
-            });
+                loadData(list);
+                prevBtn.Enabled = data.PreviousPage;
+                prevBtn.Tag = page - 1;
+                nextBtn.Enabled = data.NextPage;
+                nextBtn.Tag = page + 1;
+                currentPage.Text = data.CurrentPage.ToString();
+                lbPaging.Text = "Trang " + currentPage.Text + "/" + data.Size;
+                lbTotalRecord.Text = "- Tổng số bản ghi: " + data.TotalRecord;
+            }
+        }
+        private void pageBtnClick(object sender, EventArgs e)
+        {
+            var btn = sender as LinkLabel;
+            int page = Convert.ToInt32(btn.Tag);
+            ShowPage(page, Convert.ToInt32(pageSize.SelectedValue.ToString()));
+            //ShowPage(page, 4);
+        }
+        private void loadData(List<PhieuTangTBGridDisplayModel> list)
+        {
             List<string> headers = new List<string>();
-            
-            headers.Add("Mã thiết bị");
-            headers.Add("Số hiệu");
-            headers.Add("Tên thiết bị");
-            headers.Add("Nguồn kinh phí");
-            headers.Add("Kho/Phòng bộ môn");
-            headers.Add("Số lượng tăng");
-            headers.Add("Đơn giá");
-            headers.Add("Thành tiền");
-            headers.Add("Đơn vị tính");
-            
-            //
+            headers.Add("Số phiếu");
+            headers.Add("Ngày lập");
+            headers.Add("Chứng từ liên quan");
+            headers.Add("Nội dung");
             DataTable tb = MyConvert.ToDataTable(list);
             SetUpSearch(SearchDSTB, tb, headers, ADGVDanhSach);
             SetHeaderForGrid(ADGVDanhSach, headers);
@@ -249,18 +216,21 @@ namespace QLTB.GUI
             ADGVDanhSach.CellContentDoubleClick += ADGVDanhSach_CellContentDoubleClick;
             ADGVDanhSach.KeyPress += ADGVDanhSach_KeyPress;
             ADGVDanhSach.MouseClick += ADGVDanhSach_MouseClick;
-            //
+        }
+        private void LoadForm()
+        {
+            ShowPage(1, 50);
         }
         private void frmDSPhieuTangTB_Load(object sender, EventArgs e)
         {
             LoadForm();
+            var parent = MdiParent as Form1;
+            parent.pnlLoading.Visible = false;
         }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
         }
-
         private void btnThem_Click(object sender, EventArgs e)
         {
             Cursor = Cursors.WaitCursor;
@@ -269,11 +239,22 @@ namespace QLTB.GUI
             frm.Show();
             Cursor = Cursors.Default;
         }
-
         private void btnInDSTB_Click(object sender, EventArgs e)
         {
+            
+
             frmDialogTSGhiTang frm = new frmDialogTSGhiTang();
             frm.ShowDialog(this);
+        }
+
+        private void btnSuaDSTB_Click(object sender, EventArgs e)
+        {
+            var SoPhieu = ADGVDanhSach.SelectedRows[0].Cells["PhieuGhiTangId"].Value.ToString();
+            Cursor = Cursors.WaitCursor;
+            frmPhieuTangThietBi frm = new frmPhieuTangThietBi(SoPhieu);
+            frm.MdiParent = MdiParent;
+            frm.Show();
+            Cursor = Cursors.Default;
         }
     }
 }

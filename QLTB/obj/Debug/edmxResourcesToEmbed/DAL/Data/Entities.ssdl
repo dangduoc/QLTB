@@ -346,13 +346,14 @@
       <PropertyRef Name="PhieuGhiTangId" />
     </Key>
     <Property Name="PhieuGhiTangId" Type="nvarchar" MaxLength="10" Nullable="false" />
-    <Property Name="NgayLap" Type="nchar" MaxLength="10" />
+    <Property Name="NgayLap" Type="datetime" />
     <Property Name="ChungTuLienQuan" Type="nvarchar" MaxLength="100" />
     <Property Name="NoiDung" Type="nvarchar" MaxLength="500" />
     <Property Name="CreatedByUserId" Type="int" />
     <Property Name="CreatedOnDate" Type="datetime" />
     <Property Name="UpdatedByUserId" Type="int" />
     <Property Name="UpdatedOnDate" Type="datetime" />
+    <Property Name="IsDelete" Type="bit" />
   </EntityType>
   <EntityType Name="TB_PhieuGiamTB">
     <Key>
