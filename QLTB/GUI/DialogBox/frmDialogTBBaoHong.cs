@@ -56,7 +56,7 @@ namespace QLTB.GUI
             else
             {
                 frmPhieuBaoHong frm = new frmPhieuBaoHong(list);
-                parent.OpenFrmPhieu(frm);             
+                parent.OpenFrmChild(frm);             
             }
             Close();
         }

@@ -5,7 +5,6 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="e3e04f3a54fe47d69876a7aabc5d4cac" Name="Diagram1">
-        <EntityTypeShape EntityType="Model.DM_CanBoThietBi" Width="1.5" PointX="7.75" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.DM_GiaoVien" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.DM_KhoiLop" Width="1.5" PointX="9.75" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.DM_LopHoc" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
@@ -53,6 +52,7 @@
         <AssociationConnector Association="Model.FK_TB_PhieuThanhLyTB_HT_User1" ManuallyRouted="false" />
         <AssociationConnector Association="Model.FK_QH_User_Permission_HT_UserRole" ManuallyRouted="false" />
         <EntityTypeShape EntityType="Model.TB_PhieuGhiTang" Width="1.5" PointX="16.375" PointY="7.75" />
+        <EntityTypeShape EntityType="Model.DM_CanBoThietBi" Width="1.5" PointX="0.75" PointY="18.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

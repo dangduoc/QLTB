@@ -176,10 +176,14 @@ namespace QLTB.GUI
             headers.Add("Kho/Phòng bộ môn");
             headers.Add("Bộ môn");
             headers.Add("Số lượng");
+            headers.Add("Đơn giá");
+            headers.Add("Thành tiền");
+            headers.Add("Nguồn kinh phí");
             headers.Add("Đơn vị tính");
             headers.Add("Còn");
             headers.Add("Mất");
             headers.Add("Hỏng");
+            headers.Add("Trạng thái");
             DataTable tb = MyConvert.ToDataTable(list);
             this.Text = "Danh sách thiết bị giáo dục";
 
@@ -192,6 +196,7 @@ namespace QLTB.GUI
             source.DataSource = SetUpSearch(tb, headers);
             ADGVDanhSach.DataSource = source;
             SetHeaderForGrid(ADGVDanhSach, headers);
+        
             ADGVDanhSach.Columns.Add(col);
 
             ADGVDanhSach.Columns["checkBtn"].Width = 40;

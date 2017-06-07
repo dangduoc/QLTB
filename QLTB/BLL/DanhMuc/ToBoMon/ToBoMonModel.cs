@@ -14,5 +14,13 @@ namespace QLTB.Model
         public Nullable<int> ParentId { get; set; }
         public string GhiChu { get; set; }
         public string MaBoMon { get; set; }
+
+    }
+    public class ToBoMonDisplayModel
+    {
+        public int ToBoMonId { get; set; }
+        public string Ten { get; set; }
+        public string MaBoMon { get; set; }
+        public List<ToBoMonDisplayModel> Children { get; set; }
     }
 }

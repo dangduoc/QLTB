@@ -255,5 +255,26 @@ namespace QLTB.Handler
                 return null;
             }
         }
+        public List<DSDanToc> GetDanToc()
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    var data = unitOfWork.GetRepository<DS_DanToc>().GetAll()
+                        .Select(p => new DSDanToc
+                        {
+                            DanTocId=p.DanTocId,
+                            Ten = p.Ten
+                        }).ToList();
+                    return data;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }

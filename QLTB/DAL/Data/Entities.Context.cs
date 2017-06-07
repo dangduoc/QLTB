@@ -25,7 +25,6 @@ namespace QLTB.DAL.Data
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<DM_CanBoThietBi> DM_CanBoThietBi { get; set; }
         public virtual DbSet<DM_GiaoVien> DM_GiaoVien { get; set; }
         public virtual DbSet<DM_KhoiLop> DM_KhoiLop { get; set; }
         public virtual DbSet<DM_LopHoc> DM_LopHoc { get; set; }
@@ -63,5 +62,6 @@ namespace QLTB.DAL.Data
         public virtual DbSet<ThongTinDonVi> ThongTinDonVis { get; set; }
         public virtual DbSet<ThongTinNamHoc> ThongTinNamHocs { get; set; }
         public virtual DbSet<TB_PhieuGhiTang> TB_PhieuGhiTang { get; set; }
+        public virtual DbSet<DM_CanBoThietBi> DM_CanBoThietBi { get; set; }
     }
 }

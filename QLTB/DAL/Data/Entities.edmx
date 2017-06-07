@@ -15,11 +15,11 @@
           <Property Name="GioiTinhId" Type="int" />
           <Property Name="PhuTrachId" Type="int" />
           <Property Name="TrinhDoVanHoa" Type="nvarchar" MaxLength="200" />
-          <Property Name="ThoiGianBatDau" Type="datetime" />
-          <Property Name="ThoiGianKetThuc" Type="datetime" />
           <Property Name="IsCoTrinhDoNghiepVu" Type="bit" />
           <Property Name="GhiChu" Type="nvarchar" MaxLength="500" />
           <Property Name="TrangThai" Type="int" Nullable="false" />
+          <Property Name="ThoiGianBatDau" Type="nvarchar" MaxLength="50" />
+          <Property Name="ThoiGianKetThuc" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="DM_GiaoVien">
           <Key>
@@ -718,22 +718,6 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="DM_CanBoThietBi">
-          <Key>
-            <PropertyRef Name="CanBoThietBiId" />
-          </Key>
-          <Property Name="CanBoThietBiId" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="HoVaDem" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="GioiTinhId" Type="Int32" />
-          <Property Name="PhuTrachId" Type="Int32" />
-          <Property Name="TrinhDoVanHoa" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="ThoiGianBatDau" Type="DateTime" Precision="3" />
-          <Property Name="ThoiGianKetThuc" Type="DateTime" Precision="3" />
-          <Property Name="IsCoTrinhDoNghiepVu" Type="Boolean" />
-          <Property Name="GhiChu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="TrangThai" Type="Int32" Nullable="false" />
-        </EntityType>
         <EntityType Name="DM_GiaoVien">
           <Key>
             <PropertyRef Name="GiaoVienId" />
@@ -1354,7 +1338,6 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="DM_CanBoThietBi" EntityType="Self.DM_CanBoThietBi" />
           <EntitySet Name="DM_GiaoVien" EntityType="Self.DM_GiaoVien" />
           <EntitySet Name="DM_KhoiLop" EntityType="Self.DM_KhoiLop" />
           <EntitySet Name="DM_LopHoc" EntityType="Self.DM_LopHoc" />
@@ -1432,13 +1415,14 @@
             <End Role="QH_User_Permission" EntitySet="QH_User_Permission" />
           </AssociationSet>
           <EntitySet Name="TB_PhieuGhiTang" EntityType="Model.TB_PhieuGhiTang" />
+          <EntitySet Name="DM_CanBoThietBi" EntityType="Model.DM_CanBoThietBi" />
         </EntityContainer>
         <EntityType Name="TB_PhieuGhiTang">
           <Key>
             <PropertyRef Name="PhieuGhiTangId" />
           </Key>
           <Property Name="PhieuGhiTangId" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="NgayLap" Type="DateTime" Precision="3" Nullable="false" />
+          <Property Name="NgayLap" Type="DateTime" Precision="3" />
           <Property Name="ChungTuLienQuan" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="NoiDung" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="CreatedByUserId" Type="Int32" />
@@ -1447,29 +1431,28 @@
           <Property Name="UpdatedOnDate" Type="DateTime" Precision="3" />
           <Property Name="IsDelete" Type="Boolean" />
         </EntityType>
+        <EntityType Name="DM_CanBoThietBi">
+          <Key>
+            <PropertyRef Name="CanBoThietBiId" />
+          </Key>
+          <Property Name="CanBoThietBiId" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="HoVaDem" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GioiTinhId" Type="Int32" />
+          <Property Name="PhuTrachId" Type="Int32" />
+          <Property Name="TrinhDoVanHoa" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="IsCoTrinhDoNghiepVu" Type="Boolean" />
+          <Property Name="GhiChu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TrangThai" Type="Int32" Nullable="false" />
+          <Property Name="ThoiGianBatDau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ThoiGianKetThuc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
-          <EntitySetMapping Name="DM_CanBoThietBi">
-            <EntityTypeMapping TypeName="Model.DM_CanBoThietBi">
-              <MappingFragment StoreEntitySet="DM_CanBoThietBi">
-                <ScalarProperty Name="CanBoThietBiId" ColumnName="CanBoThietBiId" />
-                <ScalarProperty Name="HoVaDem" ColumnName="HoVaDem" />
-                <ScalarProperty Name="Ten" ColumnName="Ten" />
-                <ScalarProperty Name="GioiTinhId" ColumnName="GioiTinhId" />
-                <ScalarProperty Name="PhuTrachId" ColumnName="PhuTrachId" />
-                <ScalarProperty Name="TrinhDoVanHoa" ColumnName="TrinhDoVanHoa" />
-                <ScalarProperty Name="ThoiGianBatDau" ColumnName="ThoiGianBatDau" />
-                <ScalarProperty Name="ThoiGianKetThuc" ColumnName="ThoiGianKetThuc" />
-                <ScalarProperty Name="IsCoTrinhDoNghiepVu" ColumnName="IsCoTrinhDoNghiepVu" />
-                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
-                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="DM_GiaoVien">
             <EntityTypeMapping TypeName="Model.DM_GiaoVien">
               <MappingFragment StoreEntitySet="DM_GiaoVien">
@@ -1989,6 +1972,23 @@
                 <ScalarProperty Name="ChungTuLienQuan" ColumnName="ChungTuLienQuan" />
                 <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
                 <ScalarProperty Name="PhieuGhiTangId" ColumnName="PhieuGhiTangId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_CanBoThietBi">
+            <EntityTypeMapping TypeName="Model.DM_CanBoThietBi">
+              <MappingFragment StoreEntitySet="DM_CanBoThietBi">
+                <ScalarProperty Name="ThoiGianKetThuc" ColumnName="ThoiGianKetThuc" />
+                <ScalarProperty Name="ThoiGianBatDau" ColumnName="ThoiGianBatDau" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+                <ScalarProperty Name="IsCoTrinhDoNghiepVu" ColumnName="IsCoTrinhDoNghiepVu" />
+                <ScalarProperty Name="TrinhDoVanHoa" ColumnName="TrinhDoVanHoa" />
+                <ScalarProperty Name="PhuTrachId" ColumnName="PhuTrachId" />
+                <ScalarProperty Name="GioiTinhId" ColumnName="GioiTinhId" />
+                <ScalarProperty Name="Ten" ColumnName="Ten" />
+                <ScalarProperty Name="HoVaDem" ColumnName="HoVaDem" />
+                <ScalarProperty Name="CanBoThietBiId" ColumnName="CanBoThietBiId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

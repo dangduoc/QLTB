@@ -14,15 +14,14 @@ namespace QLTB.Model
     }
     public class CanBoThietBiModel: BaseCanBoThietBiModel
     {
-        //
         public Nullable<int> GioiTinhId { get; set; }
         public Nullable<int> PhuTrachId { get; set; }
         public string TrinhDoVanHoa { get; set; }
-        public Nullable<System.DateTime> ThoiGianBatDau { get; set; }
-        public Nullable<System.DateTime> ThoiGianKetThuc { get; set; }
         public Nullable<bool> IsCoTrinhDoNghiepVu { get; set; }
         public string GhiChu { get; set; }
         public int TrangThai { get; set; }
+        public string ThoiGianBatDau { get; set; }
+        public string ThoiGianKetThuc { get; set; }
     }
     public class CanBoTBGridDisplayModel
     {

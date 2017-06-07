@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace QLTB.GUI
 {
-    public partial class frmThongTinDonVi : Form
+    public partial class frmThongTinDonVi : DevComponents.DotNetBar.Office2007Form
     {
         private ThongTinDonViModel DonVi;
         private DbThongTinDVHandler handler= new DbThongTinDVHandler();
@@ -169,8 +169,6 @@ namespace QLTB.GUI
         private void frmThongTinDonVi_Load(object sender, EventArgs e)
         {
             loadForm();
-            var parent = MdiParent as Form1;
-            parent.pnlLoading.Visible = false;
         }
         private void btnClose_Click(object sender, EventArgs e)
         {
