@@ -22,4 +22,24 @@ namespace QLTB.Report.Model
         public string NguonKP { get; set; }
         public string GhiChu { get; set; }
     }
+    public class ThietBiReportModel
+    {
+        public string ThietBiId { get; set; }
+        public string SoHieu { get; set; }
+        public string Ten { get; set; }
+        public string PhongBM { get; set; }
+        public string MonHoc { get; set; }
+        public string DonViTinh { get; set; }
+        public string QuyCachSD { get; set; }
+        public string NamDuaVaoSD { get; set; }
+        public string NamTheoDoi { get; set; }
+        public int SoLuong { get; set; }
+        public int SoLuongMuon { get; set; }
+        public int SoLuongCon { get; set; }
+        public int SoLuongMat { get; set; }
+        public int SoLuongHong { get; set; }
+        public string DonGia { get; set; }
+        public string ThanhTien { get; set; }
+        public string GhiChu { get; set; }
+    }
 }

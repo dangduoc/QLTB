@@ -137,7 +137,7 @@
             this.layoutControlItem24,
             this.layoutGroup5,
             this.layoutGroup6});
-            this.layoutControl3.Size = new System.Drawing.Size(1010, 288);
+            this.layoutControl3.Size = new System.Drawing.Size(1027, 288);
             this.layoutControl3.TabIndex = 4;
             // 
             // labelX1
@@ -151,7 +151,7 @@
             this.labelX1.Location = new System.Drawing.Point(4, 4);
             this.labelX1.Margin = new System.Windows.Forms.Padding(0);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(1002, 27);
+            this.labelX1.Size = new System.Drawing.Size(1019, 27);
             this.labelX1.TabIndex = 0;
             this.labelX1.Text = "THÔNG TIN NGƯỜI KÝ TRÊN CÁC BÁO CÁO";
             // 
@@ -687,6 +687,7 @@
             // cbbCapTruong
             // 
             this.cbbCapTruong.DisplayMember = "Text";
+            this.cbbCapTruong.Enabled = false;
             this.cbbCapTruong.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
             this.cbbCapTruong.ForeColor = System.Drawing.Color.Black;
             this.cbbCapTruong.FormattingEnabled = true;
@@ -701,6 +702,7 @@
             // cbbKhoiTruong
             // 
             this.cbbKhoiTruong.DisplayMember = "Text";
+            this.cbbKhoiTruong.Enabled = false;
             this.cbbKhoiTruong.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
             this.cbbKhoiTruong.ForeColor = System.Drawing.Color.Black;
             this.cbbKhoiTruong.FormattingEnabled = true;
@@ -916,7 +918,7 @@
             this.pnlTTChung.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTTChung.Location = new System.Drawing.Point(10, 0);
             this.pnlTTChung.Name = "pnlTTChung";
-            this.pnlTTChung.Size = new System.Drawing.Size(1010, 324);
+            this.pnlTTChung.Size = new System.Drawing.Size(1027, 324);
             this.pnlTTChung.TabIndex = 15;
             // 
             // panel4
@@ -925,7 +927,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 45);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1010, 279);
+            this.panel4.Size = new System.Drawing.Size(1027, 279);
             this.panel4.TabIndex = 6;
             // 
             // groupBox1
@@ -946,7 +948,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1010, 45);
+            this.panel3.Size = new System.Drawing.Size(1027, 45);
             this.panel3.TabIndex = 5;
             // 
             // labelX4
@@ -959,7 +961,7 @@
             this.labelX4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX4.Location = new System.Drawing.Point(0, 0);
             this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(1010, 40);
+            this.labelX4.Size = new System.Drawing.Size(1027, 40);
             this.labelX4.TabIndex = 1;
             this.labelX4.Text = "THÔNG TIN ĐƠN VỊ";
             // 
@@ -969,7 +971,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1010, 288);
+            this.panel1.Size = new System.Drawing.Size(1027, 288);
             this.panel1.TabIndex = 17;
             // 
             // pnlBack
@@ -984,7 +986,7 @@
             this.pnlBack.MinimumSize = new System.Drawing.Size(0, 670);
             this.pnlBack.Name = "pnlBack";
             this.pnlBack.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.pnlBack.Size = new System.Drawing.Size(1030, 815);
+            this.pnlBack.Size = new System.Drawing.Size(1047, 815);
             this.pnlBack.TabIndex = 18;
             // 
             // panel2
@@ -993,7 +995,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(10, 527);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1010, 288);
+            this.panel2.Size = new System.Drawing.Size(1027, 288);
             this.panel2.TabIndex = 19;
             // 
             // pnlTTLienHe
@@ -1002,7 +1004,7 @@
             this.pnlTTLienHe.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTTLienHe.Location = new System.Drawing.Point(10, 324);
             this.pnlTTLienHe.Name = "pnlTTLienHe";
-            this.pnlTTLienHe.Size = new System.Drawing.Size(1010, 203);
+            this.pnlTTLienHe.Size = new System.Drawing.Size(1027, 203);
             this.pnlTTLienHe.TabIndex = 18;
             // 
             // groupBox2
@@ -1045,7 +1047,7 @@
             this.ribBarDSThietBi.Margin = new System.Windows.Forms.Padding(8, 5, 8, 5);
             this.ribBarDSThietBi.Name = "ribBarDSThietBi";
             this.ribBarDSThietBi.ShowShortcutKeysInToolTips = true;
-            this.ribBarDSThietBi.Size = new System.Drawing.Size(1030, 35);
+            this.ribBarDSThietBi.Size = new System.Drawing.Size(1047, 35);
             this.ribBarDSThietBi.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribBarDSThietBi.TabIndex = 19;
             // 
@@ -1107,7 +1109,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1030, 35);
+            this.panel5.Size = new System.Drawing.Size(1047, 35);
             this.panel5.TabIndex = 20;
             // 
             // panel6
@@ -1116,7 +1118,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(0, 35);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1030, 815);
+            this.panel6.Size = new System.Drawing.Size(1047, 815);
             this.panel6.TabIndex = 21;
             // 
             // frmThongTinDonVi
@@ -1126,7 +1128,7 @@
             this.AutoScroll = true;
             this.AutoScrollMinSize = new System.Drawing.Size(0, 850);
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1047, 702);
+            this.ClientSize = new System.Drawing.Size(1064, 702);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.DoubleBuffered = true;

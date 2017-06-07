@@ -136,6 +136,7 @@
     <Compile Include="BLL\DanhMuc\PhongBoMon\PhongBoMonModel.cs" />
     <Compile Include="BLL\DanhMuc\ThietBiToiThieu\DbThietBiTTHandler.cs" />
     <Compile Include="BLL\DanhMuc\ThietBiToiThieu\ThietBiToiThieuModel.cs" />
+    <Compile Include="BLL\DanhMuc\ToBoMon\DbToBoMonHandler.cs" />
     <Compile Include="BLL\DanhMuc\ToBoMon\ToBoMonModel.cs" />
     <Compile Include="BLL\DanhSach\DanhSachModel.cs" />
     <Compile Include="BLL\DanhSach\DbDanhSachHandler.cs" />
@@ -314,6 +315,12 @@
     <Compile Include="GUI\DanhMuc\CanBoThietBi\frmTaoCanBoTB.Designer.cs">
       <DependentUpon>frmTaoCanBoTB.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\DanhMuc\GiaoVien\frmTaoGiaoVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DanhMuc\GiaoVien\frmTaoGiaoVien.Designer.cs">
+      <DependentUpon>frmTaoGiaoVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\DanhMuc\LopHoc\frmTaoLopHoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -379,6 +386,12 @@
     </Compile>
     <Compile Include="GUI\DialogBox\frmDialogTSGhiTang.Designer.cs">
       <DependentUpon>frmDialogTSGhiTang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\DialogBox\Report\frmReportDSThietBi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DialogBox\Report\frmReportDSThietBi.Designer.cs">
+      <DependentUpon>frmReportDSThietBi.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\DialogBox\Report\frmReportGhiTang.cs">
       <SubType>Form</SubType>
@@ -657,6 +670,9 @@
     <EmbeddedResource Include="GUI\DanhMuc\CanBoThietBi\frmTaoCanBoTB.resx">
       <DependentUpon>frmTaoCanBoTB.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DanhMuc\GiaoVien\frmTaoGiaoVien.resx">
+      <DependentUpon>frmTaoGiaoVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\DanhMuc\LopHoc\frmTaoLopHoc.resx">
       <DependentUpon>frmTaoLopHoc.cs</DependentUpon>
     </EmbeddedResource>
@@ -689,6 +705,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DialogBox\frmDialogTSGhiTang.resx">
       <DependentUpon>frmDialogTSGhiTang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DialogBox\Report\frmReportDSThietBi.resx">
+      <DependentUpon>frmReportDSThietBi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DialogBox\Report\frmReportGhiTang.resx">
       <DependentUpon>frmReportGhiTang.cs</DependentUpon>
@@ -832,6 +851,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReportTemps\DanhSachThietBi.rdlc" />
     <EmbeddedResource Include="ReportTemps\GhiTangThietBi.rdlc" />
     <EntityDeploy Include="DAL\Data\Entities.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -842,6 +862,7 @@
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\QLTB.Report.Model.GhiTangReportModel.datasource" />
+    <None Include="Properties\DataSources\QLTB.Report.Model.ThietBiReportModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -988,6 +1009,7 @@
     </Content>
     <Content Include="icon.ico" />
     <None Include="Resources\Capture.jpg" />
+    <None Include="Resources\User.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <None Include="Resources\browse1.png" />
     <None Include="Resources\forward.png" />

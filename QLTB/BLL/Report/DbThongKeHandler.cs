@@ -1,6 +1,7 @@
 ﻿using QLTB.DAL;
 using QLTB.DAL.Data;
 using QLTB.Report.Model;
+using QLTB.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -115,6 +116,108 @@ namespace QLTB.Handler
             catch (Exception ex)
             {
                 return null;
+            }
+        }
+        /// <summary>
+        /// Thống kê danh sách thiết bị
+        /// </summary>
+        /// <returns></returns>
+        public List<ThietBiReportModel> DanhSachThietBi()
+        {
+            using (var unitOfWork = new UnitOfWork())
+            {
+                try
+                {
+                    var dstb = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetAll().Where(p=>p.TrangThai>=0);
+                    var data = dstb
+                                .Join(unitOfWork.GetRepository<DM_PhongHocBoMon>().GetAll(),
+                                    tb => tb.PhongHocId,
+                                    ph => ph.PhongHocId,
+                                    (tb, ph) => new
+                                    {
+                                        ThietBiId = tb.ThietBiId,
+                                        SoHieu = tb.SoHieu,
+                                        Ten = tb.Ten,
+                                        KhoPhong = ph.Ten,
+                                        MonHocId = tb.MonHocId,
+                                        SoLuong = tb.SoLuong,
+                                        SoLuongMat = tb.SoLuongMat,
+                                        SoLuongHong = tb.SoLuongHong,
+                                        DonViTinhId = tb.DonViTinhId,
+                                        TrangThaiId = tb.TrangThai,
+                                        SoLuongCon = tb.SoLuongCon,
+                                        DonGia = tb.DonGia,
+                                        ThanhTien = tb.ThanhTien,
+                                        NguonKP = tb.NguonKinhPhiId,
+                                        NamDuaVaoSD=tb.NamDuaVaoSD,
+                                        NamTheoDoi=tb.NamTheoDoi,
+                                        GhiChu=tb.GhiChu,
+                                        QuyCachSD=tb.QuyCachSD,
+                                        SoLuongMuon = tb.SoLuongMuon
+
+                                    }
+                                )
+                                .Join(unitOfWork.GetRepository<DM_MonHoc>().GetAll(),
+                                    tb => tb.MonHocId,
+                                    mh => mh.MonHocId,
+                                    (tb, mh) => new
+                                    {
+                                        ThietBiId = tb.ThietBiId,
+                                        SoHieu = tb.SoHieu,
+                                        Ten = tb.Ten,
+                                        KhoPhong = tb.KhoPhong,
+                                        MonHoc = mh.Ten,
+                                        SoLuong = tb.SoLuong,
+                                        SoLuongMat = tb.SoLuongMat,
+                                        SoLuongHong = tb.SoLuongHong,
+                                        DonViTinhId = tb.DonViTinhId,
+                                        TrangThaiId = tb.TrangThaiId,
+                                        SoLuongCon = tb.SoLuongCon,
+                                        DonGia = tb.DonGia,
+                                        ThanhTien = tb.ThanhTien,
+                                        NamDuaVaoSD = tb.NamDuaVaoSD,
+                                        NamTheoDoi = tb.NamTheoDoi,
+                                        GhiChu = tb.GhiChu,
+                                        QuyCachSD = tb.QuyCachSD,
+                                        SoLuongMuon = tb.SoLuongMuon
+                                    }
+                                )
+                                 .Join(unitOfWork.GetRepository<DS_DonViTinh>().GetAll(),
+                                    tb => tb.DonViTinhId,
+                                    dvt => dvt.DonViTinhId,
+                                    (tb, dvt) => new ThietBiReportModel
+                                    {
+                                        ThietBiId = tb.ThietBiId,
+                                        SoHieu = tb.SoHieu,
+                                        Ten = tb.Ten,
+                                        MonHoc = tb.MonHoc,
+                                        SoLuong = tb.SoLuong,
+                                        SoLuongCon = tb.SoLuongCon,
+                                        SoLuongMat = tb.SoLuongMat,
+                                        SoLuongHong = tb.SoLuongHong,
+                                        DonViTinh = dvt.Ten,
+                                        DonGia = tb.DonGia.ToString(),
+                                        ThanhTien = tb.ThanhTien.ToString(),
+                                        NamDuaVaoSD = tb.NamDuaVaoSD.ToString(),
+                                        NamTheoDoi = tb.NamTheoDoi.ToString(),
+                                        GhiChu = tb.GhiChu,
+                                        PhongBM=tb.KhoPhong,
+                                        QuyCachSD = tb.QuyCachSD,
+                                        SoLuongMuon = tb.SoLuongMuon
+                                    }
+                                )
+                                .OrderBy(p => p)
+                                .ToList();
+                    //
+
+
+
+                    return data;
+                }
+                catch (Exception ex)
+                {
+                    return null;
+                }
             }
         }
     }

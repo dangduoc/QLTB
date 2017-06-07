@@ -23,9 +23,9 @@ namespace QLTB.Handler
                     int captruong = GlobalVariable.GetHeThong().DonVi.CapTruongId;
                     var TotalRecord = unitOfWork.GetRepository<DM_GiaoVien>().GetAll().Count();
                     var data = unitOfWork.GetRepository<DM_GiaoVien>().GetAll()
-                         .Join(unitOfWork.GetRepository<DS_PhongBan>().GetAll().Where(p=>p.CapHocId== captruong),
+                         .Join(unitOfWork.GetRepository<DM_ToBoMon>().GetAll(),
                                     gv => gv.PhongBanId,
-                                    pb => pb.PhongBanId,
+                                    pb => pb.ToBoMonId,
                                     (gv, pb) => new
                                     {
                                         GiaoVienId = gv.GiaoVienId,

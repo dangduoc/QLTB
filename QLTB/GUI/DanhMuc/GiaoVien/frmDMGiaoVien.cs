@@ -211,14 +211,14 @@ namespace QLTB.GUI
             #region InitGridview
             //Clone
             List<GiaoVienGirdDisplayModel> list = new List<GiaoVienGirdDisplayModel>();
-           
+
             //
             List<string> headers = new List<string>();
             headers.Add("Mã cán bộ");
             headers.Add("Họ tên");
             headers.Add("Giới tính");
             headers.Add("Ngày sinh");
-            headers.Add("Phòng ban");
+            headers.Add("Tổ bộ môn");
             headers.Add("Vị trí làm việc");
             headers.Add("Chức vụ");
             headers.Add("Dạy môn");
@@ -234,23 +234,96 @@ namespace QLTB.GUI
             ADGVDanhSach.KeyPress += ADGVDanhSach_KeyPress;
             ADGVDanhSach.MouseClick += ADGVDanhSach_MouseClick;
             //
-            treeView1.ExpandAll();
+
+            #endregion
+            #region InitTreeNode
+
+            //Create root
+            TreeNode root = new TreeNode();
+            root.Text = GlobalVariable.GetHeThong().DonVi.Ten;
+            //rootNode.Name = "";
+            root.Tag = "All";
+            var nodes = new DbToBoMonHandler().GetTreeNodes();
+            foreach (var node in nodes)
+            {
+                TreeNode rootNode = new TreeNode();
+                rootNode.Text = node.Ten;
+                rootNode.Name = node.MaBoMon;
+                rootNode.Tag = node.ToBoMonId;
+                foreach (var childnode in node.Children)
+                {
+                    TreeNode childNode = new TreeNode();
+                    childNode.Text = childnode.Ten;
+                    childNode.Name = childnode.MaBoMon;
+                    childNode.Tag = childnode.ToBoMonId;
+                    rootNode.Nodes.Add(childNode);
+                }
+                root.Nodes.Add(rootNode);
+            }
+            TVToBoMon.Nodes.Add(root);
+            TVToBoMon.ExpandAll();
+            #endregion
+            #region InitMenuStrip
+            //myTimer.Elapsed += (sender, e) => PlayMusicEvent(sender, e, musicNote);
+            foreach(var item in new DbToBoMonHandler().GetAll())
+            {
+                ToolStripChuyenPB.DropDownItems.Add(
+                    item.Ten,null, ToolStrip_Click
+                    );
+            }
+            
             #endregion
             ShowPage(1, 50);
         }
-
+        private void ToolStrip_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Chức năng đang xây dựng");
+        }
 
         private void frmDMGiaoVien_Load(object sender, EventArgs e)
         {
             LoadForm();
-            var parent = MdiParent as Form1;
-            parent.pnlLoading.Visible = false;
-
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void TVToBoMon_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            ToolStripComboBox columns = SearchDSTB.Items[2] as ToolStripComboBox;
+            ToolStripTextBox textSearch = SearchDSTB.Items[3] as ToolStripTextBox;
+
+            if (!TVToBoMon.SelectedNode.Tag.ToString().Equals("All"))
+            {
+                var filterString = TVToBoMon.SelectedNode.Text.Trim();
+                columns.ComboBox.SelectedValue = "PhongBan";
+                textSearch.Text = filterString;
+            }
+            else
+            {
+
+                columns.ComboBox.SelectedValue = "All";
+                textSearch.Text = "";
+            }
+
+            searchChanged(SearchDSTB, ADGVDanhSach);
+        }
+
+        private void ADGVDanhSach_MouseClick_1(object sender, MouseEventArgs e)
+        {
+            if(e.Button== MouseButtons.Right)
+            {
+                contextMenuStrip1.Show(ADGVDanhSach, e.Location);
+            }
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            var owner = MdiParent as Form1;
+            frmTaoGiaoVien frm = new frmTaoGiaoVien();
+            owner.OpenFrmChild(frm);
         }
     }
 }

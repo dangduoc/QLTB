@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QLTB.handler
+namespace QLTB.Handler
 {
     public class DbCanBoThietBiHandler
     {
@@ -31,8 +31,8 @@ namespace QLTB.handler
                                         GioiTinh=gt.Ten,
                                         PhuTrachId=cb.PhuTrachId,
                                         TrinhDoVH=cb.TrinhDoVanHoa,
-                                        TGBatDauQL=MyConvert.DateToString(cb.ThoiGianBatDau),
-                                        TGKetThucQL=MyConvert.DateToString(cb.ThoiGianKetThuc),
+                                        TGBatDauQL=cb.ThoiGianBatDau,
+                                        TGKetThucQL=cb.ThoiGianKetThuc,
                                         CoTrinhDoNV=MyConvert.BoolToString((bool)cb.IsCoTrinhDoNghiepVu,"Có","Không"),
                                         GhiChu=cb.GhiChu
                                     }

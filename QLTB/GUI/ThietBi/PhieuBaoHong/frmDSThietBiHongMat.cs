@@ -254,8 +254,6 @@ namespace QLTB.GUI
         private void frmDSThietBiHongMat_Load(object sender, EventArgs e)
         {
             loadForm();
-            var parent = MdiParent as Form1;
-            parent.pnlLoading.Visible = false;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -302,12 +300,9 @@ namespace QLTB.GUI
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            Cursor = Cursors.WaitCursor;
+            var owner = MdiParent as Form1;
             frmPhieuBaoHong frm = new frmPhieuBaoHong();
-            frm.Text = "Phiếu báo hỏng";
-            frm.MdiParent = MdiParent;
-            frm.Show();
-            Cursor = Cursors.Default;
+            owner.OpenFrmChild(frm);
         }
 
         private void btnClose_Click_1(object sender, EventArgs e)

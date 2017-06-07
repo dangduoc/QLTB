@@ -71,7 +71,7 @@
             this.panelEx2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelEx2.Location = new System.Drawing.Point(0, 376);
             this.panelEx2.Name = "panelEx2";
-            this.panelEx2.Size = new System.Drawing.Size(1056, 78);
+            this.panelEx2.Size = new System.Drawing.Size(1220, 78);
             this.panelEx2.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -88,7 +88,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 35);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1056, 43);
+            this.panel1.Size = new System.Drawing.Size(1220, 43);
             this.panel1.TabIndex = 33;
             // 
             // btnThem
@@ -97,7 +97,7 @@
             this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnThem.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnThem.Image = global::QLTB.Properties.Resources.tick;
-            this.btnThem.Location = new System.Drawing.Point(859, 9);
+            this.btnThem.Location = new System.Drawing.Point(1023, 9);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(87, 23);
             this.btnThem.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -111,7 +111,7 @@
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnClose.Image = global::QLTB.Properties.Resources.b_drop;
-            this.btnClose.Location = new System.Drawing.Point(952, 9);
+            this.btnClose.Location = new System.Drawing.Point(1116, 9);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(87, 22);
             this.btnClose.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -135,7 +135,7 @@
             this.panelEx4.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelEx4.Location = new System.Drawing.Point(0, 0);
             this.panelEx4.Name = "panelEx4";
-            this.panelEx4.Size = new System.Drawing.Size(1056, 35);
+            this.panelEx4.Size = new System.Drawing.Size(1220, 35);
             this.panelEx4.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx4.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx4.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
@@ -198,7 +198,7 @@
             this.lbTotalRecord.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbTotalRecord.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotalRecord.ForeColor = System.Drawing.Color.Black;
-            this.lbTotalRecord.Location = new System.Drawing.Point(939, 7);
+            this.lbTotalRecord.Location = new System.Drawing.Point(1103, 7);
             this.lbTotalRecord.Name = "lbTotalRecord";
             this.lbTotalRecord.Size = new System.Drawing.Size(109, 23);
             this.lbTotalRecord.TabIndex = 4;
@@ -212,7 +212,7 @@
             // 
             this.lbPaging.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbPaging.ForeColor = System.Drawing.Color.Black;
-            this.lbPaging.Location = new System.Drawing.Point(888, 7);
+            this.lbPaging.Location = new System.Drawing.Point(1052, 7);
             this.lbPaging.Name = "lbPaging";
             this.lbPaging.Size = new System.Drawing.Size(57, 23);
             this.lbPaging.TabIndex = 3;
@@ -283,7 +283,7 @@
             this.pnlBack.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBack.Location = new System.Drawing.Point(0, 0);
             this.pnlBack.Name = "pnlBack";
-            this.pnlBack.Size = new System.Drawing.Size(1056, 376);
+            this.pnlBack.Size = new System.Drawing.Size(1220, 376);
             this.pnlBack.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.pnlBack.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.pnlBack.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -303,7 +303,7 @@
             this.panelEx1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEx1.Location = new System.Drawing.Point(0, 0);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(1056, 376);
+            this.panelEx1.Size = new System.Drawing.Size(1220, 376);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -322,7 +322,7 @@
             this.panelEx3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEx3.Location = new System.Drawing.Point(0, 31);
             this.panelEx3.Name = "panelEx3";
-            this.panelEx3.Size = new System.Drawing.Size(1056, 345);
+            this.panelEx3.Size = new System.Drawing.Size(1220, 345);
             this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -336,7 +336,7 @@
             // 
             this.ADGVDanhSach.AllowUserToAddRows = false;
             this.ADGVDanhSach.AllowUserToDeleteRows = false;
-            this.ADGVDanhSach.AutoGenerateContextFilters = false;
+            this.ADGVDanhSach.AutoGenerateContextFilters = true;
             this.ADGVDanhSach.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ADGVDanhSach.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.ADGVDanhSach.BackgroundColor = System.Drawing.Color.White;
@@ -354,12 +354,13 @@
             this.ADGVDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ADGVDanhSach.Location = new System.Drawing.Point(0, 0);
             this.ADGVDanhSach.Name = "ADGVDanhSach";
+            this.ADGVDanhSach.ReadOnly = true;
             this.ADGVDanhSach.RowHeadersVisible = false;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.ADGVDanhSach.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.ADGVDanhSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ADGVDanhSach.Size = new System.Drawing.Size(1056, 345);
+            this.ADGVDanhSach.Size = new System.Drawing.Size(1220, 345);
             this.ADGVDanhSach.TabIndex = 27;
             this.ADGVDanhSach.TimeFilter = false;
             this.ADGVDanhSach.SortStringChanged += new System.EventHandler(this.advancedDataGridView_SortStringChanged);
@@ -377,7 +378,7 @@
             this.SearchDSTB.MinimumSize = new System.Drawing.Size(0, 31);
             this.SearchDSTB.Name = "SearchDSTB";
             this.SearchDSTB.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.SearchDSTB.Size = new System.Drawing.Size(1056, 31);
+            this.SearchDSTB.Size = new System.Drawing.Size(1220, 31);
             this.SearchDSTB.TabIndex = 28;
             this.SearchDSTB.Text = "searchToolBar1";
             // 
@@ -385,7 +386,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1056, 454);
+            this.ClientSize = new System.Drawing.Size(1220, 454);
             this.Controls.Add(this.pnlBack);
             this.Controls.Add(this.panelEx2);
             this.DoubleBuffered = true;

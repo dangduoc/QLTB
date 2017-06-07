@@ -265,25 +265,21 @@ namespace QLTB.GUI
 
         private void btnGhiTra_Click(object sender, EventArgs e)
         {
-            Cursor = Cursors.WaitCursor;
             var row = ADGVDanhSach.SelectedRows[0];
             if (row != null)
             {
                 var Id = row.Cells["PhieuMuonTBId"].Value.ToString();
                 frmGhiNhanTraTB frm = new frmGhiNhanTraTB(Id);
-                frm.MdiParent = MdiParent;
-                frm.Show();
+                var owner = MdiParent as Form1;
+                owner.OpenFrmChild(frm);
             }
-            Cursor = Cursors.Default;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            Cursor = Cursors.WaitCursor;
+            var owner = MdiParent as Form1;
             frmThietBiMuon frm = new frmThietBiMuon();
-            frm.MdiParent = MdiParent;
-            frm.Show();
-            Cursor = Cursors.Default;
+            owner.OpenFrmChild(frm);   
         }
 
         private void ADGVDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)

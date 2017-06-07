@@ -29,6 +29,7 @@ namespace QLTB.Model
         public Nullable<int> ViTriId { get; set; }
         public Nullable<int> ChucVuId { get; set; }
         public string ChucVuKiemNhiem { get; set; }
+        //To bo mon
         public int PhongBanId { get; set; }
         public int LoaiHopDongId { get; set; }
         public System.DateTime NgayVaoNganh { get; set; }

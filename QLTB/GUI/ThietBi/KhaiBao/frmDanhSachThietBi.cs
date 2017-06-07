@@ -21,7 +21,7 @@ namespace QLTB.GUI
             InitializeComponent();
             toolStripXoa.Click += btnXoa_Click;
             toolStripSua.Click += btnXem_Click;
-            
+
         }
         #region ADGV Setup
         private BindingSource source = new BindingSource();
@@ -38,7 +38,7 @@ namespace QLTB.GUI
         }
         private void SetUpSearch(ADGV.SearchToolBar toolBar, DataTable tb, List<string> headers, ADGV.AdvancedDataGridView grid)
         {
-            
+
             DataTable Table = tb;
             ToolStripTextBox textSearch = toolBar.Items[3] as ToolStripTextBox;
             ToolStripButton searchCaseSensitive = toolBar.Items[6] as ToolStripButton;
@@ -174,13 +174,13 @@ namespace QLTB.GUI
         private void ADGVDanhSach_MouseClick(object sender, MouseEventArgs e)
         {
             var row = ADGVDanhSach.SelectedRows[0];
-            
+
             if (row != null)
             {
                 var status = row.Cells["TrangThai"].Value.ToString();
                 if (e.Button == MouseButtons.Right)
                 {
-                    if(status.Equals("Chưa ghi tăng"))
+                    if (status.Equals("Chưa ghi tăng"))
                     {
                         toolStripGhiTang.Enabled = true;
                         toolStripGhiGiam.Enabled = false;
@@ -191,20 +191,18 @@ namespace QLTB.GUI
                         toolStripGhiGiam.Enabled = true;
                     }
                     contextMenuStrip.Show(ADGVDanhSach, e.Location);
-                    
+
                 }
             }
         }
         #endregion
         private void LoadForm()
         {
-            ShowPage(1,50);
-            var parent=MdiParent as Form1;
-            parent.pnlLoading.Visible = false;
+            ShowPage(1, 50);
         }
-        private void ShowPage(int page,int pageSize)
+        private void ShowPage(int page, int pageSize)
         {
-            var data = handler.GetAll(page, pageSize,p=>p.TrangThai>=0);
+            var data = handler.GetAll(page, pageSize, p => p.TrangThai >= 0);
             List<ThietBiGridDisplayModel> list = data.data;
             if (list.Count > 0)
             {
@@ -213,7 +211,7 @@ namespace QLTB.GUI
                 prevBtn.Enabled = data.PreviousPage;
                 prevBtn.Tag = page - 1;
                 nextBtn.Enabled = data.NextPage;
-                nextBtn.Tag = page+1;
+                nextBtn.Tag = page + 1;
                 currentPage.Text = data.CurrentPage.ToString();
                 lbPaging.Text = "Trang " + currentPage.Text + "/" + data.Size;
                 lbTotalRecord.Text = "- Tổng số bản ghi: " + data.TotalRecord;
@@ -223,7 +221,7 @@ namespace QLTB.GUI
         {
             var btn = sender as LinkLabel;
             int page = Convert.ToInt32(btn.Tag);
-            ShowPage(page,Convert.ToInt32(pageSize.SelectedValue.ToString()));
+            ShowPage(page, Convert.ToInt32(pageSize.SelectedValue.ToString()));
             //ShowPage(page, 4);
         }
         private void loadData(List<ThietBiGridDisplayModel> list)
@@ -283,7 +281,7 @@ namespace QLTB.GUI
             tvFilter.Nodes.Add(rootNode);
             tvFilter.ExpandAll();
         }
-        private void loadTVPhongHo()
+        private void loadTVPhongHoc()
         {
             tvFilter.Tag = 2;
             tvFilter.Nodes.Clear();
@@ -302,9 +300,9 @@ namespace QLTB.GUI
         }
         private void BtnThemDSTB_Click(object sender, EventArgs e)
         {
+            var owner = MdiParent as Form1;
             frmKhaiBaoThietBi frm = new frmKhaiBaoThietBi();
-            frm.MdiParent = MdiParent;
-            frm.Show();
+            owner.OpenFrmChild(frm);
         }
         private void btnXem_Click(object sender, EventArgs e)
         {
@@ -338,20 +336,26 @@ namespace QLTB.GUI
 
         private void ADGVDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var SoHieu = ADGVDanhSach.Rows[e.RowIndex].Cells["SoHieu"].Value.ToString();
-            var tb = handler.GetById(SoHieu);
-            //
-            lbMaTB.Text = tb.ThietBiId;
-            lbSoHieu.Text = tb.SoHieu;
-            lbSoLuong.Text = tb.SoLuong.ToString();
-            lbConDungDuoc.Text = tb.SoLuongCon.ToString();
-            lbDangMuon.Text = tb.SoLuongMuon.ToString();
-            lbTenTB.Text = tb.Ten;
-            lbQuyCach.Text = tb.QuyCachSD;
-            lbKhoiLop.Text = "";
-            lbNoiDung.Text = tb.GhiChu;
-            lbPhongBM.Text = ADGVDanhSach.Rows[e.RowIndex].Cells["KhoPhong"].Value.ToString();
-
+            if (e.RowIndex > 0)
+            {
+                var SoHieu = ADGVDanhSach.Rows[e.RowIndex].Cells["SoHieu"].Value.ToString();
+                var tb = handler.GetById(SoHieu);
+                if (tb != null)
+                {
+                    //
+                    lbMaTB.Text = tb.ThietBiId;
+                    lbSoHieu.Text = tb.SoHieu;
+                    lbSoLuong.Text = tb.SoLuong.ToString();
+                    lbConDungDuoc.Text = tb.SoLuongCon.ToString();
+                    lbDangMuon.Text = tb.SoLuongMuon.ToString();
+                    lbTenTB.Text = tb.Ten;
+                    lbQuyCach.Text = tb.QuyCachSD;
+                    lbKhoiLop.Text = "";
+                    lbNoiDung.Text = tb.GhiChu;
+                    lbPhongBM.Text = ADGVDanhSach.Rows[e.RowIndex].Cells["KhoPhong"].Value.ToString();
+                    tabThongTin.Visible = true;
+                }
+            }
         }
 
         private void btnImportDSTB_Click(object sender, EventArgs e)
@@ -366,8 +370,9 @@ namespace QLTB.GUI
         private void rdioTB_CheckedChanged(object sender, EventArgs e)
         {
 
-            if (rdioTB.Checked == true)
+            if (rdioThietBi.Checked)
             {
+                rdioPhongBM.Checked = false;
                 loadTVMonHoc();
             }
 
@@ -377,14 +382,12 @@ namespace QLTB.GUI
         {
             ToolStripComboBox columns = SearchDSTB.Items[2] as ToolStripComboBox;
             ToolStripTextBox textSearch = SearchDSTB.Items[3] as ToolStripTextBox;
-
-
             var filterString = tvFilter.SelectedNode.Text.Trim();
             int type = Convert.ToInt32(tvFilter.Tag);
             //mon hoc
             if (type == 1)
             {
-                if(filterString.Equals("Tất cả"))
+                if (filterString.Equals("Tất cả"))
                 {
                     columns.ComboBox.SelectedValue = "All";
                     textSearch.Text = "";
@@ -394,12 +397,17 @@ namespace QLTB.GUI
                     columns.ComboBox.SelectedValue = "MonHoc";
                     textSearch.Text = filterString;
                 }
-                
+
                 searchChanged(SearchDSTB, ADGVDanhSach);
+                tabThongTin.Visible = false;
             }
             else if (type == 2)
             {
-                source.Filter = "KhoPhong Like '" + filterString + "'";
+                //source.Filter = "KhoPhong Like '" + filterString + "'";
+                columns.ComboBox.SelectedValue = "KhoPhong";
+                textSearch.Text = filterString;
+                searchChanged(SearchDSTB, ADGVDanhSach);
+                tabThongTin.Visible = false;
             }
         }
 
@@ -420,6 +428,22 @@ namespace QLTB.GUI
             frm.MdiParent = MdiParent;
             frm.Show();
             Cursor = Cursors.Default;
+        }
+
+        private void rdioPhongBM_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdioPhongBM.Checked)
+            {
+                rdioThietBi.Checked = false;
+                loadTVPhongHoc();
+            }
+
+        }
+
+        private void btnInDSTB_Click(object sender, EventArgs e)
+        {
+            frmReportDSThietBi frm = new frmReportDSThietBi();
+            frm.ShowDialog(this);
         }
     }
 }

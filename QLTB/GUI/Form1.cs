@@ -73,7 +73,6 @@ namespace QLTB.GUI
         {
             MessageBox.Show("Chức năng đang xây dựng....");
         }
-
         private void btnPhanQuyen_Click(object sender, EventArgs e)
         {
             Cursor = Cursors.WaitCursor;
@@ -85,6 +84,7 @@ namespace QLTB.GUI
                     frm.MdiParent = this;
                     frm.WindowState = FormWindowState.Maximized;
                     frm.Show();
+                    pnlLoading.Visible = false;
                 }
 
             }
@@ -106,6 +106,7 @@ namespace QLTB.GUI
                     frm.MdiParent = this;
                     frm.WindowState = FormWindowState.Maximized;
                     frm.Show();
+                    pnlLoading.Visible = false;
                 }
 
             }
@@ -127,6 +128,7 @@ namespace QLTB.GUI
                     frm.MdiParent = this;
                     frm.WindowState = FormWindowState.Maximized;
                     frm.Show();
+                    pnlLoading.Visible = false;
                 }
 
             }
@@ -153,6 +155,7 @@ namespace QLTB.GUI
                     frm.MdiParent = this;
                     frm.WindowState = FormWindowState.Maximized;
                     frm.Show();
+                    pnlLoading.Visible = false;
                 }
 
             }
@@ -174,6 +177,7 @@ namespace QLTB.GUI
                     frm.MdiParent = this;
                     frm.WindowState = FormWindowState.Maximized;
                     frm.Show();
+                    pnlLoading.Visible = false;
                 }
 
             }
@@ -217,6 +221,7 @@ namespace QLTB.GUI
                     frm.MdiParent = this;
                     frm.WindowState = FormWindowState.Maximized;
                     frm.Show();
+                    pnlLoading.Visible = false;
                 }
 
             }
@@ -238,6 +243,7 @@ namespace QLTB.GUI
                     frm.MdiParent = this;
                     frm.WindowState = FormWindowState.Maximized;
                     frm.Show();
+                    pnlLoading.Visible = false;
                 }
 
             }
@@ -259,6 +265,7 @@ namespace QLTB.GUI
                     frm.MdiParent = this;
                     frm.WindowState = FormWindowState.Maximized;
                     frm.Show();
+                    pnlLoading.Visible = false;
                 }
 
             }
@@ -280,6 +287,7 @@ namespace QLTB.GUI
                     frm.MdiParent = this;
                     frm.WindowState = FormWindowState.Maximized;
                     frm.Show();
+                    pnlLoading.Visible = false;
                 }
 
             }
@@ -301,6 +309,7 @@ namespace QLTB.GUI
                     frm.MdiParent = this;
                     frm.WindowState = FormWindowState.Maximized;
                     frm.Show();
+                    pnlLoading.Visible = false;
                 }
             }
             catch (Exception ex)
@@ -324,7 +333,6 @@ namespace QLTB.GUI
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-
             ChangeInfo();
         }
         public void ChangeInfo()
@@ -358,6 +366,7 @@ namespace QLTB.GUI
                     frm.WindowState = FormWindowState.Maximized;
                     frm.Show();
                     frm.ResumeLayout();
+                    pnlLoading.Visible = false;
                 }
             }
             catch (Exception ex)
@@ -379,6 +388,7 @@ namespace QLTB.GUI
                     frm.WindowState = FormWindowState.Maximized;
                     frm.Show();
                     frm.ResumeLayout();
+                    pnlLoading.Visible = false;
                 }
             }
             catch (Exception ex)
@@ -400,6 +410,7 @@ namespace QLTB.GUI
                     frm.WindowState = FormWindowState.Maximized;
                     frm.Show();
                     frm.ResumeLayout();
+                    pnlLoading.Visible = false;
                 }
             }
             catch (Exception ex)
@@ -421,6 +432,7 @@ namespace QLTB.GUI
                     frm.WindowState = FormWindowState.Maximized;
                     frm.Show();
                     frm.ResumeLayout();
+                    pnlLoading.Visible = false;
                 }
             }
             catch (Exception ex)
@@ -443,6 +455,7 @@ namespace QLTB.GUI
                     frm.WindowState = FormWindowState.Maximized;
                     frm.Show();
                     frm.ResumeLayout();
+                    pnlLoading.Visible = false;
                 }
             }
             catch (Exception ex)
@@ -465,6 +478,7 @@ namespace QLTB.GUI
                     frm.WindowState = FormWindowState.Maximized;
                     frm.Show();
                     frm.ResumeLayout();
+                    pnlLoading.Visible = false;
                 }
             }
             catch (Exception ex)
@@ -487,6 +501,7 @@ namespace QLTB.GUI
                     frm.WindowState = FormWindowState.Maximized;
                     frm.Show();
                     frm.ResumeLayout();
+                    pnlLoading.Visible = false;
                 }
             }
             catch (Exception ex)
@@ -508,6 +523,7 @@ namespace QLTB.GUI
                     frm.WindowState = FormWindowState.Maximized;
                     frm.Show();
                     frm.ResumeLayout();
+                    pnlLoading.Visible = false;
                 }
             }
             catch (Exception ex)
@@ -526,6 +542,7 @@ namespace QLTB.GUI
             toolmenuTB.Visible = true;
             pnlTop.Height = 150;
             Cursor = Cursors.Default;
+            pnlLoading.Visible = false;
         }
 
         private void btnMuonTra_Click(object sender, EventArgs e)
@@ -543,6 +560,7 @@ namespace QLTB.GUI
                     frm.WindowState = FormWindowState.Maximized;
                     frm.Show();
                     frm.ResumeLayout();
+                    pnlLoading.Visible = false;
                 }
             }
             catch (Exception ex)
@@ -567,6 +585,7 @@ namespace QLTB.GUI
                     frm.WindowState = FormWindowState.Maximized;
                     frm.Show();
                     frm.ResumeLayout();
+                    pnlLoading.Visible = false;
                 }
             }
             catch (Exception ex)
@@ -590,6 +609,7 @@ namespace QLTB.GUI
                     frm.WindowState = FormWindowState.Maximized;
                     frm.Show();
                     frm.ResumeLayout();
+                    pnlLoading.Visible = false;
                 }
             }
             catch (Exception ex)
@@ -614,8 +634,9 @@ namespace QLTB.GUI
             lbChucNang.Text = btn.Tag.ToString();
             pnlLoading.Visible = true;
         }
-        public void OpenFrmPhieu(Form form)
+        public void OpenFrmChild(Form form)
         {
+            pnlLoading.Visible = true;
             Cursor = Cursors.WaitCursor;
             if (!CheckExistForm(form.Name))
             {
@@ -623,6 +644,7 @@ namespace QLTB.GUI
                 form.WindowState = FormWindowState.Maximized;
                 form.Show();
             }
+            pnlLoading.Visible = false;
             Cursor = Cursors.Default;
             
         }
