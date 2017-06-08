@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlBackDS = new System.Windows.Forms.Panel();
             this.pnlContentDSTB = new DevComponents.DotNetBar.PanelEx();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
@@ -49,9 +49,9 @@
             this.comboItem2 = new DevComponents.Editors.ComboItem();
             this.SearchDSTB = new ADGV.SearchToolBar();
             this.ribBarDSThietBi = new DevComponents.DotNetBar.RibbonBar();
-            this.btnThemDSTB = new DevComponents.DotNetBar.ButtonItem();
-            this.btnSuaDSTB = new DevComponents.DotNetBar.ButtonItem();
-            this.btnXoaDSTB = new DevComponents.DotNetBar.ButtonItem();
+            this.btnThem = new DevComponents.DotNetBar.ButtonItem();
+            this.btnSua = new DevComponents.DotNetBar.ButtonItem();
+            this.btnXoa = new DevComponents.DotNetBar.ButtonItem();
             this.btnNapDSTB = new DevComponents.DotNetBar.ButtonItem();
             this.btnImportDSTB = new DevComponents.DotNetBar.ButtonItem();
             this.btnHelpDSTB = new DevComponents.DotNetBar.ButtonItem();
@@ -146,33 +146,33 @@
             this.ADGVDanhSach.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.ADGVDanhSach.BackgroundColor = System.Drawing.Color.White;
             this.ADGVDanhSach.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ADGVDanhSach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ADGVDanhSach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.ADGVDanhSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ADGVDanhSach.DateWithTime = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ADGVDanhSach.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ADGVDanhSach.DefaultCellStyle = dataGridViewCellStyle8;
             this.ADGVDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ADGVDanhSach.GridColor = System.Drawing.Color.Black;
             this.ADGVDanhSach.Location = new System.Drawing.Point(0, 0);
             this.ADGVDanhSach.Name = "ADGVDanhSach";
             this.ADGVDanhSach.ReadOnly = true;
             this.ADGVDanhSach.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ADGVDanhSach.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ADGVDanhSach.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.ADGVDanhSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ADGVDanhSach.Size = new System.Drawing.Size(1010, 357);
             this.ADGVDanhSach.TabIndex = 27;
@@ -191,6 +191,7 @@
             this.panelEx2.Controls.Add(this.pageSize);
             this.panelEx2.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelEx2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelEx2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelEx2.Location = new System.Drawing.Point(0, 357);
             this.panelEx2.Name = "panelEx2";
             this.panelEx2.Size = new System.Drawing.Size(1010, 35);
@@ -324,7 +325,7 @@
             // SearchDSTB
             // 
             this.SearchDSTB.AllowMerge = false;
-            this.SearchDSTB.Font = new System.Drawing.Font("Arial", 9F);
+            this.SearchDSTB.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.SearchDSTB.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.SearchDSTB.Location = new System.Drawing.Point(0, 0);
             this.SearchDSTB.MaximumSize = new System.Drawing.Size(0, 30);
@@ -351,11 +352,11 @@
             this.ribBarDSThietBi.ContainerControlProcessDialogKey = true;
             this.ribBarDSThietBi.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribBarDSThietBi.DragDropSupport = true;
-            this.ribBarDSThietBi.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.ribBarDSThietBi.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.ribBarDSThietBi.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btnThemDSTB,
-            this.btnSuaDSTB,
-            this.btnXoaDSTB,
+            this.btnThem,
+            this.btnSua,
+            this.btnXoa,
             this.btnNapDSTB,
             this.btnImportDSTB,
             this.btnHelpDSTB,
@@ -378,42 +379,49 @@
             // 
             this.ribBarDSThietBi.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
-            // btnThemDSTB
+            // btnThem
             // 
-            this.btnThemDSTB.BeginGroup = true;
-            this.btnThemDSTB.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.btnThemDSTB.Image = global::QLTB.Properties.Resources.add;
-            this.btnThemDSTB.ImagePaddingHorizontal = 20;
-            this.btnThemDSTB.ImagePaddingVertical = 10;
-            this.btnThemDSTB.Name = "btnThemDSTB";
-            this.btnThemDSTB.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlN);
-            this.btnThemDSTB.Text = "Thêm";
-            this.btnThemDSTB.Tooltip = "Khai báo thiết bị";
+            this.btnThem.BeginGroup = true;
+            this.btnThem.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnThem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThem.Image = global::QLTB.Properties.Resources.add;
+            this.btnThem.ImagePaddingHorizontal = 20;
+            this.btnThem.ImagePaddingVertical = 14;
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlN);
+            this.btnThem.Text = "Thêm";
+            this.btnThem.Tooltip = "Khai báo thiết bị";
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // btnSuaDSTB
+            // btnSua
             // 
-            this.btnSuaDSTB.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.btnSuaDSTB.Image = global::QLTB.Properties.Resources.edit16;
-            this.btnSuaDSTB.ImagePaddingHorizontal = 20;
-            this.btnSuaDSTB.ImagePaddingVertical = 10;
-            this.btnSuaDSTB.Name = "btnSuaDSTB";
-            this.btnSuaDSTB.SubItemsExpandWidth = 14;
-            this.btnSuaDSTB.Text = "Sửa";
+            this.btnSua.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnSua.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSua.Image = global::QLTB.Properties.Resources.edit16;
+            this.btnSua.ImagePaddingHorizontal = 20;
+            this.btnSua.ImagePaddingVertical = 10;
+            this.btnSua.Name = "btnSua";
+            this.btnSua.SubItemsExpandWidth = 14;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
-            // btnXoaDSTB
+            // btnXoa
             // 
-            this.btnXoaDSTB.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.btnXoaDSTB.Image = global::QLTB.Properties.Resources.b_drop;
-            this.btnXoaDSTB.ImagePaddingHorizontal = 20;
-            this.btnXoaDSTB.ImagePaddingVertical = 10;
-            this.btnXoaDSTB.Name = "btnXoaDSTB";
-            this.btnXoaDSTB.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlD);
-            this.btnXoaDSTB.Text = "Xóa";
-            this.btnXoaDSTB.Tooltip = "Xóa thiết bị";
+            this.btnXoa.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnXoa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnXoa.Image = global::QLTB.Properties.Resources.b_drop;
+            this.btnXoa.ImagePaddingHorizontal = 20;
+            this.btnXoa.ImagePaddingVertical = 10;
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlD);
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.Tooltip = "Xóa thiết bị";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnNapDSTB
             // 
             this.btnNapDSTB.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnNapDSTB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNapDSTB.Image = global::QLTB.Properties.Resources.Refresh16;
             this.btnNapDSTB.ImagePaddingHorizontal = 20;
             this.btnNapDSTB.ImagePaddingVertical = 10;
@@ -426,6 +434,7 @@
             // btnImportDSTB
             // 
             this.btnImportDSTB.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnImportDSTB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnImportDSTB.Image = global::QLTB.Properties.Resources.import16;
             this.btnImportDSTB.ImagePaddingHorizontal = 20;
             this.btnImportDSTB.ImagePaddingVertical = 10;
@@ -438,6 +447,7 @@
             // btnHelpDSTB
             // 
             this.btnHelpDSTB.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnHelpDSTB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHelpDSTB.Image = global::QLTB.Properties.Resources.Help_icon;
             this.btnHelpDSTB.ImagePaddingHorizontal = 20;
             this.btnHelpDSTB.ImagePaddingVertical = 10;
@@ -449,6 +459,7 @@
             // 
             this.buttonItem1.BeginGroup = true;
             this.buttonItem1.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.buttonItem1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonItem1.Image = global::QLTB.Properties.Resources.close16;
             this.buttonItem1.Name = "buttonItem1";
             this.buttonItem1.SubItemsExpandWidth = 14;
@@ -474,7 +485,7 @@
             this.label1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.label1.Size = new System.Drawing.Size(193, 40);
             this.label1.TabIndex = 0;
-            this.label1.Text = "CÁN BỘ GIÁO DỤC";
+            this.label1.Text = "CÁN BỘ THIẾT BỊ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel2
@@ -494,7 +505,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
-            this.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmDMCanBoThietBi";
             this.Text = "Danh mục cán bộ thiết bị";
             this.Load += new System.EventHandler(this.frmDMCanBoThietBi_Load);
@@ -532,9 +543,9 @@
         private DevComponents.Editors.ComboItem comboItem2;
         private ADGV.SearchToolBar SearchDSTB;
         private DevComponents.DotNetBar.RibbonBar ribBarDSThietBi;
-        private DevComponents.DotNetBar.ButtonItem btnThemDSTB;
-        private DevComponents.DotNetBar.ButtonItem btnSuaDSTB;
-        private DevComponents.DotNetBar.ButtonItem btnXoaDSTB;
+        private DevComponents.DotNetBar.ButtonItem btnThem;
+        private DevComponents.DotNetBar.ButtonItem btnSua;
+        private DevComponents.DotNetBar.ButtonItem btnXoa;
         private DevComponents.DotNetBar.ButtonItem btnNapDSTB;
         private DevComponents.DotNetBar.ButtonItem btnImportDSTB;
         private DevComponents.DotNetBar.ButtonItem btnHelpDSTB;

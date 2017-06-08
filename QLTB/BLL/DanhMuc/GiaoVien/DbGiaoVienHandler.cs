@@ -259,6 +259,41 @@ namespace QLTB.Handler
                 return -1;
             }
         }
+        public string GenerateCode()
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    string newCode = "GV";
+                    var last = unitOfWork.GetRepository<DM_GiaoVien>().GetAll().OrderByDescending(p => p.GiaoVienId).FirstOrDefault();
+                    if (last != null)
+                    {
+                        var lastCode = last.GiaoVienId;
+                        var numberPart = lastCode.Replace("GV", "");
+                        var number = Convert.ToInt32(numberPart.TrimStart('0'));
+                        var suffix = number + 1;
+
+                       
+                        int numberofzero = suffix / 10;
+                        for (int i = 0; i < 4-numberofzero; i++)
+                        {
+                            newCode += "0";
+                        }
+                        newCode += suffix.ToString();
+                    }
+                    else
+                    {
+                        newCode = "GV0001";
+                    }
+                    return newCode;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
         #endregion
     }
 }

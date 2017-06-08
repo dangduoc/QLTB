@@ -1,4 +1,4 @@
-﻿namespace QLTB.GUI.DanhMuc.CanBoThietBi
+﻿namespace QLTB.GUI
 {
     partial class frmTaoCanBoTB
     {
