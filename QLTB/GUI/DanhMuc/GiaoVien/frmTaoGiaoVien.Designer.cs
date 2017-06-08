@@ -86,7 +86,7 @@
             this.layoutSpacerItem4 = new DevComponents.DotNetBar.Layout.LayoutSpacerItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.layoutTTC = new DevComponents.DotNetBar.Layout.LayoutControl();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.btnChangePicture = new System.Windows.Forms.LinkLabel();
             this.cbbDanToc = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.txtHoTen = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtNoiSinh = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -915,7 +915,7 @@
             // 
             // layoutTTC
             // 
-            this.layoutTTC.Controls.Add(this.linkLabel1);
+            this.layoutTTC.Controls.Add(this.btnChangePicture);
             this.layoutTTC.Controls.Add(this.cbbDanToc);
             this.layoutTTC.Controls.Add(this.txtHoTen);
             this.layoutTTC.Controls.Add(this.txtNoiSinh);
@@ -953,17 +953,18 @@
             this.layoutTTC.Size = new System.Drawing.Size(857, 211);
             this.layoutTTC.TabIndex = 0;
             // 
-            // linkLabel1
+            // btnChangePicture
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(14, 178);
-            this.linkLabel1.Margin = new System.Windows.Forms.Padding(0);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(152, 22);
-            this.linkLabel1.TabIndex = 1;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Thay ảnh khác";
-            this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnChangePicture.AutoSize = true;
+            this.btnChangePicture.Location = new System.Drawing.Point(14, 178);
+            this.btnChangePicture.Margin = new System.Windows.Forms.Padding(0);
+            this.btnChangePicture.Name = "btnChangePicture";
+            this.btnChangePicture.Size = new System.Drawing.Size(152, 22);
+            this.btnChangePicture.TabIndex = 1;
+            this.btnChangePicture.TabStop = true;
+            this.btnChangePicture.Text = "Thay ảnh khác";
+            this.btnChangePicture.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnChangePicture.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.btnChangePicture_LinkClicked);
             // 
             // cbbDanToc
             // 
@@ -1185,7 +1186,7 @@
             // 
             // layoutControlItem34
             // 
-            this.layoutControlItem34.Control = this.linkLabel1;
+            this.layoutControlItem34.Control = this.btnChangePicture;
             this.layoutControlItem34.Height = 30;
             this.layoutControlItem34.MinSize = new System.Drawing.Size(32, 20);
             this.layoutControlItem34.Name = "layoutControlItem34";
@@ -1399,6 +1400,7 @@
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.SubItemsExpandWidth = 14;
             this.btnLuu.Text = "Lưu";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnXoaDSTB
             // 
@@ -1579,7 +1581,7 @@
         private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem31;
         private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem32;
         private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem33;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel btnChangePicture;
         private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem34;
     }
 }

@@ -2,9 +2,11 @@
 using QLTB.Model;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace QLTB.Utils
 {
@@ -52,6 +54,13 @@ namespace QLTB.Utils
         public static ThongTinHeThong GetHeThong()
         {
             return HeThong;
+        }
+
+
+        public static string ImagePath()
+        {
+            string PATH = Path.GetDirectoryName(Application.ExecutablePath);
+            return Path.Combine(PATH, "AnhDaiDien");
         }
     }
     public class ThongTinHeThong

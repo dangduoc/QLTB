@@ -267,5 +267,21 @@ namespace QLTB.GUI
             frmTaoThietBiTT frm = new frmTaoThietBiTT();
             frm.ShowDialog(this);
         }
+
+        private void btnSuaDSTB_Click(object sender, EventArgs e)
+        {
+            var row = ADGVDanhSach.SelectedRows[0];
+            if (row != null)
+            {
+                string id=row.Cells["ThietBiId"].Value.ToString();
+                frmTaoThietBiTT frm = new frmTaoThietBiTT(id);
+                frm.ShowDialog(this);
+            }
+        }
+
+        private void btnNapDSTB_Click(object sender, EventArgs e)
+        {
+            ShowPage(1, 50);
+        }
     }
 }

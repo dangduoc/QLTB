@@ -10,7 +10,7 @@ namespace QLTB.Model
     {
         public string ThietBiId { get; set; }
         public string Ten { get; set; }
-        public int DonViTinh { get; set; }
+        public int DonViTinhId { get; set; }
     }
     public class ThietBiToiThieuModel:BaseThietBiToiThieuModel
     {

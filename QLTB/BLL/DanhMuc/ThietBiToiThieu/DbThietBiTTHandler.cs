@@ -210,6 +210,33 @@ namespace QLTB.Handler
                 return -1;
             }
         }
+        public bool CheckId(string ThietBiId,out string message)
+        {
+            if (string.IsNullOrEmpty(ThietBiId))
+            {
+                message = "Mã thiết bị không được trống";
+                return false;
+            }
+            if (ThietBiId.Count() < 8)
+            {
+                message = "Mã thiết bị từ 8-10 ký tự";
+            }
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    var entity = unitOfWork.GetRepository<DM_ThietBiToiThieu>().GetById(ThietBiId);
+                    message = "Mã thiết bị đã có";
+                    return entity != null;
+                
+                }
+            }
+            catch (Exception ex)
+            {
+                message = "Có lỗi xảy ra";
+                return false;
+            }
+        }
         #endregion
     }
 }

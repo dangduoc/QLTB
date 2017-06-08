@@ -11,7 +11,7 @@ using QLTB.Handler;
 using QLTB.Model;
 using QLTB.Utils;
 
-namespace QLTB.GUI.DanhMuc.CanBoThietBi
+namespace QLTB.GUI
 {
     public partial class frmTaoCanBoTB : DevComponents.DotNetBar.Office2007Form
     {

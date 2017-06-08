@@ -250,5 +250,44 @@ namespace QLTB.GUI
         {
             Close();
         }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            frmTaoCanBoTB frm = new frmTaoCanBoTB();
+            frm.ShowDialog(this);
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            var row = ADGVDanhSach.SelectedRows[0];
+            if (row != null)
+            {
+                string id = row.Cells["CanBoThietBiId"].Value.ToString();
+                frmTaoCanBoTB frm = new frmTaoCanBoTB(id);
+                frm.ShowDialog(this);
+            }
+            
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            var row = ADGVDanhSach.SelectedRows[0];
+            if (row != null)
+            {
+                string id = row.Cells["CanBoThietBiId"].Value.ToString();
+                if(MessageBox.Show("Xóa cán bộ có số hiệu: " + id, "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question)== DialogResult.Yes)
+                {
+                    int result=handler.Remove(id);
+                    if (result == 1)
+                    {
+                        MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
     }
 }
