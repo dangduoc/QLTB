@@ -238,5 +238,17 @@ namespace QLTB.GUI
         {
             Close();
         }
+
+        private void buttonItem1_Click(object sender, EventArgs e)
+        {
+            frmTaoLopHoc frm = new frmTaoLopHoc();
+            frm.ShowDialog(this);
+        }
+
+        private void btnThemDSTB_Click(object sender, EventArgs e)
+        {
+            frmThemLopHoc frm = new frmThemLopHoc();
+            frm.ShowDialog(this);
+        }
     }
 }

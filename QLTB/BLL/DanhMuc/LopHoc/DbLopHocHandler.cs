@@ -40,7 +40,7 @@ namespace QLTB.Handler
                 }
             }
         }
-        public LopHocModel GetById(string Id)
+        public LopHocModel GetById(int Id)
         {
             try
             {
@@ -63,6 +63,8 @@ namespace QLTB.Handler
                 using (var unitOfWork = new UnitOfWork())
                 {
                     DM_LopHoc entity = MyConvert.ConvertSameData<DM_LopHoc>(model);
+                    var newid = unitOfWork.GetRepository<DM_LopHoc>().GetAll().OrderByDescending(p => p.LopHocId).FirstOrDefault().LopHocId + 1;
+                    entity.LopHocId = newid;
                     unitOfWork.GetRepository<DM_LopHoc>().Add(entity);
                     if (unitOfWork.Save() >= 1)
                     {
@@ -86,7 +88,7 @@ namespace QLTB.Handler
                 using (var unitOfWork = new UnitOfWork())
                 {
                     var data = unitOfWork.GetRepository<DM_LopHoc>().GetById(model.LopHocId);
-                   
+                    
                     if (data != null)
                     {
                         MyConvert.TransferValues(data, model);

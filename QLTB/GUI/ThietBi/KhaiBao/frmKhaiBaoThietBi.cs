@@ -150,16 +150,25 @@ namespace QLTB.GUI
             ThietBiMoi.Ten = txtTen.Text;
             ThietBiMoi.SoHieu = txtSoHieu.Text;
             ThietBiMoi.QuyCachSD = txtQuyCach.Text;
-            ThietBiMoi.PhongHocId = MyConvert.To<int>(cbbPhongBM.SelectedValue);
+            ThietBiMoi.PhongHocId = (int)cbbPhongBM.SelectedValue;
             ThietBiMoi.NguonKinhPhiId = (int)cbbNguonKinhPhi.SelectedValue;
-            ThietBiMoi.NamDuaVaoSD = MyConvert.To<short>(txtNamSD.Text);
-            ThietBiMoi.NamTheoDoi = MyConvert.To<short>(txtNamTheoDoi.Text);
-            ThietBiMoi.DonViTinhId = MyConvert.To<int>(cbbDVT.SelectedValue);
-            ThietBiMoi.SoLuong = MyConvert.To<short>(txtSoLuong.Text);
-            ThietBiMoi.DonGia = MyConvert.To<double>(txtDonGia.Text);
-            ThietBiMoi.ThanhTien = MyConvert.To<decimal>(txtThanhTien.Text);
+            int tmp;
+            double tmp1;
+            decimal tmp2;
+            if (int.TryParse(txtNamSD.Text, out tmp))
+                ThietBiMoi.NamDuaVaoSD = tmp;
+            if (int.TryParse(txtNamTheoDoi.Text, out tmp))
+                ThietBiMoi.NamTheoDoi = tmp;
+            ThietBiMoi.DonViTinhId = (int)cbbDVT.SelectedValue;
+            if (int.TryParse(txtSoLuong.Text, out tmp))
+                ThietBiMoi.SoLuong = tmp;
+
+            if (double.TryParse(txtSoLuong.Text, out tmp1))
+                ThietBiMoi.DonGia = tmp1;
+            if (decimal.TryParse(txtThanhTien.Text, out tmp2))
+                ThietBiMoi.ThanhTien = tmp2;
             ThietBiMoi.NuocSanXuat = txtNuocSX.Text;
-            ThietBiMoi.MucDichSDId = MyConvert.To<int>(cbbMucDichSD.SelectedValue);
+            ThietBiMoi.MucDichSDId = (int)cbbMucDichSD.SelectedValue;
             if (dpickerHanSD.Value != new DateTime(1, 1, 1))
             {
                 ThietBiMoi.HanSD = dpickerHanSD.Value;

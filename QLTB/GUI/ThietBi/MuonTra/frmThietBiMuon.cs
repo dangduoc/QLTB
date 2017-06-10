@@ -148,20 +148,21 @@ namespace QLTB.GUI
         {
             var PhieuMoi = new PhieuMuonThietBiModel
             {
+                
                 PhieuMuonTBId = txtSoPhieu.Text,
-                SoTiet = MyConvert.To<int>(txtSoTiet.Text),
-                MucDichSuDungId = MyConvert.To<int>(CbbMucDichSD.SelectedValue),
+                SoTiet = Convert.ToInt32(txtSoTiet.Text),
+                MucDichSuDungId = (int)CbbMucDichSD.SelectedValue,
                 GhiChu = txtGhiChu.Text,
-                BaiDayId = MyConvert.To<int>(cbbTenBaiDay.SelectedValue),
+                BaiDayId = (int)cbbTenBaiDay.SelectedValue,
                 IsNgoaiQuyDinh = cboxNgoaiQuyDinh.Checked,
-                KhoiLopId = MyConvert.To<int>(CbbKhoiLop.SelectedValue),
-                LopHocId = MyConvert.To<int>(CbbDayLop.SelectedValue),
-                MonHocId = MyConvert.To<int>(CbbMonHoc.SelectedValue),
-                ThoiGianTrongNgay = MyConvert.To<int>(CbbBuoiTrongNgay.SelectedValue),
+                KhoiLopId = (int)CbbKhoiLop.SelectedValue,
+                LopHocId = (int)CbbDayLop.SelectedValue,
+                MonHocId = (int)CbbMonHoc.SelectedValue,
+                ThoiGianTrongNgay = (int)CbbBuoiTrongNgay.SelectedValue,
                 GiaoVienId = CbbGiaoVien.SelectedValue.ToString(),
-                NgayMuon = MyConvert.To<DateTime>(dPickerNgayMuon.Value),
-                NgayTra = MyConvert.To<DateTime>(dPickerNgayTra.Value),
-                MuonTuTiet = MyConvert.To<int>(txtMuonTuTiet.Text),
+                NgayMuon = (DateTime)dPickerNgayMuon.Value,
+                NgayTra = (DateTime)dPickerNgayTra.Value,
+                MuonTuTiet = Convert.ToInt32(txtMuonTuTiet.Text),
                 ThietBis = dsThietBi
             };
             if (Phieu == null)

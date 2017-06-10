@@ -265,13 +265,13 @@ namespace QLTB.GUI
             #endregion
             #region InitMenuStrip
             //myTimer.Elapsed += (sender, e) => PlayMusicEvent(sender, e, musicNote);
-            foreach(var item in new DbToBoMonHandler().GetAll())
+            foreach (var item in new DbToBoMonHandler().GetAll())
             {
                 ToolStripChuyenPB.DropDownItems.Add(
-                    item.Ten,null, ToolStrip_Click
+                    item.Ten, null, ToolStrip_Click
                     );
             }
-            
+
             #endregion
             ShowPage(1, 50);
         }
@@ -313,7 +313,7 @@ namespace QLTB.GUI
 
         private void ADGVDanhSach_MouseClick_1(object sender, MouseEventArgs e)
         {
-            if(e.Button== MouseButtons.Right)
+            if (e.Button == MouseButtons.Right)
             {
                 contextMenuStrip1.Show(ADGVDanhSach, e.Location);
             }
@@ -324,6 +324,17 @@ namespace QLTB.GUI
             var owner = MdiParent as Form1;
             frmTaoGiaoVien frm = new frmTaoGiaoVien();
             owner.OpenFrmChild(frm);
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            var row = ADGVDanhSach.SelectedRows[0];
+            if (row != null)
+            {
+                var owner = MdiParent as Form1;
+                frmTaoGiaoVien frm = new frmTaoGiaoVien(row.Cells["GiaoVienId"].Value.ToString());
+                owner.OpenFrmChild(frm);
+            }
         }
     }
 }

@@ -212,5 +212,11 @@ namespace QLTB.GUI
         {
             Close();
         }
+
+        private void btnThemDSTB_Click(object sender, EventArgs e)
+        {
+            frmTaoMonHoc frm = new frmTaoMonHoc();
+            frm.ShowDialog();
+        }
     }
 }

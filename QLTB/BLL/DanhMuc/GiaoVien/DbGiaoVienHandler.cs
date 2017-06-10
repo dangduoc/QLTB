@@ -40,10 +40,11 @@ namespace QLTB.Handler
                                         LoaiHopDongId = gv.LoaiHopDongId
                                     }
                                 )
-                                .Join(unitOfWork.GetRepository<DM_MonHoc>().GetAll(),
+                                .GroupJoin(unitOfWork.GetRepository<DM_MonHoc>().GetAll(),
                                     gv => gv.MonHocId,
                                     mh => mh.MonHocId,
-                                    (gv, mh) => new
+                                    (gv, g) => g
+                                    .Select(mh => new
                                     {
                                         GiaoVienId = gv.GiaoVienId,
                                         Ten = gv.Ten,
@@ -55,8 +56,20 @@ namespace QLTB.Handler
                                         MonHoc = mh.Ten,
                                         TrinhDoCMId = gv.TrinhDoCMId,
                                         LoaiHopDongId = gv.LoaiHopDongId
-                                    }
-                                ).AsEnumerable()
+                                    }).DefaultIfEmpty(new
+                                    {
+                                        GiaoVienId = gv.GiaoVienId,
+                                        Ten = gv.Ten,
+                                        GioiTinhId = gv.GioiTinhId,
+                                        NgaySinh = gv.NgaySinh,
+                                        PhongBan = gv.PhongBan,
+                                        ViTriId = gv.ViTriId,
+                                        ChucVuId = gv.ChucVuId,
+                                        MonHoc = "",
+                                        TrinhDoCMId = gv.TrinhDoCMId,
+                                        LoaiHopDongId = gv.LoaiHopDongId
+                                    })
+                                  ).SelectMany(g => g).AsEnumerable()
                                 .Join(GlobalVariable.GetDS().GioiTinh,
                                     gv => gv.GioiTinhId,
                                     gt => gt.GioiTinhId,
@@ -74,10 +87,12 @@ namespace QLTB.Handler
                                         LoaiHopDongId = gv.LoaiHopDongId
                                     }
                                 )
-                                .Join(GlobalVariable.GetDS().ViTriGiaoVien.Where(p => p.CapHocId == captruong).ToList(),
+                                .GroupJoin(GlobalVariable.GetDS().ViTriGiaoVien.Where(p => p.CapHocId == captruong),
                                     gv => gv.ViTriId,
                                     vt => vt.Id,
-                                    (gv, vt) => new
+                                    (gv, g) => g
+                                    .Select(vt =>
+                                    new
                                     {
                                         GiaoVienId = gv.GiaoVienId,
                                         Ten = gv.Ten,
@@ -90,11 +105,24 @@ namespace QLTB.Handler
                                         TrinhDoCMId = gv.TrinhDoCMId,
                                         LoaiHopDongId = gv.LoaiHopDongId
                                     }
-                                )
-                                 .Join(GlobalVariable.GetDS().ChucVuGiaoVien,
+                                ).DefaultIfEmpty(new
+                                {
+                                    GiaoVienId = gv.GiaoVienId,
+                                    Ten = gv.Ten,
+                                    GioiTinh = gv.GioiTinh,
+                                    NgaySinh = gv.NgaySinh,
+                                    PhongBan = gv.PhongBan,
+                                    ViTri = "",
+                                    ChucVuId = gv.ChucVuId,
+                                    MonHocId = gv.MonHocId,
+                                    TrinhDoCMId = gv.TrinhDoCMId,
+                                    LoaiHopDongId = gv.LoaiHopDongId
+                                })).SelectMany(g => g).AsEnumerable()
+                                 .GroupJoin(GlobalVariable.GetDS().ChucVuGiaoVien,
                                     gv => gv.ChucVuId,
                                     cv => cv.Id,
-                                    (gv, cv) => new
+                                    (gv, g) => g
+                                    .Select(cv => new
                                     {
                                         GiaoVienId = gv.GiaoVienId,
                                         Ten = gv.Ten,
@@ -106,8 +134,23 @@ namespace QLTB.Handler
                                         MonHoc = gv.MonHocId,
                                         TrinhDoCMId = gv.TrinhDoCMId,
                                         LoaiHopDongId = gv.LoaiHopDongId
-                                    }
-                                )
+                                    })
+                                    .DefaultIfEmpty
+                                    (
+                                        new
+                                        {
+                                            GiaoVienId = gv.GiaoVienId,
+                                            Ten = gv.Ten,
+                                            GioiTinh = gv.GioiTinh,
+                                            NgaySinh = gv.NgaySinh,
+                                            PhongBan = gv.PhongBan,
+                                            ViTri = gv.ViTri,
+                                            ChucVu = "",
+                                            MonHoc = gv.MonHocId,
+                                            TrinhDoCMId = gv.TrinhDoCMId,
+                                            LoaiHopDongId = gv.LoaiHopDongId
+                                        })
+                                     ).SelectMany(g=>g).AsEnumerable()
                                 .Join(GlobalVariable.GetDS().TrinhDoChuyenMon,
                                     gv => gv.TrinhDoCMId,
                                     cd => cd.Id,
@@ -142,7 +185,8 @@ namespace QLTB.Handler
                                         LoaiHopDong = loai.Ten
                                     }
                                 )
-                                .Select(gv=> new GiaoVienGirdDisplayModel {
+                                .Select(gv => new GiaoVienGirdDisplayModel
+                                {
                                     GiaoVienId = gv.GiaoVienId,
                                     TenDayDu = gv.TenDayDu,
                                     GioiTinh = gv.GioiTinh,
@@ -178,13 +222,13 @@ namespace QLTB.Handler
         {
             try
             {
-                using (var unitOfWork= new UnitOfWork())
+                using (var unitOfWork = new UnitOfWork())
                 {
-                    var data=unitOfWork.GetRepository<DM_GiaoVien>().GetById(Id);
+                    var data = unitOfWork.GetRepository<DM_GiaoVien>().GetById(Id);
                     return MyConvert.ConvertSameData<GiaoVienModel>(data);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return null;
             }
@@ -197,6 +241,7 @@ namespace QLTB.Handler
                 using (var unitOfWork = new UnitOfWork())
                 {
                     DM_GiaoVien entity = MyConvert.ConvertSameData<DM_GiaoVien>(model);
+                    entity.TrangThai = 1;
                     unitOfWork.GetRepository<DM_GiaoVien>().Add(entity);
                     if (unitOfWork.Save() >= 1)
                     {
@@ -244,7 +289,7 @@ namespace QLTB.Handler
                 using (var unitOfWork = new UnitOfWork())
                 {
                     var data = unitOfWork.GetRepository<DM_GiaoVien>().GetById(Id);
-                    data.TrangThai = -1;
+                    data.TrangThai = 0;
                     unitOfWork.GetRepository<DM_GiaoVien>().Update(data);
                     if (unitOfWork.Save() >= 1)
                     {
@@ -274,9 +319,9 @@ namespace QLTB.Handler
                         var number = Convert.ToInt32(numberPart.TrimStart('0'));
                         var suffix = number + 1;
 
-                       
+
                         int numberofzero = suffix / 10;
-                        for (int i = 0; i < 4-numberofzero; i++)
+                        for (int i = 0; i < 4 - numberofzero; i++)
                         {
                             newCode += "0";
                         }

@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QLTB.GUI.DanhMuc.MonHoc
+namespace QLTB.GUI
 {
     public partial class frmTaoMonHoc : DevComponents.DotNetBar.Office2007Form
     {
         public frmTaoMonHoc()
         {
             InitializeComponent();
+        }
+
+        private void frmTaoMonHoc_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

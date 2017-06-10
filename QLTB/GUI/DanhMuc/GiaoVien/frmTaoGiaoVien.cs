@@ -89,23 +89,32 @@ namespace QLTB.GUI
                     dpickerNgaySinh.Value = (DateTime)GiaoVien.NgaySinh;
                 txtNoiSinh.Text = GiaoVien.NoiSinh;
                 cbbGioiTinh.SelectedValue = GiaoVien.GioiTinhId;
-                cbbDanToc.SelectedValue = GiaoVien.DanTocId;
+                if (GiaoVien.DanTocId != null)
+                {
+                    cbbDanToc.SelectedValue = GiaoVien.DanTocId;
+                }
                 //Thong tin lien he
                 txtDTCQ.Text = GiaoVien.DienThoaiCQ;
                 txtDTDD.Text = GiaoVien.DienThoaiDD;
                 txtEmailCN.Text = GiaoVien.EmailCN;
                 txtEmailCQ.Text = GiaoVien.EmailCQ;
                 //Thong tin cong viec
-                cbbViTri.SelectedValue = GiaoVien.ViTriId;
-                cbbChucVu.SelectedValue = GiaoVien.ChucVuId;
+                if (GiaoVien.ViTriId != null)
+                    cbbViTri.SelectedValue = GiaoVien.ViTriId;
+                if (GiaoVien.ChucVuId != null)
+                    cbbChucVu.SelectedValue = GiaoVien.ChucVuId;
+
                 cbbToBM.SelectedValue = GiaoVien.PhongBanId;
                 cbbLoaiHD.SelectedValue = GiaoVien.LoaiHopDongId;
                 txtChucVuKiemNhiem.Text = GiaoVien.ChucVuKiemNhiem;
-                cbbMonHoc.SelectedValue = GiaoVien.MonHocId;
+                if (GiaoVien.MonHocId != null)
+                    cbbMonHoc.SelectedValue = GiaoVien.MonHocId;
                 dpickerNgayVao.Value = GiaoVien.NgayVaoNganh;
                 //Trinh do chuyen mon
-                cbbTrinhDoCM.SelectedValue = GiaoVien.TrinhDoId;
-                cbbTrinhDoChuan.SelectedValue = GiaoVien.TrinhDoChuanId;
+                if (GiaoVien.TrinhDoId != null)
+                    cbbTrinhDoCM.SelectedValue = GiaoVien.TrinhDoId;
+                if (GiaoVien.TrinhDoChuanId != null)
+                    cbbTrinhDoChuan.SelectedValue = GiaoVien.TrinhDoChuanId;
                 // cbbLyLuanCT.SelectedValue
                 cboxThamGiaBD.Checked = (bool)GiaoVien.IsThamGiaBoiDuong;
                 //cbbQLNhaNuoc.SelectedValue
@@ -113,6 +122,12 @@ namespace QLTB.GUI
                 cboxDangVien.Checked = (bool)GiaoVien.IsLaDangVien;
                 if (GiaoVien.NgayVaoDang != null)
                     dpickerNgayVaoDang.Value = (DateTime)GiaoVien.NgayVaoDang;
+                //Ảnh đại diện
+                string folder = Path.Combine(GlobalVariable.ImagePath(), GiaoVien.GiaoVienId);
+                if (!string.IsNullOrEmpty(GiaoVien.AnhDaiDien))
+                {
+                    picBoxAnhDaiDien.ImageLocation = Path.Combine(folder, GiaoVien.AnhDaiDien);
+                }
 
             }
             #endregion
@@ -124,40 +139,44 @@ namespace QLTB.GUI
         /// </summary>
         private void saveData()
         {
+
             GiaoVienMoi.GiaoVienId = txtSoHieu.Text;
             GiaoVienMoi.HoVaDem = txtHoDem.Text;
-            GiaoVienMoi.NgaySinh = MyConvert.To<DateTime?>(dpickerNgaySinh.Value);
+            if (dpickerNgaySinh.Value != new DateTime(1, 1, 1))
+                GiaoVienMoi.NgaySinh = (DateTime)dpickerNgaySinh.Value;
             GiaoVienMoi.NoiSinh = txtNoiSinh.Text;
-            GiaoVienMoi.ChucVuId = MyConvert.To<int?>(cbbChucVu.SelectedValue);
-            GiaoVienMoi.DanTocId = MyConvert.To<int?>(cbbDanToc.SelectedValue);
+            GiaoVienMoi.ChucVuId = (int?)MyConvert.ChangeType(cbbChucVu.SelectedValue, typeof(int?));
+            GiaoVienMoi.DanTocId = (int?)MyConvert.ChangeType(cbbDanToc.SelectedValue, typeof(int?));
             GiaoVienMoi.ChucVuKiemNhiem = txtChucVuKiemNhiem.Text;
             GiaoVienMoi.DienThoaiCQ = txtDTCQ.Text;
             GiaoVienMoi.DienThoaiDD = txtDTDD.Text;
             GiaoVienMoi.EmailCN = txtEmailCN.Text;
             GiaoVienMoi.EmailCQ = txtEmailCQ.Text;
-            GiaoVienMoi.GioiTinhId = MyConvert.To<int>(cbbGioiTinh.SelectedValue);
+            GiaoVienMoi.GioiTinhId = (int)cbbGioiTinh.SelectedValue;
             GiaoVienMoi.IsLaDangVien = cboxDangVien.Checked;
             GiaoVienMoi.IsThamGiaBoiDuong = cboxThamGiaBD.Checked;
-            GiaoVienMoi.LoaiHopDongId = MyConvert.To<int>(cbbLoaiHD.SelectedValue);
-            GiaoVienMoi.LyLuanChinhTriId = MyConvert.To<int?>(cbbLyLuanCT.SelectedValue);
-            GiaoVienMoi.MonHocId = MyConvert.To<int?>(cbbMonHoc.SelectedValue);
-            GiaoVienMoi.NgayVaoDang = MyConvert.To<DateTime?>(dpickerNgayVaoDang.Value);
-            GiaoVienMoi.NgayVaoNganh = MyConvert.To<DateTime>(dpickerNgayVao.Value);
-            GiaoVienMoi.PhongBanId = MyConvert.To<int>(cbbToBM.SelectedValue);
-            GiaoVienMoi.QuanLyGiaoDucId = MyConvert.To<int?>(cbbQLGiaoDuc.SelectedValue);
-            GiaoVienMoi.QuanLyNhaNuocId = MyConvert.To<int?>(cbbQLNhaNuoc.SelectedValue);
+            GiaoVienMoi.LoaiHopDongId = (int)cbbLoaiHD.SelectedValue;
+            GiaoVienMoi.LyLuanChinhTriId = (int?)MyConvert.ChangeType(cbbLyLuanCT.SelectedValue, typeof(int?));
+            GiaoVienMoi.MonHocId = (int?)MyConvert.ChangeType(cbbMonHoc.SelectedValue, typeof(int?));
+            if (dpickerNgayVaoDang.Value != new DateTime(1, 1, 1))
+                GiaoVienMoi.NgayVaoDang = (DateTime)dpickerNgayVaoDang.Value;
+            GiaoVienMoi.NgayVaoNganh = (DateTime)dpickerNgayVao.Value;
+            GiaoVienMoi.PhongBanId = (int)cbbToBM.SelectedValue;
+            GiaoVienMoi.QuanLyGiaoDucId = (int?)MyConvert.ChangeType(cbbQLGiaoDuc.SelectedValue, typeof(int?));
+            GiaoVienMoi.QuanLyNhaNuocId = (int?)MyConvert.ChangeType(cbbQLNhaNuoc.SelectedValue, typeof(int?));
             GiaoVienMoi.Ten = txtTen.Text;
             GiaoVienMoi.TenDayDu = txtHoTen.Text;
-            GiaoVienMoi.TrinhDoChuanId = MyConvert.To<int?>(cbbTrinhDoChuan.SelectedValue);
-            GiaoVienMoi.TrinhDoId = MyConvert.To<int?>(cbbTrinhDoCM.SelectedValue);
-            GiaoVienMoi.ViTriId = MyConvert.To<int?>(cbbViTri.SelectedValue);
+            GiaoVienMoi.TrinhDoChuanId = (int?)MyConvert.ChangeType(cbbTrinhDoChuan.SelectedValue, typeof(int?));
+            GiaoVienMoi.TrinhDoId = (int?)MyConvert.ChangeType(cbbTrinhDoCM.SelectedValue, typeof(int?));
+            GiaoVienMoi.ViTriId = (int?)MyConvert.ChangeType(cbbViTri.SelectedValue, typeof(int?));
             //Anh
-            if (picBoxAnhDaiDien.Tag!=null)
+            if (picBoxAnhDaiDien.Tag != null)
             {
                 GiaoVienMoi.AnhDaiDien = picBoxAnhDaiDien.Tag.ToString();
             }
             if (GiaoVien != null)
             {
+                GiaoVienMoi.TrangThai = GiaoVien.TrangThai;
                 GiaoVienMoi.AnhDaiDien = GiaoVien.AnhDaiDien;
 
                 int result = handler.Update(GiaoVienMoi);
@@ -177,7 +196,7 @@ namespace QLTB.GUI
                             di.Delete(true);
                             Directory.CreateDirectory(folder);
                         }
-                        picBoxAnhDaiDien.Image.Save(Path.Combine(folder, GiaoVienMoi.AnhDaiDien), System.Drawing.Imaging.ImageFormat.Png);
+                        Methods.cropImage(picBoxAnhDaiDien.Image, new Rectangle { Height = 400, Width = 300 }).Save(Path.Combine(folder, GiaoVienMoi.AnhDaiDien + ".png"), System.Drawing.Imaging.ImageFormat.Png);
                     }
                     MessageBox.Show("Cập nhật thông tin đối tượng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -188,6 +207,7 @@ namespace QLTB.GUI
             }
             else
             {
+                GiaoVienMoi.TrangThai = 1;
                 int result = handler.Create(GiaoVienMoi);
                 if (result == 1)
                 {
@@ -205,7 +225,7 @@ namespace QLTB.GUI
                             di.Delete(true);
                             Directory.CreateDirectory(folder);
                         }
-                        picBoxAnhDaiDien.Image.Save(Path.Combine(folder, GiaoVienMoi.AnhDaiDien), System.Drawing.Imaging.ImageFormat.Png);
+                        Methods.cropImage(picBoxAnhDaiDien.Image, new Rectangle { Height = 400, Width = 300 }).Save(Path.Combine(folder, GiaoVienMoi.AnhDaiDien + ".png"), System.Drawing.Imaging.ImageFormat.Png);
 
                     }
                     MessageBox.Show("Thêm mới giáo viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -252,7 +272,7 @@ namespace QLTB.GUI
                 picBoxAnhDaiDien.ImageLocation = open.FileName;
                 picBoxAnhDaiDien.Tag = Path.GetFileNameWithoutExtension(open.FileName);
 
-                
+
             }
 
         }
