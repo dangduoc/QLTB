@@ -50,29 +50,27 @@ namespace QLTB.Utils
             foreach (var item in typeof(T).GetProperties())
             {
                 if (!item.GetMethod.IsVirtual)
-                    if(source.GetType().GetProperty(item.Name)!=null)
-                    item.SetValue(result, source.GetType().GetProperty(item.Name).GetValue(source) ?? null);
+                    if (source.GetType().GetProperty(item.Name) != null)
+                        item.SetValue(result, source.GetType().GetProperty(item.Name).GetValue(source) ?? null);
             }
             return result;
         }
-        public static T To<T>(object value)
+        public static object ChangeType(object value, Type type)
         {
-            try
+            // returns null for non-nullable types
+            Type type2 = Nullable.GetUnderlyingType(type);
+
+            if (type2 != null)
             {
-                if (value == null) return default(T);
-                if (value.GetType() == typeof(string))
+                if (value == null)
                 {
-                    if (String.IsNullOrEmpty(value.ToString()))
-                    {
-                        return default(T);
-                    }
+                    return null;
                 }
-                return (T)Convert.ChangeType(value, typeof(T));
+
+                type = type2;
             }
-            catch(Exception ex)
-            {
-                return default(T);
-            }
+
+            return Convert.ChangeType(value, type);
         }
         public static void TransferValues(object value1, object value2)
         {

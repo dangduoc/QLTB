@@ -1,4 +1,4 @@
-﻿namespace QLTB.GUI.DanhMuc.MonHoc
+﻿namespace QLTB.GUI
 {
     partial class frmTaoMonHoc
     {
@@ -294,6 +294,7 @@
             this.Padding = new System.Windows.Forms.Padding(10, 20, 10, 0);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Môn học";
+            this.Load += new System.EventHandler(this.frmTaoMonHoc_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.layoutControl1.ResumeLayout(false);

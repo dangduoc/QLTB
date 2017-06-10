@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -17,7 +18,11 @@ namespace QLTB.Utils
             var secondNotFirst = list2.Except(list1).ToList();
             return !firstNotSecond.Any() && !secondNotFirst.Any();
         }
-
+        public static Image cropImage(Image img, Rectangle cropArea)
+        {
+            Bitmap bmpImage = new Bitmap(img);
+            return bmpImage.Clone(cropArea, bmpImage.PixelFormat);
+        }
 
 
 
@@ -179,6 +184,10 @@ namespace QLTB.Utils
                 return false;
             }
         }
+
+
+        
+
 
         // Checking the version using >= will enable forward compatibility.
         //private static string CheckFor45PlusVersion(int releaseKey)
