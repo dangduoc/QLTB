@@ -41,7 +41,7 @@ namespace QLTB.GUI
         }
         private void frmTaoLopHoc_Load(object sender, EventArgs e)
         {
-
+            loadForm();
         }
     }
 }

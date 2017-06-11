@@ -1064,7 +1064,9 @@
             this.btnLuu.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
             this.btnLuu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLuu.Image = global::QLTB.Properties.Resources.save_icon;
+            this.btnLuu.ImagePaddingVertical = 13;
             this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlS);
             this.btnLuu.SubItemsExpandWidth = 14;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click_1);
@@ -1089,6 +1091,7 @@
             this.btnHelpDSTB.ImagePaddingHorizontal = 20;
             this.btnHelpDSTB.ImagePaddingVertical = 10;
             this.btnHelpDSTB.Name = "btnHelpDSTB";
+            this.btnHelpDSTB.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F1);
             this.btnHelpDSTB.SubItemsExpandWidth = 14;
             this.btnHelpDSTB.Text = "Trợ giúp";
             // 
@@ -1137,6 +1140,7 @@
             this.Name = "frmThongTinDonVi";
             this.Text = "Thông tin đơn vị";
             this.Load += new System.EventHandler(this.frmThongTinDonVi_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmThongTinDonVi_KeyDown);
             this.layoutControl3.ResumeLayout(false);
             this.layoutControl2.ResumeLayout(false);
             this.layoutControl1.ResumeLayout(false);

@@ -73,5 +73,22 @@ namespace QLTB.GUI
         {
             loadForm();
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            saveData();
+        }
+
+        private void frmThemLopHoc_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave_Click(null, null);
+            }
+            else if (e.KeyCode == Keys.Escape)
+            {
+                Close();
+            }
+        }
     }
 }

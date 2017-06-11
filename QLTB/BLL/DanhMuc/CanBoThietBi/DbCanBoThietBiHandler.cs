@@ -159,6 +159,41 @@ namespace QLTB.Handler
             }
         }
         #endregion
+        public string GenerateCode()
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    string newCode = "CBTB";
+                    var last = unitOfWork.GetRepository<DM_CanBoThietBi>().GetAll().OrderByDescending(p => p.CanBoThietBiId).FirstOrDefault();
+                    if (last != null)
+                    {
+                        var lastCode = last.CanBoThietBiId;
+                        var numberPart = lastCode.Replace("CBTB", "");
+                        var number = Convert.ToInt32(numberPart.TrimStart('0'));
+                        var suffix = number + 1;
+
+
+                        int numberofzero = suffix / 10;
+                        for (int i = 0; i < 4 - numberofzero; i++)
+                        {
+                            newCode += "0";
+                        }
+                        newCode += suffix.ToString();
+                    }
+                    else
+                    {
+                        newCode = "CBTB00001";
+                    }
+                    return newCode;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
         public CanBoThietBiModel ConvertData(DM_CanBoThietBi source)
         {
             var result = new CanBoThietBiModel

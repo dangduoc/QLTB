@@ -164,6 +164,7 @@
             this.btnSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnSave.TabIndex = 21;
             this.btnSave.Text = "Lưu";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // frmThemLopHoc
             // 
@@ -173,6 +174,7 @@
             this.ClientSize = new System.Drawing.Size(359, 133);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
+            this.EnableGlass = false;
             this.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmThemLopHoc";
@@ -180,6 +182,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Thêm môn học";
             this.Load += new System.EventHandler(this.frmThemLopHoc_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmThemLopHoc_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.layoutControl1.ResumeLayout(false);

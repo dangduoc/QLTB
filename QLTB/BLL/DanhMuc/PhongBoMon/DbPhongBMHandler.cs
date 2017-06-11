@@ -145,7 +145,13 @@ namespace QLTB.Handler
             {
                 using (var unitOfWork = new UnitOfWork())
                 {
+                    var last = unitOfWork.GetRepository<DM_PhongHocBoMon>().GetAll().OrderByDescending(p => p.PhongHocId).FirstOrDefault();
                     DM_PhongHocBoMon entity = MyConvert.ConvertSameData<DM_PhongHocBoMon>(model);
+                    if (last != null)
+                        entity.PhongHocId = last.PhongHocId + 1;
+                    else
+                        entity.PhongHocId = 1;
+                    
                     unitOfWork.GetRepository<DM_PhongHocBoMon>().Add(entity);
                     if (unitOfWork.Save() >= 1)
                     {
@@ -187,7 +193,7 @@ namespace QLTB.Handler
                 return -1;
             }
         }
-        public int Delete(string Id)
+        public int Delete(int Id)
         {
             try
             {

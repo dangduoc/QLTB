@@ -22,13 +22,13 @@ namespace QLTB.Handler
                                 .Join(GlobalVariable.GetDS().LoaiMonHoc,
                                     mh => mh.LoaiMonHocId,
                                     lmh => lmh.Id,
-                                    (mh, lmh) => new 
+                                    (mh, lmh) => new
                                     {
                                         MonHocId = mh.MonHocId,
                                         Ten = mh.Ten,
                                         LoaiMonHoc = lmh.Ten,
                                         MaMonHoc = mh.MaMonHoc,
-                                        LoaiDanhGiaId=mh.LoaiDanhGiaId
+                                        LoaiDanhGiaId = mh.LoaiDanhGiaId
                                     }
                                 )
                                 .Join(GlobalVariable.GetDS().DanhGiaMonHoc,
@@ -43,7 +43,7 @@ namespace QLTB.Handler
                                         LoaiDanhGia = ldg.Ten
                                     }
                                 )
-                                .OrderBy(p=>p.Ten).ToList();
+                                .OrderBy(p => p.Ten).ToList();
                     return data;
                 }
                 catch (Exception ex)
@@ -78,7 +78,7 @@ namespace QLTB.Handler
                         {
                             MonHocId = p.MonHocId,
                             Ten = p.Ten,
-                            LoaiMonHocId=p.LoaiMonHocId
+                            LoaiMonHocId = p.LoaiMonHocId
                         }).ToList();
                     return data;
                 }
@@ -95,7 +95,13 @@ namespace QLTB.Handler
             {
                 using (var unitOfWork = new UnitOfWork())
                 {
+                    var last = unitOfWork.GetRepository<DM_MonHoc>().GetAll().OrderByDescending(p=>p.MonHocId).FirstOrDefault();
+
                     DM_MonHoc entity = MyConvert.ConvertSameData<DM_MonHoc>(model);
+                    if (last != null)
+                        entity.MonHocId = last.MonHocId + 1;
+                    else
+                        entity.MonHocId = 1;
                     unitOfWork.GetRepository<DM_MonHoc>().Add(entity);
                     if (unitOfWork.Save() >= 1)
                     {
@@ -119,7 +125,7 @@ namespace QLTB.Handler
                 using (var unitOfWork = new UnitOfWork())
                 {
                     var data = unitOfWork.GetRepository<DM_MonHoc>().GetById(model.MonHocId);
-             
+
                     if (data != null)
                     {
                         MyConvert.TransferValues(data, model);
@@ -137,7 +143,7 @@ namespace QLTB.Handler
                 return -1;
             }
         }
-        public int Delete(string Id)
+        public int Delete(int Id)
         {
             try
             {

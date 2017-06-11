@@ -414,6 +414,7 @@
             this.btnSuaDSTB.Name = "btnSuaDSTB";
             this.btnSuaDSTB.SubItemsExpandWidth = 14;
             this.btnSuaDSTB.Text = "Sửa";
+            this.btnSuaDSTB.Click += new System.EventHandler(this.btnSuaDSTB_Click);
             // 
             // btnXoaDSTB
             // 
@@ -426,6 +427,7 @@
             this.btnXoaDSTB.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlD);
             this.btnXoaDSTB.Text = "Xóa";
             this.btnXoaDSTB.Tooltip = "Xóa thiết bị";
+            this.btnXoaDSTB.Click += new System.EventHandler(this.btnXoaDSTB_Click);
             // 
             // btnNapDSTB
             // 
@@ -439,6 +441,7 @@
             this.btnNapDSTB.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F5);
             this.btnNapDSTB.Text = "Nạp";
             this.btnNapDSTB.Tooltip = "Làm mới dữ liệu";
+            this.btnNapDSTB.Click += new System.EventHandler(this.btnNapDSTB_Click);
             // 
             // btnImportDSTB
             // 

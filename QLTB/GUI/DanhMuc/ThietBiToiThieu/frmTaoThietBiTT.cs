@@ -109,15 +109,24 @@ namespace QLTB.GUI
             }
             if (ThietBi == null)
             {
-               int result= handler.Create(ThietBiMoi);
-                if (result == 1)
+                string message = "";
+                if (handler.CheckId(txtMaTB.Text, out message))
                 {
-                    MessageBox.Show("Tạo thành công thiết bị", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    int result = handler.Create(ThietBiMoi);
+                    if (result == 1)
+                    {
+                        MessageBox.Show("Tạo thành công thiết bị", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tạo thiết bị không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Tạo thiết bị không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                
             }
             else
             {
@@ -140,20 +149,24 @@ namespace QLTB.GUI
 
         private void buttonX1_Click(object sender, EventArgs e)
         {
-            string message = "";
-            if (handler.CheckId(txtMaTB.Text,out message))
-            {
-                saveData();
-            }
-            else
-            {
-                MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            saveData();
         }
 
         private void frmTaoThietBiTT_Load(object sender, EventArgs e)
         {
             loadForm();
+        }
+
+        private void frmTaoThietBiTT_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                buttonX1_Click(null, null);
+            }
+            else if (e.KeyCode == Keys.Escape)
+            {
+                Close();
+            }
         }
     }
 }

@@ -19,7 +19,7 @@ namespace QLTB.Handler
                 try
                 {
                     var khoilops = new DbKhoiLopHandler().GetAllModel();
-                    var data = unitOfWork.GetRepository<DM_LopHoc>().GetAll()
+                    var data = unitOfWork.GetRepository<DM_LopHoc>().GetAll().AsEnumerable()
                                 .Join(khoilops,
                                     lh => lh.KhoiLopId,
                                     kl => kl.KhoiLopId,

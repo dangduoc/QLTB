@@ -179,5 +179,13 @@ namespace QLTB.GUI
         {
             saveData();
         }
+
+        private void frmThongTinDonVi_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                Close();
+            }
+        }
     }
 }

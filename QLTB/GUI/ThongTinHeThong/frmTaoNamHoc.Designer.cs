@@ -70,7 +70,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(441, 431);
+            this.panel1.Size = new System.Drawing.Size(441, 408);
             this.panel1.TabIndex = 5;
             // 
             // txtGhiChu
@@ -80,7 +80,7 @@
             // 
             this.txtGhiChu.BackgroundStyle.Class = "RichTextBoxBorder";
             this.txtGhiChu.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtGhiChu.Location = new System.Drawing.Point(166, 250);
+            this.txtGhiChu.Location = new System.Drawing.Point(166, 229);
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.Rtf = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Times New R" +
     "oman;}}\r\n\\viewkind4\\uc1\\pard\\f0\\fs20\\par\r\n}\r\n";
@@ -130,7 +130,7 @@
             // 
             this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX5.ForeColor = System.Drawing.Color.Black;
-            this.labelX5.Location = new System.Drawing.Point(15, 250);
+            this.labelX5.Location = new System.Drawing.Point(15, 229);
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(145, 31);
             this.labelX5.TabIndex = 11;
@@ -141,7 +141,7 @@
             this.panel2.Controls.Add(this.btnSave);
             this.panel2.Controls.Add(this.btnCancel);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 387);
+            this.panel2.Location = new System.Drawing.Point(0, 364);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(441, 44);
             this.panel2.TabIndex = 9;
@@ -151,6 +151,7 @@
             this.btnSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.Image = global::QLTB.Properties.Resources.tick;
             this.btnSave.Location = new System.Drawing.Point(243, 11);
             this.btnSave.Name = "btnSave";
@@ -165,6 +166,7 @@
             this.btnCancel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.Image = global::QLTB.Properties.Resources.b_drop;
             this.btnCancel.Location = new System.Drawing.Point(337, 11);
             this.btnCancel.Name = "btnCancel";
@@ -198,7 +200,7 @@
             this.dpickerStart1st.ButtonDropDown.Visible = true;
             this.dpickerStart1st.CustomFormat = "dd/mm/yyyy";
             this.dpickerStart1st.IsPopupCalendarOpen = false;
-            this.dpickerStart1st.Location = new System.Drawing.Point(167, 89);
+            this.dpickerStart1st.Location = new System.Drawing.Point(167, 75);
             // 
             // 
             // 
@@ -240,7 +242,7 @@
             // 
             this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX4.ForeColor = System.Drawing.Color.Black;
-            this.labelX4.Location = new System.Drawing.Point(15, 196);
+            this.labelX4.Location = new System.Drawing.Point(15, 172);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(145, 31);
             this.labelX4.TabIndex = 8;
@@ -257,7 +259,7 @@
             this.dpickerStart2nd.ButtonDropDown.Visible = true;
             this.dpickerStart2nd.CustomFormat = "dd/mm/yyyy";
             this.dpickerStart2nd.IsPopupCalendarOpen = false;
-            this.dpickerStart2nd.Location = new System.Drawing.Point(167, 145);
+            this.dpickerStart2nd.Location = new System.Drawing.Point(167, 124);
             // 
             // 
             // 
@@ -299,7 +301,7 @@
             // 
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX3.ForeColor = System.Drawing.Color.Black;
-            this.labelX3.Location = new System.Drawing.Point(15, 137);
+            this.labelX3.Location = new System.Drawing.Point(15, 116);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(145, 31);
             this.labelX3.TabIndex = 7;
@@ -316,7 +318,7 @@
             this.dpickerEndYear.ButtonDropDown.Visible = true;
             this.dpickerEndYear.CustomFormat = "dd/mm/yyyy";
             this.dpickerEndYear.IsPopupCalendarOpen = false;
-            this.dpickerEndYear.Location = new System.Drawing.Point(167, 204);
+            this.dpickerEndYear.Location = new System.Drawing.Point(167, 180);
             // 
             // 
             // 
@@ -358,7 +360,7 @@
             // 
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX2.ForeColor = System.Drawing.Color.Black;
-            this.labelX2.Location = new System.Drawing.Point(15, 81);
+            this.labelX2.Location = new System.Drawing.Point(15, 67);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(145, 31);
             this.labelX2.TabIndex = 6;
@@ -369,7 +371,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(441, 431);
+            this.ClientSize = new System.Drawing.Size(441, 408);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.EnableGlass = false;
@@ -381,6 +383,7 @@
             this.Text = "Thêm năm học";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmTaoNamHoc_FormClosed);
             this.Load += new System.EventHandler(this.frmTaoNamHoc_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmTaoNamHoc_KeyDown);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtEndYear)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStartYear)).EndInit();

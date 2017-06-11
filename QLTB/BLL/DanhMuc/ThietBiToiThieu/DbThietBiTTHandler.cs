@@ -226,8 +226,9 @@ namespace QLTB.Handler
                 using (var unitOfWork = new UnitOfWork())
                 {
                     var entity = unitOfWork.GetRepository<DM_ThietBiToiThieu>().GetById(ThietBiId);
+                    
                     message = "Mã thiết bị đã có";
-                    return entity != null;
+                    return entity == null;
                 
                 }
             }

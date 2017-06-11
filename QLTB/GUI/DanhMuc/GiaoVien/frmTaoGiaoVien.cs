@@ -172,12 +172,15 @@ namespace QLTB.GUI
             //Anh
             if (picBoxAnhDaiDien.Tag != null)
             {
-                GiaoVienMoi.AnhDaiDien = picBoxAnhDaiDien.Tag.ToString();
+                GiaoVienMoi.AnhDaiDien = picBoxAnhDaiDien.Tag.ToString() + ".png";
+            }
+            else if (GiaoVien != null)
+            {
+                GiaoVienMoi.AnhDaiDien = GiaoVien.AnhDaiDien;
             }
             if (GiaoVien != null)
             {
                 GiaoVienMoi.TrangThai = GiaoVien.TrangThai;
-                GiaoVienMoi.AnhDaiDien = GiaoVien.AnhDaiDien;
 
                 int result = handler.Update(GiaoVienMoi);
                 if (result == 1)
@@ -196,7 +199,7 @@ namespace QLTB.GUI
                             di.Delete(true);
                             Directory.CreateDirectory(folder);
                         }
-                        Methods.cropImage(picBoxAnhDaiDien.Image, new Rectangle { Height = 400, Width = 300 }).Save(Path.Combine(folder, GiaoVienMoi.AnhDaiDien + ".png"), System.Drawing.Imaging.ImageFormat.Png);
+                        Methods.resizeImage(picBoxAnhDaiDien.ImageLocation, Path.Combine(folder, GiaoVienMoi.AnhDaiDien), 300, 400);
                     }
                     MessageBox.Show("Cập nhật thông tin đối tượng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -225,7 +228,7 @@ namespace QLTB.GUI
                             di.Delete(true);
                             Directory.CreateDirectory(folder);
                         }
-                        Methods.cropImage(picBoxAnhDaiDien.Image, new Rectangle { Height = 400, Width = 300 }).Save(Path.Combine(folder, GiaoVienMoi.AnhDaiDien + ".png"), System.Drawing.Imaging.ImageFormat.Png);
+                        Methods.resizeImage(picBoxAnhDaiDien.ImageLocation, Path.Combine(folder, GiaoVienMoi.AnhDaiDien), 300, 400);
 
                     }
                     MessageBox.Show("Thêm mới giáo viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -280,6 +283,14 @@ namespace QLTB.GUI
         private void btnLuu_Click(object sender, EventArgs e)
         {
             saveData();
+        }
+
+        private void frmTaoGiaoVien_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                btnBack_Click(null, null);
+            }
         }
     }
 }

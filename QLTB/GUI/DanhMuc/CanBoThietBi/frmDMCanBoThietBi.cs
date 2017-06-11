@@ -289,5 +289,10 @@ namespace QLTB.GUI
                 }
             }
         }
+
+        private void btnNapDSTB_Click(object sender, EventArgs e)
+        {
+            ShowPage(1, 50);
+        }
     }
 }
