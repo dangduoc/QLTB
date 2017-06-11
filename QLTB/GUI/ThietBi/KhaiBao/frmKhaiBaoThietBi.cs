@@ -340,8 +340,15 @@ namespace QLTB.GUI
             frm.ShowDialog(this);
         }
 
+
         #endregion
 
-
+        private void frmKhaiBaoThietBi_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                Close();
+            }
+        }
     }
 }

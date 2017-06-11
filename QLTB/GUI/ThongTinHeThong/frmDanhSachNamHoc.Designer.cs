@@ -392,7 +392,7 @@
             this.btnThem.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
             this.btnThem.Image = global::QLTB.Properties.Resources.add;
             this.btnThem.ImagePaddingHorizontal = 20;
-            this.btnThem.ImagePaddingVertical = 10;
+            this.btnThem.ImagePaddingVertical = 13;
             this.btnThem.Name = "btnThem";
             this.btnThem.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlN);
             this.btnThem.Text = "Thêm";
@@ -406,6 +406,7 @@
             this.btnSuaDSTB.ImagePaddingHorizontal = 20;
             this.btnSuaDSTB.ImagePaddingVertical = 10;
             this.btnSuaDSTB.Name = "btnSuaDSTB";
+            this.btnSuaDSTB.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F2);
             this.btnSuaDSTB.SubItemsExpandWidth = 14;
             this.btnSuaDSTB.Text = "Sửa";
             this.btnSuaDSTB.Click += new System.EventHandler(this.btnSuaDSTB_Click);
@@ -429,6 +430,7 @@
             this.btnHelpDSTB.ImagePaddingHorizontal = 20;
             this.btnHelpDSTB.ImagePaddingVertical = 10;
             this.btnHelpDSTB.Name = "btnHelpDSTB";
+            this.btnHelpDSTB.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F1);
             this.btnHelpDSTB.SubItemsExpandWidth = 14;
             this.btnHelpDSTB.Text = "Trợ giúp";
             // 

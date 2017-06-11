@@ -148,7 +148,7 @@ namespace QLTB.Model
             });
             danhgiamonhoc.Add(new DanhGiaMonHoc
             {
-                Id = 1,
+                Id = 2,
                 Ten = "Đạt hay không đạt"
             });
             #endregion

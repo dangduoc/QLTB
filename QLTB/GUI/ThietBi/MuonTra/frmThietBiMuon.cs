@@ -361,5 +361,13 @@ namespace QLTB.GUI
         {
 
         }
+
+        private void frmThietBiMuon_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                Close();
+            }
+        }
     }
 }

@@ -131,31 +131,29 @@
             // 
             // cbbKetThuc
             // 
-            this.cbbKetThuc.DisplayMember = "Text";
-            this.cbbKetThuc.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbKetThuc.FormatString = "dd/mm/yyyy";
+            this.cbbKetThuc.DisplayMember = "value";
+            this.cbbKetThuc.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
             this.cbbKetThuc.FormattingEnabled = true;
-            this.cbbKetThuc.ItemHeight = 18;
+            this.cbbKetThuc.ItemHeight = 15;
             this.cbbKetThuc.Location = new System.Drawing.Point(129, 1);
             this.cbbKetThuc.Name = "cbbKetThuc";
-            this.cbbKetThuc.Size = new System.Drawing.Size(121, 24);
+            this.cbbKetThuc.Size = new System.Drawing.Size(121, 23);
             this.cbbKetThuc.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbbKetThuc.TabIndex = 1;
-            this.cbbKetThuc.WatermarkText = "dd/mm/yyyy";
+            this.cbbKetThuc.ValueMember = "key";
             // 
             // cbbBatDau
             // 
-            this.cbbBatDau.DisplayMember = "Text";
-            this.cbbBatDau.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbBatDau.FormatString = "dd/mm/yyyy";
+            this.cbbBatDau.DisplayMember = "value";
+            this.cbbBatDau.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
             this.cbbBatDau.FormattingEnabled = true;
-            this.cbbBatDau.ItemHeight = 18;
+            this.cbbBatDau.ItemHeight = 15;
             this.cbbBatDau.Location = new System.Drawing.Point(0, 1);
             this.cbbBatDau.Name = "cbbBatDau";
-            this.cbbBatDau.Size = new System.Drawing.Size(123, 24);
+            this.cbbBatDau.Size = new System.Drawing.Size(123, 23);
             this.cbbBatDau.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbbBatDau.TabIndex = 0;
-            this.cbbBatDau.WatermarkText = "dd/mm/yyyy";
+            this.cbbBatDau.ValueMember = "key";
             // 
             // txtGhiChu
             // 
@@ -408,10 +406,11 @@
             this.btnCancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnCancel.TabIndex = 16;
             this.btnCancel.Text = "Hủy bỏ";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
-            this.btnSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnSave.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu;
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnSave.Image = global::QLTB.Properties.Resources.save_icon;
@@ -432,12 +431,15 @@
             this.ClientSize = new System.Drawing.Size(546, 382);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
+            this.EnableGlass = false;
             this.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmTaoCanBoTB";
             this.Padding = new System.Windows.Forms.Padding(10, 20, 10, 0);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Thêm cán bộ thiết bị";
+            this.Load += new System.EventHandler(this.frmTaoCanBoTB_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmTaoCanBoTB_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.layoutControl1.ResumeLayout(false);

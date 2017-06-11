@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlBackDS = new System.Windows.Forms.Panel();
             this.pnlContentDSTB = new DevComponents.DotNetBar.PanelEx();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
@@ -145,32 +145,32 @@
             this.ADGVDanhSach.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.ADGVDanhSach.BackgroundColor = System.Drawing.Color.White;
             this.ADGVDanhSach.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ADGVDanhSach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ADGVDanhSach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.ADGVDanhSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ADGVDanhSach.DateWithTime = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ADGVDanhSach.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ADGVDanhSach.DefaultCellStyle = dataGridViewCellStyle5;
             this.ADGVDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ADGVDanhSach.Location = new System.Drawing.Point(0, 0);
             this.ADGVDanhSach.Name = "ADGVDanhSach";
             this.ADGVDanhSach.ReadOnly = true;
             this.ADGVDanhSach.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ADGVDanhSach.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ADGVDanhSach.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.ADGVDanhSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ADGVDanhSach.Size = new System.Drawing.Size(792, 345);
             this.ADGVDanhSach.TabIndex = 27;
@@ -375,9 +375,10 @@
             // 
             this.btnThem.BeginGroup = true;
             this.btnThem.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnThem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThem.Image = global::QLTB.Properties.Resources.add;
             this.btnThem.ImagePaddingHorizontal = 20;
-            this.btnThem.ImagePaddingVertical = 10;
+            this.btnThem.ImagePaddingVertical = 13;
             this.btnThem.Name = "btnThem";
             this.btnThem.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlN);
             this.btnThem.Text = "Thêm";
@@ -386,16 +387,19 @@
             // btnSuaDSTB
             // 
             this.btnSuaDSTB.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnSuaDSTB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSuaDSTB.Image = global::QLTB.Properties.Resources.edit16;
             this.btnSuaDSTB.ImagePaddingHorizontal = 20;
             this.btnSuaDSTB.ImagePaddingVertical = 10;
             this.btnSuaDSTB.Name = "btnSuaDSTB";
+            this.btnSuaDSTB.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F2);
             this.btnSuaDSTB.SubItemsExpandWidth = 14;
             this.btnSuaDSTB.Text = "Sửa";
             // 
             // btnXoaDSTB
             // 
             this.btnXoaDSTB.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnXoaDSTB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnXoaDSTB.Image = global::QLTB.Properties.Resources.b_drop;
             this.btnXoaDSTB.ImagePaddingHorizontal = 20;
             this.btnXoaDSTB.ImagePaddingVertical = 10;
@@ -406,6 +410,7 @@
             // btnNapDSTB
             // 
             this.btnNapDSTB.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnNapDSTB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNapDSTB.Image = global::QLTB.Properties.Resources.Refresh16;
             this.btnNapDSTB.ImagePaddingHorizontal = 20;
             this.btnNapDSTB.ImagePaddingVertical = 10;
@@ -418,6 +423,7 @@
             // btnImportDSTB
             // 
             this.btnImportDSTB.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnImportDSTB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnImportDSTB.Image = global::QLTB.Properties.Resources.import16;
             this.btnImportDSTB.ImagePaddingHorizontal = 20;
             this.btnImportDSTB.ImagePaddingVertical = 10;
@@ -429,20 +435,24 @@
             // btnInDSTB
             // 
             this.btnInDSTB.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnInDSTB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInDSTB.Image = global::QLTB.Properties.Resources.print16;
             this.btnInDSTB.ImagePaddingHorizontal = 20;
             this.btnInDSTB.ImagePaddingVertical = 10;
             this.btnInDSTB.Name = "btnInDSTB";
+            this.btnInDSTB.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlP);
             this.btnInDSTB.SubItemsExpandWidth = 14;
             this.btnInDSTB.Text = "In";
             // 
             // btnHelpDSTB
             // 
             this.btnHelpDSTB.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnHelpDSTB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHelpDSTB.Image = global::QLTB.Properties.Resources.Help_icon;
             this.btnHelpDSTB.ImagePaddingHorizontal = 20;
             this.btnHelpDSTB.ImagePaddingVertical = 10;
             this.btnHelpDSTB.Name = "btnHelpDSTB";
+            this.btnHelpDSTB.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F1);
             this.btnHelpDSTB.SubItemsExpandWidth = 14;
             this.btnHelpDSTB.Text = "Trợ giúp";
             // 
@@ -450,6 +460,7 @@
             // 
             this.btnClose.BeginGroup = true;
             this.btnClose.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.Image = global::QLTB.Properties.Resources.close16;
             this.btnClose.Name = "btnClose";
             this.btnClose.SubItemsExpandWidth = 14;

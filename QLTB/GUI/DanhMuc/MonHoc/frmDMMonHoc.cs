@@ -180,8 +180,6 @@ namespace QLTB.GUI
         #endregion
         private void LoadForm()
         {
-            //Clone
-            //List<MonHocGridDisplayModel> list = new DbMonHocHandler().GetAll();
             List<MonHocGridDisplayModel> list = handler.GetAll();
             //
             List<string> headers = new List<string>();
@@ -217,6 +215,44 @@ namespace QLTB.GUI
         {
             frmTaoMonHoc frm = new frmTaoMonHoc();
             frm.ShowDialog();
+        }
+
+        private void btnSuaDSTB_Click(object sender, EventArgs e)
+        {
+            var row = ADGVDanhSach.SelectedRows[0];
+            if (row != null)
+            {
+                frmTaoMonHoc frm = new frmTaoMonHoc(Convert.ToInt32(row.Cells["MonHocId"].Value));
+                frm.ShowDialog();
+            }
+        }
+
+        private void btnXoaDSTB_Click(object sender, EventArgs e)
+        {
+            var row = ADGVDanhSach.SelectedRows[0];
+            if (row != null)
+            {
+                int id=Convert.ToInt32(row.Cells["MonHocId"].Value);
+                DialogResult dr= MessageBox.Show("Xác nhận xóa môn học có mã: " + id.ToString(), "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (dr == DialogResult.OK)
+                {
+                    int result=handler.Delete(id);
+                    if (result == 1)
+                    {
+                        MessageBox.Show("Xóa thành công môn học", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa môn học không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private void btnNapDSTB_Click(object sender, EventArgs e)
+        {
+            LoadForm();
         }
     }
 }

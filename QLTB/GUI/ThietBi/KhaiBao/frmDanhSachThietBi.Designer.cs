@@ -359,6 +359,7 @@
             this.btnSuaDSTB.ImagePaddingHorizontal = 20;
             this.btnSuaDSTB.ImagePaddingVertical = 10;
             this.btnSuaDSTB.Name = "btnSuaDSTB";
+            this.btnSuaDSTB.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F2);
             this.btnSuaDSTB.SubItemsExpandWidth = 14;
             this.btnSuaDSTB.Text = "Sửa";
             this.btnSuaDSTB.Click += new System.EventHandler(this.btnXem_Click);
@@ -412,6 +413,7 @@
             this.btnInDSTB.ImagePaddingHorizontal = 20;
             this.btnInDSTB.ImagePaddingVertical = 10;
             this.btnInDSTB.Name = "btnInDSTB";
+            this.btnInDSTB.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlP);
             this.btnInDSTB.SubItemsExpandWidth = 14;
             this.btnInDSTB.Text = "In";
             this.btnInDSTB.Click += new System.EventHandler(this.btnInDSTB_Click);

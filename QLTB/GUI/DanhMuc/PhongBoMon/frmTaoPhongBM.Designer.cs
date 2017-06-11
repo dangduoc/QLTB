@@ -30,17 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTaoPhongBM));
             this.pnlBack = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.layoutControl1 = new DevComponents.DotNetBar.Layout.LayoutControl();
-            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.line1 = new DevComponents.DotNetBar.Controls.Line();
-            this.textBoxX2 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtNamKetThucSD = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtTen = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.textBoxX5 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX4 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.checkBoxX1 = new DevComponents.DotNetBar.Controls.CheckBoxX();
-            this.textBoxX3 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtNamBatDauSD = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtSoCanBo = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.cboxPhongChucNang = new DevComponents.DotNetBar.Controls.CheckBoxX();
+            this.txtDienTich = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.cbbMonHoc = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.cbbXepLoai = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.cbbLoaiPhong = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -56,36 +55,45 @@
             this.layoutControlItem11 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
             this.layoutControlItem2 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
             this.layoutSpacerItem2 = new DevComponents.DotNetBar.Layout.LayoutSpacerItem();
-            this.layoutSpacerItem3 = new DevComponents.DotNetBar.Layout.LayoutSpacerItem();
             this.layoutControlItem7 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
-            this.layoutSpacerItem4 = new DevComponents.DotNetBar.Layout.LayoutSpacerItem();
-            this.layoutControlItem12 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
-            this.layoutControlItem13 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSave = new DevComponents.DotNetBar.ButtonX();
+            this.btnCancel = new DevComponents.DotNetBar.ButtonX();
             this.pnlBack.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.layoutControl1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlBack
             // 
-            this.pnlBack.Controls.Add(this.layoutControl1);
+            this.pnlBack.Controls.Add(this.panel2);
+            this.pnlBack.Controls.Add(this.panel1);
             this.pnlBack.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBack.Location = new System.Drawing.Point(10, 10);
             this.pnlBack.Name = "pnlBack";
-            this.pnlBack.Size = new System.Drawing.Size(429, 307);
+            this.pnlBack.Size = new System.Drawing.Size(429, 296);
             this.pnlBack.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.layoutControl1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(429, 255);
+            this.panel2.TabIndex = 2;
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.buttonX2);
-            this.layoutControl1.Controls.Add(this.buttonX1);
             this.layoutControl1.Controls.Add(this.line1);
-            this.layoutControl1.Controls.Add(this.textBoxX2);
-            this.layoutControl1.Controls.Add(this.textBoxX1);
+            this.layoutControl1.Controls.Add(this.txtNamKetThucSD);
+            this.layoutControl1.Controls.Add(this.txtTen);
             this.layoutControl1.Controls.Add(this.labelX1);
-            this.layoutControl1.Controls.Add(this.textBoxX5);
-            this.layoutControl1.Controls.Add(this.textBoxX4);
-            this.layoutControl1.Controls.Add(this.checkBoxX1);
-            this.layoutControl1.Controls.Add(this.textBoxX3);
+            this.layoutControl1.Controls.Add(this.txtNamBatDauSD);
+            this.layoutControl1.Controls.Add(this.txtSoCanBo);
+            this.layoutControl1.Controls.Add(this.cboxPhongChucNang);
+            this.layoutControl1.Controls.Add(this.txtDienTich);
             this.layoutControl1.Controls.Add(this.cbbMonHoc);
             this.layoutControl1.Controls.Add(this.cbbXepLoai);
             this.layoutControl1.Controls.Add(this.cbbLoaiPhong);
@@ -108,41 +116,9 @@
             this.layoutControlItem11,
             this.layoutControlItem2,
             this.layoutSpacerItem2,
-            this.layoutSpacerItem3,
-            this.layoutControlItem7,
-            this.layoutSpacerItem4,
-            this.layoutControlItem12,
-            this.layoutControlItem13});
-            this.layoutControl1.Size = new System.Drawing.Size(429, 307);
+            this.layoutControlItem7});
+            this.layoutControl1.Size = new System.Drawing.Size(429, 255);
             this.layoutControl1.TabIndex = 0;
-            // 
-            // buttonX2
-            // 
-            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX2.Image = global::QLTB.Properties.Resources.b_drop;
-            this.buttonX2.Location = new System.Drawing.Point(347, 265);
-            this.buttonX2.Margin = new System.Windows.Forms.Padding(0);
-            this.buttonX2.Name = "buttonX2";
-            this.buttonX2.Size = new System.Drawing.Size(75, 26);
-            this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX2.TabIndex = 16;
-            this.buttonX2.Text = "Hủy bỏ";
-            this.buttonX2.Click += new System.EventHandler(this.buttonX2_Click);
-            // 
-            // buttonX1
-            // 
-            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.Image = global::QLTB.Properties.Resources.save_icon;
-            this.buttonX1.Location = new System.Drawing.Point(264, 265);
-            this.buttonX1.Margin = new System.Windows.Forms.Padding(0);
-            this.buttonX1.Name = "buttonX1";
-            this.buttonX1.Size = new System.Drawing.Size(75, 26);
-            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX1.TabIndex = 15;
-            this.buttonX1.Text = "Lưu";
-            this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
             // 
             // line1
             // 
@@ -153,33 +129,34 @@
             this.line1.TabIndex = 9;
             this.line1.Text = "line1";
             // 
-            // textBoxX2
+            // txtNamKetThucSD
             // 
             // 
             // 
             // 
-            this.textBoxX2.Border.Class = "TextBoxBorder";
-            this.textBoxX2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX2.Location = new System.Drawing.Point(194, 187);
-            this.textBoxX2.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxX2.Name = "textBoxX2";
-            this.textBoxX2.PreventEnterBeep = true;
-            this.textBoxX2.Size = new System.Drawing.Size(52, 23);
-            this.textBoxX2.TabIndex = 10;
+            this.txtNamKetThucSD.Border.Class = "TextBoxBorder";
+            this.txtNamKetThucSD.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtNamKetThucSD.Enabled = false;
+            this.txtNamKetThucSD.Location = new System.Drawing.Point(194, 187);
+            this.txtNamKetThucSD.Margin = new System.Windows.Forms.Padding(0);
+            this.txtNamKetThucSD.Name = "txtNamKetThucSD";
+            this.txtNamKetThucSD.PreventEnterBeep = true;
+            this.txtNamKetThucSD.Size = new System.Drawing.Size(52, 23);
+            this.txtNamKetThucSD.TabIndex = 10;
             // 
-            // textBoxX1
+            // txtTen
             // 
             // 
             // 
             // 
-            this.textBoxX1.Border.Class = "TextBoxBorder";
-            this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX1.Location = new System.Drawing.Point(134, 4);
-            this.textBoxX1.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.PreventEnterBeep = true;
-            this.textBoxX1.Size = new System.Drawing.Size(291, 23);
-            this.textBoxX1.TabIndex = 0;
+            this.txtTen.Border.Class = "TextBoxBorder";
+            this.txtTen.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtTen.Location = new System.Drawing.Point(134, 4);
+            this.txtTen.Margin = new System.Windows.Forms.Padding(0);
+            this.txtTen.Name = "txtTen";
+            this.txtTen.PreventEnterBeep = true;
+            this.txtTen.Size = new System.Drawing.Size(291, 23);
+            this.txtTen.TabIndex = 0;
             // 
             // labelX1
             // 
@@ -194,62 +171,63 @@
             this.labelX1.TabIndex = 5;
             this.labelX1.Text = "( m² )";
             // 
-            // textBoxX5
+            // txtNamBatDauSD
             // 
             // 
             // 
             // 
-            this.textBoxX5.Border.Class = "TextBoxBorder";
-            this.textBoxX5.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX5.Location = new System.Drawing.Point(134, 187);
-            this.textBoxX5.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxX5.Name = "textBoxX5";
-            this.textBoxX5.PreventEnterBeep = true;
-            this.textBoxX5.Size = new System.Drawing.Size(42, 23);
-            this.textBoxX5.TabIndex = 8;
+            this.txtNamBatDauSD.Border.Class = "TextBoxBorder";
+            this.txtNamBatDauSD.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtNamBatDauSD.Location = new System.Drawing.Point(134, 187);
+            this.txtNamBatDauSD.Margin = new System.Windows.Forms.Padding(0);
+            this.txtNamBatDauSD.Name = "txtNamBatDauSD";
+            this.txtNamBatDauSD.PreventEnterBeep = true;
+            this.txtNamBatDauSD.Size = new System.Drawing.Size(42, 23);
+            this.txtNamBatDauSD.TabIndex = 8;
+            this.txtNamBatDauSD.Leave += new System.EventHandler(this.txtNamBatDauSD_Leave);
             // 
-            // textBoxX4
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX4.Border.Class = "TextBoxBorder";
-            this.textBoxX4.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX4.Location = new System.Drawing.Point(134, 155);
-            this.textBoxX4.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxX4.Name = "textBoxX4";
-            this.textBoxX4.PreventEnterBeep = true;
-            this.textBoxX4.Size = new System.Drawing.Size(112, 23);
-            this.textBoxX4.TabIndex = 6;
-            // 
-            // checkBoxX1
+            // txtSoCanBo
             // 
             // 
             // 
             // 
-            this.checkBoxX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.checkBoxX1.Location = new System.Drawing.Point(124, 219);
-            this.checkBoxX1.Margin = new System.Windows.Forms.Padding(0);
-            this.checkBoxX1.Name = "checkBoxX1";
-            this.checkBoxX1.Size = new System.Drawing.Size(301, 27);
-            this.checkBoxX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.checkBoxX1.TabIndex = 13;
-            this.checkBoxX1.Text = "Là phòng học chức năng";
-            this.checkBoxX1.TextColor = System.Drawing.Color.Black;
+            this.txtSoCanBo.Border.Class = "TextBoxBorder";
+            this.txtSoCanBo.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtSoCanBo.Location = new System.Drawing.Point(134, 155);
+            this.txtSoCanBo.Margin = new System.Windows.Forms.Padding(0);
+            this.txtSoCanBo.Name = "txtSoCanBo";
+            this.txtSoCanBo.PreventEnterBeep = true;
+            this.txtSoCanBo.Size = new System.Drawing.Size(112, 23);
+            this.txtSoCanBo.TabIndex = 6;
             // 
-            // textBoxX3
-            // 
+            // cboxPhongChucNang
             // 
             // 
             // 
-            this.textBoxX3.Border.Class = "TextBoxBorder";
-            this.textBoxX3.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX3.Location = new System.Drawing.Point(134, 124);
-            this.textBoxX3.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxX3.Name = "textBoxX3";
-            this.textBoxX3.PreventEnterBeep = true;
-            this.textBoxX3.Size = new System.Drawing.Size(112, 23);
-            this.textBoxX3.TabIndex = 4;
+            // 
+            this.cboxPhongChucNang.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.cboxPhongChucNang.Location = new System.Drawing.Point(134, 219);
+            this.cboxPhongChucNang.Margin = new System.Windows.Forms.Padding(0);
+            this.cboxPhongChucNang.Name = "cboxPhongChucNang";
+            this.cboxPhongChucNang.Size = new System.Drawing.Size(291, 27);
+            this.cboxPhongChucNang.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cboxPhongChucNang.TabIndex = 12;
+            this.cboxPhongChucNang.Text = "Là phòng học chức năng";
+            this.cboxPhongChucNang.TextColor = System.Drawing.Color.Black;
+            // 
+            // txtDienTich
+            // 
+            // 
+            // 
+            // 
+            this.txtDienTich.Border.Class = "TextBoxBorder";
+            this.txtDienTich.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtDienTich.Location = new System.Drawing.Point(134, 124);
+            this.txtDienTich.Margin = new System.Windows.Forms.Padding(0);
+            this.txtDienTich.Name = "txtDienTich";
+            this.txtDienTich.PreventEnterBeep = true;
+            this.txtDienTich.Size = new System.Drawing.Size(112, 23);
+            this.txtDienTich.TabIndex = 4;
             // 
             // cbbMonHoc
             // 
@@ -292,7 +270,7 @@
             // 
             // layoutControlItem1
             // 
-            this.layoutControlItem1.Control = this.textBoxX1;
+            this.layoutControlItem1.Control = this.txtTen;
             this.layoutControlItem1.Height = 30;
             this.layoutControlItem1.MinSize = new System.Drawing.Size(120, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
@@ -332,7 +310,7 @@
             // 
             // layoutControlItem6
             // 
-            this.layoutControlItem6.Control = this.textBoxX3;
+            this.layoutControlItem6.Control = this.txtDienTich;
             this.layoutControlItem6.Height = 30;
             this.layoutControlItem6.MinSize = new System.Drawing.Size(139, 0);
             this.layoutControlItem6.Name = "layoutControlItem6";
@@ -350,7 +328,7 @@
             // 
             // layoutControlItem8
             // 
-            this.layoutControlItem8.Control = this.textBoxX4;
+            this.layoutControlItem8.Control = this.txtSoCanBo;
             this.layoutControlItem8.Height = 30;
             this.layoutControlItem8.MinSize = new System.Drawing.Size(139, 0);
             this.layoutControlItem8.Name = "layoutControlItem8";
@@ -366,7 +344,7 @@
             // 
             // layoutControlItem9
             // 
-            this.layoutControlItem9.Control = this.textBoxX5;
+            this.layoutControlItem9.Control = this.txtNamBatDauSD;
             this.layoutControlItem9.Height = 30;
             this.layoutControlItem9.MinSize = new System.Drawing.Size(139, 0);
             this.layoutControlItem9.Name = "layoutControlItem9";
@@ -384,7 +362,7 @@
             // 
             // layoutControlItem2
             // 
-            this.layoutControlItem2.Control = this.textBoxX2;
+            this.layoutControlItem2.Control = this.txtNamKetThucSD;
             this.layoutControlItem2.Height = 23;
             this.layoutControlItem2.MinSize = new System.Drawing.Size(40, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
@@ -397,51 +375,59 @@
             this.layoutSpacerItem2.Width = 100;
             this.layoutSpacerItem2.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
             // 
-            // layoutSpacerItem3
-            // 
-            this.layoutSpacerItem3.Height = 32;
-            this.layoutSpacerItem3.Name = "layoutSpacerItem3";
-            this.layoutSpacerItem3.Width = 120;
-            // 
             // layoutControlItem7
             // 
-            this.layoutControlItem7.Control = this.checkBoxX1;
+            this.layoutControlItem7.Control = this.cboxPhongChucNang;
             this.layoutControlItem7.Height = 35;
             this.layoutControlItem7.MinSize = new System.Drawing.Size(74, 20);
             this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.Text = "  ";
             this.layoutControlItem7.Width = 100;
             this.layoutControlItem7.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
             // 
-            // layoutSpacerItem4
+            // panel1
             // 
-            this.layoutSpacerItem4.Height = 45;
-            this.layoutSpacerItem4.Name = "layoutSpacerItem4";
-            this.layoutSpacerItem4.Width = 260;
+            this.panel1.Controls.Add(this.btnSave);
+            this.panel1.Controls.Add(this.btnCancel);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 255);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(429, 41);
+            this.panel1.TabIndex = 1;
             // 
-            // layoutControlItem12
+            // btnSave
             // 
-            this.layoutControlItem12.Control = this.buttonX1;
-            this.layoutControlItem12.Height = 31;
-            this.layoutControlItem12.MinSize = new System.Drawing.Size(32, 20);
-            this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Padding = new System.Windows.Forms.Padding(4, 15, 4, 4);
-            this.layoutControlItem12.Width = 83;
+            this.btnSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnSave.Image = global::QLTB.Properties.Resources.save_icon;
+            this.btnSave.Location = new System.Drawing.Point(267, 8);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 26);
+            this.btnSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnSave.TabIndex = 14;
+            this.btnSave.Text = "Lưu";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // layoutControlItem13
+            // btnCancel
             // 
-            this.layoutControlItem13.Control = this.buttonX2;
-            this.layoutControlItem13.Height = 31;
-            this.layoutControlItem13.MinSize = new System.Drawing.Size(32, 20);
-            this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Padding = new System.Windows.Forms.Padding(4, 15, 4, 4);
-            this.layoutControlItem13.Width = 83;
+            this.btnCancel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnCancel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnCancel.Image = global::QLTB.Properties.Resources.b_drop;
+            this.btnCancel.Location = new System.Drawing.Point(351, 8);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 26);
+            this.btnCancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnCancel.TabIndex = 14;
+            this.btnCancel.Text = "Hủy bỏ";
             // 
             // frmTaoPhongBM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(449, 317);
+            this.ClientSize = new System.Drawing.Size(449, 306);
             this.Controls.Add(this.pnlBack);
             this.DoubleBuffered = true;
             this.EnableGlass = false;
@@ -452,8 +438,12 @@
             this.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Thêm kho/ phòng bộ môn";
+            this.Load += new System.EventHandler(this.frmTaoPhongBM_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmTaoPhongBM_KeyDown);
             this.pnlBack.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.layoutControl1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -463,13 +453,13 @@
         private System.Windows.Forms.Panel pnlBack;
         private DevComponents.DotNetBar.Layout.LayoutControl layoutControl1;
         private DevComponents.DotNetBar.Controls.Line line1;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX2;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtNamKetThucSD;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtTen;
         private DevComponents.DotNetBar.LabelX labelX1;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX5;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX4;
-        private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxX1;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX3;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtNamBatDauSD;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtSoCanBo;
+        private DevComponents.DotNetBar.Controls.CheckBoxX cboxPhongChucNang;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtDienTich;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbbMonHoc;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbbXepLoai;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbbLoaiPhong;
@@ -485,12 +475,10 @@
         private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem11;
         private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem2;
         private DevComponents.DotNetBar.Layout.LayoutSpacerItem layoutSpacerItem2;
-        private DevComponents.DotNetBar.Layout.LayoutSpacerItem layoutSpacerItem3;
         private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem7;
-        private DevComponents.DotNetBar.ButtonX buttonX2;
-        private DevComponents.DotNetBar.ButtonX buttonX1;
-        private DevComponents.DotNetBar.Layout.LayoutSpacerItem layoutSpacerItem4;
-        private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem12;
-        private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem13;
+        private DevComponents.DotNetBar.ButtonX btnCancel;
+        private DevComponents.DotNetBar.ButtonX btnSave;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -214,5 +214,13 @@ namespace QLTB.GUI
             frm.Text = "Danh sách các thiết bị chưa ghi tăng";
             frm.ShowDialog(this);
         }
+
+        private void frmPhieuTangThietBi_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                Close();
+            }
+        }
     }
 }

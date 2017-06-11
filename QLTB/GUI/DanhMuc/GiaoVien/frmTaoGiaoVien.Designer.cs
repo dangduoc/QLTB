@@ -1398,6 +1398,7 @@
             this.btnLuu.ImagePaddingHorizontal = 20;
             this.btnLuu.ImagePaddingVertical = 10;
             this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlS);
             this.btnLuu.SubItemsExpandWidth = 14;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
@@ -1421,6 +1422,7 @@
             this.btnHelpDSTB.ImagePaddingHorizontal = 20;
             this.btnHelpDSTB.ImagePaddingVertical = 10;
             this.btnHelpDSTB.Name = "btnHelpDSTB";
+            this.btnHelpDSTB.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F1);
             this.btnHelpDSTB.SubItemsExpandWidth = 14;
             this.btnHelpDSTB.Text = "Trợ giúp";
             // 
@@ -1461,6 +1463,7 @@
             this.Name = "frmTaoGiaoVien";
             this.Text = "Cán bộ giáo viên";
             this.Load += new System.EventHandler(this.frmTaoGiaoVien_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmTaoGiaoVien_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);

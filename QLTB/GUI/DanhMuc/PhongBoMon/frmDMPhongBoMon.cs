@@ -255,5 +255,43 @@ namespace QLTB.GUI
             frmTaoPhongBM frm = new frmTaoPhongBM();
             frm.ShowDialog(this);
         }
+
+        private void btnSuaDSTB_Click(object sender, EventArgs e)
+        {
+            var row = ADGVDanhSach.SelectedRows[0];
+            if (row != null)
+            {
+                frmTaoPhongBM frm = new frmTaoPhongBM(Convert.ToInt32(row.Cells["PhongHocId"].Value));
+                frm.ShowDialog(this);
+            }
+        }
+
+        private void btnNapDSTB_Click(object sender, EventArgs e)
+        {
+            ShowPage(1, 50);
+        }
+
+        private void btnXoaDSTB_Click(object sender, EventArgs e)
+        {
+            var row = ADGVDanhSach.SelectedRows[0];
+            if (row != null)
+            {
+                int id = Convert.ToInt32(row.Cells["PhongHocId"].Value);
+                DialogResult dr = MessageBox.Show("Xác nhận xóa phòng học có mã: " + id.ToString(), "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (dr == DialogResult.OK)
+                {
+                    int result = handler.Delete(id);
+                    if (result == 1)
+                    {
+                        MessageBox.Show("Xóa thành công phòng học", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa phòng học không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
     }
 }

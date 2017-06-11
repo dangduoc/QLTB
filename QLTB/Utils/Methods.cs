@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -18,14 +20,117 @@ namespace QLTB.Utils
             var secondNotFirst = list2.Except(list1).ToList();
             return !firstNotSecond.Any() && !secondNotFirst.Any();
         }
-        public static Image cropImage(Image img, Rectangle cropArea)
+        //public static Bitmap FixedSize(Image imgPhoto, int Width, int Height)
+        //{
+        //    int sourceWidth = imgPhoto.Width;
+        //    int sourceHeight = imgPhoto.Height;
+        //    int sourceX = 0;
+        //    int sourceY = 0;
+        //    int destX = 0;
+        //    int destY = 0;
+
+        //    float nPercent = 0;
+        //    float nPercentW = 0;
+        //    float nPercentH = 0;
+
+        //    nPercentW = ((float)Width / (float)sourceWidth);
+        //    nPercentH = ((float)Height / (float)sourceHeight);
+        //    if (nPercentH < nPercentW)
+        //    {
+        //        nPercent = nPercentH;
+        //        destX = System.Convert.ToInt16((Width -
+        //                      (sourceWidth * nPercent)) / 2);
+        //    }
+        //    else
+        //    {
+        //        nPercent = nPercentW;
+        //        destY = System.Convert.ToInt16((Height -
+        //                      (sourceHeight * nPercent)) / 2);
+        //    }
+
+        //    int destWidth = (int)(sourceWidth * nPercent);
+        //    int destHeight = (int)(sourceHeight * nPercent);
+
+        //    Bitmap bmPhoto = new Bitmap(Width, Height,
+        //                      PixelFormat.Format24bppRgb);
+        //    bmPhoto.SetResolution(imgPhoto.HorizontalResolution,
+        //                     imgPhoto.VerticalResolution);
+
+        //    Graphics grPhoto = Graphics.FromImage(bmPhoto);
+        //    grPhoto.Clear(Color.White);
+        //    grPhoto.InterpolationMode =
+        //            InterpolationMode.HighQualityBicubic;
+
+        //    grPhoto.DrawImage(imgPhoto,
+        //        new Rectangle(destX, destY, destWidth, destHeight),
+        //        new Rectangle(sourceX, sourceY, sourceWidth, sourceHeight),
+        //        GraphicsUnit.Pixel);
+        //    imgPhoto.Dispose();
+        //    grPhoto.Dispose();
+        //    return bmPhoto;
+        //}
+
+        public static Image cropImage(Image src)
         {
-            Bitmap bmpImage = new Bitmap(img);
+            int maxWidth = 300, maxHeight = 400;
+            Rectangle cropArea = new Rectangle();
+            Bitmap bmpImage = new Bitmap(src);
+            
+            decimal rnd = Math.Min(maxWidth / (decimal)src.Width, maxHeight / (decimal)src.Height);
+             Size size= new Size((int)Math.Round(src.Width * rnd), (int)Math.Round(src.Height * rnd));
+            cropArea.Size = size;
+            cropArea.X = 0;
+            cropArea.Y = 0;
             return bmpImage.Clone(cropArea, bmpImage.PixelFormat);
         }
+        public static void resizeImage(string originalFile, string newFile,
+                     /* note changed names */
+                     int canvasWidth, int canvasHeight)
+        {
+            Image image = Image.FromFile(originalFile);
+            int originalWidth = image.Width;
+            int originalHeight = image.Height;
+            System.Drawing.Image thumbnail =
+                new Bitmap(canvasWidth, canvasHeight); // changed parm names
+            System.Drawing.Graphics graphic =
+                         System.Drawing.Graphics.FromImage(thumbnail);
 
+            graphic.InterpolationMode = InterpolationMode.HighQualityBicubic;
+            graphic.SmoothingMode = SmoothingMode.HighQuality;
+            graphic.PixelOffsetMode = PixelOffsetMode.HighQuality;
+            graphic.CompositingQuality = CompositingQuality.HighQuality;
 
+            /* ------------------ new code --------------- */
 
+            // Figure out the ratio
+            double ratioX = (double)canvasWidth / (double)originalWidth;
+            double ratioY = (double)canvasHeight / (double)originalHeight;
+            // use whichever multiplier is smaller
+            double ratio = ratioX < ratioY ? ratioX : ratioY;
+
+            // now we can get the new height and width
+            int newHeight = Convert.ToInt32(originalHeight * ratio);
+            int newWidth = Convert.ToInt32(originalWidth * ratio);
+
+            // Now calculate the X,Y position of the upper-left corner 
+            // (one of these will always be zero)
+            int posX = Convert.ToInt32((canvasWidth - (originalWidth * ratio)) / 2);
+            int posY = Convert.ToInt32((canvasHeight - (originalHeight * ratio)) / 2);
+
+            graphic.Clear(Color.White); // white padding
+            graphic.DrawImage(image, posX, posY, newWidth, newHeight);
+
+            /* ------------- end new code ---------------- */
+
+            System.Drawing.Imaging.ImageCodecInfo[] info =
+                             ImageCodecInfo.GetImageEncoders();
+            EncoderParameters encoderParameters;
+            encoderParameters = new EncoderParameters(1);
+            encoderParameters.Param[0] = new EncoderParameter(System.Drawing.Imaging.Encoder.Quality,
+                             100L);
+            thumbnail.Save(newFile, info[1],
+                             encoderParameters);
+        }
     }
     public class SetUpInfo
     {
@@ -186,7 +291,7 @@ namespace QLTB.Utils
         }
 
 
-        
+
 
 
         // Checking the version using >= will enable forward compatibility.

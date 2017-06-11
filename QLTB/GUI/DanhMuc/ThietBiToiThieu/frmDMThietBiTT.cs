@@ -283,5 +283,28 @@ namespace QLTB.GUI
         {
             ShowPage(1, 50);
         }
+
+        private void btnXoaDSTB_Click(object sender, EventArgs e)
+        {
+            var row = ADGVDanhSach.SelectedRows[0];
+            if (row != null)
+            {
+                string id = row.Cells["ThietBiId"].Value.ToString();
+                DialogResult dr = MessageBox.Show("Xác nhận xóa thiết bị có mã: " + id.ToString(), "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (dr == DialogResult.OK)
+                {
+                    int result = handler.Delete(id);
+                    if (result == 1)
+                    {
+                        MessageBox.Show("Xóa thành công thiết bị", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa thiết bị không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
     }
 }

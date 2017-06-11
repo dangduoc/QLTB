@@ -208,5 +208,13 @@ namespace QLTB.GUI
             frmDialogTBBaoHong frm = new frmDialogTBBaoHong(lst);
             frm.ShowDialog(this);
         }
+
+        private void frmGhiNhanTraTB_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                Close();
+            }
+        }
     }
 }

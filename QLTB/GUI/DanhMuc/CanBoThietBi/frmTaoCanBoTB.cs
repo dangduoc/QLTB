@@ -27,6 +27,7 @@ namespace QLTB.GUI
         {
             InitializeComponent();
             CanBo = handler.GetById(Id);
+            txtMaCanBo.Enabled = false;
             if (CanBo == null)
             {
                 MessageBox.Show("Không tìm thấy cán bộ");
@@ -68,6 +69,11 @@ namespace QLTB.GUI
                 //
                 cboxTrinhDoNV.Checked = (bool)CanBo.IsCoTrinhDoNghiepVu;
             }
+            else
+            {
+                txtMaCanBo.Text = handler.GenerateCode();
+                txtMaCanBo.Enabled = false;
+            }
 
         }
         /// <summary>
@@ -92,10 +98,11 @@ namespace QLTB.GUI
             //Editing
             if (CanBo != null)
             {
-                int result = handler.Create(CanBoMoi);
+                int result = handler.Update(CanBoMoi);
                 if (result == 1)
                 {
                     MessageBox.Show("Thay đổi thông tin thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                  
                 }
                 else
                 {
@@ -105,10 +112,11 @@ namespace QLTB.GUI
             //Creating
             else
             {
-                int result = handler.Update(CanBoMoi);
+                int result = handler.Create(CanBoMoi);
                 if (result == 1)
                 {
                     MessageBox.Show("Thêm cán bộ thiết bị thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    resetForm();
                 }
                 else
                 {
@@ -118,10 +126,45 @@ namespace QLTB.GUI
           
             
         }
-
+        private void resetForm()
+        {
+            txtGhiChu.Text = "";
+            txtHoDem.Text = "";
+            txtMaCanBo.Text = "";
+            txtTen.Text = "";
+            txtTrinhDoVH.Text = "";
+            cbbBatDau.Text = "";
+            cbbKetThuc.Text = "";
+            cbbGioiTinh.SelectedIndex = 0;
+            cbbPhuTrach.SelectedIndex = 0;
+            CanBo = null;
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
             saveData();
+
+        }
+
+        private void frmTaoCanBoTB_Load(object sender, EventArgs e)
+        {
+            loadForm();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void frmTaoCanBoTB_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                Close();
+            }
+            else if (e.KeyCode == Keys.Enter)
+            {
+                btnSave_Click(null, null);
+            }
         }
     }
 }

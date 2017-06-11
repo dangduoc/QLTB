@@ -21,5 +21,13 @@ namespace QLTB.GUI
         {
             Close();
         }
+
+        private void frmPhieuMuaThietBi_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                Close();
+            }
+        }
     }
 }

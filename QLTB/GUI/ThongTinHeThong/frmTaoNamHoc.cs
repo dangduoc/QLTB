@@ -117,5 +117,17 @@ namespace QLTB.GUI
             var ds = owner.ActiveControl as frmDanhSachNamHoc;
             ds.ReloadData();
         }
+
+        private void frmTaoNamHoc_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave_Click(null, null);
+            }
+            else if (e.KeyCode == Keys.Escape)
+            {
+                Close();
+            }
+        }
     }
 }

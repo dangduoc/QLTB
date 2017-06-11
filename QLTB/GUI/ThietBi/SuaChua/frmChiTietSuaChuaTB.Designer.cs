@@ -40,6 +40,7 @@
             this.pnlTTPhieuMuon = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.layoutControl2 = new DevComponents.DotNetBar.Layout.LayoutControl();
             this.richTextBoxEx2 = new DevComponents.DotNetBar.Controls.RichTextBoxEx();
             this.dateTimeInput2 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
@@ -54,16 +55,15 @@
             this.btnXoa = new DevComponents.DotNetBar.ButtonItem();
             this.btnHelpDSTB = new DevComponents.DotNetBar.ButtonItem();
             this.btnClose = new DevComponents.DotNetBar.ButtonItem();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ADGVDSTB)).BeginInit();
             this.pnlTTPhieuMuon.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.layoutControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput2)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -169,7 +169,9 @@
             // btnLayTB
             // 
             this.btnLayTB.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnLayTB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLayTB.Image = global::QLTB.Properties.Resources.cancel16;
+            this.btnLayTB.ImagePaddingVertical = 13;
             this.btnLayTB.Name = "btnLayTB";
             this.btnLayTB.SubItemsExpandWidth = 14;
             this.btnLayTB.Text = "Chọn từ danh sách thiết bị hỏng";
@@ -220,6 +222,17 @@
             this.panel4.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.panel4.Size = new System.Drawing.Size(1010, 190);
             this.panel4.TabIndex = 1;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.layoutControl2);
+            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(7, 5);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(733, 171);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Thông tin chung";
             // 
             // layoutControl2
             // 
@@ -410,7 +423,9 @@
             // btnLuu
             // 
             this.btnLuu.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnLuu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLuu.Image = global::QLTB.Properties.Resources.save_icon;
+            this.btnLuu.ImagePaddingVertical = 13;
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.SubItemsExpandWidth = 14;
             this.btnLuu.Text = "Lưu";
@@ -418,6 +433,7 @@
             // btnXoa
             // 
             this.btnXoa.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnXoa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnXoa.Image = global::QLTB.Properties.Resources.b_drop;
             this.btnXoa.ImagePaddingHorizontal = 20;
             this.btnXoa.ImagePaddingVertical = 10;
@@ -428,6 +444,7 @@
             // btnHelpDSTB
             // 
             this.btnHelpDSTB.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnHelpDSTB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHelpDSTB.Image = global::QLTB.Properties.Resources.Help_icon;
             this.btnHelpDSTB.ImagePaddingHorizontal = 20;
             this.btnHelpDSTB.ImagePaddingVertical = 10;
@@ -438,22 +455,12 @@
             // btnClose
             // 
             this.btnClose.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.Image = global::QLTB.Properties.Resources.close16;
             this.btnClose.Name = "btnClose";
             this.btnClose.SubItemsExpandWidth = 14;
             this.btnClose.Text = "Đóng";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.layoutControl2);
-            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(7, 5);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(733, 171);
-            this.groupBox1.TabIndex = 6;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông tin chung";
             // 
             // frmChiTietSuaChuaTB
             // 
@@ -472,9 +479,9 @@
             this.pnlTTPhieuMuon.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.layoutControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput2)).EndInit();
-            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -571,6 +571,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Thêm thiết bị tối thiểu";
             this.Load += new System.EventHandler(this.frmTaoThietBiTT_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmTaoThietBiTT_KeyDown);
             this.pnlBack.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.layoutControl1.ResumeLayout(false);

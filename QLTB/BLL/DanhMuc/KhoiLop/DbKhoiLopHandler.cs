@@ -18,7 +18,7 @@ namespace QLTB.Handler
             {
                 try
                 {
-                    var data = unitOfWork.GetRepository<DM_KhoiLop>().GetAll().Where(p => p.CapTruongId == GlobalVariable.GetHeThong().DonVi.CapTruongId).AsEnumerable()
+                    var data = unitOfWork.GetRepository<DM_KhoiLop>().GetAll().AsEnumerable()
                                 .Join(GlobalVariable.GetDS().CapTruong,
                                     kl => kl.CapTruongId,
                                     ct => ct.CapTruongId,
@@ -46,7 +46,6 @@ namespace QLTB.Handler
                 try
                 {
                     var data = unitOfWork.GetRepository<DM_KhoiLop>().GetAll()
-                        .Where(p => p.CapTruongId == GlobalVariable.GetHeThong().DonVi.CapTruongId)
                                  .Select(p => new KhoiLopModel
                                  {
                                      KhoiLopId = p.KhoiLopId,

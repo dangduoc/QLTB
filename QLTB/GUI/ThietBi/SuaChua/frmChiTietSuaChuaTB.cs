@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace QLTB.GUI
 {
-    public partial class frmChiTietSuaChuaTB : Form
+    public partial class frmChiTietSuaChuaTB : DevComponents.DotNetBar.Office2007Form
     {
         public frmChiTietSuaChuaTB()
         {
