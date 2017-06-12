@@ -428,6 +428,7 @@
             this.btnNapDSTB.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F5);
             this.btnNapDSTB.Text = "Nạp";
             this.btnNapDSTB.Tooltip = "Làm mới dữ liệu";
+            this.btnNapDSTB.Click += new System.EventHandler(this.btnNapDSTB_Click);
             // 
             // btnImportDSTB
             // 

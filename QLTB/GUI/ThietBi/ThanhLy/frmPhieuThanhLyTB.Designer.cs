@@ -29,13 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPhieuThanhLyTB));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.ADGVDSTB = new ADGV.AdvancedDataGridView();
+            this.ADGVDSTB = new System.Windows.Forms.DataGridView();
             this.ribbonBar1 = new DevComponents.DotNetBar.RibbonBar();
             this.btnLayTB = new DevComponents.DotNetBar.ButtonItem();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
@@ -100,41 +97,17 @@
             // 
             this.ADGVDSTB.AllowUserToAddRows = false;
             this.ADGVDSTB.AllowUserToDeleteRows = false;
-            this.ADGVDSTB.AutoGenerateContextFilters = true;
             this.ADGVDSTB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ADGVDSTB.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.ADGVDSTB.BackgroundColor = System.Drawing.Color.White;
-            this.ADGVDSTB.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ADGVDSTB.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.ADGVDSTB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ADGVDSTB.DateWithTime = false;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ADGVDSTB.DefaultCellStyle = dataGridViewCellStyle5;
             this.ADGVDSTB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ADGVDSTB.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.ADGVDSTB.Location = new System.Drawing.Point(5, 64);
             this.ADGVDSTB.Name = "ADGVDSTB";
-            this.ADGVDSTB.ReadOnly = true;
-            this.ADGVDSTB.RowHeadersVisible = false;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ADGVDSTB.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.ADGVDSTB.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ADGVDSTB.Size = new System.Drawing.Size(956, 85);
-            this.ADGVDSTB.TabIndex = 29;
-            this.ADGVDSTB.TimeFilter = false;
+            this.ADGVDSTB.TabIndex = 15;
+            this.ADGVDSTB.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ADGVDSTB_CellContentClick);
             // 
             // ribbonBar1
             // 
@@ -569,7 +542,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private ADGV.AdvancedDataGridView ADGVDSTB;
         private DevComponents.DotNetBar.RibbonBar ribbonBar1;
         private DevComponents.DotNetBar.ButtonItem btnLayTB;
         private DevComponents.DotNetBar.LabelX labelX1;
@@ -596,5 +568,6 @@
         private DevComponents.DotNetBar.ButtonItem btnClose;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.DataGridView ADGVDSTB;
     }
 }

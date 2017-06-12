@@ -13,7 +13,7 @@ using QLTB.Utils;
 
 namespace QLTB.GUI
 {
-    public partial class frmPhieuThanhLyTB : DevComponents.DotNetBar.Office2007Form
+    public partial class frmPhieuThanhLyTB : DevComponents.DotNetBar.Office2007Form, IFrmPhieuTBHong
     {
         private PhieuThanhLyModel Phieu;
         private List<ThietBiTLGridDisplayModel> dsThietBi = new List<ThietBiTLGridDisplayModel>();
@@ -23,10 +23,18 @@ namespace QLTB.GUI
         public frmPhieuThanhLyTB()
         {
             InitializeComponent();
+            Phieu = null;
         }
         public frmPhieuThanhLyTB(string SoPhieu)
         {
             InitializeComponent();
+            Phieu = handler.GetById(SoPhieu);
+            txtSoPhieu.Enabled = false;
+            if (Phieu == null)
+            {
+                MessageBox.Show("Thông tìm thấy phiếu thanh lý", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Close();
+            }
         }
         private void loadForm()
         {
@@ -244,6 +252,25 @@ namespace QLTB.GUI
         private void btnLuu_Click(object sender, EventArgs e)
         {
             saveData();
+        }
+
+        private void ADGVDSTB_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                var id = ADGVDSTB.Rows[e.RowIndex].Cells["SoHieu"].Value.ToString();
+                if (e.ColumnIndex == ADGVDSTB.Columns["Remove"].Index)
+                {
+                    DialogResult dr = MessageBox.Show("Xóa thiết bị có số hiệu: " + id + " khỏi danh sách", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    if (dr == DialogResult.OK)
+                    {
+                        if (dsThietBi.Remove(dsThietBi.Where(p => p.SoHieu.Equals(id)).FirstOrDefault()))
+                            ADGVDSTB.Rows.Remove(ADGVDSTB.Rows[e.RowIndex]);
+                    }
+
+                }
+
+            }
         }
     }
 }

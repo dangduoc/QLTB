@@ -23,11 +23,18 @@ namespace QLTB.GUI
         public frmPhieuTangThietBi()
         {
             InitializeComponent();
+            Phieu = null;
         }
         public frmPhieuTangThietBi(string Id)
         {
             InitializeComponent();
             Phieu = handler.GetById(Id);
+            txtSoPhieu.Enabled = false;
+            if (Phieu == null)
+            {
+                MessageBox.Show("Thông tìm thấy phiếu ghi tăng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Close();
+            }
         }
         private void loadForm()
         {
@@ -221,6 +228,25 @@ namespace QLTB.GUI
             if (e.KeyCode == Keys.Escape)
             {
                 Close();
+            }
+        }
+
+        private void ADGVDSTB_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                var id = ADGVDSTB.Rows[e.RowIndex].Cells["SoHieu"].Value.ToString();
+                if (e.ColumnIndex == ADGVDSTB.Columns["Remove"].Index)
+                {
+                    DialogResult dr = MessageBox.Show("Xóa thiết bị có số hiệu: " + id + " khỏi danh sách", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    if (dr == DialogResult.OK)
+                    {
+                        if (dsThietBi.Remove(dsThietBi.Where(p => p.SoHieu.Equals(id)).FirstOrDefault()))
+                            ADGVDSTB.Rows.Remove(ADGVDSTB.Rows[e.RowIndex]);
+                    }
+
+                }
+
             }
         }
     }

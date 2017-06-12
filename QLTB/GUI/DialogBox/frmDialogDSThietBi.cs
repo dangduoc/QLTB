@@ -216,9 +216,7 @@ namespace QLTB.GUI
         }
         private void advancedDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if ((e.RowIndex > 0) && (e.ColumnIndex == ADGVDanhSach.Columns["checkBtn"].Index))
-            {
-            }
+            
         }
         private void advancedDataGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
@@ -257,7 +255,7 @@ namespace QLTB.GUI
             }
             else
             {
-                var parent = Owner.ActiveControl as IFrmPhieu;
+                var parent = Owner.ActiveControl as IFrmPhieuBaseTB;
                 var list = new List<BaseThietBiGridDisplayModel>();
                 foreach (DataGridViewRow item in ADGVDanhSach.Rows)
                 {

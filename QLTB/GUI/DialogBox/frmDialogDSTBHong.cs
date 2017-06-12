@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace QLTB.GUI
 {
-    public partial class frmDialogDSTBHong : Form
+    public partial class frmDialogDSTBHong : DevComponents.DotNetBar.Office2007Form
     {
-        private DbThietBiHandler handler = new DbThietBiHandler();
+        private DbPhieuBaoHongHandler handler = new DbPhieuBaoHongHandler();
         public frmDialogDSTBHong()
         {
             InitializeComponent();
@@ -144,8 +144,8 @@ namespace QLTB.GUI
         }
         private void ShowPage(int page, int pageSize)
         {
-            var data = handler.GetAll(page, pageSize,p=>p.TrangThai>=0);
-            List<ThietBiGridDisplayModel> list = data.data;
+            var data = handler.GetAllTB(page,pageSize);
+            List<BaseThietBiHongGridDisplayModel> list = data.data;
             if (list.Count > 0)
             {
                 loadData(list);
@@ -164,16 +164,17 @@ namespace QLTB.GUI
             int page = Convert.ToInt32(btn.Tag);
             ShowPage(page, Convert.ToInt32(pageSize.SelectedValue.ToString()));
         }
-        private void loadData(List<ThietBiGridDisplayModel> list)
+        private void loadData(List<BaseThietBiHongGridDisplayModel> list)
         {
             List<string> headers = new List<string>();
-            headers.Add("Mã thiết bị");
-            headers.Add("Tên thiết bị");
             headers.Add("Số hiệu");
+            headers.Add("Mã thiết bị");
+            headers.Add("Tên");
+            headers.Add("Loại thiết bị");
+            headers.Add("Tình trạng");
+            headers.Add("Số phiếu báo hỏng");
+            headers.Add("Phòng học");
             headers.Add("Đơn vị tính");
-            headers.Add("Số lượng");
-            headers.Add("Kho/Phòng bộ môn");
-            headers.Add("Bộ môn");
             DataTable tb = MyConvert.ToDataTable(list);
             this.Text = "Chọn thiết bị hỏng/mất";
             DataGridViewCheckBoxColumn col = new DataGridViewCheckBoxColumn();
@@ -185,15 +186,10 @@ namespace QLTB.GUI
             SetHeaderForGrid(ADGVDanhSach, headers);
             ADGVDanhSach.Columns.Add(col);
 
-            ADGVDanhSach.Columns["checkBtn"].Width = 20;
+            ADGVDanhSach.Columns["checkBtn"].Width = 40;
             ADGVDanhSach.Columns["checkBtn"].HeaderText = "";
             ADGVDanhSach.Columns["checkBtn"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             ADGVDanhSach.Columns["checkBtn"].DefaultCellStyle.Padding = new Padding(5, 0, 0, 0);
-            ADGVDanhSach.Columns["Ten"].Width = 170;
-            ADGVDanhSach.Columns["KhoPhong"].Width = 170;
-            ADGVDanhSach.Columns["SoLuong"].Width = 80;
-            ADGVDanhSach.Columns["SoLuongHong"].Width = 50;
-            ADGVDanhSach.Columns["SoLuongMat"].Width = 50;
             //
         }
 
@@ -204,25 +200,29 @@ namespace QLTB.GUI
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            var list = new List<BaseThietBiGridDisplayModel>();
+            var list = new List<BaseThietBiHongGridDisplayModel>();
             foreach (DataGridViewRow item in ADGVDanhSach.Rows)
             {
-                if (item.Cells[9].Value != null)
+                if (item.Cells["checkBtn"].Value != null)
                 {
-                    var tmp = new BaseThietBiGridDisplayModel
+                    var tmp = new BaseThietBiHongGridDisplayModel
                     {
                         ThietBiId = item.Cells["ThietBiId"].Value.ToString(),
                         Ten = item.Cells["Ten"].Value.ToString(),
                         SoHieu = item.Cells["SoHieu"].Value.ToString(),
-                        PhongHoc = item.Cells["KhoPhong"].Value.ToString(),
-                        DonViTinh = item.Cells["DonViTinh"].Value.ToString(), 
+                        PhongHoc = item.Cells["PhongHoc"].Value.ToString(),
+                        DonViTinh = item.Cells["DonViTinh"].Value.ToString(),
+                        Loai=item.Cells["Loai"].Value.ToString(),
+                        SoPhieuBaoHong=item.Cells["SoPhieuBaoHong"].Value.ToString(),
+                        TinhTrang=item.Cells["TinhTrang"].Value.ToString()
                     };
                     list.Add(tmp);
                 }
             }
             if (list.Count > 0)
             {
-                var owner = this.Owner.ActiveControl as frmThietBiMuon;
+                
+                var owner = this.Owner.ActiveControl as IFrmPhieuTBHong;
                 owner.AddToGrid(list);
             }
             Close();
@@ -231,6 +231,12 @@ namespace QLTB.GUI
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show("Đang xây dựng");
+            radioButton2.Checked = false;
         }
     }
 }

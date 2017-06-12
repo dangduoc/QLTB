@@ -63,5 +63,7 @@ namespace QLTB.DAL.Data
         public virtual DbSet<ThongTinNamHoc> ThongTinNamHocs { get; set; }
         public virtual DbSet<TB_PhieuGhiTang> TB_PhieuGhiTang { get; set; }
         public virtual DbSet<DM_CanBoThietBi> DM_CanBoThietBi { get; set; }
+        public virtual DbSet<QH_PhieuSuaTB_ThietBi> QH_PhieuSuaTB_ThietBi { get; set; }
+        public virtual DbSet<TB_PhieuSuaTB> TB_PhieuSuaTB { get; set; }
     }
 }

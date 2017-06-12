@@ -23,9 +23,9 @@ namespace QLTB.Handler
                     var data = unitOfWork.GetRepository<TB_PhieuGiamTB>().GetAll().AsEnumerable()
                                  .Select(p => new PhieuGiamTBGridDisplayModel
                                  {
-                                     SoPhieu=p.PhieuGiamTBId,
-                                     GhiChu=p.GhiChu,
-                                     NgayLap=MyConvert.DateToString(p.NgayLap)
+                                     SoPhieu = p.PhieuGiamTBId,
+                                     GhiChu = p.GhiChu,
+                                     NgayLap = MyConvert.DateToString(p.NgayLap)
                                  })
                                 .OrderBy(p => p.SoPhieu)
                                 .Skip(pageSize * (page - 1))
@@ -167,17 +167,23 @@ namespace QLTB.Handler
                         {
                             var ThietBi = new QH_PhieuGiamTB_ThietBi
                             {
-                                PhieuBaoHongId=item.SoPhieuBaoHong,
-                                SoHieuTB=item.SoHieu,
-                                LyDo=item.LyDoGiam,
-                                SoLuong=Convert.ToInt32(item.SoLuongGiam),
-                                PhieuGiamTBId=model.PhieuGiamTBId
+                                PhieuBaoHongId = item.SoPhieuBaoHong,
+                                SoHieuTB = item.SoHieu,
+                                LyDo = item.LyDoGiam,
+                                SoLuong = Convert.ToInt32(item.SoLuongGiam),
+                                PhieuGiamTBId = model.PhieuGiamTBId
                             };
                             unitOfWork.GetRepository<QH_PhieuGiamTB_ThietBi>().Add(ThietBi);
                             var thietbi = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetById(item.SoHieu);
                             if (thietbi != null)
                             {
-                                thietbi.TrangThai = 1;
+                                thietbi.SoLuong -= (int)ThietBi.SoLuong;
+                                thietbi.SoLuongCon-= (int)ThietBi.SoLuong;
+                                if (thietbi.SoLuong <= 0)
+                                {
+                                    thietbi.SoLuong = 0;
+                                    thietbi.SoLuongCon = 0;
+                                }
                                 unitOfWork.GetRepository<TB_ThongTinThietBi>().Update(thietbi);
                             }
                         }
@@ -196,30 +202,48 @@ namespace QLTB.Handler
 
             }
         }
-        public int Update(PhieuTangTBModel model)
+        public int Update(PhieuGiamTBModel model, List<ThietBiGiamGridDisplayModel> ds)
         {
             try
             {
                 using (var unitOfWork = new UnitOfWork())
                 {
-                    var data = unitOfWork.GetRepository<TB_PhieuGhiTang>().GetById(model.PhieuGhiTangId);
+                    var data = unitOfWork.GetRepository<TB_PhieuGiamTB>().GetById(model.PhieuGiamTBId);
                     if (data != null)
                     {
                         MyConvert.TransferValues(data, model);
-                        unitOfWork.GetRepository<TB_PhieuGhiTang>().Update(data);
-                        unitOfWork.GetRepository<QH_PhieuGhiTang_ThietBi>().Delete(p => p.PhieuGhiTangId == model.PhieuGhiTangId);
+                        unitOfWork.GetRepository<TB_PhieuGiamTB>().Update(data);
+                        foreach (var item in ds)
+                        {
+                            var tmp = unitOfWork.GetRepository<QH_PhieuGiamTB_ThietBi>().GetAll()
+                                .Where(p => p.PhieuGiamTBId.Equals(model.PhieuGiamTBId) && p.SoHieuTB.Equals(item.SoHieu))
+                                .FirstOrDefault();
+                            if (tmp != null)
+                            {
+                                var thietbi = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetById(item.SoHieu);
+                                if (thietbi != null)
+                                {
+                                    thietbi.SoLuong += Convert.ToInt32(item.SoLuongGiam);
+                                    thietbi.SoLuongCon+= Convert.ToInt32(item.SoLuongGiam);
+                                    unitOfWork.GetRepository<TB_ThongTinThietBi>().Update(thietbi);
+                                }
+                            }
+                        }
                         foreach (var item in model.ThietBis)
                         {
-                            unitOfWork.GetRepository<QH_PhieuGhiTang_ThietBi>().Add(new QH_PhieuGhiTang_ThietBi
+                            unitOfWork.GetRepository<QH_PhieuGiamTB_ThietBi>().Add(new QH_PhieuGiamTB_ThietBi
                             {
-                                PhieuGhiTangId = model.PhieuGhiTangId,
-                                SoHieuId = item.SoHieu,
-                                SoLuong = Convert.ToInt32(item.SoLuongTang)
+                                PhieuGiamTBId=model.PhieuGiamTBId,
+                                SoHieuTB=item.SoHieu,
+                                LyDo=item.LyDoGiam,
+                                SoLuong=Convert.ToInt32(item.SoLuongGiam),
+                                PhieuBaoHongId=item.SoPhieuBaoHong
                             });
                             var thietbi = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetById(item.SoHieu);
                             if (thietbi != null)
                             {
-                                thietbi.TrangThai = 1;
+                                thietbi.SoLuong -= Convert.ToInt32(item.SoLuongGiam);
+                                thietbi.SoLuongCon-= Convert.ToInt32(item.SoLuongGiam);
                                 unitOfWork.GetRepository<TB_ThongTinThietBi>().Update(thietbi);
                             }
                         }
@@ -242,7 +266,7 @@ namespace QLTB.Handler
             {
                 using (var unitOfWork = new UnitOfWork())
                 {
-                    var data = unitOfWork.GetRepository<TB_PhieuGhiTang>().GetById(Id);
+                    var data = unitOfWork.GetRepository<TB_PhieuGiamTB>().GetById(Id);
                     if (data != null)
                     {
                         data.IsDelete = true;

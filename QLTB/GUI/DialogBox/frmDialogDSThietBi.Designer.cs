@@ -50,8 +50,8 @@
             this.pnlBack = new DevComponents.DotNetBar.PanelEx();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.panelEx3 = new DevComponents.DotNetBar.PanelEx();
-            this.ADGVDanhSach = new ADGV.AdvancedDataGridView();
             this.SearchDSTB = new ADGV.SearchToolBar();
+            this.ADGVDanhSach = new ADGV.AdvancedDataGridView();
             this.panelEx2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelEx4.SuspendLayout();
@@ -332,11 +332,25 @@
             this.panelEx3.Style.GradientAngle = 90;
             this.panelEx3.TabIndex = 29;
             // 
+            // SearchDSTB
+            // 
+            this.SearchDSTB.AllowMerge = false;
+            this.SearchDSTB.Font = new System.Drawing.Font("Arial", 9F);
+            this.SearchDSTB.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.SearchDSTB.Location = new System.Drawing.Point(0, 0);
+            this.SearchDSTB.MaximumSize = new System.Drawing.Size(0, 31);
+            this.SearchDSTB.MinimumSize = new System.Drawing.Size(0, 31);
+            this.SearchDSTB.Name = "SearchDSTB";
+            this.SearchDSTB.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.SearchDSTB.Size = new System.Drawing.Size(1220, 31);
+            this.SearchDSTB.TabIndex = 28;
+            this.SearchDSTB.Text = "searchToolBar1";
+            // 
             // ADGVDanhSach
             // 
             this.ADGVDanhSach.AllowUserToAddRows = false;
             this.ADGVDanhSach.AllowUserToDeleteRows = false;
-            this.ADGVDanhSach.AutoGenerateContextFilters = true;
+            this.ADGVDanhSach.AutoGenerateContextFilters = false;
             this.ADGVDanhSach.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ADGVDanhSach.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.ADGVDanhSach.BackgroundColor = System.Drawing.Color.White;
@@ -354,33 +368,14 @@
             this.ADGVDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ADGVDanhSach.Location = new System.Drawing.Point(0, 0);
             this.ADGVDanhSach.Name = "ADGVDanhSach";
-            this.ADGVDanhSach.ReadOnly = true;
             this.ADGVDanhSach.RowHeadersVisible = false;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.ADGVDanhSach.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.ADGVDanhSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ADGVDanhSach.Size = new System.Drawing.Size(1220, 345);
-            this.ADGVDanhSach.TabIndex = 27;
+            this.ADGVDanhSach.TabIndex = 28;
             this.ADGVDanhSach.TimeFilter = false;
-            this.ADGVDanhSach.SortStringChanged += new System.EventHandler(this.advancedDataGridView_SortStringChanged);
-            this.ADGVDanhSach.FilterStringChanged += new System.EventHandler(this.advancedDataGridView_FilterStringChanged);
-            this.ADGVDanhSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.advancedDataGridView_CellContentClick);
-            this.ADGVDanhSach.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.advancedDataGridView_RowsAdded);
-            // 
-            // SearchDSTB
-            // 
-            this.SearchDSTB.AllowMerge = false;
-            this.SearchDSTB.Font = new System.Drawing.Font("Arial", 9F);
-            this.SearchDSTB.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.SearchDSTB.Location = new System.Drawing.Point(0, 0);
-            this.SearchDSTB.MaximumSize = new System.Drawing.Size(0, 31);
-            this.SearchDSTB.MinimumSize = new System.Drawing.Size(0, 31);
-            this.SearchDSTB.Name = "SearchDSTB";
-            this.SearchDSTB.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.SearchDSTB.Size = new System.Drawing.Size(1220, 31);
-            this.SearchDSTB.TabIndex = 28;
-            this.SearchDSTB.Text = "searchToolBar1";
             // 
             // frmDialogDSThietBi
             // 
@@ -417,7 +412,6 @@
         private DevComponents.DotNetBar.ButtonX buttonX1;
         private DevComponents.DotNetBar.PanelEx panelEx1;
         private DevComponents.DotNetBar.PanelEx panelEx3;
-        private ADGV.AdvancedDataGridView ADGVDanhSach;
         private ADGV.SearchToolBar SearchDSTB;
         private DevComponents.DotNetBar.ButtonX btnThem;
         private DevComponents.DotNetBar.ButtonX btnClose;
@@ -433,5 +427,6 @@
         private DevComponents.Editors.ComboItem comboItem3;
         private DevComponents.Editors.ComboItem comboItem1;
         private DevComponents.Editors.ComboItem comboItem2;
+        private ADGV.AdvancedDataGridView ADGVDanhSach;
     }
 }

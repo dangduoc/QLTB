@@ -163,6 +163,7 @@
     <Compile Include="BLL\PhongHocBM\MuonTra\PhieuMuonPhongModel.cs" />
     <Compile Include="BLL\ThietBi\PhieuMuon\PhieuMuonThietBiModel.cs" />
     <Compile Include="BLL\ThietBi\PhieuTra\PhieuTraTBModel.cs" />
+    <Compile Include="BLL\ThietBi\TheoDoi\SuaChua\DbPhieuSuaTBHandler.cs" />
     <Compile Include="BLL\ThietBi\TheoDoi\SuaChua\PhieuSuaChuaTBModel.cs" />
     <Compile Include="BLL\ThietBi\TheoDoi\Tang\DbGhiTangTBHandler.cs" />
     <Compile Include="BLL\ThietBi\TheoDoi\Tang\GhiTangThietBiModel.cs" />
@@ -270,6 +271,9 @@
     <Compile Include="DAL\Data\QH_PhieuMuonTB_ThietBi.cs">
       <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\Data\QH_PhieuSuaTB_ThietBi.cs">
+      <DependentUpon>Entities.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAL\Data\QH_PhieuThanhLyTB_ThietBi.cs">
       <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
@@ -292,6 +296,9 @@
       <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\TB_PhieuMuonTB.cs">
+      <DependentUpon>Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Data\TB_PhieuSuaTB.cs">
       <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Data\TB_PhieuThanhLyTB.cs">
