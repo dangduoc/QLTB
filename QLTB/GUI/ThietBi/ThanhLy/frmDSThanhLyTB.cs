@@ -9,12 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QLTB.Model;
 using QLTB.Utils;
+using QLTB.Handler;
 
 namespace QLTB.GUI
 {
     public partial class frmDSThanhLyTB : DevComponents.DotNetBar.Office2007Form
     {
-
+        private DbPhieuThanhLyHandler handler = new DbPhieuThanhLyHandler();
         public frmDSThanhLyTB()
         {
             InitializeComponent();
@@ -177,34 +178,35 @@ namespace QLTB.GUI
             //}
         }
         #endregion
-
-        private void loadForm()
+        private void LoadForm()
         {
-            List<PhieuTLGridDisplayModel> list = new List<PhieuTLGridDisplayModel>();
-            list.Add(new PhieuTLGridDisplayModel
+            ShowPage(1, 50);
+        }
+        private void ShowPage(int page, int pageSize)
+        {
+            var data = handler.GetAll(page, pageSize);
+            List<PhieuTLGridDisplayModel> list = data.data;
+            if (list.Count > 0)
             {
-                SoPhieu="PTL0000001",
-                NgayLap="21/11/2010",
-                GhiChu=""
-            });
-            list.Add(new PhieuTLGridDisplayModel
-            {
-                SoPhieu = "PTL0000002",
-                NgayLap = "21/11/2011",
-                GhiChu = ""
-            });
-            list.Add(new PhieuTLGridDisplayModel
-            {
-                SoPhieu = "PTL0000003",
-                NgayLap = "21/11/2012",
-                GhiChu = ""
-            });
-            list.Add(new PhieuTLGridDisplayModel
-            {
-                SoPhieu = "PTL0000004",
-                NgayLap = "21/11/2013",
-                GhiChu = ""
-            });
+                loadData(list);
+                prevBtn.Enabled = data.PreviousPage;
+                prevBtn.Tag = page - 1;
+                nextBtn.Enabled = data.NextPage;
+                nextBtn.Tag = page + 1;
+                currentPage.Text = data.CurrentPage.ToString();
+                lbPaging.Text = "Trang " + currentPage.Text + "/" + data.Size;
+                lbTotalRecord.Text = "- Tổng số bản ghi: " + data.TotalRecord;
+            }
+        }
+        private void pageBtnClick(object sender, EventArgs e)
+        {
+            var btn = sender as LinkLabel;
+            int page = Convert.ToInt32(btn.Tag);
+            ShowPage(page, Convert.ToInt32(pageSize.SelectedValue.ToString()));
+            //ShowPage(page, 4);
+        }
+        private void loadData(List<PhieuTLGridDisplayModel> list)
+        {
             List<string> headers = new List<string>();
             headers.Add("Số phiếu");
             headers.Add("Ngày lập");
@@ -219,24 +221,46 @@ namespace QLTB.GUI
             ADGVDanhSach.CellContentDoubleClick += ADGVDanhSach_CellContentDoubleClick;
             ADGVDanhSach.KeyPress += ADGVDanhSach_KeyPress;
             ADGVDanhSach.MouseClick += ADGVDanhSach_MouseClick;
-        }     
+            //
+            //
+        }   
         private void frmDSThanhLyTB_Load(object sender, EventArgs e)
         {
-            loadForm();
+            LoadForm();
         }
 
         private void btnThemDSTB_Click(object sender, EventArgs e)
         {
-            Cursor = Cursors.WaitCursor;
             frmPhieuThanhLyTB frm = new frmPhieuThanhLyTB();
-            frm.MdiParent = MdiParent;
-            frm.Show();
-            Cursor = Cursors.Default;
+            var owner = MdiParent as Form1;
+            owner.OpenFrmChild(frm);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnSuaDSTB_Click(object sender, EventArgs e)
+        {
+            var row = ADGVDanhSach.SelectedRows[0];
+            if (row != null)
+            {
+                var id=row.Cells["SoPhieu"].Value.ToString();
+                frmPhieuThanhLyTB frm = new frmPhieuThanhLyTB(id);
+                var owner = MdiParent as Form1;
+                owner.OpenFrmChild(frm);
+            }
+        }
+
+        private void btnXoaDSTB_Click(object sender, EventArgs e)
+        {
+            var row = ADGVDanhSach.SelectedRows[0];
+            if (row != null)
+            {
+                var id = row.Cells["SoPhieu"].Value.ToString();
+                
+            }
         }
     }
 }

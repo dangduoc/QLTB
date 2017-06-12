@@ -156,6 +156,7 @@
     <Compile Include="BLL\ThietBi\MuaSam\PhieuMuaSamTBModel.cs" />
     <Compile Include="BLL\ThietBi\PhieuMuon\DbPhieuMuonTBHandler.cs" />
     <Compile Include="BLL\ThietBi\PhieuTra\DbPhieuTraTBHandler.cs" />
+    <Compile Include="BLL\ThietBi\TheoDoi\Giam\DbPhieuGiamTBHandler.cs" />
     <Compile Include="BLL\ThietBi\TheoDoi\HongMat\DbPhieuBaoHongHandler.cs" />
     <Compile Include="BLL\ThietBi\TheoDoi\HongMat\PhieuBaoHongModel.cs" />
     <Compile Include="BLL\ThietBi\TheoDoi\Giam\PhieuGiamTBModel.cs" />
@@ -165,6 +166,7 @@
     <Compile Include="BLL\ThietBi\TheoDoi\SuaChua\PhieuSuaChuaTBModel.cs" />
     <Compile Include="BLL\ThietBi\TheoDoi\Tang\DbGhiTangTBHandler.cs" />
     <Compile Include="BLL\ThietBi\TheoDoi\Tang\GhiTangThietBiModel.cs" />
+    <Compile Include="BLL\ThietBi\TheoDoi\ThanhLy\DbPhieuThanhLyHandler.cs" />
     <Compile Include="BLL\ThietBi\TheoDoi\ThanhLy\PhieuThanhLyModel.cs" />
     <Compile Include="BLL\ThietBi\DbThietBiHandler.cs" />
     <Compile Include="BLL\ThietBi\ThietBiModel.cs" />

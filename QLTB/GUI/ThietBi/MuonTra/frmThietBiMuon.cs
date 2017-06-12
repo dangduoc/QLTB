@@ -162,8 +162,7 @@ namespace QLTB.GUI
                 GiaoVienId = CbbGiaoVien.SelectedValue.ToString(),
                 NgayMuon = (DateTime)dPickerNgayMuon.Value,
                 NgayTra = (DateTime)dPickerNgayTra.Value,
-                MuonTuTiet = Convert.ToInt32(txtMuonTuTiet.Text),
-                ThietBis = dsThietBi
+                MuonTuTiet = Convert.ToInt32(txtMuonTuTiet.Text)
             };
             if (Phieu == null)
             {
@@ -171,6 +170,7 @@ namespace QLTB.GUI
                 PhieuMoi.CreatedOnDate = DateTime.Now;
                 PhieuMoi.UpdatedByUserId = PhieuMoi.CreatedByUserId;
                 PhieuMoi.UpdatedOnDate = PhieuMoi.CreatedOnDate;
+                PhieuMoi.ThietBis = dsThietBi;
                 int result = handler.Create(PhieuMoi);
                 if (result == 1)
                 {
@@ -187,7 +187,6 @@ namespace QLTB.GUI
             }
             else
             {
-
                 PhieuMoi.UpdatedByUserId = GlobalVariable.GetUser().UserId;
                 PhieuMoi.UpdatedOnDate = DateTime.Now;
                 int result = handler.Update(PhieuMoi, dsThietBi);

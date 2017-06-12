@@ -12,7 +12,7 @@ namespace QLTB.Model
         public string NgayLap { get; set; }
         public string GhiChu { get; set; }
     }
-    public class ThietBiSuaChuaDialogModel:BaseThietBiHongDialogModel
+    public class ThietBiSuaChuaDialogModel:BaseThietBiHongGridDisplayModel
     {
     }
     public class ThietBiSuaGridDisplayModel:BaseThietBiGridDisplayModel
@@ -33,7 +33,7 @@ namespace QLTB.Model
         public int DonGiaSua { get; set; }
       
     }
-    public class ThietBiSuaDialogModel:BaseThietBiHongDialogModel
+    public class ThietBiSuaDialogModel:BaseThietBiHongGridDisplayModel
     {
 
     }

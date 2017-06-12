@@ -78,14 +78,16 @@ namespace QLTB.Model
         public string NgayLap { get; set; }
         public string NoiDung { get; set; }
     }
-    public class BaseThietBiHongDialogModel
+    public class BaseThietBiHongGridDisplayModel
     {
         public string SoHieu { get; set; }
-        public string MaThietBi { get; set; }
+        public string ThietBiId { get; set; }
         public string Ten { get; set; }
         public string Loai { get; set; }
         public string TinhTrang { get; set; }
         public string SoPhieuBaoHong { get; set; }
+        public string PhongHoc { get; set; }
+        public string DonViTinh { get; set; }
     }
     
 }
