@@ -8,8 +8,12 @@ using System.Windows.Forms;
 
 namespace QLTB.GUI
 {
-    public interface IFrmPhieu
+    public interface IFrmPhieuBaseTB
     {
         void AddToGrid(List<BaseThietBiGridDisplayModel> list);
+    }
+    public interface IFrmPhieuTBHong
+    {
+        void AddToGrid(List<BaseThietBiHongGridDisplayModel> list);
     }
 }

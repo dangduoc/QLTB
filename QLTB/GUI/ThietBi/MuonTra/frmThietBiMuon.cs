@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace QLTB.GUI
 {
-    public partial class frmThietBiMuon : DevComponents.DotNetBar.Office2007Form, IFrmPhieu
+    public partial class frmThietBiMuon : DevComponents.DotNetBar.Office2007Form, IFrmPhieuBaseTB
     {
         private PhieuMuonThietBiModel Phieu;
         private List<ThietBiMuonGridDisplayModel> dsThietBi = new List<ThietBiMuonGridDisplayModel>();

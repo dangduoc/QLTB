@@ -231,11 +231,9 @@ namespace QLTB.GUI
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
-            Cursor = Cursors.WaitCursor;
             frmPhieuTangThietBi frm = new frmPhieuTangThietBi();
-            frm.MdiParent = MdiParent;
-            frm.Show();
-            Cursor = Cursors.Default;
+            var owner = MdiParent as Form1;
+            owner.OpenFrmChild(frm);
         }
         private void btnInDSTB_Click(object sender, EventArgs e)
         {
@@ -247,12 +245,19 @@ namespace QLTB.GUI
 
         private void btnSuaDSTB_Click(object sender, EventArgs e)
         {
-            var SoPhieu = ADGVDanhSach.SelectedRows[0].Cells["PhieuGhiTangId"].Value.ToString();
-            Cursor = Cursors.WaitCursor;
-            frmPhieuTangThietBi frm = new frmPhieuTangThietBi(SoPhieu);
-            frm.MdiParent = MdiParent;
-            frm.Show();
-            Cursor = Cursors.Default;
+            var row = ADGVDanhSach.SelectedRows[0];
+            if (row != null)
+            {
+                var id = row.Cells["PhieuGhiTangId"].Value.ToString();
+                frmPhieuTangThietBi frm = new frmPhieuTangThietBi(id);
+                var owner = MdiParent as Form1;
+                owner.OpenFrmChild(frm);
+            }
+        }
+
+        private void btnNapDSTB_Click(object sender, EventArgs e)
+        {
+            ShowPage(1, 50);
         }
     }
 }

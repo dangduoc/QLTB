@@ -167,6 +167,7 @@ namespace QLTB.Handler
                             if (thietbi != null)
                             {
                                 thietbi.SoLuong += (int)ThietBi.SoLuong;
+                                thietbi.SoLuongCon+= (int)ThietBi.SoLuong;
                                 thietbi.TrangThai = 1;
                                 unitOfWork.GetRepository<TB_ThongTinThietBi>().Update(thietbi);
                             }
@@ -206,9 +207,11 @@ namespace QLTB.Handler
                                 if (thietbi != null)
                                 {
                                     thietbi.SoLuong -= Convert.ToInt32(item.SoLuongTang);
+                                    thietbi.SoLuongCon-= Convert.ToInt32(item.SoLuongTang);
                                     if (thietbi.SoLuong <= 0)
                                     {
                                         thietbi.SoLuong = 0;
+                                        thietbi.SoLuongCon = 0;
                                         thietbi.TrangThai = 0;
                                     }
                                     unitOfWork.GetRepository<TB_ThongTinThietBi>().Update(thietbi);
@@ -227,6 +230,7 @@ namespace QLTB.Handler
                             if (thietbi != null)
                             {
                                 thietbi.SoLuong += Convert.ToInt32(item.SoLuongTang);
+                                thietbi.SoLuongCon += Convert.ToInt32(item.SoLuongTang);
                                 thietbi.TrangThai = 1;
                                 unitOfWork.GetRepository<TB_ThongTinThietBi>().Update(thietbi);
                             }

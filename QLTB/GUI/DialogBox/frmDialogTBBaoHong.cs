@@ -49,7 +49,7 @@ namespace QLTB.GUI
                
                 if (list.Count > 0)
                 {
-                    var owner = this.Owner.ActiveControl as IFrmPhieu;
+                    var owner = this.Owner.ActiveControl as IFrmPhieuBaseTB;
                     owner.AddToGrid(list);
                 }
             }

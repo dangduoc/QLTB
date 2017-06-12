@@ -105,6 +105,7 @@
             this.ADGVDSTB.Name = "ADGVDSTB";
             this.ADGVDSTB.Size = new System.Drawing.Size(903, 132);
             this.ADGVDSTB.TabIndex = 15;
+            this.ADGVDSTB.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ADGVDSTB_CellContentClick);
             // 
             // ribbonBar1
             // 

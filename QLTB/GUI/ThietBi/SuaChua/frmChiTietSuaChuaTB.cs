@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace QLTB.GUI
 {
-    public partial class frmChiTietSuaChuaTB : DevComponents.DotNetBar.Office2007Form
+    public partial class frmChiTietSuaChuaTB : DevComponents.DotNetBar.Office2007Form, IFrmPhieuTBHong
     {
         public frmChiTietSuaChuaTB()
         {
@@ -59,13 +59,18 @@ namespace QLTB.GUI
 
         private void btnLayTB_Click(object sender, EventArgs e)
         {
-            frmDialogTBSuaChua frm = new frmDialogTBSuaChua();
+            frmDialogDSTBHong frm = new frmDialogDSTBHong();
             frm.ShowDialog(this);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        public void AddToGrid(List<BaseThietBiHongGridDisplayModel> list)
+        {
+            throw new NotImplementedException();
         }
     }
 }

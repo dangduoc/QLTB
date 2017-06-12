@@ -13,7 +13,7 @@ using QLTB.Utils;
 
 namespace QLTB.GUI
 {
-    public partial class frmPhieuBaoHong : DevComponents.DotNetBar.Office2007Form, IFrmPhieu
+    public partial class frmPhieuBaoHong : DevComponents.DotNetBar.Office2007Form, IFrmPhieuBaseTB
     {
         private PhieuBaoHongModel Phieu;
         private List<ThietBiHongGridDisplayModel> dsThietBi = new List<ThietBiHongGridDisplayModel>();
@@ -24,17 +24,24 @@ namespace QLTB.GUI
         public frmPhieuBaoHong()
         {
             InitializeComponent();
- 
+            Phieu = null;
         }
         public frmPhieuBaoHong(List<BaseThietBiGridDisplayModel> ds)
         {
             InitializeComponent();
             dsBase = ds;
+            Phieu = null;
         }
         public frmPhieuBaoHong(string Id)
         {
             InitializeComponent();
             Phieu = handler.GetById(Id);
+            txtSoPhieu.Enabled = false;
+            if (Phieu == null)
+            {
+                MessageBox.Show("Thông tìm thấy phiếu báo hỏng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Close();
+            }
         }
         private void loadForm()
         {
@@ -163,7 +170,7 @@ namespace QLTB.GUI
                 GhiChu = txtGhiChu.Text,
                 IsDelete = false,
                 NguoiLamHong = txtNguoiLamHong.Text,
-                ThietBis = dsThietBi
+                
             };
             if (Phieu == null)
             {
@@ -171,6 +178,7 @@ namespace QLTB.GUI
                 PhieuMoi.CreatedOnDate = DateTime.Now;
                 PhieuMoi.UpdatedByUserId = PhieuMoi.CreatedByUserId;
                 PhieuMoi.UpdatedOnDate = PhieuMoi.CreatedOnDate;
+                PhieuMoi.ThietBis = dsThietBi;
                 int result = handler.Create(PhieuMoi);
                 if (result == 1)
                 {
@@ -187,7 +195,7 @@ namespace QLTB.GUI
             }
             else
             {
-
+                PhieuMoi.ThietBis = Phieu.ThietBis;
                 PhieuMoi.UpdatedByUserId = GlobalVariable.GetUser().UserId;
                 PhieuMoi.UpdatedOnDate = DateTime.Now;
                 int result = handler.Update(PhieuMoi, dsThietBi);
