@@ -206,11 +206,12 @@ namespace QLTB.Handler
                                 PhieuMuonTBId = model.PhieuMuonTBId
                             };
                             unitOfWork.GetRepository<QH_PhieuMuonTB_ThietBi>().Add(ThietBi);
+
                             var thietbi = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetById(item.SoHieu);
                             if (thietbi != null)
                             {
                                 thietbi.SoLuongMuon += Convert.ToInt32(item.SoLuongMuon);
-                                thietbi.SoLuongCon = thietbi.SoLuong - (thietbi.SoLuongMuon + thietbi.SoLuongHong+thietbi.SoLuongMat);
+                                thietbi.SoLuongCon -= thietbi.SoLuongMuon;
                                 unitOfWork.GetRepository<TB_ThongTinThietBi>().Update(thietbi);
                             }
                         }
@@ -238,9 +239,23 @@ namespace QLTB.Handler
                     var data = unitOfWork.GetRepository<TB_PhieuMuonTB>().GetById(model.PhieuMuonTBId);
                     if (data != null)
                     {
+                        //Lưu thông tin chung
                         MyConvert.TransferValues(data, model);
                         unitOfWork.GetRepository<TB_PhieuMuonTB>().Update(data);
-                        unitOfWork.GetRepository<QH_PhieuMuonTB_ThietBi>().Delete(p => p.PhieuMuonTBId == model.PhieuMuonTBId);
+                        //Các thiết bị mượn cũ
+                        foreach(var item in model.ThietBis)
+                        {
+                            unitOfWork.GetRepository<QH_PhieuMuonTB_ThietBi>()
+                                .Delete(p => p.PhieuMuonTBId == model.PhieuMuonTBId && p.SoHieuTB==item.SoHieu);
+                            var thietbi = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetById(item.SoHieu);
+                            if (thietbi != null)
+                            {
+                                thietbi.SoLuongMuon -= Convert.ToInt32(item.SoLuongMuon);
+                                thietbi.SoLuongCon += Convert.ToInt32(item.SoLuongMuon);
+                                unitOfWork.GetRepository<TB_ThongTinThietBi>().Update(thietbi);
+                            }
+                        }
+                        //Các thiết bị mượn mới
                         foreach (var item in ds)
                         {
                             int SoLuongMuon = Convert.ToInt32(item.SoLuongMuon);
@@ -255,7 +270,7 @@ namespace QLTB.Handler
                             if (thietbi != null)
                             {
                                 thietbi.SoLuongMuon += Convert.ToInt32(item.SoLuongMuon);
-                                thietbi.SoLuongCon = thietbi.SoLuong - (thietbi.SoLuongMuon + thietbi.SoLuongHong + thietbi.SoLuongMat);
+                                thietbi.SoLuongCon += Convert.ToInt32(item.SoLuongMuon);
                                 unitOfWork.GetRepository<TB_ThongTinThietBi>().Update(thietbi);
                             }
                         }

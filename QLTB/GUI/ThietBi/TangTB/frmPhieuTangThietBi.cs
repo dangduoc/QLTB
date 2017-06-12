@@ -156,7 +156,7 @@ namespace QLTB.GUI
                 NgayLap=dPickerNgayLap.Value,
                 ChungTuLienQuan=txtChungTu.Text,
                 NoiDung=txtGhiChu.Text,
-                ThietBis = dsThietBi
+                
             };
             if (Phieu == null)
             {
@@ -164,6 +164,7 @@ namespace QLTB.GUI
                 PhieuMoi.CreatedOnDate = DateTime.Now;
                 PhieuMoi.UpdatedByUserId = PhieuMoi.CreatedByUserId;
                 PhieuMoi.UpdatedOnDate = PhieuMoi.CreatedOnDate;
+                PhieuMoi.ThietBis = dsThietBi;
                 int result = handler.Create(PhieuMoi);
                 if (result == 1)
                 {
@@ -180,10 +181,10 @@ namespace QLTB.GUI
             }
             else
             {
-
+                PhieuMoi.ThietBis = Phieu.ThietBis;
                 PhieuMoi.UpdatedByUserId = GlobalVariable.GetUser().UserId;
                 PhieuMoi.UpdatedOnDate = DateTime.Now;
-                int result = handler.Update(PhieuMoi);
+                int result = handler.Update(PhieuMoi,dsThietBi);
                 if (result == 1)
                 {
                     MessageBox.Show("Cập nhật thông tin thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

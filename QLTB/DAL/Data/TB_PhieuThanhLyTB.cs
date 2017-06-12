@@ -23,6 +23,7 @@ namespace QLTB.DAL.Data
         public Nullable<System.DateTime> CreatedOnDate { get; set; }
         public Nullable<int> UpdatedByUserId { get; set; }
         public Nullable<System.DateTime> UpdatedOnDate { get; set; }
+        public Nullable<System.DateTime> NgapLap { get; set; }
     
         public virtual HT_User HT_User { get; set; }
         public virtual HT_User HT_User1 { get; set; }
