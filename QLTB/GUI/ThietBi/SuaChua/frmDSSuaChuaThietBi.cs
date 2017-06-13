@@ -232,9 +232,9 @@ namespace QLTB.GUI
 
         private void btnThemDSTB_Click(object sender, EventArgs e)
         {
-            //frmChiTietSuaChuaTB frm = new frmChiTietSuaChuaTB();
-            //var owner = MdiParent as Form1;
-            //owner.OpenFrmChild(frm);
+            frmChiTietSuaChuaTB frm = new frmChiTietSuaChuaTB();
+            var owner = MdiParent as Form1;
+            owner.OpenFrmChild(frm);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -244,14 +244,19 @@ namespace QLTB.GUI
 
         private void btnSuaDSTB_Click(object sender, EventArgs e)
         {
-            //var row = ADGVDanhSach.SelectedRows[0];
-            //if (row != null)
-            //{
-            //    var id = row.Cells["SoPhieu"].Value.ToString();
-            //    frmChiTietSuaChuaTB frm = new frmChiTietSuaChuaTB(id);
-            //    var owner = MdiParent as Form1;
-            //    owner.OpenFrmChild(frm);
-            //}
+            var row = ADGVDanhSach.SelectedRows[0];
+            if (row != null)
+            {
+                var id = row.Cells["PhieuSuaTBId"].Value.ToString();
+                frmChiTietSuaChuaTB frm = new frmChiTietSuaChuaTB(id);
+                var owner = MdiParent as Form1;
+                owner.OpenFrmChild(frm);
+            }
+        }
+
+        private void btnNapDSTB_Click(object sender, EventArgs e)
+        {
+            ShowPage(1, 50);
         }
     }
 }

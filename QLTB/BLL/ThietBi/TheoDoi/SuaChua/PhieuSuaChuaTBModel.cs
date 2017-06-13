@@ -11,11 +11,13 @@ namespace QLTB.Model
         public string PhieuSuaTBId { get; set; }
         public System.DateTime NgayLap { get; set; }
         public string GhiChu { get; set; }
+        public bool IsDelete { get; set; }
         public List<ThietBiSuaGridDisplayModel> ThietBis { get; set; }
         public int CreatedByUserId { get; set; }
         public int UpdatedByUserId { get; set; }
         public System.DateTime CreatedOnDate { get; set; }
         public System.DateTime UpdatedOnDate { get; set; }
+       
     }
     public class PhieuSuaTBGridDisplayModel
     {

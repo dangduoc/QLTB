@@ -30,6 +30,8 @@ namespace QLTB.GUI
         {
             InitializeComponent();
             dsBase = ds;
+            txtSoPhieu.Text = handler.GenerateCode();
+            
             Phieu = null;
         }
         public frmPhieuBaoHong(string Id)
@@ -66,7 +68,6 @@ namespace QLTB.GUI
             }
             else
             {
-                txtSoPhieu.Text = handler.GenerateCode();
                 source.DataSource = MyConvert.ToDataTable<ThietBiHongGridDisplayModel>(dsThietBi);
             }
             ADGVDSTB.DataSource = source;

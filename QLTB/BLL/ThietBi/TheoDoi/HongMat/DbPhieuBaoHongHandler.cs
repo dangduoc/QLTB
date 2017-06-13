@@ -368,24 +368,22 @@ namespace QLTB.Handler
             {
                 using (var unitOfWork = new UnitOfWork())
                 {
-                    string newCode = "";
+                    string newCode = "PHBH";
                     var last = unitOfWork.GetRepository<TB_PhieuBaoHong>().GetAll().OrderByDescending(p => p.PhieuBaoHongId).FirstOrDefault();
                     if (last != null)
                     {
                         var lastCode = last.PhieuBaoHongId;
-                        var numberPart = lastCode.Remove(0, 4);
-                        var prefixPart = lastCode.Substring(0, 4);
+                        var numberPart = lastCode.Replace("PHBH", "");
                         var number = Convert.ToInt32(numberPart.TrimStart('0'));
                         var suffix = number + 1;
-                        int sizePrefix = prefixPart.Length;
-                        int sizeSuffix = suffix.ToString().Length;
-                        string middle = "";
-                        for (int i = 0; i < (10 - sizePrefix - sizeSuffix); i++)
+
+
+                        int numberofzero = suffix / 10;
+                        for (int i = 0; i < 5 - numberofzero; i++)
                         {
-                            middle += "0";
+                            newCode += "0";
                         }
-                        newCode = prefixPart + middle + suffix;
-                        return newCode;
+                        newCode += suffix.ToString();
                     }
                     else
                     {

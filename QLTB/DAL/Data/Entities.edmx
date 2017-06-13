@@ -305,9 +305,8 @@
             <PropertyRef Name="SoHieu" />
           </Key>
           <Property Name="PhieuSuaTBId" Type="nvarchar" MaxLength="10" Nullable="false" />
-          <Property Name="SoHieu" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="SoHieu" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="SoLuong" Type="int" Nullable="false" />
-          <Property Name="DonViTinhId" Type="int" Nullable="false" />
           <Property Name="GiaTri" Type="money" />
           <Property Name="DonGia" Type="money" />
           <Property Name="ThanhTien" Type="money" />
@@ -454,6 +453,7 @@
           <Property Name="UpdatedByUserId" Type="int" Nullable="false" />
           <Property Name="CreatedOnDate" Type="datetime" Nullable="false" />
           <Property Name="UpdatedOnDate" Type="datetime" Nullable="false" />
+          <Property Name="IsDelete" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="TB_PhieuThanhLyTB">
           <Key>
@@ -1494,9 +1494,8 @@
             <PropertyRef Name="SoHieu" />
           </Key>
           <Property Name="PhieuSuaTBId" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="SoHieu" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="SoHieu" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="SoLuong" Type="Int32" Nullable="false" />
-          <Property Name="DonViTinhId" Type="Int32" Nullable="false" />
           <Property Name="GiaTri" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="DonGia" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="ThanhTien" Type="Decimal" Precision="19" Scale="4" />
@@ -1514,6 +1513,7 @@
           <Property Name="UpdatedByUserId" Type="Int32" Nullable="false" />
           <Property Name="CreatedOnDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="UpdatedOnDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsDelete" Type="Boolean" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -2073,7 +2073,6 @@
                 <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
                 <ScalarProperty Name="DonGia" ColumnName="DonGia" />
                 <ScalarProperty Name="GiaTri" ColumnName="GiaTri" />
-                <ScalarProperty Name="DonViTinhId" ColumnName="DonViTinhId" />
                 <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
                 <ScalarProperty Name="SoHieu" ColumnName="SoHieu" />
                 <ScalarProperty Name="PhieuSuaTBId" ColumnName="PhieuSuaTBId" />
@@ -2083,6 +2082,7 @@
           <EntitySetMapping Name="TB_PhieuSuaTB">
             <EntityTypeMapping TypeName="Model.TB_PhieuSuaTB">
               <MappingFragment StoreEntitySet="TB_PhieuSuaTB">
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
                 <ScalarProperty Name="UpdatedOnDate" ColumnName="UpdatedOnDate" />
                 <ScalarProperty Name="CreatedOnDate" ColumnName="CreatedOnDate" />
                 <ScalarProperty Name="UpdatedByUserId" ColumnName="UpdatedByUserId" />

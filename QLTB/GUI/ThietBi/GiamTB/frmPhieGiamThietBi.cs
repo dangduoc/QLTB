@@ -24,6 +24,8 @@ namespace QLTB.GUI
         {
             InitializeComponent();
             Phieu = null;
+            txtSoPhieu.Text = handler.GenerateCode();
+            txtSoPhieu.Enabled = false;
         }
         public frmPhieGiamThietBi(string id)
         {
@@ -261,6 +263,14 @@ namespace QLTB.GUI
 
                 }
 
+            }
+        }
+
+        private void frmPhieGiamThietBi_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                Close();
             }
         }
     }
