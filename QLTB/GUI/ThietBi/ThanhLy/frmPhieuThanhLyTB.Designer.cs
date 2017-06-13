@@ -342,6 +342,7 @@
             this.txtSoPhieu.Border.Class = "TextBoxBorder";
             this.txtSoPhieu.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtSoPhieu.DisabledBackColor = System.Drawing.Color.White;
+            this.txtSoPhieu.Enabled = false;
             this.txtSoPhieu.ForeColor = System.Drawing.Color.Black;
             this.txtSoPhieu.Location = new System.Drawing.Point(111, 4);
             this.txtSoPhieu.Margin = new System.Windows.Forms.Padding(0);

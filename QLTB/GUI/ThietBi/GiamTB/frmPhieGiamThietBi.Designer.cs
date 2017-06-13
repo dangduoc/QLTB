@@ -412,6 +412,7 @@
             this.btnLuu.Image = global::QLTB.Properties.Resources.save_icon;
             this.btnLuu.ImagePaddingVertical = 13;
             this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlS);
             this.btnLuu.SubItemsExpandWidth = 14;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
@@ -435,6 +436,7 @@
             this.btnHelpDSTB.ImagePaddingHorizontal = 20;
             this.btnHelpDSTB.ImagePaddingVertical = 10;
             this.btnHelpDSTB.Name = "btnHelpDSTB";
+            this.btnHelpDSTB.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F1);
             this.btnHelpDSTB.SubItemsExpandWidth = 14;
             this.btnHelpDSTB.Text = "Trợ giúp";
             // 
@@ -466,6 +468,7 @@
             this.Name = "frmPhieGiamThietBi";
             this.Text = "Phiếu giảm thiết bị";
             this.Load += new System.EventHandler(this.frmPhieGiamThietBi_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmPhieGiamThietBi_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ADGVDSTB)).EndInit();

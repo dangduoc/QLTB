@@ -24,6 +24,7 @@ namespace QLTB.GUI
         {
             InitializeComponent();
             Phieu = null;
+            txtSoPhieu.Text = handler.GenerateCode();
         }
         public frmPhieuThanhLyTB(string SoPhieu)
         {
@@ -218,7 +219,8 @@ namespace QLTB.GUI
             try
             {
                 var sohieu = ADGVDSTB.Rows[e.RowIndex].Cells["SoHieu"].Value.ToString();
-                var tb = dsThietBi.Where(p => p.SoHieu.Equals(sohieu)).FirstOrDefault();
+                var maphieubh= ADGVDSTB.Rows[e.RowIndex].Cells["SoPhieuBaoHong"].Value.ToString();
+                var tb = dsThietBi.Where(p => p.SoHieu.Equals(sohieu)&&p.SoPhieuBaoHong.Equals(maphieubh)).FirstOrDefault();
                 //so luong
                 var soluong = Convert.ToInt32(ADGVDSTB.Rows[e.RowIndex].Cells["SoLuongTL"].Value);
                 tb.SoLuongTL = soluong.ToString();

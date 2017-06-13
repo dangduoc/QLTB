@@ -21,5 +21,6 @@ namespace QLTB.DAL.Data
         public int UpdatedByUserId { get; set; }
         public System.DateTime CreatedOnDate { get; set; }
         public System.DateTime UpdatedOnDate { get; set; }
+        public bool IsDelete { get; set; }
     }
 }

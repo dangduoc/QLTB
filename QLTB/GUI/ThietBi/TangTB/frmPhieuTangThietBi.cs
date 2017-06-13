@@ -24,6 +24,8 @@ namespace QLTB.GUI
         {
             InitializeComponent();
             Phieu = null;
+            txtSoPhieu.Text = handler.GenerateCode();
+            txtSoPhieu.Enabled = false;
         }
         public frmPhieuTangThietBi(string Id)
         {

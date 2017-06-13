@@ -384,6 +384,7 @@
             // 
             this.btnThemDSTB.BeginGroup = true;
             this.btnThemDSTB.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnThemDSTB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThemDSTB.Image = global::QLTB.Properties.Resources.add;
             this.btnThemDSTB.ImagePaddingHorizontal = 20;
             this.btnThemDSTB.ImagePaddingVertical = 13;
@@ -395,6 +396,7 @@
             // btnSuaDSTB
             // 
             this.btnSuaDSTB.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnSuaDSTB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSuaDSTB.Image = global::QLTB.Properties.Resources.edit16;
             this.btnSuaDSTB.ImagePaddingHorizontal = 20;
             this.btnSuaDSTB.ImagePaddingVertical = 10;
@@ -407,6 +409,7 @@
             // btnXoaDSTB
             // 
             this.btnXoaDSTB.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnXoaDSTB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnXoaDSTB.Image = global::QLTB.Properties.Resources.b_drop;
             this.btnXoaDSTB.ImagePaddingHorizontal = 20;
             this.btnXoaDSTB.ImagePaddingVertical = 10;
@@ -417,6 +420,7 @@
             // btnNapDSTB
             // 
             this.btnNapDSTB.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnNapDSTB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNapDSTB.Image = global::QLTB.Properties.Resources.Refresh16;
             this.btnNapDSTB.ImagePaddingHorizontal = 20;
             this.btnNapDSTB.ImagePaddingVertical = 10;
@@ -425,10 +429,12 @@
             this.btnNapDSTB.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F5);
             this.btnNapDSTB.Text = "Nạp";
             this.btnNapDSTB.Tooltip = "Làm mới dữ liệu";
+            this.btnNapDSTB.Click += new System.EventHandler(this.btnNapDSTB_Click);
             // 
             // btnImportDSTB
             // 
             this.btnImportDSTB.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnImportDSTB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnImportDSTB.Image = global::QLTB.Properties.Resources.import16;
             this.btnImportDSTB.ImagePaddingHorizontal = 20;
             this.btnImportDSTB.ImagePaddingVertical = 10;
@@ -441,6 +447,7 @@
             // btnInDSTB
             // 
             this.btnInDSTB.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnInDSTB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInDSTB.Image = global::QLTB.Properties.Resources.print16;
             this.btnInDSTB.ImagePaddingHorizontal = 20;
             this.btnInDSTB.ImagePaddingVertical = 10;
@@ -452,6 +459,7 @@
             // btnHelpDSTB
             // 
             this.btnHelpDSTB.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnHelpDSTB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHelpDSTB.Image = global::QLTB.Properties.Resources.Help_icon;
             this.btnHelpDSTB.ImagePaddingHorizontal = 20;
             this.btnHelpDSTB.ImagePaddingVertical = 10;
@@ -464,6 +472,7 @@
             // 
             this.btnClose.BeginGroup = true;
             this.btnClose.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.Image = global::QLTB.Properties.Resources.close16;
             this.btnClose.Name = "btnClose";
             this.btnClose.SubItemsExpandWidth = 14;

@@ -279,5 +279,40 @@ namespace QLTB.Handler
             }
         }
         #endregion
+        public string GenerateCode()
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    string newCode = "PTL";
+                    var last = unitOfWork.GetRepository<TB_PhieuThanhLyTB>().GetAll().OrderByDescending(p => p.PhieuThanhLyTBId).FirstOrDefault();
+                    if (last != null)
+                    {
+                        var lastCode = last.PhieuThanhLyTBId;
+                        var numberPart = lastCode.Replace("PTL", "");
+                        var number = Convert.ToInt32(numberPart.TrimStart('0'));
+                        var suffix = number + 1;
+
+
+                        int numberofzero = suffix / 10;
+                        for (int i = 0; i < 6 - numberofzero; i++)
+                        {
+                            newCode += "0";
+                        }
+                        newCode += suffix.ToString();
+                    }
+                    else
+                    {
+                        newCode = "PTL0000001";
+                    }
+                    return newCode;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }

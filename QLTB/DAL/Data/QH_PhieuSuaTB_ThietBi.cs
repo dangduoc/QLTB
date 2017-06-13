@@ -17,7 +17,6 @@ namespace QLTB.DAL.Data
         public string PhieuSuaTBId { get; set; }
         public string SoHieu { get; set; }
         public int SoLuong { get; set; }
-        public int DonViTinhId { get; set; }
         public Nullable<decimal> GiaTri { get; set; }
         public Nullable<decimal> DonGia { get; set; }
         public Nullable<decimal> ThanhTien { get; set; }
