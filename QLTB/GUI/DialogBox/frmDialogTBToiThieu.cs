@@ -1,5 +1,4 @@
-﻿using QLTB.DAL.Data;
-using QLTB.Handler;
+﻿using QLTB.Handler;
 using QLTB.Model;
 using QLTB.Utils;
 using System;
@@ -8,21 +7,18 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLTB.GUI
 {
-    public partial class frmDialogDSThietBi : DevComponents.DotNetBar.Office2007Form
+    public partial class frmDialogTBToiThieu : DevComponents.DotNetBar.Office2007Form
     {
-        private DbThietBiHandler handler = new DbThietBiHandler();
-        Expression<Func<TB_ThongTinThietBi, bool>> predicate;
-        public frmDialogDSThietBi(Expression<Func<TB_ThongTinThietBi, bool>> predicate)
+        private DbThietBiTTHandler handler = new DbThietBiTTHandler();
+        public frmDialogTBToiThieu()
         {
             InitializeComponent();
-            this.predicate = predicate;
         }
         #region ADGB
         private BindingSource source = new BindingSource();
@@ -140,14 +136,10 @@ namespace QLTB.GUI
             }
         }
         #endregion
-        private void LoadForm()
-        {
-            ShowPage(1, 50);
-        }
         private void ShowPage(int page, int pageSize)
         {
-            var data = handler.GetAll(page, pageSize, predicate);
-            List<ThietBiGridDisplayModel> list = data.data;
+            var data = handler.GetAll(page, pageSize);
+            List<ThietBiTTGridDisplayModel> list = data.data;
             if (list.Count > 0)
             {
                 loadData(list);
@@ -165,127 +157,76 @@ namespace QLTB.GUI
             var btn = sender as LinkLabel;
             int page = Convert.ToInt32(btn.Tag);
             ShowPage(page, Convert.ToInt32(pageSize.SelectedValue.ToString()));
-            //ShowPage(page, 4);
         }
-        private void loadData(List<ThietBiGridDisplayModel> list)
+        private void loadData(List<ThietBiTTGridDisplayModel> list)
         {
+            BindingSource source = new BindingSource();
+            source.DataSource = MyConvert.ToDataTable<ThietBiTTGridDisplayModel>(list);
+            ADGVDanhSach.DataSource = source;
+        }
+
+        private void LoadForm()
+        {
+            #region Init Gridview
+            List<ThietBiTTGridDisplayModel> list = new List<ThietBiTTGridDisplayModel>();
+            //
             List<string> headers = new List<string>();
-            headers.Add("Số hiệu");
             headers.Add("Mã thiết bị");
             headers.Add("Tên thiết bị");
-            headers.Add("Kho/Phòng bộ môn");
-            headers.Add("Bộ môn");
+            headers.Add("Dùng cho lớp");
+            headers.Add("Loại thiết bị");
+            headers.Add("Môn học");
+            headers.Add("Đầu mục");
             headers.Add("Số lượng");
-            headers.Add("Đơn giá");
-            headers.Add("Thành tiền");
-            headers.Add("Nguồn kinh phí");
             headers.Add("Đơn vị tính");
-            headers.Add("Còn");
-            headers.Add("Mất");
-            headers.Add("Hỏng");
-            headers.Add("Trạng thái");
-            DataTable tb = MyConvert.ToDataTable(list);
-            this.Text = "Danh sách thiết bị giáo dục";
+            headers.Add("Mô tả");
 
-            DataGridViewCheckBoxColumn col = new DataGridViewCheckBoxColumn();
-            col.Name = "checkBtn";
-            col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            col.HeaderCell = new DGVColumnHeaderCheckBox();
-            col.TrueValue = "T";
-            col.FalseValue = "F";
+            //
+            DataTable tb = MyConvert.ToDataTable(list);;
             source.DataSource = SetUpSearch(tb, headers);
             ADGVDanhSach.DataSource = source;
             SetHeaderForGrid(ADGVDanhSach, headers);
-        
-            ADGVDanhSach.Columns.Add(col);
-
-            ADGVDanhSach.Columns["checkBtn"].Width = 40;
-            ADGVDanhSach.Columns["checkBtn"].HeaderText = "";
-            ADGVDanhSach.Columns["checkBtn"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            ADGVDanhSach.Columns["checkBtn"].DefaultCellStyle.Padding = new Padding(5, 0, 0, 0);
-            ADGVDanhSach.Columns["Ten"].Width = 170;
-            ADGVDanhSach.Columns["KhoPhong"].Width = 170;
-            ADGVDanhSach.Columns["SoLuong"].Width = 80;
-            ADGVDanhSach.Columns["SoLuongHong"].Width = 50;
-            ADGVDanhSach.Columns["SoLuongMat"].Width = 50;
+            ADGVDanhSach.Columns["ThietBiId"].Width = 80;
+            ADGVDanhSach.Columns["DungChoLop"].Width = 80;
+            ADGVDanhSach.Columns["LoaiThietBi"].Width = 80;
+            ADGVDanhSach.Columns["DauMuc"].Width = 60;
+            ADGVDanhSach.Columns["SoLuong"].Width = 60;
+            ADGVDanhSach.Columns["DonViTinh"].Width = 60;
+            ADGVDanhSach.Columns["MonHoc"].Width = 100;
 
             ADGVDanhSach.SortStringChanged += advancedDataGridView_SortStringChanged;
             ADGVDanhSach.FilterStringChanged += advancedDataGridView_FilterStringChanged;
             //
             prevBtn.Click += pageBtnClick;
             nextBtn.Click += pageBtnClick;
-            //
+
+            #endregion
+
+            ShowPage(1, 50);
         }
-        private void frmDialogDSThietBi_Load(object sender, EventArgs e)
+        private void frmDialogTBToiThieu_Load(object sender, EventArgs e)
         {
             LoadForm();
         }
-        private void advancedDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-        private void advancedDataGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {
-            // DataGridViewButtonCell cell = advancedDataGridView.Rows[e.RowIndex].Cells["btnCol"] as DataGridViewButtonCell;
 
-        }
         private void btnThem_Click(object sender, EventArgs e)
         {
-            var owner = Owner.ActiveControl as Form;
-            if (owner.Name.Equals("frmPhieuTangThietBi"))
+            var item = ADGVDanhSach.SelectedRows[0];
+            if (item != null)
             {
-                var list = new List<ThietBiTangGridDisplayModel>();
-                foreach (DataGridViewRow item in ADGVDanhSach.Rows)
+                var tb = new ThietBiTTDialogModel
                 {
-                    if ((string)item.Cells["checkBtn"].Value == "T")
-                    {
-                        list.Add(new ThietBiTangGridDisplayModel
-                        {
-                            ThietBiId = item.Cells["ThietBiId"].Value.ToString(),
-                            Ten = item.Cells["Ten"].Value.ToString(),
-                            SoHieu = item.Cells["SoHieu"].Value.ToString(),
-                            PhongHoc = item.Cells["KhoPhong"].Value.ToString(),
-                            DonViTinh = item.Cells["DonViTinh"].Value.ToString(),
-                            SoLuongTang = item.Cells["SoLuong"].Value.ToString(),
-                            DonGia=item.Cells["DonGia"].Value.ToString(),
-                            ThanhTien=item.Cells["DonGia"].Value.ToString(),
-                            NguonKinhPhi=item.Cells["NguonKinhPhi"].Value.ToString()
-                        });
-                    }
-                }
-                if (list.Count > 0)
-                {
-                    var parent = owner as frmPhieuTangThietBi;
-                    parent.AddToGrid(list);
-                }
+                    ThietBiId = item.Cells["ThietBiId"].Value.ToString(),
+                    Ten = item.Cells["Ten"].Value.ToString(),
+                    LoaiThietBi = item.Cells["LoaiThietBi"].Value.ToString()
+                };
+                tb.SoLuongCon = new DbThietBiHandler().GetSoLuong(tb.ThietBiId);
+                var owner = this.Owner.ActiveControl as frmPhieuMuaThietBi;
+                owner.AddToGrid(tb);
+                Close();
             }
-            else
-            {
-                var parent = Owner.ActiveControl as IFrmPhieuBaseTB;
-                var list = new List<BaseThietBiGridDisplayModel>();
-                foreach (DataGridViewRow item in ADGVDanhSach.Rows)
-                {
-                    if ((string)item.Cells["checkBtn"].Value == "T")
-                    {
-                        var tmp = new BaseThietBiGridDisplayModel
-                        {
-                            ThietBiId = item.Cells["ThietBiId"].Value.ToString(),
-                            Ten = item.Cells["Ten"].Value.ToString(),
-                            SoHieu = item.Cells["SoHieu"].Value.ToString(),
-                            PhongHoc = item.Cells["KhoPhong"].Value.ToString(),
-                            DonViTinh = item.Cells["DonViTinh"].Value.ToString()
-                        };
-                        list.Add(tmp);
-                    }
-                }
-
-                if (list.Count > 0)
-                {
-                    parent.AddToGrid(list);
-                }
-            }
-            Close();
         }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();

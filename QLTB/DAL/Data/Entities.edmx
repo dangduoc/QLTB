@@ -257,6 +257,9 @@
           <Property Name="ThietBiId" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="SoLuong" Type="int" />
           <Property Name="IsTuMua" Type="bit" />
+          <Property Name="DonGia" Type="money" />
+          <Property Name="ThanhTien" Type="money" />
+          <Property Name="SoLuongDeNghi" Type="int" />
         </EntityType>
         <EntityType Name="QH_PhieuGhiTang_ThietBi">
           <Key>
@@ -363,6 +366,7 @@
           <Property Name="CreatedOnDate" Type="datetime" />
           <Property Name="UpdatedByUserId" Type="int" />
           <Property Name="UpdatedOnDate" Type="datetime" />
+          <Property Name="NgayLap" Type="datetime" />
         </EntityType>
         <EntityType Name="TB_PhieuGhiTang">
           <Key>
@@ -1001,6 +1005,9 @@
           <Property Name="ThietBiId" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="SoLuong" Type="Int32" />
           <Property Name="IsTuMua" Type="Boolean" />
+          <Property Name="DonGia" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ThanhTien" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="SoLuongDeNghi" Type="Int32" />
         </EntityType>
         <EntityType Name="QH_PhieuGhiTang_ThietBi">
           <Key>
@@ -1095,6 +1102,7 @@
           <Property Name="CreatedOnDate" Type="DateTime" Precision="3" />
           <Property Name="UpdatedByUserId" Type="Int32" />
           <Property Name="UpdatedOnDate" Type="DateTime" Precision="3" />
+          <Property Name="NgayLap" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="TB_PhieuGiamTB">
           <Key>
@@ -1770,6 +1778,9 @@
           <EntitySetMapping Name="QH_PhieuDenNghiMS_ThietBi">
             <EntityTypeMapping TypeName="Model.QH_PhieuDenNghiMS_ThietBi">
               <MappingFragment StoreEntitySet="QH_PhieuDenNghiMS_ThietBi">
+                <ScalarProperty Name="SoLuongDeNghi" ColumnName="SoLuongDeNghi" />
+                <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
+                <ScalarProperty Name="DonGia" ColumnName="DonGia" />
                 <ScalarProperty Name="PhieuDeNghiId" ColumnName="PhieuDeNghiId" />
                 <ScalarProperty Name="ThietBiId" ColumnName="ThietBiId" />
                 <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
@@ -1860,6 +1871,7 @@
           <EntitySetMapping Name="TB_PhieuDeNghiMuaSam">
             <EntityTypeMapping TypeName="Model.TB_PhieuDeNghiMuaSam">
               <MappingFragment StoreEntitySet="TB_PhieuDeNghiMuaSam">
+                <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
                 <ScalarProperty Name="PhieuDeNghiId" ColumnName="PhieuDeNghiId" />
                 <ScalarProperty Name="Ten" ColumnName="Ten" />
                 <ScalarProperty Name="NamHocId" ColumnName="NamHocId" />

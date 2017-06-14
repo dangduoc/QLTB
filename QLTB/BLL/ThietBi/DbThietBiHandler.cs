@@ -341,6 +341,29 @@ namespace QLTB.Handler
             }
         }
         #endregion
+        //
+        public int GetSoLuong(string ThietBiId)
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    List<int> lst = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetAll().Where(p => p.ThietBiId.Equals(ThietBiId)).Select(p => p.SoLuongCon).ToList();
+                    if (lst.Count == 0)
+                    {
+                        return 0;
+                    }
+                    else
+                    {
+                        return lst.Sum();
+                    }
 
+                }
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
     }
 }

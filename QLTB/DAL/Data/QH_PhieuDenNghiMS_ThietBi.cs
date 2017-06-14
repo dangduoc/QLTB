@@ -18,5 +18,8 @@ namespace QLTB.DAL.Data
         public string ThietBiId { get; set; }
         public Nullable<int> SoLuong { get; set; }
         public Nullable<bool> IsTuMua { get; set; }
+        public Nullable<decimal> DonGia { get; set; }
+        public Nullable<decimal> ThanhTien { get; set; }
+        public Nullable<int> SoLuongDeNghi { get; set; }
     }
 }
