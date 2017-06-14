@@ -10,12 +10,12 @@ namespace QLTB.Model
     {
         public string ThietBiId { get; set; }
         public string Ten { get; set; }
+        public int LoaiThietBiId { get; set; }
         public int DonViTinhId { get; set; }
     }
     public class ThietBiToiThieuModel:BaseThietBiToiThieuModel
     {
         public string DungChoLopHienThi { get; set; }
-        public int LoaiThietBiId { get; set; }
         public int MonHocId { get; set; }
         public string MoTa { get; set; }
         public short SoLuong { get; set; }
@@ -38,6 +38,15 @@ namespace QLTB.Model
         public string SoLuong { get; set; }
         public string DonViTinh { get; set; }
         public string MoTa { get; set; }
+    }
+    public class ThietBiTTDialogModel
+    {
+
+        public string ThietBiId { get; set; }
+        public string Ten { get; set; }
+    
+        public string LoaiThietBi { get; set; }
+       public int SoLuongCon { get; set; }
     }
     public class ThietBiTTCreateModel
     {

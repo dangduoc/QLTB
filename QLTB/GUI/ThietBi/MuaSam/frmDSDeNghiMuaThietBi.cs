@@ -15,6 +15,7 @@ namespace QLTB.GUI
 {
     public partial class frmDSDeNghiMuaThietBi : DevComponents.DotNetBar.Office2007Form
     {
+        private DbMuaSamTBHandler handler = new DbMuaSamTBHandler();
         public frmDSDeNghiMuaThietBi()
         {
             InitializeComponent();
@@ -179,15 +180,35 @@ namespace QLTB.GUI
         #endregion
         private void LoadForm()
         {
-            List<DeNghiMuaGridDisplayModel> list = new  List<DeNghiMuaGridDisplayModel>();
-            list.Add(new DeNghiMuaGridDisplayModel
+            ShowPage(1, 50);
+        }
+        private void ShowPage(int page, int pageSize)
+        {
+            var data = handler.GetAll(page, pageSize);
+            List<DeNghiMuaGridDisplayModel> list = data.data;
+            if (list.Count > 0)
             {
-                Ten = "Đề nghị mua thiết bị môn công nghệ năm 2016-2016",
-                NamHoc="2016-2016",
-                NgayLap="16/5/2017",
-                TrangThai="Chưa gửi"
-            });
+                loadData(list);
+                prevBtn.Enabled = data.PreviousPage;
+                prevBtn.Tag = page - 1;
+                nextBtn.Enabled = data.NextPage;
+                nextBtn.Tag = page + 1;
+                currentPage.Text = data.CurrentPage.ToString();
+                lbPaging.Text = "Trang " + currentPage.Text + "/" + data.Size;
+                lbTotalRecord.Text = "- Tổng số bản ghi: " + data.TotalRecord;
+            }
+        }
+        private void pageBtnClick(object sender, EventArgs e)
+        {
+            var btn = sender as LinkLabel;
+            int page = Convert.ToInt32(btn.Tag);
+            ShowPage(page, Convert.ToInt32(pageSize.SelectedValue.ToString()));
+            //ShowPage(page, 4);
+        }
+        private void loadData(List<DeNghiMuaGridDisplayModel> list)
+        {
             List<string> headers = new List<string>();
+            headers.Add("Số phiếu");
             headers.Add("Tên đề nghị");
             headers.Add("Năm học");
             headers.Add("Ngày lập");
@@ -203,7 +224,6 @@ namespace QLTB.GUI
             ADGVDanhSach.KeyPress += ADGVDanhSach_KeyPress;
             ADGVDanhSach.MouseClick += ADGVDanhSach_MouseClick;
         }
-
         private void frmDSDeNghiMuaThietBi_Load(object sender, EventArgs e)
         {
             LoadForm();
@@ -212,13 +232,24 @@ namespace QLTB.GUI
         private void btnThem_Click(object sender, EventArgs e)
         {
             frmPhieuMuaThietBi frm = new frmPhieuMuaThietBi();
-            frm.MdiParent = MdiParent;
-            frm.Show();
+            var owner = MdiParent as Form1;
+            owner.OpenFrmChild(frm);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnSuaDSTB_Click(object sender, EventArgs e)
+        {
+            var row = ADGVDanhSach.SelectedRows[0];
+            if (row != null)
+            {
+                frmPhieuMuaThietBi frm = new frmPhieuMuaThietBi(row.Cells["SoPhieu"].Value.ToString());
+                var owner = MdiParent as Form1;
+                owner.OpenFrmChild(frm);
+            }
         }
     }
 }

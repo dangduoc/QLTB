@@ -12,13 +12,17 @@ namespace QLTB.Model
         public string Ten { get; set; }
         public Nullable<int> NamHocId { get; set; }
         public Nullable<int> TrangThaiId { get; set; }
-        public string CreatedByUserId { get; set; }
+        public Nullable<System.DateTime> NgayLap { get; set; }
+        public List<ThietBiMuaGridDisplayModel> ThietBis { get; set; }
+        public Nullable<int> CreatedByUserId { get; set; }
         public Nullable<System.DateTime> CreatedOnDate { get; set; }
-        public string UpdatedByUserId { get; set; }
+        public Nullable<int> UpdatedByUserId { get; set; }
         public Nullable<System.DateTime> UpdatedOnDate { get; set; }
+        
     }
     public class DeNghiMuaGridDisplayModel
     {
+        public string SoPhieu { get; set; }
         public string Ten { get; set; }
         public string NamHoc { get; set; }
         public string NgayLap { get; set; }
@@ -34,6 +38,7 @@ namespace QLTB.Model
         public string SoLuongDeNghi { get; set; }
         public string DonGia { get; set; }
         public string ThanhTien { get; set; }
+        public bool isTuMua { get; set; }
     }
     public class ThietBiMuaSamModel
     {

@@ -153,6 +153,7 @@
     <Compile Include="BLL\ThietBi\KiemKe\KiemKeThietBiModel.cs" />
     <Compile Include="BLL\TaiKhoan\LoginHandler.cs" />
     <Compile Include="BLL\PhongHocBM\MuonTra\DbPhieuMuonPhongHandler.cs" />
+    <Compile Include="BLL\ThietBi\MuaSam\DbMuaSamTBHandler.cs" />
     <Compile Include="BLL\ThietBi\MuaSam\PhieuMuaSamTBModel.cs" />
     <Compile Include="BLL\ThietBi\PhieuMuon\DbPhieuMuonTBHandler.cs" />
     <Compile Include="BLL\ThietBi\PhieuTra\DbPhieuTraTBHandler.cs" />
@@ -389,6 +390,12 @@
     </Compile>
     <Compile Include="GUI\DialogBox\frmDialogTBSuaChua.Designer.cs">
       <DependentUpon>frmDialogTBSuaChua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\DialogBox\frmDialogTBToiThieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DialogBox\frmDialogTBToiThieu.Designer.cs">
+      <DependentUpon>frmDialogTBToiThieu.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\DialogBox\frmDialogTSGhiTang.cs">
       <SubType>Form</SubType>
@@ -711,6 +718,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DialogBox\frmDialogTBSuaChua.resx">
       <DependentUpon>frmDialogTBSuaChua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DialogBox\frmDialogTBToiThieu.resx">
+      <DependentUpon>frmDialogTBToiThieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DialogBox\frmDialogTSGhiTang.resx">
       <DependentUpon>frmDialogTSGhiTang.cs</DependentUpon>
