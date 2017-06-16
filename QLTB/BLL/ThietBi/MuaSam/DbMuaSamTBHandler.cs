@@ -21,14 +21,19 @@ namespace QLTB.Handler
                 {
                     var TotalRecord = unitOfWork.GetRepository<TB_PhieuDeNghiMuaSam>().GetAll().Count();
                     var data = unitOfWork.GetRepository<TB_PhieuDeNghiMuaSam>().GetAll().AsEnumerable()
-                                 .Select(p => new DeNghiMuaGridDisplayModel
-                                 {
-                                     SoPhieu = p.PhieuDeNghiId,
-                                     TrangThai = p.TrangThaiId == 0 ? "Chưa gửi" : "Đã gửi",
-                                     Ten = p.Ten,
-                                     NamHoc = p.Ten,
-                                     NgayLap = MyConvert.DateToString(p.NgayLap)
-                                 })
+                            .Join(unitOfWork.GetRepository<ThongTinNamHoc>().GetAll().AsEnumerable(),
+                            p => p.NamHocId,
+                            nh => nh.NamHocId,
+                            (p, nh) =>
+                                new DeNghiMuaGridDisplayModel
+                                {
+                                    SoPhieu = p.PhieuDeNghiId,
+                                    TrangThai = p.TrangThaiId == 0 ? "Chưa gửi" : "Đã gửi",
+                                    Ten = p.Ten,
+                                    NamHoc = nh.NamBatDau.ToString() + " - " + nh.NamKetThuc.ToString(),
+                                    NgayLap = MyConvert.DateToString(p.NgayLap)
+                                })
+
                                 .OrderBy(p => p.SoPhieu)
                                 .Skip(pageSize * (page - 1))
                                 .Take(pageSize)
@@ -168,7 +173,7 @@ namespace QLTB.Handler
                         #endregion
                         #region Cập nhật lại danh sách các thiết bị mới
                         foreach (var item in ds)
-                        {  
+                        {
                             unitOfWork.GetRepository<QH_PhieuDenNghiMS_ThietBi>().Add(new QH_PhieuDenNghiMS_ThietBi
                             {
                                 PhieuDeNghiId = model.PhieuDeNghiId,

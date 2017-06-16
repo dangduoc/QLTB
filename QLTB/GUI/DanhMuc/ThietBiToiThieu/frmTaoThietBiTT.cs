@@ -41,7 +41,7 @@ namespace QLTB.GUI
         private void loadForm()
         {
             //combobox
-            foreach(var item in layoutControl1.Controls.OfType<DevComponents.DotNetBar.Controls.ComboBoxEx>())
+            foreach (var item in layoutControl1.Controls.OfType<DevComponents.DotNetBar.Controls.ComboBoxEx>())
             {
                 item.DisplayMember = "value";
                 item.ValueMember = "key";
@@ -50,11 +50,11 @@ namespace QLTB.GUI
             //loai thiet bi
             cbbLoaiTB.DataSource = dshandler.LoaiThietBi.Select(p => new { key = p.Id, value = p.Ten }).ToList();
             //don vi tinh
-            cbbDVT.DataSource=new DbDanhSachHandler().GetDVT().Select(p => new { key = p.DonViTinhId, value = p.Ten }).ToList();
+            cbbDVT.DataSource = new DbDanhSachHandler().GetDVT().Select(p => new { key = p.DonViTinhId, value = p.Ten }).ToList();
             //mon hoc
-            cbbMonHoc.DataSource=new DbDanhSachHandler().GetMonHoc().Select(p => new { key = p.MonHocId, value = p.Ten }).ToList();
+            cbbMonHoc.DataSource = new DbDanhSachHandler().GetMonHoc().Select(p => new { key = p.MonHocId, value = p.Ten }).ToList();
             //dau muc thiet bi
-            cbbThuocDauMuc.DataSource= dshandler.DauMucThietBi.Select(p => new { key = p.Id, value = p.Ten }).ToList();
+            cbbThuocDauMuc.DataSource = dshandler.DauMucThietBi.Select(p => new { key = p.Id, value = p.Ten }).ToList();
             //
             if (ThietBi != null)
             {
@@ -81,66 +81,73 @@ namespace QLTB.GUI
         }
         private void saveData()
         {
-            ThietBiToiThieuModel ThietBiMoi = new ThietBiToiThieuModel
+            try
             {
-                ThietBiId=txtMaTB.Text,
-                Ten=txtTenTB.Text,
-                SoLuong= Convert.ToInt16(txtSoLuongTT.Text),
-                DauMucId = (int?)MyConvert.ChangeType(cbbThuocDauMuc.SelectedValue, typeof(int?)),
-                DonViTinhId=(int)cbbDVT.SelectedValue,
-                MonHocId=(int)cbbMonHoc.SelectedValue,
-                LoaiThietBiId=(int)cbbLoaiTB.SelectedValue,
-                MoTa=txtMoTa.Text,
-                IsDanhChoGV=cboxDanhChoGV.Checked,
-                IsDanhChoHS=cboxDanhChoHS.Checked,
-                IsThuocDMTT=cboxThuocDM.Checked
-            };
+                ThietBiToiThieuModel ThietBiMoi = new ThietBiToiThieuModel
+                {
+                    ThietBiId = txtMaTB.Text,
+                    Ten = txtTenTB.Text,
+                    SoLuong = Convert.ToInt16(txtSoLuongTT.Text),
+                    DauMucId = (int?)MyConvert.ChangeType(cbbThuocDauMuc.SelectedValue, typeof(int?)),
+                    DonViTinhId = (int)cbbDVT.SelectedValue,
+                    MonHocId = (int)cbbMonHoc.SelectedValue,
+                    LoaiThietBiId = (int)cbbLoaiTB.SelectedValue,
+                    MoTa = txtMoTa.Text,
+                    IsDanhChoGV = cboxDanhChoGV.Checked,
+                    IsDanhChoHS = cboxDanhChoHS.Checked,
+                    IsThuocDMTT = cboxThuocDM.Checked
+                };
 
-            foreach(var item in pnlDungChoLop.Controls.OfType<DevComponents.DotNetBar.Controls.CheckBoxX>())
-            {
-                if (item.Checked)
+                foreach (var item in pnlDungChoLop.Controls.OfType<DevComponents.DotNetBar.Controls.CheckBoxX>())
                 {
-                    ThietBiMoi.DungChoLopHienThi += item.Text+", ";
-                }
-            }
-            if (!string.IsNullOrEmpty(ThietBiMoi.DungChoLopHienThi))
-            {
-                ThietBiMoi.DungChoLopHienThi.Remove(ThietBiMoi.DungChoLopHienThi.Length - 2, 2);
-            }
-            if (ThietBi == null)
-            {
-                string message = "";
-                if (handler.CheckId(txtMaTB.Text, out message))
-                {
-                    int result = handler.Create(ThietBiMoi);
-                    if (result == 1)
+                    if (item.Checked)
                     {
-                        MessageBox.Show("Tạo thành công thiết bị", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ThietBiMoi.DungChoLopHienThi += item.Text + ", ";
+                    }
+                }
+                if (!string.IsNullOrEmpty(ThietBiMoi.DungChoLopHienThi))
+                {
+                    ThietBiMoi.DungChoLopHienThi.Remove(ThietBiMoi.DungChoLopHienThi.Length - 2, 2);
+                }
+                if (ThietBi == null)
+                {
+                    string message = "";
+                    if (handler.CheckId(txtMaTB.Text, out message))
+                    {
+                        int result = handler.Create(ThietBiMoi);
+                        if (result == 1)
+                        {
+                            MessageBox.Show("Tạo thành công thiết bị", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        
+                        }
+                        else
+                        {
+                            MessageBox.Show("Tạo thiết bị không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Tạo thiết bị không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                }
+                else
+                {
+                    int result = handler.Update(ThietBiMoi);
+                    if (result == 1)
+                    {
+                        MessageBox.Show("Cập nhật thông tin thiết bị thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cập nhật thông tin thiết bị không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                else
-                {
-                    MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                
             }
-            else
+            catch(Exception ex)
             {
-                int result=handler.Update(ThietBiMoi);
-                if (result == 1)
-                {
-                    MessageBox.Show("Cập nhật thông tin thiết bị thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Cập nhật thông tin thiết bị không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show("Đã xảy ra lỗi | Chi tiết: " + Environment.NewLine + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-           
         }
         private void buttonX2_Click(object sender, EventArgs e)
         {
@@ -150,6 +157,11 @@ namespace QLTB.GUI
         private void buttonX1_Click(object sender, EventArgs e)
         {
             saveData();
+            var owner = Owner.ActiveControl as frmKhaiBaoThietBi;
+            if (owner != null)
+            {
+                owner.Reload();
+            }
         }
 
         private void frmTaoThietBiTT_Load(object sender, EventArgs e)

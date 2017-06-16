@@ -59,7 +59,7 @@ namespace QLTB.GUI
         }
         private void loadData()
         {
-            
+
             #region Khai báo các control
             //Khai bao truong can nhap
             listValidate = new List<object>()
@@ -68,7 +68,7 @@ namespace QLTB.GUI
                 txtSoHieu,
                 cbbPhongBM,
                 txtNamSD,
-                
+
                 txtNamTheoDoi,
                 cbbNguonKinhPhi,
                 cbbDVT,
@@ -173,7 +173,7 @@ namespace QLTB.GUI
             {
                 ThietBiMoi.HanSD = dpickerHanSD.Value;
             }
-            if(dpickNgaySX.Value!=new DateTime(1, 1, 1))
+            if (dpickNgaySX.Value != new DateTime(1, 1, 1))
             {
                 ThietBiMoi.NgaySanXuat = dpickNgaySX.Value;
             }
@@ -333,11 +333,21 @@ namespace QLTB.GUI
             frmTaoThietBiTT frm = new frmTaoThietBiTT();
             frm.ShowDialog(this);
         }
-
+        public void Reload()
+        {
+            try
+            {
+                cbbMaThietBi.DataSource = new DbThietBiTTHandler().GetMaTB();          
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         private void btnAddPhongBM_Click(object sender, EventArgs e)
         {
-            frmTaoPhongBM frm = new frmTaoPhongBM();
-            frm.ShowDialog(this);
+            //frmTaoPhongBM frm = new frmTaoPhongBM();
+            //frm.ShowDialog(this);
         }
 
 

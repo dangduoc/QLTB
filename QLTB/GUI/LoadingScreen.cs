@@ -30,28 +30,38 @@ namespace QLTB.GUI
             DialogResult = DialogResult.OK;
             this.Close();
         }
+        private void InitApp()
+        {
+            GlobalVariable.SetHeThong();
+            GlobalVariable.InitDanhSach();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            progressBarX1.Visible = true;
-            string username = txtUserName.Text.Trim();
-            string password = txtPassWord.Text.Trim();
-            string message = "";
-            var handler = new LoginHandler();
-            var WorkingUser = handler.CheckLogin(username, password, out message);
-            if (WorkingUser != null)
+            if (ConnectiongStringBuilder.CheckConnection())
             {
-                //Set global
-                GlobalVariable.SetUser(WorkingUser);
-                //
-                Task.Delay(1000).ContinueWith(t => CloseForm());
-            }
-            else
-            {
-                MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                Close();
-            }
-            
+                if (!ConnectiongStringBuilder.CheckUserSaved())
+                {
+                    progressBarX1.Visible = true;
+                    string username = txtUserName.Text.Trim();
+                    string password = txtPassWord.Text.Trim();
+                    string message = "";
+                    var handler = new LoginHandler();
+                    var WorkingUser = handler.CheckLogin(username, password, out message);
+                    if (WorkingUser != null)
+                    {
+                        InitApp();
+                        //Set global
+                        GlobalVariable.SetUser(WorkingUser);
+                        //
+                        Task.Delay(1000).ContinueWith(t => CloseForm());
+                    }
+                    else
+                    {
+                        MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        Close();
+                    }
+                }
+            }     
         }
 
         private void textBoxX1_KeyPress(object sender, KeyPressEventArgs e)

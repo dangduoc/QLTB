@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>QLTB</RootNamespace>
-    <AssemblyName>QLTB</AssemblyName>
+    <AssemblyName>QLTB YODO</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -54,6 +54,10 @@
     <Reference Include="AdvancedDataGridView, Version=0.1.0.10, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\AdvancedDataGridView.dll</HintPath>
+    </Reference>
+    <Reference Include="DataGridViewGrouper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DataGridViewGrouper.dll</HintPath>
     </Reference>
     <Reference Include="DevComponents.DotNetBar.Layout, Version=12.8.0.6, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -415,6 +419,12 @@
     <Compile Include="GUI\DialogBox\Report\frmReportGhiTang.Designer.cs">
       <DependentUpon>frmReportGhiTang.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\DialogBox\Report\frmReportMuaSam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DialogBox\Report\frmReportMuaSam.Designer.cs">
+      <DependentUpon>frmReportMuaSam.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -731,6 +741,9 @@
     <EmbeddedResource Include="GUI\DialogBox\Report\frmReportGhiTang.resx">
       <DependentUpon>frmReportGhiTang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DialogBox\Report\frmReportMuaSam.resx">
+      <DependentUpon>frmReportMuaSam.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -871,6 +884,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="ReportTemps\DanhSachThietBi.rdlc" />
+    <EmbeddedResource Include="ReportTemps\DeNghiMuaSam.rdlc" />
     <EmbeddedResource Include="ReportTemps\GhiTangThietBi.rdlc" />
     <EntityDeploy Include="DAL\Data\Entities.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -881,6 +895,7 @@
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\QLTB.Report.Model.GhiTangReportModel.datasource" />
+    <None Include="Properties\DataSources\QLTB.Report.Model.ThietBiMuaReportModel.datasource" />
     <None Include="Properties\DataSources\QLTB.Report.Model.ThietBiReportModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
