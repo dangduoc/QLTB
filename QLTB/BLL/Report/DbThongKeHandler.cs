@@ -23,13 +23,13 @@ namespace QLTB.Handler
             {
                 using (var unitOfWork= new UnitOfWork())
                 {
-                    var lst=unitOfWork.GetRepository<QH_PhieuGhiTang_ThietBi>().GetAll()
+                    var lst = unitOfWork.GetRepository<QH_PhieuGhiTang_ThietBi>().GetAll()
                     .Join(unitOfWork.GetRepository<TB_PhieuGhiTang>().GetAll(),
                     phieu => phieu.PhieuGhiTangId,
                     qh => qh.PhieuGhiTangId,
                     (phieu, qh) => new
                     {
-                        NgayGhiTang = qh.NgayLap.ToString(),
+                        NgayGhiTang = qh.NgayLap,
                         PhieuGhiTangId = phieu.PhieuGhiTangId,
                         SoHieu = phieu.SoHieuId,
                         SoLuong = phieu.SoLuong,
@@ -93,7 +93,7 @@ namespace QLTB.Handler
                     }).Join(unitOfWork.GetRepository<DM_NguonKinhPhi>().GetAll(),
                     tb => tb.NguonKP,
                     ng => ng.NguonKinhPhiId,
-                    (tb, ng) => new GhiTangReportModel
+                    (tb, ng) => new
                     {
                         NgayGhiTang = tb.NgayGhiTang,
                         PhieuGhiTangId = tb.PhieuGhiTangId,
@@ -107,6 +107,22 @@ namespace QLTB.Handler
                         DonGia = tb.DonGia.ToString(),
                         ThanhTien = tb.ThanhTien.ToString(),
                         NguonKP = ng.Ten,
+                        GhiChu = tb.GhiChu
+                    }).AsEnumerable().
+                    Select(tb => new GhiTangReportModel
+                    {
+                        NgayGhiTang = MyConvert.DateToString(tb.NgayGhiTang),
+                        PhieuGhiTangId = tb.PhieuGhiTangId,
+                        ThietBiId = tb.ThietBiId,
+                        TenTB = tb.TenTB,
+                        SoHieu = tb.SoHieu,
+                        NuocSX = tb.NuocSX,
+                        PhongBM = tb.PhongBM,
+                        DVT = tb.DVT,
+                        SoLuong = tb.SoLuong.ToString(),
+                        DonGia = tb.DonGia.ToString(),
+                        ThanhTien = tb.ThanhTien.ToString(),
+                        NguonKP = tb.NguonKP,
                         GhiChu = tb.GhiChu
                     }).ToList();
 
@@ -218,6 +234,57 @@ namespace QLTB.Handler
                 {
                     return null;
                 }
+            }
+        }
+        /// <summary>
+        /// Danh sách thiết bị đề nghị mua sắm của phiếu đề nghị mua sắm
+        /// </summary>
+        /// <param name="id">mã phiếu</param>
+        /// <returns></returns>
+        public List<ThietBiMuaReportModel> ThietBiMuSam(string id)
+        {
+            try
+            {
+                using (var unitOfWork=new UnitOfWork())
+                {
+                    var ds = unitOfWork.GetRepository<QH_PhieuDenNghiMS_ThietBi>().GetAll()
+                           .Where(p => p.PhieuDeNghiId.Equals(id))
+                           .Join(unitOfWork.GetRepository<DM_ThietBiToiThieu>().GetAll(),
+                           pm => pm.ThietBiId,
+                           tb => tb.ThietBiId,
+                           (pm, tb) => new
+                           {
+                               Ma = tb.ThietBiId,
+                               Ten = tb.Ten,
+                               Loai = tb.LoaiThietBiId,
+                               SoLuongDangCo = pm.SoLuong,
+                               SoLuongDeNghi = pm.SoLuongDeNghi,
+                               DonGia = pm.DonGia,
+                               ThanhTien = pm.ThanhTien,
+                               IsTuMua=pm.IsTuMua
+                           }
+                           ).AsEnumerable()
+                           .Join(GlobalVariable.GetDS().LoaiThietBi,
+                           tb => tb.Loai,
+                           l => l.Id,
+                           (tb, l) => new ThietBiMuaReportModel
+                           {
+                               MaThietBi = tb.Ma,
+                               Ten = tb.Ten,
+                               DonGia = tb.DonGia.ToString(),
+                               SoLuongDangCo = tb.SoLuongDangCo.ToString(),
+                               SoLuongDeNghi = tb.SoLuongDeNghi.ToString(),
+                               LoaiTB = l.Ten,
+                               ThanhTien = tb.ThanhTien.ToString(),
+                               isTuMua = (bool)tb.IsTuMua
+                           })
+                           .ToList();
+                    return ds;
+                }
+            }
+            catch(Exception ex)
+            {
+                return null;
             }
         }
     }

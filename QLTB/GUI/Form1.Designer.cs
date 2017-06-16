@@ -455,7 +455,7 @@
             // toolStripStatusLabel7
             // 
             this.toolStripStatusLabel7.Name = "toolStripStatusLabel7";
-            this.toolStripStatusLabel7.Size = new System.Drawing.Size(145, 20);
+            this.toolStripStatusLabel7.Size = new System.Drawing.Size(19, 20);
             this.toolStripStatusLabel7.Spring = true;
             // 
             // toolStripStatusLabel1
@@ -468,8 +468,9 @@
             // toolStripStatusLabel2
             // 
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(258, 20);
-            this.toolStripStatusLabel2.Text = "Số 31, Tăng Thiết Giáp, Cổ Nhuế, Từ Liêm, Hà Nội";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(511, 20);
+            this.toolStripStatusLabel2.Text = "Tầng 2 - Số 519 Đường Nguyễn Hoàng Tôn, Phường Xuân Đỉnh, Quận Bắc Từ Liêm, Thành" +
+    " Phố Hà Nội";
             // 
             // toolStripStatusLabel5
             // 
@@ -493,7 +494,7 @@
             // toolStripStatusLabel6
             // 
             this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
-            this.toolStripStatusLabel6.Size = new System.Drawing.Size(145, 20);
+            this.toolStripStatusLabel6.Size = new System.Drawing.Size(19, 20);
             this.toolStripStatusLabel6.Spring = true;
             // 
             // ss

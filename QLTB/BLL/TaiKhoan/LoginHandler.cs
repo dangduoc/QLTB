@@ -13,28 +13,21 @@ namespace QLTB.Handler
 {
     public class LoginHandler
     {
-        public UserModel CheckLogin(string username,string password, out string message)
+        public UserModel CheckLogin(string username, string password, out string message)
         {
             try
             {
-                using (var unitOfWork= new UnitOfWork())
+                using (var unitOfWork = new UnitOfWork())
                 {
-                    var entity = unitOfWork.GetRepository<HT_User>().GetById(1);
-                    if (entity != null) {
-                        if (entity.PassWord.Equals(password))
-                        {
-                            message = "";
-                            return MyConvert.ConvertSameData<UserModel>(entity);
-                        }
-                        else
-                        {
-                            message = "Mật khẩu không đúng";
-                            return null;
-                        }
+                    var entity = unitOfWork.GetRepository<HT_User>().GetAll().Where(p => p.UserName.Equals(username, StringComparison.CurrentCultureIgnoreCase) && p.PassWord.Equals(password, StringComparison.CurrentCultureIgnoreCase)).FirstOrDefault();
+                    if (entity != null)
+                    {
+                        message = "";
+                        return MyConvert.ConvertSameData<UserModel>(entity);
                     }
                     else
                     {
-                        message = "Tài khoản không tồn tại";
+                        message = "Tài khoản hoặc mật khẩu không đúng!";
                         return null;
                     }
                 }
@@ -53,14 +46,14 @@ namespace QLTB.Handler
                 {
                     var entity = unitOfWork.GetRepository<HT_User>().GetById(Id);
                     if (entity != null)
-                    return MyConvert.ConvertSameData<UserModel>(entity);
+                        return MyConvert.ConvertSameData<UserModel>(entity);
                     return null;
-                   
+
                 }
             }
             catch (Exception ex)
             {
-               
+
                 return null;
             }
         }
@@ -79,9 +72,9 @@ namespace QLTB.Handler
         public void loadPermissions(TreeView menu)
         {
             int permissionKey = 0;
-            foreach(TreeNode item in menu.Nodes)
+            foreach (TreeNode item in menu.Nodes)
             {
-                
+
             }
         }
     }

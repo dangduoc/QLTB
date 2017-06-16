@@ -251,5 +251,23 @@ namespace QLTB.GUI
                 owner.OpenFrmChild(frm);
             }
         }
+
+        private void btnInDSTB_Click(object sender, EventArgs e)
+        {
+            var row = ADGVDanhSach.SelectedRows[0];
+            if (row != null)
+            {
+                var id = row.Cells["SoPhieu"].Value.ToString();
+                var namhoc = row.Cells["NamHoc"].Value.ToString();
+                var tenbaocao = row.Cells["Ten"].Value.ToString();
+                frmReportMuaSam frm = new frmReportMuaSam(id, namhoc, tenbaocao);
+                frm.ShowDialog(this);
+            }
+        }
+
+        private void btnNapDSTB_Click(object sender, EventArgs e)
+        {
+            ShowPage(1, 50);
+        }
     }
 }

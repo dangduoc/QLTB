@@ -30,7 +30,7 @@ namespace QLTB.GUI
         {
             InitializeComponent();
             Phieu = handler.GetById(id);
-
+            
             if (Phieu == null)
             {
                 MessageBox.Show("Thông tìm thấy đề nghị nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -59,7 +59,8 @@ namespace QLTB.GUI
             }
             else
             {
-                //txtSoPhieu.Text = handler.GenerateCode();
+                var nh = GlobalVariable.GetHeThong().NamHoc;
+                txtNamHoc.Text = nh.NamBatDau.ToString() + " - " + nh.NamKetThuc.ToString();
                 source.DataSource = MyConvert.ToDataTable<ThietBiMuaGridDisplayModel>(dsThietBi);
             }
 

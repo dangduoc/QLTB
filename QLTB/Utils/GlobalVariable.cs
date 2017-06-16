@@ -21,17 +21,6 @@ namespace QLTB.Utils
         }
         public static UserModel GetUser()
         {
-            WorkingUser = new UserModel
-            {
-                UserId = 1,
-                UserName = "admin",
-                PassWord = "123456",
-                Email = "dangduoc@outlook.com",
-                UserRoleId = 1,
-                PhoneNumber = "01638004227",
-                Name = "Đặng Minh Được",
-                Note = ""
-            };
             return WorkingUser;
         }
         public static void InitDanhSach()

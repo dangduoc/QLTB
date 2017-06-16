@@ -17,9 +17,9 @@ namespace QLTB.GUI
     {
         public Form1()
         {
-            //Thread t = new Thread(new ThreadStart(Loading));
-            //t.Start();
-            //Thread.Sleep(3000);
+            Thread t = new Thread(new ThreadStart(Loading));
+            t.Start();
+            Thread.Sleep(3000);
             #region Init
             InitializeComponent();
             //
@@ -62,11 +62,11 @@ namespace QLTB.GUI
             txtEndYear.Text = GlobalVariable.GetHeThong().NamHoc.NamKetThuc.ToString();
             //
             #endregion
-            // t.Abort();
+            t.Abort();
         }
         private void Loading()
         {
-           // Application.Run(new frmLogin());
+           Application.Run(new frmLogin());
         }
        
         private void BtnTaiKhoan_Click(object sender, EventArgs e)

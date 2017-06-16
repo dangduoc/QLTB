@@ -20,12 +20,12 @@ namespace QLTB.Handler
                 using (var unitOfWork = new UnitOfWork())
                 {
                     var TotalRecord = unitOfWork.GetRepository<TB_PhieuBaoHong>().GetAll().Where(p => p.IsDelete == false).Count();
-                    var data = unitOfWork.GetRepository<TB_PhieuBaoHong>().GetAll().Where(p => p.IsDelete == false)
+                    var data = unitOfWork.GetRepository<TB_PhieuBaoHong>().GetAll().Where(p => p.IsDelete == false).AsEnumerable()
                                     .Select(p => new PhieuBaoHongGridDisplayModel
                                     {
                                         PhieuBaoHongId = p.PhieuBaoHongId,
                                         NguoiLamHong = p.NguoiLamHong,
-                                        NgayLap = p.NgayLap.ToString(),
+                                        NgayLap = MyConvert.DateToString(p.NgayLap),
                                         GhiChu = p.GhiChu
                                     })
                                     .OrderBy(p => p.PhieuBaoHongId)

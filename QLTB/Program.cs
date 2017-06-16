@@ -23,7 +23,7 @@ namespace QLTB
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            frmLogin fLogin = new frmLogin();
+            LoadingScreen fLogin = new LoadingScreen();
             if (fLogin.ShowDialog() == DialogResult.OK)
             {
                 Application.Run(new Form1());

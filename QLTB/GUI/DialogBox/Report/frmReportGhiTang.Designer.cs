@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.GhiTangReportModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.GhiTangReportModelBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,10 +47,6 @@
             this.reportViewer1.Size = new System.Drawing.Size(721, 413);
             this.reportViewer1.TabIndex = 0;
             // 
-            // GhiTangReportModelBindingSource
-            // 
-           
-            // 
             // frmReportGhiTang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -58,6 +54,7 @@
             this.ClientSize = new System.Drawing.Size(721, 413);
             this.Controls.Add(this.reportViewer1);
             this.DoubleBuffered = true;
+            this.EnableGlass = false;
             this.Name = "frmReportGhiTang";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

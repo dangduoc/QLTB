@@ -316,6 +316,7 @@
             this.txtSoLuongTT.PreventEnterBeep = true;
             this.txtSoLuongTT.Size = new System.Drawing.Size(157, 23);
             this.txtSoLuongTT.TabIndex = 10;
+            this.txtSoLuongTT.Text = "0";
             // 
             // txtMoTa
             // 

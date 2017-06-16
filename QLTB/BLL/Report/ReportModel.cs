@@ -42,4 +42,15 @@ namespace QLTB.Report.Model
         public string ThanhTien { get; set; }
         public string GhiChu { get; set; }
     }
+    public class ThietBiMuaReportModel
+    {
+        public string MaThietBi { get; set; }
+        public string Ten { get; set; }
+        public string LoaiTB { get; set; }
+        public string SoLuongDangCo { get; set; }
+        public string SoLuongDeNghi { get; set; }
+        public string DonGia { get; set; }
+        public string ThanhTien { get; set; }
+        public bool isTuMua { get; set; }
+    }
 }
