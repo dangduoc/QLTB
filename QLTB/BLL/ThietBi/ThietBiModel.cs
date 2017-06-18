@@ -59,7 +59,8 @@ namespace QLTB.Model
         public string TrangThai { get; set; }
     }
 
-    public class BaseThietBiGridDisplayModel{
+    public class BaseThietBiGridDisplayModel
+    {
         public string ThietBiId { get; set; }
         public string SoHieu { get; set; }
         public string Ten { get; set; }
@@ -89,5 +90,5 @@ namespace QLTB.Model
         public string PhongHoc { get; set; }
         public string DonViTinh { get; set; }
     }
-    
+   
 }

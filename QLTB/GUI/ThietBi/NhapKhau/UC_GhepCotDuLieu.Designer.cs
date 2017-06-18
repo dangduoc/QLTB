@@ -1,4 +1,4 @@
-﻿namespace QLTB.GUI.ThietBi.NhapKhau
+﻿namespace QLTB.GUI
 {
     partial class UC_GhepCotDuLieu
     {
@@ -41,9 +41,6 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.STT = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
-            this.PhanMem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TepNguon = new DevComponents.DotNetBar.Controls.DataGridViewComboBoxExColumn();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
@@ -99,14 +96,9 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.STT,
-            this.PhanMem,
-            this.TepNguon});
             this.gridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridView.Location = new System.Drawing.Point(0, 0);
             this.gridView.Name = "gridView";
-            this.gridView.ReadOnly = true;
             this.gridView.RowHeadersVisible = false;
             this.gridView.Size = new System.Drawing.Size(906, 332);
             this.gridView.TabIndex = 0;
@@ -197,40 +189,6 @@
             this.label2.Text = "* Chú ý: Bạn bắt buộc phải ghép các cột trong tệp nguồn tương ứng với các cột đán" +
     "h dấu (*) phần cột dữ liệu phần mềm.";
             // 
-            // STT
-            // 
-            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.STT.FillWeight = 50F;
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 50;
-            this.STT.Name = "STT";
-            this.STT.ReadOnly = true;
-            this.STT.Width = 50;
-            // 
-            // PhanMem
-            // 
-            this.PhanMem.FillWeight = 111.4339F;
-            this.PhanMem.HeaderText = "Cột dữ liệu phần mềm";
-            this.PhanMem.Name = "PhanMem";
-            this.PhanMem.ReadOnly = true;
-            // 
-            // TepNguon
-            // 
-            this.TepNguon.DisplayMember = "Text";
-            this.TepNguon.DropDownHeight = 106;
-            this.TepNguon.DropDownWidth = 121;
-            this.TepNguon.FillWeight = 111.4339F;
-            this.TepNguon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TepNguon.HeaderText = "Cột trong tệp nguồn";
-            this.TepNguon.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.TepNguon.IntegralHeight = false;
-            this.TepNguon.ItemHeight = 15;
-            this.TepNguon.Name = "TepNguon";
-            this.TepNguon.ReadOnly = true;
-            this.TepNguon.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.TepNguon.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.TepNguon.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
             // UC_GhepCotDuLieu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -240,6 +198,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "UC_GhepCotDuLieu";
             this.Size = new System.Drawing.Size(906, 490);
+            this.Load += new System.EventHandler(this.UC_GhepCotDuLieu_Load);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
@@ -266,8 +225,5 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView gridView;
-        private DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PhanMem;
-        private DevComponents.DotNetBar.Controls.DataGridViewComboBoxExColumn TepNguon;
     }
 }
