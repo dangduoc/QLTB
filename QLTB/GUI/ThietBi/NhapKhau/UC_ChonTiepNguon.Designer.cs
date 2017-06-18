@@ -1,4 +1,4 @@
-﻿namespace QLTB.GUI.ThietBi.NhapKhau
+﻿namespace QLTB.GUI
 {
     partial class UC_ChonTiepNguon
     {
@@ -40,20 +40,19 @@
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.txtFileName = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.integerInput2 = new DevComponents.Editors.IntegerInput();
-            this.integerInput1 = new DevComponents.Editors.IntegerInput();
             this.layoutControlItem1 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
             this.layoutControlItem5 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
             this.layoutSpacerItem1 = new DevComponents.DotNetBar.Layout.LayoutSpacerItem();
-            this.layoutControlItem2 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
             this.layoutSpacerItem2 = new DevComponents.DotNetBar.Layout.LayoutSpacerItem();
             this.layoutControlItem3 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
             this.layoutControlItem4 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
+            this.comboBoxEx1 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.layoutControlItem2 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
             this.pnlHolder.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.integerInput2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.integerInput1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlHolder
@@ -143,7 +142,7 @@
             this.layoutControl1.Controls.Add(this.labelX1);
             this.layoutControl1.Controls.Add(this.txtFileName);
             this.layoutControl1.Controls.Add(this.integerInput2);
-            this.layoutControl1.Controls.Add(this.integerInput1);
+            this.layoutControl1.Controls.Add(this.comboBoxEx1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(70, 12);
             this.layoutControl1.Name = "layoutControl1";
@@ -153,9 +152,9 @@
             this.layoutControl1.RootGroup.Items.AddRange(new DevComponents.DotNetBar.Layout.LayoutItemBase[] {
             this.layoutControlItem1,
             this.layoutControlItem5,
-            this.layoutSpacerItem1,
-            this.layoutControlItem2,
             this.layoutSpacerItem2,
+            this.layoutControlItem2,
+            this.layoutSpacerItem1,
             this.layoutControlItem3,
             this.layoutControlItem4});
             this.layoutControl1.Size = new System.Drawing.Size(808, 115);
@@ -199,11 +198,11 @@
             // 
             this.txtFileName.Border.Class = "TextBoxBorder";
             this.txtFileName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtFileName.Location = new System.Drawing.Point(169, 4);
+            this.txtFileName.Location = new System.Drawing.Point(149, 4);
             this.txtFileName.Margin = new System.Windows.Forms.Padding(0);
             this.txtFileName.Name = "txtFileName";
             this.txtFileName.PreventEnterBeep = true;
-            this.txtFileName.Size = new System.Drawing.Size(177, 23);
+            this.txtFileName.Size = new System.Drawing.Size(197, 23);
             this.txtFileName.TabIndex = 0;
             // 
             // integerInput2
@@ -214,27 +213,12 @@
             this.integerInput2.BackgroundStyle.Class = "DateTimeInputBackground";
             this.integerInput2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.integerInput2.ButtonFreeText.Shortcut = DevComponents.DotNetBar.eShortcut.F2;
-            this.integerInput2.Location = new System.Drawing.Point(169, 81);
+            this.integerInput2.Location = new System.Drawing.Point(149, 81);
             this.integerInput2.Margin = new System.Windows.Forms.Padding(0);
             this.integerInput2.Name = "integerInput2";
             this.integerInput2.ShowUpDown = true;
-            this.integerInput2.Size = new System.Drawing.Size(107, 23);
+            this.integerInput2.Size = new System.Drawing.Size(127, 23);
             this.integerInput2.TabIndex = 5;
-            // 
-            // integerInput1
-            // 
-            // 
-            // 
-            // 
-            this.integerInput1.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.integerInput1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.integerInput1.ButtonFreeText.Shortcut = DevComponents.DotNetBar.eShortcut.F2;
-            this.integerInput1.Location = new System.Drawing.Point(169, 45);
-            this.integerInput1.Margin = new System.Windows.Forms.Padding(0);
-            this.integerInput1.Name = "integerInput1";
-            this.integerInput1.ShowUpDown = true;
-            this.integerInput1.Size = new System.Drawing.Size(107, 23);
-            this.integerInput1.TabIndex = 3;
             // 
             // layoutControlItem1
             // 
@@ -261,15 +245,6 @@
             this.layoutSpacerItem1.Width = 100;
             this.layoutSpacerItem1.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
             // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.integerInput1;
-            this.layoutControlItem2.Height = 35;
-            this.layoutControlItem2.MinSize = new System.Drawing.Size(74, 20);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Text = "Sheet nhập khẩu là sheet thứ";
-            this.layoutControlItem2.Width = 280;
-            // 
             // layoutSpacerItem2
             // 
             this.layoutSpacerItem2.Height = 36;
@@ -295,6 +270,28 @@
             this.layoutControlItem4.Width = 100;
             this.layoutControlItem4.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
             // 
+            // comboBoxEx1
+            // 
+            this.comboBoxEx1.DisplayMember = "Text";
+            this.comboBoxEx1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxEx1.FormattingEnabled = true;
+            this.comboBoxEx1.ItemHeight = 18;
+            this.comboBoxEx1.Location = new System.Drawing.Point(149, 45);
+            this.comboBoxEx1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.comboBoxEx1.Name = "comboBoxEx1";
+            this.comboBoxEx1.Size = new System.Drawing.Size(197, 24);
+            this.comboBoxEx1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.comboBoxEx1.TabIndex = 3;
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.comboBoxEx1;
+            this.layoutControlItem2.Height = 35;
+            this.layoutControlItem2.MinSize = new System.Drawing.Size(64, 18);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Text = "Sheet nhập khẩu";
+            this.layoutControlItem2.Width = 350;
+            // 
             // UC_ChonTiepNguon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -309,7 +306,6 @@
             this.panel2.ResumeLayout(false);
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.integerInput2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.integerInput1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -328,13 +324,13 @@
         private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.DotNetBar.Controls.TextBoxX txtFileName;
         private DevComponents.Editors.IntegerInput integerInput2;
-        private DevComponents.Editors.IntegerInput integerInput1;
         private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem1;
         private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem5;
         private DevComponents.DotNetBar.Layout.LayoutSpacerItem layoutSpacerItem1;
-        private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem2;
         private DevComponents.DotNetBar.Layout.LayoutSpacerItem layoutSpacerItem2;
         private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem3;
         private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem4;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx comboBoxEx1;
+        private DevComponents.DotNetBar.Layout.LayoutControlItem layoutControlItem2;
     }
 }

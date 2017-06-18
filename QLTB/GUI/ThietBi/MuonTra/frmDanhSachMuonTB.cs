@@ -1,4 +1,6 @@
-﻿using QLTB.Handler;
+﻿using DevComponents.DotNetBar.Schedule;
+using DevComponents.Schedule.Model;
+using QLTB.Handler;
 using QLTB.Model;
 using QLTB.Utils;
 using System;
@@ -19,6 +21,7 @@ namespace QLTB.GUI
         public frmDanhSachMuonTB()
         {
             InitializeComponent();
+            calendarView1.CalendarModel = new CalendarModel();
         }
         #region ADGV Setup
         private BindingSource source = new BindingSource();
@@ -240,6 +243,7 @@ namespace QLTB.GUI
             LoadForm();
             var parent = MdiParent as Form1;
             parent.pnlLoading.Visible = false;
+            dateTimeInput1.Value = DateTime.Today;
         }
         private void advancedDataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -333,6 +337,60 @@ namespace QLTB.GUI
         private void btnNapDSTB_Click(object sender, EventArgs e)
         {
             ShowPage(1, 50);
+        }
+
+        private void rdioWeek_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdioWeek.Checked)
+            {
+                if (pnlCalendar.Visible==false)
+                {
+                    pnlCalendar.Visible = true;
+                    pnlDS.Visible = false;
+                    pnlCalendar.Dock = DockStyle.Fill;
+                }
+               
+                calendarView1.SelectedView = eCalendarView.Week;
+            }
+        }
+
+        private void rdioMonth_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdioMonth.Checked)
+            {
+                if (pnlCalendar.Visible==false)
+                {
+                    pnlCalendar.Visible = true;
+                    pnlDS.Visible = false;
+                    pnlCalendar.Dock = DockStyle.Fill;
+                }
+                calendarView1.SelectedView = eCalendarView.Month;
+            }
+        }
+
+        private void rdioDanhSach_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdioDanhSach.Checked)
+            {
+                pnlDS.Visible = true;
+                pnlCalendar.Visible = false;
+                pnlDS.Dock = DockStyle.Fill;
+            }
+        }
+
+        private void dateTimeInput1_ValueChanged(object sender, EventArgs e)
+        {
+            calendarView1.ShowDate(dateTimeInput1.Value);
+        }
+
+        private void calendarView1_MouseUp(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void calendarView1_ItemDoubleClick(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }

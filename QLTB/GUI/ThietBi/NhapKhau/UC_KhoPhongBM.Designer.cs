@@ -1,4 +1,4 @@
-﻿namespace QLTB.GUI.ThietBi.NhapKhau
+﻿namespace QLTB.GUI
 {
     partial class UC_KhoPhongBM
     {
@@ -147,6 +147,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "UC_KhoPhongBM";
             this.Size = new System.Drawing.Size(903, 506);
+            this.Load += new System.EventHandler(this.UC_KhoPhongBM_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();

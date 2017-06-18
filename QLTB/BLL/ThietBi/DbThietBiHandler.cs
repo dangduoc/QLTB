@@ -365,5 +365,29 @@ namespace QLTB.Handler
                 return 0;
             }
         }
+        public bool Import(ThietBiImport model)
+        {
+            //ResponseImport result = new ResponseImport();
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    TB_ThongTinThietBi entity = MyConvert.ConvertSameData<TB_ThongTinThietBi>(model);
+                    unitOfWork.GetRepository<TB_ThongTinThietBi>().Add(entity);
+                    if (unitOfWork.Save() >= 1)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }

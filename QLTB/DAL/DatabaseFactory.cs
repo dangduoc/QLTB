@@ -18,15 +18,15 @@ namespace QLTB.DAL
         {
 
             dataContext = new Entities();
-            if (ConnectiongStringBuilder.CheckDataFile(out FileData))
-            {
-                dataContext.Database.Connection.ConnectionString = FileData;
-            }
-            else
-            {
-                MessageBox.Show("Không tìm thấy file data!" + Environment.NewLine + FileData, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Application.Exit();
-            }
+            //if (ConnectiongStringBuilder.CheckDataFile(out FileData))
+            //{
+            //    dataContext.Database.Connection.ConnectionString = FileData;
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Không tìm thấy file data!" + Environment.NewLine + FileData, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    Application.Exit();
+            //}
 
             // Get randomize Id
             var random = new Random(DateTime.Now.Millisecond);
