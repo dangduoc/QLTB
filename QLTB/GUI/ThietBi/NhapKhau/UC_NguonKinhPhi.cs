@@ -8,17 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QLTB.Model;
+
 namespace QLTB.GUI
 {
-    public partial class UC_KhoPhongBM : UserControl
+    public partial class UC_NguonKinhPhi : UserControl
     {
         private List<Columnmapping> desData, srcData;
         private DataTable _data;
-        public UC_KhoPhongBM(List<Columnmapping> desData, List<Columnmapping> srcData)
+        public UC_NguonKinhPhi(List<Columnmapping> desData, List<Columnmapping> srcData)
         {
             InitializeComponent();
-            this.srcData = srcData;
             this.desData = desData;
+            this.srcData = srcData;
         }
         private void loadGrid()
         {
@@ -28,14 +29,6 @@ namespace QLTB.GUI
             _data.Columns.Add(des);
             _data.Columns.Add(source);
         }
-
-        private void UC_KhoPhongBM_Load(object sender, EventArgs e)
-        {
-            loadGrid();
-            loadData();
-            
-        }
-
         private void loadData()
         {
             try
@@ -66,7 +59,7 @@ namespace QLTB.GUI
             }
         }
         private void gridview_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {  
+        {
             try
             {
                 if (e.ColumnIndex == gridView.Columns["PhanMem"].Index)
@@ -84,26 +77,15 @@ namespace QLTB.GUI
                 MessageBox.Show("Có lỗi xảy ra, vui lòng thử lại sau", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void checkExsist(string value,int rowIndex)
+        private void UC_NguonKinhPhi_Load(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in gridView.Rows)
-            {
-                if(row.Index!=rowIndex)
-                {
-                    if (row.Cells["PhanMem"].Value != null)
-                    {
-                        if (row.Cells["PhanMem"].Value.ToString().Equals(value))
-                        {
-                            row.Cells["PhanMem"].Value = "";
-                        }
-                    }
-                }
-            }
+            loadGrid();
+            loadData();
         }
+
         public List<Columnmapping> GetResult()
         {
             return srcData;
         }
     }
-
 }
