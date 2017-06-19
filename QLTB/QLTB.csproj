@@ -443,6 +443,18 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Interface\IFrmPhieu.cs" />
+    <Compile Include="GUI\ThietBi\NhapKhau\UC_NguonKinhPhi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBi\NhapKhau\UC_NguonKinhPhi.Designer.cs">
+      <DependentUpon>UC_NguonKinhPhi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThietBi\NhapKhau\UC_ThietBiGD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBi\NhapKhau\UC_ThietBiGD.Designer.cs">
+      <DependentUpon>UC_ThietBiGD.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ThongTinHeThong\frmDanhSachNamHoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -759,6 +771,12 @@
     <EmbeddedResource Include="GUI\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBi\NhapKhau\UC_NguonKinhPhi.resx">
+      <DependentUpon>UC_NguonKinhPhi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBi\NhapKhau\UC_ThietBiGD.resx">
+      <DependentUpon>UC_ThietBiGD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\ThongTinHeThong\frmDanhSachNamHoc.resx">
       <DependentUpon>frmDanhSachNamHoc.cs</DependentUpon>
     </EmbeddedResource>
@@ -906,6 +924,7 @@
       <DependentUpon>Entities.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\QLTB.Model.Columnmapping.datasource" />
     <None Include="Properties\DataSources\QLTB.Report.Model.GhiTangReportModel.datasource" />
     <None Include="Properties\DataSources\QLTB.Report.Model.ThietBiMuaReportModel.datasource" />
     <None Include="Properties\DataSources\QLTB.Report.Model.ThietBiReportModel.datasource" />

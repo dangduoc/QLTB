@@ -28,18 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.gridView = new System.Windows.Forms.DataGridView();
-            this.PhanMem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TepNguon = new DevComponents.DotNetBar.Controls.DataGridViewComboBoxExColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewComboBoxExColumn1 = new DevComponents.DotNetBar.Controls.DataGridViewComboBoxExColumn();
+            this.columnmappingBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.TepNguon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhanMem = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.columnmappingBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -79,39 +85,14 @@
             this.gridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.PhanMem,
-            this.TepNguon});
+            this.TepNguon,
+            this.PhanMem});
             this.gridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridView.Location = new System.Drawing.Point(0, 0);
             this.gridView.Name = "gridView";
-            this.gridView.ReadOnly = true;
             this.gridView.RowHeadersVisible = false;
             this.gridView.Size = new System.Drawing.Size(903, 447);
             this.gridView.TabIndex = 1;
-            // 
-            // PhanMem
-            // 
-            this.PhanMem.FillWeight = 127.1574F;
-            this.PhanMem.HeaderText = "Kho/ Phòng trong tệp nhập khẩu";
-            this.PhanMem.Name = "PhanMem";
-            this.PhanMem.ReadOnly = true;
-            // 
-            // TepNguon
-            // 
-            this.TepNguon.DisplayMember = "Text";
-            this.TepNguon.DropDownHeight = 106;
-            this.TepNguon.DropDownWidth = 121;
-            this.TepNguon.FillWeight = 127.1574F;
-            this.TepNguon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TepNguon.HeaderText = "Tên kho/ phòng sẽ nhập khẩu";
-            this.TepNguon.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.TepNguon.IntegralHeight = false;
-            this.TepNguon.ItemHeight = 15;
-            this.TepNguon.Name = "TepNguon";
-            this.TepNguon.ReadOnly = true;
-            this.TepNguon.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.TepNguon.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.TepNguon.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // panel2
             // 
@@ -138,6 +119,58 @@
             this.labelX1.TabIndex = 0;
             this.labelX1.Text = "Chú ý: Đây là chú ý, ghi chú ý gì đó ra đây";
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.FillWeight = 127.1574F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Kho/ Phòng trong tệp nhập khẩu";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 450;
+            // 
+            // dataGridViewComboBoxColumn1
+            // 
+            this.dataGridViewComboBoxColumn1.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.dataGridViewComboBoxColumn1.FillWeight = 127.1574F;
+            this.dataGridViewComboBoxColumn1.HeaderText = "Tên kho/ phòng sẽ nhập khẩu";
+            this.dataGridViewComboBoxColumn1.Name = "dataGridViewComboBoxColumn1";
+            this.dataGridViewComboBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewComboBoxColumn1.Width = 450;
+            // 
+            // dataGridViewComboBoxExColumn1
+            // 
+            this.dataGridViewComboBoxExColumn1.DisplayMember = "Ten";
+            this.dataGridViewComboBoxExColumn1.DropDownHeight = 106;
+            this.dataGridViewComboBoxExColumn1.DropDownWidth = 121;
+            this.dataGridViewComboBoxExColumn1.FillWeight = 127.1574F;
+            this.dataGridViewComboBoxExColumn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dataGridViewComboBoxExColumn1.HeaderText = "Tên kho/ phòng sẽ nhập khẩu";
+            this.dataGridViewComboBoxExColumn1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dataGridViewComboBoxExColumn1.IntegralHeight = false;
+            this.dataGridViewComboBoxExColumn1.ItemHeight = 15;
+            this.dataGridViewComboBoxExColumn1.Name = "dataGridViewComboBoxExColumn1";
+            this.dataGridViewComboBoxExColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewComboBoxExColumn1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dataGridViewComboBoxExColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewComboBoxExColumn1.ValueMember = "Index";
+            this.dataGridViewComboBoxExColumn1.Width = 450;
+            // 
+            // columnmappingBindingSource
+            // 
+            this.columnmappingBindingSource.DataSource = typeof(QLTB.Model.Columnmapping);
+            // 
+            // TepNguon
+            // 
+            this.TepNguon.FillWeight = 127.1574F;
+            this.TepNguon.HeaderText = "Kho/ Phòng trong tệp nhập khẩu";
+            this.TepNguon.Name = "TepNguon";
+            // 
+            // PhanMem
+            // 
+            this.PhanMem.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.PhanMem.FillWeight = 127.1574F;
+            this.PhanMem.HeaderText = "Tên kho/ phòng sẽ nhập khẩu";
+            this.PhanMem.Name = "PhanMem";
+            this.PhanMem.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
             // UC_KhoPhongBM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -152,6 +185,7 @@
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.columnmappingBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -162,8 +196,12 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView gridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PhanMem;
-        private DevComponents.DotNetBar.Controls.DataGridViewComboBoxExColumn TepNguon;
         private DevComponents.DotNetBar.LabelX labelX1;
+        private System.Windows.Forms.BindingSource columnmappingBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DevComponents.DotNetBar.Controls.DataGridViewComboBoxExColumn dataGridViewComboBoxExColumn1;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TepNguon;
+        private System.Windows.Forms.DataGridViewComboBoxColumn PhanMem;
     }
 }

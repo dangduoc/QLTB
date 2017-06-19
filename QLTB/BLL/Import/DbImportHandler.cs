@@ -15,7 +15,6 @@ namespace QLTB.Handler
         private string PATH = Path.GetDirectoryName(Application.ExecutablePath);
         public List<string> GetSourceHeader(string path, int headerIndex, int sheetIndex)
         {
-
             var headers = new List<string>();
             Excel.Application xlApp = new Excel.Application();
             Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(path);
@@ -27,7 +26,6 @@ namespace QLTB.Handler
             {
                 headers.Add(((Excel.Range)xlRange.Cells[headerIndex, j + 1]).Value.ToString());
             }
-            return headers;
             #region Clean
             //cleanup
             GC.Collect();
@@ -50,6 +48,243 @@ namespace QLTB.Handler
 
             Marshal.ReleaseComObject(xlApp);
             #endregion
+            return headers;
+        }
+        public List<string> GetKhoPhong(string path, int headerIndex, int sheetIndex)
+        {
+            var khophong = new List<string>();
+            Excel.Application xlApp = new Excel.Application();
+            Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(path);
+            Excel._Worksheet xlWorksheet = (Excel._Worksheet)xlWorkbook.Sheets[sheetIndex];
+            //get all worksheet
+            Excel.Range xlRange = xlWorksheet.UsedRange;
+            try
+            {
+
+                int colCount = xlRange.Columns.Count;
+                int rowCount = xlRange.Rows.Count;
+                int khophongindex = 4;
+                //get khophong column index
+                //for (int j = 0; j < colCount; j++)
+                //{
+                //    string tmp = ((Excel.Range)xlRange.Cells[headerIndex, j + 1]).Value.ToString();
+                //    if (tmp.Equals("Kho phòng",StringComparison.CurrentCultureIgnoreCase))
+                //    {
+                //        khophongindex = j+1;
+                //    }
+                //}
+                if (rowCount > 1)
+                {
+                    for (int i = headerIndex; i < rowCount; i++)
+                    {
+                        string tmp = ((Excel.Range)xlRange.Cells[i + 1, khophongindex]).Value.ToString();
+                        if (!string.IsNullOrEmpty(tmp))
+                        {
+                            if (!khophong.Contains(tmp))
+                                khophong.Add(tmp);
+                        }
+                    }
+                    return khophong;
+                }
+                return null;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                #region Clean
+                //cleanup
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+
+                //rule of thumb for releasing com objects:
+                //  never use two dots, all COM objects must be referenced and released individually
+                //  ex: [somthing].[something].[something] is bad
+
+                //release com objects to fully kill excel process from running in the background
+                Marshal.ReleaseComObject(xlRange);
+                Marshal.ReleaseComObject(xlWorksheet);
+
+                //close and release
+                xlWorkbook.Close(false);
+                Marshal.ReleaseComObject(xlWorkbook);
+
+                //quit and release
+                xlApp.Quit();
+
+                Marshal.ReleaseComObject(xlApp);
+                #endregion
+            }
+        }
+        /// <summary>
+        /// Lấy file info gồm 
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="headerIndex"></param>
+        /// <param name="sheetIndex"></param>
+        /// <returns></returns>
+        public Model.FileInfo GetFileInfo(string path, int headerIndex, int sheetIndex)
+        {
+            //khai bao bien
+            var khophong = new List<Columnmapping>();
+            var header = new List<Columnmapping>();
+            var nguonkp = new List<Columnmapping>();
+            var thietbichuaco = new List<string>();
+            var info = new Model.FileInfo();
+
+            //
+            Excel.Application xlApp = new Excel.Application();
+            Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(path);
+            Excel._Worksheet xlWorksheet = (Excel._Worksheet)xlWorkbook.Sheets[sheetIndex];
+            //get all worksheet
+            Excel.Range xlRange = xlWorksheet.UsedRange;
+            try
+            {
+                int colCount = xlRange.Columns.Count;
+                int rowCount = xlRange.Rows.Count;
+                #region Lấy kho phòng
+                int khophongindex = 4;
+                //get khophong column index
+                //for (int j = 0; j < colCount; j++)
+                //{
+                //    string tmp = ((Excel.Range)xlRange.Cells[headerIndex, j + 1]).Value.ToString();
+                //    if (tmp.Equals("Kho phòng",StringComparison.CurrentCultureIgnoreCase))
+                //    {
+                //        khophongindex = j+1;
+                //    }
+                //}
+                if (rowCount > 1)
+                {
+                    var lst = new List<string>();
+                    for (int i = headerIndex; i < rowCount; i++)
+                    {
+                        string tmp = ((Excel.Range)xlRange.Cells[i + 1, khophongindex]).Value.ToString();
+                        if (!string.IsNullOrEmpty(tmp))
+                        {
+                            if (!lst.Contains(tmp))
+                                lst.Add(tmp);
+                        }
+                    }
+                    if (lst.Count > 0)
+                    {
+                        int i = 1;
+                        foreach (var item in lst)
+                        {
+                            khophong.Add(new Columnmapping
+                            {
+                                Index = i++,
+                                Ten = item
+                            });
+                        }
+                    }
+                }
+                #endregion
+                #region Lấy header
+                var headers = new List<string>();
+                for (int j = 0; j < colCount; j++)
+                {
+                    headers.Add(((Excel.Range)xlRange.Cells[headerIndex, j + 1]).Value.ToString());
+                }
+                if (headers.Count > 0)
+                {
+                    int i = 1;
+                    foreach (var item in headers)
+                    {
+                        header.Add(new Columnmapping
+                        {
+                            Index = i++,
+                            Ten = item
+                        });
+                    }
+                }
+                #endregion
+                #region Lấy Nguồn kinh phí
+                int nguonkpindex = 8;
+                if (rowCount > 1)
+                {
+                    var lst = new List<string>();
+                    for (int i = headerIndex; i < rowCount; i++)
+                    {
+                        string tmp = ((Excel.Range)xlRange.Cells[i + 1, nguonkpindex]).Value.ToString();
+                        if (!string.IsNullOrEmpty(tmp))
+                        {
+                            if (!lst.Contains(tmp))
+                                lst.Add(tmp);
+                        }
+                    }
+                    if (lst.Count > 0)
+                    {
+                        int i = 1;
+                        foreach (var item in lst)
+                        {
+                            nguonkp.Add(new Columnmapping
+                            {
+                                Index = i++,
+                                Ten = item
+                            });
+                        }
+                    }
+                }
+                #endregion
+                #region Lấy thiết bị chưa có
+                var dstb = new DbThietBiTTHandler().GetMaTB();
+                int matbindex = 1;
+                if (rowCount > 1)
+                {
+                    var lst = new List<string>();
+                    for (int i = headerIndex; i < rowCount; i++)
+                    {
+                        string tmp = ((Excel.Range)xlRange.Cells[i + 1, matbindex]).Value.ToString();
+                        if (!string.IsNullOrEmpty(tmp))
+                        {
+                            tmp = tmp.ToUpper();
+                            if (!dstb.Contains(tmp))
+                                lst.Add(tmp);
+                        }
+                    }
+                    if (lst.Count > 0)
+                    {
+                        thietbichuaco = lst;
+                    }
+                }
+                #endregion
+                info.header = header;
+                info.khophong = khophong;
+                info.nguonkinhphi = nguonkp;
+                info.thietbichuaco = thietbichuaco;
+                return info;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                #region Clean
+                //cleanup
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+
+                //rule of thumb for releasing com objects:
+                //  never use two dots, all COM objects must be referenced and released individually
+                //  ex: [somthing].[something].[something] is bad
+
+                //release com objects to fully kill excel process from running in the background
+                Marshal.ReleaseComObject(xlRange);
+                Marshal.ReleaseComObject(xlWorksheet);
+
+                //close and release
+                xlWorkbook.Close(false);
+                Marshal.ReleaseComObject(xlWorkbook);
+
+                //quit and release
+                xlApp.Quit();
+
+                Marshal.ReleaseComObject(xlApp);
+                #endregion
+            }
         }
         public List<string> GetSheets(string path)
         {
@@ -57,82 +292,135 @@ namespace QLTB.Handler
             Excel.Application xlApp = new Excel.Application();
             Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(path);
             //get all worksheet
-            foreach (Excel.Worksheet item in xlWorkbook.Sheets)
+            try
             {
-                result.Add(item.Name);
+                foreach (Excel.Worksheet item in xlWorkbook.Sheets)
+                {
+                    result.Add(item.Name);
+                }
+                return result;
             }
-            return result;
-            #region Clean
-            //cleanup
-            GC.Collect();
-            GC.WaitForPendingFinalizers();
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                #region Clean
+                //cleanup
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
 
-            //rule of thumb for releasing com objects:
-            //  never use two dots, all COM objects must be referenced and released individually
-            //  ex: [somthing].[something].[something] is bad
+                //rule of thumb for releasing com objects:
+                //  never use two dots, all COM objects must be referenced and released individually
+                //  ex: [somthing].[something].[something] is bad
 
-            //release com objects to fully kill excel process from running in the background
+                //release com objects to fully kill excel process from running in the background
 
-            //close and release
-            xlWorkbook.Close(false);
-            Marshal.ReleaseComObject(xlWorkbook);
+                //close and release
+                Marshal.ReleaseComObject(xlWorkbook.Sheets);
+                xlWorkbook.Close(false);
+                Marshal.ReleaseComObject(xlWorkbook);
 
-            //quit and release
-            xlApp.Quit();
+                //quit and release
+                xlApp.Quit();
+                Marshal.ReleaseComObject(xlApp);
+                #endregion
+            }
 
-            Marshal.ReleaseComObject(xlApp);
-            #endregion
         }
-        public List<ThietBiImport> Read(string path, int headerRow, int sheet)
+        public List<ThietBiImport> Read(string path, int headerRow, int sheet, List<Columnmapping> header, List<Columnmapping> khophong, List<Columnmapping> nguonkp)
         {
             List<ThietBiImport> lst = new List<ThietBiImport>();
             Excel.Application xlApp = new Excel.Application();
             Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(path);
             Excel._Worksheet xlWorksheet = (Excel._Worksheet)xlWorkbook.Sheets[sheet];
-
             Excel.Range xlRange = xlWorksheet.UsedRange;
-            //
-            int rowCount = xlRange.Rows.Count;
-            int colCount = xlRange.Columns.Count;
-            //
-            for (int i = 1 + headerRow; i <= rowCount; i++)
+            try
             {
-                var tmp = new ThietBiImport();
-                for (int j = 0; j < colCount; j++)
+                int rowCount = xlRange.Rows.Count;
+                int colCount = xlRange.Columns.Count;
+                //
+                for (int i = 1 + headerRow; i <= rowCount; i++)
                 {
-                    Type type = typeof(ThietBiImport).GetProperties()[j].PropertyType;
+                    var tmp = new ThietBiImport();
+                    tmp.ThietBiId = (string)((Excel.Range)xlRange.Cells[i, header.Where(p => p.Ten.Equals("ThietBiId")).FirstOrDefault().Index]).Value.ToString();
+                    tmp.SoHieu = (string)((Excel.Range)xlRange.Cells[i, header.Where(p => p.Ten.Equals("SoHieu")).FirstOrDefault().Index]).Value.ToString();
+                    tmp.Ten = (string)((Excel.Range)xlRange.Cells[i, header.Where(p => p.Ten.Equals("Ten")).FirstOrDefault().Index]).Value.ToString();
+                    //phong hoc
+                    string tenphong = ((Excel.Range)xlRange.Cells[i, header.Where(p => p.Ten.Equals("PhongHocId")).FirstOrDefault().Index]).Value.ToString();
+                    tmp.PhongHocId = khophong.Where(p => p.Ten.Equals(tenphong)).FirstOrDefault().Index;
+                    //nguon kinh phi
+                    string tennguonkp = ((Excel.Range)xlRange.Cells[i, header.Where(p => p.Ten.Equals("NguonKinhPhiId")).FirstOrDefault().Index]).Value.ToString();
+                    tmp.NguonKinhPhiId = nguonkp.Where(p => p.Ten.Equals(tennguonkp)).FirstOrDefault().Index;
 
-                    var item = Convert.ChangeType(((Excel.Range)xlRange.Cells[i, j + 1]).Value.ToString(), type);
-                    if (item != null)
+                    //
+                    tmp.QuyCachSD = ((Excel.Range)xlRange.Cells[i, header.Where(p => p.Ten.Equals("QuyCachSD")).FirstOrDefault().Index]).Text;
+                    tmp.MonHocId = Convert.ToInt32(((Excel.Range)xlRange.Cells[i, header.Where(p => p.Ten.Equals("MonHocId")).FirstOrDefault().Index]).Value.ToString());
+                    tmp.DonViTinhId = Convert.ToInt32(((Excel.Range)xlRange.Cells[i, header.Where(p => p.Ten.Equals("DonViTinhId")).FirstOrDefault().Index]).Value.ToString());
+                    tmp.NuocSanXuat = ((Excel.Range)xlRange.Cells[i, header.Where(p => p.Ten.Equals("NuocSanXuat")).FirstOrDefault().Index]).Text;
+                    tmp.NamDuaVaoSD = Convert.ToInt32(((Excel.Range)xlRange.Cells[i, header.Where(p => p.Ten.Equals("NamDuaVaoSD")).FirstOrDefault().Index]).Value.ToString());
+                    tmp.NamTheoDoi = Convert.ToInt32(((Excel.Range)xlRange.Cells[i, header.Where(p => p.Ten.Equals("NamTheoDoi")).FirstOrDefault().Index]).Value.ToString());
+                    //han su dung
+                    DateTime hansd;
+                    if (DateTime.TryParse(((Excel.Range)xlRange.Cells[i, header.Where(p => p.Ten.Equals("HanSD")).FirstOrDefault().Index]).Value2, out hansd))
                     {
-                        type.GetProperties()[j].SetValue(tmp, item);
+                        tmp.HanSD = hansd;
                     }
+                    tmp.SoLuong = Convert.ToInt32(((Excel.Range)xlRange.Cells[i, header.Where(p => p.Ten.Equals("SoLuong")).FirstOrDefault().Index]).Value.ToString());
+                    //don gia
+                    double dongia;
+                    if (double.TryParse(((Excel.Range)xlRange.Cells[i, header.Where(p => p.Ten.Equals("DonGia")).FirstOrDefault().Index]).Text, out dongia))
+                    {
+                        tmp.DonGia = dongia;
+                    }
+                    //thanh tien
+                    decimal thanhtien;
+                    if (decimal.TryParse((xlRange.Cells[i, header.Where(p => p.Ten.Equals("ThanhTien")).FirstOrDefault().Index]).Text, out thanhtien))
+                    {
+                        tmp.ThanhTien = thanhtien;
+                    }
+                    //ngay san xuat
+                    DateTime ngaysx;
+                    if (DateTime.TryParse(((Excel.Range)xlRange.Cells[i, header.Where(p => p.Ten.Equals("NgaySanXuat")).FirstOrDefault().Index]).Value2, out ngaysx))
+                    {
+                        tmp.NgaySanXuat = ngaysx;
+                    }
+                    //
+                    tmp.GhiChu = ((Excel.Range)xlRange.Cells[i, header.Where(p => p.Ten.Equals("GhiChu")).FirstOrDefault().Index]).Text;
+                    lst.Add(tmp);
                 }
-                lst.Add(tmp);
+                return lst;
             }
-            #region Clean
-            //cleanup
-            GC.Collect();
-            GC.WaitForPendingFinalizers();
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                #region Clean
+                //cleanup
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
 
-            //rule of thumb for releasing com objects:
-            //  never use two dots, all COM objects must be referenced and released individually
-            //  ex: [somthing].[something].[something] is bad
+                //rule of thumb for releasing com objects:
+                //  never use two dots, all COM objects must be referenced and released individually
+                //  ex: [somthing].[something].[something] is bad
 
-            //release com objects to fully kill excel process from running in the background
-            Marshal.ReleaseComObject(xlRange);
-            Marshal.ReleaseComObject(xlWorksheet);
+                //release com objects to fully kill excel process from running in the background
+                Marshal.ReleaseComObject(xlRange);
 
-            //close and release
-            xlWorkbook.Close(false);
-            Marshal.ReleaseComObject(xlWorkbook);
+                Marshal.ReleaseComObject(xlWorksheet);
 
-            //quit and release
-            xlApp.Quit();
+                //close and release
+                xlWorkbook.Close(false);
+                Marshal.ReleaseComObject(xlWorkbook);
 
-            Marshal.ReleaseComObject(xlApp);
-            #endregion
-            return lst;
+                //quit and release
+                xlApp.Quit();
+                Marshal.ReleaseComObject(xlApp);
+                #endregion
+            }
         }
     }
 }
