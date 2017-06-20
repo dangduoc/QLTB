@@ -25,6 +25,93 @@ namespace QLTB.GUI
         }
         public void loadForm()
         {
+            var desHeader = new List<Columnmapping>();
+            #region Khởi tạo cột trong phần mềm
+            int i = 1;
+            desHeader.Add(new Columnmapping
+            {
+                Index = i++,
+                Ten = "Mã thiết bị"
+            });
+            desHeader.Add(new Columnmapping
+            {
+                Index = i++,
+                Ten = "Tên thiết bị"
+            });
+            desHeader.Add(new Columnmapping
+            {
+                Index = i++,
+                Ten = "Phòng học"
+            });
+            desHeader.Add(new Columnmapping
+            {
+                Index = i++,
+                Ten = "Quy cách sử dụng"
+            });
+            desHeader.Add(new Columnmapping
+            {
+                Index = i++,
+                Ten = "Nguồn kinh phí"
+            });
+            desHeader.Add(new Columnmapping
+            {
+                Index = i++,
+                Ten = "Năm đưa vào SD"
+            });
+            desHeader.Add(new Columnmapping
+            {
+                Index = i++,
+                Ten = "Ngày đưa vào SD"
+            });
+            desHeader.Add(new Columnmapping
+            {
+                Index = i++,
+                Ten = "Năm theo dõi"
+            });
+            desHeader.Add(new Columnmapping
+            {
+                Index = i++,
+                Ten = "Số lượng"
+            });
+            desHeader.Add(new Columnmapping
+            {
+                Index = i++,
+                Ten = "Đơn giá"
+            });
+            desHeader.Add(new Columnmapping
+            {
+                Index = i++,
+                Ten = "Thành tiền"
+            });
+            desHeader.Add(new Columnmapping
+            {
+                Index = i++,
+                Ten = "Nước sản xuất"
+            });
+            desHeader.Add(new Columnmapping
+            {
+                Index = i++,
+                Ten = "Ngày sản xuất"
+            });
+            desHeader.Add(new Columnmapping
+            {
+                Index = i++,
+                Ten = "Hạn sử dụng"
+            });
+            desHeader.Add(new Columnmapping
+            {
+                Index = i++,
+                Ten = "Ghi chú"
+            });
+            #endregion
+            //
+            int j = 1;
+            foreach(var item in Thietbis)
+            {
+                dstb.RemoveAll(p => p.ThietBiId.Equals(item, StringComparison.CurrentCultureIgnoreCase));
+                listView.Items.Add(j++ +"Mã thiết bị: "+item);
+            }
+            lbSoLuong.Text = Thietbis.Count.ToString();
             BindingSource source = new BindingSource();
             source.DataSource = dstb;
             DSTBDaCo.DataSource = source;

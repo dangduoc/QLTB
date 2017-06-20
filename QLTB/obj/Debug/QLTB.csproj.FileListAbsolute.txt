@@ -2,10 +2,11 @@ D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\SqlServerTypes\x64\msvcr100.dll
 D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\SqlServerTypes\x64\SqlServerSpatial110.dll
 D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\SqlServerTypes\x86\msvcr100.dll
 D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\SqlServerTypes\x86\SqlServerSpatial110.dll
-D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\QLTB.exe.config
-D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\QLTB.exe
-D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\QLTB.pdb
+D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\QLTB YODO.exe.config
+D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\QLTB YODO.exe
+D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\QLTB YODO.pdb
 D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\EntityFramework.SqlServerCompact.dll
+D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\EPPlus.dll
 D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\Microsoft.ReportViewer.Common.dll
 D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\Microsoft.ReportViewer.DataVisualization.DLL
 D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\Microsoft.ReportViewer.Design.DLL
@@ -18,8 +19,14 @@ D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\EnvDTE80.dll
 D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\stdole.dll
 D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\Microsoft.MSXML.dll
 D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\EntityFramework.SqlServerCompact.xml
+D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\EPPlus.xml
 D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\EnvDTE.xml
 D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\EnvDTE80.xml
+D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmTaoCanBoTB.resources
+D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmTaoGiaoVien.resources
+D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmTaoLopHoc.resources
+D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmThemLopHoc.resources
+D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmTaoMonHoc.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmTaoPhongBM.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmTaoThietBiTT.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmDialogDSTBHong.resources
@@ -27,9 +34,14 @@ D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmDialogDSThietBi.resour
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmDialogHCHetHan.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmDialogTBBaoHong.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmDialogTBSuaChua.resources
+D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmDialogTBToiThieu.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmDialogTSGhiTang.resources
+D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmReportDSThietBi.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmReportGhiTang.resources
+D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmReportMuaSam.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.Form1.resources
+D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.UC_NguonKinhPhi.resources
+D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.UC_ThietBiGD.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmDanhSachNamHoc.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmLogin.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmMain.resources
@@ -59,9 +71,9 @@ D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmKhaiBaoThietBi.resourc
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmGhiNhanTraTB.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmThietBiMuon.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmNhapKhauTB.resources
-D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.ThietBi.NhapKhau.UC_ChonTiepNguon.resources
-D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.ThietBi.NhapKhau.UC_GhepCotDuLieu.resources
-D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.ThietBi.NhapKhau.UC_KhoPhongBM.resources
+D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.UC_ChonTiepNguon.resources
+D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.UC_GhepCotDuLieu.resources
+D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.UC_KhoPhongBM.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmDSThietBiHongMat.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmPhieuBaoHong.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmChiTietSuaChuaTB.resources
@@ -76,6 +88,5 @@ D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.Properties.Resources.resource
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.csproj.GenerateResource.Cache
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\RdlCompile.cache
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\RdlCompile.compiled
-D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.exe
-D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.pdb
-D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.csprojResolveAssemblyReference.cache
+D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB YODO.exe
+D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB YODO.pdb

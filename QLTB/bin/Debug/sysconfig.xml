@@ -3,5 +3,5 @@
     <root>DataFolder</root>
     <data>Data\QLTB.sdf</data>
     <dotnetcheck>true</dotnetcheck>
-    <userid>1</userid>
+    <userid></userid>
 </Configuration>

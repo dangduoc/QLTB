@@ -59,27 +59,12 @@ namespace QLTB.GUI
                 desHeader.Add(new Columnmapping
                 {
                     Index = i++,
-                    Ten = "Số hiệu"
-                });
-                desHeader.Add(new Columnmapping
-                {
-                    Index = i++,
                     Ten = "Tên thiết bị"
                 });
                 desHeader.Add(new Columnmapping
                 {
                     Index = i++,
                     Ten = "Phòng học"
-                });
-                desHeader.Add(new Columnmapping
-                {
-                    Index = i++,
-                    Ten = "Môn học"
-                });
-                desHeader.Add(new Columnmapping
-                {
-                    Index = i++,
-                    Ten = "Đơn vị tính"
                 });
                 desHeader.Add(new Columnmapping
                 {
@@ -95,6 +80,11 @@ namespace QLTB.GUI
                 {
                     Index = i++,
                     Ten = "Năm đưa vào SD"
+                });
+                desHeader.Add(new Columnmapping
+                {
+                    Index = i++,
+                    Ten = "Ngày đưa vào SD"
                 });
                 desHeader.Add(new Columnmapping
                 {
@@ -148,27 +138,12 @@ namespace QLTB.GUI
                 headername.Add(new Columnmapping
                 {
                     Index = i++,
-                    Ten = "SoHieu"
-                });
-                headername.Add(new Columnmapping
-                {
-                    Index = i++,
                     Ten = "Ten"
                 });
                 headername.Add(new Columnmapping
                 {
                     Index = i++,
                     Ten = "PhongHocId"
-                });
-                headername.Add(new Columnmapping
-                {
-                    Index = i++,
-                    Ten = "MonHocId"
-                });
-                headername.Add(new Columnmapping
-                {
-                    Index = i++,
-                    Ten = "DonViTinhId"
                 });
                 headername.Add(new Columnmapping
                 {
@@ -184,6 +159,11 @@ namespace QLTB.GUI
                 {
                     Index = i++,
                     Ten = "NamDuaVaoSD"
+                });
+                headername.Add(new Columnmapping
+                {
+                    Index = i++,
+                    Ten = "NgayDuaVaoSD"
                 });
                 headername.Add(new Columnmapping
                 {

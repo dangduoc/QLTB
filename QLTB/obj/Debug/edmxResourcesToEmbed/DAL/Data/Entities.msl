@@ -1,23 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
-    <EntitySetMapping Name="DM_CanBoThietBi">
-      <EntityTypeMapping TypeName="Model.DM_CanBoThietBi">
-        <MappingFragment StoreEntitySet="DM_CanBoThietBi">
-          <ScalarProperty Name="CanBoThietBiId" ColumnName="CanBoThietBiId" />
-          <ScalarProperty Name="HoVaDem" ColumnName="HoVaDem" />
-          <ScalarProperty Name="Ten" ColumnName="Ten" />
-          <ScalarProperty Name="GioiTinhId" ColumnName="GioiTinhId" />
-          <ScalarProperty Name="PhuTrachId" ColumnName="PhuTrachId" />
-          <ScalarProperty Name="TrinhDoVanHoa" ColumnName="TrinhDoVanHoa" />
-          <ScalarProperty Name="ThoiGianBatDau" ColumnName="ThoiGianBatDau" />
-          <ScalarProperty Name="ThoiGianKetThuc" ColumnName="ThoiGianKetThuc" />
-          <ScalarProperty Name="IsCoTrinhDoNghiepVu" ColumnName="IsCoTrinhDoNghiepVu" />
-          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
-          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="DM_GiaoVien">
       <EntityTypeMapping TypeName="Model.DM_GiaoVien">
         <MappingFragment StoreEntitySet="DM_GiaoVien">
@@ -267,6 +250,9 @@
     <EntitySetMapping Name="QH_PhieuDenNghiMS_ThietBi">
       <EntityTypeMapping TypeName="Model.QH_PhieuDenNghiMS_ThietBi">
         <MappingFragment StoreEntitySet="QH_PhieuDenNghiMS_ThietBi">
+          <ScalarProperty Name="SoLuongDeNghi" ColumnName="SoLuongDeNghi" />
+          <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
+          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
           <ScalarProperty Name="PhieuDeNghiId" ColumnName="PhieuDeNghiId" />
           <ScalarProperty Name="ThietBiId" ColumnName="ThietBiId" />
           <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
@@ -286,6 +272,8 @@
     <EntitySetMapping Name="QH_PhieuGiamTB_ThietBi">
       <EntityTypeMapping TypeName="Model.QH_PhieuGiamTB_ThietBi">
         <MappingFragment StoreEntitySet="QH_PhieuGiamTB_ThietBi">
+          <ScalarProperty Name="LyDo" ColumnName="LyDo" />
+          <ScalarProperty Name="PhieuBaoHongId" ColumnName="PhieuBaoHongId" />
           <ScalarProperty Name="PhieuGiamTBId" ColumnName="PhieuGiamTBId" />
           <ScalarProperty Name="SoHieuTB" ColumnName="SoHieuTB" />
           <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
@@ -316,6 +304,8 @@
     <EntitySetMapping Name="QH_PhieuThanhLyTB_ThietBi">
       <EntityTypeMapping TypeName="Model.QH_PhieuThanhLyTB_ThietBi">
         <MappingFragment StoreEntitySet="QH_PhieuThanhLyTB_ThietBi">
+          <ScalarProperty Name="LyDo" ColumnName="LyDo" />
+          <ScalarProperty Name="PhieuBaoHongId" ColumnName="PhieuBaoHongId" />
           <ScalarProperty Name="PhieuThanhLyTBId" ColumnName="PhieuThanhLyTBId" />
           <ScalarProperty Name="SoHieuTB" ColumnName="SoHieuTB" />
           <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
@@ -353,6 +343,7 @@
     <EntitySetMapping Name="TB_PhieuDeNghiMuaSam">
       <EntityTypeMapping TypeName="Model.TB_PhieuDeNghiMuaSam">
         <MappingFragment StoreEntitySet="TB_PhieuDeNghiMuaSam">
+          <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
           <ScalarProperty Name="PhieuDeNghiId" ColumnName="PhieuDeNghiId" />
           <ScalarProperty Name="Ten" ColumnName="Ten" />
           <ScalarProperty Name="NamHocId" ColumnName="NamHocId" />
@@ -434,6 +425,7 @@
     <EntitySetMapping Name="TB_PhieuThanhLyTB">
       <EntityTypeMapping TypeName="Model.TB_PhieuThanhLyTB">
         <MappingFragment StoreEntitySet="TB_PhieuThanhLyTB">
+          <ScalarProperty Name="NgapLap" ColumnName="NgapLap" />
           <ScalarProperty Name="PhieuThanhLyTBId" ColumnName="PhieuThanhLyTBId" />
           <ScalarProperty Name="DiaDiem" ColumnName="DiaDiem" />
           <ScalarProperty Name="HoiDongThanhLy" ColumnName="HoiDongThanhLy" />
@@ -537,6 +529,51 @@
           <ScalarProperty Name="ChungTuLienQuan" ColumnName="ChungTuLienQuan" />
           <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
           <ScalarProperty Name="PhieuGhiTangId" ColumnName="PhieuGhiTangId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_CanBoThietBi">
+      <EntityTypeMapping TypeName="Model.DM_CanBoThietBi">
+        <MappingFragment StoreEntitySet="DM_CanBoThietBi">
+          <ScalarProperty Name="ThoiGianKetThuc" ColumnName="ThoiGianKetThuc" />
+          <ScalarProperty Name="ThoiGianBatDau" ColumnName="ThoiGianBatDau" />
+          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+          <ScalarProperty Name="IsCoTrinhDoNghiepVu" ColumnName="IsCoTrinhDoNghiepVu" />
+          <ScalarProperty Name="TrinhDoVanHoa" ColumnName="TrinhDoVanHoa" />
+          <ScalarProperty Name="PhuTrachId" ColumnName="PhuTrachId" />
+          <ScalarProperty Name="GioiTinhId" ColumnName="GioiTinhId" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="HoVaDem" ColumnName="HoVaDem" />
+          <ScalarProperty Name="CanBoThietBiId" ColumnName="CanBoThietBiId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QH_PhieuSuaTB_ThietBi">
+      <EntityTypeMapping TypeName="Model.QH_PhieuSuaTB_ThietBi">
+        <MappingFragment StoreEntitySet="QH_PhieuSuaTB_ThietBi">
+          <ScalarProperty Name="TinhTrangHong" ColumnName="TinhTrangHong" />
+          <ScalarProperty Name="PhieuBaoHongId" ColumnName="PhieuBaoHongId" />
+          <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
+          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+          <ScalarProperty Name="GiaTri" ColumnName="GiaTri" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="SoHieu" ColumnName="SoHieu" />
+          <ScalarProperty Name="PhieuSuaTBId" ColumnName="PhieuSuaTBId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_PhieuSuaTB">
+      <EntityTypeMapping TypeName="Model.TB_PhieuSuaTB">
+        <MappingFragment StoreEntitySet="TB_PhieuSuaTB">
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="UpdatedOnDate" ColumnName="UpdatedOnDate" />
+          <ScalarProperty Name="CreatedOnDate" ColumnName="CreatedOnDate" />
+          <ScalarProperty Name="UpdatedByUserId" ColumnName="UpdatedByUserId" />
+          <ScalarProperty Name="CreatedByUserId" ColumnName="CreatedByUserId" />
+          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+          <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
+          <ScalarProperty Name="PhieuSuaTBId" ColumnName="PhieuSuaTBId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
