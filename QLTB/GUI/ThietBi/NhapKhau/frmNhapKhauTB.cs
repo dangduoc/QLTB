@@ -19,9 +19,11 @@ namespace QLTB.GUI
         private UC_KhoPhongBM KhoPhong;
         private UC_NguonKinhPhi NguonKP;
         private UC_ThietBiGD ThietBiGD;
+        private UC_ThucHienImport KetThuc;
         private List<Columnmapping> Cot;
         private List<Columnmapping> PhongHoc;
         private List<Columnmapping> NguonKp;
+        private List<ThietBiImport> dsthietbi;
         private bool firstLoad = true;
         public frmNhapKhauTB()
         {
@@ -32,11 +34,25 @@ namespace QLTB.GUI
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            var btn = sender as Button;
+            //int btnStep = Convert.ToInt32(btn.Tag);
+            //switch (btn.Name)
+            //{
+            //    case "btnStep1":
+            //        {
+            //            break;
+            //        }
+            //    case "btnStep2": { break; }
+            //    case "btnStep3": { break; }
+            //    case "btnStep4": { break; }
+            //    case "btnStep5": { break; }
+            //    case "btnStep6": { break; }
+            //    default: { break; }
+            //}
             foreach (Button item in toolmenuTB.Controls.OfType<Button>())
             {
                 item.BackColor = Color.Transparent;
             }
-            Button btn = sender as Button;
             btn.BackColor = Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
         }
         #region Perform steps
@@ -300,8 +316,37 @@ namespace QLTB.GUI
         /// </summary>
         public void PerformFifthStep()
         {
-
-
+            this.Opacity = 50;
+            Cursor = Cursors.WaitCursor;
+            dsthietbi = ThietBiGD.GetResult();
+            int thanhcong = 0;
+            var dsfailed = new List<FailImport>();
+            if (dsthietbi.Count > 0)
+            {
+                string message = "";
+                foreach (var item in dsthietbi)
+                {
+                    if (!new DbImportHandler().Import(item, out message))
+                    {
+                        dsfailed.Add(new FailImport
+                        {
+                            Id = item.ThietBiId,
+                            Message = message
+                        });
+                    }
+                    else
+                    {
+                        thanhcong++;
+                    }
+                }
+            }
+            Cursor = Cursors.Default;
+            this.Opacity = 100;
+            KetThuc = new UC_ThucHienImport(thanhcong, dsfailed);
+            NextStep(KetThuc);
+            step++;
+            btnBack.Visible = true;
+            btnNext.Visible = false;
         }
         #endregion
         private void NextStep(UserControl u)
@@ -321,33 +366,41 @@ namespace QLTB.GUI
                 case 1:
                     {
                         PerformFirstStep();
+                        btnStep2.PerformClick();
                         break;
                     }
-                case 2: { PerformSecondStep(); break; }
-                case 3: { PerformThirdStep(); break; }
-                case 4: { PerformFourthStep(); break; }
-                case 5: { PerformFifthStep(); break; }
+                case 2: { PerformSecondStep(); btnStep3.PerformClick(); break; }
+                case 3: { PerformThirdStep(); btnStep4.PerformClick(); break; }
+                case 4: { PerformFourthStep(); btnStep5.PerformClick(); break; }
+                case 5: { PerformFifthStep(); btnStep6.PerformClick(); break; }
                 default: { MessageBox.Show("Đang xây dựng tiếp"); break; }
             }
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            //if (step > 1)
-            //{
-            //    switch (step)
-            //    {
-            //        case 2:
-            //            { NextStep(firstStep); step--; btnBack.Visible = false; break; }
-            //        case 3: { NextStep(secondtStep); step--; btnBack.Visible = true; break; }
-            //        default: { MessageBox.Show("Đang xây dựng tiếp"); break; }
-            //    }
-            //}
+            if (step > 1)
+            {
+                switch (step)
+                {
+                    case 2:
+                        { NextStep(ChonTiepNguon); step--; btnBack.Visible = false; btnStep1.PerformClick(); break; }
+                    case 3: { NextStep(GhepCot); step--; btnBack.Visible = true; btnStep2.PerformClick(); break; }
+                    case 4: { NextStep(KhoPhong); step--; btnBack.Visible = true; btnStep3.PerformClick(); break; }
+                    case 5: { NextStep(NguonKP); step--; btnBack.Visible = true; btnStep4.PerformClick(); break; }
+                    case 6: { NextStep(ThietBiGD); step--; btnBack.Visible = true; btnStep5.PerformClick(); break; }
+                    default: { MessageBox.Show("Đang xây dựng tiếp"); break; }
+                }
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            Close();
+            DialogResult dr = MessageBox.Show("Hủy nhập khẩu thiết bị?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                Close();
+            }
         }
     }
 }

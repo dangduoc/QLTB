@@ -442,6 +442,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Interface\IFrmPhieu.cs" />
+    <Compile Include="GUI\ThietBi\NhapKhau\frmDialogError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBi\NhapKhau\frmDialogError.Designer.cs">
+      <DependentUpon>frmDialogError.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ThietBi\NhapKhau\UC_NguonKinhPhi.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -453,6 +459,12 @@
     </Compile>
     <Compile Include="GUI\ThietBi\NhapKhau\UC_ThietBiGD.Designer.cs">
       <DependentUpon>UC_ThietBiGD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThietBi\NhapKhau\UC_ThucHienImport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBi\NhapKhau\UC_ThucHienImport.Designer.cs">
+      <DependentUpon>UC_ThucHienImport.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\ThongTinHeThong\frmDanhSachNamHoc.cs">
       <SubType>Form</SubType>
@@ -770,11 +782,17 @@
     <EmbeddedResource Include="GUI\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBi\NhapKhau\frmDialogError.resx">
+      <DependentUpon>frmDialogError.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\ThietBi\NhapKhau\UC_NguonKinhPhi.resx">
       <DependentUpon>UC_NguonKinhPhi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ThietBi\NhapKhau\UC_ThietBiGD.resx">
       <DependentUpon>UC_ThietBiGD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBi\NhapKhau\UC_ThucHienImport.resx">
+      <DependentUpon>UC_ThucHienImport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ThongTinHeThong\frmDanhSachNamHoc.resx">
       <DependentUpon>frmDanhSachNamHoc.cs</DependentUpon>

@@ -30,7 +30,6 @@
         {
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.toolmenuTB = new DevComponents.DotNetBar.PanelEx();
-            this.btnStep7 = new System.Windows.Forms.Button();
             this.btnStep6 = new System.Windows.Forms.Button();
             this.btnStep5 = new System.Windows.Forms.Button();
             this.btnStep4 = new System.Windows.Forms.Button();
@@ -49,11 +48,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.expandableSplitter1 = new DevComponents.DotNetBar.ExpandableSplitter();
             this.pnlContainer = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panelEx1.SuspendLayout();
             this.toolmenuTB.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.pnlContainer.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelEx1
@@ -79,7 +80,6 @@
             // 
             this.toolmenuTB.CanvasColor = System.Drawing.SystemColors.Control;
             this.toolmenuTB.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.toolmenuTB.Controls.Add(this.btnStep7);
             this.toolmenuTB.Controls.Add(this.btnStep6);
             this.toolmenuTB.Controls.Add(this.btnStep5);
             this.toolmenuTB.Controls.Add(this.btnStep4);
@@ -99,24 +99,6 @@
             this.toolmenuTB.Style.GradientAngle = 90;
             this.toolmenuTB.TabIndex = 21;
             // 
-            // btnStep7
-            // 
-            this.btnStep7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnStep7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnStep7.FlatAppearance.BorderSize = 0;
-            this.btnStep7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
-            this.btnStep7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
-            this.btnStep7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStep7.Location = new System.Drawing.Point(0, 210);
-            this.btnStep7.Name = "btnStep7";
-            this.btnStep7.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnStep7.Size = new System.Drawing.Size(201, 35);
-            this.btnStep7.TabIndex = 6;
-            this.btnStep7.Text = "7, Nhập khẩu dữ liệu";
-            this.btnStep7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStep7.UseVisualStyleBackColor = true;
-            this.btnStep7.Click += new System.EventHandler(this.button1_Click);
-            // 
             // btnStep6
             // 
             this.btnStep6.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -129,8 +111,9 @@
             this.btnStep6.Name = "btnStep6";
             this.btnStep6.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnStep6.Size = new System.Drawing.Size(201, 35);
-            this.btnStep6.TabIndex = 5;
-            this.btnStep6.Text = "6, Kiểm tra dữ liệu";
+            this.btnStep6.TabIndex = 6;
+            this.btnStep6.Tag = "6";
+            this.btnStep6.Text = "6, Nhập khẩu dữ liệu";
             this.btnStep6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStep6.UseVisualStyleBackColor = true;
             this.btnStep6.Click += new System.EventHandler(this.button1_Click);
@@ -148,7 +131,8 @@
             this.btnStep5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnStep5.Size = new System.Drawing.Size(201, 35);
             this.btnStep5.TabIndex = 4;
-            this.btnStep5.Text = "5, Nguồn kinh phí";
+            this.btnStep5.Tag = "5";
+            this.btnStep5.Text = "5, Thiết bị giáo dục";
             this.btnStep5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStep5.UseVisualStyleBackColor = true;
             this.btnStep5.Click += new System.EventHandler(this.button1_Click);
@@ -166,7 +150,8 @@
             this.btnStep4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnStep4.Size = new System.Drawing.Size(201, 35);
             this.btnStep4.TabIndex = 3;
-            this.btnStep4.Text = "4, Thiết bị giáo dục";
+            this.btnStep4.Tag = "4";
+            this.btnStep4.Text = "4, Nguồn kinh phí";
             this.btnStep4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStep4.UseVisualStyleBackColor = true;
             this.btnStep4.Click += new System.EventHandler(this.button1_Click);
@@ -184,6 +169,7 @@
             this.btnStep3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnStep3.Size = new System.Drawing.Size(201, 35);
             this.btnStep3.TabIndex = 2;
+            this.btnStep3.Tag = "3";
             this.btnStep3.Text = "3, Kho/ Phòng bộ môn";
             this.btnStep3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStep3.UseVisualStyleBackColor = true;
@@ -202,6 +188,7 @@
             this.btnStep2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnStep2.Size = new System.Drawing.Size(201, 35);
             this.btnStep2.TabIndex = 1;
+            this.btnStep2.Tag = "2";
             this.btnStep2.Text = "2, Ghép cột dữ liệu";
             this.btnStep2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStep2.UseVisualStyleBackColor = true;
@@ -221,7 +208,7 @@
             this.btnStep1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnStep1.Size = new System.Drawing.Size(201, 35);
             this.btnStep1.TabIndex = 0;
-            this.btnStep1.Tag = "frmDanhSachThietBi";
+            this.btnStep1.Tag = "1";
             this.btnStep1.Text = "1, Chọn tệp nguồn";
             this.btnStep1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStep1.UseVisualStyleBackColor = false;
@@ -249,10 +236,8 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.btnBack);
+            this.panel4.Controls.Add(this.flowLayoutPanel1);
             this.panel4.Controls.Add(this.btnHelp);
-            this.panel4.Controls.Add(this.btnNext);
-            this.panel4.Controls.Add(this.btnCancel);
             this.panel4.Controls.Add(this.line3);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(0, 458);
@@ -267,12 +252,12 @@
             this.btnBack.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBack.Image = global::QLTB.Properties.Resources.back16;
-            this.btnBack.Location = new System.Drawing.Point(542, 16);
+            this.btnBack.Location = new System.Drawing.Point(320, 8);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(88, 23);
             this.btnBack.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2013;
             this.btnBack.TabIndex = 4;
-            this.btnBack.Text = "Tiếp theo";
+            this.btnBack.Text = "Quay lại";
             this.btnBack.Visible = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
@@ -298,7 +283,7 @@
             this.btnNext.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnNext.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNext.Image = global::QLTB.Properties.Resources.forward;
-            this.btnNext.Location = new System.Drawing.Point(636, 16);
+            this.btnNext.Location = new System.Drawing.Point(414, 8);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(88, 23);
             this.btnNext.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2013;
@@ -313,7 +298,7 @@
             this.btnCancel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.Image = global::QLTB.Properties.Resources.b_drop;
-            this.btnCancel.Location = new System.Drawing.Point(731, 16);
+            this.btnCancel.Location = new System.Drawing.Point(508, 8);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2013;
@@ -352,28 +337,28 @@
             // 
             // expandableSplitter1
             // 
-            this.expandableSplitter1.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(108)))), ((int)(((byte)(122)))));
+            this.expandableSplitter1.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(147)))), ((int)(((byte)(207)))));
             this.expandableSplitter1.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
             this.expandableSplitter1.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.expandableSplitter1.ExpandFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(108)))), ((int)(((byte)(122)))));
+            this.expandableSplitter1.ExpandFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(147)))), ((int)(((byte)(207)))));
             this.expandableSplitter1.ExpandFillColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.expandableSplitter1.ExpandLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(57)))), ((int)(((byte)(120)))));
+            this.expandableSplitter1.ExpandLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.expandableSplitter1.ExpandLineColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
-            this.expandableSplitter1.GripDarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(57)))), ((int)(((byte)(120)))));
+            this.expandableSplitter1.GripDarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.expandableSplitter1.GripDarkColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
-            this.expandableSplitter1.GripLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(232)))), ((int)(((byte)(246)))));
+            this.expandableSplitter1.GripLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
             this.expandableSplitter1.GripLightColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.expandableSplitter1.HotBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(200)))), ((int)(((byte)(103)))));
-            this.expandableSplitter1.HotBackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(226)))), ((int)(((byte)(135)))));
+            this.expandableSplitter1.HotBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(151)))), ((int)(((byte)(61)))));
+            this.expandableSplitter1.HotBackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(184)))), ((int)(((byte)(94)))));
             this.expandableSplitter1.HotBackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemPressedBackground2;
             this.expandableSplitter1.HotBackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemPressedBackground;
-            this.expandableSplitter1.HotExpandFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(108)))), ((int)(((byte)(122)))));
+            this.expandableSplitter1.HotExpandFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(147)))), ((int)(((byte)(207)))));
             this.expandableSplitter1.HotExpandFillColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.expandableSplitter1.HotExpandLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(57)))), ((int)(((byte)(120)))));
+            this.expandableSplitter1.HotExpandLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.expandableSplitter1.HotExpandLineColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
-            this.expandableSplitter1.HotGripDarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(108)))), ((int)(((byte)(122)))));
+            this.expandableSplitter1.HotGripDarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(147)))), ((int)(((byte)(207)))));
             this.expandableSplitter1.HotGripDarkColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.expandableSplitter1.HotGripLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(232)))), ((int)(((byte)(246)))));
+            this.expandableSplitter1.HotGripLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
             this.expandableSplitter1.HotGripLightColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
             this.expandableSplitter1.Location = new System.Drawing.Point(201, 0);
             this.expandableSplitter1.Name = "expandableSplitter1";
@@ -390,6 +375,19 @@
             this.pnlContainer.Name = "pnlContainer";
             this.pnlContainer.Size = new System.Drawing.Size(818, 508);
             this.pnlContainer.TabIndex = 9;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.btnCancel);
+            this.flowLayoutPanel1.Controls.Add(this.btnNext);
+            this.flowLayoutPanel1.Controls.Add(this.btnBack);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(227, 10);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 5, 5, 0);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(591, 40);
+            this.flowLayoutPanel1.TabIndex = 5;
             // 
             // frmNhapKhauTB
             // 
@@ -409,6 +407,7 @@
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.pnlContainer.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -419,7 +418,6 @@
         private System.Windows.Forms.Panel panel1;
         private DevComponents.DotNetBar.ExpandableSplitter expandableSplitter1;
         private DevComponents.DotNetBar.PanelEx toolmenuTB;
-        private System.Windows.Forms.Button btnStep7;
         private System.Windows.Forms.Button btnStep6;
         private System.Windows.Forms.Button btnStep5;
         private System.Windows.Forms.Button btnStep4;
@@ -436,5 +434,6 @@
         private System.Windows.Forms.Panel pnlContainer;
         private System.Windows.Forms.Panel pnlHolder;
         private DevComponents.DotNetBar.ButtonX btnBack;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

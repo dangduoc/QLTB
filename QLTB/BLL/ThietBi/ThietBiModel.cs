@@ -90,5 +90,11 @@ namespace QLTB.Model
         public string PhongHoc { get; set; }
         public string DonViTinh { get; set; }
     }
+
+    public class Response
+    {
+        public int result { get; set; }
+        public string message { get; set; }
+    }
    
 }

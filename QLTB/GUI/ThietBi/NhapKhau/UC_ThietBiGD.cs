@@ -109,7 +109,7 @@ namespace QLTB.GUI
             foreach(var item in Thietbis)
             {
                 dstb.RemoveAll(p => p.ThietBiId.Equals(item, StringComparison.CurrentCultureIgnoreCase));
-                listView.Items.Add(j++ +"Mã thiết bị: "+item);
+                listView.Items.Add("Mã thiết bị: "+item);
             }
             lbSoLuong.Text = Thietbis.Count.ToString();
             BindingSource source = new BindingSource();

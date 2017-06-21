@@ -233,27 +233,28 @@ namespace QLTB.Handler
                 return null;
             }
         }
-        public int Create(ThietBiModel model)
+        public Response Create(ThietBiModel model)
         {
             try
             {
                 using (var unitOfWork = new UnitOfWork())
                 {
                     TB_ThongTinThietBi entity = MyConvert.ConvertSameData<TB_ThongTinThietBi>(model);
+                    entity.TrangThai = 1;
                     unitOfWork.GetRepository<TB_ThongTinThietBi>().Add(entity);
                     if (unitOfWork.Save() >= 1)
                     {
-                        return 1;
+                        return new Response { result = 1, message = "" };
                     }
                     else
                     {
-                        return 0;
+                        return new Response { result = 0, message = "Lưu thiết bị không thành công" };
                     }
                 }
             }
             catch (Exception ex)
             {
-                return -1;
+                return new Response { result = 0, message = "Lỗi lưu thiết bị"+Environment.NewLine+ex.Message };
             }
         }
         public int Update(ThietBiModel model)
