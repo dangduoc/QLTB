@@ -188,8 +188,8 @@ namespace QLTB.GUI
                 ThietBiMoi.MonHocId = new DbThietBiTTHandler().GetById(ThietBiMoi.ThietBiId).MonHocId;
                 ThietBiMoi.TrangThai = 0;
                 ThietBiMoi.SoLuongCon = ThietBiMoi.SoLuong;
-                int result = handler.Create(ThietBiMoi);
-                if (result == 1)
+                var response = handler.Create(ThietBiMoi);
+                if (response.result == 1)
                 {
                     MessageBox.Show("Thiết bị được khai báo thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     foreach (var item in layoutControl1.Controls.OfType<DevComponents.DotNetBar.Controls.TextBoxX>())
@@ -202,13 +202,9 @@ namespace QLTB.GUI
                     }
                     txtQuyCach.Text = "";
                 }
-                else if (result == 0)
+                else if (response.result == 0)
                 {
-                    MessageBox.Show("Khai báo thiết bị không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Có lỗi xảy ra, xin thử lại khi khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(response.message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else

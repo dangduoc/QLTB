@@ -64,4 +64,9 @@ namespace QLTB.Model
             Status = 0;
         }
     }
+    public class FailImport
+    {
+        public string Id { get; set; }
+        public string Message { get; set; }
+    }
 }

@@ -7,13 +7,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QLTB.Model;
 using OfficeOpenXml;
-
+using QLTB.DAL;
+using QLTB.DAL.Data;
+using QLTB.Utils;
+using QLTB.Handler;
 namespace QLTB.Handler
 {
     public class DbImportHandler
     {
         private string PATH = Path.GetDirectoryName(Application.ExecutablePath);
-
         //public List<string> GetSourceHeader(string path, int headerIndex, int sheetIndex)
         //{
         //    var headers = new List<string>();
@@ -619,6 +621,77 @@ namespace QLTB.Handler
             catch (Exception ex)
             {
                 return null;
+            }
+        }
+        public bool Import(ThietBiImport model, out string error)
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    ThietBiModel entity = new ThietBiModel
+                    {
+                        ThietBiId = model.ThietBiId,
+                        Ten = model.Ten,
+                        PhongHocId = model.PhongHocId,
+                        QuyCachSD = model.QuyCachSD,
+                        NguonKinhPhiId = model.NguonKinhPhiId,
+                        NamDuaVaoSD = model.NamDuaVaoSD,
+                        NgayDuaVaoSD = model.NgayDuaVaoSD,
+                        NamTheoDoi = model.NamTheoDoi,
+                        SoLuong = model.SoLuong,
+                        DonGia = model.DonGia,
+                        ThanhTien = model.ThanhTien,
+                        NuocSanXuat = model.NuocSanXuat,
+                        NgaySanXuat = model.NgaySanXuat,
+                        HanSD = model.HanSD,
+                        GhiChu = model.GhiChu
+                    };
+                    var ThietBiId = entity.ThietBiId;
+                    var thietbi = new DbThietBiTTHandler().GetById(ThietBiId);
+                    if (thietbi != null)
+                    {
+                        //Lay mon hoc
+                        entity.MonHocId = thietbi.MonHocId;
+                        //Lay don vi tinh
+                        entity.DonViTinhId = thietbi.DonViTinhId;
+                        //so hieu
+                        entity.SoHieu = new DbThietBiHandler().GenerateCode(ThietBiId);
+                        //Soluong mat
+                        entity.SoLuongMat = 0;
+                        entity.SoLuongCon = entity.SoLuong;
+                        entity.SoLuongHong = 0;
+                        entity.SoLuongMuon = 0;
+                        //User
+                        entity.CreateByUserId = GlobalVariable.GetUser().UserId;
+                        entity.UpdatedByUserId = entity.CreateByUserId;
+                        entity.CreatedOnDate = DateTime.Now;
+                        entity.UpdatedOnDate = entity.CreatedOnDate;
+                        //
+                        var response = new DbThietBiHandler().Create(entity);
+                        if (response.result == 1)
+                        {
+                            error = "";
+                            return true;
+                        }
+                        else
+                        {
+                            error = response.message;
+                            return false;
+                        }
+                        
+                    }
+                    else
+                    {
+                        error = "Không tìm thấy thiết bị trong hệ thống";
+                        return false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+                return false;
             }
         }
     }
