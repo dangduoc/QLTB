@@ -9,12 +9,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using QLTB.Handler;
 namespace QLTB.GUI
 {
     public partial class frmDSMuonPhongBM : DevComponents.DotNetBar.Office2007Form
     {
-       
+        private DbPhieuMuonPhongHandler handler = new DbPhieuMuonPhongHandler();
         public frmDSMuonPhongBM()
         {
             InitializeComponent();
@@ -154,21 +154,31 @@ namespace QLTB.GUI
             //}
         }
         #endregion
-        private void LoadForm()
+        private void ShowPage(int page, int pageSize)
         {
-            //Clone
-            List<PhieuMuonPhongGridDisplayModel> list = new List<PhieuMuonPhongGridDisplayModel>();
-            list.Add(new PhieuMuonPhongGridDisplayModel
+            var data = handler.GetAll(page, pageSize);
+            List<PhieuMuonPhongGridDisplayModel> list = data.data;
+            if (list.Count > 0)
             {
-                PhieuMuonPhongId="PMPBM00001",
-                BaiDay="Phản ứng hóa học số 1",
-                MonHoc="Hóa học",
-                SoTiet="3",
-                GiaoVien="Đặng Minh Được",
-                LopHoc="Lớp 7A1",
-                NgayMuon="21/11/2010",
-                TrangThai="Đang sử dụng"
-            });
+                loadData(list);
+                prevBtn.Enabled = data.PreviousPage;
+                prevBtn.Tag = page - 1;
+                nextBtn.Enabled = data.NextPage;
+                nextBtn.Tag = page + 1;
+                currentPage.Text = data.CurrentPage.ToString();
+                lbPaging.Text = "Trang " + currentPage.Text + "/" + data.Size;
+                lbTotalRecord.Text = "- Tổng số bản ghi: " + data.TotalRecord;
+            }
+        }
+        private void pageBtnClick(object sender, EventArgs e)
+        {
+            var btn = sender as LinkLabel;
+            int page = Convert.ToInt32(btn.Tag);
+            ShowPage(page, Convert.ToInt32(pageSize.SelectedValue.ToString()));
+            //ShowPage(page, 4);
+        }
+        private void loadData(List<PhieuMuonPhongGridDisplayModel> list)
+        {
             List<string> headers = new List<string>();
             headers.Add("Số phiếu");
             headers.Add("Ngày mượn");
@@ -188,74 +198,55 @@ namespace QLTB.GUI
             //ADGVDanhSach.KeyPress += advancedDataGridView_KeyPress;
             ADGVDanhSach.MouseClick += ADGVDanhSach_MouseClick;
             ADGVDanhSach.CellClick += ADGVDanhSach_CellClick;
-            //
 
             //
-           
         }
-
-        private void ADGVDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void LoadForm()
         {
+
+            ShowPage(1, 50);
+            //
             List<ThietBiMuonGridDisplayModel> listTB = new List<ThietBiMuonGridDisplayModel>();
+            List<string> headers = new List<string>();
+            headers.Add("Mã thiết bị");
+            headers.Add("Số hiệu");
+            headers.Add("Tên thiết bị");
+            headers.Add("Phòng bộ môn");
+            headers.Add("Đơn vị tính");
+            headers.Add("Số lượng");
+
             BindingSource source = new BindingSource();
             source.DataSource = MyConvert.ToDataTable<ThietBiMuonGridDisplayModel>(listTB);
             ADGVDSTB.DataSource = source;
-            listTB.Add(new ThietBiMuonGridDisplayModel
+            SetHeaderForGrid(ADGVDSTB, headers);
+        }
+        private void ADGVDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
             {
-                ThietBiId = "CSCN00001",
-                SoHieu = "CSCN00001.01",
-                Ten = "Giỏ hoa cảnh",
-                DonViTinh = "Cái",
-                SoLuongMuon = "2",
-                PhongHoc = "Phòng thực hành công nghệ"
-            });
-            listTB.Add(new ThietBiMuonGridDisplayModel
-            {
-                ThietBiId = "CSCN00001",
-                SoHieu = "CSCN00001.02",
-                Ten = "Chậu đất",
-                DonViTinh = "Cái",
-                SoLuongMuon = "4",
-                PhongHoc = "Phòng thực hành công nghệ"
-            });
-            DataGridViewLinkColumn linkColEdit = new DataGridViewLinkColumn();
-            linkColEdit.Text = "Thay đổi";
-            linkColEdit.Name = "Edit";
-            linkColEdit.LinkColor = Color.Blue;
-            linkColEdit.LinkBehavior = LinkBehavior.NeverUnderline;
-            linkColEdit.UseColumnTextForLinkValue = true;
-            linkColEdit.HeaderText = "";
-            DataGridViewLinkColumn linkColDelete = new DataGridViewLinkColumn();
-            linkColDelete.Text = "Xóa bỏ";
-            linkColDelete.Name = "Delete";
-            linkColDelete.LinkColor = Color.Red;
-            linkColDelete.LinkBehavior = LinkBehavior.NeverUnderline;
-            linkColDelete.UseColumnTextForLinkValue = true;
-            linkColDelete.HeaderText = "";
+                var id = ADGVDanhSach.Rows[e.RowIndex].Cells[0].Value.ToString();
 
-            ADGVDSTB.Columns.Add(linkColEdit);
-            ADGVDSTB.Columns.Add(linkColDelete);
-            //
-            ADGVDSTB.Columns[1].HeaderText = "Mã thiết bị";
-            ADGVDSTB.Columns[2].HeaderText = "Tên thiết bị";
-            ADGVDSTB.Columns[3].HeaderText = "Số hiệu";
-            ADGVDSTB.Columns[4].HeaderText = "Phòng bộ môn";
-            ADGVDSTB.Columns[5].HeaderText = "Số lượng mượn";
-            ADGVDSTB.Columns[6].HeaderText = "Đơn vị tính";
+                var lst = handler.GetById(id).ThietBis;
+                if (lst != null)
+                {
+                    BindingSource source = new BindingSource();
+                    source.DataSource = MyConvert.ToDataTable<ThietBiMuonGridDisplayModel>(lst);
+                    ADGVDSTB.DataSource = source;
+                }
+                panel1.Visible = true;
+            }
         }
 
         private void frmDSMuonPhongBM_Load(object sender, EventArgs e)
         {
             LoadForm();
-            var parent = MdiParent as Form1;
-            parent.pnlLoading.Visible = false;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
             frmCTPhieuMuonPhong frm = new frmCTPhieuMuonPhong();
-            frm.MdiParent = MdiParent;
-            frm.Show();
+            var parent = MdiParent as Form1;
+            parent.OpenFrmChild(frm);
         }
 
         private void btnBaoHong_Click(object sender, EventArgs e)
@@ -268,6 +259,25 @@ namespace QLTB.GUI
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+
+            var row = ADGVDanhSach.SelectedRows[0];
+            if (row != null)
+            {
+                var id = row.Cells["PhieuMuonPhongId"].Value.ToString();
+                frmCTPhieuMuonPhong frm = new frmCTPhieuMuonPhong(id);
+                var parent = MdiParent as Form1;
+                parent.OpenFrmChild(frm);
+            }
+
+        }
+
+        private void btnNapDSTB_Click(object sender, EventArgs e)
+        {
+            ShowPage(1, 50);
         }
     }
 }

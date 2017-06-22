@@ -35,7 +35,6 @@
         <EntityTypeShape EntityType="Model.TB_PhieuBaoHong" Width="1.5" PointX="15.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.TB_PhieuDeNghiMuaSam" Width="1.5" PointX="4.75" PointY="15.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.TB_PhieuGiamTB" Width="1.5" PointX="15.75" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.TB_PhieuMuonPhong" Width="1.5" PointX="13.75" PointY="15.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.TB_PhieuMuonTB" Width="1.5" PointX="15.75" PointY="15.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.TB_PhieuThanhLyTB" Width="1.5" PointX="5.25" PointY="11" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.TB_ThongTinThietBi" Width="1.5" PointX="9.75" PointY="16.75" IsExpanded="true" />
@@ -55,6 +54,7 @@
         <EntityTypeShape EntityType="Model.DM_CanBoThietBi" Width="1.5" PointX="0.75" PointY="18.75" />
         <EntityTypeShape EntityType="Model.QH_PhieuSuaTB_ThietBi" Width="1.5" PointX="18.375" PointY="4.75" />
         <EntityTypeShape EntityType="Model.TB_PhieuSuaTB" Width="1.5" PointX="18.375" PointY="8.75" />
+        <EntityTypeShape EntityType="Model.TB_PhieuMuonPhong" Width="1.5" PointX="12.375" PointY="16.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

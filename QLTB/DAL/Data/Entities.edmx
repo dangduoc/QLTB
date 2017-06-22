@@ -420,6 +420,8 @@
           <Property Name="CreatedOnDate" Type="datetime" />
           <Property Name="UpdatedByUserId" Type="int" />
           <Property Name="UpdatedOnDate" Type="datetime" />
+          <Property Name="ThoiGianTrongNgay" Type="int" Nullable="false" />
+          <Property Name="MuonTuTiet" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="TB_PhieuMuonTB">
           <Key>
@@ -501,12 +503,12 @@
           <Property Name="IsThietBiTuLam" Type="bit" Nullable="false" />
           <Property Name="NgaySanXuat" Type="datetime" />
           <Property Name="HanSD" Type="datetime" />
-          <Property Name="GhiChu" Type="nchar" MaxLength="10" />
           <Property Name="TrangThai" Type="int" Nullable="false" />
           <Property Name="CreateByUserId" Type="int" />
           <Property Name="CreatedOnDate" Type="datetime" />
           <Property Name="UpdatedByUserId" Type="int" />
           <Property Name="UpdatedOnDate" Type="datetime" />
+          <Property Name="GhiChu" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="ThongTinDonVi">
           <Key>
@@ -1117,32 +1119,6 @@
           <Property Name="UpdatedByUserId" Type="Int32" />
           <Property Name="UpdatedOnDate" Type="DateTime" Precision="3" />
         </EntityType>
-        <EntityType Name="TB_PhieuMuonPhong">
-          <Key>
-            <PropertyRef Name="PhieuMuonPhongId" />
-          </Key>
-          <Property Name="PhieuMuonPhongId" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="GiaoVienId" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="MonHocId" Type="Int32" Nullable="false" />
-          <Property Name="PhongBoMonId" Type="Int32" Nullable="false" />
-          <Property Name="BaiDayId" Type="Int32" Nullable="false" />
-          <Property Name="KhoiLopId" Type="Int32" Nullable="false" />
-          <Property Name="LopHocId" Type="Int32" Nullable="false" />
-          <Property Name="SoTiet" Type="Int32" Nullable="false" />
-          <Property Name="NgayMuon" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="NgayTra" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="IsSuDungCaNgay" Type="Boolean" Nullable="false" />
-          <Property Name="MucDichSDId" Type="Int32" Nullable="false" />
-          <Property Name="IsNgoaiQuyDinh" Type="Boolean" Nullable="false" />
-          <Property Name="IsSuDungChoGD" Type="Boolean" Nullable="false" />
-          <Property Name="TrangThaiId" Type="Int32" />
-          <Property Name="GhiChu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="IsDelete" Type="Boolean" Nullable="false" />
-          <Property Name="CreatedByUserId" Type="Int32" />
-          <Property Name="CreatedOnDate" Type="DateTime" Precision="3" />
-          <Property Name="UpdatedByUserId" Type="Int32" />
-          <Property Name="UpdatedOnDate" Type="DateTime" Precision="3" />
-        </EntityType>
         <EntityType Name="TB_PhieuMuonTB">
           <Key>
             <PropertyRef Name="PhieuMuonTBId" />
@@ -1212,7 +1188,7 @@
           <Property Name="IsThietBiTuLam" Type="Boolean" Nullable="false" />
           <Property Name="NgaySanXuat" Type="DateTime" Precision="3" />
           <Property Name="HanSD" Type="DateTime" Precision="3" />
-          <Property Name="GhiChu" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="GhiChu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="TrangThai" Type="Int32" Nullable="false" />
           <Property Name="CreateByUserId" Type="Int32" />
           <Property Name="CreatedOnDate" Type="DateTime" Precision="3" />
@@ -1415,7 +1391,6 @@
           <EntitySet Name="TB_PhieuBaoHong" EntityType="Self.TB_PhieuBaoHong" />
           <EntitySet Name="TB_PhieuDeNghiMuaSam" EntityType="Self.TB_PhieuDeNghiMuaSam" />
           <EntitySet Name="TB_PhieuGiamTB" EntityType="Self.TB_PhieuGiamTB" />
-          <EntitySet Name="TB_PhieuMuonPhong" EntityType="Self.TB_PhieuMuonPhong" />
           <EntitySet Name="TB_PhieuMuonTB" EntityType="Self.TB_PhieuMuonTB" />
           <EntitySet Name="TB_PhieuThanhLyTB" EntityType="Self.TB_PhieuThanhLyTB" />
           <EntitySet Name="TB_ThongTinThietBi" EntityType="Self.TB_ThongTinThietBi" />
@@ -1465,6 +1440,7 @@
           <EntitySet Name="DM_CanBoThietBi" EntityType="Model.DM_CanBoThietBi" />
           <EntitySet Name="QH_PhieuSuaTB_ThietBi" EntityType="Model.QH_PhieuSuaTB_ThietBi" />
           <EntitySet Name="TB_PhieuSuaTB" EntityType="Model.TB_PhieuSuaTB" />
+          <EntitySet Name="TB_PhieuMuonPhong" EntityType="Model.TB_PhieuMuonPhong" />
         </EntityContainer>
         <EntityType Name="TB_PhieuGhiTang">
           <Key>
@@ -1522,6 +1498,34 @@
           <Property Name="CreatedOnDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="UpdatedOnDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="IsDelete" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_PhieuMuonPhong">
+          <Key>
+            <PropertyRef Name="PhieuMuonPhongId" />
+          </Key>
+          <Property Name="PhieuMuonPhongId" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="GiaoVienId" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MonHocId" Type="Int32" Nullable="false" />
+          <Property Name="PhongBoMonId" Type="Int32" Nullable="false" />
+          <Property Name="BaiDayId" Type="Int32" Nullable="false" />
+          <Property Name="KhoiLopId" Type="Int32" Nullable="false" />
+          <Property Name="LopHocId" Type="Int32" Nullable="false" />
+          <Property Name="SoTiet" Type="Int32" Nullable="false" />
+          <Property Name="NgayMuon" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="NgayTra" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsSuDungCaNgay" Type="Boolean" Nullable="false" />
+          <Property Name="MucDichSDId" Type="Int32" Nullable="false" />
+          <Property Name="IsNgoaiQuyDinh" Type="Boolean" Nullable="false" />
+          <Property Name="IsSuDungChoGD" Type="Boolean" Nullable="false" />
+          <Property Name="TrangThaiId" Type="Int32" />
+          <Property Name="GhiChu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="IsDelete" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedByUserId" Type="Int32" />
+          <Property Name="CreatedOnDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedByUserId" Type="Int32" />
+          <Property Name="UpdatedOnDate" Type="DateTime" Precision="3" />
+          <Property Name="ThoiGianTrongNgay" Type="Int32" Nullable="false" />
+          <Property Name="MuonTuTiet" Type="Int32" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1897,33 +1901,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TB_PhieuMuonPhong">
-            <EntityTypeMapping TypeName="Model.TB_PhieuMuonPhong">
-              <MappingFragment StoreEntitySet="TB_PhieuMuonPhong">
-                <ScalarProperty Name="PhieuMuonPhongId" ColumnName="PhieuMuonPhongId" />
-                <ScalarProperty Name="GiaoVienId" ColumnName="GiaoVienId" />
-                <ScalarProperty Name="MonHocId" ColumnName="MonHocId" />
-                <ScalarProperty Name="PhongBoMonId" ColumnName="PhongBoMonId" />
-                <ScalarProperty Name="BaiDayId" ColumnName="BaiDayId" />
-                <ScalarProperty Name="KhoiLopId" ColumnName="KhoiLopId" />
-                <ScalarProperty Name="LopHocId" ColumnName="LopHocId" />
-                <ScalarProperty Name="SoTiet" ColumnName="SoTiet" />
-                <ScalarProperty Name="NgayMuon" ColumnName="NgayMuon" />
-                <ScalarProperty Name="NgayTra" ColumnName="NgayTra" />
-                <ScalarProperty Name="IsSuDungCaNgay" ColumnName="IsSuDungCaNgay" />
-                <ScalarProperty Name="MucDichSDId" ColumnName="MucDichSDId" />
-                <ScalarProperty Name="IsNgoaiQuyDinh" ColumnName="IsNgoaiQuyDinh" />
-                <ScalarProperty Name="IsSuDungChoGD" ColumnName="IsSuDungChoGD" />
-                <ScalarProperty Name="TrangThaiId" ColumnName="TrangThaiId" />
-                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
-                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
-                <ScalarProperty Name="CreatedByUserId" ColumnName="CreatedByUserId" />
-                <ScalarProperty Name="CreatedOnDate" ColumnName="CreatedOnDate" />
-                <ScalarProperty Name="UpdatedByUserId" ColumnName="UpdatedByUserId" />
-                <ScalarProperty Name="UpdatedOnDate" ColumnName="UpdatedOnDate" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="TB_PhieuMuonTB">
             <EntityTypeMapping TypeName="Model.TB_PhieuMuonTB">
               <MappingFragment StoreEntitySet="TB_PhieuMuonTB">
@@ -2102,6 +2079,35 @@
                 <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
                 <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
                 <ScalarProperty Name="PhieuSuaTBId" ColumnName="PhieuSuaTBId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_PhieuMuonPhong">
+            <EntityTypeMapping TypeName="Model.TB_PhieuMuonPhong">
+              <MappingFragment StoreEntitySet="TB_PhieuMuonPhong">
+                <ScalarProperty Name="MuonTuTiet" ColumnName="MuonTuTiet" />
+                <ScalarProperty Name="ThoiGianTrongNgay" ColumnName="ThoiGianTrongNgay" />
+                <ScalarProperty Name="UpdatedOnDate" ColumnName="UpdatedOnDate" />
+                <ScalarProperty Name="UpdatedByUserId" ColumnName="UpdatedByUserId" />
+                <ScalarProperty Name="CreatedOnDate" ColumnName="CreatedOnDate" />
+                <ScalarProperty Name="CreatedByUserId" ColumnName="CreatedByUserId" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+                <ScalarProperty Name="TrangThaiId" ColumnName="TrangThaiId" />
+                <ScalarProperty Name="IsSuDungChoGD" ColumnName="IsSuDungChoGD" />
+                <ScalarProperty Name="IsNgoaiQuyDinh" ColumnName="IsNgoaiQuyDinh" />
+                <ScalarProperty Name="MucDichSDId" ColumnName="MucDichSDId" />
+                <ScalarProperty Name="IsSuDungCaNgay" ColumnName="IsSuDungCaNgay" />
+                <ScalarProperty Name="NgayTra" ColumnName="NgayTra" />
+                <ScalarProperty Name="NgayMuon" ColumnName="NgayMuon" />
+                <ScalarProperty Name="SoTiet" ColumnName="SoTiet" />
+                <ScalarProperty Name="LopHocId" ColumnName="LopHocId" />
+                <ScalarProperty Name="KhoiLopId" ColumnName="KhoiLopId" />
+                <ScalarProperty Name="BaiDayId" ColumnName="BaiDayId" />
+                <ScalarProperty Name="PhongBoMonId" ColumnName="PhongBoMonId" />
+                <ScalarProperty Name="MonHocId" ColumnName="MonHocId" />
+                <ScalarProperty Name="GiaoVienId" ColumnName="GiaoVienId" />
+                <ScalarProperty Name="PhieuMuonPhongId" ColumnName="PhieuMuonPhongId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -40,14 +40,14 @@
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.txtFileName = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.integerInput2 = new DevComponents.Editors.IntegerInput();
+            this.comboBoxEx1 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.layoutControlItem1 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
             this.layoutControlItem5 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
-            this.layoutSpacerItem1 = new DevComponents.DotNetBar.Layout.LayoutSpacerItem();
             this.layoutSpacerItem2 = new DevComponents.DotNetBar.Layout.LayoutSpacerItem();
+            this.layoutControlItem2 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
+            this.layoutSpacerItem1 = new DevComponents.DotNetBar.Layout.LayoutSpacerItem();
             this.layoutControlItem3 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
             this.layoutControlItem4 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
-            this.comboBoxEx1 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.layoutControlItem2 = new DevComponents.DotNetBar.Layout.LayoutControlItem();
             this.pnlHolder.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -219,6 +219,20 @@
             this.integerInput2.ShowUpDown = true;
             this.integerInput2.Size = new System.Drawing.Size(127, 23);
             this.integerInput2.TabIndex = 5;
+            this.integerInput2.Value = 1;
+            // 
+            // comboBoxEx1
+            // 
+            this.comboBoxEx1.DisplayMember = "Text";
+            this.comboBoxEx1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxEx1.FormattingEnabled = true;
+            this.comboBoxEx1.ItemHeight = 18;
+            this.comboBoxEx1.Location = new System.Drawing.Point(149, 45);
+            this.comboBoxEx1.Margin = new System.Windows.Forms.Padding(0);
+            this.comboBoxEx1.Name = "comboBoxEx1";
+            this.comboBoxEx1.Size = new System.Drawing.Size(197, 24);
+            this.comboBoxEx1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.comboBoxEx1.TabIndex = 3;
             // 
             // layoutControlItem1
             // 
@@ -238,19 +252,28 @@
             this.layoutControlItem5.Padding = new System.Windows.Forms.Padding(4, 0, 4, 4);
             this.layoutControlItem5.Width = 47;
             // 
-            // layoutSpacerItem1
-            // 
-            this.layoutSpacerItem1.Height = 36;
-            this.layoutSpacerItem1.Name = "layoutSpacerItem1";
-            this.layoutSpacerItem1.Width = 100;
-            this.layoutSpacerItem1.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
-            // 
             // layoutSpacerItem2
             // 
             this.layoutSpacerItem2.Height = 36;
             this.layoutSpacerItem2.Name = "layoutSpacerItem2";
             this.layoutSpacerItem2.Width = 100;
             this.layoutSpacerItem2.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.comboBoxEx1;
+            this.layoutControlItem2.Height = 35;
+            this.layoutControlItem2.MinSize = new System.Drawing.Size(64, 18);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Text = "Sheet nhập khẩu";
+            this.layoutControlItem2.Width = 350;
+            // 
+            // layoutSpacerItem1
+            // 
+            this.layoutSpacerItem1.Height = 36;
+            this.layoutSpacerItem1.Name = "layoutSpacerItem1";
+            this.layoutSpacerItem1.Width = 100;
+            this.layoutSpacerItem1.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
             // 
             // layoutControlItem3
             // 
@@ -269,28 +292,6 @@
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Width = 100;
             this.layoutControlItem4.WidthType = DevComponents.DotNetBar.Layout.eLayoutSizeType.Percent;
-            // 
-            // comboBoxEx1
-            // 
-            this.comboBoxEx1.DisplayMember = "Text";
-            this.comboBoxEx1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxEx1.FormattingEnabled = true;
-            this.comboBoxEx1.ItemHeight = 18;
-            this.comboBoxEx1.Location = new System.Drawing.Point(149, 45);
-            this.comboBoxEx1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
-            this.comboBoxEx1.Name = "comboBoxEx1";
-            this.comboBoxEx1.Size = new System.Drawing.Size(197, 24);
-            this.comboBoxEx1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.comboBoxEx1.TabIndex = 3;
-            // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.comboBoxEx1;
-            this.layoutControlItem2.Height = 35;
-            this.layoutControlItem2.MinSize = new System.Drawing.Size(64, 18);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Text = "Sheet nhập khẩu";
-            this.layoutControlItem2.Width = 350;
             // 
             // UC_ChonTiepNguon
             // 

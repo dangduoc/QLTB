@@ -40,7 +40,7 @@
             this.tabControlPanel2 = new DevComponents.DotNetBar.TabControlPanel();
             this.DSTBDaCo = new ADGV.AdvancedDataGridView();
             this.tabItem2 = new DevComponents.DotNetBar.TabItem(this.components);
-            this.listView = new System.Windows.Forms.CheckedListBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -107,7 +107,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.listView);
+            this.panel3.Controls.Add(this.listBox1);
             this.panel3.Controls.Add(this.lbSoLuong);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -185,14 +185,15 @@
             this.tabItem2.Name = "tabItem2";
             this.tabItem2.Text = "Thiết bị giáo dục đã có";
             // 
-            // listView
+            // listBox1
             // 
-            this.listView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listView.FormattingEnabled = true;
-            this.listView.Location = new System.Drawing.Point(30, 76);
-            this.listView.Name = "listView";
-            this.listView.Size = new System.Drawing.Size(228, 342);
-            this.listView.TabIndex = 3;
+            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 15;
+            this.listBox1.Location = new System.Drawing.Point(30, 59);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(202, 360);
+            this.listBox1.TabIndex = 3;
             // 
             // UC_ThietBiGD
             // 
@@ -230,6 +231,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.LinkLabel lbSoLuong;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckedListBox listView;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }

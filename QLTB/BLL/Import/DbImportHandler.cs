@@ -667,6 +667,9 @@ namespace QLTB.Handler
                         entity.UpdatedByUserId = entity.CreateByUserId;
                         entity.CreatedOnDate = DateTime.Now;
                         entity.UpdatedOnDate = entity.CreatedOnDate;
+
+                        entity.TrangThai = 1;
+                    
                         //
                         var response = new DbThietBiHandler().Create(entity);
                         if (response.result == 1)

@@ -213,7 +213,7 @@ namespace QLTB.Handler
                     {
                         MyConvert.TransferValues(data, model);
                         unitOfWork.GetRepository<TB_PhieuGiamTB>().Update(data);
-                        foreach (var item in ds)
+                        foreach (var item in model.ThietBis)
                         {
                             var tmp = unitOfWork.GetRepository<QH_PhieuGiamTB_ThietBi>().GetAll()
                                 .Where(p => p.PhieuGiamTBId.Equals(model.PhieuGiamTBId) && p.SoHieuTB.Equals(item.SoHieu))
@@ -228,8 +228,9 @@ namespace QLTB.Handler
                                     unitOfWork.GetRepository<TB_ThongTinThietBi>().Update(thietbi);
                                 }
                             }
+                            unitOfWork.GetRepository<QH_PhieuGiamTB_ThietBi>().Delete(tmp);
                         }
-                        foreach (var item in model.ThietBis)
+                        foreach (var item in ds)
                         {
                             unitOfWork.GetRepository<QH_PhieuGiamTB_ThietBi>().Add(new QH_PhieuGiamTB_ThietBi
                             {
