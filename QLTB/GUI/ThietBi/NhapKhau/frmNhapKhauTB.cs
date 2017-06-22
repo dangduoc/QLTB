@@ -245,28 +245,36 @@ namespace QLTB.GUI
         /// </summary>
         public void PerformSecondStep()
         {
+
             Cot = GhepCot.GetResult();
-            var desKhoPhong = new List<Columnmapping>();
-            var khophong = new DbPhongBMHandler().GetNames();
-            foreach (var item in khophong)
+            if (Cot != null)
             {
-                desKhoPhong.Add(new Columnmapping
+                var desKhoPhong = new List<Columnmapping>();
+                var khophong = new DbPhongBMHandler().GetNames();
+                foreach (var item in khophong)
                 {
-                    Index = item.PhongHocId,
-                    Ten = item.Ten
-                });
-            }
-            var srcKhoPhong = ChonTiepNguon.Info.khophong;
-            if (srcKhoPhong != null)
-            {
-                KhoPhong = new UC_KhoPhongBM(desKhoPhong, srcKhoPhong);
-                NextStep(KhoPhong);
-                step++;
-                btnBack.Visible = true;
+                    desKhoPhong.Add(new Columnmapping
+                    {
+                        Index = item.PhongHocId,
+                        Ten = item.Ten
+                    });
+                }
+                var srcKhoPhong = ChonTiepNguon.Info.khophong;
+                if (srcKhoPhong != null)
+                {
+                    KhoPhong = new UC_KhoPhongBM(desKhoPhong, srcKhoPhong);
+                    NextStep(KhoPhong);
+                    step++;
+                    btnBack.Visible = true;
+                }
+                else
+                {
+                    MessageBox.Show("Đọc file không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                MessageBox.Show("Đọc file không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ghép cột còn thiếu, vui lòng chọn đầy đủ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
         }

@@ -53,7 +53,7 @@ namespace QLTB.GUI
                 }
                 else
                 {
-                    dsThietBi = Phieu.ThietBis;
+                    dsThietBi.AddRange(Phieu.ThietBis);
                 }
                 source.DataSource = MyConvert.ToDataTable<ThietBiMuaGridDisplayModel>(dsThietBi);
             }
@@ -151,6 +151,9 @@ namespace QLTB.GUI
             }
             else
             {
+                PhieuMoi.ThietBis = Phieu.ThietBis;
+                PhieuMoi.CreatedByUserId = Phieu.CreatedByUserId;
+                PhieuMoi.CreatedOnDate = Phieu.CreatedOnDate;
                 PhieuMoi.UpdatedByUserId = GlobalVariable.GetUser().UserId;
                 PhieuMoi.UpdatedOnDate = DateTime.Now;
                 int result = handler.Update(PhieuMoi, dsThietBi);

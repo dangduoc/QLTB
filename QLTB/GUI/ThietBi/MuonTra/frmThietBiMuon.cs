@@ -29,6 +29,11 @@ namespace QLTB.GUI
         {
             InitializeComponent();
             Phieu = handler.GetById(Id);
+            if(Phieu==null)
+            {
+                MessageBox.Show("Không tìm thấy phiếu mượn phù hợp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Close();
+            }
         }
         private void loadForm()
         {
@@ -73,7 +78,7 @@ namespace QLTB.GUI
                 }
                 else
                 {
-                    dsThietBi = Phieu.ThietBis;
+                    dsThietBi.AddRange(Phieu.ThietBis);
                 }
                 source.DataSource = MyConvert.ToDataTable<ThietBiMuonGridDisplayModel>(dsThietBi);
             }
@@ -187,6 +192,9 @@ namespace QLTB.GUI
             }
             else
             {
+                PhieuMoi.ThietBis = Phieu.ThietBis;
+                PhieuMoi.CreatedByUserId = Phieu.CreatedByUserId;
+                PhieuMoi.CreatedOnDate = Phieu.CreatedOnDate;
                 PhieuMoi.UpdatedByUserId = GlobalVariable.GetUser().UserId;
                 PhieuMoi.UpdatedOnDate = DateTime.Now;
                 int result = handler.Update(PhieuMoi, dsThietBi);
@@ -270,22 +278,22 @@ namespace QLTB.GUI
                     DialogResult dr = MessageBox.Show("Xóa thiết bị có số hiệu: " + id + " khỏi danh sách", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                     if (dr == DialogResult.OK)
                     {
-                        if (Phieu != null)
-                        {
-                            if (handler.RemoveFromList(id, Phieu.PhieuMuonTBId) == 1)
-                            {
-                                ADGVDSTB.Rows.Remove(ADGVDSTB.Rows[e.RowIndex]);
-                            }
-                            else
-                            {
-                                MessageBox.Show("Xóa không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                        }
-                        else
-                        {
+                        //if (Phieu != null)
+                        //{
+                        //    if (handler.RemoveFromList(id, Phieu.PhieuMuonTBId) == 1)
+                        //    {
+                        //        ADGVDSTB.Rows.Remove(ADGVDSTB.Rows[e.RowIndex]);
+                        //    }
+                        //    else
+                        //    {
+                        //        MessageBox.Show("Xóa không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //    }
+                        //}
+                        //else
+                        //{
                             if (dsThietBi.Remove(dsThietBi.Where(p => p.SoHieu.Equals(id)).FirstOrDefault()))
                                 ADGVDSTB.Rows.Remove(ADGVDSTB.Rows[e.RowIndex]);
-                        }
+                       // }
                     }
 
                 }

@@ -229,20 +229,20 @@ namespace QLTB.GUI
 
         private void BtnSua_Click(object sender, EventArgs e)
         {
-            Cursor = Cursors.WaitCursor;
             var row = ADGVDanhSach.SelectedRows[0];
-            var id = row.Cells["PhieuMuonTBId"].Value.ToString();
-            frmThietBiMuon frm = new frmThietBiMuon(id);
-            frm.MdiParent = MdiParent;
-            frm.Show();
-            Cursor = Cursors.Default;
+            if (row != null)
+            {
+                var id = row.Cells["PhieuMuonTBId"].Value.ToString();
+                frmThietBiMuon frm = new frmThietBiMuon(id);
+                var parent = MdiParent as Form1;
+                parent.OpenFrmChild(frm);
+            }
         }
 
         private void frmDanhSachMuonTB_Load(object sender, EventArgs e)
         {
             LoadForm();
-            var parent = MdiParent as Form1;
-            parent.pnlLoading.Visible = false;
+
             dateTimeInput1.Value = DateTime.Today;
         }
         private void advancedDataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -283,7 +283,7 @@ namespace QLTB.GUI
         {
             var owner = MdiParent as Form1;
             frmThietBiMuon frm = new frmThietBiMuon();
-            owner.OpenFrmChild(frm);   
+            owner.OpenFrmChild(frm);
         }
 
         private void ADGVDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -343,13 +343,13 @@ namespace QLTB.GUI
         {
             if (rdioWeek.Checked)
             {
-                if (pnlCalendar.Visible==false)
+                if (pnlCalendar.Visible == false)
                 {
                     pnlCalendar.Visible = true;
                     pnlDS.Visible = false;
                     pnlCalendar.Dock = DockStyle.Fill;
                 }
-               
+
                 calendarView1.SelectedView = eCalendarView.Week;
             }
         }
@@ -358,7 +358,7 @@ namespace QLTB.GUI
         {
             if (rdioMonth.Checked)
             {
-                if (pnlCalendar.Visible==false)
+                if (pnlCalendar.Visible == false)
                 {
                     pnlCalendar.Visible = true;
                     pnlDS.Visible = false;

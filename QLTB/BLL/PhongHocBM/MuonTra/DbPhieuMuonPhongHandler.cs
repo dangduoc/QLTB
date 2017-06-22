@@ -12,12 +12,13 @@ namespace QLTB.Handler
 {
     class DbPhieuMuonPhongHandler
     {
-        public List<PhieuMuonPhongGridDisplayModel> GetAll()
+        public Paging<List<PhieuMuonPhongGridDisplayModel>> GetAll(int page, int pageSize)
         {
             try
             {
                 using (var unitOfWork = new UnitOfWork())
                 {
+                    var TotalRecord = unitOfWork.GetRepository<TB_PhieuMuonPhong>().GetAll().Where(p => p.IsDelete == false).Count();
                     var data = unitOfWork.GetRepository<TB_PhieuMuonPhong>().GetAll()
                                   .Join(unitOfWork.GetRepository<DS_BaiGiang>().GetAll(),
                                       tb => tb.BaiDayId,
@@ -60,22 +61,34 @@ namespace QLTB.Handler
                                           LopHoc = tb.LopHoc,
                                           GiaoVien = ltb.Ten
                                       }
-                                  ).Join(unitOfWork.GetRepository<DM_MonHoc>().GetAll(),
+                                  ).AsEnumerable()
+                                  .Join(unitOfWork.GetRepository<DM_MonHoc>().GetAll().AsEnumerable(),
                                       tb => tb.MonHocId,
                                       ltb => ltb.MonHocId,
                                       (tb, ltb) => new PhieuMuonPhongGridDisplayModel
                                       {
                                           PhieuMuonPhongId = tb.PhieuMuonPhongId,
-                                          NgayMuon = tb.NgayMuon.ToString("dd/M/yyyy"),
+                                          NgayMuon = MyConvert.DateToString(tb.NgayMuon),
                                           SoTiet = tb.SoTiet.ToString(),
                                           BaiDay = tb.BaiDay,
                                           MonHoc = ltb.Ten,
                                           LopHoc = tb.LopHoc,
                                           GiaoVien = tb.GiaoVien
                                       }
-                                  ).ToList();
-
-                    return data;
+                                  )
+                                  .OrderBy(p => p.PhieuMuonPhongId)
+                                .Skip(pageSize * (page - 1))
+                                .Take(pageSize)
+                                .ToList();
+                    return new Paging<List<PhieuMuonPhongGridDisplayModel>>
+                    {
+                        CurrentPage = page,
+                        Size = TotalRecord % pageSize == 0 ? TotalRecord / pageSize : TotalRecord / pageSize + 1,
+                        TotalRecord = TotalRecord,
+                        data = data,
+                        NextPage = (pageSize * page) < TotalRecord ? true : false,
+                        PreviousPage = page > 1 ? true : false
+                    };
 
                 }
             }
@@ -146,47 +159,170 @@ namespace QLTB.Handler
                 return null;
             }
         }
-        //public int Create(PhieuMuonThietBiCreateModel model)
-        //{
-        //    try
-        //    {
-        //        using (var unitOfWork= new UnitOfWork())
-        //        {
+        #region Create,Update,Delete
+        public int Create(PhieuMuonPhongModel model)
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    var data = new TB_PhieuMuonPhong();
+                    MyConvert.TransferValues(data, model);
+                    data.IsDelete = false;
+                    data.TrangThaiId = 0;
+                    unitOfWork.GetRepository<TB_PhieuMuonPhong>().Add(data);
+                    if (unitOfWork.Save() >= 1)
+                    {
+                        //saving devices and update quantity
+                        foreach (var item in model.ThietBis)
+                        {
+                            var ThietBi = new QH_PhieuMuonPhong_ThietBi
+                            {
+                                PhieuMuonPhongId = model.PhieuMuonPhongId,
+                                SoHieuTB = item.SoHieu,
+                                SoLuong = Convert.ToInt32(item.SoLuongMuon)
+                            };
+                            unitOfWork.GetRepository<QH_PhieuMuonPhong_ThietBi>().Add(ThietBi);
 
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
+                            var thietbi = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetById(item.SoHieu);
+                            if (thietbi != null)
+                            {
+                                thietbi.SoLuongMuon += Convert.ToInt32(item.SoLuongMuon);
+                                thietbi.SoLuongCon -= thietbi.SoLuongMuon;
+                                unitOfWork.GetRepository<TB_ThongTinThietBi>().Update(thietbi);
+                            }
+                        }
+                        if (unitOfWork.Save() >= 1)
+                        {
+                            return 1;
+                        }
+                        else return 2;
+                    }
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                return -1;
 
-        //    }
-        //}
-        //public int Update(PhieuMuonThietBiCreateModel model)
-        //{
-        //    try
-        //    {
-        //        using (var unitOfWork = new UnitOfWork())
-        //        {
-
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //    }
-        //}
-        //public int Delete(PhieuMuonThietBiCreateModel model)
-        //{
-        //    try
-        //    {
-        //        using (var unitOfWork = new UnitOfWork())
-        //        {
-
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //    }
-        //}
+            }
+        }
+        public int Update(PhieuMuonPhongModel model, List<ThietBiMuonGridDisplayModel> ds)
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    var data = unitOfWork.GetRepository<TB_PhieuMuonPhong>().GetById(model.PhieuMuonPhongId);
+                    if (data != null)
+                    {
+                        //Lưu thông tin chung
+                        MyConvert.TransferValues(data, model);
+                        unitOfWork.GetRepository<TB_PhieuMuonPhong>().Update(data);
+                        //Các thiết bị mượn cũ
+                        foreach (var item in model.ThietBis)
+                        {
+                            unitOfWork.GetRepository<QH_PhieuMuonPhong_ThietBi>()
+                                .Delete(p => p.PhieuMuonPhongId == model.PhieuMuonPhongId && p.SoHieuTB == item.SoHieu);
+                            var thietbi = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetById(item.SoHieu);
+                            if (thietbi != null)
+                            {
+                                thietbi.SoLuongMuon -= Convert.ToInt32(item.SoLuongMuon);
+                                thietbi.SoLuongCon += Convert.ToInt32(item.SoLuongMuon);
+                                unitOfWork.GetRepository<TB_ThongTinThietBi>().Update(thietbi);
+                            }
+                        }
+                        //Các thiết bị mượn mới
+                        foreach (var item in ds)
+                        {
+                            int SoLuongMuon = Convert.ToInt32(item.SoLuongMuon);
+                            unitOfWork.GetRepository<QH_PhieuMuonPhong_ThietBi>().Add(new QH_PhieuMuonPhong_ThietBi
+                            {
+                                SoHieuTB = item.SoHieu,
+                                PhieuMuonPhongId = model.PhieuMuonPhongId,
+                                SoLuong = SoLuongMuon
+                            });
+                            var thietbi = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetById(item.SoHieu);
+                            if (thietbi != null)
+                            {
+                                thietbi.SoLuongMuon += Convert.ToInt32(item.SoLuongMuon);
+                                thietbi.SoLuongCon += Convert.ToInt32(item.SoLuongMuon);
+                                unitOfWork.GetRepository<TB_ThongTinThietBi>().Update(thietbi);
+                            }
+                        }
+                        if (unitOfWork.Save() >= 1)
+                        {
+                            return 1;
+                        }
+                    }
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+        }
+        public int Delete(string PhieuMuonId)
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    var data = unitOfWork.GetRepository<TB_PhieuMuonPhong>().GetById(PhieuMuonId);
+                    if (data != null)
+                    {
+                        data.IsDelete = true;
+                        if (unitOfWork.Save() >= 1)
+                        {
+                            return 1;
+                        }
+                    }
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+        }
+        #endregion
+        public string GenerateCode()
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    string newCode = "";
+                    var last = unitOfWork.GetRepository<TB_PhieuMuonPhong>().GetAll().OrderByDescending(p => p.PhieuMuonPhongId).FirstOrDefault();
+                    if (last != null)
+                    {
+                        var lastCode = last.PhieuMuonPhongId;
+                        var numberPart = lastCode.Remove(0, 4);
+                        var prefixPart = lastCode.Substring(0, 4);
+                        var number = Convert.ToInt32(numberPart.TrimStart('0'));
+                        var suffix = number + 1;
+                        int sizePrefix = prefixPart.Length;
+                        int sizeSuffix = suffix.ToString().Length;
+                        string middle = "";
+                        for (int i = 0; i < (10 - sizePrefix - sizeSuffix); i++)
+                        {
+                            middle += "0";
+                        }
+                        newCode = prefixPart + middle + suffix;
+                        return newCode;
+                    }
+                    else
+                    {
+                        newCode = "PHMP000001";
+                    }
+                    return newCode;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }

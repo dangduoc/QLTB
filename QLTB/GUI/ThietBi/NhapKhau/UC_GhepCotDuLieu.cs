@@ -133,6 +133,10 @@ namespace QLTB.GUI
         }
         public List<Columnmapping> GetResult()
         {
+            if(result.Count< desHeader.Count)
+            {
+                return null;
+            }
             return result;
         }
     }

@@ -22,6 +22,7 @@ namespace QLTB.GUI
             InitializeComponent();
             Thietbis = tb;
             dstb = ds;
+            loadForm();
         }
         public void loadForm()
         {
@@ -109,7 +110,7 @@ namespace QLTB.GUI
             foreach(var item in Thietbis)
             {
                 dstb.RemoveAll(p => p.ThietBiId.Equals(item, StringComparison.CurrentCultureIgnoreCase));
-                listView.Items.Add("Mã thiết bị: "+item);
+                listBox1.Items.Add(j++.ToString()+", Mã thiết bị: "+item);
             }
             lbSoLuong.Text = Thietbis.Count.ToString();
             BindingSource source = new BindingSource();

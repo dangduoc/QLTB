@@ -22,6 +22,8 @@ namespace QLTB.DAL.Data
         public int KhoiLopId { get; set; }
         public int LopHocId { get; set; }
         public int SoTiet { get; set; }
+        public int ThoiGianTrongNgay { get; set; }
+        public int MuonTuTiet { get; set; }
         public System.DateTime NgayMuon { get; set; }
         public System.DateTime NgayTra { get; set; }
         public bool IsSuDungCaNgay { get; set; }
@@ -35,5 +37,6 @@ namespace QLTB.DAL.Data
         public Nullable<System.DateTime> CreatedOnDate { get; set; }
         public Nullable<int> UpdatedByUserId { get; set; }
         public Nullable<System.DateTime> UpdatedOnDate { get; set; }
+        
     }
 }
