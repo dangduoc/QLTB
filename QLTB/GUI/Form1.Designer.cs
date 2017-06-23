@@ -59,7 +59,7 @@
             this.btnBaoCao = new DevComponents.DotNetBar.ButtonItem();
             this.btnQuanTri = new DevComponents.DotNetBar.ButtonItem();
             this.btnTaiKhoan = new DevComponents.DotNetBar.ButtonItem();
-            this.btnPhanQuyen = new DevComponents.DotNetBar.ButtonItem();
+            this.btnHCQuaHan = new DevComponents.DotNetBar.ButtonItem();
             this.labelItem1 = new DevComponents.DotNetBar.LabelItem();
             this.txtStartYear = new DevComponents.DotNetBar.TextBoxItem();
             this.labelItem2 = new DevComponents.DotNetBar.LabelItem();
@@ -390,9 +390,10 @@
             this.btnQuanTri.Name = "btnQuanTri";
             this.btnQuanTri.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.btnTaiKhoan,
-            this.btnPhanQuyen});
+            this.btnHCQuaHan});
             this.btnQuanTri.Tag = "Quản trị";
             this.btnQuanTri.Text = "QUẢN TRỊ";
+            this.btnQuanTri.Click += new System.EventHandler(this.btnQuanTri_Click);
             // 
             // btnTaiKhoan
             // 
@@ -400,11 +401,11 @@
             this.btnTaiKhoan.Text = "Tài khoản hệ thống";
             this.btnTaiKhoan.Click += new System.EventHandler(this.btnDanhMuc_Click);
             // 
-            // btnPhanQuyen
+            // btnHCQuaHan
             // 
-            this.btnPhanQuyen.Name = "btnPhanQuyen";
-            this.btnPhanQuyen.Text = "Phần quyền - người dùng";
-            this.btnPhanQuyen.Click += new System.EventHandler(this.btnDanhMuc_Click);
+            this.btnHCQuaHan.Name = "btnHCQuaHan";
+            this.btnHCQuaHan.Text = "Hóa chất quá hạn";
+            this.btnHCQuaHan.Click += new System.EventHandler(this.btnDanhMuc_Click);
             // 
             // labelItem1
             // 
@@ -775,7 +776,7 @@
         private DevComponents.DotNetBar.ButtonItem buttonItem2;
         private DevComponents.DotNetBar.ButtonItem btnQuanTri;
         private DevComponents.DotNetBar.ButtonItem btnTaiKhoan;
-        private DevComponents.DotNetBar.ButtonItem btnPhanQuyen;
+        private DevComponents.DotNetBar.ButtonItem btnHCQuaHan;
         private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.Panel toolmenuTB;
         private System.Windows.Forms.Panel panel3;

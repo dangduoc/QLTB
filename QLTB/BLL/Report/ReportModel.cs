@@ -53,4 +53,16 @@ namespace QLTB.Report.Model
         public string ThanhTien { get; set; }
         public bool isTuMua { get; set; }
     }
+    public class HCHetHanReportModel
+    {
+        public string Ten { get; set; }
+        public string MaTB { get; set; }
+        public string SoHieu { get; set; }
+        public string DonViTinh { get; set; }
+        public int SoLuong { get; set; }
+        public string NoiSX { get; set; }
+        public string NgaySX { get; set; }
+        public string HanSD { get; set; }
+        public string GhiChu { get; set; }
+    }
 }

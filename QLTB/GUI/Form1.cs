@@ -1,4 +1,5 @@
-﻿using QLTB.Handler;
+﻿using DevComponents.DotNetBar;
+using QLTB.Handler;
 using QLTB.Utils;
 using System;
 using System.Collections.Generic;
@@ -51,7 +52,7 @@ namespace QLTB.GUI
             //
             btnTLThongTinDV.Click += BtnTLThongTinDV_Click;
             btnTLThongTinNamHoc.Click += BtnTLThongTinNamHoc_Click;
-            btnPhanQuyen.Click += btnPhanQuyen_Click;
+            btnHCQuaHan.Click += btnHCHetHan_Click;
             btnTaiKhoan.Click += BtnTaiKhoan_Click;
             string userfullname = GlobalVariable.GetUser().Name;
             string tendv = GlobalVariable.GetHeThong().DonVi.Ten;
@@ -62,37 +63,22 @@ namespace QLTB.GUI
             txtEndYear.Text = GlobalVariable.GetHeThong().NamHoc.NamKetThuc.ToString();
             //
             #endregion
+
             t.Abort();
         }
         private void Loading()
         {
-           Application.Run(new frmLogin());
+            Application.Run(new frmLogin());
         }
-       
+
         private void BtnTaiKhoan_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Chức năng đang xây dựng....");
         }
-        private void btnPhanQuyen_Click(object sender, EventArgs e)
+        private void btnHCHetHan_Click(object sender, EventArgs e)
         {
-            Cursor = Cursors.WaitCursor;
-            try
-            {
-                if (!CheckExistForm("frmPhanQuyenTaiKhoan"))
-                {
-                    frmPhanQuyenTaiKhoan frm = new frmPhanQuyenTaiKhoan();
-                    frm.MdiParent = this;
-                    frm.WindowState = FormWindowState.Maximized;
-                    frm.Show();
-                    pnlLoading.Visible = false;
-                }
-
-            }
-            catch (Exception ex)
-            {
-
-            }
-            Cursor = Cursors.Default;
+            frmDialogHCHetHan frm = new frmDialogHCHetHan();
+            frm.ShowDialog(this);
         }
 
         private void BtnTLThongTinNamHoc_Click(object sender, EventArgs e)
@@ -334,6 +320,12 @@ namespace QLTB.GUI
         private void Form1_Load(object sender, EventArgs e)
         {
             ChangeInfo();
+            //checking expired
+            int expires = new DbThietBiHandler().CheckHC(4);
+            if (expires > 0)
+            {
+                ShowNotif("Hiện có " + expires.ToString() + " hóa chất đã hết hạn sử dụng." + Environment.NewLine + "Vào cập 'QUẢN TRỊ>Hóa chất quá hạn' để xem chi tiết!");
+            }
         }
         public void ChangeInfo()
         {
@@ -350,7 +342,7 @@ namespace QLTB.GUI
             }
             Button btn = sender as Button;
             btn.BackColor = Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
-            
+
             pnlLoading.Visible = true;
         }
         private void btnDSThietBi_Click(object sender, EventArgs e)
@@ -372,7 +364,7 @@ namespace QLTB.GUI
             catch (Exception ex)
             {
 
-            }          
+            }
             Cursor = Cursors.Default;
         }
         private void btnKiemKe_Click(object sender, EventArgs e)
@@ -537,7 +529,7 @@ namespace QLTB.GUI
         {
             Cursor = Cursors.WaitCursor;
             //btnDSThietBi.PerformClick();
-           // btnDSThietBi_Click(null, null);
+            // btnDSThietBi_Click(null, null);
             //button1_Click(btnDSThietBi, null);
             toolmenuTB.Visible = true;
             pnlTop.Height = 150;
@@ -646,7 +638,32 @@ namespace QLTB.GUI
             }
             pnlLoading.Visible = false;
             Cursor = Cursors.Default;
-            
+
+        }
+        //Notif
+        public void ShowNotif(string Content)
+        {
+            // You can also use other static properties on ToastNotification to customize toast appearance, like:
+            // ToastNotification.DefaultToastGlowColor - to change the default toast glow color
+            // ToastNotification.DefaultToastPosition - to change default toast position
+            // ToastNotification.ToastBackColor - to change the toast notification background color which is by default black
+            // ToastNotification.ToastForeColor - to change the toast notification text color which is by default white
+            // ToastNotification.ToastFont - to change the toast notification font
+            // ToastNotification.ToastMargin - to set spacing between edges of the toast and its parent form
+
+            // Also note that ToastNotification.Show has overload which allows you to specify the explicit toast position using X, Y coordinates
+
+            //if ((eToastGlowColor)toastGlow.SelectedValue == eToastGlowColor.Custom)
+            //    ToastNotification.CustomGlowColor = Color.FromArgb(48, customGlowColor.SelectedColor);
+            // ToastNotification.ToastFont= new Font("Time new roman",)
+            ToastNotification.Show(this,
+                Content, null, 10000, eToastGlowColor.Green, eToastPosition.BottomRight
+                );
+        }
+
+        private void btnQuanTri_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
