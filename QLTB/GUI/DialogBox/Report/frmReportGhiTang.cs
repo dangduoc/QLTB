@@ -33,7 +33,7 @@ namespace QLTB.GUI
                 new Microsoft.Reporting.WinForms.ReportParameter("DonViChuQuan",GlobalVariable.GetHeThong().DonVi.DonViChuQuan),
                 new Microsoft.Reporting.WinForms.ReportParameter("TenTruong",GlobalVariable.GetHeThong().DonVi.Ten),
                  new Microsoft.Reporting.WinForms.ReportParameter("TenBaoCao","SỔ THEO DÕI VIỆC GHI TĂNG THIẾT BỊ GIÁO DỤC"),
-                  new Microsoft.Reporting.WinForms.ReportParameter("NamHoc","Năm học: 2016-2017")
+                  new Microsoft.Reporting.WinForms.ReportParameter("NamHoc","NĂM HỌC: "+GlobalVariable.GetHeThong().NamHoc.NamBatDau.ToString()+" - "+GlobalVariable.GetHeThong().NamHoc.NamKetThuc.ToString())
 
             };
             reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;

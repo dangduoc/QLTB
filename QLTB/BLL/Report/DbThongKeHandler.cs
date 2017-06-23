@@ -21,7 +21,7 @@ namespace QLTB.Handler
         {
             try
             {
-                using (var unitOfWork= new UnitOfWork())
+                using (var unitOfWork = new UnitOfWork())
                 {
                     var lst = unitOfWork.GetRepository<QH_PhieuGhiTang_ThietBi>().GetAll()
                     .Join(unitOfWork.GetRepository<TB_PhieuGhiTang>().GetAll(),
@@ -144,7 +144,7 @@ namespace QLTB.Handler
             {
                 try
                 {
-                    var dstb = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetAll().Where(p=>p.TrangThai>=0);
+                    var dstb = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetAll().Where(p => p.TrangThai >= 0);
                     var data = dstb
                                 .Join(unitOfWork.GetRepository<DM_PhongHocBoMon>().GetAll(),
                                     tb => tb.PhongHocId,
@@ -165,10 +165,10 @@ namespace QLTB.Handler
                                         DonGia = tb.DonGia,
                                         ThanhTien = tb.ThanhTien,
                                         NguonKP = tb.NguonKinhPhiId,
-                                        NamDuaVaoSD=tb.NamDuaVaoSD,
-                                        NamTheoDoi=tb.NamTheoDoi,
-                                        GhiChu=tb.GhiChu,
-                                        QuyCachSD=tb.QuyCachSD,
+                                        NamDuaVaoSD = tb.NamDuaVaoSD,
+                                        NamTheoDoi = tb.NamTheoDoi,
+                                        GhiChu = tb.GhiChu,
+                                        QuyCachSD = tb.QuyCachSD,
                                         SoLuongMuon = tb.SoLuongMuon
 
                                     }
@@ -217,7 +217,7 @@ namespace QLTB.Handler
                                         NamDuaVaoSD = tb.NamDuaVaoSD.ToString(),
                                         NamTheoDoi = tb.NamTheoDoi.ToString(),
                                         GhiChu = tb.GhiChu,
-                                        PhongBM=tb.KhoPhong,
+                                        PhongBM = tb.KhoPhong,
                                         QuyCachSD = tb.QuyCachSD,
                                         SoLuongMuon = tb.SoLuongMuon
                                     }
@@ -245,7 +245,7 @@ namespace QLTB.Handler
         {
             try
             {
-                using (var unitOfWork=new UnitOfWork())
+                using (var unitOfWork = new UnitOfWork())
                 {
                     var ds = unitOfWork.GetRepository<QH_PhieuDenNghiMS_ThietBi>().GetAll()
                            .Where(p => p.PhieuDeNghiId.Equals(id))
@@ -261,7 +261,7 @@ namespace QLTB.Handler
                                SoLuongDeNghi = pm.SoLuongDeNghi,
                                DonGia = pm.DonGia,
                                ThanhTien = pm.ThanhTien,
-                               IsTuMua=pm.IsTuMua
+                               IsTuMua = pm.IsTuMua
                            }
                            ).AsEnumerable()
                            .Join(GlobalVariable.GetDS().LoaiThietBi,
@@ -282,9 +282,60 @@ namespace QLTB.Handler
                     return ds;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return null;
+            }
+        }
+        public List<HCHetHanReportModel> HCHetHan(int code)
+        {
+            using (var unitOfWork = new UnitOfWork())
+            {
+                try
+                {
+                    var dstb = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetAll().Where(p => p.TrangThai == 1 && p.HanSD < DateTime.Today)
+                        .Join(unitOfWork.GetRepository<DM_ThietBiToiThieu>().GetAll().Where(p => p.LoaiThietBiId == code),
+                                    tb => tb.ThietBiId,
+                                    ph => ph.ThietBiId,
+                                    (tb, ph) => new
+                                    {
+                                        ThietBiId = tb.ThietBiId,
+                                        SoHieu = tb.SoHieu,
+                                        Ten = tb.Ten,
+                                        DonViTinhId = tb.DonViTinhId,
+                                        SoLuong = tb.SoLuongCon,
+                                        NoiSX = tb.NuocSanXuat,
+                                        NgaySX = tb.NgaySanXuat,
+                                        HanSD = tb.HanSD,
+                                        GhiChu = tb.GhiChu
+                                    }
+                                )
+                        ;
+                    var data = dstb.AsEnumerable()
+                                 .Join(unitOfWork.GetRepository<DS_DonViTinh>().GetAll(),
+                                    tb => tb.DonViTinhId,
+                                    dvt => dvt.DonViTinhId,
+                                    (tb, dvt) => new HCHetHanReportModel
+                                    {
+                                        MaTB = tb.ThietBiId,
+                                        SoHieu = tb.SoHieu,
+                                        Ten = tb.Ten,
+                                        DonViTinh = dvt.Ten,
+                                        SoLuong = tb.SoLuong,
+                                        NoiSX = tb.NoiSX,
+                                        NgaySX = MyConvert.DateToString(tb.NgaySX),
+                                        HanSD = MyConvert.DateToString(tb.HanSD),
+                                        GhiChu = tb.GhiChu
+                                    }
+                                )
+                                .OrderBy(p => p.MaTB)
+                                .ToList();
+                    return data;
+                }
+                catch (Exception ex)
+                {
+                    return null;
+                }
             }
         }
     }

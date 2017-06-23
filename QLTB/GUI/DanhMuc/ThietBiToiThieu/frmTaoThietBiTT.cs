@@ -69,6 +69,16 @@ namespace QLTB.GUI
                 cboxDanhChoGV.Checked = ThietBi.IsDanhChoGV;
                 cboxDanhChoHS.Checked = ThietBi.IsDanhChoHS;
                 cboxThuocDM.Checked = ThietBi.IsThuocDMTT;
+                //dung cho lop
+                var arr=ThietBi.DungChoLopHienThi.Split(',');
+
+                foreach (var item in pnlDungChoLop.Controls.OfType<DevComponents.DotNetBar.Controls.CheckBoxX>())
+                {
+                    if (arr.Contains(item.Text))
+                    {
+                        item.Checked = true;
+                    }
+                }
             }
             DisableHighlightCBB();
         }
@@ -107,7 +117,7 @@ namespace QLTB.GUI
                 }
                 if (!string.IsNullOrEmpty(ThietBiMoi.DungChoLopHienThi))
                 {
-                    ThietBiMoi.DungChoLopHienThi.Remove(ThietBiMoi.DungChoLopHienThi.Length - 2, 2);
+                    ThietBiMoi.DungChoLopHienThi = ThietBiMoi.DungChoLopHienThi.Remove(ThietBiMoi.DungChoLopHienThi.Length - 2);
                 }
                 if (ThietBi == null)
                 {
@@ -118,7 +128,7 @@ namespace QLTB.GUI
                         if (result == 1)
                         {
                             MessageBox.Show("Tạo thành công thiết bị", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        
+                            ResetForm();
                         }
                         else
                         {
@@ -179,6 +189,14 @@ namespace QLTB.GUI
             {
                 Close();
             }
+        }
+
+        private void ResetForm()
+        {
+            txtMaTB.Text = "";
+            txtTenTB.Text = "";
+            txtMoTa.Text = "";
+            txtSoLuongTT.Text = "0";
         }
     }
 }

@@ -212,6 +212,11 @@ namespace QLTB.Model
                 Id = 3,
                 Ten = "Băng đĩa CD/ DVD"
             });
+            loaithietbi.Add(new LoaiThietBi
+            {
+                Id = 4,
+                Ten = "Hóa chất"
+            });
             #endregion
             #region Loại trường chuyên biệt
             loaitruongchuyenbiet.Add(new LoaiTruongChuyenBiet

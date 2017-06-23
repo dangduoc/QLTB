@@ -9,35 +9,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using QLTB.Model;
+
 namespace QLTB.GUI
 {
-    public partial class frmReportMuaSam : DevComponents.DotNetBar.Office2007Form
+    public partial class frmReportDSHCHetHan : DevComponents.DotNetBar.Office2007Form
     {
         private DbThongKeHandler handler = new DbThongKeHandler();
         BindingSource source = new BindingSource();
-        private string namhoc = "",tenbaocao="";
-        public frmReportMuaSam(string id,string namhoc,string tenbaocao)
+        public frmReportDSHCHetHan()
         {
             InitializeComponent();
-            source.DataSource = handler.ThietBiMuSam(id);
-            this.namhoc = "NĂM HỌC: "+namhoc;
-            this.tenbaocao = tenbaocao;
+            source.DataSource = handler.HCHetHan(4);
         }
 
-        private void frmReportMuaSam_Load(object sender, EventArgs e)
+        private void frmReportDSHCHetHan_Load(object sender, EventArgs e)
         {
-           
-            
-            ThietBiMuaReportModelBindingSource.DataSource = source;
+
+            HCHetHanReportModelBindingSource.DataSource = source;
             //
             Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
             {
                 new Microsoft.Reporting.WinForms.ReportParameter("DonViChuQuan",GlobalVariable.GetHeThong().DonVi.DonViChuQuan),
                 new Microsoft.Reporting.WinForms.ReportParameter("TenTruong",GlobalVariable.GetHeThong().DonVi.Ten),
-                 new Microsoft.Reporting.WinForms.ReportParameter("TenBaoCao",tenbaocao.ToUpper()),
-                  new Microsoft.Reporting.WinForms.ReportParameter("NamHoc",namhoc)
-
+                 new Microsoft.Reporting.WinForms.ReportParameter("TenBaoCao","DANH MỤC HÓA CHẤT HẾT HẠN - PHÒNG THỰC HÀNH HÓA"),
+                  new Microsoft.Reporting.WinForms.ReportParameter("NamHoc","NĂM HỌC: "+GlobalVariable.GetHeThong().NamHoc.NamBatDau.ToString()+" - "+GlobalVariable.GetHeThong().NamHoc.NamKetThuc.ToString())
             };
             reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             reportViewer1.LocalReport.SetParameters(rParams);

@@ -390,5 +390,194 @@ namespace QLTB.Handler
                 return false;
             }
         }
+
+        public Paging<List<ThietBiGridDisplayModel>> ThietBiHetHan(int page, int pageSize,int code)
+        {
+            using (var unitOfWork = new UnitOfWork())
+            {
+                try
+                {
+                    var dstb = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetAll().Where(p=>p.TrangThai==1 && p.HanSD<DateTime.Today)
+                        .Join(unitOfWork.GetRepository<DM_ThietBiToiThieu>().GetAll().Where(p=>p.LoaiThietBiId==code),
+                                    tb => tb.ThietBiId,
+                                    ph => ph.ThietBiId,
+                                    (tb, ph) => new
+                                    {
+                                        ThietBiId = tb.ThietBiId,
+                                        SoHieu = tb.SoHieu,
+                                        Ten = tb.Ten,
+                                        PhongHocId = tb.PhongHocId,
+                                        MonHocId = tb.MonHocId,
+                                        SoLuong = tb.SoLuong,
+                                        SoLuongMat = tb.SoLuongMat,
+                                        SoLuongHong = tb.SoLuongHong,
+                                        DonViTinhId = tb.DonViTinhId,
+                                        TrangThai = tb.TrangThai,
+                                        SoLuongCon = tb.SoLuongCon,
+                                        DonGia = tb.DonGia,
+                                        ThanhTien = tb.ThanhTien,
+                                        NguonKinhPhiId = tb.NguonKinhPhiId
+                                    }
+                                )
+                        ;
+                    var TotalRecord = dstb.Count();
+                    var data = dstb
+                                .Join(unitOfWork.GetRepository<DM_PhongHocBoMon>().GetAll(),
+                                    tb => tb.PhongHocId,
+                                    ph => ph.PhongHocId,
+                                    (tb, ph) => new
+                                    {
+                                        ThietBiId = tb.ThietBiId,
+                                        SoHieu = tb.SoHieu,
+                                        Ten = tb.Ten,
+                                        KhoPhong = ph.Ten,
+                                        MonHocId = tb.MonHocId,
+                                        SoLuong = tb.SoLuong,
+                                        SoLuongMat = tb.SoLuongMat,
+                                        SoLuongHong = tb.SoLuongHong,
+                                        DonViTinhId = tb.DonViTinhId,
+                                        TrangThaiId = tb.TrangThai,
+                                        SoLuongCon = tb.SoLuongCon,
+                                        DonGia = tb.DonGia,
+                                        ThanhTien = tb.ThanhTien,
+                                        NguonKP = tb.NguonKinhPhiId
+                                    }
+                                )
+                                .Join(unitOfWork.GetRepository<DM_MonHoc>().GetAll(),
+                                    tb => tb.MonHocId,
+                                    mh => mh.MonHocId,
+                                    (tb, mh) => new
+                                    {
+                                        ThietBiId = tb.ThietBiId,
+                                        SoHieu = tb.SoHieu,
+                                        Ten = tb.Ten,
+                                        KhoPhong = tb.KhoPhong,
+                                        MonHoc = mh.Ten,
+                                        SoLuong = tb.SoLuong,
+                                        SoLuongMat = tb.SoLuongMat,
+                                        SoLuongHong = tb.SoLuongHong,
+                                        DonViTinhId = tb.DonViTinhId,
+                                        TrangThaiId = tb.TrangThaiId,
+                                        SoLuongCon = tb.SoLuongCon,
+                                        DonGia = tb.DonGia,
+                                        ThanhTien = tb.ThanhTien,
+                                        NguonKP = tb.NguonKP
+                                    }
+                                )
+                                 .Join(unitOfWork.GetRepository<DS_DonViTinh>().GetAll(),
+                                    tb => tb.DonViTinhId,
+                                    dvt => dvt.DonViTinhId,
+                                    (tb, dvt) => new
+                                    {
+                                        ThietBiId = tb.ThietBiId,
+                                        SoHieu = tb.SoHieu,
+                                        Ten = tb.Ten,
+                                        KhoPhong = tb.KhoPhong,
+                                        MonHoc = tb.MonHoc,
+                                        SoLuong = tb.SoLuong.ToString(),
+                                        SoLuongMat = tb.SoLuongMat.ToString(),
+                                        SoLuongHong = tb.SoLuongHong.ToString(),
+                                        DonViTinh = dvt.Ten,
+                                        TrangThaiId = tb.TrangThaiId,
+                                        SoLuongCon = tb.SoLuongCon,
+                                        DonGia = tb.DonGia,
+                                        ThanhTien = tb.ThanhTien,
+                                        NguonKP = tb.NguonKP
+
+                                    }
+                                )
+                                .Join(unitOfWork.GetRepository<DM_NguonKinhPhi>().GetAll(),
+                                tb => tb.NguonKP,
+                                tmp => tmp.NguonKinhPhiId,
+                                (tb, tmp) => new
+                                {
+                                    ThietBiId = tb.ThietBiId,
+                                    SoHieu = tb.SoHieu,
+                                    Ten = tb.Ten,
+                                    KhoPhong = tb.KhoPhong,
+                                    MonHoc = tb.MonHoc,
+                                    SoLuong = tb.SoLuong,
+                                    SoLuongCon = tb.SoLuongCon.ToString(),
+                                    SoLuongMat = tb.SoLuongMat,
+                                    SoLuongHong = tb.SoLuongHong,
+                                    DonViTinh = tb.DonViTinh,
+                                    TrangThaiId = tb.TrangThaiId,
+                                    DonGia = tb.DonGia,
+                                    ThanhTien = tb.ThanhTien,
+                                    NguonKinhPhi = tmp.Ten
+                                }
+                                )
+                                .AsEnumerable()
+                                .Join(GlobalVariable.GetDS().TrangThaiThietBi,
+                                    tb => tb.TrangThaiId,
+                                    tt => tt.Id,
+                                    (tb, tt) => new ThietBiGridDisplayModel
+                                    {
+                                        ThietBiId = tb.ThietBiId,
+                                        SoHieu = tb.SoHieu,
+                                        Ten = tb.Ten,
+                                        KhoPhong = tb.KhoPhong,
+                                        MonHoc = tb.MonHoc,
+                                        SoLuong = tb.SoLuong,
+                                        SoLuongCon = tb.SoLuongCon.ToString(),
+                                        SoLuongMat = tb.SoLuongMat,
+                                        SoLuongHong = tb.SoLuongHong,
+                                        DonViTinh = tb.DonViTinh,
+                                        TrangThai = tt.Name,
+                                        DonGia = tb.DonGia.ToString(),
+                                        ThanhTien = tb.ThanhTien.ToString(),
+                                        NguonKinhPhi = tb.NguonKinhPhi
+                                    }
+                                )
+                                .OrderBy(p => p.MonHoc)
+                                .Skip(pageSize * (page - 1))
+                                .Take(pageSize)
+                                .ToList();
+                    //
+
+
+
+                    return new Paging<List<ThietBiGridDisplayModel>>
+                    {
+                        CurrentPage = page,
+                        Size = TotalRecord % pageSize == 0 ? TotalRecord / pageSize : TotalRecord / pageSize + 1,
+                        TotalRecord = TotalRecord,
+                        data = data,
+                        NextPage = (pageSize * page) < TotalRecord ? true : false,
+                        PreviousPage = page > 1 ? true : false
+                    };
+                }
+                catch (Exception ex)
+                {
+                    return null;
+                }
+            }
+        }
+        public int CheckHC(int code)
+        {
+            using (var unitOfWork = new UnitOfWork())
+            {
+                try
+                {
+                    var dstb = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetAll().Where(p => p.TrangThai == 1 && p.HanSD < DateTime.Today)
+                        .Join(unitOfWork.GetRepository<DM_ThietBiToiThieu>().GetAll().Where(p => p.LoaiThietBiId == code),
+                                    tb => tb.ThietBiId,
+                                    ph => ph.ThietBiId,
+                                    (tb, ph) => new
+                                    {
+                                        ThietBiId = tb.ThietBiId
+                                    }
+                                )
+                        ;
+                    if(dstb!=null)
+                    return dstb.Count();
+                    return 0;
+                }
+                catch (Exception ex)
+                {
+                    return 0;
+                }
+            }
+        }
     }
 }
