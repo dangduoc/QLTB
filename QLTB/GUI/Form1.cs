@@ -63,7 +63,6 @@ namespace QLTB.GUI
             txtEndYear.Text = GlobalVariable.GetHeThong().NamHoc.NamKetThuc.ToString();
             //
             #endregion
-
             t.Abort();
         }
         private void Loading()
@@ -73,7 +72,24 @@ namespace QLTB.GUI
 
         private void BtnTaiKhoan_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Chức năng đang xây dựng....");
+            Cursor = Cursors.WaitCursor;
+            try
+            {
+                if (!CheckExistForm("frmDanhSachNamHoc"))
+                {
+                    frmTaiKhoanHeThong frm = new frmTaiKhoanHeThong();
+                    frm.MdiParent = this;
+                    frm.WindowState = FormWindowState.Maximized;
+                    frm.Show();
+                    pnlLoading.Visible = false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            Cursor = Cursors.Default;
         }
         private void btnHCHetHan_Click(object sender, EventArgs e)
         {
@@ -319,7 +335,13 @@ namespace QLTB.GUI
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            SuspendLayout();
             ChangeInfo();
+            WindowState = FormWindowState.Maximized;
+            if(WindowState== FormWindowState.Maximized)
+            this.Visible = true;
+            ResumeLayout();
+           
             //checking expired
             int expires = new DbThietBiHandler().CheckHC(4);
             if (expires > 0)

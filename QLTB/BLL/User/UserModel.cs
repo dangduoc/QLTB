@@ -18,6 +18,15 @@ namespace QLTB.Model
         public string Note { get; set; }
         public string Name { get; set; }
     }
+    public class UserGridDisplayModel
+    {
+        public int UserId { get; set; }
+        public string UserName { get; set; }
+        public string Role { get; set; }
+        public string Name { get; set; }
+        public string Note { get; set; }
+        public string TrangThai { get; set; }
+    }
     public class UserTreeViewModel
     {
         public int UserId { get; set; }

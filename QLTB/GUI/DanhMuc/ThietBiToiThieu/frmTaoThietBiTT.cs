@@ -176,7 +176,13 @@ namespace QLTB.GUI
 
         private void frmTaoThietBiTT_Load(object sender, EventArgs e)
         {
+            try { 
             loadForm();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Xảy ra lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void frmTaoThietBiTT_KeyDown(object sender, KeyEventArgs e)

@@ -34,15 +34,15 @@ namespace QLTB.GUI
         }
         private void loadForm()
         {
-            foreach(var item in layoutControl1.Controls.OfType<DevComponents.DotNetBar.Controls.ComboBoxEx>())
+            foreach (var item in layoutControl1.Controls.OfType<DevComponents.DotNetBar.Controls.ComboBoxEx>())
             {
                 item.ValueMember = "key";
                 item.DisplayMember = "value";
             }
             //
             cbbLoaiPhong.DataSource = dshandler.LoaiPhongTN.Select(p => new { value = p.Ten, key = p.Id }).ToList();
-            cbbMonHoc.DataSource=new DbMonHocHandler().GetNames().Select(p => new { value = p.Ten, key = p.MonHocId }).ToList();
-            cbbXepLoai.DataSource=dshandler.XepLoaiPhongBM.Select(p => new { value = p.Ten, key = p.Id }).ToList();
+            cbbMonHoc.DataSource = new DbMonHocHandler().GetNames().Select(p => new { value = p.Ten, key = p.MonHocId }).ToList();
+            cbbXepLoai.DataSource = dshandler.XepLoaiPhongBM.Select(p => new { value = p.Ten, key = p.Id }).ToList();
             if (Phong != null)
             {
                 txtTen.Text = Phong.Ten;
@@ -63,10 +63,10 @@ namespace QLTB.GUI
                 NamDuaVaoSD = Convert.ToInt16(txtNamBatDauSD.Text),
                 DienTich = Convert.ToDouble(txtDienTich.Text),
                 IsPhongChucNang = cboxPhongChucNang.Checked,
-                LoaiPhongTNId =  (int?)MyConvert.ChangeType(cbbLoaiPhong.SelectedValue,typeof(int?)),
-                MonHocId= (int?)MyConvert.ChangeType(cbbMonHoc.SelectedValue, typeof(int?)),
-                XepLoaiId= (int?)MyConvert.ChangeType(cbbXepLoai.SelectedValue, typeof(int?)),
-                
+                LoaiPhongTNId = (int?)MyConvert.ChangeType(cbbLoaiPhong.SelectedValue, typeof(int?)),
+                MonHocId = (int?)MyConvert.ChangeType(cbbMonHoc.SelectedValue, typeof(int?)),
+                XepLoaiId = (int?)MyConvert.ChangeType(cbbXepLoai.SelectedValue, typeof(int?)),
+
             };
             if (Phong != null)
             {
@@ -105,18 +105,32 @@ namespace QLTB.GUI
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            saveData();
+            try
+            {
+                saveData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Xảy ra lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void frmTaoPhongBM_Load(object sender, EventArgs e)
         {
-            loadForm();
+            try
+            {
+                loadForm();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Xảy ra lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void txtNamBatDauSD_Leave(object sender, EventArgs e)
         {
             int tmp;
-            if(int.TryParse(txtNamBatDauSD.Text, out tmp))
+            if (int.TryParse(txtNamBatDauSD.Text, out tmp))
             {
                 txtNamKetThucSD.Text = (tmp + 1).ToString();
             }

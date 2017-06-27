@@ -1,27 +1,4 @@
-D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\SqlServerTypes\x64\msvcr100.dll
-D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\SqlServerTypes\x64\SqlServerSpatial110.dll
-D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\SqlServerTypes\x86\msvcr100.dll
-D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\SqlServerTypes\x86\SqlServerSpatial110.dll
-D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\QLTB YODO.exe.config
-D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\QLTB YODO.exe
-D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\QLTB YODO.pdb
-D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\EntityFramework.SqlServerCompact.dll
-D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\EPPlus.dll
-D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\Microsoft.ReportViewer.Common.dll
-D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\Microsoft.ReportViewer.DataVisualization.DLL
-D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\Microsoft.ReportViewer.Design.DLL
-D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.DLL
-D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\Microsoft.ReportViewer.WinForms.DLL
-D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\Microsoft.SqlServer.Types.dll
-D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\System.Data.SqlServerCe.dll
-D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\EnvDTE.dll
-D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\EnvDTE80.dll
-D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\stdole.dll
-D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\Microsoft.MSXML.dll
-D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\EntityFramework.SqlServerCompact.xml
-D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\EPPlus.xml
-D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\EnvDTE.xml
-D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\EnvDTE80.xml
+D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.csprojResolveAssemblyReference.cache
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmTaoCanBoTB.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmTaoGiaoVien.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmTaoLopHoc.resources
@@ -36,12 +13,17 @@ D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmDialogTBBaoHong.resour
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmDialogTBSuaChua.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmDialogTBToiThieu.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmDialogTSGhiTang.resources
+D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmReportDSHCHetHan.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmReportDSThietBi.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmReportGhiTang.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmReportMuaSam.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.Form1.resources
+D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmCTTaiKhoan.resources
+D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmTaiKhoanHeThong.resources
+D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmDialogError.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.UC_NguonKinhPhi.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.UC_ThietBiGD.resources
+D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.UC_ThucHienImport.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmDanhSachNamHoc.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmLogin.resources
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.GUI.frmMain.resources
@@ -88,5 +70,33 @@ D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.Properties.Resources.resource
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB.csproj.GenerateResource.Cache
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\RdlCompile.cache
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\RdlCompile.compiled
+D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\SqlServerTypes\x64\msvcr100.dll
+D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\SqlServerTypes\x64\SqlServerSpatial110.dll
+D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\SqlServerTypes\x86\msvcr100.dll
+D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\SqlServerTypes\x86\SqlServerSpatial110.dll
+D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\QLTB YODO.exe.config
+D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\QLTB YODO.exe
+D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\QLTB YODO.pdb
+D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\DevComponents.DotNetBar.SuperGrid.dll
+D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\DevComponents.Instrumentation.dll
+D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\EntityFramework.SqlServerCompact.dll
+D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\EPPlus.dll
+D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\Microsoft.ReportViewer.Common.dll
+D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\Microsoft.ReportViewer.DataVisualization.DLL
+D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\Microsoft.ReportViewer.Design.DLL
+D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\Microsoft.ReportViewer.WinForms.DLL
+D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\Microsoft.SqlServer.Types.dll
+D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\System.Data.SqlServerCe.dll
+D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\EnvDTE.dll
+D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\EnvDTE80.dll
+D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\stdole.dll
+D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\Microsoft.MSXML.dll
+D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\DevComponents.DotNetBar.SuperGrid.xml
+D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\DevComponents.Instrumentation.xml
+D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\EntityFramework.SqlServerCompact.xml
+D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\EPPlus.xml
+D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\EnvDTE.xml
+D:\Công việc\QLTB\Code\QLTB\QLTB\bin\Debug\EnvDTE80.xml
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB YODO.exe
 D:\Công việc\QLTB\Code\QLTB\QLTB\obj\Debug\QLTB YODO.pdb

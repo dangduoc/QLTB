@@ -55,6 +55,9 @@
         <EntityTypeShape EntityType="Model.QH_PhieuSuaTB_ThietBi" Width="1.5" PointX="18.375" PointY="4.75" />
         <EntityTypeShape EntityType="Model.TB_PhieuSuaTB" Width="1.5" PointX="18.375" PointY="8.75" />
         <EntityTypeShape EntityType="Model.TB_PhieuMuonPhong" Width="1.5" PointX="12.375" PointY="16.75" />
+        <EntityTypeShape EntityType="Model.QH_PhieuKiemKe_ThietBi" Width="1.5" PointX="18.375" PointY="12.75" />
+        <EntityTypeShape EntityType="Model.TB_PhieuKiemKe" Width="1.5" PointX="18.375" PointY="17.75" />
+        <EntityTypeShape EntityType="Model.QH_PhieuKiemKe_BanKiemKe" Width="1.5" PointX="3.375" PointY="19.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -257,7 +257,15 @@ namespace QLTB.GUI
         }
         private void frmTaoGiaoVien_Load(object sender, EventArgs e)
         {
-            loadForm();
+            try
+            {
+                loadForm();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Xảy ra lỗi", MessageBoxButtons.OK
+                    , MessageBoxIcon.Error);
+            }
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -282,7 +290,15 @@ namespace QLTB.GUI
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            saveData();
+            try
+            {
+                saveData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Xảy ra lỗi", MessageBoxButtons.OK
+                    , MessageBoxIcon.Error);
+            }
         }
 
         private void frmTaoGiaoVien_KeyDown(object sender, KeyEventArgs e)

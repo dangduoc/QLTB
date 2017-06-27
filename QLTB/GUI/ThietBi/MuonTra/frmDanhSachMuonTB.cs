@@ -269,13 +269,16 @@ namespace QLTB.GUI
 
         private void btnGhiTra_Click(object sender, EventArgs e)
         {
-            var row = ADGVDanhSach.SelectedRows[0];
-            if (row != null)
+            if (ADGVDanhSach.SelectedRows.Count > 0)
             {
-                var Id = row.Cells["PhieuMuonTBId"].Value.ToString();
-                frmGhiNhanTraTB frm = new frmGhiNhanTraTB(Id);
-                var owner = MdiParent as Form1;
-                owner.OpenFrmChild(frm);
+                var row = ADGVDanhSach.SelectedRows[0];
+                if (row != null)
+                {
+                    var Id = row.Cells["PhieuMuonTBId"].Value.ToString();
+                    frmGhiNhanTraTB frm = new frmGhiNhanTraTB(Id);
+                    var owner = MdiParent as Form1;
+                    owner.OpenFrmChild(frm);
+                }
             }
         }
 

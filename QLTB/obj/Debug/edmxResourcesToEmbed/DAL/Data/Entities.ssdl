@@ -276,6 +276,35 @@
     <Property Name="PhieuBaoHongId" Type="nvarchar" MaxLength="10" />
     <Property Name="LyDo" Type="nvarchar" MaxLength="500" />
   </EntityType>
+  <EntityType Name="QH_PhieuKiemKe_BanKiemKe">
+    <Key>
+      <PropertyRef Name="SoPhieu" />
+    </Key>
+    <Property Name="SoPhieu" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ChucVu" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="DaiDien" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="VaiTro" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QH_PhieuKiemKe_ThietBi">
+    <Key>
+      <PropertyRef Name="SoPhieu" />
+      <PropertyRef Name="SoHieu" />
+    </Key>
+    <Property Name="SoPhieu" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="SoHieu" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="PhongHocId" Type="int" Nullable="false" />
+    <Property Name="SoLuong" Type="int" Nullable="false" />
+    <Property Name="DonViTinhId" Type="int" Nullable="false" />
+    <Property Name="MatTruoc" Type="int" Nullable="false" />
+    <Property Name="MatSau" Type="int" Nullable="false" />
+    <Property Name="HongTruoc" Type="int" Nullable="false" />
+    <Property Name="HongSau" Type="int" Nullable="false" />
+    <Property Name="ConDungDuoc" Type="int" Nullable="false" />
+    <Property Name="ChenhLechMat" Type="int" Nullable="false" />
+    <Property Name="ChenhLechHong" Type="int" Nullable="false" />
+    <Property Name="GhiChu" Type="nvarchar" MaxLength="500" />
+  </EntityType>
   <EntityType Name="QH_PhieuMuonPhong_ThietBi">
     <Key>
       <PropertyRef Name="PhieuMuonPhongId" />
@@ -390,6 +419,20 @@
     <Property Name="UpdatedByUserId" Type="int" />
     <Property Name="UpdatedOnDate" Type="datetime" />
   </EntityType>
+  <EntityType Name="TB_PhieuKiemKe">
+    <Key>
+      <PropertyRef Name="SoPhieu" />
+    </Key>
+    <Property Name="SoPhieu" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="NgayLap" Type="datetime" Nullable="false" />
+    <Property Name="NgayKiemKe" Type="datetime" Nullable="false" />
+    <Property Name="PhongHocId" Type="int" Nullable="false" />
+    <Property Name="GhiChu" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreatedByUserId" Type="int" />
+    <Property Name="CreatedOnDate" Type="datetime" />
+    <Property Name="UpdatedByUserId" Type="datetime" />
+    <Property Name="UpdatedOnDate" Type="datetime" />
+  </EntityType>
   <EntityType Name="TB_PhieuMuonPhong">
     <Key>
       <PropertyRef Name="PhieuMuonPhongId" />
@@ -415,6 +458,8 @@
     <Property Name="CreatedOnDate" Type="datetime" />
     <Property Name="UpdatedByUserId" Type="int" />
     <Property Name="UpdatedOnDate" Type="datetime" />
+    <Property Name="ThoiGianTrongNgay" Type="int" Nullable="false" />
+    <Property Name="MuonTuTiet" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="TB_PhieuMuonTB">
     <Key>
@@ -496,12 +541,12 @@
     <Property Name="IsThietBiTuLam" Type="bit" Nullable="false" />
     <Property Name="NgaySanXuat" Type="datetime" />
     <Property Name="HanSD" Type="datetime" />
-    <Property Name="GhiChu" Type="nchar" MaxLength="10" />
     <Property Name="TrangThai" Type="int" Nullable="false" />
     <Property Name="CreateByUserId" Type="int" />
     <Property Name="CreatedOnDate" Type="datetime" />
     <Property Name="UpdatedByUserId" Type="int" />
     <Property Name="UpdatedOnDate" Type="datetime" />
+    <Property Name="GhiChu" Type="nvarchar" MaxLength="500" />
   </EntityType>
   <EntityType Name="ThongTinDonVi">
     <Key>
@@ -690,6 +735,8 @@
     <EntitySet Name="QH_PhieuDenNghiMS_ThietBi" EntityType="Self.QH_PhieuDenNghiMS_ThietBi" store:Type="Tables" />
     <EntitySet Name="QH_PhieuGhiTang_ThietBi" EntityType="Self.QH_PhieuGhiTang_ThietBi" store:Type="Tables" />
     <EntitySet Name="QH_PhieuGiamTB_ThietBi" EntityType="Self.QH_PhieuGiamTB_ThietBi" store:Type="Tables" />
+    <EntitySet Name="QH_PhieuKiemKe_BanKiemKe" EntityType="Self.QH_PhieuKiemKe_BanKiemKe" store:Type="Tables" />
+    <EntitySet Name="QH_PhieuKiemKe_ThietBi" EntityType="Self.QH_PhieuKiemKe_ThietBi" store:Type="Tables" />
     <EntitySet Name="QH_PhieuMuonPhong_ThietBi" EntityType="Self.QH_PhieuMuonPhong_ThietBi" store:Type="Tables" />
     <EntitySet Name="QH_PhieuMuonTB_ThietBi" EntityType="Self.QH_PhieuMuonTB_ThietBi" store:Type="Tables" />
     <EntitySet Name="QH_PhieuSuaTB_ThietBi" EntityType="Self.QH_PhieuSuaTB_ThietBi" store:Type="Tables" />
@@ -699,6 +746,7 @@
     <EntitySet Name="TB_PhieuDeNghiMuaSam" EntityType="Self.TB_PhieuDeNghiMuaSam" store:Type="Tables" />
     <EntitySet Name="TB_PhieuGhiTang" EntityType="Self.TB_PhieuGhiTang" store:Type="Tables" />
     <EntitySet Name="TB_PhieuGiamTB" EntityType="Self.TB_PhieuGiamTB" store:Type="Tables" />
+    <EntitySet Name="TB_PhieuKiemKe" EntityType="Self.TB_PhieuKiemKe" store:Type="Tables" />
     <EntitySet Name="TB_PhieuMuonPhong" EntityType="Self.TB_PhieuMuonPhong" store:Type="Tables" />
     <EntitySet Name="TB_PhieuMuonTB" EntityType="Self.TB_PhieuMuonTB" store:Type="Tables" />
     <EntitySet Name="TB_PhieuSuaTB" EntityType="Self.TB_PhieuSuaTB" store:Type="Tables" />

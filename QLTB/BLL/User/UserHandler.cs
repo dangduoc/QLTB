@@ -131,6 +131,101 @@ namespace QLTB.Handler
                 return null;
             }
         }
+        public List<UserGridDisplayModel> GetAll()
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    return unitOfWork.GetRepository<HT_User>().GetAll().Where(p=>p.isActived==true).AsEnumerable()
+                        .Select(p => new UserGridDisplayModel
+                        {
+                            UserId=p.UserId,
+                            Name=p.Name,
+                            Note=p.Note,
+                            Role=p.UserRoleId==1?"Quản trị":"Thường",
+                            UserName=p.UserName,
+                            TrangThai=(bool)p.isActived?"Đang hoạt động":"Đã tắt"
+                        }).ToList();
+                }
+            }
+            catch(Exception ex)
+            {
+                return null;
+
+            }
+        }
+        #region Update,Delete,Create
+        public int Create(UserModel model)
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    var entity = MyConvert.ConvertSameData<HT_User>(model);
+                    unitOfWork.GetRepository<HT_User>().Add(entity);
+                    if (unitOfWork.Save() >= 1)
+                    {
+                        return 1;
+                    }
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+        }
+        public int Update(UserModel model)
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    var data = unitOfWork.GetRepository<HT_User>().GetById(model.UserId);
+                    if (data != null)
+                    {
+                        MyConvert.TransferValues(data, model);
+                        unitOfWork.GetRepository<HT_User>().Update(data);
+                        if (unitOfWork.Save() >= 1)
+                        {
+                            return 1;
+                        }
+                    }
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+        }
+        public int Remove(int Id)
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    var data = unitOfWork.GetRepository<HT_User>().GetById(Id);
+                    if (data != null)
+                    {
+                        data.isActived=false;
+                        unitOfWork.GetRepository<HT_User>().Update(data);
+                        if (unitOfWork.Save() >= 1)
+                        {
+                            return 1;
+                        }
+                    }
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+        }
+        #endregion
+
 
         public List<QHUserPermission> GetPermissionsOfRole(int RoleId)
         {

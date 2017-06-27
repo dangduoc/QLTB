@@ -33,8 +33,9 @@ namespace QLTB.Utils
             else
                 return ((DateTime)date).ToString("dd/M/yyyy", CultureInfo.InvariantCulture);
         }
-        public static string BoolToString(bool value, string iftrue, string iffalse)
+        public static string BoolToString(bool? value, string iftrue, string iffalse)
         {
+            if (value == null) return iffalse;
             return value == true ? iftrue : iffalse;
         }
         public static string ToVienameseCurrency(double value)
