@@ -471,6 +471,12 @@
     <Compile Include="GUI\QuanTri\frmTaiKhoanHeThong.Designer.cs">
       <DependentUpon>frmTaiKhoanHeThong.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ThietBi\KiemKe\Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBi\KiemKe\Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ThietBi\NhapKhau\frmDialogError.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -608,12 +614,6 @@
     </Compile>
     <Compile Include="GUI\ThietBi\GiamTB\frmPhieGiamThietBi.Designer.cs">
       <DependentUpon>frmPhieGiamThietBi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\ThietBi\KiemKe\frmChiTietKiemKe.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\ThietBi\KiemKe\frmChiTietKiemKe.Designer.cs">
-      <DependentUpon>frmChiTietKiemKe.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\ThietBi\KiemKe\frmKiemKeTB.cs">
       <SubType>Form</SubType>
@@ -820,6 +820,9 @@
     <EmbeddedResource Include="GUI\QuanTri\frmTaiKhoanHeThong.resx">
       <DependentUpon>frmTaiKhoanHeThong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBi\KiemKe\Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\ThietBi\NhapKhau\frmDialogError.resx">
       <DependentUpon>frmDialogError.cs</DependentUpon>
     </EmbeddedResource>
@@ -888,9 +891,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ThietBi\GiamTB\frmPhieGiamThietBi.resx">
       <DependentUpon>frmPhieGiamThietBi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\ThietBi\KiemKe\frmChiTietKiemKe.resx">
-      <DependentUpon>frmChiTietKiemKe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ThietBi\KiemKe\frmKiemKeTB.resx">
       <DependentUpon>frmKiemKeTB.cs</DependentUpon>

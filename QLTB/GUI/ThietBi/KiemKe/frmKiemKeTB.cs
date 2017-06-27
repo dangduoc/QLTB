@@ -234,11 +234,9 @@ namespace QLTB.GUI
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            Cursor = Cursors.WaitCursor;
-            frmChiTietKiemKe frm = new frmChiTietKiemKe();
-            frm.MdiParent = MdiParent;
-            frm.Show();
-            Cursor = Cursors.Default;
+            Form2 frm = new Form2();
+            var parent = MdiParent as Form1;
+            parent.OpenFrmChild(frm);
         }
     }
 }

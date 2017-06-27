@@ -32,14 +32,14 @@ namespace QLTB.Model
     }
     public class ThietBiKKGridDisplayModel
     {
-        public string SoPhieu { get; set; }
+        public string Ten { get; set; }
         public string SoHieu { get; set; }
-        public int PhongHocId { get; set; }
+        public int PhongHoc { get; set; }
         public int SoLuong { get; set; }
-        public int DonViTinhId { get; set; }
+        public int DonViTinh { get; set; }
         public int MatTruoc { get; set; }
-        public int MatSau { get; set; }
         public int HongTruoc { get; set; }
+        public int MatSau { get; set; }
         public int HongSau { get; set; }
         public int ConDungDuoc { get; set; }
         public int ChenhLechMat { get; set; }
