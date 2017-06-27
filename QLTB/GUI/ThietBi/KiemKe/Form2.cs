@@ -1,152 +1,96 @@
-﻿using System;
+﻿using DevComponents.DotNetBar.SuperGrid;
+using DevComponents.DotNetBar.SuperGrid.Style;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using QLTB.Model;
-using DevComponents.DotNetBar.SuperGrid;
-using DevComponents.DotNetBar.SuperGrid.Style;
+using QLTB.Handler;
+using QLTB.Utils;
 
 namespace QLTB.GUI
 {
-    public partial class frmChiTietKiemKe : DevComponents.DotNetBar.Office2007Form
+    public partial class Form2 : Form
     {
+        #region Private variables
+
+        private DataSet _DataSet;
+        private Random _Rand = new Random();
+
         private int _BaseColumnCount;
-        public frmChiTietKiemKe()
+        private int _HeaderCount;
+        private int _StartColIndex;
+        private int _EndColIndex;
+
+        private GridColumn _HitColumn;
+        private ColumnGroupHeader _HitGroupHeader;
+        private List<ColumnGroupHeader> _SelectedGroupHeaders;
+
+        private Point[] _ChartData1;
+        private Point[] _ChartData2;
+
+        #endregion
+        public Form2()
         {
             InitializeComponent();
+            InitializeGrid();
         }
-        private void loadForm()
+        private void Form2_Load(object sender, EventArgs e)
         {
-            //
-            List<BanKiemKeGridDisplayModel> list = new List<BanKiemKeGridDisplayModel>();
-           
-            DataGridViewLinkColumn col = new DataGridViewLinkColumn();
-            DataGridViewLinkColumn col2 = new DataGridViewLinkColumn();
-            col2.HeaderText = "STT";
-            col2.Width = 30;
-            col2.Text = "1";
-            col2.LinkColor = Color.White;
-            col2.UseColumnTextForLinkValue = true;
-            col.Width = 50;
-            col.HeaderText = "";
-            gridBanKiemKe.Columns.Add(col2);
-            gridBanKiemKe.Columns.Add(col);
-            gridBanKiemKe.DataSource = list;
-            gridBanKiemKe.Columns[2].HeaderText = "Họ tên";
-            gridBanKiemKe.Columns[3].HeaderText = "Chức vụ";
-            gridBanKiemKe.Columns[4].HeaderText = "Đại diện";
-            gridBanKiemKe.Columns[5].HeaderText = "Vai trò";
-            gridBanKiemKe.Columns[1].DisplayIndex = 5;
-            gridBanKiemKe.Refresh();
-            gridBanKiemKe.Update();
-        }
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-        private void frmChiTietKiemKe_Load(object sender, EventArgs e)
-        {
-            loadForm();
-        }
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-        private void frmChiTietKiemKe_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Escape)
-            {
-                Close();
-            }
-        }
-        #region Cài đặt SuperGridView
-        #region Tạo column trước kiểm kê
+            GridPanel panel = superGridControl1.PrimaryGrid;
+            GridColumnCollection columns = panel.Columns;
+            //columns["CompanyName"].HeaderStyles.Default.Image = imageList3.Images["factory"];
+            //columns["CompanyName"].HeaderStyles.Default.ImageAlignment = Alignment.BottomCenter;
+            //columns["CompanyName"].HeaderStyles.Default.ImagePadding = new DevComponents.DotNetBar.SuperGrid.Style.Padding(0, 0, 0, 15);
 
-        /// <summary>
-        /// Creates and returns the 'Current Info' header.
-        /// </summary>
-        /// <param name="columns"></param>
-        /// <returns></returns>
-        private ColumnGroupHeader GetClTruocKiemKeHeader(GridColumnCollection columns)
+            // Create and add the subordinate headers
+
+            panel.ColumnHeader.GroupHeaders.Add(GetClChenhLechHeader(columns));
+            panel.ColumnHeader.GroupHeaders.Add(GetClSauHeader(columns));
+            panel.ColumnHeader.GroupHeaders.Add(GetClTruocHeader(columns));
+        }
+        #region GetClCurrentInfoHeader
+        private ColumnGroupHeader GetClTruocHeader(GridColumnCollection columns)
         {
             ColumnGroupHeader cgh = new ColumnGroupHeader();
 
             cgh.Name = "TruocKiemKe";
             cgh.HeaderText = "Trước kiểm kê";
-
             cgh.MinRowHeight = 36;
-
-            // Create the 'Sales' header and add it to the group
-
-            //ColumnGroupHeader cshSales = GetCiSalesHeader(columns);
-
-            //cgh.GroupHeaders.Add(cshSales);
-
-            // We want to also include the "T1" column to the left
-            // of the added sales range, so we must set the start
-            // display index to include it.
-
             cgh.StartDisplayIndex = GetDisplayIndex(columns, "MatTruoc");
             cgh.EndDisplayIndex = GetDisplayIndex(columns, "HongTruoc");
 
             return (cgh);
         }
-        #endregion
-        #region Tạo column sau kiểm kê
-
-        /// <summary>
-        /// Creates and returns the 'Projected Info' header.
-        /// </summary>
-        /// <param name="columns"></param>
-        /// <returns></returns>
-        private ColumnGroupHeader GetClSauKiemKeHeader(GridColumnCollection columns)
+        private ColumnGroupHeader GetClSauHeader(GridColumnCollection columns)
         {
             ColumnGroupHeader cgh = new ColumnGroupHeader();
 
             cgh.Name = "SauKiemKe";
             cgh.HeaderText = "Sau kiểm kê";
-
             cgh.MinRowHeight = 36;
-
-            // Set the group's start and end indicees
-
             cgh.StartDisplayIndex = GetDisplayIndex(columns, "MatSau");
-            cgh.EndDisplayIndex = GetDisplayIndex(columns, "HongSau");
+            cgh.EndDisplayIndex = GetDisplayIndex(columns, "ConDungDuoc");
 
             return (cgh);
         }
-
-        #endregion
-        #region Tạo column chênh lệch
-
-        /// <summary>
-        /// Creates and returns the 'Projected Info' header.
-        /// </summary>
-        /// <param name="columns"></param>
-        /// <returns></returns>
         private ColumnGroupHeader GetClChenhLechHeader(GridColumnCollection columns)
         {
             ColumnGroupHeader cgh = new ColumnGroupHeader();
 
             cgh.Name = "ChenhLech";
             cgh.HeaderText = "Chênh lệch";
-
             cgh.MinRowHeight = 36;
-
-            // Set the group's start and end indicees
-
             cgh.StartDisplayIndex = GetDisplayIndex(columns, "ChenhLechMat");
             cgh.EndDisplayIndex = GetDisplayIndex(columns, "ChenhLechHong");
 
             return (cgh);
         }
-
         #endregion
+
         private int GetDisplayIndex(GridColumnCollection columns, string name)
         {
             return (columns.GetDisplayIndex(columns[name]));
@@ -173,9 +117,23 @@ namespace QLTB.GUI
         private void InitializeGrid()
         {
             GridPanel panel = superGridControl1.PrimaryGrid;
-            panel.Name = "DSTB";
+
+            panel.Name = "Customers";
             panel.MinRowHeight = 20;
+
+            // Bind to our customer data and hook a few SuperGrid events.
+
             BindCustomerData();
+
+            //superGridControl1.ColumnHeaderClick += ColumnHeaderClick;
+            //superGridControl1.ColumnGroupHeaderClick += GroupHeaderClick;
+
+            //superGridControl1.PostRenderColumnGroupHeader += SuperGridControl1PostRenderColumnGroupHeader;
+            //superGridControl1.ColumnGroupHeaderResized += SuperGridControl1ColumnGroupHeaderResized;
+
+            //superGridControl1.ColumnGroupHeaderMarkupLinkClick += SuperGridControl1ColumnGroupHeaderMarkupLinkClick;
+            //superGridControl1.ColumnHeaderMarkupLinkClick += SuperGridControl1ColumnHeaderMarkupLinkClick;
+
             superGridControl1.DataBindingComplete += SuperGridControl1DataBindingComplete;
         }
 
@@ -186,12 +144,9 @@ namespace QLTB.GUI
         /// </summary>
         private void BindCustomerData()
         {
-            DataTable table = new DataTable("DSTB");
-
-            table.Columns.Add(new DataColumn("CustomerID"));
-            table.Columns.Add(new DataColumn("Monday"));
-            table.Columns.Add(new DataColumn("Tuesday"));
-            table.Columns.Add(new DataColumn("Wednesday"));
+            DataTable table = new DataTable();
+            List<ThietBiKKGridDisplayModel> lst = new List<ThietBiKKGridDisplayModel>();
+            table= MyConvert.ToDataTable(lst);
 
 
             BindingSource src = new BindingSource();
@@ -200,9 +155,9 @@ namespace QLTB.GUI
             // Fill the newly added columns with
             // 'useful' data.
             // Bind our grid to the created dataset.
-
+            
             superGridControl1.PrimaryGrid.DataSource = src;
-            superGridControl1.PrimaryGrid.DataMember = "DSTB";
+            superGridControl1.PrimaryGrid.DataMember = "Customers";
         }
         #region AddNewColumns
 
@@ -251,11 +206,19 @@ namespace QLTB.GUI
                 col.EnableHeaderMarkup = true;
             }
 
-            SetColumnTw(columns, "CustomerID", "ID", 50);
-            SetColumnTw(columns, "Monday", "Thứ 2", 100);
-            SetColumnTw(columns, "Tuesday", "Thứ 3", 100);
-            SetColumnTw(columns, "Wednesday", "Thứ 4", 100);
-
+            SetColumnTw(columns, "Ten", "Tên", 200);
+            SetColumnTw(columns, "SoHieu", "Số hiệu", 100);
+            SetColumnTw(columns, "PhongHoc", "Kho/ Phòng bộ môn", 120);
+            SetColumnTw(columns, "SoLuong", "Số lượng", 100);
+            SetColumnTw(columns, "DonViTinh", "Đơn vị tính", 100);
+            SetColumnTw(columns, "MatTruoc", "Mất", 100);
+            SetColumnTw(columns, "HongTruoc", "Số lượng", 100);
+            SetColumnTw(columns, "MatSau", "Số lượng", 100);
+            SetColumnTw(columns, "HongSau", "Số lượng", 100);
+            SetColumnTw(columns, "ConDungDuoc", "Số lượng", 100);
+            SetColumnTw(columns, "ChenhLechMat", "Số lượng", 100);
+            SetColumnTw(columns, "ChenhLechHong", "Số lượng", 100);
+            SetColumnTw(columns, "GhiChu", "Ghi chú", 200);
             //SetupCurrencyColumns(columns, new string[] { "MTD", "YTD", "LTD", "T1", "T2", "T3" });
             // SetupPctColumns(columns, new string[] { "P1", "P2", "P3", "P4" });
 
@@ -379,13 +342,12 @@ namespace QLTB.GUI
                 col.CellStyles.Default.Background = null;
             }
 
-            // columns["Country"].HeaderText = null;
+           // columns["Country"].HeaderText = null;
 
             panel.ColumnHeader.GroupHeaders.Clear();
             panel.ClearAll();
         }
 
-        #endregion
         #endregion
     }
 }
