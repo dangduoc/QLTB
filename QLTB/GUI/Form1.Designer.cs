@@ -36,8 +36,6 @@
             this.line1 = new DevComponents.DotNetBar.Controls.Line();
             this.bar2 = new DevComponents.DotNetBar.Bar();
             this.CornerInfo = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem5 = new DevComponents.DotNetBar.ButtonItem();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.bar1 = new DevComponents.DotNetBar.Bar();
             this.btnThietBi = new DevComponents.DotNetBar.ButtonItem();
             this.btnMuonTra = new DevComponents.DotNetBar.ButtonItem();
@@ -85,6 +83,8 @@
             this.toolmenuTB = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnlLoading = new System.Windows.Forms.Panel();
+            this.buttonItem5 = new DevComponents.DotNetBar.ButtonItem();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).BeginInit();
@@ -174,29 +174,6 @@
             this.CornerInfo.ItemAlignment = DevComponents.DotNetBar.eItemAlignment.Far;
             this.CornerInfo.Name = "CornerInfo";
             this.CornerInfo.Text = "Trường THCS Nam Hà - Đặng Minh Được";
-            // 
-            // buttonItem5
-            // 
-            this.buttonItem5.Image = global::QLTB.Properties.Resources.Help_icon;
-            this.buttonItem5.Name = "buttonItem5";
-            this.buttonItem5.Text = "buttonItem5";
-            // 
-            // labelX1
-            // 
-            // 
-            // 
-            // 
-            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.labelX1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX1.Image = global::QLTB.Properties.Resources.logo_1_48;
-            this.labelX1.Location = new System.Drawing.Point(0, 0);
-            this.labelX1.Name = "labelX1";
-            this.labelX1.PaddingLeft = 5;
-            this.labelX1.Size = new System.Drawing.Size(269, 63);
-            this.labelX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.labelX1.TabIndex = 11;
-            this.labelX1.Text = "<b>VSMART ESTIMATION</b>";
             // 
             // bar1
             // 
@@ -691,6 +668,29 @@
             this.pnlLoading.Size = new System.Drawing.Size(1083, 344);
             this.pnlLoading.TabIndex = 33;
             // 
+            // buttonItem5
+            // 
+            this.buttonItem5.Image = global::QLTB.Properties.Resources.Help_icon;
+            this.buttonItem5.Name = "buttonItem5";
+            this.buttonItem5.Text = "buttonItem5";
+            // 
+            // labelX1
+            // 
+            // 
+            // 
+            // 
+            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.labelX1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX1.Image = global::QLTB.Properties.Resources.logo_1_48;
+            this.labelX1.Location = new System.Drawing.Point(0, 0);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.PaddingLeft = 5;
+            this.labelX1.Size = new System.Drawing.Size(269, 63);
+            this.labelX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.labelX1.TabIndex = 11;
+            this.labelX1.Text = "<b>VSMART ESTIMATION</b>";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -710,7 +710,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.TopLeftCornerSize = 0;
             this.TopRightCornerSize = 0;
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bar2)).EndInit();

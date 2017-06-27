@@ -26,7 +26,9 @@ namespace QLTB
             LoadingScreen fLogin = new LoadingScreen();
             if (fLogin.ShowDialog() == DialogResult.OK)
             {
-                Application.Run(new Form1());
+                Form1 frm = new Form1();
+                frm.Visible = false;
+                Application.Run(frm);
             }
             else
             {

@@ -70,7 +70,7 @@ namespace QLTB.GUI
             if (MonHoc != null)
             {
                 MonHocMoi.MonHocId = MonHoc.MonHocId;
-                
+
                 int result = handler.Update(MonHocMoi);
                 if (result == 1)
                 {
@@ -96,12 +96,28 @@ namespace QLTB.GUI
         }
         private void frmTaoMonHoc_Load(object sender, EventArgs e)
         {
-            loadForm();
+            try
+            {
+                loadForm();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Xảy ra lỗi", MessageBoxButtons.OK
+                    , MessageBoxIcon.Error);
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            saveData();
+            try
+            {
+                saveData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Xảy ra lỗi", MessageBoxButtons.OK
+                    , MessageBoxIcon.Error);
+            }
         }
 
         private void frmTaoMonHoc_KeyDown(object sender, KeyEventArgs e)

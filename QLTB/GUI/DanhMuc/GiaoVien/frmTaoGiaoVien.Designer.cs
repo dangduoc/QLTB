@@ -1396,7 +1396,7 @@
             this.btnLuu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLuu.Image = global::QLTB.Properties.Resources.save_icon;
             this.btnLuu.ImagePaddingHorizontal = 20;
-            this.btnLuu.ImagePaddingVertical = 10;
+            this.btnLuu.ImagePaddingVertical = 13;
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlS);
             this.btnLuu.SubItemsExpandWidth = 14;

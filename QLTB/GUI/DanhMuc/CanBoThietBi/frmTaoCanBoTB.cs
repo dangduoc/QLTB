@@ -88,7 +88,7 @@ namespace QLTB.GUI
                 Ten = txtTen.Text,
                 TrinhDoVanHoa = txtTrinhDoVH.Text,
                 GhiChu = txtGhiChu.Text,
-                GioiTinhId = (int?)MyConvert.ChangeType(cbbGioiTinh.SelectedValue,typeof(int?)),
+                GioiTinhId = (int?)MyConvert.ChangeType(cbbGioiTinh.SelectedValue, typeof(int?)),
                 PhuTrachId = (int?)MyConvert.ChangeType(cbbPhuTrach.SelectedValue, typeof(int?)),
                 ThoiGianBatDau = cbbBatDau.Text,
                 ThoiGianKetThuc = cbbKetThuc.Text,
@@ -102,7 +102,7 @@ namespace QLTB.GUI
                 if (result == 1)
                 {
                     MessageBox.Show("Thay đổi thông tin thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                  
+
                 }
                 else
                 {
@@ -123,8 +123,8 @@ namespace QLTB.GUI
                     MessageBox.Show("Thêm cán bộ thiết bị không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-          
-            
+
+
         }
         private void resetForm()
         {
@@ -141,13 +141,29 @@ namespace QLTB.GUI
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            saveData();
+            try
+            {
+                saveData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Xảy ra lỗi", MessageBoxButtons.OK
+                    , MessageBoxIcon.Error);
+            }
 
         }
 
         private void frmTaoCanBoTB_Load(object sender, EventArgs e)
         {
-            loadForm();
+            try
+            {
+                loadForm();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Xảy ra lỗi", MessageBoxButtons.OK
+                    , MessageBoxIcon.Error);
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

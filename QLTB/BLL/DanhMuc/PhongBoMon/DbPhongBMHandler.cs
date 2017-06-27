@@ -68,7 +68,6 @@ namespace QLTB.Handler
                                         XepLoai = xl.Ten
                                     }
                                 )
-                                .OrderBy(ph => ph.PhongHocId)
                                 .Select(ph => new PhongBoMonGridDisplayModel
                                 {
                                     PhongHocId = ph.PhongHocId.ToString(),
@@ -78,7 +77,7 @@ namespace QLTB.Handler
                                     DienTich = ph.DienTich.ToString(),
                                     SoCanBo = ph.SoCanBo.ToString(),
                                     NamDuaVaoSD = ph.NamDuaVaoSD.ToString(),
-                                    IsPhongChucNang = MyConvert.BoolToString((bool)ph.IsPhongChucNang, "Có", "Không"),
+                                    IsPhongChucNang = MyConvert.BoolToString(ph.IsPhongChucNang, "Có", "Không"),
                                     XepLoai = ph.XepLoai
 
                                 })

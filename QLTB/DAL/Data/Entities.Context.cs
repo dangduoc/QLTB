@@ -65,5 +65,8 @@ namespace QLTB.DAL.Data
         public virtual DbSet<QH_PhieuSuaTB_ThietBi> QH_PhieuSuaTB_ThietBi { get; set; }
         public virtual DbSet<TB_PhieuSuaTB> TB_PhieuSuaTB { get; set; }
         public virtual DbSet<TB_PhieuMuonPhong> TB_PhieuMuonPhong { get; set; }
+        public virtual DbSet<QH_PhieuKiemKe_ThietBi> QH_PhieuKiemKe_ThietBi { get; set; }
+        public virtual DbSet<TB_PhieuKiemKe> TB_PhieuKiemKe { get; set; }
+        public virtual DbSet<QH_PhieuKiemKe_BanKiemKe> QH_PhieuKiemKe_BanKiemKe { get; set; }
     }
 }

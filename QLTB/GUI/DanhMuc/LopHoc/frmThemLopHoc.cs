@@ -24,7 +24,7 @@ namespace QLTB.GUI
         public frmThemLopHoc(int id)
         {
             InitializeComponent();
-            LopHoc= handler.GetById(id);
+            LopHoc = handler.GetById(id);
             if (LopHoc == null)
             {
                 MessageBox.Show("Không tìm thấy lớp học", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -41,12 +41,12 @@ namespace QLTB.GUI
         {
             LopHocModel LopHocMoi = new LopHocModel
             {
-                KhoiLopId=(int)cbbKhoiLop.SelectedValue,
-                Ten=txtTenLop.Text
+                KhoiLopId = (int)cbbKhoiLop.SelectedValue,
+                Ten = txtTenLop.Text
             };
             if (LopHoc != null)
             {
-                int result=handler.Create(LopHocMoi);
+                int result = handler.Create(LopHocMoi);
                 if (result == 1)
                 {
                     MessageBox.Show("Thêm lớp học thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -58,7 +58,7 @@ namespace QLTB.GUI
             }
             else
             {
-                int result=handler.Update(LopHocMoi);
+                int result = handler.Update(LopHocMoi);
                 if (result == 1)
                 {
                     MessageBox.Show("Cập nhật thông tin lớp học thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -71,12 +71,28 @@ namespace QLTB.GUI
         }
         private void frmThemLopHoc_Load(object sender, EventArgs e)
         {
-            loadForm();
+            try
+            {
+                loadForm();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Xảy ra lỗi", MessageBoxButtons.OK
+                    , MessageBoxIcon.Error);
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            saveData();
+            try
+            {
+                saveData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Xảy ra lỗi", MessageBoxButtons.OK
+                    , MessageBoxIcon.Error);
+            }
         }
 
         private void frmThemLopHoc_KeyDown(object sender, KeyEventArgs e)
