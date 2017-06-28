@@ -179,34 +179,7 @@ namespace QLTB.GUI
         private void loadForm()
         {
             List<KiemKeTBGridDisplayModel> list = new List<KiemKeTBGridDisplayModel>();
-            list.Add(new KiemKeTBGridDisplayModel
-            {
-                SoHieu="PKTTB00001",
-                NgayKiemKe="21/11/2010",
-                NgayLap="19/10/2010",
-                GhiChu=""
-            });
-            list.Add(new KiemKeTBGridDisplayModel
-            {
-                SoHieu = "PKTTB00002",
-                NgayKiemKe = "21/11/2010",
-                NgayLap = "19/10/2010",
-                GhiChu = ""
-            });
-            list.Add(new KiemKeTBGridDisplayModel
-            {
-                SoHieu = "PKTTB00003",
-                NgayKiemKe = "21/11/2010",
-                NgayLap = "19/10/2010",
-                GhiChu = ""
-            });
-            list.Add(new KiemKeTBGridDisplayModel
-            {
-                SoHieu = "PKTTB00004",
-                NgayKiemKe = "21/11/2010",
-                NgayLap = "19/10/2010",
-                GhiChu = ""
-            });
+           
             List<string> headers = new List<string>();
             headers.Add("Số phiếu");
             headers.Add("Ngày lập");

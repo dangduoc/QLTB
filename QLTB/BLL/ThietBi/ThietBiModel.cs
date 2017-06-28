@@ -15,6 +15,15 @@ namespace QLTB.Model
         public int MonHocId { get; set; }
         public int DonViTinhId { get; set; }
     }
+    public class BaseThietBiGridDisplayModel
+    {
+        public string ThietBiId { get; set; }
+        public string SoHieu { get; set; }
+        public string Ten { get; set; }
+        public string PhongHoc { get; set; }
+        public string MonHoc { get; set; }
+        public string DonViTinh { get; set; }
+    }
     public class ThietBiModel : BaseThietBiModel
     {
         public string QuyCachSD { get; set; }
@@ -59,14 +68,6 @@ namespace QLTB.Model
         public string TrangThai { get; set; }
     }
 
-    public class BaseThietBiGridDisplayModel
-    {
-        public string ThietBiId { get; set; }
-        public string SoHieu { get; set; }
-        public string Ten { get; set; }
-        public string PhongHoc { get; set; }
-        public string DonViTinh { get; set; }
-    }
     public class BasePhieuThietBiModel
     {
         public string SoPhieu { get; set; }

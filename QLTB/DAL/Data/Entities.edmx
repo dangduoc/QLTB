@@ -309,6 +309,7 @@
           <Property Name="ChenhLechMat" Type="int" Nullable="false" />
           <Property Name="ChenhLechHong" Type="int" Nullable="false" />
           <Property Name="GhiChu" Type="nvarchar" MaxLength="500" />
+          <Property Name="MonHocId" Type="int" />
         </EntityType>
         <EntityType Name="QH_PhieuMuonPhong_ThietBi">
           <Key>
@@ -1594,6 +1595,7 @@
           <Property Name="ChenhLechMat" Type="Int32" Nullable="false" />
           <Property Name="ChenhLechHong" Type="Int32" Nullable="false" />
           <Property Name="GhiChu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MonHocId" Type="Int32" />
         </EntityType>
         <EntityType Name="TB_PhieuKiemKe">
           <Key>
@@ -2206,6 +2208,7 @@
           <EntitySetMapping Name="QH_PhieuKiemKe_ThietBi">
             <EntityTypeMapping TypeName="Model.QH_PhieuKiemKe_ThietBi">
               <MappingFragment StoreEntitySet="QH_PhieuKiemKe_ThietBi">
+                <ScalarProperty Name="MonHocId" ColumnName="MonHocId" />
                 <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
                 <ScalarProperty Name="ChenhLechHong" ColumnName="ChenhLechHong" />
                 <ScalarProperty Name="ChenhLechMat" ColumnName="ChenhLechMat" />

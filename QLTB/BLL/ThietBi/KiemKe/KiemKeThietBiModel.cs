@@ -14,11 +14,11 @@ namespace QLTB.Model
         public int PhongHocId { get; set; }
         public string GhiChu { get; set; }
         public List<BanKiemKeGridDisplayModel> BanKiemKe { get; set; }
-        List<ThietBiKKGridDisplayModel> ThietBis { get; set; }
+        public List<ThietBiKKGridDisplayModel> ThietBis { get; set; }
     }
     public class KiemKeTBGridDisplayModel
     {
-        public string SoHieu { get; set; }
+        public string SoPhieu { get; set; }
         public string NgayLap { get; set; }
         public string NgayKiemKe { get; set; }
         public string GhiChu { get; set; }
@@ -34,9 +34,10 @@ namespace QLTB.Model
     {
         public string Ten { get; set; }
         public string SoHieu { get; set; }
-        public int PhongHoc { get; set; }
+        public string PhongHoc { get; set; }
+        public string MonHoc { get; set; }
         public int SoLuong { get; set; }
-        public int DonViTinh { get; set; }
+        public string DonViTinh { get; set; }
         public int MatTruoc { get; set; }
         public int HongTruoc { get; set; }
         public int MatSau { get; set; }
