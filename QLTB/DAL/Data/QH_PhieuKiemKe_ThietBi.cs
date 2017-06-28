@@ -27,5 +27,6 @@ namespace QLTB.DAL.Data
         public int ChenhLechMat { get; set; }
         public int ChenhLechHong { get; set; }
         public string GhiChu { get; set; }
+        public Nullable<int> MonHocId { get; set; }
     }
 }

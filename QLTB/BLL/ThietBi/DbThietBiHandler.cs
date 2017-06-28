@@ -579,5 +579,101 @@ namespace QLTB.Handler
                 }
             }
         }
+
+        public List<BaseThietBiGridDisplayModel> GetBaseModel()
+        {
+            using (var unitOfWork = new UnitOfWork())
+            {
+                try
+                {
+                    var dstb = unitOfWork.GetRepository<TB_ThongTinThietBi>().GetAll().Where(p=>p.TrangThai>=1);
+                    var data = dstb
+                                .Join(unitOfWork.GetRepository<DM_PhongHocBoMon>().GetAll(),
+                                    tb => tb.PhongHocId,
+                                    ph => ph.PhongHocId,
+                                    (tb, ph) => new
+                                    {
+                                        ThietBiId = tb.ThietBiId,
+                                        SoHieu = tb.SoHieu,
+                                        Ten = tb.Ten,
+                                        KhoPhong = ph.Ten,
+                                        MonHocId = tb.MonHocId,
+                                        SoLuong = tb.SoLuong,
+                                        SoLuongMat = tb.SoLuongMat,
+                                        SoLuongHong = tb.SoLuongHong,
+                                        DonViTinhId = tb.DonViTinhId,
+                                        TrangThaiId = tb.TrangThai,
+                                        SoLuongCon = tb.SoLuongCon,
+                                        DonGia = tb.DonGia,
+                                        ThanhTien = tb.ThanhTien,
+                                        NguonKP = tb.NguonKinhPhiId
+                                    }
+                                )
+                                .Join(unitOfWork.GetRepository<DM_MonHoc>().GetAll(),
+                                    tb => tb.MonHocId,
+                                    mh => mh.MonHocId,
+                                    (tb, mh) => new
+                                    {
+                                        ThietBiId = tb.ThietBiId,
+                                        SoHieu = tb.SoHieu,
+                                        Ten = tb.Ten,
+                                        KhoPhong = tb.KhoPhong,
+                                        MonHoc = mh.Ten,
+                                        SoLuong = tb.SoLuong,
+                                        SoLuongMat = tb.SoLuongMat,
+                                        SoLuongHong = tb.SoLuongHong,
+                                        DonViTinhId = tb.DonViTinhId,
+                                        TrangThaiId = tb.TrangThaiId,
+                                        SoLuongCon = tb.SoLuongCon,
+                                        DonGia = tb.DonGia,
+                                        ThanhTien = tb.ThanhTien,
+                                        NguonKP = tb.NguonKP
+                                    }
+                                )
+                                 .Join(unitOfWork.GetRepository<DS_DonViTinh>().GetAll(),
+                                    tb => tb.DonViTinhId,
+                                    dvt => dvt.DonViTinhId,
+                                    (tb, dvt) => new
+                                    {
+                                        ThietBiId = tb.ThietBiId,
+                                        SoHieu = tb.SoHieu,
+                                        Ten = tb.Ten,
+                                        KhoPhong = tb.KhoPhong,
+                                        MonHoc = tb.MonHoc,
+                                        SoLuong = tb.SoLuong.ToString(),
+                                        SoLuongMat = tb.SoLuongMat.ToString(),
+                                        SoLuongHong = tb.SoLuongHong.ToString(),
+                                        DonViTinh = dvt.Ten,
+                                        TrangThaiId = tb.TrangThaiId,
+                                        SoLuongCon = tb.SoLuongCon,
+                                        DonGia = tb.DonGia,
+                                        ThanhTien = tb.ThanhTien,
+                                        NguonKP = tb.NguonKP
+
+                                    }
+                                )
+                               .Select(p=>new BaseThietBiGridDisplayModel
+                               {
+                                   ThietBiId=p.ThietBiId,
+                                   SoHieu=p.SoHieu,
+                                   DonViTinh=p.DonViTinh,
+                                   MonHoc=p.MonHoc,
+                                   PhongHoc=p.KhoPhong,
+                                   Ten=p.Ten
+                               })
+                                .OrderBy(p => p.ThietBiId)
+                                .ToList();
+                    //
+
+
+
+                    return data;
+                }
+                catch (Exception ex)
+                {
+                    return null;
+                }
+            }
+        }
     }
 }

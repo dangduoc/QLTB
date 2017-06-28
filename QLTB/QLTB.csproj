@@ -166,6 +166,7 @@
     <Compile Include="BLL\Import\ImportModel.cs" />
     <Compile Include="BLL\Report\DbThongKeHandler.cs" />
     <Compile Include="BLL\Report\ReportModel.cs" />
+    <Compile Include="BLL\ThietBi\KiemKe\DbKiemKeTBHandler.cs" />
     <Compile Include="BLL\ThietBi\KiemKe\KiemKeThietBiModel.cs" />
     <Compile Include="BLL\TaiKhoan\LoginHandler.cs" />
     <Compile Include="BLL\PhongHocBM\MuonTra\DbPhieuMuonPhongHandler.cs" />
@@ -476,6 +477,12 @@
     </Compile>
     <Compile Include="GUI\ThietBi\KiemKe\Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThietBi\KiemKe\frmDialogThemBanKK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThietBi\KiemKe\frmDialogThemBanKK.Designer.cs">
+      <DependentUpon>frmDialogThemBanKK.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\ThietBi\NhapKhau\frmDialogError.cs">
       <SubType>Form</SubType>
@@ -823,6 +830,9 @@
     <EmbeddedResource Include="GUI\ThietBi\KiemKe\Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThietBi\KiemKe\frmDialogThemBanKK.resx">
+      <DependentUpon>frmDialogThemBanKK.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\ThietBi\NhapKhau\frmDialogError.resx">
       <DependentUpon>frmDialogError.cs</DependentUpon>
     </EmbeddedResource>
@@ -968,6 +978,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReportTemps\KiemKeThietBi.rdlc" />
     <EmbeddedResource Include="ReportTemps\DanhSachThietBi.rdlc" />
     <EmbeddedResource Include="ReportTemps\HoaChatHetHan.rdlc" />
     <EmbeddedResource Include="ReportTemps\DeNghiMuaSam.rdlc" />
@@ -980,7 +991,10 @@
       <DependentUpon>Entities.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\QLTB.Model.BanKiemKeGridDisplayModel.datasource" />
+    <None Include="Properties\DataSources\QLTB.Model.BaseThietBiModel.datasource" />
     <None Include="Properties\DataSources\QLTB.Model.Columnmapping.datasource" />
+    <None Include="Properties\DataSources\QLTB.Model.ThietBiKKGridDisplayModel.datasource" />
     <None Include="Properties\DataSources\QLTB.Report.Model.GhiTangReportModel.datasource" />
     <None Include="Properties\DataSources\QLTB.Report.Model.HCHetHanReportModel.datasource" />
     <None Include="Properties\DataSources\QLTB.Report.Model.ThietBiMuaReportModel.datasource" />

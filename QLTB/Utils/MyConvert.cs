@@ -81,5 +81,6 @@ namespace QLTB.Utils
                     item.SetValue(value1, value2.GetType().GetProperty(item.Name).GetValue(value2) ?? null);
             }
         }
+        
     }
 }

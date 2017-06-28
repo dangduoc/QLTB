@@ -10,49 +10,152 @@ using System.Windows.Forms;
 using QLTB.Model;
 using QLTB.Handler;
 using QLTB.Utils;
+using System.Linq;
 
 namespace QLTB.GUI
 {
-    public partial class Form2 : Form
+    public partial class Form2 : DevComponents.DotNetBar.Office2007Form
     {
         #region Private variables
-
-        private DataSet _DataSet;
-        private Random _Rand = new Random();
-
         private int _BaseColumnCount;
-        private int _HeaderCount;
-        private int _StartColIndex;
-        private int _EndColIndex;
 
-        private GridColumn _HitColumn;
-        private ColumnGroupHeader _HitGroupHeader;
-        private List<ColumnGroupHeader> _SelectedGroupHeaders;
-
-        private Point[] _ChartData1;
-        private Point[] _ChartData2;
-
+        //
+        private PhieuKiemKeThietBiModel Phieu;
+        private List<BanKiemKeGridDisplayModel> bankiemke = new List<BanKiemKeGridDisplayModel>();
+        private List<ThietBiKKGridDisplayModel> dsThietBi = new List<ThietBiKKGridDisplayModel>();
+        private DbKiemKeTBHandler handler = new DbKiemKeTBHandler();
+        private DanhSachModel dshandler = new DanhSachModel();
+        private BindingSource source = new BindingSource();
         #endregion
         public Form2()
         {
             InitializeComponent();
-            InitializeGrid();
+            Phieu = null;
+            txtSoPhieu.Text = handler.GenerateCode();
+            loadForm();
+        }
+        public Form2(string SoPhieu)
+        {
+            InitializeComponent();
+            Phieu = handler.GetById(SoPhieu);
+            txtSoPhieu.Enabled = false;
+            if (Phieu == null)
+            {
+                MessageBox.Show("Thông tìm thấy phiếu thanh lý", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Close();
+            }
+            loadForm();
         }
         private void Form2_Load(object sender, EventArgs e)
         {
             GridPanel panel = superGridControl1.PrimaryGrid;
             GridColumnCollection columns = panel.Columns;
-            //columns["CompanyName"].HeaderStyles.Default.Image = imageList3.Images["factory"];
-            //columns["CompanyName"].HeaderStyles.Default.ImageAlignment = Alignment.BottomCenter;
-            //columns["CompanyName"].HeaderStyles.Default.ImagePadding = new DevComponents.DotNetBar.SuperGrid.Style.Padding(0, 0, 0, 15);
-
-            // Create and add the subordinate headers
-
             panel.ColumnHeader.GroupHeaders.Add(GetClChenhLechHeader(columns));
             panel.ColumnHeader.GroupHeaders.Add(GetClSauHeader(columns));
             panel.ColumnHeader.GroupHeaders.Add(GetClTruocHeader(columns));
+            panel.SetGroup(columns["MonHoc"]);
+            
         }
-        #region GetClCurrentInfoHeader
+        private void loadForm()
+        {
+            BindingSource src = new BindingSource();
+            
+            #region Loading data
+            cbbPhongBM.DisplayMember = "value";
+            cbbPhongBM.ValueMember = "key";
+            cbbPhongBM.DataSource = new DbPhongBMHandler().GetNames().Select(p => new { key = p.PhongHocId, value = p.Ten }).ToList();
+            //load thong tin phieu 
+            if (Phieu != null)
+            {
+                //Thong tin chung
+                txtSoPhieu.Text = Phieu.SoPhieu;
+                txtGhiChu.Text = Phieu.GhiChu;
+                cbbPhongBM.SelectedValue = Phieu.PhongHocId;
+                dpickerNgayKK.Value = Phieu.NgayKiemKe;
+                dpickerNgayLap.Value = Phieu.NgayLap;
+                //ban kiểm kê
+                if (Phieu.BanKiemKe != null)
+                {
+                    bankiemke.AddRange(Phieu.BanKiemKe);
+                    foreach (var item in Phieu.BanKiemKe)
+                    {
+                        int i = bankiemke.Count + 1;
+                        var str = i++.ToString() + ", " + item.HoTen + " - " + item.ChucVu + " - " + item.DaiDien;
+                        lboxBanKiemKe.Items.Add(str);
+                    }
+                }
+                else
+                {
+                    Phieu.BanKiemKe = new List<BanKiemKeGridDisplayModel>();
+                }
+                //Thiet bi
+                if (Phieu.ThietBis == null)
+                {
+                    Phieu.ThietBis = new List<ThietBiKKGridDisplayModel>();
+                }
+                else
+                {
+                    dsThietBi.AddRange(Phieu.ThietBis);
+
+                }
+                InitializeGrid(MyConvert.ToDataTable(dsThietBi));
+            }
+            else
+            {
+                InitializeGrid(MyConvert.ToDataTable(handler.GetTB()));
+            }
+        }
+        private void saveData()
+        {
+            var PhieuMoi = new PhieuKiemKeThietBiModel
+            {
+                SoPhieu = txtSoPhieu.Text,
+                GhiChu = txtGhiChu.Text,
+                NgayLap = dpickerNgayLap.Value,
+                NgayKiemKe = dpickerNgayKK.Value,
+                PhongHocId = (int)cbbPhongBM.SelectedValue
+            };
+            if (Phieu == null)
+            {
+
+                PhieuMoi.ThietBis = dsThietBi;
+                PhieuMoi.BanKiemKe = bankiemke;
+                int result = handler.Create(PhieuMoi);
+                if (result == 1)
+                {
+                    MessageBox.Show("Thông tin kiểm kê được lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (result == 0)
+                {
+                    MessageBox.Show("Thông tin kiểm kê lưu chưa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Có lỗi xảy ra, xin thử lại khi khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                PhieuMoi.BanKiemKe = bankiemke;
+                PhieuMoi.ThietBis = dsThietBi;
+                int result = handler.Update(PhieuMoi);
+                if (result == 1)
+                {
+                    MessageBox.Show("Cập nhật thông tin kiểm kê thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (result == 0)
+                {
+                    MessageBox.Show("Cập nhật thông tin không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Có lỗi xảy ra, xin thử lại khi khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+        }
+        #region Super Grid Set up
+        #region Group header
         private ColumnGroupHeader GetClTruocHeader(GridColumnCollection columns)
         {
             ColumnGroupHeader cgh = new ColumnGroupHeader();
@@ -90,7 +193,6 @@ namespace QLTB.GUI
             return (cgh);
         }
         #endregion
-
         private int GetDisplayIndex(GridColumnCollection columns, string name)
         {
             return (columns.GetDisplayIndex(columns[name]));
@@ -111,61 +213,31 @@ namespace QLTB.GUI
             columns[name].Visible = false;
         }
         #region InitializeGrid
-        /// <summary>
-        /// Initializes the default grid
-        /// </summary>
-        private void InitializeGrid()
+        private void InitializeGrid(DataTable tb)
         {
             GridPanel panel = superGridControl1.PrimaryGrid;
-
             panel.Name = "Customers";
             panel.MinRowHeight = 20;
-
-            // Bind to our customer data and hook a few SuperGrid events.
-
-            BindCustomerData();
-
-            //superGridControl1.ColumnHeaderClick += ColumnHeaderClick;
-            //superGridControl1.ColumnGroupHeaderClick += GroupHeaderClick;
-
-            //superGridControl1.PostRenderColumnGroupHeader += SuperGridControl1PostRenderColumnGroupHeader;
-            //superGridControl1.ColumnGroupHeaderResized += SuperGridControl1ColumnGroupHeaderResized;
-
-            //superGridControl1.ColumnGroupHeaderMarkupLinkClick += SuperGridControl1ColumnGroupHeaderMarkupLinkClick;
-            //superGridControl1.ColumnHeaderMarkupLinkClick += SuperGridControl1ColumnHeaderMarkupLinkClick;
-
+            BindCustomerData(tb);
             superGridControl1.DataBindingComplete += SuperGridControl1DataBindingComplete;
         }
-
+        
         #region BindCustomerData
-
-        /// <summary>
-        /// Creates and binds our data to the grid
-        /// </summary>
-        private void BindCustomerData()
+        private void BindCustomerData(DataTable table)
         {
-            DataTable table = new DataTable();
-            List<ThietBiKKGridDisplayModel> lst = new List<ThietBiKKGridDisplayModel>();
-            table= MyConvert.ToDataTable(lst);
-
-
             BindingSource src = new BindingSource();
             src.DataSource = table;
             _BaseColumnCount = table.Columns.Count;
             // Fill the newly added columns with
             // 'useful' data.
             // Bind our grid to the created dataset.
-            
+
             superGridControl1.PrimaryGrid.DataSource = src;
             superGridControl1.PrimaryGrid.DataMember = "Customers";
         }
+        #endregion
+        #endregion
         #region AddNewColumns
-
-        /// <summary>
-        /// Adds a set of new columns to the given table
-        /// </summary>
-        /// <param name="table"></param>
-        /// <param name="names"></param>
         private void AddNewColumns(DataTable table, IEnumerable<string> names)
         {
             Type type = Type.GetType("System.Decimal");
@@ -173,18 +245,8 @@ namespace QLTB.GUI
             foreach (string name in names)
                 table.Columns.Add(new DataColumn(name, type));
         }
-
-        #endregion
-        #endregion
         #endregion
         #region SuperGridControl1DataBindingComplete
-        /// <summary>
-        /// This routine is called after the data bind operation has
-        /// been completed. This call-out lets you customize the display
-        /// or visibility of the data however the application needs.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         void SuperGridControl1DataBindingComplete(
             object sender, GridDataBindingCompleteEventArgs e)
         {
@@ -224,15 +286,8 @@ namespace QLTB.GUI
 
             ResetLayout();
         }
+        #endregion
         #region SetColumnTw
-
-        /// <summary>
-        /// Sets the header text and width for the given column.
-        /// </summary>
-        /// <param name="columns"></param>
-        /// <param name="name"></param>
-        /// <param name="text"></param>
-        /// <param name="width"></param>
         private void SetColumnTw(GridColumnCollection columns,
             string name, string text, int width)
         {
@@ -246,84 +301,7 @@ namespace QLTB.GUI
         }
 
         #endregion
-        #region SetupCurrencyColumns
-
-        /// <summary>
-        /// Sets up the given columns to render/edit
-        /// as a center-aligned Currency column.
-        /// </summary>
-        /// <param name="columns"></param>
-        /// <param name="names"></param>
-        private void SetupCurrencyColumns(GridColumnCollection columns, string[] names)
-        {
-            foreach (string name in names)
-            {
-                GridColumn column = columns[name];
-
-                column.EditorType = typeof(MyCurrencyEditControl);
-
-                column.CellStyles.Default.Alignment = Alignment.MiddleCenter;
-            }
-        }
-
-        #region MyCurrencyEditControl
-
-        /// <summary>
-        /// Currency DoubleInput edit control
-        /// </summary>
-        public class MyCurrencyEditControl : GridDoubleInputEditControl
-        {
-            public MyCurrencyEditControl()
-            {
-                DisplayFormat = "C";
-            }
-        }
-
-        #endregion
-
-        #endregion
-        #region SetupPctColumns
-
-        /// <summary>
-        /// Sets up the given column to render/edit
-        /// as a center-aligned "percent" column.
-        /// </summary>
-        /// <param name="columns"></param>
-        /// <param name="names"></param>
-        private void SetupPctColumns(GridColumnCollection columns, string[] names)
-        {
-            foreach (string name in names)
-            {
-                GridColumn column = columns[name];
-
-                column.EditorType = typeof(MyPercentEditControl);
-
-                column.CellStyles.Default.Alignment = Alignment.MiddleCenter;
-            }
-        }
-
-        #region MyPercentEditControl
-
-        /// <summary>
-        /// Percent DoubleInput edit control
-        /// </summary>
-        public class MyPercentEditControl : GridDoubleInputEditControl
-        {
-            public MyPercentEditControl()
-            {
-                DisplayFormat = "P";
-            }
-        }
-
-        #endregion
-
-        #endregion
-        #endregion
         #region ResetLayout
-
-        /// <summary>
-        /// Reset the grid layout back to its default.
-        /// </summary>
         private void ResetLayout()
         {
             GridPanel panel = superGridControl1.PrimaryGrid;
@@ -342,12 +320,69 @@ namespace QLTB.GUI
                 col.CellStyles.Default.Background = null;
             }
 
-           // columns["Country"].HeaderText = null;
+            // columns["Country"].HeaderText = null;
 
             panel.ColumnHeader.GroupHeaders.Clear();
             panel.ClearAll();
         }
+        #endregion
+        #region Ban kiểm kê
+        private void addBanKK_Click(object sender, EventArgs e)
+        {
+            frmDialogThemBanKK frm = new frmDialogThemBanKK();
+            frm.ShowDialog(this);
+        }
+        private void btnRemove_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+            RemovePerson();
+        }
+        public void AddPerson(BanKiemKeGridDisplayModel person)
+        {
+            bankiemke.Add(person);
+            bankiemke = bankiemke.OrderBy(p => p.VaiTro).ToList();
+            lboxBanKiemKe.Items.Clear();
+            foreach (var item in bankiemke)
+            {
+                int i = bankiemke.Count + 1;
+                var str = i++.ToString() + ", " + item.HoTen + " - " + item.ChucVu + " - " + item.DaiDien;
+                lboxBanKiemKe.Items.Add(str);
+            }
+        }
+        public void RemovePerson()
+        {
+            int index = lboxBanKiemKe.SelectedIndex;
+            if (index >= 0)
+            {
+                lboxBanKiemKe.Items.RemoveAt(index);
+                bankiemke.RemoveAt(index);
+            }
+            else
+            {
+                MessageBox.Show("Danh sách trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        #endregion
+        #region Danh sách thiết bị
+        private void btnChonTB_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmDialogTBToiThieu frm = new frmDialogTBToiThieu();
+        }
 
         #endregion
+        #endregion
+        #endregion
+        private void comboBoxEx1_DataColumnCreated(object sender, DevComponents.DotNetBar.Controls.DataColumnEventArgs e)
+        {
+            //DevComponents.AdvTree.ColumnHeader header = e.ColumnHeader;
+            //if (header.DataFieldName == "ContactTitle") // Make title column narrow
+            //{
+            //    header.Width.Relative = 20; // 20% of available width
+            //}
+            //else // All other columns are at 40% available width
+            //{
+            //    header.Width.Relative = 40;
+            //}
+        }
     }
 }
